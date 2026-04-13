@@ -1,0 +1,51 @@
+name: PDF to Markdown
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**/*.pdf'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install poppler-utils
+        run: sudo apt-get install -y poppler-utils
+
+      - name: Convert new PDFs to Markdown
+        run: |
+          any_new=false
+          while IFS= read -r -d '' pdf; do
+            # Strip leading ./ and .pdf extension to get FILENAME
+            filename="${pdf#./}"
+            filename="${filename%.pdf}"
+            outfile="md/${filename}/README.md"
+            if [ ! -f "$outfile" ]; then
+              mkdir -p "$(dirname "$outfile")"
+              pdftotext -layout "$pdf" "$outfile"
+              echo "Converted: $pdf -> $outfile"
+              any_new=true
+            fi
+          done < <(find . -name '*.pdf' -print0)
+
+          if [ "$any_new" = true ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add md/
+            git commit -m "[Auto] Convert PDFs to Markdown"
+            git push
+          else
+            echo "No new PDFs to convert."
+          fi
