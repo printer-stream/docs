@@ -1,0 +1,100 @@
+name: Render PDF pages to JPEG
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**/*.pdf'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install poppler-utils
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils
+
+      - name: Render PDFs to JPEG
+        run: |
+          any_new=false
+          rendered_list=""
+
+          while IFS= read -r -d '' pdf; do
+            # Strip leading ./ and .pdf extension
+            rel="${pdf#./}"
+            filename="${rel%.pdf}"
+
+            small_dir="jpeg/${filename}/small"
+            big_dir="jpeg/${filename}/big"
+            readme="jpeg/${filename}/README.md"
+
+            # Skip if README already exists (already rendered)
+            if [ -f "$readme" ]; then
+              continue
+            fi
+
+            mkdir -p "$small_dir" "$big_dir"
+
+            # Render small JPEGs (~1024px wide)
+            pdftoppm -jpeg -scale-to 1024 "$pdf" "${small_dir}/page"
+
+            # Render full-resolution JPEGs
+            pdftoppm -jpeg "$pdf" "${big_dir}/page"
+
+            # Build README with anchors
+            {
+              echo "# ${filename}"
+              echo ""
+              echo "Auto-generated JPEG renders of \`${rel}\`."
+              echo ""
+              echo "## Pages"
+              echo ""
+
+              page_num=0
+              for img in "${small_dir}"/page-*.jpg; do
+                [ -f "$img" ] || continue
+                page_num=$((page_num + 1))
+                base="$(basename "$img")"
+                echo "### Page ${page_num}"
+                echo ""
+                echo "<a id=\"page-${page_num}\"></a>"
+                echo ""
+                echo "![Page ${page_num} preview](small/${base})"
+                echo ""
+                echo "[Full size](big/${base})"
+                echo ""
+              done
+
+              echo "---"
+              echo ""
+              echo "### Quick Navigation"
+              echo ""
+              for i in $(seq 1 "$page_num"); do
+                echo "- [Page ${i}](#page-${i})"
+              done
+            } > "$readme"
+
+            echo "Rendered: $pdf -> jpeg/${filename}/"
+            rendered_list="${rendered_list} ${rel}"
+            any_new=true
+          done < <(find . -name '*.pdf' -print0)
+
+          if [ "$any_new" = true ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add jpeg/
+            git commit -m "[Auto] Render PDF pages to JPEG:${rendered_list}"
+            git push
+          else
+            echo "No new PDFs to render."
+          fi
