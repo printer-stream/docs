@@ -34,7 +34,7 @@ logging.basicConfig(
     level=os.environ.get("DOCS_LOG_LEVEL", "INFO").upper(),
     format="%(asctime)s %(levelname)-7s [%(name)s] %(message)s",
 )
-log = logging.getLogger("printerrr-docs")
+log = logging.getLogger("printer-stream-docs")
 
 # Quiet noisy third-party loggers so our own step-by-step logs stay readable.
 # Set DOCS_VERBOSE_DEPS=1 to see the underlying HF/httpx download chatter.
@@ -44,7 +44,7 @@ if not os.environ.get("DOCS_VERBOSE_DEPS"):
         logging.getLogger(noisy).setLevel(logging.WARNING)
 
 mcp = FastMCP(
-    "printerrr-docs",
+    "printer-stream-docs",
     host=os.environ.get("HOST", "0.0.0.0"),
     port=int(os.environ.get("PORT", "8000")),
 )
@@ -67,13 +67,15 @@ def db() -> sqlite3.Connection:
         log.info("Index file size: %d KB", size_kb)
         t0 = time.perf_counter()
         conn = sqlite3.connect(
-            f"file:{INDEX_PATH}?mode=ro", uri=True, check_same_thread=False
+            f"file:{INDEX_PATH}?mode=ro",
+            uri=True,
+            check_same_thread=False
         )
         conn.row_factory = sqlite3.Row
         log.info("Loading sqlite-vec extension...")
-        conn.enable_load_extension(True)
+        # conn.enable_load_extension(True)
         sqlite_vec.load(conn)
-        conn.enable_load_extension(False)
+        # conn.enable_load_extension(False)
         ndocs = conn.execute("SELECT COUNT(*) FROM documents").fetchone()[0]
         nchunks = conn.execute("SELECT COUNT(*) FROM chunks").fetchone()[0]
         log.info(
@@ -247,11 +249,10 @@ def get_page(stem: str, page: int) -> dict:
 
 
 if __name__ == "__main__":
-    log.info("=== printerrr-docs MCP server starting ===")
+    log.info("=== printer-stream-docs MCP server starting ===")
     log.info("Embedding model : %s", EMBED_MODEL)
     log.info("Index path      : %s", INDEX_PATH)
-    log.info("Bind address    : %s:%s",
-             os.environ.get("HOST", "0.0.0.0"), os.environ.get("PORT", "8000"))
+    log.info("Bind address    : %s:%s", os.environ.get("HOST", "0.0.0.0"), os.environ.get("PORT", "8000"))
     log.info("Transport       : streamable-http (endpoint /mcp)")
     warm_up()
     log.info("Starting HTTP transport; press Ctrl-C to stop")
