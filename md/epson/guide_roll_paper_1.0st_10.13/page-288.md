@@ -1,0 +1,29 @@
+## **C O N F I D E N T I A L** 
+
+## TM-J2000/J2100 
+
+**This printer is equipped with a print head configured in column format, which makes it faster to define data using Function 113 (column format) than with this function.** 
+
+**The model information for this function (the dot density and maximum print area and others) is the same as for Function 69. See the model information of Function 69.** 
+
+## TM-T90,  TM-L90 
+
+**For specifying paper (2-color/single-color), see Function 5 of** GS ( E **.** 
+
+**The dot density and maximum print area are the same as Function 69. See the model information of Function 69.** 
+
+**Use the following settings (except when using a serial interface) for fastest processing time.** 
+
+- ❏ **Check that there is space in the receive buffer of the printer before transmitting this function when transmitting the first graphic data. (You can check that the receive buffer is empty by executing status receiving of** GS r **(** n **= 1, 49)).** 
+
+## **Example: Example of data processing:** 
+
+GS r **-> Status receiving -> This function (color 1) -> This function (color 2) -> This command <Function 50> -> This function (color 1) -> This function (color 2) -> This command <Function 50>** 
+
+- ❏ **Specify standard mode.** 
+
+- ❏ **Specify left margin as 0, and the horizontal position to a position that is a multiple of 8, and specify the horizontal size of the graphic to the dot which is the multiple of 8. (Example: the left margin = 0, horizontal position = 8, 16, or 24, 32, etc., (** xL **+** xH × **256) = 64, 128, or 256 etc.)** 
+
+- ❏ **Specify the scaling to the original size (** bx **= 1,** by **= 1).** 
+
+- ❏ **Specify the size of image data not to exceed the current print area.** 

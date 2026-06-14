@@ -1,0 +1,38 @@
+Rev.2.52 
+
+The interface disconnection detection function through data reception timeout is controlled when s=5 is specified. 
+
+When this function is enabled, the interface is determined to have been disconnected when no data is received for a specified period of time at the data read section of the printer. 
+
+When a disconnection is detected during a command execution, the command parsing is stopped. 
+
+When data cancel is enabled, the print start function using the timer (ESC GS g 1) is disabled, and data is canceled. 
+
+n1=0 and n2=0: Initializes the interface disconnection detection function through data reception timeout. 
+
+(Returns to the MSW settings. The initial value for the timeout time is 3 seconds.) 
+
+n1=1 : Set enable/disable and the timeout time for data reception timeouts. 
+
+When n2 is 0, the disconnection detection function is disabled due to data reception timeouts. 
+
+When n2 is anything except for 0, the data reception timeout is set. (Units: seconds, 1 to 255 seconds) 
+
+n1=2 and n2=0: Sends the current setting to the host. 
+
+The data format returned to the host is as shown below. 
+
+<Returned Data Formats> 
+
+|Code|ASCII|ESC|GS|ETX|s|n1|n2|[timeout setting]|NUL|
+|---|---|---|---|---|---|---|---|---|---|
+||Hex.|1B|1D|03|s|n1|n2|[timeout setting]|00|
+||Decimal|27|29|3|s|n1|n2|[timeout setting]|0|
+
+
+
+* Echoes back the specified contents from the host as is until ESC GS ETX s n1 n2, and then sends the timeout setting value and NUL. 
+
+ESC/POS Command Specifications 
+
+192 

@@ -1,0 +1,29 @@
+Chapter 2   Setup 
+
+2 
+
+## _Changing the Paper Width_ 
+
+The printer is initially set to print on 80 mm width paper and you can change the printer to print on 58 mm width paper by installing the roll paper guide and changing the paper width setting with the customized value. 
+
+Follow the steps below to install the roll paper guide. 
+
+Once you change the paper width from 80 mm to 58 mm, you cannot change it back to 80 mm. 
+
+To set the customized value, see "Setting the Memory Switches (Customized Value)" on page 63. 
+
+- 1 Open the roll paper cover. 
+
+- 2 Install the roll paper guide so that the projection on its bottom is aligned with the hole at the right of the roll paper holder. 
+
+**==> picture [21 x 8] intentionally omitted <==**
+
+**----- Start of picture text -----**<br>
+Hole<br>**----- End of picture text -----**<br>
+
+
+**==> picture [200 x 278] intentionally omitted <==**
+
+3 Tighten the enclosed screw to fix the roll paper guide. 
+
+**27** 

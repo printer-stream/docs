@@ -1,0 +1,23 @@
+## **C O N F I D E N T I A L** 
+
+## **ESC ( A** _**pL pH fn n c** <_ Function 97 > (TM-T88V, TM-T20) 
+
+[Name] Sound buzzer in TM-T88V, TM-T20 models (registered sound pattern specified) (optional external buzzer) [Format] ASCII ESC ( A pL pH fn n c Hex 1B 28 41 pL pH fn n c Decimal 27 40 65 pL pH fn n c [Range] (pL + pH × 256) = 3 (pL = 3, pH = 0) fn = 97 
+
+[Format] 
+
+1 ≤ n ≤ 7 
+
+- 0 ≤ c ≤ 255 
+
+[Description] Sounds a pattern specified by n the number of times specified by c. 
+
+|n|**Pattern**|
+|---|---|
+|1|Pattern A|
+|2|Pattern B|
+|3|Pattern C|
+|4|Pattern D|
+|5|Pattern E|
+|6|Pattern for error|
+|7|Pattern for paper-end|

@@ -1,0 +1,5 @@
+## **3.3.12. External Device Drive** 
+
+**ESC BEL n1 n2** [Name] Set external drive device 1 pulse width [Code] ASCII ESC BEL n1 n2 Hex. 1B 07 n1 n2 Decimal 27 7 n1 n2 [Defined Area] 1≤n1≤127 1≤n2≤127 [Initial Value] n1 = 20 (Energizing time: 200 msec) n2 = 20 (Delay time: 200 msec) [Function] Sets the energizing and delay times for drive of the external device. • Energizing time = 10 x n1 (ms) • Delay time = 10 x n2 (ms) 
+
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― STAR Line Mode Command Specifications 3-45 

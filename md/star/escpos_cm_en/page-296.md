@@ -1,0 +1,35 @@
+Rev.2.52 
+
+## **6-6 Appendix 6 CODE 128 Bar Codes, GS-1 Bar Codes** 
+
+## **6-6-1 General Description of CODE 128 Bar Codes** 
+
+With CODE 128 bar codes, it is possible to express one character of full ASCII128 character groups or two digits numbers with one bar code character by combining 103 bar code types and three types of code sets. 
+
+- Code Set A  Expresses ASCII characters of 00H to 5FH 
+
+- Code Set B  Expresses ASCII characters of 20H to 7FH 
+
+- Code Set C  Expresses two-digit numbers with one character 
+
+   - (100 types of 00 to 99) 
+
+Also in CODE 128, the following special characters are available. 
+
+- Shift characters (SHIFT) 
+
+- In code set A, 1 character immediately after a shift is handled as a character from code set B. 
+
+- In code set B, 1 character immediately after is handled as a character from code set A. 
+
+- Note that this is not used with code set C. 
+
+- Code set selection characters (Code A, Code B, Code C) Switches the following code set to A, B or C. 
+
+- Function characters (FNC1, FNC2, FNC3, FNC4) 
+
+The use of function keys depends on the application.  Note that only FNC1 is used with code set C. 
+
+ESC/POS Command Specifications 
+
+292 

@@ -1,0 +1,28 @@
+|TEO|Extended talker.||No|capability.|
+|---|---|---|---|---|
+|Co|Controller.||No|capability.|
+|DCO|Device clear.||No|capability.|
+|DTO|Device trigger.|.|No|capability.|
+|PPO|Parallel poll.||No|capability.|
+|SRO|Service request.||No|capability.|
+|AAI|Auto address.||Complete capability.||
+|AEO|Auto extended||No|capability.|
+||address.||||
+|AMO|Auto multiple||No|capability.|
+||address.||||
+|RLO|Remote local.||No|capability.|
+|PDO|Power down.||No|capability.|
+|DDO|Device dependent||No|capability.|
+||commands.||||
+
+
+
+## Reaction to Interface Commands and Messages 
+
+All unsupported interface commands are ignored and retransmitted around the loop. Upon receipt of the interface clear (IFC) message, the plotter resets the parser and starts looking for a new HP-GL instruction. Any partially parsed HP-GL instruction or parameters will be lost. This message does not reset parameters in the plotter to their default values. 
+
+## Addressing the Plotter 
+
+The default address of the plotter is 5. However, the plotter address in a program may vary; this is because the system controller generally assigns addresses automatically in a sequential manner around the loop. Refer to your computer’s documentation for hints on writing programs so that they will run no matter what order the peripheral devices are interconnected. The examples in this chapter assume that the plotter is the only device connected to the computer. Therefore, the plotter’s address is 1. 
+
+HP-ILINTERFACING 11-3 

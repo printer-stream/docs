@@ -1,0 +1,39 @@
+## **C O N F I D E N T I A L** 
+
+## Page 43 [PC1119 (Lithuanian)] 
+
+|Page 43 [PC1119 (Lithuanian)]|||||||||||||||||
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|HEX|8||9||A||B||C||D||E||F||
+|0<br>~~P~~<br>~~a~~|128<br>~~Peet~~||144<br>~~eet~~<br>~~re~~||160<br>~~eet~~<br>~~ee~~||176<br>~~eet~~<br>~~ee~~||192<br>~~eo~~<br>~~ee~~||208<br>~~eo~~<br>~~ee~~||224<br>~~eo~~<br>~~ee~~||240<br>~~eo~~<br>~~ee~~||
+|||128<br>~~eet~~||144<br>~~eet~~<br>~~re~~||160<br>~~eet~~<br>~~ee~~||176<br>~~eet~~<br>~~ee~~||192<br>~~eo~~<br>~~ee~~||208<br>~~eo~~<br>~~ee~~||224<br>~~eo~~<br>~~ee~~||240<br>~~eo~~<br>~~ee~~|
+|1<br>~~P~~<br>~~a~~<br>~~Pete~~|129<br>~~Peet~~<br>~~Pete~~||145<br>~~eet~~<br>~~re~~<br>~~Pete~~||161<br>~~eet~~<br>~~ee~~<br>~~eto~~||177<br>~~eet ~~<br>~~ee~~<br>~~eto~~||193<br> ~~eo~~<br>~~ee~~<br>~~eto~~||209<br>~~eo~~<br>~~ee~~<br>~~eto~~||225<br>~~eo~~<br>~~ee~~||241<br>~~eo~~<br>~~ee~~||
+|||129<br>~~Pete~~||145<br>~~re~~<br>~~Pete~~||161<br>~~ee~~<br>~~eto~~||177<br>~~ee~~<br>~~eto~~||193<br>~~ee~~<br>~~eto~~||209<br>~~ee~~<br>~~eto~~||225<br>~~ee~~||241<br>~~ee~~|
+|2<br>~~a~~<br>~~Pete~~|130<br>~~Pete~~||146<br>~~re~~<br>~~Pete~~||162<br>~~ee~~<br>~~eto~~||178<br>~~ee ~~<br>~~eto~~<br>~~tet~~||194<br> ~~ee~~<br>~~eto~~<br>~~tet~~||210<br>~~ee~~<br>~~eto~~<br>~~tet~~||226<br>~~ee~~<br>~~ot~~||242<br>~~ee~~<br>~~ot~~||
+|||130<br>~~Pete~~||146<br>~~Pete~~||162<br>~~eto~~||178<br>~~eto~~<br>~~tet~~||194<br>~~eto~~<br>~~tet~~||210<br>~~eto~~<br>~~tet~~||226<br>~~ot~~||242<br>~~ot~~|
+|3<br>~~Pete~~<br>~~Pere~~<br>~~Ce~~|131<br>~~Pete~~<br>~~Pere~~<br>~~Ce~~||147<br>~~Pete ~~<br>~~Pere~~<br>~~Ce~~||163<br> ~~eto~~<br>~~Pere~~<br>||179<br>~~eto~~<br>~~Pere~~<br>~~tet~~<br>||195<br>~~eto~~<br>~~Pere~~<br>~~tet~~<br>~~tt~~<br>||211<br>~~eto~~<br>~~Pere~~<br>~~tet~~<br>~~tt~~||227<br>~~Pere~~<br>~~ot~~<br>~~tt~~||243<br>~~Pere~~<br>~~ot~~||
+|||131<br>~~Pere~~<br>~~Ce~~||147<br>~~Pere~~<br>~~Ce~~||163<br>~~Pere~~<br>||179<br>~~Pere~~<br>~~tet~~<br>||195<br>~~Pere~~<br>~~tet~~<br>~~tt~~<br>||211<br>~~Pere~~<br>~~tet~~<br>~~tt~~||227<br>~~Pere~~<br>~~ot~~<br>~~tt~~||243<br>~~Pere~~<br>~~ot~~|
+|4<br>~~Peete~~<br>~~Ce~~|132<br>~~Peete~~<br>~~Ce~~||148<br>~~Peete~~<br>~~Ce~~||164<br>~~Peete~~<br>||180<br>~~tet~~<br>~~Peete~~<br>||196<br>~~tet~~<br>~~Peete~~<br>~~tt~~<br>||212<br>~~tet ~~<br>~~Peete~~<br>~~tt~~||228<br> ~~ot~~<br>~~Peete~~<br>~~tt~~||„<br>244<br>~~ot~~<br>~~Peete~~||
+|||132<br>~~Peete~~<br>~~Ce~~||148<br>~~Peete~~<br>~~Ce~~||164<br>~~Peete~~<br>||180<br>~~Peete~~<br>||196<br>~~Peete~~<br>~~tt~~<br>||212<br>~~Peete~~<br>~~tt~~||228<br>~~Peete~~<br>~~tt~~||244<br>~~Peete~~|
+|5<br>~~Ce~~<br>~~er~~|133<br>~~Ce~~<br>~~r~~||149<br>~~Ce ~~<br>~~ee~~||165<br> ~~eet~~<br>~~ee~~||181<br>~~eet~~<br>~~ee~~||197<br>~~tt~~<br>~~eet~~<br>~~ee~~||š<br>213<br>~~tt~~<br>~~ot~~<br>||229<br>~~tt~~<br>~~ot~~<br>||“<br>245<br>||
+|||133<br>~~Ce~~<br>~~r~~||149<br>~~Ce ~~<br>~~ee~~||165<br> ~~eet~~<br>~~ee~~||181<br>~~eet~~<br>~~ee~~||197<br>~~tt~~<br>~~eet~~<br>||213<br>~~tt~~<br>~~ot~~<br>||229<br>~~tt~~<br>~~ot~~<br>||245<br>|
+|6<br>~~er~~|134<br>~~r~~||150<br>~~ee~~||166<br>~~ee~~||182<br>~~ee~~||198<br>~~eeeee~~||214<br>~~eee~~||230<br>~~eee~~||÷<br>246<br>~~eee~~||
+|||134<br>~~r~~||150<br>~~ee~~||166<br>~~ee~~||182<br>~~ee~~||198<br>~~eee~~||214<br>~~eee~~||230<br>~~eee~~||246<br>~~eee~~|
+|7<br>~~er~~<br>~~Bee~~|135<br>~~r ~~<br>~~Bee~~||151<br> ~~ee~~<br>~~Bee ~~||167<br>~~ee ~~<br> ~~Feet~~||183<br> ~~ee~~<br>~~Feet~~<br>~~ee~~||199<br>~~ee~~<br>~~Feet~~<br>~~ee ee~~||215<br><br>~~Feet~~<br>~~ee~~||231<br><br>~~ot~~<br>~~ee~~||247<br><br>~~ot~~<br>~~ee~~||
+|||135<br>~~Bee~~||151<br>~~Bee ~~||167<br> ~~Feet~~||183<br>~~Feet~~<br>~~ee~~||199<br>~~Feet~~<br>~~ee ee~~||215<br>~~Feet~~<br>~~ee~~||231<br>~~ot~~<br>~~ee~~||247<br>~~ot~~<br>~~ee~~|
+|8<br>~~ee~~|136<br>~~ee~~||152<br>~~ee~~||168<br>~~ee~~||184<br>~~ee~~<br>~~ee~~<br>~~ee~~||200<br>~~ee~~<br>~~ee ee~~<br>~~ee~~||ž<br>216<br>~~ee~~<br>~~ee~~<br>~~oo~~||232<br>~~ee~~<br>~~ee~~<br>~~oo~~||°<br>248<br>~~ee~~<br>~~ee~~||
+|||136<br>~~ee~~||152<br>~~ee~~||168<br>~~ee~~||184<br>~~ee~~<br>~~ee~~<br>~~ee~~||200<br>~~ee~~<br>~~ee ee~~<br>~~ee~~||216<br>~~ee~~<br>~~ee~~<br>~~oo~~||232<br>~~ee~~<br>~~ee~~<br>~~oo~~||248<br>~~ee~~<br>~~ee~~|
+|9<br>~~Pe~~<br>~~er~~|137<br>~~Pe~~<br>~~er~~||153<br>~~Pe~~<br>||169<br>~~Pe~~<br>~~ee~~<br>||185<br>~~ee ~~<br>~~Pe~~<br>~~ee~~<br>~~ee~~<br>||201<br> ~~ee ee~~<br>~~Pe~~<br>~~ee~~<br>~~ee ee~~<br>||217<br>~~ee~~<br>~~Pe~~<br>~~oo~~<br>~~ee~~<br>||233<br>~~ee~~<br>~~Pe~~<br>~~oo~~<br>~~ee~~<br>||·<br>249<br>~~ee~~<br>~~Pe~~<br>~~ee~~<br>||
+|||137<br>~~Pe~~<br>~~er~~||153<br>~~Pe~~<br>||169<br>~~Pe~~<br>~~ee~~<br>||185<br>~~Pe~~<br>~~ee~~<br>~~ee~~<br>||201<br>~~Pe~~<br>~~ee~~<br>~~ee ee~~<br>||217<br>~~Pe~~<br>~~oo~~<br>~~ee~~<br>||233<br>~~Pe~~<br>~~oo~~<br>~~ee~~<br>||249<br>~~Pe~~<br>~~ee~~<br>|
+|A<br>~~re~~<br>~~er~~<br>~~|~~|138<br>~~re~~<br>~~er~~||154<br>~~re~~<br>~~ee~~||170<br>~~re~~<br>~~ee~~<br>~~ee~~||186<br>~~ee~~<br>~~re~~<br>~~ee~~<br>~~ee~~||202<br>~~ee ~~<br>~~re~~<br>~~ee ee~~<br>~~ee~~||218<br> ~~oo~~<br>~~re~~<br>~~ee~~<br>~~e~~||234<br>~~oo~~<br>~~re~~<br>~~ee~~<br>~~e~~~~**e**e~~||·<br>250<br>~~re~~<br>~~ee~~<br>~~e~~||
+|||138<br>~~re~~<br>~~er~~||154<br>~~re~~<br>~~ee~~||170<br>~~re~~<br>~~ee~~<br>~~ee~~||186<br>~~re~~<br>~~ee~~<br>~~ee~~||202<br>~~re~~<br>~~ee ee~~<br>~~ee~~||218<br>~~re~~<br>~~ee~~<br>~~e~~||234<br>~~re~~<br>~~ee~~<br>~~**e**e~~||250<br>~~re~~<br>~~ee~~<br>~~e~~|
+|B<br>~~er~~<br>~~|~~|139<br>~~er ~~<br>||155<br> ~~ee~~<br>||171<br>~~ee ~~<br>~~ee~~<br>||187<br> ~~ee ~~<br>~~ee~~<br>||203<br> ~~ee ee~~<br>~~ee~~<br>||219<br>~~ee~~<br>~~e~~<br>||235<br>~~ee~~<br>~~e~~~~**e**e~~<br>~~oo~~||251<br>~~ee~~<br>~~e~~<br>~~oo~~||
+|||139<br>~~er ~~<br>||155<br> ~~ee~~<br>||171<br>~~ee ~~<br>~~ee~~<br>||187<br>~~ee ~~<br>~~ee~~<br>||203<br>~~ee ee~~<br>~~ee~~<br>||219<br>~~ee~~<br>~~e~~<br>||235<br>~~ee~~<br>~~**e**e~~<br>~~oo~~||251<br>~~ee~~<br>~~e~~<br>~~oo~~|
+|C<br><br>~~|~~|M<br>140<br> <br>~~te~~||156<br> ~~ee~~<br>~~te~~||172<br>~~ee~~<br>~~et~~<br>~~ee~~||188<br>~~ee ~~<br>~~et~~<br>~~ee~~||204<br> ~~ee~~<br>~~et~~<br>~~ee ee~~||220<br>~~e~~<br>~~et~~<br>~~ee~~||236<br>~~e~~~~**e**e~~<br>~~et oo~~<br>~~ee~~||252<br>~~e~~<br>~~oo~~<br>~~ee~~||
+|||140<br> <br>~~te~~||156<br> ~~ee~~<br>~~te~~||172<br>~~ee~~<br>~~et~~<br>~~ee~~||188<br>~~ee ~~<br>~~et~~<br>~~ee~~||204<br>~~ee~~<br>~~et~~<br>~~ee ee~~||220<br>~~e~~<br>~~et~~<br>~~ee~~||236<br>~~**e**e~~<br> ~~oo~~<br>~~ee~~||252<br>~~e~~<br>~~oo~~<br>~~ee~~|
+|D<br>~~re~~|141<br><br>~~re~~||157<br><br>~~re~~||173<br><br>~~re~~<br>~~ee~~||189<br><br>~~re~~<br>~~ee~~||205<br><br>~~re~~<br>~~ee ee~~||221<br><br>~~re~~<br>~~ee~~||237<br> ~~oo~~<br>~~re~~<br>~~ee~~||²<br>253<br>~~oo~~<br>~~re~~<br>~~ee~~||
+|||141<br>~~re~~||157<br>~~re~~||173<br>~~re~~<br>~~ee~~||189<br>~~re~~<br>~~ee~~||205<br>~~re~~<br>~~ee ee~~||221<br>~~re~~<br>~~ee~~||237<br>~~re~~<br>~~ee~~||253<br>~~re~~<br>~~ee~~|
+|E<br>~~Per~~|142<br>~~Per~~||158<br>~~Per~~||174<br>~~ee ~~<br>~~Per~~<br>~~et~~||Š<br>190<br> ~~ee ~~<br>~~Poet~~<br>~~et~~||206<br> ~~ee ee~~<br>~~Poet~~<br>~~oe~~||222<br>~~ee~~<br>~~Poet~~<br>~~oe~~||238<br>~~ee~~<br>~~Poet~~<br>~~oe~~||254<br>~~ee~~<br>~~Poet~~||
+|||142<br>~~Per~~||158<br>~~Per~~||174<br>~~Per~~<br>~~et~~||190<br>~~Poet~~<br>~~et~~||206<br>~~Poet~~<br>~~oe~~||222<br>~~Poet~~<br>~~oe~~||238<br>~~Poet~~||254<br>~~Poet~~|
+|F<br>~~PPP~~|143<br>~~PPP~~||159<br>~~PPP~~||175<br>~~PPP~~<br>~~et~~||191<br>~~PPP~~<br>~~et~~||Ž<br>207<br>~~PPP~~<br>~~oe~~||223<br>~~PPP~~<br>~~oe~~||239<br>~~PPP~~<br>~~oe~~||SP<br>255<br>~~PPP~~||
+|||143<br>~~PPP~~||159<br>~~PPP~~||175<br>~~PPP~~<br>~~et~~||191<br>~~PPP~~<br>~~et~~||207<br>~~PPP~~<br>~~oe~~||223<br>~~PPP~~<br>~~oe~~||239<br>~~PPP~~||255<br>~~PPP~~|

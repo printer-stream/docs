@@ -1,0 +1,24 @@
+Rev.2.52 
+
+• This command is affected by the following command settings: Alignment (ESC a n) Move to absolute position (ESC $ n1 n2) Move to relative position (ESC \ n1 n2) Set print area (ESC RS A n) Horizontal tab (HT) Upside-down printing (ESC { n) 
+
+- Notes • The following explains the DPI and the maximum print area. 
+
+   - “Vertical” refers to the paper feeding direction, and “horizontal” refers to a direction perpendicular to the paper feed direction. 
+
+- Star •  Dot density of STAR printers (STAR printer head: 203 DPI) 
+
+|X x Y|Mode|Horizontal Direction Dot Density|Vertical Direction Dot Density|
+|---|---|---|---|
+|1 x 1|Normal mode|203 DPI|203 DPI|
+|1 x 2|Double-high Mode|203 DPI|101 DPI|
+|2 x 1|Double-wide Mode|101 DPI|203 DPI|
+|2 x 2|Double-high,Double-wide Mode|101 DPI|101 DPI|
+
+
+
+Reference GS ( L/GS 8 L , ESC 2 , ESC 3 , ESC a , ESC $ , ESC \ , ESC RS A , HT , ESC { 
+
+ESC/POS Command Specifications 
+
+104 

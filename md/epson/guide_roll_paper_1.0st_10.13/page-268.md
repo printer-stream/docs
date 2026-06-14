@@ -1,0 +1,31 @@
+## **C O N F I D E N T I A L** 
+
+## **GS ( L** _**pL pH m fn d1 d2** <_ Function 80 > 
+
+[Name] Transmit the key code list for defined download graphics. 
+
+[Format] ASCII GS ( L pL pH m fn d1 d2 Hex 1D 28 4C 04 00 30 50 4B 43 Decimal 29 40 76 4 0 48 80 75 67 [Range] (pL + pH × 256) = 4 (pL = 4, pH = 0) m = 48 fn = 80 d1 = 75 d2 = 67 
+
+- [Format] 
+
+- [Description] Transmits the defined downloaded graphics key code list. 
+
+   - This function does require ESC/POS Handshaking Protocol. 
+
+- [Notes] ■ When key codes are present, the data shown below (beginning with Header and ending with NUL) is sent. 
+
+|**Send data**|**Hexadecimal**|**Decimal**|**Data length**|
+|---|---|---|---|
+|Header|37H|55|1 byte|
+|Identifier|73H|115|1 byte|
+|Identification status (*1) (*2)|40H or 41H|64 or 64|1 byte|
+|Data (*3)|30H to 39H|48 to 57|2 to 80 bytes|
+|NUL|00H|0|1 byte|
+
+
+
+- (*1) When the number of downloaded graphics data groups exceeds 40, the groups are divided into blocks: 
+
+   - When unsent data is present, the Identification status byte (byte 3) is set to hexadecimal value 41H and decimal value 65. 
+
+   - When unsent data is not present, the Identification status byte (byte 3) is set to hexadecimal value 40H and decimal value 64. 

@@ -1,0 +1,31 @@
+Rev.2.52 
+
+## **<Function 480> GS ( k pL pH cn fn m a b d1...dk (cn=52, fn=80)** 
+
+Name Compound symbol: Store data in symbol saving region Code ASCII GS ( k pL pH cn fn m a b d1...dk Hex. 1D   28  6B  pL  pH cn fn m a b d1...dk Decimal   29   40  107  pL  pH cn fn m a b d1...dk Defined Region 7≤(pL+pH×256)≤2366  (0≤pL≤255, 0≤pH≤9) cn = 52 fn = 80 m = 48 a = 48,49 65 ≤ b ≤ 77(a=48) b = 65,66 (a=49) 0 ≤ d ≤ 255 k=(pL+pH×256) - 5 
+
+Function Symbol data (d1...dk) for the Compound symbol:is stored in the symbol saving region. 
+
+a = 48 
+
+|a = 48||||||
+|---|---|---|---|---|---|
+|b|Bar Code Type|Data(k)||ASCII|Defned region of d|
+|65|EAN8|k = 7,8||“0”to”9”|<br>48≤d≤57|
+|66|EAN13|k = 12,13||“0”to”9”|48≤d≤57|
+|67|UPC-A|k = 11,12||“0”to”9”|48≤d≤57|
+|69|UPC-E (11-digit version<br>(0 included))|k = 11,12||“0”to”9”|48≤d≤57|
+|70|GS1 DataBar|k = 13||“0”to”9”|48≤d≤57|
+|71|GS1 DataBar Truncated|k = 13||“0”to”9”|48≤d≤57|
+|72|GS1 DataBar Stacked|k = 13||“0”to”9”|48≤d≤57|
+|73|GS1 DataBar Stacked<br>Omnidirectional|k = 13||“0”to”9”|48≤d≤57|
+|74|GS1 DataBar Limited|k = 13||“0”to”9”|48≤d≤57[However d1 = 48,49]|
+|75|GS1 DataBar Expanded|2|≤k≤255|0~9, A~Z, a~z<br>SP, !, “, %, $,<br>‘, (, ), *, +, ,, -,<br>., /, :, ;, <, =, >,<br>?, _, {|48≤d≤57, 65≤d≤90, 97≤d≤122,<br>32≤d≤34, 37≤d≤47, 58≤d≤63,<br>d = 95,123<br>[However d1 = 40, 48≤d2≤57, 48≤d3≤57 , 48≤<br>d1≤57, 48≤d2≤57]|
+|76|GS1 DataBar Expanded<br>Stacked|2|≤k≤255|0~9, A~Z, a~z<br>SP, !, “, %, $,<br>‘, (, ), *, +, ,, -,<br>., /, :, ;, <, =, >,<br>?, _, {|48≤d≤57, 65≤d≤90, 97≤d≤122,<br>32≤d≤34, 37≤d≤47, 58≤d≤63,<br>d = 95,123<br>[However d1 = 40, 48≤d2≤57, 48≤d3≤57 ,<br>48≤d1≤57, 48≤d2≤57]|
+|77|GS1-128|2|≤k≤255||0≤d≤127|
+
+
+
+ESC/POS Command Specifications 
+
+123 

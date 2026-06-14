@@ -1,0 +1,38 @@
+|• Black Mark Related Commands|
+|---|
+|**Class**<br>**Commands**<br>**Model Name**<br>~~Ce~~|
+|**TSP800**<br>**TSP700**<br>**TSP600**<br>**TUP900**<br>**TSP1000**<br>**TSP828L**<br>**TSP700II**<br>**TSP650**<br>**TUP500**<br>**TSP800II**<br>**FVP10**|
+|Black Mark<br>ESC d<br>OK<br>OK<br>OK<br>OK<br>OK<br>OK<br>OK<br>NO<br>OK<br>OK<br>OK<br>Related<br>FF<br>OK<br>OK<br>OK<br>OK<br>OK<br>OK<br>OK<br>NO<br>OK<br>OK<br>OK<br>Commands<br>ESC C<br>OK<br>OK<br>OK<br>OK<br>OK<br>OK<br>OK<br>NO<br>OK<br>OK<br>OK<br>ESC C 0<br>OK<br>OK<br>OK<br>OK<br>OK<br>OK<br>OK<br>NO<br>OK<br>OK<br>OK<br>VT<br>OK<br>OK<br>OK<br>OK<br>OK<br>OK<br>OK<br>NO<br>OK<br>OK<br>OK<br>ESC B<br>OK<br>OK<br>OK<br>OK<br>OK<br>OK<br>OK<br>NO<br>OK<br>OK<br>OK<br>~~See~~<br>~~Pe~~<br>~~po~~<br>~~Rs~~~~**GG**~~<br>~~CG~~<br>~~Rs~~<br>~~CG~~<br>~~Pe~~|
+|• 2-Color PrintingRelated Commands|
+|**Class**<br>**Commands**<br>**Model Name**<br>**TSP800**<br>**TSP700**<br>**TSP600**<br>**TUP900**<br>**TSP1000**<br>**TSP828L**<br>**TSP700II**<br>**TSP650**<br>**TUP500**<br>**TSP800II**<br>**FVP10**<br>2-Color<br>ESC RS c<br>Ver. 4.0<br>Ver. 2.0<br>Ver. 2.0<br>OK<br>OK<br>OK<br>OK<br>OK<br>OK<br>OK<br>OK<br>~~OOOOOO~~|
+|Printing<br>or later<br>or later<br>or later<br>Related<br>Commands<br>ESC RS C<br>Spec. A<br>Ver. 4.0<br>or later<br>Spec. A<br>Ver. 2.0<br>or later<br>Spec. A<br>Ver. 2.0<br>or later<br>Spec. B<br>Spec. B<br>Spec. B<br>Spec. C<br>Spec. A<br>Spec. C<br>Spec. C<br>Spec. C<br>ESC<br>4<br>(Not<br>recommended)<br>Ver. 4.0<br>or later<br>Ver. 2.0<br>or later<br>Ver. 2.0<br>or later<br>NO<br>NO<br>NO<br>NO<br>OK<br>NO<br>OK<br>NO<br>ESC<br>5<br>(Not<br>recommended)<br>Ver. 4.0<br>or later<br>Ver. 2.0<br>or later<br>Ver. 2.0<br>or later<br>NO<br>NO<br>NO<br>NO<br>OK<br>NO<br>OK<br>NO<br>ESC FS q<br>Ver. 4.0<br>or later<br>Ver. 2.0<br>or later<br>Ver. 2.0<br>or later<br>OK<br>OK<br>OK<br>OK<br>OK<br>OK<br>OK<br>OK<br>ESC FS p<br>Ver. 4.0<br>or later<br>Ver. 2.0<br>or later<br>Ver. 2.0<br>or later<br>OK<br>OK<br>OK<br>OK<br>OK<br>OK<br>OK<br>OK<br>~~ft~~<br>~~|~~<br>~~a i eeee ee~~<br>~~ee~~<br>~~es es~~<br>~~es~~<br>~~es~~<br>~~es ssGe~~<br>~~es es~~<br>~~es es ssQsOs~~<br>~~ieese~~<br>~~ee~~|
+
+
+
+|• Presenter Related Commands|
+|---|
+|**Class**<br>**Commands**<br>**Model Name**|
+|**TSP800**<br>**TSP700**<br>**TSP600**<br>**TUP900**<br>**TSP1000**<br>**TSP828L**<br>**TSP700II**<br>**TSP650**<br>**TUP500**<br>**TSP800II**<br>**FVP10**|
+|Presenter<br>ESC SYN0<br>NO<br>NO<br>NO<br>OK<br>NO<br>NO<br>NO<br>NO<br>OK<br>NO<br>NO<br>Related<br>ESC SYN 1<br>NO<br>NO<br>NO<br>OK<br>NO<br>NO<br>NO<br>NO<br>OK<br>NO<br>NO<br>Commands<br>ESC SYN 3<br>NO<br>NO<br>NO<br>OK<br>NO<br>NO<br>NO<br>NO<br>OK<br>NO<br>NO<br>ESC SYN 4<br>NO<br>NO<br>NO<br>OK<br>NO<br>NO<br>NO<br>NO<br>OK<br>NO<br>NO<br>ECS GS SUB DC1<br>NO<br>NO<br>NO<br>NO<br>NO<br>NO<br>NO<br>NO<br>OK<br>NO<br>NO<br>ECS GS SUB DC2<br>NO<br>NO<br>NO<br>NO<br>NO<br>NO<br>NO<br>NO<br>OK<br>NO<br>NO<br>ECS GS SUB DC3<br>NO<br>NO<br>NO<br>NO<br>NO<br>NO<br>NO<br>NO<br>OK<br>NO<br>NO<br>~~a~~<br>~~GC~~<br>~~GG~~<br>~~CC~~<br>~~Po~~<br>~~RsGG~~<br>~~**C**C~~<br>~~RseG~~<br>~~CO GG~~<br>~~(O~~<br>~~Po~~<br>=~~=====>=====~~<br>~~Po~~|
+|• Mark Commands|
+|**Class**<br>**Commands**<br>**Model Name**<br>**TSP800**<br>**TSP700**<br>**TSP600**<br>**TUP900**<br>**TSP1000**<br>**TSP828L**<br>**TSP700II**<br>**TSP650**<br>**TUP500**<br>**TSP800II**<br>**FVP10**<br>Mark<br>Commands<br>ESC GS * 0<br>NO<br>Ver. 4.0<br>or later<br>NO<br>Ver. 3.0<br>or later<br>OK<br>OK<br>OK<br>OK<br>OK<br>OK<br>OK<br>ESC GS * 1<br>NO<br>Ver. 4.0<br>or later<br>NO<br>Ver. 3.0<br>or later<br>OK<br>OK<br>OK<br>OK<br>OK<br>OK<br>OK<br>ESC GS * 2<br>NO<br>Ver. 4.0<br>or later<br>NO<br>Ver. 3.0<br>or later<br>OK<br>OK<br>OK<br>OK<br>OK<br>OK<br>OK<br>ESC GS * W<br>NO<br>Ver. 4.0<br>or later<br>NO<br>Ver. 3.0<br>or later<br>OK<br>OK<br>OK<br>OK<br>OK<br>OK<br>OK<br>ESC GS * C<br>NO<br>Ver. 4.0<br>or later<br>NO<br>Ver. 3.0<br>or later<br>OK<br>OK<br>OK<br>OK<br>OK<br>OK<br>OK<br>~~ce~~<br>~~vyeauyaeauaea_nasa——aaaes~~<br>~~i ee es es ee~~<br>~~a i eeee ee~~<br>~~ee~~<br>~~es es~~<br>~~es~~<br>~~es~~<br>~~es ssGe~~<br>~~es es~~<br>~~es es ssQsOs~~<br>~~ieese~~<br>~~ee~~|
+
+
+
+• Auto Logo Commands 
+
+|**Class**<br>~~OO~~|**Commands**<br>~~OO~~<br>~~i~~|**Model Name**<br>~~OOOOOO~~|**Model Name**<br>~~OOOOOO~~|**Model Name**<br>~~OOOOOO~~|**Model Name**<br>~~OOOOOO~~|**Model Name**<br>~~OOOOOO~~|**Model Name**<br>~~OOOOOO~~|**Model Name**<br>~~OOOOOO~~|**Model Name**<br>~~OOOOOO~~|**Model Name**<br>~~OOOOOO~~|**Model Name**<br>~~OOOOOO~~|**Model Name**<br>~~OOOOOO~~|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|||**TSP800**<br>~~OO~~<br>~~i~~|**TSP700**<br>~~OO~~<br>~~ee~~|**TSP600**<br>~~OO~~<br>~~es~~|**TUP900**<br>~~OO~~<br>~~es~~|**TSP1000**<br>~~OO~~<br>~~ee~~|**TSP828L**<br>~~OO~~|**TSP700II**<br>~~OO~~|**TSP650**<br>~~OOOO~~|**TUP500**<br>~~OOOO~~|**TSP800II**<br>~~OOOO~~|**FVP10**<br>~~OOOO~~|
+|Auto Logo<br>Commands ESC GS / C<br>~~OO~~|ESC GS / W<br>~~OO~~<br>~~i~~<br>~~a~~|NO<br>~~OO~~<br>~~i~~<br>~~i~~|Ver. 4.0<br>or later<br>~~OO~~<br>~~ee~~<br>~~ee~~|NO<br>~~OO~~<br>~~es~~<br>~~ee~~|NO<br>~~OO~~<br>~~es~~<br>~~ee~~|NO<br>~~OO~~<br>~~ee~~<br>~~ee~~|NO<br>~~OO~~<br>~~ee~~|OK<br>~~OO~~<br>~~ee~~|OK<br>~~OOOO~~<br>~~ee~~|NO<br>~~OOOO~~<br>~~ee~~|OK<br>~~OOOO~~|OK<br>~~OOOO~~|
+||Commands ESC GS / C<br>~~i~~<br>~~a~~<br>~~es~~|NO<br>~~i ~~<br>~~i~~<br>~~es~~|Ver. 4.0<br>or later<br> ~~ee ~~<br>~~ee~~<br>~~es~~|NO<br> ~~es ~~<br>~~ee~~<br>~~es~~|NO<br> ~~es ~~<br>~~ee~~<br>~~es~~|NO<br> ~~ee~~<br>~~ee~~<br>~~ss~~|NO<br>~~ee~~<br>~~ss~~|OK<br>~~ee~~<br>~~Ge~~|OK<br>~~ee~~|NO<br>~~ee~~|OK|OK|
+||ESC GS / 1<br>~~a ~~<br>~~es~~<br>~~es~~|NO<br> ~~i ~~<br>~~es~~<br>~~es~~|Ver. 4.0<br>or later<br> ~~ee~~<br>~~es~~<br>~~es~~|NO<br>~~ee~~<br>~~es~~<br>~~es~~|NO<br>~~ee ~~<br>~~es~~<br>~~ss~~|NO<br> ~~ee~~<br>~~ss~~<br>~~ss~~|NO<br>~~ee~~<br>~~ss~~<br>~~Qs~~|OK<br>~~ee~~<br>~~Ge~~<br>~~Os~~|OK<br>~~ee~~<br>~~Os~~|NO<br>~~ee~~|OK|OK|
+||ESC GS / 2<br>~~es ~~<br>~~es~~<br>~~i~~|NO<br> ~~es~~<br>~~es~~<br>~~i~~|Ver. 4.0<br>or later<br>~~es~~<br>~~es~~<br>~~ee~~|NO<br>~~es~~<br>~~es~~<br>~~es~~|NO<br>~~es ~~<br>~~ss~~<br>~~es~~|NO<br> ~~ss~~<br>~~ss~~<br>~~ee~~|NO<br>~~ss~~<br>~~Qs~~|OK<br>~~Ge~~<br>~~Os~~|OK<br>~~Os~~|NO|OK|OK|
+||ESC GS / 3<br>~~es ~~<br>~~i~~<br>~~a~~|NO<br> ~~es~~<br>~~i~~<br>~~i~~|Ver. 4.0<br>or later<br>~~es ~~<br>~~ee~~<br>~~ee~~|NO<br> ~~es ~~<br>~~es~~<br>~~ee~~|NO<br> ~~ss~~<br>~~es~~<br>~~ee~~|NO<br>~~ss~~<br>~~ee~~<br>~~ee~~|NO<br>~~Qs~~<br>~~ee~~|OK<br>~~Os~~<br>~~ee~~|OK<br>~~Os~~<br>~~ee~~|NO<br>~~ee~~|OK|OK|
+||ESC GS / 4<br>~~i~~<br>~~a~~<br>~~es~~|NO<br>~~i ~~<br>~~i~~<br>~~es~~|Ver. 4.0<br>or later<br> ~~ee ~~<br>~~ee~~<br>~~es~~|NO<br> ~~es ~~<br>~~ee~~<br>~~es~~|NO<br> ~~es ~~<br>~~ee~~<br>~~es~~|NO<br> ~~ee~~<br>~~ee~~<br>~~ss~~|NO<br>~~ee~~<br>~~ss~~|OK<br>~~ee~~<br>~~Ge~~|OK<br>~~ee~~|NO<br>~~ee~~|OK|OK|
+||ESC GS / 5<br>~~a ~~<br>~~es~~<br>~~es~~|NO<br> ~~i ~~<br>~~es~~<br>~~es~~|Ver. 4.0<br>or later<br> ~~ee~~<br>~~es~~<br>~~es~~|NO<br>~~ee~~<br>~~es~~<br>~~ee~~|NO<br>~~ee ~~<br>~~es~~<br>~~ss~~|NO<br> ~~ee~~<br>~~ss~~<br>~~ss~~|NO<br>~~ee~~<br>~~ss~~<br>~~Gs~~|OK<br>~~ee~~<br>~~Ge~~<br>~~sd~~|OK<br>~~ee~~<br>~~sd~~|NO<br>~~ee~~|OK|OK|
+||ESC GS / 6<br>~~es ~~<br>~~es~~|NO<br> ~~es~~<br>~~es~~|Ver. 4.0<br>or later<br>~~es~~<br>~~es~~|NO<br>~~es~~<br>~~ee~~|NO<br>~~es ~~<br>~~ss~~|NO<br> ~~ss~~<br>~~ss~~|NO<br>~~ss~~<br>~~Gs~~|OK<br>~~Ge~~<br>~~sd~~|OK<br>~~sd~~|NO|OK|OK|
+
+
+
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― STAR Line Mode Command Specifications 6-21 

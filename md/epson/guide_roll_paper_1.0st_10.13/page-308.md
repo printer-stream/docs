@@ -1,0 +1,29 @@
+## **C O N F I D E N T I A L** 
+
+- The scales for width and height of raster bit images are specified by m. Therefore, in page mode with 90 ° or 270 ° clockwise-rotated raster bit image, the printer applies print area and dot density from [width: direction of paper feed, height: perpendicular to direction of paper feed]. 
+
+- The raster bit image is not affected by print modes (emphasized, double-strike, underline, character size, white/black reverse printing, upside-down printing, or 90° clockwise-rotated). 
+
+- This command feeds as much paper as is required to print the raster bit image, regardless of the line spacing specified by ESC 2 or ESC 3. 
+
+- If this command is processed while a macro is being defined, the printer cancels macro definition, clears the definition, and prints a raster bit image. 
+
+- After printing a raster bit image, the printer processes normal data. 
+
+   - The print position is set to the left of the print area. Printer is in the beginning of a line and data is not in the print buffer. 
+
+- The bit image is printed in the default dot density (dot density of vertical and horizontal direction in normal mode) defined by GS L <Function 49>. 
+
+- The relationship between bit image data and the print result is as follows: 
+
+|d1|d2|...|dX|
+|---|---|---|---|
+|dX+ 1|dX+ 2|...|dX× 2|
+|:|:|...|:|
+|...|dk-2|dk-1|dk|
+
+
+
+## [Model-dependent variations] 
+
+TM-J2000/J2100, TM-T90, TM-T20, TM-T88IV, TM-T88V, TM-T70, TM-L90 

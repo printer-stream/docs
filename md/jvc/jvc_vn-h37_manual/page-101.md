@@ -1,0 +1,33 @@
+S->C RTSP/1.0 200 OK CSeq: 3 Session: 401875008 Status: pause 
+
+C->S PLAY rtsp://192.168.0.20/PSIA/Streaming/tracks RTSP/1.0 CSeq: 4 Range: clock=20120518T135717Z Session: 401875008 
+
+S->C RTSP/1.0 200 OK CSeq: 4 Session: 401875008 
+
+C->S GET_PARAMETER rtsp://192.168.0.20/PSIA/Streaming/tracks RTSP/1.0 CSeq: 5 Connection: Keep-Alive Session: 401875008 
+
+S->C RTSP/1.0 200 OK CSeq: 5 Session: 401875008 Status: play 
+
+## **32. Exporting H.264 data from SD Card to the PC** 
+
+This section describes APIs for audio exporting H.264 data from SD card to the PC. 
+
+## **Getting Total Number of Files and File Size** 
+
+**Format** 
+
+**/api/copy?pseudo=on&from.date.start=YYYYMMDDhhmmss&from.date.end=YYYYMMDDhhmmss** 
+
+## **Example of response** 
+
+**14<CRLF>** 
+
+**200 OK,(Completed)<CRLF>** 
+
+**<CRLF>** 
+
+**1f<CRLF>** 
+
+98 
+
+Downloaded from www.Manualslib.com manuals search engine 

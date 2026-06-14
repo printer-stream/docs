@@ -1,0 +1,22 @@
+|**VT**|||
+|---|---|---|
+|[Name]|Feed paper to vertical tab position||
+|[Code]|ASCII|VT|
+||Hex.|0B|
+||Decimal|11|
+|[Defined Area]||- - -|
+|[Initial Value]||- - -|
+|[Function]|[Function]|Feeds paper to the next vertical tab position.|
+|||This command is ignored if there are no tabs set.|
+|||If a vertical tab is set, and the current position is the same as the vertical tab position, or if it is|
+|||below that position, it feeds paper to the top of the next page.|
+|||If data exists in the line buffer when feeing paper to the vertical tab position, it executes the paper|
+|||feed to the vertical tab position after printing that data.  However, if moved to the vertical tab|
+|||position by printing data remaining in the buffer, the move to the vertical tab position is considered|
+|||to have been executed, so a move to the next vertical tab position is not performed.|
+|||There is no initial value for the vertical tab.|
+|||Invalid in page mode.|
+
+
+
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― STAR Line Mode Command Specifications 3-25 

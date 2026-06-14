@@ -1,0 +1,47 @@
+## **3-2-4. Ethernet Cable** 
+
+If a ferrite core is included, install the ferrite core onto the Ethernet cable according to the following procedure to prevent electrical noise. 
+
+If a ferrite core is not included, perform steps (1) and (5) only. 
+
+When using an Ethernet cable that is 10 cm or less, shielded cable is recommended. 
+
+- (1) Make sure the printer is turned off. 
+
+- (2) Install the ferrite core onto the ethernet cable as shown in the illustration below. 
+
+- (3) Pass the fastener through the ferrite core. 
+
+- (4) Loop the fastener around the cable and lock it. Use scissors to cut off any excess. 
+
+**==> picture [58 x 60] intentionally omitted <==**
+
+**==> picture [207 x 126] intentionally omitted <==**
+
+**----- Start of picture text -----**<br>
+10 cm<br>  (maximum)<br>Ethernet cable<br>Fastener<br>Ferrite core<br>**----- End of picture text -----**<br>
+
+
+- (5) Connect the interface cable to the connector on the rear panel of the printer. 
+
+**==> picture [142 x 116] intentionally omitted <==**
+
+**==> picture [295 x 116] intentionally omitted <==**
+
+**----- Start of picture text -----**<br>
+Ethernet cable<br>Ethernet cable<br>IFBD-HE07<br>IFBD-HE05<br>**----- End of picture text -----**<br>
+
+
+- g Link disconnection detection feature 
+
+   - The Ethernet interface model is equipped with a link disconnection detection feature. 
+
+   - If the printer is turned on when an Ethernet cable is not connected to it, the POWER and ERROR lamps are simultaneously turned on and off at 4-second intervals to indicate the disconnection. 
+
+   - Be sure to connect the Ethernet cable from a PC or hub to the printer, and then turn the printer on. 
+
+## **3-2-4-1. Initialize Communication Settings** 
+
+When disposing of the product, initialize it from the viewpoint of information protection. For the initialization procedure, refer to IFBD-HE07/08-BE07 User's Manual or IFBD-HI01X/02X Setup Manual.. 
+
+- 11 - 

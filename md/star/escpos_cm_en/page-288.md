@@ -1,0 +1,55 @@
+Rev.2.52 
+
+## • TSP600/TSP700 
+
+Page mode print region initial value (dxL, dxH, dyL, dyH) <Print Dot count: ESC/POS compatible mode> 
+
+|Print region<br>Setting<br>(Memory<br>Switch<br>Setting)|Basic<br>Calculated<br>Pitch<br>Correction<br>(DIPSW<br>Setting)|Initial Value(= Maximum Value)|Initial Value(= Maximum Value)|Initial Value(= Maximum Value)|Initial Value(= Maximum Value)|Initial Value(= Maximum Value)|Initial Value(= Maximum Value)|
+|---|---|---|---|---|---|---|---|
+|||dxL|dxH|dyL|dyH|Printable Region Width||
+|||||||X Dir.|Y Dir.|
+|80mm|203DPI|128|2|84|7|80mm|117.3mm|
+||180DPI|56|2|126|6|71mm|103.9mm|
+|72mm|203DPI|64|2|84|7|72mm|117.3mm|
+||180DPI|0|2|126|6|64mm|103.9mm|
+|52.5mm|203DPI|164|1|84|7|52.5mm|117.3mm|
+||180DPI|120|1|126|6|47mm|103.9mm|
+|50.8mm|203DPI|150|1|84|7|50.8mm|117.3mm|
+||180DPI|104|1|126|6|45mm|103.9mm|
+
+
+
+Basic calculated pitch initial value:  X=1/180 (inch), Y=1/360 (inch) 
+
+Page mode print region initial value (dxL, dxH, dyL, dyH) <Print Dot count: Maximum> 
+
+|Print region<br>Setting<br>(Memory<br>Switch<br>Setting)|Basic<br>Calculated<br>Pitch<br>Correction<br>(DIPSW<br>Setting)|Initial Value(= Maximum Value)|Initial Value(= Maximum Value)|Initial Value(= Maximum Value)|Initial Value(= Maximum Value)|Initial Value(= Maximum Value)|Initial Value(= Maximum Value)|
+|---|---|---|---|---|---|---|---|
+|||dxL|dxH|dyL|dyH|Printable Region Width||
+|||||||X Dir.|Y Dir.|
+|80mm|203/180<br>DPI|128|2|84|7|80mm|117.3mm|
+|72mm|203/180<br>DPI|64|2|84|7|72mm|117.3mm|
+|52.5mm|203/180<br>DPI|164|1|8|7|52.5mm|117.3mm|
+|50.8mm|203/180<br>DPI|150|1|84|7|50.8mm|117.3mm|
+
+
+
+Basic calculated pitch initial value:  X=1/180 (inch), Y=1/360 (inch) 
+
+## • TSP800 
+
+## Page mode print region initial value (dxL, dxH, dyL, dyH) 
+
+|Print region<br>Setting<br>(Memory<br>Switch<br>Setting)|Basic<br>Calculated<br>Pitch<br>Correction<br>(DIPSW<br>Setting)|Initial Value(= Maximum Value)|Initial Value(= Maximum Value)|Initial Value(= Maximum Value)|Initial Value(= Maximum Value)|Initial Value(= Maximum Value)|Initial Value(= Maximum Value)|
+|---|---|---|---|---|---|---|---|
+|||dxL|dxH|dyL|dyH|Printable Region Width||
+|||||||X Dir.|Y Dir.|
+|104mm|203/180<br>DPI|64|3|128|6|104mm|104mm|
+
+
+
+Basic calculated pitch initial value:  X=1/180 (inch), Y=1/360 (inch) 
+
+ESC/POS Command Specifications 
+
+284 

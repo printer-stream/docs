@@ -1,0 +1,47 @@
+SETTING COMMAND 
+
+## **C O N F I D E N T I A L** 
+
+## **ESC M** 
+
+[Name] Select character font 
+
+[Format] ASCII ESC M n Hex 1B 4D n Decimal 27 77 n 
+
+- [Range] TM-J2000/J2100, TM-T90, TM-L90 **:** 
+
+n **= 0, 1, 48, 49 (Other than Japanese model)** 
+
+**0** ≤ n ≤ **2, 48** ≤ n ≤ **50 (Japanese model)** 
+
+- TM-T70, TM-T88IV **,** TM-T88V **:** n **= 0, 1, 48, 49 (Other than the following model)** n **= 0, 1, 48, 49, 97, 98 (South Asia model)** 
+
+TM-T20 **:** n **= 0, 1, 48, 49** 
+
+TM-U220: n **= 0, 1, 48, 49** 
+
+TM-P60 **:** 
+
+- **0** ≤ n ≤ **2, 48** ≤ n ≤ **50,** n **= 97 (Peeler model)** 
+
+- **0** ≤ n ≤ **2, 48** ≤ n ≤ **50 (Other than peeler model)** 
+
+[Default] TM-J2000/J2100, TM-T90, TM-T20, TM-T88IV, TM-T88V, TM-T70, TM-L90 **:** n **= 0** TM-P60, TM-U220 **:** n **= 1** 
+
+- [Printers not featuring this command] TM-U230 
+
+- [Description] Selects a character font, using n as follows: 
+
+|n|**Font**|
+|---|---|
+|0, 48|Font A|
+|1, 49|Font B|
+|2,50|Font C|
+|97|Special font A|
+|98|Special font B|
+
+
+
+■ The character font set by this command is effective for alphanumeric, Kana, and user-defined characters. 
+
+[Notes] 

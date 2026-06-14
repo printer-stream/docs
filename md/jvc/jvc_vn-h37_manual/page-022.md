@@ -1,0 +1,51 @@
+admin:jvc 
+
+Base64 encoding of this string yields YWRtaW46anZj. Enter this in the Authorization line. Default password for each username is jvc. 
+
+3) The camera returns a response to the client. In the following example, current subnet mask is 255.0.0.0. In 
+
+addition, 255.0.0.0 is followed by & and 200 OK, indicating that getting parameter is successful. 
+
+## **Example** 
+
+## **HTTP/1.1 200 OK<CRLF>** 
+
+## **Connection: close<CRLF>** 
+
+## **Content-Length: 80<CRLF>** 
+
+## **Content-type: text/plain<CRLF>** 
+
+## **Date: Fri, 13 MAY 2011 07:33:12 GMT<CRLF>** 
+
+**Server: JVC VN-H37 API Server<CRLF>** 
+
+## **network.interface.subnetmask=255.0.0.0&200 OK<CRLF>** 
+
+- 4) The client disconnects TCP80 to end the use of API. 
+
+Note:  APIs for getting/setting parameters are not restricted by the access restriction function. 
+
+## **7.2. Getting Parameter** 
+
+Specify API in GET line according to the format below when getting a parameter from the camera. 
+
+## **/api/param?ParamA.ParamB.ParamC** 
+
+It is possible to get multiple parameters at a time. Connect parameters with &. Do not insert space before and after 
+
+&. 
+
+## **/api/param?ParamA.ParamB.ParamC&ParamA.ParamD.ParamE** 
+
+The upper limit of this character string is 1024 bytes. The maximum number of parameters that can be acquired at a time is 15. Status settings, i.e. network.interface.status, network.dns.status, network.ntp.status, etc., can not be acquired at a time. 
+
+When acquisition is successfully completed, values will be shown in the body of HTTP response, followed by "&200 OK" message. 
+
+Example: 
+
+## **ParamA.ParamB.ParamC=Data&200 OK** 
+
+19 
+
+Downloaded from www.Manualslib.com manuals search engine 

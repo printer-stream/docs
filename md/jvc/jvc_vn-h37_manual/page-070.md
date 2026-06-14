@@ -1,0 +1,45 @@
+**Interpretation** Change the motion detect sensitivity. Specify a value between 0 to 100. The larger the value, the higher will be the sensitivity. The change is saved by the API, camera.status=save. If the change is not saved, the setting is restored by reboot. 
+
+**Allowed users** admin, operator 
+
+## **Getting Motion Detect Mask** 
+
+## **Format  /api/param?camera.detection.area** 
+
+## **Example of response camera.detection.area=00010203040506070809,,,&200 OK** 
+
+**Interpretation** Acquire the mask of motion detect. 20 ASCII characters will be returned. 
+
+The screen is made up of 15x 9 = 135 blocks, and mask can be set to on/off for each block. This information can be represented in 135 bits = 17-byte hexadecimal. (Response is returned in ASCII character strings. Therefore, 34 characters will be returned.) The bit string will appear as follows when mask is set to off for the top left block 
+
+only. 
+
+10000000 00000000 00000000 ,,, 
+
+Storage in bytes will begin from the LSB and represented in a hexadecimal value as shown below. 01 00 00 00 00 00 00 00 00 00,,, 
+
+The hexadecimal value denotes the 34 ASCII characters acquired via this API that are expressed in ASCII codes. For example, the following character string will be returned when only the top left and bottom right blocks are masked. 
+
+camera.detection.area=0100000000000000,,,0080 
+
+**Allowed users** admin, operator, user 
+
+## **Setting Motion Detect Mask** 
+
+## **Format  /api/param?camera.detection.area=data** 
+
+## **Example  /api/param?camera.detection.area=00010203040506070809,,,** 
+
+## **Example of response  camera.detection.area&202 Accepted(camera.status=save)** 
+
+**Interpretation** Change the motion detect mask. Specify using a 34 ASCII character string. Refer to the item on "Getting Motion Mask" on the interpretation of this character string. To mask all blocks, specify all zeros in the ASCII character string. The change is saved by the API, camera.status=save. If the change is not saved, the setting is restored by reboot. 
+
+**Allowed users** admin, operator 
+
+## **18. JVC API for Tampering Detect** 
+
+The APIs below are related to the Tampering detection. These are equivalent to the features on the Tampering Detection page of the WEB setting page. Refer to the instruction manual for details on the Tampering Detection 
+
+67 
+
+Downloaded from www.Manualslib.com manuals search engine 

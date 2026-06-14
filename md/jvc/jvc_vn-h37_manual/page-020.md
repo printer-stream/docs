@@ -1,0 +1,53 @@
+## **5. RTSP/RTP** 
+
+## **5.1. URI** 
+
+RTSP of the camera is RFC2326 compliant. 
+
+Three encoders can be enabled in the camera at its maximum. Each encoder's URI for RTSP is: 
+
+|Encoder Channel|URI of RTSP|
+|---|---|
+|1|rtsp://ipaddress/PSIA/Streaming/channels/0|
+|2|rtsp://ipaddress/PSIA/Streaming/channels/1|
+|3|rtsp://ipaddress/PSIA/Streaming/channels/2|
+
+
+
+To know compression format of each channel, open Encoder setting page by IE described in INSTRUCTIONS manual, or issue "encode" API described in later chapter of this document. 
+
+## **5.2. JPEG** 
+
+## - RFC 
+
+JPEG/RTP of the camera is RFC2435 compliant. 
+
+## - Frame Rate of JPEG 
+
+In case of JPEG/RTP, the client can request frame rate to the camera. 
+
+Example to get 5fps JPEG: (This is valid when encode channel 1 is set to JPEG.) 
+
+## **rtsp://ipaddress/PSIA/Streaming/channels/0?maxFrameRate=5** 
+
+If maxFrameRate is not specified, the camera tries to send JPEG at its maximum frame rate. 
+
+## **5.3. H.264** 
+
+H.264/RTP of the camera is RFC3984 compliant. 
+
+## **6. API to Search Camera** 
+
+The camera in LAN can be searched by broadcast/multicast packet that has search API. 
+
+## **Search Camera in LAN** 
+
+**Protocol** Send broadcast/multicast packet with following text in UDP payload to destination port number 80. Source port number can be any value.  Multicast address is 239.0.255.255. 
+
+## **system.id<CRLF>** 
+
+**Response** The camera that received this packet sends unicast udp packet to the source port number of the search packet. UDP payload of response packet has model name, IP address, and subnet mask. The camera 
+
+17 
+
+Downloaded from www.Manualslib.com manuals search engine 

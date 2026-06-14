@@ -1,0 +1,7 @@
+Rev.2.52 
+
+(1) When basic calculation pitch correction has selected 203 DPI Left margin = (nL + nH x 256) x 2032/X/10 (Decimals are discarded.) (2) When basic calculation pitch correction has selected 180 DPI Left margin = (nL + nH x 256) x 180/X (Decimals are discarded.) Reference ESC SP, ESC $, ESC 3, ESC J, ESC W, ESC \, GS $, GS L GS V, GS W, GS \ 
+
+ESC/POS Command Specifications 
+
+139 

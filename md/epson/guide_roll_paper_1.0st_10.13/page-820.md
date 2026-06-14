@@ -1,0 +1,19 @@
+## **C O N F I D E N T I A L** 
+
+- The transmission data when an effective value (n = 80) is specified for information type is as follows. 
+
+   - The effective value indicates the value, calculated based on the following values, that is actually used for the operation. The unit is 1 dot. 
+
+      - •The paper layout information (the setting value of <Function 33> of this command) saved in memory 
+
+      - •The specified value for the mechanical configuration (minimum pitch etc.) 
+
+   - The effective value for horizontal layout (sf) is indicated by the horizontal size of the printable area, calculated from the horizontal layout (sf) and layout reference (sm) set. 
+
+- For a description of transmission of the data group, refer to [Description: Applied to transmission of the data group]. 
+
+[Model-dependent variations] TM-L90 
+
+## TM-L90 
+
+TM-L90 **with Peeler does not support this function.** 

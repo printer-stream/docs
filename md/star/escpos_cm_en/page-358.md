@@ -1,0 +1,58 @@
+Rev.2.52 
+
+## • Star Original Page Function Commands 
+
+|<br>**Commands**|<br>**Model Name**|<br>**Model Name**|<br>**Model Name**|<br>**Model Name**|<br>**Model Name**|<br>**Model Name**|<br>**Model Name**|<br>**Model Name**|<br>**Model Name**|<br>**Model Name**|<br>**Model Name**|<br>**Model Name**|<br>**Model Name**|<br>**Model Name**|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+||**TSP700**|**TSP600**|**TSP800**|**TUP900**|**TSP1000**|**TSP700II**|**TSP650**|**TUP500**|**TSP800II**|**FVP10**|**BSC10**|**TSP043**|**TSP650II**|**TSP650IISK**|
+|ESC GS h 0|x|x|x|x|x|○|○|○|○|○|○|○|○|○|
+|ESC GS h 1|x|x|x|x|x|○|○|○|○|○|Ver.1.3 or<br>later|Ver.1.3 or<br>later|○|○|
+|•Star Original  Reduced Printing Function Command|||||||||||||||
+|<br>**Commands**|<br>**Model Name**||||||||||||||
+||**TSP700**|**TSP600**|**TSP800**|**TUP900**|**TSP1000**|**TSP700II**|**TSP650**|**TUP500**|**TSP800II**|**FVP10**|**BSC10**|**TSP043**|**TSP650II**|**TSP650IISK**|
+|ESC GSC|x|x|x|x|x|x|x|x|x|○|○|○|x|x|
+
+
+
+## Star Original  Text Search Commands 
+
+|Star Original  Text|Search Commands|Search Commands|Search Commands|Search Commands|Search Commands|Search Commands|Search Commands|Search Commands|Search Commands|Search Commands|Search Commands|Search Commands|Search Commands|Search Commands|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|**Commands**|**Model Name**||||||||||||||
+||**TSP700**|**TSP600**|**TSP800**|**TUP900**|**TSP1000**|**TSP700II**|**TSP650**|**TUP500**|**TSP800II**|**FVP10**|**BSC10**|**TSP043**|**TSP650II**|**TSP650IISK**|
+|ESC GS ) B  (fn = 48)|x|x|x|x|x|x|x|x|x|○|○|○|○|○|
+|ESC GS ) B  (fn = 49)|x|x|x|x|x|x|x|x|x|○|○|○|○|○|
+|ESC GS ) B  (fn = 50)|x|x|x|x|x|x|x|x|x|○|○|○|○|○|
+|ESC GS ) B  (fn = 64)|x|x|x|x|x|x|x|x|x|○|○|○|○|○|
+|ESC GS ) B  (fn = 65)|x|x|x|x|x|x|x|x|x|○|○|○|○|○|
+|ESC GS ) B  (fn = 66)|x|x|x|x|x|x|x|x|x|x|Ver.1.3 or<br>later|Ver.1.3 or<br>later|○|○|
+|ESC GS ) B  (fn = 80)|x|x|x|x|x|x|x|x|x|○|○|○|○|○|
+|ESC GS ) B  (fn = 81)|x|x|x|x|x|x|x|x|x|○|○|○|○|○|
+|ESC GS ) B  (fn = 96)|x|x|x|x|x|x|x|x|x|○|○|○|○|○|
+|ESC GS ) B  (fn = 97)|x|x|x|x|x|x|x|x|x|○|○|○|○|○|
+
+
+
+## • Star Original Printer Information Transmission Command 
+
+|<br>**Commands**|<br>**Model Name**|<br>**Model Name**|<br>**Model Name**|<br>**Model Name**|<br>**Model Name**|<br>**Model Name**|<br>**Model Name**|<br>**Model Name**|<br>**Model Name**|<br>**Model Name**|<br>**Model Name**|<br>**Model Name**|<br>**Model Name**|<br>**Model Name**|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+||**TSP700**|**TSP600**|**TSP800**|**TUP900**|**TSP1000**|**TSP700II**|**TSP650**|**TUP500**|**TSP800II**|**FVP10**|**BSC10**|**TSP043**|**TSP650II**|**TSP650IISK**|
+|ESC GS ) I (fn = 48)|x|x|x|x|x|x|x|x|x|x|Ver.1.3 or<br>later|Ver.1.3 or<br>later|○|○|
+
+
+
+## • Star Original Individual Logo Command 
+
+|<br>**Commands**|<br>**Model Name**|<br>**Model Name**|<br>**Model Name**|<br>**Model Name**|<br>**Model Name**|<br>**Model Name**|<br>**Model Name**|<br>**Model Name**|<br>**Model Name**|<br>**Model Name**|<br>**Model Name**|<br>**Model Name**|<br>**Model Name**|<br>**Model Name**|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+||**TSP700**|**TSP600**|**TSP800**|**TUP900**|**TSP1000**|**TSP700II**|**TSP650**|**TUP500**|**TSP800II**|**FVP10**|**BSC10**|**TSP043**|**TSP650II**|**TSP650IISK**|
+|ESC GS ) L (fn = 48)|x|x|x|x|x|x|x|x|x|x|○|○|○|○|
+|ESC GS ) L (fn = 49)|x|x|x|x|x|x|x|x|x|x|Ver.1.3 or<br>later|Ver.1.3 or<br>later|○|○|
+|ESC GS ) L (fn = 50)|x|x|x|x|x|x|x|x|x|x|Ver.1.3 or<br>later<br>Spec.A|Ver.1.3 or<br>later<br>Spec.A|Spec. B|Spec. B|
+
+
+
+ESC/POS Command Specifications 
+
+353 

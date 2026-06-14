@@ -1,0 +1,34 @@
+## **C O N F I D E N T I A L** 
+
+- If this command is newly processed during beeping of the buzzer, the current process for beeping the buzzer is stopped and the new process for beeping the buzzer is started. 
+
+- Integrated beeper beeping by this function stops due to any of the following factors. 
+
+   - Finish specification of (c). 
+
+   - The parameter n specifies “doesn’t beep“ by this function. 
+
+   - Printer processes DLE DC4 (fn = 2) command. 
+
+   - Reset or power off. 
+
+[Model-dependent variations] TM-P60, TM-U230 
+
+## TM-P60 
+
+**The setting of [Msw 8-2] ~ [Msw 8-5] doesn’t affect the performance of this command.** 
+
+**The “doesn’t beep“ (** n **= 48) affects beeping caused by this function only. It doesn’t affect warning beeping (Example: roll paper end, and during status sheet printing.)** 
+
+**The following beeping tones and timing can be specified by** n **.** 
+
+|n|**Tone**|
+|---|---|
+|**48**|**doesn’t beep**|
+|**49**|**1280Hz: 1000ms beeping**|
+|**50**|**4100Hz: 1000ms beeping**|
+|**51**|**1280Hz: 200ms beeping**|
+|**52**|**4100Hz: 200ms beeping**|
+|**53**|**1280Hz: 200ms beeping -> 200ms off -> 200ms beeping**|
+|**54**|**4100Hz: 200ms beeping -> 200ms off -> 200ms beeping**|
+|**55**|**1280Hz: 500ms beeping**|

@@ -1,0 +1,53 @@
+Rev.2.52 
+
+## **GS / m** 
+
+Name 
+
+Print download bit images 
+
+Code ASCII GS / m Hex. 1D 2F m Decimal 29 47 m 
+
+Defined Region 0 ≤ m ≤ 3, 48 ≤ m ≤ 51 Function Prints defined download bit image data using mode m. 
+
+|m|Print Mode|Densityof Vertical Direction Dots|Densityof Horizontal Direction Dots|
+|---|---|---|---|
+|0,48|Normal Mode|180 DPI|180 DPI|
+|1,49|Double-wide Mode|180 DPI|90 DPI|
+|2,50|Double-tall Mode|90 DPI|180 DPI|
+|3,51|Quadruple Mode|90 DPI|90 DPI|
+
+
+
+- Details • This command is ignored if there is no download bit image data defined. 
+
+   - This command is effective only when no data exists in the print buffer in standard mode. 
+
+   - Excluding upside-down printing, print modes (emphasized printing, overlap printing, 
+
+   - underlines, character sizes and black/white inverted printing) are unaffected. 
+
+   - If there is download bit image data defined that exceeds the print region, that excess portion is not printed. 
+
+   - Regardless of the line feed amount set by ESC 2 (Initial line feed amount setting) and ESC 3 (Line feed amount setting), a paper feed is executed for the amount of dots (the height of the download bit image n) when in normal mode and horizontal double wide mode, and for the amount of dots (the height of the download bit image n x 2) when in double high mode and double wide double high mode. 
+
+   - See section 2.3.2 for details on the download bit image expansion position in page mode. 
+
+STAR 
+
+- Dot density (when the STAR printer head = 203 DPI) on STAR printers. 
+
+|m|Mode|Densityof Vertical Direction Dots|Densityof Horizontal Direction Dots|
+|---|---|---|---|
+|0,48|Normal Mode|203 DPI|203 DPI|
+|1,49|Double-wide Mode|203 DPI|101 DPI|
+|2,50|Double-tall Mode|101 DPI|203 DPI|
+|3,51|Quadruple Mode|101 DPI|101 DPI|
+
+
+
+Reference GS * 
+
+ESC/POS Command Specifications 
+
+126 

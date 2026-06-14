@@ -1,0 +1,22 @@
+## **C O N F I D E N T I A L** 
+
+## **TM-P60 SUPPORTED COMMANDS** 
+
+|**Command**|**Classification**|**Name**|**Function type**|
+|---|---|---|---|
+|HT|EXECUTING COMMAND|Horizontal tab|PRINT POSITION COMMANDS|
+|LF|EXECUTING COMMAND|Print and line feed|PRINT COMMANDS|
+|FF (in page mode)|EXECUTING COMMAND|Print and return to standard mode (in page||
+|||mode)|PRINT COMMANDS|
+|CAN|EXECUTING COMMAND|Cancel print data in page mode|CHARACTER COMMANDS|
+|DLE EOT|EXECUTING COMMAND|Transmit real-time status|STATUS COMMANDS|
+|DLE ENQ|EXECUTING COMMAND|Send real-time request to printer|MISCELLANEOUS COMMANDS|
+|DLE DC4 (fn = 2)|EXECUTING COMMAND|Execute power-off sequence|MISCELLANEOUS COMMANDS|
+|DLE DC4 (fn = 7 )|EXECUTING+ SETTING|Transmit specified status in real-time|MISCELLANEOUS COMMANDS|
+|DLE DC4 (fn = 8)|EXECUTING COMMAND|Clear buffer(s)|MISCELLANEOUS COMMANDS|
+|ESC FF|EXECUTING COMMAND|Print data in page mode|PRINT COMMANDS|
+|ESC SP|SETTING COMMAND|Set right-side character spacing|CHARACTER COMMANDS|
+|ESC $|EXECUTING COMMAND|Set absolute print position|PRINT POSITION COMMANDS|
+|ESC ( A|EXECUTING+ SETTING|Control beeper tones|MISCELLANEOUS COMMANDS|
+|ESC –|SETTING COMMAND|Turn underline mode on/off|CHARACTER COMMANDS|
+|ESC 3|SETTING COMMAND|Set line spacing|LINE SPACING COMMANDS|

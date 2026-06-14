@@ -1,0 +1,15 @@
+## **C O N F I D E N T I A L** 
+
+[Model-dependent variations] TM-J2000/J2100, TM-T90, TM-L90, TM-T88IV 
+
+## TM-J2000/J2100 
+
+**After processing this function, the bit images (** ESC * **), downloaded bit images, and NV bit images are always printed in Color 1.** 
+
+## TM-T90, TM-L90 
+
+**This function is available only when the recommended two-color thermal paper is selected.** 
+
+## TM-T88IV 
+
+**This function can be used when two-color printing control is selected with** GS ( E **<Function 5>.** 

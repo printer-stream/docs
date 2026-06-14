@@ -1,0 +1,33 @@
+## **C O N F I D E N T I A L** 
+
+k **=** c2 **–** c1 **+ 1 [South Asia model]** y **= 3 32** ≤ c1 ≤ c2 ≤ **126** 
+
+**0** ≤ x ≤ **12 (Font A (12** × **24))** 
+
+**0** ≤ x ≤ **9 (Font B (9** × **17))** 
+
+**0** ≤ x ≤ **12 (Special Font A (12** × **24))** 
+
+**0** ≤ x ≤ **9 (Special Font B (9** × **24))** 
+
+**0** ≤ d ≤ **255** 
+
+k **=** c2 **–** c1 **+ 1 [Japanese model]** y **= 3 (Font A (12** × **24))** y **= 2 (Font B (8** × **16)) 32** ≤ c1 ≤ c2 ≤ **126 0** ≤ x ≤ **12 (Font A (12** × **24))** 
+
+**0** ≤ x ≤ **8 (Font B (8** × **16)) 0** ≤ d ≤ **255** k **=** c2 **–** c1 **+ 1** TM-U230, TM-U220 **:** 
+
+**==> picture [162 x 80] intentionally omitted <==**
+
+[Default] 
+
+None 
+
+[Printers not featuring this command] TM-P60 
+
+[Description] Defines the user-defined character pattern for the specified character codes. 
+
+- y specifies the number of bytes in the vertical direction. 
+
+- c1 specifies the beginning character code for the definition, and c2 specifies the final code. 
+
+- x specifies the number of dots in the horizontal direction from the left. 

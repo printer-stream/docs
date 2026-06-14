@@ -1,0 +1,11 @@
+Rev.2.52 
+
+## **ESC GS x S 2 n** 
+
+Name Set PDF417 module X direction size 
+
+Code ASCII ESC GS x S 2 n Hex. 1B 1D 78 53 32 n Decimal 27 29 120 83 50 n 1 ≤ n ≤ 10 Defined Area Initial Value n = 2 Function Parameter details • n: Sets the module X direction size (x-dim). Units: Dots It is recommended that 2 ≤ n when specifying using this command. When using with n = 1, check by actual use. 
+
+ESC/POS Command Specifications 
+
+223 

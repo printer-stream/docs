@@ -1,0 +1,23 @@
+## **31.3. Example of message sequence** 
+
+C->S DESCRIBE rtsp://192.168.0.20/PSIA/Streaming/tracks RTSP/1.0 CSeq: 1 S->C RTSP/1.0 200 OK CSeq: 1 
+
+Content-Base: rtsp://192.168.0.20/PSIA/Streaming/tracks/ Content-Type: application/sdp Content-Length: 267 
+
+v=0 o=- 401875008 1 IN IP4 0.0.0.0 s=Media Presentation c=IN IP4 0.0.0.0 t=0 0 m=video 0 RTP/AVP 96 a=control:video a=rtpmap:96 H264/90000 a=fmtp:96 
+
+packetization-mode=1;profile-level-id=640028;sprop-parameter-sets=Z2QAKKzSAeAIn5cBbgwMDIA AAAMAgAAACkeEQjUA,aO48MAD= 
+
+C->S SETUP rtsp://192.168.0.20/PSIA/Streaming/tracks/video RTSP/1.0 
+
+CSeq: 2 
+
+Transport: RTP/AVP;unicast;client_port=6970-6971 
+
+S->C RTSP/1.0 200 OK CSeq: 2 Session: 401875008;timeout=60 Transport: RTP/AVP;unicast;client_port=6970-6971;server_port=1486-1487 
+
+C->S GET_PARAMETER rtsp://192.168.0.20/PSIA/Streaming/tracks RTSP/1.0 CSeq: 3 Connection: Keep-Alive Session: 401875008 
+
+97 
+
+Downloaded from www.Manualslib.com manuals search engine 

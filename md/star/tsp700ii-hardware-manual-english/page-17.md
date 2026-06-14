@@ -1,0 +1,33 @@
+## **3-6-3. Changing the Adjustment Lever Position** 
+
+The adjustment lever position must be changed in accordance with the paper thickness. It is factory-set to position 1. When using paper thickness between 100 and 150 μm, change the adjustment lever position in accordance with the procedure below. 
+
+As shown, use a flat head screwdriver to move the adjustment lever inward. Then, lower the adjustment lever to the position in which the protrusion on the adjustment lever engages with the hole in the frame. 
+
+## **Note: Do not use position 2.** 
+
+**==> picture [39 x 33] intentionally omitted <==**
+
+**==> picture [242 x 30] intentionally omitted <==**
+
+**----- Start of picture text -----**<br>
+Position 1 Position 3<br>Paper thickness   Paper thickness<br>between 65 μm and 105 μm between 105 μm and 150 μm<br>**----- End of picture text -----**<br>
+
+
+## **3-6-4. Removing the Roll Paper Guide** 
+
+When using a paper roll with an 82.5 mm width, remove the roll paper guide as shown. 
+
+When using a paper roll with a 57.5 mm width, remove the roll paper guide, and install the roll paper guide into the other groove. When you change the effective print width (paper roll width), change the printer utility’s memory switch setting. For details, see the printer utility help. 
+
+**Note: After using a paper roll with a width of 57.5 mm, do not change to a paper roll with a width of 79.5 or 82.5 mm. This is because the printer head has deteriorated as a result of a portion of the head having been in direct contact with the platen.** 
+
+**==> picture [63 x 9] intentionally omitted <==**
+
+**----- Start of picture text -----**<br>
+Roll paper guide<br>**----- End of picture text -----**<br>
+
+
+**==> picture [82 x 77] intentionally omitted <==**
+
+- 17 - 

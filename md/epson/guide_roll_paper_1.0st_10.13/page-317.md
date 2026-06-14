@@ -1,0 +1,37 @@
+## **C O N F I D E N T I A L** 
+
+## TM-J2000/J2100 
+
+**This printer supports the graphics functions of** GS ( L/GS 8 L **. It is recommended to use** GS ( L /GS 8 L **instead of** GS / **.** 
+
+**Values of [Dot Density] and [Maximum Print Area (dot)] are the same as in the graphics function** GS ( L/GS 8 L **of Function 69.** 
+
+## TM-T90 
+
+**The dot density and the maximum print area are described in the next tables (dpi: number of dots per 25.4 mm).** 
+
+**“Vertical” is in the direction of paper feeding and “horizontal” is perpendicular (at right angles) to the direction of paper feeding.** 
+
+**The maximum print area in the vertical direction is information used when graphics are printed with the page mode selected (for the starting position specified with** ESC T **is “Upper right” or “Lower left”). In this case, bit images rotated by 90 degrees or 270 degrees are printed.** 
+
+**See Function 5 of** GS ( E **for the paper width.** 
+
+## **<Other than Japanese model>** 
+
+|**Scaling**||**Vertical**|**Vertical**|**Vertical**|**Horizontal**|**Horizontal**|
+|---|---|---|---|---|---|---|
+||**Dot density**|**Maximum print area (dot)**|||**Dot density**|**Maximum print area (dot)**|
+|||**Paper width**<br>**80 mm**|**Paper width**<br>**60 mm**|**Paper width**<br>**58 mm**|||
+|×1|**180 dpi**|**512**|**384**|**360**|**180 dpi**|**831**|
+|×2|**90 dpi**|**256**|**192**|**180**|**90 dpi**|**415**|
+
+
+
+## **<Japanese model>** 
+
+|**Scaling**||**Vertical**|**Vertical**|**Horizontal**|**Horizontal**|
+|---|---|---|---|---|---|
+||**Dot density**|**Maximum print area (dot)**||**Dot density**|**Maximum print area (dot)**|
+|||**Paper width 80 mm**|**Paper width 60 / 58 mm**|||
+|×1|**203 dpi**|**576**|**420**|**203 dpi**|**738**|
+|×2|**203/2 dpi**|**288**|**210**|**203/2 dpi**|**369**|

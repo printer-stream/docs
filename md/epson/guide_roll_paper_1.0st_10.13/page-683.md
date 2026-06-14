@@ -1,0 +1,27 @@
+## **C O N F I D E N T I A L** 
+
+   - With a parallel interface printer, data sent (excluding ASB status) with this command (“Header to NUL”) is temporarily stored in the printer send buffer, as with other data. When the host goes into Reverse mode, the printer then sends the data sequentially from the beginning of the send buffer. Send buffer capacity is 99 bytes. Data exceeding this amount is lost. Therefore, when using this command, promptly change into Reverse mode to start the data receive process. 
+
+- When communication with the printer uses XON/XOFF control with serial interface, the XOFF code may interrupt the “Header to NUL” data string. 
+
+- The transmission information for each function can be identified to other transmission data according to specific data of the transmission data block. When the header transmitted by the printer is [hex = 37H/ decimal =55], treat NUL [hex = 00H/decimal =0] as a data group and identify it according to the combination of the header and the identifier. 
+
+## [Notes for ESC/POS Handshaking Protocol] 
+
+- Use ESC/POS Handshaking Protocol below for Functions 2 and 5: 
+
+|**Step**|**Host process**|**Printer process**|
+|---|---|---|
+|1|SendGS ( C<**Function 2**>.|Start processing of Function 2. (Read specified record back to host.)|
+|2|Receive data from printer.|Send data.|
+|3|Send response code.(*1)|Continue processing(*2) (*3)according to response.|
+
+
+
+## (*1) Response code 
+
+|**ASCII**|**Hex**|**Decimal**|**Request**|
+|---|---|---|---|
+|ACK|06|6|Send next data.|
+|NAK|15|21|Resend previously sent data.|
+|CAN|18|24|Cancel send process.|

@@ -1,0 +1,27 @@
+## **C O N F I D E N T I A L** 
+
+## TM-J2000/J2100 
+
+## **The units and maximum values of the counters are as follows:** 
+
+|**Number **|**Counter**|**Counting method**|**Unit**|**Maximum**<br>**value**|
+|---|---|---|---|---|
+|**30,158**|**The number of paper feed lines**|**Counts a paper feed of 30 dots**<br>**as one line (+1)**|**Lines**|**71,582,788**|
+|**31,159**|**The average number of head strokes**<br>**(1st color)**|**Counts a head driving stroke in**<br>**64-stroke unit (+1)**|**Strokes **|**4,294,967,295**|
+|**32,160**|**The average number of head strokes**<br>**(2nd color)**|**Counts a head driving stroke in**<br>**64-stroke unit (+1)**|**Strokes **|**4,294,967,295**|
+|**33,161**|**The number of times of carriage**<br>**driving**|**Counts the number of carriage**<br>**passes when printing (+1)**|**Times**|**4,294,967,295**|
+|**34,162**|**The number of pumping**|**Counts the number of pumping (+1) **|**Times**|**4,294,967,295**|
+|**50,178**|**The number of autocutter operations **|**Counts an autocutter operation (+1) **|**Times**|**4,294,967,295**|
+|**70,198**|**Period of printer operation**|**Counts the number of hours power**<br>**has been on**|**Hours**|**71,582,788**|
+
+
+
+**Note: Commas used in the maximum values in the table above are not included in the transmission data.** 
+
+## TM-T90, TM-T88IV, TM-T70, TM-L90 **,** TM-P60 
+
+## **The units and maximum values of the counters are as follows:** 
+
+|**Number **|**Counter**|**Counting method**|**Unit**|**Maximum**<br>**value**|
+|---|---|---|---|---|
+|**20,148**|**The number of paper feed lines**|**Counts a paper feed 30 dots as one**<br>**line (+1)**|**Lines**|**143,165,576**|

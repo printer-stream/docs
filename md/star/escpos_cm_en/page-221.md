@@ -1,0 +1,15 @@
+Rev.2.52 
+
+= ESC/POS Page Mode = 
+
+(1) Specify page mode <ESC> “L”: Select page mode 
+
+(2) Set bar code type <ESC> <GS> “x” “S” “0” 0 2 3: Set bar code size to USE LIMITS = 2:3 <ESC> <GS> “x” “S” “1” 3: Set ECC level to 3 <ESC> <GS> “x” “S” “2” 3: Set module X direction size to 3 <ESC> <GS> “x” “S” “3” 3: Set module aspect ratio to 3 
+
+(3) Set bar code data <ESC> <GS> “x” “D” 10 0 “0123456789”: Select bar code data 
+
+(4) Print bar code Check the bar code expansion information to check whether to print using the current settings. <ESC> <GS> “x” “I”: Check bar code expansion information <ESC> <GS> “x” “P”: Expand bar code <ESC> <FF>: Print 
+
+ESC/POS Command Specifications 
+
+221 

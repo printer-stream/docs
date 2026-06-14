@@ -1,0 +1,67 @@
+|||Rev.2.52|
+|---|---|---|
+|ESC|GS t n|182|
+|ESC|GS # m N n1 n2 n3 n4 LF NUL|184|
+|ESC|RS F n|186|
+|ESC|RS C n|187|
+|ESC|RS L m|188|
+|ESC|GS ETX s n1 n2|189|
+|4-3-5|STAR Original Presenter Control Commands|193|
+|ESC|SYN 0 n|193|
+|ESC|SYN 1 n|194|
+|ESC|SYN 3 n|195|
+|ESC|<br>SYN 4<br>n|196|
+|ESC|GS SUB DC1 m t1 t2|197|
+|ESC|GS SUB DC2 m t1 t2|198|
+|ESC|GS SUB DC3 m t1 t2|199|
+|4-3-6|STAR Original Mark Commands|200|
+|ESC|GS * 0 n m1 m2 m3 … mk|201|
+|ESC|GS * 1 h v|202|
+|ESC|GS * 2 m c w|203|
+|ESC|GS * W|204|
+|ESC|GS * C|204|
+|4-3-7|STAR Original Auto Logo Commands|205|
+|ESC|GS / W|208|
+|ESC|GS / C|209|
+|ESC|GS / 1 n|210|
+|ESC|GS / 2 n|211|
+|ESC|GS / 3 nL nH d1 d2 … dk|212|
+|ESC|GS / 4 nL nH d1 d2 ... dk|213|
+|ESC|GS / 5 n|214|
+|ESC|GS / 6 n|215|
+|4-3-8|STAR Original Buzzer Commands|216|
+|ESC|GS BEL m t1 t2|216|
+|ESC|GS EM DC1 m n1 n2|217|
+|ESC|GS EM DC2 m n1 n2|218|
+|4-3-9|Two-dimensional Bar Code 2D Code PDF417 Command Details|219|
+|ESC|GS x S 0 n p1 p2|222|
+|ESC|GS x S 1 n|222|
+|ESC|GS x S 2 n|223|
+|ESC|GS x S 3 n|224|
+|ESC|GS x D nL nH d1 d2 … dk|224|
+|ESC|GS x P|225|
+|ESC|GS x I|226|
+|4-3-10|STAR Original Print Starting Trigger Control Commands|227|
+|ESC|GS g 0 m n|227|
+|ESC|GS g 1 m n|227|
+|4-3-11|STAR Original 2-Dimensional Bar Code QR Code Command Details|228|
+|ESC|GS y S 0 n|230|
+|ESC|GS y S 1 n|230|
+|ESC|GS y S 2 n|230|
+|ESC|GS y D 1 m nL nH d1 d2 … dk|231|
+|ESC|GS y D 2 a m1 n1L n1H d11 d12 • • •  d1k m2 n2L n2H d21 d22 • • • d2k ml • • • dlk|232|
+|ESC|GS y P|234|
+|ESC|GS y I|234|
+|4-3-12|STAR Original Page Function Commands|235|
+|ESC|GS h 0 k m n|235|
+|ESC|GS h 1 k m n|236|
+|4-3-13|Star Original  Reduced Printing Function Command|238|
+|ESC|GS c h v|238|
+|4-3-14|STAR Original  Text Search Commands|239|
+|ESC|GS ) B pL pH fn [parameter]|239|
+
+
+
+ESC/POS Command Specifications 
+
+5 

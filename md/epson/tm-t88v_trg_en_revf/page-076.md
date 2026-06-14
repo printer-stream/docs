@@ -1,0 +1,39 @@
+## _Controlling the Cash Drawer_ 
+
+A pulse output is sent to drawer kick connector pin 2 or pin 5, and you can open the drawer. 
+
+You can also check the open/close status of the drawer by checking the signal level of the drawer kick connector pin 3. 
+
+These controls are executed by a driver or by commands. 
+
+## ESC/POS Commands 
+
+Prepare the output command for the specified pulse and the status transmission command. For details, see the ESC/POS Command Reference. 
+
+## For Windows Printer Drivers (APD) 
+
+You can set so that the drawer opens at the start/end of printing or start/end of a page. For details, see the manual for drivers. 
+
+For details on control, see the manual for Status API of the driver. 
+
+## OPOS (OCX Driver) 
+
+Register a cash drawer using the SetupPOS Utility, and control using the OpenDrawer method or the DirectIO function. 
+
+For details, see the "EPSON OPOS ADK MANUAL APPLICATION DEVELOPMENT GUIDE Cash Drawer" and the "UnifiedPOS Specification". 
+
+## OPOS for .NET 
+
+Register a cash drawer using the SetupPOS Utility, and control using the OpenDrawer method or the DirectIO function. 
+
+For details, see the "EPSON OPOS ADK for .NET MANUAL Application Development Guide Cash Drawer (EPSON Standard)" and the "UnifiedPOS Specification". 
+
+## ePOS-Print SDK 
+
+The output command for the drawer kick pulse and the status transmission command are provided in each SDK library. For details, see the user's manuals provided with each SDK. 
+
+- Whether or not pin 2 or pin 5 operates the drawer kick connector depends on the connected cash drawer. 
+
+- You can acquire documents regarding the UnifiedPOS from the following link. https://nrf.com/resources/retail-technology-standards/unifiedpos 
+
+**76** 

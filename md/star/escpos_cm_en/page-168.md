@@ -1,0 +1,13 @@
+Rev.2.52 
+
+## **FS C n** 
+
+Name Select Chinese character code type Code ASCII FS C n Hex. 1C 43 n Decimal 28 67 n Defined Region n = 0, 1, 48, 49 Initial Value n = 0 Function Selects the Chinese character code type. n Selection 0, 48 JIS Code Type 1, 49 SHIFT-JIS Code Type 
+
+Details • If using the JIS code type, the Chinese characters codes below are effective.  This command is enabled only when using Japanese language specifications. First Byte: <21>H to <7E>H Second Byte: <21>H to <7E>H • If using the SHIFT-JIS code type, the Chinese characters codes below are effective. First Byte: <81>H to <9F>H and <E0>H to <EF>H Second Byte: <40>H to <7E>H and <80>H to <FC>H 
+
+STAR • This command is ignored when the memory switch location of use is specified as SBCS (single byte countries). 
+
+ESC/POS Command Specifications 
+
+168 

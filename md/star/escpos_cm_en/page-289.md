@@ -1,0 +1,41 @@
+Rev.2.52 
+
+## • TUP900 
+
+## Page mode print region initial value (dxL, dxH, dyL, dyH) 
+
+|Print region<br>Setting<br>(Memory<br>Switch<br>Setting)|Basic<br>Calculated<br>Pitch<br>Correction<br>(DIPSW<br>Setting)|Initial Value(= Maximum Value)|Initial Value(= Maximum Value)|Initial Value(= Maximum Value)|Initial Value(= Maximum Value)|Initial Value(= Maximum Value)|Initial Value(= Maximum Value)|
+|---|---|---|---|---|---|---|---|
+|||dxL|dxH|dyL|dyH|Printable Region Width||
+|||||||X Dir.|Y Dir.|
+|104mm|203/180<br>DPI|64|3|96|9|104mm|300mm|
+|80mm|203/180<br>DPI|128|2|96|9|80mm|300mm|
+|72mm|203/180<br>DPI|64|2|96|9|72mm|300mm|
+|56mm|203/180<br>DPI|192|1|96|9|56mm|300mm|
+
+
+
+Basic calculated pitch initial value:  X=1/203 (inch), Y=1/203 (inch) 
+
+## • TSP1000 
+
+## Page mode print region initial value (dxL, dxH, dyL, dyH) 
+
+|Print region<br>Setting<br>(Memory<br>Switch<br>Setting)|Basic<br>Calculated<br>Pitch<br>Correction<br>(DIPSW<br>Setting)|Initial Value(= Maximum Value)|Initial Value(= Maximum Value)|Initial Value(= Maximum Value)|Initial Value(= Maximum Value)|Initial Value(= Maximum Value)|Initial Value(= Maximum Value)|
+|---|---|---|---|---|---|---|---|
+|||dxL|dxH|dyL|dyH|Printable Region Width||
+|||||||X Dir.|Y Dir.|
+|80mm|--|128|2|96|9|80mm|300mm|
+|72mm|--|64|2|96|9|72mm|300mm|
+|55mm|--|184|1|96|9|55mm|300mm|
+|52mm|--|160|1|96|9|52mm|300mm|
+|47mm|--|120|1|96|9|47mm|300mm|
+|42mm|--|80|1|96|9|42mm|300mm|
+
+
+
+Basic calculated pitch initial value:  X=1/203 (inch), Y=1/203 (inch) 
+
+ESC/POS Command Specifications 
+
+285 

@@ -1,0 +1,29 @@
+## **C O N F I D E N T I A L** 
+
+■ The selected character code table is valid until ESC @ is executed, the printer is reset, or the power is turned off. 
+
+[Model-dependent variations] 
+
+TM-J2000/J2100, TM-T90, TM-T20, TM-T88IV, TM-T88V, TM-T70, TM-L90, TM-P60, TM-U230, TM-U220. 
+
+## **Program Example for all printers** 
+
+PRINT #1, CHR$(&H1B);"t";CHR$(0); ← Select page 0 GOSUB printing PRINT #1, CHR$(&H1B);"t";CHR$(1); ← Select page 1 GOSUB printing END printing: FOR i=&H20 TO &H7F PRINT #1, CHR$(i); NEXT i PRINT #1, CHR$(&HA); FOR i=&H80 TO &HFF PRINT #1, CHR$(i); NEXT i PRINT #1, CHR$(&HA); RETURN 
+
+## **Print Sample** 
+
+Page 0 Page 1 
+
+## TM-J2000/J2100, TM-T90, TM-L90 
+
+**Page 255 is able to be edited by <Function 7> ~ <Function 10> of** GS ( E **. When the printer is shipped, the page is a space page.** 
+
+## TM-T88IV, TM-T70 
+
+**Page 255 is a space page.** 
+
+## TM-T20, TM-T88V 
+
+**Page 255 is a space page.** 
+
+**When the default of the character code table is changed with** GS ( E **<Function 5> <a = 8>, the default value becomes the one specified by** GS ( E. 

@@ -1,0 +1,30 @@
+## **C O N F I D E N T I A L** 
+
+## **ESC c 3** 
+
+SETTING COMMAND 
+
+[Name] Select paper sensor(s) to output paper-end signals [Format] ASCII ESC c 3 n Hex 1B 63 33 n Decimal 27 99 51 n [Range] 0 ≤ n ≤ 255 
+
+[Default] TM-J2000/J2100, TM-L90 **:** n **= 0** TM-T90 **:** n **= 0 (For the Japanese model or when memory switch Msw 8-7 is OFF.)** n **= 15 (When the memory switch Msw 8-7 is ON.)** 
+
+TM-T88IV **,** TM-T88V **:** n **= 0 (When the DIP switch SW1-3 is ON.)** 
+
+n **= 15 (When the DIP switch SW1-3 is OFF.)** 
+
+TM-T70 **: n = 0 [ANK model, TM-T88IV command-compatible mode disabled] n = 0 [ANK model, TM-T88IV command-compatible mode enabled, DIP switch 1-3 ON] n = 15 [ANK model, TM-T88IV command-compatible mode enabled, DIP switch 1-3OFF] n = 0 [Japanese model]** 
+
+TM-U230, TM-U220 **:** n **= 15** 
+
+[Printers not featuring this command] TM-P60, TM-T20 
+
+[Description] Selects the paper sensor(s) to output paper end signals when a paper end is detected using n as follows: 
+
+|n:**Bit **|**Off/On**|**Hex**|**Decimal**|**Function**|**_... how to use_**<br>**_this table_**|
+|---|---|---|---|---|---|
+|0|Off|00|0|Roll paper near-end sensor disabled.||
+||On|01|1|Roll paper near-end sensor enabled.||
+|1|Off|00|0|Roll paper near-end sensor disabled.||
+||On|02|2|Roll paper near-end sensor enabled.||
+|2|Off|00|0|Roll paper end sensor disabled.||
+||On|02|4|Roll paper end sensor enabled.||

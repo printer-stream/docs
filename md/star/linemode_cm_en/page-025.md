@@ -1,0 +1,26 @@
+## **ESC R n** 
+
+[Name] Specify international character set [Code] ASCII ESC R n Hex. 1B 52 n Decimal 27 82 n [Defined Area] 0≤n≤14 n = 64 48≤n≤57 (”0”≤n≤”9”) 65≤n≤69 (”A”≤n≤”E”) [Initial Value] Memory switch setting When installed with Japanese language characters and DBCS setting: Fixed at n=8 [Function] Specifies international characters 
+
+|n|International Characters|
+|---|---|
+|0,48|USA|
+|1,49|France|
+|2, 50|Germany|
+|3, 51|UK|
+|4, 52|Denmark|
+|5, 53|Sweden|
+|6, 54|Italy|
+|7, 55|Spain|
+|8, 56|Japan|
+|9, 57|Norway|
+|10, 65|Denmark II|
+|11, 66|Spain II|
+|12, 67|Latin America|
+|13, 68|Korea|
+|14, 69|Ireland|
+|64|Legal|
+
+
+
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― STAR Line Mode Command Specifications 3-7 

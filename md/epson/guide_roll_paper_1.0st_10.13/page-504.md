@@ -1,0 +1,24 @@
+## **C O N F I D E N T I A L** 
+
+## **GS ( Q** 
+
+## EXECUTING COMMAND 
+
+[Name] Commands for drawing graphics 
+
+[Printers not featuring this command] TM-J2000/J2100, TM-T90, TM-T20, TM-T88IV, TM-T88V, TM-T70, TM-L90, TM-U230, TM-U220 
+
+- [Description] Executes various controls regarding drawing graphics. 
+
+   - The function is specified with the function code (fn). 
+
+|fn|Function No.|Function name|
+|---|---|---|
+|48|**Function 48**|Draw line|
+|49|**Function 49**|Draw rectangle|
+
+
+
+- pL and pH specify the number of bytes following fn as ( pL + pH × 256). 
+
+- **[** parameter **]** is covered in the description of each function. 

@@ -1,0 +1,59 @@
+**Allowed users** admin, operator, user 
+
+## **Setting H.264 or MPEG-4 I-Frame Interval** 
+
+## **Format  /api/param?encode(number).iframeinterval=data** 
+
+**Example    /api/param?encode(1).iframeinterval=15** 
+
+## **Example of response  encode(1).iframeinterval&202 Accepted(encode.status=save)** 
+
+**Interpretation** Change I-Frame interval of H.264 or MPEG-4. This API is valid when compression format is 
+
+h264high, h264baseline or mpeg4.  In case of  H.264, specify 5, 10, 15, 30, 60, 90, or 120.  In case of MPEG-4, specify 15 or 30. The change of the first channel is availed by the API, encode(1).status=save. **Allowed users** admin, operator 
+
+## **Getting Frame Rate Setting** 
+
+**Format  /api/param?encode(number).framerate** 
+
+## **Example of response  encode(1).framerate=15&200 OK** 
+
+**Interpretation** Acquire frame rate of the encoding. 
+
+**Allowed users** admin, operator, user 
+
+## **Setting Frame Rate** 
+
+## **Format  /api/param?encode(number).framerate=data** 
+
+**Example    /api/param?encode(1).framerate=30** 
+
+## **Example of response  encode(1).framerate&202 Accepted(encode.status=save)** 
+
+**Interpretation** Change frame rate of the encoding. In case of H.264, specify 30, 25, 15, 10, 7.5, 5, 3, 2, or 1. In case of JPEG, specify 30, 15, 10, 7.5, 5, 3, 2, or 1. When 30fps or 25fps is set, 3DDNR, motion detection and 
+
+analog viedeo output are not available. The change of the first channel is availed by the API, 
+
+encode(1).status=save. 
+
+**Allowed users** admin, operator 
+
+## **Getting Monitor Out Status** 
+
+**Format  /api/param?video.output.status** 
+
+## **Example of response  video.output.status=on&200 OK** 
+
+**Interpretation** Acquire monitor out status. “on” or “off” is returned. 
+
+**Allowed users** admin, operator, user 
+
+## **Setting Monitor Out Status** 
+
+**Format  /api/param?video.output.status=data** 
+
+**Example    /api/param?video.output.status=on** 
+
+33 
+
+Downloaded from www.Manualslib.com manuals search engine 

@@ -1,0 +1,34 @@
+## **C O N F I D E N T I A L** 
+
+## **GS ( C** _**pL pH m fn b**_ <Function 4> 
+
+[Name] Transmit the remaining capacity of the NV user memory 
+
+- [Format] 
+
+- [Range] 
+
+   - ASCII GS ( C pL pH m fn b Hex 1D 28 43 03 00 00 fn 00 Decimal 29 40 67 3 0 0 fn 0 (pL + pH × 256) = 3 (pL = 3, pH = 0) m = 0 fn = 4, 52 b = 0 
+
+- [Description] Transmits the number of bytes of remaining memory (unused area) in the NV user memory. 
+
+      - ESC/POS Handshaking Protocol is not required for this function. 
+
+- [Notes] 
+
+- With this function, the printer sends the “Header to NUL” data shown below: 
+
+|**Send data**|**Hex**|**Decimal**|**Data quantity**|
+|---|---|---|---|
+|Header|37H|55|1 byte|
+|Identifier|29H|41|1 byte|
+|Available Capacity(*1)|30H−39H|48−57|1−8 bytes|
+|NUL|00H|0|1 byte|
+
+
+
+- (*1) The available capacity indicates the number of bytes not being used. The decimal value for the available capacity is converted to ASCII character data and sent from the most significant digit. 
+
+- Example: When 120 bytes is available (not being used), the number 120 is expressed with 3 bytes of data (Hexadecimal: 31H, 32H, and 30H / decimal numbers = 49, 50, and 48). 
+
+- See previous [Notes for transmission process] for process sending data group. 

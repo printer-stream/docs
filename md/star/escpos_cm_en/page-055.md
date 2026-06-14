@@ -1,0 +1,9 @@
+Rev.2.52 
+
+## **ESC ? n** 
+
+Name Delete download characters Code ASCII ESC ? n Hex. 1B 3F n Decimal 27 63 n 32 ≤ n ≤ 126 Defined Region Function Deletes the download characters to the specified character code. Details • n specifies the character code to delete the defined pattern.  After deleting, the printer prints the same pattern as the internal characters. • Deletes the specified code definition pattern of the character code selected by ESCM and ESC !. • This command is ignored when the specified character code is undefined. Reference ESC &, ESC % 
+
+ESC/POS Command Specifications 
+
+55 

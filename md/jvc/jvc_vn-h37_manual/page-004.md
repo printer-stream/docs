@@ -1,0 +1,15 @@
+## **IP Camera API GUIDE** 
+
+## **VN-H37/137/237/237VP VN-H57/157WP/257/257VP** 
+
+This document provides information of protocol and API of JVC new IP cameras, VN-H series. 
+
+Specifications subject to change without notice. 
+
+## **2012.06.29. (V4.00)** 
+
+© 2012 JVC KENWOOD Corporation 
+
+1 
+
+Downloaded from www.Manualslib.com manuals search engine 

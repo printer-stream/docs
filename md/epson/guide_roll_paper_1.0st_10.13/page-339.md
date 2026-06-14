@@ -1,0 +1,45 @@
+## **C O N F I D E N T I A L** 
+
+## TM-T20 
+
+**BUSY condition is selected by Msw 1-3.** 
+
+■ **Printer status (n = 1)** 
+
+**Bits 5 and 6 of the printer status are undefined.** 
+
+■ **Error status (n = 3)** 
+
+**Bit 2 of the error status is undefined.** 
+
+■ **Roll paper sensor status (n = 4)** 
+
+**When the cover is open, the status of the roll paper end sensor (bit 5, 6) retain the value when the cover was closed immediately before.** 
+
+## TM-T88IV, TM-T88V 
+
+**BUSY condition for a parallel interface is selected by DIP switch 2-1.** 
+
+■ **Printer status (** n **= 1)** 
+
+**Bits 5 and 6 of the printer status are undefined.** 
+
+■ **Error status (** n **= 3)** 
+
+**Bit 2 of the error status is undefined.** 
+
+■ **Roll paper sensor status (** n **= 4)** 
+
+**When the cover is open, the status of the roll paper end sensor (bit 5, 6) retain the value when the cover was closed immediately before.** 
+
+## TM-T70 
+
+**BUSY condition for a parallel interface is selected by DIP switch 2-1.** 
+
+■ **Printer status (** n **= 1)** 
+
+**Bits 5 and 6 of the printer status are undefined.** 
+
+■ **Error status (** n **= 3)** 
+
+**Bit 2 of the error status is undefined.** 

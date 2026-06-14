@@ -1,0 +1,29 @@
+## **C O N F I D E N T I A L** 
+
+## ■ Ink status B (n = 8, a = 3) is as follows: 
+
+|■Ink|status B (n= 8,a= 3) is as follows:||||
+|---|---|---|---|---|
+|**Bit**|**Function**|**Binary**|**Hexadecimal**|**Decimal**|
+|0|Fixed|0|00|0|
+|1|Fixed|1|02|2|
+|2|Not waiting for a label to be removed|0|00|0|
+||Waiting for a label to be removed|1|04|4|
+|3|Reserved|-|-|-|
+|4|Fixed|1|10|16|
+|5|Paper present in label peeling<br>detector|0|00|0|
+||No paper present in label peeling<br>detector|1|20|32|
+|6|Reserved|-|-|-|
+|7|Fixed|0|00|0|
+
+
+
+## ■ When you use this command, follow these rules. 
+
+- After the host PC transmits the function data, the printer will send response data or status data back to the PC. Do not transmit more data from the PC until the real-time status data are received from the printer. 
+
+- Only when it is necessary to acquire plural, real-time status items continuously, up to the limitation of the printer model, this command can be transmitted continuously. However, the next data is not transmitted until all status items are received in this case. 
+
+- With serial interface, use this command when the printer is in Ready status. 
+
+- With a parallel interface, a real-time status is stored in the transmission buffer of the printer temporarily the same as the other transmission data (except for ASB status), and when the host enters Reverse Mode, data is transmitted in order from the beginning of the transmission buffer. The 

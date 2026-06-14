@@ -1,0 +1,32 @@
+## **C O N F I D E N T I A L GS ( k** <Function 169> 
+
+[Name] QR Code: Select the error correction level 
+
+[Format] ASCII GS ( k pL pH cn fn n Hex 1D 28 6B 03 00 31 45 n Decimal 29 40 107 3 0 49 69 n [Range] (pL + pH × 256) = 3 (pL = 3, pH =0) cn = 49 fn = 69 48 ≤ n ≤ 51 
+
+- [Default] n = 48 
+
+- [Description] Selects the error correction level for QR Code. 
+
+|n|**Function**|**Recovery Capacity % (approx.)**|
+|---|---|---|
+|48|Selects Error correction level L|7|
+|49|Selects Error correction level M|15|
+|50|Selects Error correction level Q|25|
+|51|Selects Error correction level H|30|
+
+
+
+- [Notes] 
+
+- Settings of this function affect the processing of Functions 181 and 182. 
+
+- QR Code employs Reed-Solomon error correction to generate a series of error correction codewords. 
+
+- Settings of this function are effective until ESC @ is executed, the printer is reset, or the power is turned off. 
+
+[Model-dependent variations] TM-T90, TM-P60, TM-T20, TM-T88V 
+
+## TM-T90 
+
+**This model does not support this function.** 

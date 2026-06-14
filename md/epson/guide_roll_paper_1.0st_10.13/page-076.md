@@ -1,0 +1,25 @@
+## **C O N F I D E N T I A L** 
+
+## **obsolete commands** 
+
+The following commands are obsolete commands and will not be supported by future printer models. More suitable substitute commands are listed to the right. 
+
+|**Command**|**Name**|**Function type**|**Substitute command**|
+|---|---|---|---|
+|ESC i|Partial cut (one point left uncut)|MECHANISM CONTROL COMMANDS|GS V|
+|ESC m|Partial cut (three points left uncut)|MECHANISM CONTROL COMMANDS|GS V|
+|ESC u|Transmit peripheral device status|STATUS COMMANDS|GS r|
+|ESC v|Transmit paper sensor status|STATUS COMMANDS|GS r|
+|FS g 1|Write to NV user memory|CUSTOMIZE COMMANDS|GS ( C|
+|FS g 2|Read from NV user memory|CUSTOMIZE COMMANDS|GS ( C|
+|FS p|Print NV bit image|BIT-IMAGE COMMANDS|GS ( L GS 8 L|
+|FS q|Define NV bit image|BIT-IMAGE COMMANDS|GS ( L GS 8 L|
+|GS✻|Define downloaded bit image|BIT-IMAGE COMMANDS|GS ( L GS 8 L|
+|GS \|Print downloaded bit image|BIT-IMAGE COMMANDS|GS ( L GS 8 L|
+|GS C 0|Select counter print mode|COUNTER PRINTING COMMANDS|NONE|
+|GS C 1|Select count mode (A)|COUNTER PRINTING COMMANDS|NONE|
+|GS C 2|Select counter print mode|COUNTER PRINTING COMMANDS|NONE|
+|GS C ;|Select counter mode (B)|COUNTER PRINTING COMMANDS|NONE|
+|GS Q 0|Print variable vertical size bit image|BIT-IMAGE COMMANDS|GS ( L|
+|GS c|Print counter|COUNTER PRINTING COMMANDS|NONE|
+|GS v 0|Print raster bit image|BIT-IMAGE COMMANDS|GS ( L|

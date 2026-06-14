@@ -1,0 +1,9 @@
+Chapter 2   Setup 
+
+2 
+
+The optional power supply box (OT-BX88V) is available. You can store the power supply unit in the box attached to the printer. 
+
+**==> picture [182 x 144] intentionally omitted <==**
+
+**31** 

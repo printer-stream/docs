@@ -1,0 +1,9 @@
+// *************** Viewer *************** function play_click(play_btn, ip, http_port) { if(play_btn.value == "Play"){ InitViewer(ip, http_port); Viewer.Play(); play_btn.value = "Stop"; } else{ Viewer.Stop(); play_btn.value = "Play"; } } function capture_click() { Viewer.Capture(); } 
+
+function InitViewer(ip, http_port) { Viewer.OpPassword = "jvc"; Viewer.IP = ip.value; Viewer.HttpPort = http_port.value; Viewer.DispWidth = 640; Viewer.DispHeight = 360; Viewer.FolderName = "VN-H37"; Viewer.RcvMode = 0; } 
+
+// ************** Audio Monitor ************** function receive_click(rcv_btn, ip, http_port) { if(rcv_btn.value == "Receive"){ InitMonitor(ip, http_port); AudioMonitor.Play(); rcv_btn.value = "Stop"; } else{ AudioMonitor.Stop(); rcv_btn.value = "Receive"; } } function InitMonitor(ip, http_port) { AudioMonitor.Password = "jvc"; AudioMonitor.IP = ip.value; AudioMonitor.Port = http_port.value; } // ************** Audio Sender *************** function send_click(send_btn, ip, http_port) { if(send_btn.value == "Send"){ InitSender(ip, http_port); AudioSender.Play(); send_btn.value = "Stop"; } else{ AudioSender.Stop(); send_btn.value = "Send"; } } 
+
+105 
+
+Downloaded from www.Manualslib.com manuals search engine 

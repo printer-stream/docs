@@ -1,0 +1,37 @@
+## **C O N F I D E N T I A L** 
+
+   - When this command is disabled by GS (D 
+
+- This command can be used even if the printer is disabled by ESC  =. 
+
+- With a serial interface, the printer executes this command even when it is in offline, receive buffer full. 
+
+- With a parallel interface, if the printer is in BUSY condition, this command cannot be used in the following states. 
+
+   - When DIP switch or memory switch (BUSY condition) is on: receive buffer full 
+
+   - When DIP switch or memory switch (BUSY condition) is off: offline, receive buffer full, or error status 
+
+- This command is effective when the printer is disabled by ESC = (select peripheral device). 
+
+[Model-dependent variations] TM-J2000/J2100, TM-T90, TM-T20, TM-T88IV, TM-T88V, TM-T70, TM-L90, TM-U220 
+
+## **Program Example** 
+
+PRINT #1, CHR$(&H10);CHR$(&H14);CHR$(1)l;CHR$(0);CHR$(5); 
+
+## TM-J2000/J2100, TM-T90, TM-L90 
+
+**The BUSY condition is selected by memory switch 1-3.** 
+
+## TM-T20 
+
+## **The BUSY condition is selected by memory switch 1-3.** 
+
+**When the optional external buzzer is enabled with** GS ( E **<Function 5>, the optional external buzzer sounds (a pulse signal is not output).** 
+
+## TM-T88IV, TM-T70 
+
+**The BUSY condition is selected by DIP switch 2-1.** 
+
+**With specifications that have a buzzer, a pulse signal sounds the buzzer with this command. Buzzer control and drawer control is set with the buzzer circuit board DIP switches. Turn off the printer before changing DIP switch settings.** 

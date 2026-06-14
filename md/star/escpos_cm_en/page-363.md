@@ -1,0 +1,38 @@
+Rev.2.52 
+
+## • ESC/POS Black Mark Related Commands (When black marks are efective) 
+
+|**Commands**|**Model Name**|**Model Name**|**Model Name**|**Model Name**|**Model Name**|**Model Name**|**Model Name**|**Model Name**|**Model Name**|**Model Name**|**Model Name**|**Model Name**|**Model Name**|**Model Name**|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+||**TSP700**|**TSP600**|**TSP800**|**TUP900**|**TSP1000**|**TSP700II**|**TSP650**|**TUP500**|**TSP800II**|**FVP10**|**BSC10**|**TSP043**|**TSP650II**|**TSP650IISK**|
+|FF|○|x|○|x|○|○|x|x|x|x|x|x|x|x|
+|DLE ENQ|○|x|○|x|○|○|x|x|x|x|x|x|x|x|
+|GS FF|x|x|x|x|○|○|x|x|x|x|x|x|x|x|
+|GS(F|x|x|x|x|○|x|x|x|x|x|x|x|x|x|
+|GS(M n=1|x|x|x|x|○|x|x|x|x|x|x|x|x|x|
+|GS(M n=2|x|x|x|x|○|x|x|x|x|x|x|x|x|x|
+|GS(M n=3|x|x|x|x|○|x|x|x|x|x|x|x|x|x|
+|GS <|○|x|○|x|x|○|x|x|x|x|x|x|x|x|
+|GS V|○|x|○|x|○|○|x|x|x|x|x|x|x|x|
+
+
+
+## • STAR Original Commands 
+
+|**Commands**|**Model Name**|**Model Name**|**Model Name**|**Model Name**|**Model Name**|**Model Name**|**Model Name**|**Model Name**|**Model Name**|**Model Name**|**Model Name**|**Model Name**|**Model Name**|**Model Name**|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+||**TSP700**|**TSP600**|**TSP800**|**TUP900**|**TSP1000**|**TSP700II**|**TSP650**|**TUP500**|**TSP800II**|**FVP10**|**BSC10**|**TSP043**|**TSP650II**|**TSP650IISK**|
+|ESC GS =|○|x|○|x|○|○|x|x|x|x|x|x|x|x|
+|ESC GS t|Spec. A|x|Spec. A|x|Spec. A|Spec. A|x|x|x|x|x|x|x|x|
+|ESC GS +|x|x|x|x|x|○|x|x|x|x|x|x|x|x|
+|ESC GS # m|Spec. B|x|Spec. B|x|Spec. B|Spec. B|x|x|x|x|x|x|x|x|
+|ESC RS F|x|x|x|x|○|○|x|x|x|x|x|x|x|x|
+|ESC RS C|x|x|x|x|x|○|x|x|x|x|x|x|x|x|
+|ESC RS L|x|x|x|x|x|Spec. A<br>Ver. 1.3~<br>1.4<br>Spec. B<br>Ver. 2.0<br>or later|x|x|x|x|x|x|x|x|
+|ESC GS ETX|x|x|x|x|x|Spec. A<br>Ver. 2.0 or<br>later<br>Spec. B<br>Ver. 3.0  or<br>later|x|x|x|x|x|x|x|x|
+
+
+
+ESC/POS Command Specifications 
+
+358 

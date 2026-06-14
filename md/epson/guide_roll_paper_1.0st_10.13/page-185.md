@@ -1,0 +1,33 @@
+## **C O N F I D E N T I A L** 
+
+## **ESC \** 
+
+EXECUTING COMMAND 
+
+[Name] Set relative print position [Format] ASCII ESC \ nL nH Hex 1B 5C nL nH Decimal 27 92 nL nH [Range] –32768 ≤ (nL + nH × 256) ≤ 32767 
+
+[Default] None 
+
+[Printers not featuring this command] TM-U230, TM-U220 
+
+[Description] Moves the print position to (nL + nH × 256) × (horizontal or vertical motion unit) from the current position. 
+
+- [Notes] 
+
+- The printer ignores any setting that exceeds the print area. 
+
+- A positive number specifies movement to the right, and a negative number specifies movement to the left. N pitch movement to the right: (nL + nH × 256) = N. Use the complement of N for setting N pitch movement to the left: (nL + nH × 256) = 65536 – N. 
+
+- When standard mode is selected, the horizontal motion unit is used. 
+
+- When page mode is selected, the horizontal or vertical motion unit is used for the print direction set by ESC T. 
+
+   - When the starting position is set to the upper left or lower right of the print area using ESC T, the horizontal motion unit is used. 
+
+   - When the starting position is set to the upper right or lower left of the print area using ESC T, the vertical motion unit is used. 
+
+- Even if the vertical or horizontal motion unit is changed after changing the print position, the setting of the print position will not be changed. 
+
+- When underline mode is turned on, the underline will not be printed under the space skipped by this command. 
+
+- “\” corresponds to “\” in the JIS code system. 

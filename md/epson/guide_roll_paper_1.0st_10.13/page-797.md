@@ -1,0 +1,48 @@
+## **C O N F I D E N T I A L** 
+
+## **GS C 1** 
+
+SETTING COMMAND 
+
+[Name] Select count mode (A) 
+
+- [Format] ASCII GS C 1 aL aH bL bH n r Hex 1D 43 31 aL aH bL bH n r Decimal 29 67 49 aL aH bL bH n r 
+
+- [Range] 0 ≤ (aL + aH × 256) ≤ 65535 (0 ≤ aL ≤ 255, 0 ≤ aH ≤ 255) 
+
+   - 0 ≤ (bL + bH × 256) ≤ 65535 (0 ≤ bL ≤ 255, 0 ≤ bH ≤ 255) 
+
+   - 0 ≤ n ≤ 255, 0 ≤ r ≤ 255 
+
+- [Default] (aL + aH × 256) = 1 (aL = 1, aH = 0) 
+
+   - (bL + bH × 256) = 65535 (bL = 255, bH = 255) 
+
+   - n = 1, r = 1 
+
+- [Printers not featuring this command] TM-J2000/J2100, TM-T90, TM-T20, TM-T88IV, TM-T88V, TM-T70, TM-P60, TM-U230, TM-U220 
+
+- [Description] Sets the serial number counter range, the stepping amount, and the repetition number. 
+
+|**Count mode **|**Parameters**|**Counter range**|**Counter range**|
+|---|---|---|---|
+|||**Minimum value **|**Maximum value**|
+|Count-up|aL +aH ×256 <bL +bH ×256 andn ≠0 andr ≠0|aL +aH ×256|bL +bH ×256|
+|Count-down|aL +aH ×256 >bL +bH ×256 andn ≠0 andr ≠0|bL +bH ×256|aL +aH ×256|
+|Count-stop|aL +aH ×256 =bL +bH ×256 orn =0 orr =0|⎯|⎯|
+
+
+
+- aL, aH and bL, bH specify the serial number counter ranges (maximum or minimum value). 
+
+- n specifies the stepping amount for counting up or down. 
+
+- r specifies the repetition number with the counter value. 
+
+## [Recommended Functions] 
+
+This command is supported by some of the printer models and will not be supported by future models. Future models will not support counter value. 
+
+## [Notes] 
+
+■ When this command is executed, the internal counter which counts the repetition number of printing is 0. 

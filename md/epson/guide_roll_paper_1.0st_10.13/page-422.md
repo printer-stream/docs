@@ -1,0 +1,3 @@
+## **C O N F I D E N T I A L** 
+
+Draw line Draw rectangle GS I Transmit printer ID GS P Set horizontal and vertical motion units GS g 0 Initialize maintenance counter GS g 2 Transmit maintenance counter GS z 0 Set online recovery wait time GS z 0 (TM-L90 with Peeler) Set online recovery wait time FS ( E Group of commands for receipt enhancement control 

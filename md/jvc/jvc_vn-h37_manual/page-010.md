@@ -1,0 +1,39 @@
+## **1. Streaming Protocol** 
+
+- Both JVC protocol and standard RTSP/RTP are supported. 
+
+- JPEG, H.264 baseline profile, and H.264 high profile are supported. MPEG-4 will be supported in future. 
+
+- Maximum resolution is 1920x1080. 
+
+- VN-H series can send 3 different resolution streams of JPEG simultaneously. 
+
+- VN-H series can send 3 different resolution streams of H.264 simultaneously. 
+
+- Sending JPEG stream and H.264 stream simultaneously is supported. 
+
+## **2. JVC Protocol: JPEG Streaming** 
+
+## **2.1. Basic Procedures** 
+
+- 1) The client establishes a TCP connection to port number 80. 
+
+- 2) The client sends out API. 
+
+## **Example to get JPEG stream encoded by first channel of the camera** 
+
+## **GET /api/video?encode=jpeg(1)&framerate=5&server_push=on HTTP/1.1<CRLF>** 
+
+**Host: 192.168.0.2<CRLF><CRLF>** 
+
+**Note** <CRLF> denotes the line feed code (0x0D, 0x0A). 
+
+## 3) The camera returns HTTP response and JPEG stream. 
+
+JPEG files in boundary structure will be sent out continuously after HTTP response. Each Content-Length is the size of each JPEG data. Using the size, reading the whole data of each JPEG is possible. HTTP Response and JPEG data sent out by the camera are as follows. 
+
+HTTP Response --foo<CRLF> Content-Type: image/jpeg<CRLF> Content-Length: 31614<CRLF><CRLF> 
+
+JPEG (No. 1) <CRLF> --foo<CRLF> Content-Type: image/jpeg<CRLF> Content-Length: 32756<CRLF><CRLF> JPEG (No. 2) <CRLF> ,,, 
+
+Downloaded from www.Manualslib.com manuals search engine 

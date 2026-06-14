@@ -1,0 +1,35 @@
+## Interface signals 
+
+|Pin|Source||Compatibility<br>Mode|Nibble Mode|Byte Mode|
+|---|---|---|---|---|---|
+|1|Host||Strobe|HostClk|HostClk|
+|2|Host/Ptr||Data0 (LSB)|Data0 (LSB)|Data0 (LSB)|
+|3|Host/Ptr||Data1|Data1|Data1|
+|4|Host/Ptr||Data2|Data2|Data2|
+|5|Host/Ptr||Data3|Data3|Data3|
+|6|Host/Ptr||Data4|Data4|Data4|
+|7|Host/Ptr||Data5|Data5|Data5|
+|8|Host/Ptr||Data6|Data6|Data6|
+|9|Host/Ptr||Data7 (MSB)|Data7 (MSB)|Data7 (MSB)|
+|10|Printer||Ack|PtrClk|PtrClk|
+|11|Printer||Busy|PtrBusy/Data3,7|PtrBusy|
+|12|Printer||Perror|AckDataReq/Data2,6|AckDataReq|
+|13|Printer||Select|Xflag/Data1,5|Xflag|
+|14|Host||AutoFd|HostBusy k|HostBusy|
+|15|||NC|ND|ND|
+|16|||GND|GND|GND|
+|17|||FG|FG|FG|
+|18|Printer||Logic-H|Logic-H|Logic-H|
+|19|||GND|GND|GND|
+|20|||GND|GND|GND|
+|21|||GND|GND|GND|
+|22|||GND|GND|GND|
+|23|||GND|GND|GND|
+|24|||GND|GND|GND|
+|25|||GND|GND|GND|
+|26|||GND|GND|GND|
+|27|||GND|GND|GND|
+
+
+
+**108** 

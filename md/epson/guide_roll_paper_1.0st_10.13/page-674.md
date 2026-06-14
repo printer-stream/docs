@@ -1,0 +1,19 @@
+## **C O N F I D E N T I A L** 
+
+■ See previous [Notes for transmission process] for process sending data group. [Model-dependent variations] TM-T90, TM-T20, TM-T88IV, TM-T88V, TM-T70, TM-L90, TM-P60 
+
+## TM-T90, TM-T88IV, TM-T70, TM-L90 
+
+**This model does not support this function.** 
+
+## TM-T20, TM-T88V 
+
+**The printer supports this function.** 
+
+**In standard mode, when symbols have a height greater than 831 dots, they cannot be printed with this printer according to [Other information] [Hexadecimal = 31H / Decimal = 49]. In this case the [Error information] is "2002".** 
+
+## TM-P60 
+
+TM-P60 **with peeler supports this function.** 
+
+**In standard mode, when symbols have a height greater than 1,200 dots, they cannot be printed with this printer according to [Other information] [Hexadecimal = 31H / Decimal = 49]. In this case the [Error information] is "2002".** 

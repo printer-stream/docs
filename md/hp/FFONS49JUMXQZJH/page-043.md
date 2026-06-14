@@ -1,0 +1,23 @@
+or 
+
+## SP pen number (terminator) 
+
+## SP (terminator) 
+
+The pen parameter must be in the range of —32 768 to 32 767. Decimal fractions are truncated. An odd-numbered parameter selects the pen from the left stall; an even-numbered parameter selects the pen from the right stall. A zero parameter or no parameter stores the pen. When a pen parameter is less than —32 768 or greater than 32 767, an error is generated and the pen does not change. 
+
+## The Velocity Select Instruction, VS 
+
+The velocity select instruction, VS, specifies the pendown speed for plotting and labeling operations. 
+
+| USES | The instruction is used to set velocity to a speed other than the default velocity of 38.1 cm/s and to change the acceleration from its default value of 2 g (980 cm/s2). This instruction should be used to slow velocity to 10 cm/s when plotting on transparency film. A slightly thicker line can be created by slowing down the pen speed on any medium. A pen nearing the end of its life will write with a clearer, sharper, more solid line if the velocity is slowed. 
+
+## VS_ pen velocity (terminator) or VS (terminator) 
+
+A VS command without parameters sets pen velocity to its default velocity of 38.1 cm/s (15 in./s) and acceleration to 2 g (980 cm/s2), A VS command with parameters sets the pen velocity for horizontal or vertical pen-down moves to the value specified by the first parameter and slows the acceleration to 0.5 g. Anything after the first parameter is ignored. Parameters must be in the range 0 to 127.9999. A velocity of 0 is set to 0.38 cm/s. Velocity can be set in increments of 0.38 cm/s. Parameters are rounded to the nearest multiple of 0.38 cm/s. Negative parameters and parameters greater than or equal to 97 set an error condition (error 3) and the velocity does not change. Parameters between 38.1 and 96 set velocity to its default value of 38.1 cm/s. 
+
+When either the horizontal or vertical velocity falls in the range 0.38 to 3.8 cm/s, it is reset to a slower or faster velocity to avoid this range. This is done to assure lines of high quality. The change is most noticeable when a line is almost vertical or almost horizontal. Pen-down moves will be at the specified velocity except when such adjustment is necessary. 
+
+Execution of a VS command with a parameter of 38.1 will slow the acceleration, giving the highest line quality at that maximum speed. 
+
+CONTROLLING THE PEN AND PLOTTING 3-3 

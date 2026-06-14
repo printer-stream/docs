@@ -1,0 +1,27 @@
+**ESC GS y D 2 a m1 n1L n1H d11 d12 • • • d1k m2 n2L n2H d21 d22 • • • d2k ml • • • dlk** [Name] Set QR code cell size (Manual setting) [Code] ASCII E S C G S y D 2 a m 1 n 1 L n 1 H d 11 d 1 2 … d 1 K Hex. 1 B 1 D 7 9 4 4 3 2 a m 1 n 1 L n 1 H d 11 d 1 2 … d 1 K Decimal 2 7 2 9 1 2 1 6 8 5 0 a m 1 n 1 L n 1 H d 11 d 1 2 … d 1 K ASCII m 2 n 2 L n 2 H D 2 1 d 2 2 … d 2 K m l … d k l Hex. m 2 n 2 L n 2 H D 2 1 d 2 2 … d 2 K m l … d k l Decimal m 2 n 2 L n 2 H D 11 d 2 2 … d 2 K m l … d k l 
+
+[Defined Area] 1 ≤ a ≤ 255 1 ≤ m ≤ 4 0 ≤ nL ≤ 255, 0 ≤ nH ≤ 255 1 ≤ nL + nH x 256 ≤ 7089 (k = nL + nH x 256) 0 ≤ d ≤ 255 1 ≤ I ≤ 255 [Initial Value] --[Function] Specifies the bar code data type and sets the data. • Parameter details • a: Block count • m: Input data type • nL + nH x 256: Bar code data byte count • dk: Bar code data (Max. 7089 bytes) 
+
+|m|Data Type|Data Definition Region(d)|
+|---|---|---|
+|1|Numbers|“0” to “9”|
+|2|English Characters|“”,“$”,“%” “*”,“+”,“-“ “.” “/”,“:”,“0” to “9”,“A” to “Z”,|
+|3|Binary|0x00 to 0xFF|
+|4|Kanji(Shift JIS)|0x8140 to 0x9FFC, 0xE040 to 0xEBBF<br>However, the lower 8 bits are 0x40 to 0x7E, and 0x80<br>to 0xFC|
+||||
+
+
+
+- The printer receives the data type specified by m, and the data of the number of bytes (k) specified by nL and nH, based on the block count specified by a. 
+
+• 1 block specified by a indicates m1, n1L, n1H, d11 • • • d1k (data type + data count + bar code data), and by continuously sending these a multiple of times, one bar code data can mix data types. • It is possible to set a maximum of 255 blocks with one command transmission. 
+
+• nL and nH specify the number of bytes of the data, so when using Kanji, calculate that 1 character has 2 bytes. 
+
+- If this command is outside of the definition region, immediately stop the command analysis process. 
+
+When doing so, the bar code data is cleared. 
+
+- This command data storage region is shared with the automatic setting command, so data is updated each time either command is executed. 
+
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― STAR Line Mode Command Specifications 3-131 

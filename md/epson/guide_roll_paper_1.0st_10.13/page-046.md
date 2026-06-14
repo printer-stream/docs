@@ -1,0 +1,22 @@
+## **C O N F I D E N T I A L** 
+
+|**Command**|**Classification**|**Name**|**Function type**|
+|---|---|---|---|
+|ESC <|EXECUTING COMMAND|Return home|MECHANISM CONTROL COMMANDS|
+|ESC =|SETTING COMMAND|Select peripheral device|MISCELLANEOUS COMMANDS|
+|ESC ?|SETTING COMMAND|Cancel user-defined characters|CHARACTER COMMANDS|
+|ESC @|EXECUTING+ SETTING|Initialize printer|MISCELLANEOUS COMMANDS|
+|ESC D|SETTING COMMAND|Set horizontal tab positions|PRINT POSITION COMMANDS|
+|ESC E|SETTING COMMAND|Turn emphasized mode on/off|CHARACTER COMMANDS|
+|ESC G|SETTING COMMAND|Turn double-strike mode on/off|CHARACTER COMMANDS|
+|ESC J|EXECUTING COMMAND|Print and feed paper|PRINT COMMANDS|
+|ESC K|EXECUTING COMMAND|Print and reverse feed|PRINT COMMANDS|
+|ESC M|SETTING COMMAND|Select character font|CHARACTER COMMANDS|
+|ESC R|SETTING COMMAND|Select an international character set|CHARACTER COMMANDS|
+|ESC U|SETTING COMMAND|Turn unidirectional print mode on/off|MECHANISM CONTROL COMMANDS|
+|ESC a|SETTING COMMAND|Select justification|PRINT POSITION COMMANDS|
+|ESC c 3|SETTING COMMAND|Select paper sensor(s) to output paper-end||
+|||signals|PAPER SENSOR COMMANDS|
+|ESC c 4|SETTING COMMAND|Select paper sensor(s) to stop printing|PAPER SENSOR COMMANDS|
+|ESC c 5|SETTING COMMAND|Enable/disable panel buttons|PANEL BUTTON COMMAND|
+|ESC d|EXECUTING COMMAND|Print and feednlines|PRINT COMMANDS|

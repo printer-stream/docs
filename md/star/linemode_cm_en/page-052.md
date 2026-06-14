@@ -1,0 +1,20 @@
+## **3.3.8. Bit Image Graphics** 
+
+**ESC K n1 n2 d1...dk** [Name] Standard density bit image [Code] ASCII ESC K n1 n2 d1 ... dk Hex. 1B 4B n1 n2 d1 ... dk Decimal 27 75 n1 n2 d1 ... dk [Defined Area] 1 ≤ {(n1 + n2 x 256) x 3} ≤ printable region k = (n1 + n2 x 256) 0≤d≤255 [Initial Value] - - - [Function] Prints bit images using 3 dots wide and 3 dots high per 1 dot of input data. The following shows the data processing in this command. • When {(n1 + n2 x 256) x 3} exceeds the printable region, data after d1 is handled as normal data. • When {(n1 + n2 x 256) x 3} exceeds the printable region that is currently set, only the data in the printing region is printed. At this time, all data for the print region is discarded. 
+
+- If the current position already exceeds the print region, this command discards all data. 
+
+|b7<br> b6<br> b5<br> b4<br> b3<br> b2<br> b1<br> b0<br> • • •<br>• • •<br>• • •<br> • • •<br>• • •<br>• • •<br> • • •<br>• • •<br>• • •<br> • • •<br>• • •<br>• • •<br> • • •<br>• • •<br>• • •<br> • • •<br>• • •<br>• • •<br> • • •<br>• • •<br>• • •<br> • • •<br>• • •<br>• • •|b7<br>|b6<br>|b5<br>|b4<br>|b3<br>|b2<br>|b1<br>|b0|
+|---|---|---|---|---|---|---|---|---|
+|• • •<br>• • •<br>• • •|||||||||
+|• • •<br>• • •<br>• • •|||||||||
+|• • •<br>• • •<br>• • •|||||||||
+|• • •<br>• • •<br>• • •|||||||||
+|• • •<br>• • •<br>• • •|||||||||
+|• • •<br>• • •<br>• • •|||||||||
+|• • •<br>• • •<br>• • •|||||||||
+|• • •<br>• • •<br>• • •|||||||||
+
+
+
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― STAR Line Mode Command Specifications 3-34 

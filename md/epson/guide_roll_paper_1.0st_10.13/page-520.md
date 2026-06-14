@@ -1,0 +1,32 @@
+## **C O N F I D E N T I A L** 
+
+## **<1st byte of DIP switch information>** 
+
+|**Bit**|**Off/On**|**Hex**|**Decimal**|**Function**|
+|---|---|---|---|---|
+|**0**|**Off**|**00**|**0**|**DIP switch 1 OFF**|
+||**On**|**01**|**1**|**DIP switch 1 ON**|
+|**1**|**Off**|**00**|**0**|**DIP switch 2 OFF**|
+||**On**|**02**|**2**|**DIP switch 2 ON**|
+|**2**|**Off**|**00**|**0**|**DIP switch 3 OFF**|
+||**On**|**04**|**4**|**DIP switch 3 ON**|
+|**3**|**Off**|**00**|**0**|**DIP switch 4 OFF**|
+||**On**|**08**|**8**|**DIP switch 4 ON**|
+|**4, 5 **|**-**|**-**|**-**|**Reserved**|
+|**6**|**On**|**40**|**64**|**Fixed**|
+|**7**|**Off**|**00**|**0**|**Fixed**|
+
+
+
+## **<2nd byte of DIP switch information>** 
+
+|**Bit**|**Off/On**|**Hex**|**Decimal**|**Function**|
+|---|---|---|---|---|
+|**0**|**Off**|**00**|**0**|**DIP switch 5 OFF**|
+||**On**|**01**|**1**|**DIP switch 5 ON**|
+|**1**|**Off**|**00**|**0**|**DIP switch 6 OFF**|
+||**On**|**02**|**2**|**DIP switch 6 ON**|
+|**2**|**Off**|**00**|**0**|**DIP switch 7 OFF**|
+||**On**|**04**|**4**|**DIP switch 7 ON**|
+|**3**|**Off**|**00**|**0**|**DIP switch 8 OFF**|
+||**On**|**08**|**8**|**DIP switch 8 ON**|

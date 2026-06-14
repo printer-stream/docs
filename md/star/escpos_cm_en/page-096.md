@@ -1,0 +1,80 @@
+Rev.2.52 
+
+## **<Function 48> GS ( L pL pH m fn  (fn=48)** 
+
+## **<Function 48> GS 8 L p1 p2 p3 p4 m fn  (fn=48)** 
+
+Name Send NV graphics memory capacity 
+
+Code ASCII GS ( L pL pH m fn Hex. 1D   28  4C  pL  pH m fn Decimal   29   40  76  pL  pH  m fn ASCII     GS   8    L p1  p2 p3 p4  m  fn Hex. 1D   38  4C    p1  p2 p3 p4  m  fn Decimal  29   56  76 p1  p2 p3 p4  m  fn 
+
+- Defined Region • Parameter for GS ( L 
+
+(pL+pH×256)=2  (pL=2, pH=0) 
+
+- Parameter for GS 8 L 
+
+(p1+p2×256+p3x65536+p4x16777216)=2  (p1=2, p2=0, p3=0, p4=0) 
+
+- Parameter are shared by for GS ( L and GS 8 L. 
+
+m = 48, 
+
+fn = 0, 48 
+
+Function Details 
+
+Sends the entire capacity of NV graphics area in bytes. 
+
+- The byte count is sent in the following format: 
+
+|Transmission data|Hex|Decimal|Data length|
+|---|---|---|---|
+|Header<br>|37H|55|<br>1 Byte|
+|Identifer|30H|48|<br>1 Byte|
+|Total capacity*1|30H to 39H|48 to 57|<br>1 to 8 Byte|
+|<br>NUL|00H|0|<br>1 Byte|
+
+
+
+*1 The total capacity is the total number of bytes in this region. 
+
+The decimal value indicating the total capacity is converted to text data and sent in order from the MSB. Ex.: When the total capacity is 1200 bytes: 
+
+   - “1200” (Hex:31H, 32H, 30H, 30H, Decimal:49, 50, 48, 48) is converted to 4-bytes of data. 
+
+- This command is used when sending total capacity, and the total byte capacity of the region is sent regardless of the current setting for the NV graphics data. This total capacity includes the information region. 
+
+- When the value that indicates the entire capacity is “0” (Hex:30H, Decimal:48), it is not possible to use the NV graphics function. 
+
+Note 
+
+- Data transmission process: Function 48, 51, 52, 64 
+
+Observe the following rules when using these functions. 
+
+   - When the host PC sends this command, the printer sends response data or the status to the PC. 
+
+      - The PC does not send any more data until it receives response data or status from the printer. 
+
+   - When using a serial interface, configure operations for the host PC to use the printer only while the printer is in the READY state. 
+
+   - When using a parallel interface, data sent by this function ([header to NUL] block) is temporarily stored in the transmission buffer of the printer in the same way as other data. When the host PC enters reverse mode, data is sent from the top of the transmission buffer in order. 
+
+   - When the amount of data exceeds the capacity of the transmission buffer, data is erased. 
+
+      - When using this command, it is important to set operations so that the host PC 
+
+      - **i** mmediately enters a reverse mode and quickly processes the status transmission. 
+
+- When using the Xon/Xoff mode communications of the serial interface, it is possible to use Xoff in a data string of [header to NUL]. 
+
+- Transmission information of each function can be identified as other transmission data by specific data (identifier) of the transmission data string. 
+
+   - When the header sent by the printer is [Hex = 37H/Decimal = 55], data up to NUL 
+
+   - [Hex = 00H/Decimal = 0] is handled as one group, and identified by corresponding to the combination of the header and identifier. 
+
+ESC/POS Command Specifications 
+
+96 

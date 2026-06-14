@@ -1,0 +1,21 @@
+Rev.2.52 
+
+## **6-5 Appendix 5 Page Mode** 
+
+## **6-5-1 Page Mode Print Region** 
+
+EPSON has models that have 180 DPI and 203 DPI print heads.  STAR’s print head is 203 DPI.  Therefore, when targeting models with the EPSON 180 DPI print head, it is necessary to correct the line spacing that will be caused by the difference in the head’s print density.  Correction is done using the memory switches (Print dot count: ESC/ POS Compatible Mode/Max).  Setting the memory switches to ESC/POS compatible mode artificially makes the number of dot counts the same as an EPSON printer. The page mode printing region initial value (= maximum value) changes according to the basic calculated pitch correction when the memory switch print dot count in page mode is set to ESC/POS Compatible mode.  However, if the target model has a 203 DPI print head, correction is unnecessary so memory switches for print dot settings are not equipped. 
+
+The following illustrates the basic calculated pitch correction of the print region in page mode on TSP700. 
+
+<Basic calculated pitch correction conceptual view; TSP700; Print dots = ESC/POS compatible mode; Print region setting is 72 mm> 
+
+**==> picture [404 x 393] intentionally omitted <==**
+
+**----- Start of picture text -----**<br>
+( 0 , 0 )<br>STAR Printer<br>Print Head 203DPI<br>( 0 , 0 ) 203 DPI<br>Correction<br>EPSON Printer 72mm<br>576 dot<br>( 576,1876 )<br>Print Head 180DPI<br>( 0 , 0 )<br>180 DPI<br>Correction<br>STAR Printer<br>72mm<br>512 dot Print Head 203DPI<br>( 511,1661 )<br>64mm<br>512 dot<br>( 511,1661 )<br>117.3mm 938 dot<br>831 dot<br>117.3mm<br>831 dot<br>103.9mm<br>**----- End of picture text -----**<br>
+
+
+ESC/POS Command Specifications 
+
+283 

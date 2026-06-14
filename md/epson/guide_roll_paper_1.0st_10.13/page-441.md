@@ -1,0 +1,30 @@
+## **C O N F I D E N T I A L** 
+
+- With a serial interface, the printer executes this command even when it is in offline, receive buffer full, or error status. 
+
+- With a parallel interface, if the printer is BUSY, this command cannot be used in the following states. 
+
+   - When DIP switch or memory switch (BUSY condition) is on: receive buffer full 
+
+   - When DIP switch or memory switch (BUSY condition) is off: offline, receive buffer full, or error status 
+
+- When buffer clear processing is finished, the printer transmits  the clear response as shown below to the host. 
+
+|host.||||
+|---|---|---|---|
+|**Clear response**|**Hex**|**Decimal**|**Data quantity**|
+|Header|37H|55|1 byte|
+|Identifier|25H|37|1 byte|
+|NUL|00H|0|1 byte|
+
+
+
+## ■ When you use this command, obey the following rules. 
+
+   - When host PC transmits the function data, transmit the next data after receiving the corresponding data (header ~ NULL) from the printer. 
+
+   - When operating with a serial interface, be sure to configure operation so that the host computer uses the printer only when it is READY. 
+
+   - When operating with a parallel interface, the data sent by this function (starting with Header and ending with NUL), as with other data, is first stored in the send buffer, then output in sequential order when the host computer changes to the reverse mode. Note that the send buffer capacity is 99 bytes, and any data exceeding this volume limit will be lost; therefore, when using this command, it is important to configure the operation so that the host computer’s change to the reverse mode and the subsequent status send /receive process is performed quickly. 
+
+- When communication with the printer uses XON/XOFF control with serial interface, the XOFF code may interrupt the “Header to NUL” data string. 

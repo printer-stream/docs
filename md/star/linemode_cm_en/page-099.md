@@ -1,0 +1,13 @@
+## **ESC FF NUL** 
+
+[Name] Execute FF mode [Code] ASCII ESC FF NUL Hex. 1B 0C 00 Decimal 27 12 0 [Defined Area] - - - [Initial Value] - - - [Function] Executes FF mode. Executes operation specified by the FF mode setting command (ESC * r F n NUL). Invalid in page mode. 
+
+## **ESC FF EOT** 
+
+[Name] Execute EOT mode [Code] ASCII ESC FF EOT Hex. 1B 0C 04 Decimal 27 12 4 [Defined Area] - - - [Initial Value] - - - [Function] Executes EOT mode. Executes operation specified by the EOT mode setting command (ESC * r E n NUL). Invalid in page mode. 
+
+## **ESC * r N n NUL** 
+
+[Name] Discard data for specified byte count [Code] ASCII ESC * r N n NUL Hex. 1B 2A 72 4E n 0 Decimal 27 42 114 78 n 0 [Defined Area] 1 ≤ n≤ 2 55 [Initial Value] - - - [Function] Discards data for the specified byte count. Discards data received after a byte count specified by n. n is expressed in decimal (maximum 4 digits) using ASCII characters. This command is effective only in raster mode. Invalid in page mode. 
+
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― STAR Line Mode Command Specifications 3-81 

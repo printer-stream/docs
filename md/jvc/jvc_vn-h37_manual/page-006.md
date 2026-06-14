@@ -1,0 +1,11 @@
+||||
+|---|---|---|
+|Version|Date|Updates|
+|2.01<br>3.00|2012/05/08 <br>2012/05/21|Page 5, “JVC API for Audio” is added.<br>Page 5, “Getting Audio from the Camera via HTTP” is added.<br>Page 5, “Sending Audio to the Camera” is added.<br>Page 33, section 10, JVC API for Audio is added.<br>Page 36, section 11, Getting and Setting Alarm Action: “audioplay” and<br>“pinout” are added.<br>Page 41, section 11, Getting and Setting Alarm Trigger: “m1”, “b1”, “m2”, “b2”,<br>“audio_detect1”, “audio_detect2”, “tampering_detect”, “ncbwe” and “ncbws”<br>are added.<br>Page 87, section 28, “Getting Audio from the Camera via HTTP” is added.<br>Page 90, section 29, “Sending Audio to the Camera” is added.<br>Page 92, section 31, List of ActiveX: “Audio Monitor” and “Audio Sending<br>Client” are added.<br>Page 93, section 31, Properties of ActiveX: Explanation of default Folder<br>Name is added.<br>Page 94, section 31, Properties of ActiveX: Audio Monitor / Audio Sending<br>Client is added.<br>Page 95, section 31, Method of ActiveX Control: Audio Monitor / Audio<br>Sending Client is added.<br>Page 96, section 31, How to use ActiveX control by HTML: Audio Monitor and<br>Audio Sending Client are added.<br>Page 97, section 31, HTML Sample: Audio Monitor and Audio Sender are<br>added.<br> Page 5, 13. JVC API for SD Card Record is added.<br>Page 5, 31. Getting SD Card data from the Camera via RTSP/RTP is added.<br>Page 5, 32. Exporting H.264 data from SD Card to the PC is added.<br>Page 35, section 11, Explanation of SD Card recording is added.<br>Page 51, section 12, Getting and Setting Parameters of Pre/Post Recording<br>for FTP : Explanation of Encoder No. is added.<br>Page 53, 13. JVC API for SD Card Record is added.<br>Page 96, 31. Getting SD Card data from the Camera via RTSP/RTP is added.<br>Page 97, 32. Exporting H.264 data from SD Card to the PC|
+|4.00|2012/06/29|Page 30, section 9, Corrections of typographical error<br>change from “channel is saved” to “channel is availed”<br>Page 30, section 9, Example of Setting Compression Format is added.<br>Page 35, section 11, event No.10 is added.<br>Page 60, section 14, “Moving Specified Position to Center” is added.|
+
+
+
+3 
+
+Downloaded from www.Manualslib.com manuals search engine 

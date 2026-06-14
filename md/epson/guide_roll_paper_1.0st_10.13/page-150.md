@@ -1,0 +1,44 @@
+## **C O N F I D E N T I A L** 
+
+## **GS ( N** _**p**_ L _**p**_ H _**fn m**_ <Function 49> 
+
+[Name] Select background color 
+
+- [Format] 
+
+ASCII GS ( N pL pH fn m Hex 1D 28 4E 02 00 31 m Decimal 29 40 78 2 0 49 m 
+
+- [Range] 
+
+- (pL + pH × 256) = 2 (pL =2, pH =0) 
+
+TM-J2000 **(single-color printing model):** m **= 48, 49** TM-J2100 **(two-color printing model): 48** ≤ m ≤ **51** 
+
+- [Default] 
+
+m = 48 
+
+- [Description] Selects background color by m as follows: 
+
+|m|**Background color**|
+|---|---|
+|48|None (not print)|
+|49|Color 1|
+|50|Color 2|
+|51|Color 3|
+
+
+
+- [Notes] 
+
+   - This function does not affect the color of the spaces skipped by HT,  ESC $, and ESC \; the spaces between rows; and background of the characters in white/black reverse print mode. 
+
+   - The color of the spaces between characters set by ESC SP, FS S will be printed in the color specified by this function. 
+
+   - When a character with shadow is selected by Function 50, dots, except for the background and shadow parts, are printed in the color specified by this function. 
+
+- [Model-dependent variations] TM-J2000/J2100, TM-T90, TM-T88IV, TM-L90 
+
+## TM-J2000/J2100 
+
+**After processing this function, the bit images (** ESC * **), downloaded bit images, and NV bit images are always printed in Color 1.** 

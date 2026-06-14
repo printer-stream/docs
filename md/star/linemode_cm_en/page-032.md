@@ -1,0 +1,30 @@
+|**SO**|||
+|---|---|---|
+|[Name]|Set double wide||
+|[Code]|ASCII|SO|
+||Hex.|0E|
+||Decimal|14|
+|[Defined Area]||- - -|
+|[Initial Value]||Cancels 2x wide expansion|
+|[Function]|[Function]|Specifies double wide for ANK characters and Kanji characters.|
+|||This command is equivalent to ESC W  n (n = 1).|
+|**DC4**|||
+|[Name]|Cancel expanded wide||
+|[Code]|ASCII|DC4|
+||Hex.|14|
+||Decimal|20|
+|[Defined Area]||- - -|
+|[Initial Value]||- - -|
+|[Function]|[Function]|Cancels expanded wide if the following commands specify expanded wide.|
+|||• Double wide specifying command (SO)|
+|||• Set/cancel double wide (ESC W)|
+|||• Set/cancel double wide/high (ESC i)|
+|||This command is equivalent to ESC W  n (n = 0).|
+
+
+
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+
+STAR Line Mode Command Specifications 
+
+3-14 

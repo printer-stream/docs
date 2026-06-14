@@ -1,0 +1,22 @@
+## **C O N F I D E N T I A L** 
+
+|**D E N T I A L**||||
+|---|---|---|---|
+|e) Prints the top logo at power-on.|30H, 31H|48, 49|1 byte|
+|f) Prints the top logo when the roll paper<br>cover is closed.|30H, 31H|48, 49|1 byte|
+|g) Prints the top logo while clearing the<br>buffer to recover from a recoverable error.|30H, 31H|48, 49|1 byte|
+|h) Prints the top logo after paper feeding<br>with the paper Feed button has finished.|30H, 31H|48, 49|1 byte|
+
+
+
+[Model-dependent variations] TM-T20, TM-T88V 
+
+## TM-T20 
+
+**When c = 50 is specified: d) Reserved Hex: 30H Decimal: 48 Data amount: 1 byte** 
+
+## TM-T88V 
+
+**When** _**c**_ **= 50 is specified: d) Prints the top logo while paper feeding to the cutting position Hex: 30H, 31H** 
+
+**Decimal: 48, 49 Data amount: 1 byte** 

@@ -1,0 +1,9 @@
+function InitSender(ip, http_port) { AudioSender.Password = "jvc"; AudioSender.IP = ip.value; AudioSender.Port = http_port.value; } 
+
+// *************** PTZ Control *************** var f_init = 0; function PTControl(num){ if (f_init == 0) InitPTZCtrl(); PTZCtrl.ManualCtrl(num); } function ZoomControl(num){ if (f_init == 0) InitPTZCtrl(); 
+
+PTZCtrl.ZoomCtrl(num); } function InitPTZCtrl(){ PTZCtrl.OpPassword = "jvc"; PTZCtrl.IP = myForm.IP.value; PTZCtrl.HttpPort = myForm.HTTP_PORT.value; PTZCtrl.Initialize(); f_init = 1; } function mouse_up(){ PTZCtrl.Stop(); } function close_window(){ AudioSender.Destroy(); PTZCtrl.Destroy(); } </SCRIPT> <BODY STYLE="font-size:12px;font-family:arial;color:#ffffff" bgcolor="#000000" onunload="close_window()"> <!-- Viewer ActiveX --> <OBJECT ID="Viewer" WIDTH = 640 HEIGHT= 360 CLASSID="CLSID:C0795FC0-14E7-4A78-A928-88C3FBD2A1D0" STYLE="border-style:solid;border:1px;border-color:#ffffff;"> </OBJECT> <!-- Audio Monitor ActiveX --> <OBJECT ID="AudioMonitor" WIDTH = 1 HEIGHT= 1 CLASSID="CLSID:EEF1E8CA-D887-4530-97F9-4C79ABCAE520"> </OBJECT> <!-- Audio Sender ActiveX --> <OBJECT ID="AudioSender" WIDTH = 1 HEIGHT= 1 CLASSID="CLSID:CAA77F3F-FADA-48d6-A9F3-C4B1D74C0E77"> 
+
+106 
+
+Downloaded from www.Manualslib.com manuals search engine 

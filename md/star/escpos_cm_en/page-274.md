@@ -1,0 +1,40 @@
+Rev.2.52 
+
+## 2. Second Byte (Error Information) 
+
+|Bit|Contents|Status|Status|Targeted Status n|Targeted Status n|Targeted Status n|Targeted Status n|Targeted Status n|CompatibilityPer Model|CompatibilityPer Model|CompatibilityPer Model|CompatibilityPer Model|CompatibilityPer Model|CompatibilityPer Model|CompatibilityPer Model|CompatibilityPer Model|CompatibilityPer Model|CompatibilityPer Model|CompatibilityPer Model|CompatibilityPer Model|CompatibilityPer Model|CompatibilityPer Model|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|||“0”|“1”|Bit7|Bit3|Bit2|Bit1|Bit0|TSP600|TSP700|TSP800|TUP900|TSP1000|TSP700II|TSP650|TUP500|TSP800II|FVP10|BSC10|TSP043|TSP650II|TSP650IISK|
+|7|Fixed at “0”||||||||-|-|-|-|-|-|-|-|-|-|-|-|-|-|
+|6|Auto-recovery Error|No error|Error|||○|||○|○|○|○|○|○|○|○|○|○|○|○|○|○|
+|5|Non-recoverable<br>Error|No error|Error|||○|||○|○|○|○|○|○|○|○|○|○|○|○|○|○|
+|4|Fixed at “0”||||||||-|-|-|-|-|-|-|-|-|-|-|-|-|-|
+|3|Auto-cutter Error|No error|Error|||○|||○|○|○|○|○|○|○|○|○|○|○|○|○|○|
+|2|Black mark error|No error|Error|○|||||○|○|○|x|○|○|x|x|○|○|○|○|x|x|
+||Mechanical Error|No error|Error|||○|||x|x|x|○|x|x|x|○|x|x|x|x|x|x|
+|1|Paper SW input|No SW<br>Input|SW Input||||○||x|x|x|○|x|x|x|○|x|x|x|x|x|x|
+|0|Online recovery wait|No<br>waiting for<br>recovery|Wait for<br>recovery||||○||x|x|x|○|x|x|x|○|x|x|x|x|x|x|
+
+
+
+Bit-2:  Black mark error status is allocated for models not equipped with a presenter; mechanical error status is allocated to those models equipped with a presenter. Black mark error status is set only when the black mark is enabled. 
+
+A TUP900/TUP500 mechanical error represents a paper jam in the presenter and black mark errors. 
+
+## 3. Third Byte (Paper Detector Information) 
+
+|Bit|Contents|Status|Status|Targeted Status n|Targeted Status n|Targeted Status n|Targeted Status n|Targeted Status n|Compatibility Per Model|Compatibility Per Model|Compatibility Per Model|Compatibility Per Model|Compatibility Per Model|Compatibility Per Model|Compatibility Per Model|Compatibility Per Model|Compatibility Per Model|Compatibility Per Model|Compatibility Per Model|Compatibility Per Model|Compatibility Per Model|Compatibility Per Model|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|||“0”|“1”|Bit7|Bit3|Bit2|Bit1|Bit0|TSP600|TSP700|TSP800|TUP900|TSP1000|TSP700II|TSP650|TUP500|TPS800II|FVP10|BSC10|TSP043|TSP650II|TSP650IISK|
+|7|Fixed at “0”||||||||-|-|-|-|-|-|-|-|-|-|-|-|-|-|
+|6|Undefned (“0”)||||||||-|-|-|-|-|-|-|-|-|-|-|-|-|-|
+|5|Undefned (“0”)||||||||-|-|-|-|-|-|-|-|-|-|-|-|-|-|
+|4|Fixed at “0”||||||||-|-|-|-|-|-|-|-|-|-|-|-|-|-|
+|3|Paper out sensor|Has paper|Paper Out||○||||○|○|○|○|○|○|○|○|○|○|○|○|○|○|
+|2|Paper out sensor|Has paper|Paper Out||○||||○|○|○|○|○|○|○|○|○|○|○|○|○|○|
+|1|Near-end Sensor|Has paper|Paper Out||○||||○|○|○|○|○|○|○|○|○|○|○|○|○|x|
+|0|Near-end Sensor|Has paper|Paper Out||○||||○|○|○|○|○|○|○|○|○|○|○|○|○|x|
+
+
+
+ESC/POS Command Specifications 

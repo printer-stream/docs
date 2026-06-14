@@ -1,0 +1,34 @@
+## **C O N F I D E N T I A L** 
+
+## TM-P60 
+
+**The setting of Memory switch [Msw8-1] doesn’t affect the result of this command. The battery status is a status that is automatically transmitted. The status is transmitted in the following cases.** 
+
+- **The printer is booted by turning the power on, or resetting printer. (When Memory switch [Msw8-1] is ON)** 
+
+- **The “Power source” in the status is changed.** 
+
+- **The “Battery remaining amount“ in the status is changed.** 
+
+- **The printer processes this command.** 
+
+**The transmitted battery status from this printer is constructed by [Header ~ NUL] as shown in the following table.** 
+
+|**able.**||||
+|---|---|---|---|
+|**Transmitted data**|**Hex**|**Decimal**|**Amount of data**|
+|**Header**|**37H**|**55**|**1 byte**|
+|**Identifier**|**45H**|**69**|**1 byte**|
+|**Power source (*1)**|**30H or 31H**|**48 or 49**|**1 byte**|
+|**Battery remaining**<br>**amount (*2)**|**30H ~ 34H**|**48 ~ 52**|**1 byte**|
+|**NUL**|**00H**|**0**|**1 byte**|
+
+
+
+## **(*1) “Power source“ is as indicated in the following table.** 
+
+|**Power source**|**Power source**|**Information**|
+|---|---|---|
+|**Hex**|**Decimal**||
+|**30H**|**48**|**Power provided from AC adapter**|
+|**31H**|**49**|**Power provided from battery**|

@@ -1,0 +1,26 @@
+## **C O N F I D E N T I A L** 
+
+|**Command**|**Name**|**Function type**|
+|---|---|---|
+|ESC p|Generate pulse|MISCELLANEOUS COMMANDS|
+|ESC r|Select print color|CHARACTER COMMANDS|
+|ESC t|Select character code table|CHARACTER COMMANDS|
+|ESC u<br>*****|Transmit peripheral device status|STATUS COMMANDS|
+|ESC v<br>*****|Transmit paper sensor status|STATUS COMMANDS|
+|ESC {|Turn upside-down printing mode on/off|CHARACTER COMMANDS|
+|FS !|Set print mode(s) for Kanji characters|KANJI COMMANDS|
+|FS &|Select Kanji character mode|KANJI COMMANDS|
+|FS ( A|Define character effects of Kanji characters.|KANJI COMMANDS|
+|FS ( E|Group of commands for receipt enhancement control|MISCELLANEOUS COMMANDS|
+|FS ( L|Control of the label paper / black mark paper|PRINTING PAPER COMMANDS|
+|FS –|Turn underline mode on/off for Kanji characters|KANJI COMMANDS|
+|FS .|Cancel Kanji character mode|KANJI COMMANDS|
+|FS 2|Define user-defined Kanji characters|KANJI COMMANDS|
+|FS C|Select Kanji character code system|KANJI COMMANDS|
+|FS S|Set Kanji character spacing|KANJI COMMANDS|
+|FS W|Turn quadruple-size mode on/off for Kanji characters|KANJI COMMANDS|
+|FS ?|Cancel user-defined Kanji characters|KANJI COMMANDS|
+
+
+
+*** obsolete command** 

@@ -1,0 +1,31 @@
+## **C O N F I D E N T I A L** 
+
+**Waiting for the FEED button to be pressed when removing a label (when the peeling detector cannot detect a label due to sunlight)** 
+
+■ **Error cause status (** n **= 3)** 
+
+**If the cause of the recoverable error (bit 2) is a paper layout error, the printer can recover from the error by opening/closing the roll paper cover or by the** DLE ENQ **command, or pressing the paper feed button only when memory switch Msw 8-1 or Msw 8-2 is OFF. See Function 3 of** GS E **.** 
+
+**Bit 3 is not supported.** 
+
+■ **Continuous paper detection status (** n **= 4)** 
+
+**When the cover is open, the status of the roll paper end sensor (bit 5, 6) retain the value when the cover was closed immediately before.** 
+
+- **Peeler status (** n **= 8,** _**a**_ **= 3)** 
+
+**Bit 0: When the continuous issuing mode is selected, this bit is always 0.** 
+
+**Bit 2: When the peeling issuing mode is selected, this bit is changed during paper feeding or when a label is in the peeling position. When label removal is checked by pressing the paper feed button, this bit may be incorrect.  When the continuous issuing mode is selected, this bit is always 1.** 
+
+**Models other than the** TM-L90 **with Peeler** 
+
+**The default value is set by Msw 1-3.** 
+
+- **Error cause status (** n **= 3)** 
+
+**If the cause of the recoverable error (bit 2) is a paper layout error, the printer can recover from the error by opening/closing the roll paper cover or by the** DLE ENQ **command, or pressing the paper feed button only when memory switch Msw 8-2 is OFF. See Function 3 of** GS E **.** 
+
+■ **Continuous paper detection status (** n **= 4)** 
+
+**When the cover is open, the status of the roll paper end sensor (bit 5, 6) retain the value when the cover was closed immediately before.** 

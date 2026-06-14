@@ -1,0 +1,34 @@
+SETTING COMMAND 
+
+## **C O N F I D E N T I A L** 
+
+## **FS ?** 
+
+[Name] Cancel user-defined Kanji characters [Format] ASCII FS ? c1 c2 Hex 1C 3F c1 c2 Decimal 28 63 c1 c2 
+
+- [Printers not featuring this command] TM-T90, TM-T20, TM-T88IV, TM-T88V, TM-T70, TM-L90, TM-P60 
+
+[Range] The ranges of c1 and c2 differ, depending on specifications and the character code system used. The ranges of c1 and c2 for each model are as follows. 
+
+|**Models**|c1|c2|
+|---|---|---|
+|Japanese model (JIS code)|c1= 77H|21H≤ c2 ≤7EH|
+|Japanese model (SHIFT JIS code)|c1= ECH|40H≤ c2 ≤7EH,<br>80H≤ c2 ≤9EH|
+|Simplified Chinese|c1= FEH|A1H≤ c2 ≤FEH|
+|Traditional Chinese|c1= FEH|A1H≤ c2 ≤FEH|
+
+
+
+- [Description] Deletes the user-defined Kanji character pattern specified by the character codes (c1 and c2) of the currently selected Kanji font. 
+
+   - c1 specifies the first byte of a character code for a user-defined Kanji character. 
+
+   - c2 specifies the second byte of a character code for a user-defined Kanji character. 
+
+[Notes] 
+
+- This command is effective only for Japanese, Simplified Chinese, and Traditional Chinese models. 
+
+- After user-defined Kanji characters are canceled, a space is printed. 
+
+- The foreign character pattern of the selected Kanji character font is deleted. Use function 48 of  FS ( A to specify the Kanji character font. 

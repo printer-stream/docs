@@ -1,0 +1,7 @@
+## Line Thermal Printer 
+
+## STAR Line Mode **Command Specifications** 
+
+**Rev 1.12** 
+
+Star Micronics Co., Ltd. Special Products Division 

@@ -1,0 +1,9 @@
+| 
+
+1 PRINTER IS 705,80 . 10 PRINT "IN;PA300,279;SP2;FP0D;TLIO0;xT;" 20 FOR IT=i TO 10 30 PRINT "PR1000,0;XT;" 40 NEXT I 50 PRINT "TL;PU;PA300,279;PD" 60 GOSUB 1000 70 PRINT "TL1,0;PU;PA1300,279;PD;" 680 GOSUB 1000 90 PRINT "TLO,5;PU;PA2300,279;" 100 GOSUB 1000 110 PRINT "PA3OO, 7479; TL100; YT; PU; SPO; 120 STOP 1000 ! SUBROUTINE TO DRAW TICKS 1010 FOR J=1 TO 9 1020 PRINT "PRO,720;YT;" 1030 NEXT J 19040 RETURN 1050 END 
+
+## The Symbol Mode Instruction, SM 
+
+DESCRIPTION Biwirs symbol mode instruction, SM, is used with PA and PR commands, and provides the means to draw a single character which is centered at the end of each vector. 
+
+4-4 ENHANCING THE PLOT 

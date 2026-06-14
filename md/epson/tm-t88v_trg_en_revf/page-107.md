@@ -1,0 +1,37 @@
+Appendix 
+
+## Modes 
+
+The IEEE 1284 parallel interface supports the following two modes. 
+
+|Mode|Communication direction|Other information|
+|---|---|---|
+|Compatibility mode|Host→Printer communication|Centronics-compliant|
+|Reverse mode|Printer→Host communication|Assumes a data transfer from an<br>asynchronous printer|
+
+
+
+## Compatibility Mode 
+
+Compatibility mode allows data transmission from host to printer only: Centronics-compatible. 
+
+## Specification 
+
+|Specification|||
+|---|---|---|
+|Data transmission|8-bit parallel||
+|Synchronization|Externally supplied|STROBE<br>signals|
+|Handshaking|ACK<br>and BUSY signals||
+|Signal levels|TTL-compatible connector||
+|Connector|ADS-B36BLFDR176 (HONDA) or equivalent product||
+|Reverse communication|Nibble or byte mode||
+
+
+
+## Reverse Mode 
+
+The transfer of status data from the printer to the host proceeds in the nibble or byte mode. 
+
+This mode allows data transfer from an asynchronous printer under the control of the host. Data transfers in the nibble mode are made via the existing control lines in units of four bits (a nibble). In the byte mode, data transfer proceeds by making the 8-bit data lines bidirectional. Both modes fail to proceed concurrently in the compatibility mode, thereby causing half-duplex transmission. 
+
+**107** 

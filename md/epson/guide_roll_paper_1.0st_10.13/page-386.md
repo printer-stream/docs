@@ -1,0 +1,39 @@
+## **C O N F I D E N T I A L** 
+
+## [Notes for CODE39 (m = 4, 69) process] 
+
+   - The printer processes the start character (ASCII = ***/** Hex = 2Ah/Decimal = 42) as follows: 
+
+      - When the first bar code (d1) is “ ***** ”, the printer processes the data as a first character. 
+
+      - If the first bar code (d1) is not “ ***** ”, the printer adds a start character ( ***** ) automatically. 
+
+   - The printer processes the start character (ASCII = ***/** Hex = 2Ah/Decimal = 42) as follows: 
+
+      - When the last bar code (dk or dn) is “ ***** ”, the printer processes the data as a last character. 
+
+      - If the last bar code (dk or dn) is not “ ***** ”, the printer adds a last character ( ***** ) automatically. 
+
+      - When “ ***** ” is processed during bar code data processing, the printer processes “ ***** ” as a stop character. The printer prints data preceding “ ***** ” and finishes command processing. Therefore, data following “ ***** ” are processed as normal data. 
+
+   - Check digits are not calculated and added. 
+
+- [Notes for ITF (Interleaved 2 of 5) (m = 5, 70) process] 
+
+   - Start code and stop code are added automatically. 
+
+■ Check digits are not calculated and added. 
+
+- [Notes for CODABAR (NW-7) (m = 6, 71) process] 
+
+   - Start character and stop character are not added automatically. Transmit data including the codes. 
+
+      - Specify the start character (ASCII = “A“ ~ “D,” / “a“ ~ “d,”/ Hex = 41H ~ 44H, 61H ~ 64H, / Decimal = 65 ~ 68,/  97 ~ 100) at beginning of the data (d1). 
+
+      - Specify the stop character (ASCII = “A“ ~ “D,” / “a“ ~ “d,”/Hex = 41H ~ 44H, 61H ~ 64H, / Decimal = 65 ~ 68,/ 97 ~ 100) at end of the data (dk or dn). 
+
+      - Start character or stop character (ASCII = “A“ ~ “D,” / “a“ ~ “d,”/Hex = 41H ~ 44H, 61H ~ 64H,/ Decimal = 65 ~ 68, / 97 ~ 100) cannot be specified in bar code data. 
+
+      - The character (ASCII = “a“ ~ “d,”/Hex = 61H ~ 64H,/ Decimal =  97 ~ 100) is supported by some printer models. 
+
+■ Check digits are not calculated and added. 

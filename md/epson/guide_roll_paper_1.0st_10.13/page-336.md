@@ -1,0 +1,31 @@
+## **C O N F I D E N T I A L** 
+
+transmission buffer is 99 bytes; therefore, data that exceeds 99 bytes is ignored. When using this command, the host should be changed to the Reverse Mode immediately and execute a receive processing of status. 
+
+- Real time status can be differentiated by the information of bits 0, 1, 4, and 7 from other transmission data. If the data transmitted from the printer after outputting is “0xx1xx10”(x = 0 or 1), process the data as a real time status. 
+
+[Model-dependent variations] 
+
+TM-J2000/J2100, TM-T90, TM-T20, TM-T88IV, TM-T88V, TM-T70, TM-L90, TM-P60, TM-U230, TM-U220 
+
+## **Program Example for all printers** 
+
+PRINT #1, CHR$(&h10);CHR$(&h4);CHR$(2); ← Transmits offline status 
+
+PRINT #1, CHR$(&h10);CHR$(&h4);CHR$(&h7);CHR$(1); ← Transmits ink status A 
+
+## TM-J2000/J2100 
+
+**BUSY condition for a parallel interface is selected by memory switch 1-3.** 
+
+**Use this command according to the following rules; otherwise, the status might not be transmitted.** 
+
+■ **The next data is not transmitted until status is received after this command is transmitted.** 
+
+■ **Only when it is necessary to acquire plural, real-time status items continuously, this command can be transmitted continuously up to 6 times. However, the next data is not transmitted until all status is received in this case.** 
+
+■ **Roll paper sensor status (** n **= 4)** 
+
+**When the cover is open, the status of the roll paper end sensor (bit 5, 6) retain the value when the cover was closed immediately before.** 
+
+- **Ink status A / B (** n **= 7)** 

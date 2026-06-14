@@ -1,0 +1,9 @@
+## **C O N F I D E N T I A L** 
+
+**This printer is equipped with a print head configured in column format, which makes it faster to define data using this function than with Function 67 (raster format).** 
+
+**The [data value (k) + control information data value (16 bytes)] area of the NV graphics data domain is used when this function is executed.** 
+
+## TM-T90,TM-T20, TM-T88IV, TM-T88V, TM-T70,  TM-L90, TM-P60 
+
+**The printer does not support this function.** 

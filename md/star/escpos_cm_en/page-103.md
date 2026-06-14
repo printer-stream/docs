@@ -1,0 +1,39 @@
+Rev.2.52 
+
+## **<Function 69> GS ( L pL pH m fn kc1 kc2 x y   (fn=69)** 
+
+## **<Function 69> GS 8 L p1 p2 p3 p4 m fn kc1 kc2 x y   (fn=69)** 
+
+Name Print the specified NV graphics data 
+
+Code ASCII GS ( L pL pH m   fn  kc1  kc2 x y Hex. 1D   28  4C  pL  pH m   fn  kc1  kc2 x y Decimal   29   40  76  pL   pH m   fn  kc1  kc2 x y ASCII     GS   8    L p1  p2 p3 p4  m  fn  kc1  kc2 x y Hex. 1D   38  4C    p1  p2 p3 p4  m  fn  kc1  kc2 x y Decimal  29   56  76 p1  p2 p3 p4  m  fn  kc1  kc2 x y 
+
+Defined Region • Parameter for GS ( L (pL+pH×256)=6  (pL=6, pH=0) • Parameter for GS 8 L (p1+p2×256+p3x65536+p4x16777216)=6  (p1=6, p2=0, p3=0, p4=0) • Parameter are shared by for GS ( L and GS 8 L. m = 48 fn = 69 32 ≤ kc1 ≤ 126 32 ≤ kc2 ≤ 126 x = 1, 2 y = 1, 2 
+
+Function Prints the NV graphics data defined by key codes kc1 and kc2. • Selected data can be printed in the “horizontal x-times” by “vertical y-times” scale. Details • This function is used to print the NV graphics data defined by Function 67. 
+
+- Selected data can be printed in the “horizontal x-times” by “vertical y-times” scale. 
+
+- The printer prints data only when the NV graphics data that matches the specified key code is defined. 
+
+- If data with the specified key code is not found, the data of this counter is discarded. 
+
+- This command is effective only when no data exists in the print buffer in standard mode. 
+
+- If any data exists in the print buffer, the data for this counter is discarded. 
+
+- Data for this counter is discarded in page mode. 
+
+- If graphics that exceeds the print area size is specified, the data within the print area is printed out but the excess data is not printed out. 
+
+- The horizontal and vertical size of NV graphics can be specified by “x” and “y”. 
+
+- Excluding upside-down printing, print modes (emphasized printing, overlap printing, underlines, character sizes, black/white inverted printing, and 90 degree rotation) are unaffected. 
+
+- When normal mode or double-width mode is specified, the paper is fed for the number of dots (the height of NV graphics) and when double-height mode or 4x mode is specified, the paper is fed for the number of dots (NV graphics height multiplied by 2) regardless of the settings of default line spacing (ESC 2) and line feed amount (ESC 3). 
+
+- After these graphics are printed, the next printing starts at the beginning of a line (the printer is at the “beginning of the line” and has “no print data”), and subsequent data is processed as normal data. 
+
+ESC/POS Command Specifications 
+
+103 

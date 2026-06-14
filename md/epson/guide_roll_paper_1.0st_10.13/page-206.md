@@ -1,0 +1,23 @@
+## **C O N F I D E N T I A L** 
+
+[Model-dependent variations] 
+
+TM-J2000/J2100, TM-T90, TM-T20,  TM-T88IV **,** TM-T88V **,** TM-T70, TM-L90, TM-U230, TM-U220 
+
+**Program Example for all printers** m=0:  GOSUB bitimage8 ← 8-dot single-density m=1:  GOSUB bitimage8 ← 8-dot double-density END bitimage8: PRINT #1, CHR$(&H1B);"✻";CHR$(m);CHR$(70);CHR$(0); FOR i=1 TO 5 PRINT #1, CHR$(1);CHR$(2);CHR$(4);CHR$(8); PRINT #1, CHR$(16);CHR$(32);CHR$(64);CHR$(128); PRINT #1, CHR$(64);CHR$(32);CHR$(16);CHR$(8); PRINT #1, CHR$(4);CHR$(2); NEXT i PRINT #1, CHR$(&HA); RETURN 
+
+**==> picture [72 x 12] intentionally omitted <==**
+
+**----- Start of picture text -----**<br>
+Print Sample<br>**----- End of picture text -----**<br>
+
+
+m=0 m=1 
+
+## TM-J2000 **(single-color printing model)** 
+
+**The bit image modes selectable by** m **are as follows:** 
+
+**“Vertical” is in the direction of paper feeding and “horizontal” is perpendicular (at right angles) to the direction of paper feeding.** 
+
+**See Function 5 of** GS E **for specifying the paper.** 

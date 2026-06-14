@@ -1,0 +1,7 @@
+## **C O N F I D E N T I A L** 
+
+- **Paper sensor status (** n **= 1, 49)** 
+
+- **The roll paper near-end sensor is an option. If the printer is not equipped with the paper near-end sensor, bits 0 and 1 of the paper sensor status are always OFF “Paper adequate.”** 
+
+- **When the roll paper end sensor detects a paper-end, the printer goes offline and does not execute this command. Therefore, bits 2 and 3 of the paper sensor status do not transmit a paper-end status.** 

@@ -1,0 +1,20 @@
+## **ESC GS A n1 n2** 
+
+|[Name]|Move absolute position|Move absolute position||||
+|---|---|---|---|---|---|
+|[Code]|ASCII|ESC GS|A|n1|n2|
+||Hex.|1B<br>1D|41|n1|n2|
+||Decimal|27<br>29|65|n1|n2|
+|[Defined Area]||0≤<br>n1≤<br>255||||
+|||0≤<br>n2≤<br>255||||
+|[Initial Value]||- - -||||
+|[Function]|[Function]|Moves the printing position from the left margin to the (n1 + n2 x 256) position.||||
+|||This command is ignored if the print region is exceeded.|This command is ignored if the print region is exceeded.||This command is ignored if the print region is exceeded.|
+
+
+
+## **ESC GS R n1 n2** 
+
+[Name] Move relative position [Code] ASCII ESC GS R n1 n2 Hex. 1B 1D 52 n1 n2 Decimal 27 29 82 n1 n2 [Defined Area] 0≤n1≤255 0≤n2≤255 [Initial Value] - - - [Function] Moves the printing position from the current position to the (n1 + n2 x 256) position. This command is ignored if the print region is exceeded. When (n1 + n2 x 256) ≥ 32768, it moves {65536 – (n1 + n2 x 256)} dots in the left direction. When (n1 + n2 x 256) < 32768, it moves (n1 + n2 x 256)} dots in the right direction. 
+
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― STAR Line Mode Command Specifications 3-30 

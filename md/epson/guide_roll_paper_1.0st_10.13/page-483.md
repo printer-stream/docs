@@ -1,0 +1,28 @@
+## **C O N F I D E N T I A L** 
+
+## **<The fourth byte: information for recoverable error>** 
+
+|**Bit**|**Off/On **|**Hex **|**Decimal **|**Information**|
+|---|---|---|---|---|
+|**6**|**On**|**40**|**64**|**Fixed.**|
+|**7**|**0**|**00**|**0**|**Fixed.**|
+
+
+
+**When one of above errors occurs, the error can be canceled by executing** DLE ENQ **(** n **=2) after clearing the error cause.** 
+
+**<The fifth byte: information for unrecoverable error>** 
+
+|**Bit**|**Off/On **|**Hex **|**Decimal **|**Function**|
+|---|---|---|---|---|
+|**0**|**Off**|**00**|**0**|**Roll paper cover open error hasn’t occurred.(When Msw [8-8] is OFF)**|
+||**On**|**01**|**1**|**Roll paper cover open error has occurred.(When Msw [8-8] is OFF)**|
+|**2 ~ 5 **|**-**|**-**|**-**|**Reserved.**|
+|**6**|**On**|**40**|**64**|**Fixed.**|
+|**7**|**0**|**00**|**0**|**Fixed.**|
+
+
+
+**When the error of bit 0 occurs, the error can be canceled by closing the roll paper cover.** 
+
+**When the error of bit 1 occurs, the error is automatically canceled when the temperature of the print head returns to the specified temperature range.** 

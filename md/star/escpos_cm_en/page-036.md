@@ -1,0 +1,15 @@
+Rev.2.52 
+
+## **CR** 
+
+Name Print and carriage return Code ASCII CR Hex. 0D Decimal 13 Function • When an automatic line feed is enabled, this command functions in the same way as LF (print and line feed).  When the automatic line feed is disabled, this command is ignored. Details • This command is ignored with serial interface models. 
+
+- The operations of this command are selected by the memory switch <CR> code: Ignore/ same as <LF> for parallel interface models. 
+
+- • Sets the print position to the beginning of the next line after execution. 
+
+- Reference LF 
+
+ESC/POS Command Specifications 
+
+36 

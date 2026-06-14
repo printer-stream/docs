@@ -1,0 +1,33 @@
+## **C O N F I D E N T I A L** 
+
+- d specifies the defined data (column format). 
+
+- k indicates the number of defined data. k is an explanation parameter; therefore it does not need to be transmitted. 
+
+## [Notes] 
+
+- Character codes from the alphanumeric characters in Hexadecimal: 20H to 7EH /  in Decinal: 32 to 126 can be defined. 
+
+- Data (d) specifies a bit printed to 1 and not printed to 0. The dot pattern is in the horizontal direction from the left side. Any remaining dots on the right side are blank. 
+
+- The data to define a user-defined character is (y × x) bytes. 
+
+- When the value of y, c1, c2, or x is out of the range, this command is canceled, and the following data is processed as normal data. 
+
+- This command can define user-defined characters for each font independently. To select a font, use ESC ! or ESC M. 
+
+- A user-defined character, downloaded graphics, and downloaded bit image cannot be defined simultaneously on some printer models. 
+
+   - When this command is executed, the downloaded bit image is cleared. 
+
+   - When GS ( L <Function 83> <Function 84> or GS ✻ is executed, the user-defined character data is cleared. 
+
+- Once the user-defined characters have been defined, they are available until ESC ?, GS ✻, or ESC @ is executed; the user-defined characters are redefined; the power is turned off; or the printer is reset. 
+
+- The user-defined characters are not defined at the default, and the resident characters are printed. 
+
+- The relationship between the definition data and printing result is as follows. Example: Downloaded character definition consists of 9 × 7 dots. 
+
+|d1|d3|d5|d7|d9|d11|d13|MSB<br>LSB<br>MSB<br>LSB|
+|---|---|---|---|---|---|---|---|
+|d2|d4|d6|d8|d10|d12|d14||

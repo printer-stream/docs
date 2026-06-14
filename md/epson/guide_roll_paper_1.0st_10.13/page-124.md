@@ -1,0 +1,35 @@
+## **C O N F I D E N T I A L** 
+
+## **ESC E** 
+
+SETTING COMMAND 
+
+[Name] Turn emphasized mode on/off 
+
+[Format] ASCII ESC E n Hex 1B 45 n Decimal 27 69 n [Range] 0 ≤ n ≤ 255 
+
+- [Default] n = 0 
+
+- [Printers not featuring this command] None 
+
+- [Description] Turns emphasized mode on or off. 
+
+   - When the LSB of n is 0, emphasized mode is turned off. 
+
+   - When the LSB of n is 1, emphasized mode is turned on. 
+
+- [Notes] 
+
+- This mode is effective for alphanumeric, Kana, multilingual, and user-defined characters. 
+
+- The settings of this command are effective until ESC ! is executed, ESC @ is executed, the printer is reset, or the power is turned off. 
+
+[Model-dependent variations] 
+
+## TM-U230, TM-U220 
+
+**Program Example for all printers Print Sample** PRINT #1, CHR$(&H1B);"E";CHR$(1); ← Select **AAAAA** ← Emphasized PRINT #1, "AAAAA"; CHR$(&HA); BBBBB ← Normal PRINT #1, CHR$(&H1B);"E";CHR$(0); ← Cancel PRINT #1, "BBBBB"; CHR$(&HA); 
+
+## TM-U220, TM-U230 
+
+**Print speed is slow when emphasized mode on because this printer prints with 2 passes in this mode.** 

@@ -1,0 +1,27 @@
+## **C O N F I D E N T I A L** 
+
+■ This function is used when using label paper or black mark paper. 
+
+- The paper feed operation is ended when no paper is detected in the paper feed to the print start position. 
+
+- [Position information A] transmitted by Function 48 becomes (bit 2 = 1) when this function is processed. Moreover, the print area of the label paper or black mark paper that the print position includes the print start position becomes “current label,” and the following label of the current label becomes “next label.” 
+
+[Model-dependent variations] TM-L90, TM-P60 
+
+## TM-L90 
+
+**When the positioning information B of** FS ( L **<Function 48> is [Bit 0 = 1: Impossible to feed paper to the print starting position on the next label], the operation of (** m **= 50) is as follows:** 
+
+**When the peeling issuing mode is selected, the printer does not feed.** 
+
+**When the continuous issuing mode is selected, the printer feeds paper to the print starting position on the next label.** 
+
+**Switching between the peeling issuing mode and the continuous issuing mode can be done with a slide switch on the printer. This switch can be used when the roll paper cover is open.** 
+
+## TM-P60 
+
+## **[Peeler model]** 
+
+**This function operates when (** sm **= "1", "2", "3") is specified for the layout reference.** 
+
+**This function does not operate when the position information of <Function 48> of this command is "Feed current label to the print starting position is not possible."** 

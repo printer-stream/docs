@@ -1,0 +1,13 @@
+Rev.2.52 
+
+- Notes: • There is the potential of damaging the non-volatile memory by overusing the command to write to that memory (FS g 1), so only use this command once a day to write to the nonvolatile memory. 
+
+   - The printer may enter a busy state while writing data to the non-volatile memory when using this command.  While the printer is busy, the printer will stop receptions so data will not be received from the host (including real-time commands). 
+
+- STAR • STAR printers ignore this command.   (It receives and discards the writing data of nL + nH x 256.) 
+
+Reference FS g 2 
+
+ESC/POS Command Specifications 
+
+79 
