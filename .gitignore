@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.venv-*/
+venv/
+env/
+
+# Local model / HF caches
+.cache/
+*.egg-info/
+
+# Note: index/ is intentionally tracked — it's built by CI and loaded by the
+# MCP server at boot.

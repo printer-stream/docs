@@ -1,0 +1,58 @@
+name: Build search index
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'md/**'
+      - 'mcp-server/indexer.py'
+      - 'mcp-server/corpus.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Share the serialization group so this never pushes to main at the same time
+# as the PDF conversion / render workflows.
+concurrency:
+  group: pdf-artifacts-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  index:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r mcp-server/requirements.txt
+
+      - name: Build index
+        env:
+          # Optional: set OPENAI_API_KEY as a repo secret to get LLM summaries.
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: python mcp-server/indexer.py
+
+      - name: Commit index if changed
+        run: |
+          if [ -n "$(git status --porcelain index/)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add index/
+            git commit -m "[Auto] Rebuild search index"
+            git pull --rebase origin main
+            git push
+          else
+            echo "Index unchanged."
+          fi

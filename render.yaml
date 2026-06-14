@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: printerrr-docs-mcp
+    runtime: python
+    plan: starter
+    repo: https://github.com/printer-stream/docs
+    branch: main
+    buildCommand: pip install -r mcp-server/requirements.txt
+    # The index is committed to the repo, so boot only loads it (no rebuild).
+    startCommand: cd mcp-server && python server.py
+    healthCheckPath: /mcp
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12"
+      - key: PORT
+        value: "8000"
+      - key: DOCS_EMBED_MODEL
+        value: "BAAI/bge-small-en-v1.5"

@@ -26,30 +26,44 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Install poppler-utils
-        run: sudo apt-get update && sudo apt-get install -y poppler-utils
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install OCR tooling
+        run: sudo apt-get update && sudo apt-get install -y ocrmypdf tesseract-ocr
+
+      - name: Install pymupdf4llm
+        run: pip install pymupdf4llm
 
       - name: Convert new PDFs to Markdown
         run: |
           any_new=false
           while IFS= read -r -d '' pdf; do
-            # Strip leading ./ and .pdf extension to get FILENAME
+            # Strip leading ./ and .pdf extension to get the doc stem
             filename="${pdf#./}"
             filename="${filename%.pdf}"
-            outfile="md/${filename}/README.md"
-            if [ ! -f "$outfile" ]; then
-              mkdir -p "$(dirname "$outfile")"
-              pdftotext -layout "$pdf" "$outfile"
-              echo "Converted: $pdf -> $outfile"
-              any_new=true
+
+            # Skip if already converted
+            if [ -f "md-bulk/${filename}/README.md" ]; then
+              continue
             fi
+
+            # pymupdf4llm writes md-bulk/<stem>/README.md and md/<stem>/page-NN.md.
+            # Per-page slices stay 1:1 with the JPEG page-NN.jpg renders, giving the
+            # search/MCP layer a text+image pair for every page.
+            python scripts/pdf_to_markdown.py "$pdf" "$filename"
+
+            echo "Converted: $pdf -> md-bulk/${filename}/README.md + md/${filename}/page-*.md"
+            any_new=true
           done < <(find . -name '*.pdf' -print0)
 
           if [ "$any_new" = true ]; then
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add md/
-            git commit -m "[Auto] Convert PDFs to Markdown"
+            git add md/ md-bulk/
+            git commit -m "[Auto] Convert PDFs to Markdown (bulk + per-page)"
             git pull --rebase origin main
             git push
           else
