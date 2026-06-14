@@ -25,6 +25,7 @@ import sqlite_vec
 from mcp.server.fastmcp import FastMCP
 from sentence_transformers import SentenceTransformer
 
+from version import __version__
 from corpus import INDEX_PATH
 
 EMBED_MODEL = os.environ.get("DOCS_EMBED_MODEL", "BAAI/bge-small-en-v1.5")
@@ -247,6 +248,10 @@ def get_page(stem: str, page: int) -> dict:
     log.info("get_page -> %s page %d (%d chars)", stem, page, len(row["text"]))
     return dict(row)
 
+@mcp.tool()
+def version() -> dict:
+    """Return the server version."""
+    return {"version": __version__}
 
 if __name__ == "__main__":
     log.info("=== printer-stream-docs MCP server starting ===")
