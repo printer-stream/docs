@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: printerrr-docs-mcp
+    name: printer-stream-docs-mcp
     runtime: python
     plan: starter
     repo: https://github.com/printer-stream/docs
@@ -11,7 +11,7 @@ services:
     healthCheckPath: /mcp
     envVars:
       - key: PYTHON_VERSION
-        value: "3.12"
+        value: "3.13"
       - key: PORT
         value: "8000"
       - key: DOCS_EMBED_MODEL
