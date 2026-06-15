@@ -1,4 +1,4 @@
-name: Build search index
+name: Render search index
 
 on:
   push:
