@@ -19,6 +19,7 @@ RUN apt-get update && apt-get install -y \
     gcc \
     sqlite3 \
     libsqlite3-dev \
+    cmake \
  && rm -rf /var/lib/apt/lists/*
 
 # Build context is the repo root; requirements.txt lives in mcp-server/.
