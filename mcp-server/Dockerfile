@@ -2,7 +2,7 @@
 # cached embedding model). Pass DEPS_IMAGE and DEPS_VERSION at build time to
 # pin a specific release; the defaults here are fallbacks for local builds only.
 ARG DEPS_IMAGE=ghcr.io/printer-stream/docs/mcp-dependencies-image
-ARG DEPS_VERSION=1.1.0
+ARG DEPS_VERSION=1.2.0
 FROM ${DEPS_IMAGE}:${DEPS_VERSION}
 
 ARG APP_VERSION=dev

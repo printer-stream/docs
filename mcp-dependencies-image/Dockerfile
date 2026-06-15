@@ -25,11 +25,3 @@ RUN apt-get update && apt-get install -y \
 # Build context is the repo root; requirements.txt lives in mcp-server/.
 COPY mcp-server/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
-
-# Pre-download the embedding model so the first server/indexer start is instant.
-# The model is cached in HF_HOME and inherited by every image built FROM this one.
-# (Local summarisation is opt-in — its model is fetched on demand at index time,
-# not baked in here, to keep this shared layer slim.)
-ARG DOCS_EMBED_MODEL=BAAI/bge-small-en-v1.5
-ENV DOCS_EMBED_MODEL=${DOCS_EMBED_MODEL}
-RUN python -c "import os; from sentence_transformers import SentenceTransformer; SentenceTransformer(os.environ['DOCS_EMBED_MODEL'])"
