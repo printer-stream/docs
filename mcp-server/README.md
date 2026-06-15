@@ -1,4 +1,4 @@
-# printerrr-docs MCP server
+# Printer Stream Docs - MCP server
 
 A Model Context Protocol server that lets AI tools (GitHub Copilot, Claude,
 etc.) search the printer/device specification corpus in this repo and ground
@@ -6,24 +6,16 @@ answers in the exact page text and image.
 
 ## How it works
 
-```
-PDF push ──► md/ + jpeg/ (per-page text & images)
-                 │
-                 ├─ search-index.yml (CI) ─► index/specs.db  (committed)
-                 │       chunks + FTS5 full-text + doc summaries
-                 │
-                 └─ Render web service loads index/specs.db read-only
-                          │
-                          └─ MCP tools over Streamable HTTP ──► Copilot / Claude
-```
+1. PDF file(s) pushed
+2. Rendering starts: markdown per-page, markdown bulk, JPEG
+3. Index is built
+4. MCP Server Docker image is built
+5. MCP Server is deployed
 
 - **Text↔image alignment:** every page is `md/<doc>/page-NN.md` paired with
   `jpeg/<doc>/{small,big}/page-NN.jpg`. Search results carry image URLs for the
   hit page and the pages around it.
-- **Full-text search:** SQLite FTS5 / BM25 keyword search over page bodies,
-  headings, and summaries, with exact `ESC`/`GS`/hex command-token lookups. No
-  embeddings — startup is fast and the dependency stack is tiny. (Vector search
-  may return later behind a low-cost store; see TASK-1-SIMPLIFY.md.)
+- **Full-text search:** keyword search over page bodies, headings, and summaries.
 - **Summaries:** each document gets an extractive "what devices/technologies it
   covers" blurb, exposed via `get_document_summary` and searchable.
 
@@ -40,158 +32,32 @@ PDF push ──► md/ + jpeg/ (per-page text & images)
 
 Page images are returned as URLs built from `DOCS_STATIC_BASE_URL` (e.g. a CDN);
 when it is unset the server serves them itself under `/static/...` and returns
-relative URLs.
+relative URLs (`DOCS_BASE_URL`).
 
 ## Build the index
 
-```bash
-pip install -r mcp-server/requirements.txt
-python mcp-server/indexer.py          # writes index/specs.db
-```
-
-Document summaries are extractive (title + leading text) — deterministic, free,
-and built in CI on every `md/` change. No model download is involved.
+TBD
 
 ## Run locally
 
-```bash
-pip install -r mcp-server/requirements.txt
-cd mcp-server && python server.py     # Streamable HTTP on :8000 (/mcp)
-```
-
-> Requires Python 3.10+ (the `mcp` package does not support 3.9; CI and Render
-> pin 3.13). Startup just opens the committed index — there is no model to load,
-> so it is effectively instant. You will see:
->
-> ```
-> INFO [printer-stream-docs] === printer-stream-docs MCP server starting ===
-> INFO [printer-stream-docs] Index ready in 0.08s: 9 document(s), 2153 chunk(s)
-> INFO [printer-stream-docs] Warm-up complete in 0.09s -- server ready to serve queries
-> INFO Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
-> ```
->
-> Logging env vars: `DOCS_LOG_LEVEL=DEBUG` for per-query detail (FTS candidate
-> counts, timing); `DOCS_VERBOSE_DEPS=1` to also show the underlying httpx
-> chatter (hidden by default).
+TBD
 
 ## Validation
 
-After building the index, verify the index and the server before deploying.
-
-### 1. Verify the index file
-
-```bash
-python - <<'PY'
-import sqlite3
-db = sqlite3.connect("index/specs.db")
-docs   = db.execute("SELECT COUNT(*) FROM documents").fetchone()[0]
-chunks = db.execute("SELECT COUNT(*) FROM chunks").fetchone()[0]
-fts    = db.execute("SELECT COUNT(*) FROM fts_chunks").fetchone()[0]
-print(f"documents={docs} chunks={chunks} fts_chunks={fts}")
-assert chunks == fts and chunks > 0, "chunk / fts counts must match and be non-zero"
-print("OK: index is internally consistent")
-PY
-```
-
-Expected: `chunks` and `fts_chunks` are equal and non-zero (no `vec_chunks`
-table exists — search is FTS-only).
-
-### 2. Exercise the tools directly (no HTTP)
-
-```bash
-cd mcp-server && python - <<'PY'
-import server
-server.warm_up()                                   # logs index load timing
-print("docs   :", [d["stem"] for d in server.list_documents()])
-print("summary:", server.get_document_summary("star/star_graphic_cm_en")["title"])
-hits = server.search_specs("how to print a bit image graphic", k=3)
-for h in hits:
-    print(f"  p{h['page']:>3}  {h['score']}  {h['image_small_url']}  +{len(h['neighbors'])} neighbours")
-print("page 1 :", server.get_page("star/star_graphic_cm_en", 1)["image_big_url"])
-PY
-```
-
-Each `search_specs` result must include a `page`, the matching
-`image_small_url` / `image_big_url` for that page, and a `neighbors` list of the
-surrounding pages.
-
-### 3. Smoke-test the HTTP transport
-
-Start the server, then in another shell:
-
-```bash
-# Should return HTTP 200
-curl -s -o /dev/null -w "init: %{http_code}\n" \
-  -X POST http://127.0.0.1:8000/mcp \
-  -H "Content-Type: application/json" \
-  -H "Accept: application/json, text/event-stream" \
-  -d '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"curl","version":"0"}}}'
-```
-
-For full interactive testing, use the MCP Inspector:
-
-```bash
-npx @modelcontextprotocol/inspector
-# Transport: Streamable HTTP   URL: http://127.0.0.1:8000/mcp
-```
+TBD
 
 ## Measuring search quality
 
-`evaluate.py` quantifies retrieval quality with **recall@k**, **MRR@10**, and
-query latency. It is self-supervised: for a sample of pages it derives a query
-the page should answer, runs `search_specs`, and checks where the source page
-ranks. (It calls `search_specs` directly, isolating retrieval quality from the
-HTTP transport.)
-
-```bash
-cd mcp-server
-
-# No-LLM mode: queries built from page headings / salient tokens (zero deps).
-python evaluate.py --sample 30 --no-llm
-
-# LLM mode: natural questions per page -> realistic test of conceptual search.
-# Uses OpenAI if OPENAI_API_KEY is set (or any OpenAI-compatible endpoint via
-# OPENAI_BASE_URL + DOCS_EVAL_LLM=1, e.g. a local Ollama/LM Studio model).
-export OPENAI_API_KEY=sk-...
-python evaluate.py --sample 30
-```
-
-Sample output:
-
-```
-=== Search quality ===
-queries          : 20  (fallback generated)
-recall@1         : 0.850  (17/20)
-recall@3         : 1.000  (20/20)
-recall@5         : 1.000  (20/20)
-MRR@10           : 0.917
-latency p50 / p95: 26 ms / 875 ms
-```
-
-Notes:
-- **recall@k** = fraction of queries whose source page appears in the top k.
-  **MRR@10** = mean of 1/rank of the source page. Higher is better; 1.0 is perfect.
-- No-LLM numbers are optimistic (queries share vocabulary with the page).
-  LLM-generated queries are the honest measure of conceptual retrieval -- use
-  them before trusting the numbers.
-- Re-run after changing the indexer or query handling to catch regressions.
-  The `--seed` flag keeps the page sample reproducible.
+TBD
 
 ## Deploy on Render
 
-`render.yaml` (repo root) defines a Python web service. The index is committed,
-so boot only loads it. Connect a client to `https://<service>.onrender.com/mcp`.
+Currently we use render.com with a manual deployment via a docker image.
 
 ### Connect from VS Code / Copilot
 
-```jsonc
-// .vscode/mcp.json
-{
-  "servers": {
-    "printerrr-docs": {
-      "type": "http",
-      "url": "https://<service>.onrender.com/mcp"
-    }
-  }
-}
-```
+TBD
+
+### Validate results from VS Code / Copilot
+
+TBD

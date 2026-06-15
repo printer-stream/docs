@@ -1,3 +1,0 @@
-## **C O N F I D E N T I A L** 
-
-**In standard mode, symbols with height greater than 1,200 dots cannot be printed with this printer. 2-dimensional GS1 DataBar symbols are printed with the “printing control mode = fine” regardless of the setting of Function 48 of** GS ( K **.** 

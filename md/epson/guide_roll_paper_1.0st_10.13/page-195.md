@@ -1,9 +1,0 @@
-## **C O N F I D E N T I A L** 
-
-## **GS W** 
-
-SETTING COMMAND 
-
-[Name] Set print area width [Format] ASCII GS W nL nH Hex 1D 57 nL nH Decimal 29 87 nL nH [Range] 0 ≤ (nL + nH × 256) ≤ 65535 (0 ≤ nL ≤ 255, 0 ≤ nH ≤ 255) [Default] Entire printable area TM-J2000/J2100 **:** nL **= 0,** nH **= 2 (when paper width is set to 82.5 mm)** nL **= 224,** nH **= 1 (when paper width is set to 76 mm)** nL **= 176,** nH **= 1 (when paper width is set to 69.5 mm)** nL **= 104,** nH **= 1 (when paper width is set to 57.5 mm)** TM-T90 **: [Other than Japanese model]** nL **= 0,** nH **= 2 (when paper width is set to 80 mm)** nL **= 128,** nH **= 1 (when paper width is set to 60 mm)** nL **= 104,** nH **= 1 (when paper width is set to 58 mm) [Japanese model]** nL **= 64,** nH **= 2 (when paper width is set to 80 mm)** nL **= 180,** nH **= 1 (when paper width is set to 60 mm)** nL **= 164,** nH **= 1 (when paper width is set to 58 mm)** TM-T20 **: (** nL **+** nH × **256) = 576 (** nL **= 64,** nH **= 2) (when paper width is set to 80 mm) (** nL **+** nH × **256) = 546 (** nL **= 34,** nH **= 2) (when paper width is set to 80 mm and “Column emulation: 42 column mode” is selected) (** nL **+** nH × **256) = 420 (** nL **= 164,** nH **= 1) (when paper width is set to 58 mm) (** nL **+** nH × **256) = 378 (** nL **= 122,** nH **= 1) (when paper width is set to 58 mm and “Column emulation: 42 column mode” is selected)** TM-T88IV, TM-T88V **:** 
-
-nL **+** nH **x 256 = 512 (** nL **= 0,** nH **= 2) (when paper width is set to 80 mm)** nL **+** nH **x 256 = 360 (** nL **= 104,** nH **= 1) (when paper width is set to 58 mm)** TM-T70 **:** nL **+** nH **x 256 = 512 (** nL **= 0,** nH **= 2) (Other than Japanese model)** nL **+** nH **x 256 = 576 (** nL **= 64,** nH **= 2) (Japanese model (paper width 80 mm))** nL **+** nH **x 256 = 416 (** nL **= 160,** nH **= 1) (Japanese model (paper width 58 mm))** 

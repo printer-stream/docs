@@ -1,7 +1,0 @@
-Rev.2.52 
-
-• m: Mode Selection • N: Memory switch number to specify • n1 n2 n3 n4:  Specified Data • m = “,” → Specified Data • m = “+” → Bit number to set • m = “-” → Bit number that was cleared. 
-
-ESC/POS Command Specifications 
-
-185 

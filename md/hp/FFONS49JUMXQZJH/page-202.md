@@ -1,7 +1,0 @@
-**==> picture [362 x 504] intentionally omitted <==**
-
-**----- Start of picture text -----**<br>
-OC The Output Commanded Position and Page 7-4<br>Pen Status Instruction<br>OC (;)<br>Purpose: Used to output the pen position and status at time of<br>command.<br>Response: X,Y,P [TERM] — decimal numbers,* in ASCII.<br>X,Y — —32 768 to 32 767.<br>P — 0, pen up or 1, pen down.<br>Plotter units unless scaling in effect; then in user units.<br>OD The Output Digitized Point and Page 6-3<br>Pen Status Instruction<br>OD (;)<br>Purpose: Used to output the physical pen position and status for<br>the last digitized point.<br>Response: XY,P [TERM] — integers, in ASCII.<br>X,Y — In plotter units, within mechanical limits.<br>P — 0, pen up or 1, pen down.<br>OE The Output Error Instruction Page 7-5<br>OE (;)<br>Purpose: Used to output the last HP-GL error.<br>Response: error number [TERM] — a positive ASCII integer,<br>0 through 8, excluding 4.<br>OF The Output Factors Instruction Page 7-6<br>OF (;)<br>Response: 40, 40 [TERM] — integers, in ASCII.<br>OI The Output Identification Instruction Page 7-7<br>OF (;)<br>Purpose: Used to output the plotter’s identification.<br>Response: 7470A [TERM]— ASCII string.<br>**----- End of picture text -----**<br>
-
-
-*If you have an HP-IB or RS-232-C plotter that has a serial prefix number lower than 2308A, OC parameters are output as integers. For more information, refer to the explanation of the OC instruction on page 7-4. B-6 INSTRUCTION SYNTAX 
