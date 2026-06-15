@@ -61,8 +61,6 @@ jobs:
       BRANCH_NAME: ${{ needs.validate_new_version.outputs.branch_name }}
       APP_NAME: "mcp-index-image"
 
-    if: >
-      github.event_name == 'push'
 
     steps:
 

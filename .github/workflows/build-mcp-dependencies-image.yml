@@ -62,9 +62,6 @@ jobs:
       BRANCH_NAME: ${{ needs.validate_new_version.outputs.branch_name }}
       APP_NAME: "mcp-dependencies-image"
 
-    if: >
-      github.event_name == 'push'
-
     steps:
 
       - name: Check out code
