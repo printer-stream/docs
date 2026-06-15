@@ -85,6 +85,7 @@ jobs:
           registry_token: "${{ secrets.GITHUB_TOKEN }}"
           name: "${{ github.repository }}/${{ env.APP_NAME }}"
           planned_version: "${{ env.PLANNED_VERSION }}"
+          default_branch: main
           dockerfile: "mcp-index-image/Dockerfile"
           build_args: |-
             APP_VERSION=${{ env.PLANNED_VERSION }}
