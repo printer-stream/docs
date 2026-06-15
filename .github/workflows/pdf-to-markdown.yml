@@ -1,4 +1,4 @@
-name: PDF to Markdown
+name: Render PDF to Markdown
 
 on:
   push:
