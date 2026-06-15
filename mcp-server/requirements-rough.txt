@@ -1,8 +1,7 @@
+# Top-level runtime dependencies for the FTS5-only MCP server + indexer.
+# Search is pure SQLite FTS5 -- no embeddings, so the heavy ML stack
+# (torch / transformers / sentence-transformers / sqlite-vec) is gone.
+# The fully pinned transitive closure lives in requirements.txt.
 mcp>=1.2.0
-sentence-transformers>=3.0.0
-sqlite-vec>=0.1.6
 pydantic-settings>=2.0.0
-# Local document summarisation (flan-t5 via transformers). transformers + torch
-# already ship with sentence-transformers; sentencepiece is the T5 tokenizer.
-transformers>=4.40.0
-sentencepiece>=0.2.0
+uvicorn>=0.30.0

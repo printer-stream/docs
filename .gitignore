@@ -10,5 +10,9 @@ env/
 .cache/
 *.egg-info/
 
+# OS metadata and local secrets — never commit these.
+.DS_Store
+**/.env
+
 # Note: index/ is intentionally tracked — it's built by CI and loaded by the
 # MCP server at boot.

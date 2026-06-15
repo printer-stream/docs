@@ -1,4 +1,4 @@
-"""Measure search quality of the MCP server's hybrid retrieval.
+"""Measure search quality of the MCP server's full-text (FTS5) retrieval.
 
 Strategy (self-supervised, no manual labels): for a sample of pages, derive a
 query that the page should answer, run search_specs, and check where the source
@@ -20,13 +20,12 @@ HTTP transport. For transport/interactive testing use the MCP Inspector.
 from __future__ import annotations
 
 import argparse
-import asyncio
 import logging
 import random
 import re
 import time
 
-import server  # reuses the same index + model + search_specs
+import server  # reuses the same index + search_specs
 from config import cfg
 from corpus import discover_documents
 
@@ -126,7 +125,7 @@ def evaluate(sample: int, k: int, seed: int, use_llm: bool) -> None:
 
     for i, (query, stem, page_no) in enumerate(queries, start=1):
         t0 = time.perf_counter()
-        results = asyncio.run(server.search_specs(query, k=max(k, 10)))
+        results = server.search_specs(query, k=max(k, 10))
         latencies.append(time.perf_counter() - t0)
 
         rank = next(

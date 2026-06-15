@@ -1,6 +1,6 @@
-# Built on top of the pre-built dependencies layer (Python packages + cached
-# embedding model). Build context is the REPO ROOT (see build-mcp-server.yml),
-# so the committed data tree can be baked in alongside the app code.
+# Built on top of the pre-built dependencies layer (Python packages). Build
+# context is the REPO ROOT (see build-mcp-server.yml), so the committed data
+# tree can be baked in alongside the app code.
 # Pass DEPS_IMAGE / DEPS_VERSION at build time to pin a release; the defaults
 # here are fallbacks for local builds only.
 ARG DEPS_IMAGE=ghcr.io/printer-stream/docs/mcp-dependencies-image
@@ -12,7 +12,7 @@ ARG VCS_REF=unknown
 ARG BUILD_DATE=unknown
 
 LABEL org.opencontainers.image.title="MCP Server" \
-      org.opencontainers.image.description="Streamable-HTTP MCP server exposing hybrid FTS5 + vector search over printer specification documents" \
+      org.opencontainers.image.description="Streamable-HTTP MCP server exposing FTS5 full-text search over printer specification documents" \
       org.opencontainers.image.authors="printer-stream" \
       org.opencontainers.image.source="https://github.com/printer-stream/docs" \
       org.opencontainers.image.version="${APP_VERSION}" \

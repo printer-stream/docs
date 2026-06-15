@@ -22,6 +22,8 @@ from pathlib import Path
 
 import pymupdf4llm
 
+from md_clean import clean, find_running_headers
+
 # Average characters per page below which a PDF is treated as scanned/image-only.
 MIN_CHARS_PER_PAGE = 50
 
@@ -88,11 +90,15 @@ def main() -> None:
     bulk_dir.mkdir(parents=True, exist_ok=True)
     page_dir.mkdir(parents=True, exist_ok=True)
 
-    parts = []
-    for i, page in enumerate(pages, start=1):
-        text = page.get("text", "").strip("\n")
+    # Normalize away extraction noise (picture placeholders, glyph-bitmap tables,
+    # running headers/footers, watermarks) before writing. Running headers are
+    # learned from the whole document, so the cleaner sees intact pages here.
+    raw = [page.get("text", "").strip("\n") for page in pages]
+    headers = find_running_headers(raw)
+    parts = [clean(text, headers) for text in raw]
+
+    for i, text in enumerate(parts, start=1):
         (page_dir / f"page-{i:0{width}d}.md").write_text(text + "\n", encoding="utf-8")
-        parts.append(text)
 
     (bulk_dir / "README.md").write_text("\n\n".join(parts) + "\n", encoding="utf-8")
     print(f"Converted {pdf_path} -> {total} page(s)")

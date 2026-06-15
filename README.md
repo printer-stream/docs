@@ -5,8 +5,9 @@ data source for AI tools (search, RAG, and an MCP server).
 
 ## What's here
 
-Each source PDF lives under `<vendor>/<doc>.pdf`. On push, GitHub Actions
-generate aligned text and image artifacts:
+Each source PDF lives under `pdf/<vendor>/<doc>.pdf`. On push, GitHub Actions
+generate aligned text and image artifacts (keyed by the vendor-rooted stem
+`<vendor>/<doc>`, i.e. the source path with the leading `pdf/` stripped):
 
 | Path | Contents | Tool |
 |------|----------|------|

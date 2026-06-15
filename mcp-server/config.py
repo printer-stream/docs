@@ -9,16 +9,12 @@ Supported variables:
   DOCS_MD_BULK_DIR     — directory of bulk Markdown exports
   DOCS_JPEG_DIR        — directory of page JPEG thumbnails
   DOCS_INDEX_PATH      — path to the SQLite search index
-  DOCS_EMBED_MODEL     — sentence-transformer model name for embeddings
-  DOCS_EMBED_QUERY_PREFIX — instruction prefix prepended to queries (BGE-style)
-  DOCS_CHUNK_TOKENS    — max tokens per body chunk (must fit the embed model)
-  DOCS_CHUNK_OVERLAP   — token overlap between adjacent body chunks
-  DOCS_SUMMARY_BACKEND — 'extractive' (no model) or 'local' (transformers)
-  DOCS_SUMMARY_MODEL   — local seq2seq model used when backend == 'local'
+  DOCS_STATIC_BASE_URL — base URL page images are served from (empty -> the
+                         server serves them itself under /static)
   HOST / DOCS_HOST     — server bind address
   PORT / DOCS_PORT     — server bind port
   DOCS_LOG_LEVEL       — log verbosity (DEBUG/INFO/WARNING/ERROR)
-  DOCS_VERBOSE_DEPS    — show download/HTTP chatter from HF/httpx
+  DOCS_VERBOSE_DEPS    — show HTTP chatter from httpx
   DOCS_EVAL_LLM        — evaluate.py: use an LLM to generate eval queries
   DOCS_EVAL_MODEL      — evaluate.py: OpenAI model for eval query generation
   OPENAI_API_KEY       — evaluate.py: API key for LLM eval (no DOCS_ prefix)
@@ -40,6 +36,9 @@ class Settings(BaseSettings):
         env_file=str(_HERE / ".env"),
         env_file_encoding="utf-8",
         case_sensitive=False,
+        # Tolerate unknown DOCS_ vars (e.g. a leftover DOCS_EMBED_MODEL from the
+        # embedding era) instead of crashing on startup.
+        extra="ignore",
     )
 
     repo_root: Path = _HERE.parent
@@ -48,21 +47,11 @@ class Settings(BaseSettings):
     jpeg_dir: Path = _HERE.parent / "jpeg"
     index_path: Path = _HERE.parent / "index" / "specs.db"
 
-    # Embeddings. BGE retrieval models expect an instruction prefix on the
-    # *query* side only (passages are embedded bare); see the model card.
-    embed_model: str = "BAAI/bge-small-en-v1.5"
-    embed_query_prefix: str = "Represent this sentence for searching relevant passages: "
-
-    # Body chunking: keep each chunk under the embedding model's context window
-    # (bge-small is 512 tokens) so nothing is silently truncated at encode time.
-    chunk_tokens: int = 400
-    chunk_overlap: int = 50
-
-    # Summarisation. 'extractive' (default) uses the page-1 spec overview, which
-    # on this corpus is on-topic, deterministic and free. Set to 'local' to use
-    # a transformers seq2seq model (summary_model) instead — fetched on demand.
-    summary_backend: str = "extractive"  # 'extractive' | 'local'
-    summary_model: str = "google/flan-t5-base"
+    # Page images. Search results expose absolute URLs to each page's JPEG.
+    # When set, URLs point at this base (e.g. a CDN, "https://cdn.example.com");
+    # when empty, the server serves the images itself and builds URLs under
+    # /static. A trailing slash is optional.
+    static_base_url: str = ""
 
     # Server runtime. HOST/PORT keep their conventional unprefixed names (a
     # DOCS_-prefixed form is also accepted).

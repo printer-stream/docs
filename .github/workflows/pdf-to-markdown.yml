@@ -7,6 +7,11 @@ on:
     paths:
       - '**/*.pdf'
   workflow_dispatch:
+    inputs:
+      force:
+        description: "Re-render every PDF, even if its Markdown already exists"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -38,16 +43,29 @@ jobs:
         run: pip install pymupdf4llm
 
       - name: Convert new PDFs to Markdown
+        env:
+          # Empty on push; "true" only when a manual run requests a forced re-render.
+          FORCE: ${{ inputs.force }}
         run: |
           any_new=false
           while IFS= read -r -d '' pdf; do
-            # Strip leading ./ and .pdf extension to get the doc stem
+            # Strip leading ./ and .pdf extension to get the doc stem.
+            # Sources live under pdf/<vendor>/...; strip that prefix so the stem
+            # stays vendor-rooted (epson/foo) and md/ + jpeg/ paths are unchanged.
             filename="${pdf#./}"
             filename="${filename%.pdf}"
+            filename="${filename#pdf/}"
 
-            # Skip if already converted
-            if [ -f "md-bulk/${filename}/README.md" ]; then
+            # Skip if already converted, unless a manual run forced a re-render.
+            if [ "$FORCE" != "true" ] && [ -f "md-bulk/${filename}/README.md" ]; then
               continue
+            fi
+
+            # On a forced re-render, clear stale slices first so a PDF whose page
+            # count changed never leaves orphaned page-NN.md behind (the zero-pad
+            # width is derived from the page count).
+            if [ "$FORCE" = "true" ]; then
+              rm -rf "md/${filename}" "md-bulk/${filename}"
             fi
 
             # pymupdf4llm writes md-bulk/<stem>/README.md and md/<stem>/page-NN.md.

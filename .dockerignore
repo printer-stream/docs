@@ -1,6 +1,9 @@
 # Keep the Docker build context lean. NOTE: the server image bakes in the data
 # tree (index/, md/, md-bulk/, jpeg/), so those are intentionally NOT ignored.
 
+# Source PDFs are only inputs to the CI render steps; no image copies them.
+pdf/
+
 # Version control and OS metadata
 .git/
 .gitignore

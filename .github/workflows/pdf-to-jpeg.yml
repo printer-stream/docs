@@ -7,6 +7,11 @@ on:
     paths:
       - '**/*.pdf'
   workflow_dispatch:
+    inputs:
+      force:
+        description: "Re-render every PDF, even if its JPEGs already exist"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -30,22 +35,34 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y poppler-utils
 
       - name: Render PDFs to JPEG
+        env:
+          # Empty on push; "true" only when a manual run requests a forced re-render.
+          FORCE: ${{ inputs.force }}
         run: |
           any_new=false
           rendered_list=""
 
           while IFS= read -r -d '' pdf; do
-            # Strip leading ./ and .pdf extension
+            # Strip leading ./ and .pdf extension. Sources live under
+            # pdf/<vendor>/...; strip that prefix from the output stem so jpeg/
+            # stays vendor-rooted (rel keeps the true path for the README/commit).
             rel="${pdf#./}"
             filename="${rel%.pdf}"
+            filename="${filename#pdf/}"
 
             small_dir="jpeg/${filename}/small"
             big_dir="jpeg/${filename}/big"
             readme="jpeg/${filename}/README.md"
 
-            # Skip if README already exists (already rendered)
-            if [ -f "$readme" ]; then
+            # Skip if already rendered, unless a manual run forced a re-render.
+            if [ "$FORCE" != "true" ] && [ -f "$readme" ]; then
               continue
+            fi
+
+            # On a forced re-render, clear stale page files first so a PDF whose
+            # page count changed never leaves orphaned page-NN.jpg behind.
+            if [ "$FORCE" = "true" ]; then
+              rm -rf "jpeg/${filename}/small" "jpeg/${filename}/big"
             fi
 
             mkdir -p "$small_dir" "$big_dir"

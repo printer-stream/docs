@@ -1,34 +1,38 @@
-"""MCP server exposing search over the printer-spec corpus.
+"""MCP server exposing full-text search over the printer-spec corpus.
 
 Transport: Streamable HTTP (remote-hostable, e.g. on Render).
 Tools:
   list_documents()                  -> all docs with vendor/title/page count
   get_document_summary(stem)        -> what devices/technologies a doc covers
-  search_specs(query, vendor?, k?)  -> hybrid (FTS5 + vector) ranked results,
-                                       each with page number + JPEG image paths
-  get_page(stem, page)              -> full page Markdown + image paths
+  search_specs(query, vendor?, k?)  -> FTS5-ranked page results, each with a page
+                                       number, snippet, and page-image URLs (plus
+                                       the surrounding pages' images)
+  get_page(stem, page)              -> full page Markdown + image URLs
 
-Logging: thorough ASCII-only logs on every step. The slow part of startup is
-loading the sentence-transformers embedding model (downloaded on first run,
-then cached); it is preloaded eagerly with progress logs so a cold start is
-easy to follow. Set DOCS_LOG_LEVEL=DEBUG for per-query detail.
+Search is pure SQLite FTS5 (keyword + exact command-token / hex lookups). The
+former embedding/vector half was removed (see TASK-1-SIMPLIFY.md), so there is no
+model to load and startup is fast.
+
+Page images are served as URLs. With DOCS_STATIC_BASE_URL set they point at that
+base (e.g. a CDN); otherwise this server serves them itself under /static.
+
+Logging: thorough ASCII-only logs on every step. Set DOCS_LOG_LEVEL=DEBUG for
+per-query detail.
 """
 from __future__ import annotations
 
-import asyncio
 import logging
+import re
 import sqlite3
 import time
+from pathlib import Path
 
-import sqlite_vec
 from mcp.server.fastmcp import FastMCP
-from sentence_transformers import SentenceTransformer
+from starlette.requests import Request
+from starlette.responses import FileResponse, PlainTextResponse, Response
 
 from version import __version__
 from config import cfg
-from utils import serialize
-
-RRF_K = 60  # reciprocal-rank-fusion constant
 
 logging.basicConfig(
     level=cfg.log_level.upper(),
@@ -37,10 +41,8 @@ logging.basicConfig(
 log = logging.getLogger("printer-stream-docs")
 
 # Quiet noisy third-party loggers so our own step-by-step logs stay readable.
-# Set DOCS_VERBOSE_DEPS=1 to see the underlying HF/httpx download chatter.
 if not cfg.verbose_deps:
-    for noisy in ("httpx", "httpcore", "sentence_transformers",
-                  "transformers", "urllib3", "filelock"):
+    for noisy in ("httpx", "httpcore", "urllib3"):
         logging.getLogger(noisy).setLevel(logging.WARNING)
 
 mcp = FastMCP(
@@ -50,7 +52,9 @@ mcp = FastMCP(
 )
 
 _db: sqlite3.Connection | None = None
-_model: SentenceTransformer | None = None
+
+# Directories whose files may be served over /static (page images + Markdown).
+_STATIC_ROOTS = [Path(cfg.jpeg_dir).resolve(), Path(cfg.md_dir).resolve()]
 
 
 def db() -> sqlite3.Connection:
@@ -69,13 +73,9 @@ def db() -> sqlite3.Connection:
         conn = sqlite3.connect(
             f"file:{cfg.index_path}?mode=ro",
             uri=True,
-            check_same_thread=False
+            check_same_thread=False,
         )
         conn.row_factory = sqlite3.Row
-        log.info("Loading sqlite-vec extension...")
-        conn.enable_load_extension(True)
-        sqlite_vec.load(conn)
-        conn.enable_load_extension(False)
         _verify_index_compatibility(conn)
         ndocs = conn.execute("SELECT COUNT(*) FROM documents").fetchone()[0]
         nchunks = conn.execute("SELECT COUNT(*) FROM chunks").fetchone()[0]
@@ -88,11 +88,7 @@ def db() -> sqlite3.Connection:
 
 
 def _verify_index_compatibility(conn: sqlite3.Connection) -> None:
-    """Fail fast if the index was built with a different embedding model.
-
-    Querying with a model that doesn't match the one used to build the index
-    embeds into a different vector space, silently returning garbage results.
-    """
+    """Fail fast if the index was built by an older (embedding-era) indexer."""
     try:
         rows = conn.execute("SELECT key, value FROM meta").fetchall()
     except sqlite3.OperationalError as exc:
@@ -101,46 +97,73 @@ def _verify_index_compatibility(conn: sqlite3.Connection) -> None:
             "Rebuild it with mcp-server/indexer.py."
         ) from exc
     meta = {row["key"]: row["value"] for row in rows}
-    built_with = meta.get("embed_model")
-    if built_with and built_with != cfg.embed_model:
+    if "embed_model" in meta or meta.get("search") != "fts5":
         raise RuntimeError(
-            f"Index was built with embedding model {built_with!r} but the server "
-            f"is configured to use {cfg.embed_model!r}. Rebuild the index or set "
-            f"DOCS_EMBED_MODEL={built_with!r}."
+            "Index was built with the old hybrid (embedding) indexer. "
+            "Rebuild it with mcp-server/indexer.py."
         )
-    log.info("Index metadata: embed_model=%s schema_version=%s built_at=%s",
-             meta.get("embed_model"), meta.get("schema_version"), meta.get("built_at"))
-
-
-def model() -> SentenceTransformer:
-    """Load (once) the embedding model. This is the slow part of a cold start."""
-    global _model
-    if _model is None:
-        log.info("Loading embedding model '%s' (first run downloads + caches it; "
-                 "this can take a while)...", cfg.embed_model)
-        t0 = time.perf_counter()
-        _model = SentenceTransformer(cfg.embed_model)
-        try:
-            dim = _model.get_embedding_dimension()
-        except AttributeError:  # older sentence-transformers
-            dim = _model.get_sentence_embedding_dimension()
-        log.info("Embedding model loaded in %.2fs (dim=%d)",
-                 time.perf_counter() - t0, dim)
-    return _model
+    log.info("Index metadata: search=%s schema_version=%s built_at=%s",
+             meta.get("search"), meta.get("schema_version"), meta.get("built_at"))
 
 
 def warm_up() -> None:
-    """Eagerly initialize the slow resources so the first query is fast and
-    the startup cost is visible in the logs."""
-    log.info("Warm-up starting: index + embedding model")
+    """Eagerly open the index so the first query is fast and startup is visible."""
+    log.info("Warm-up starting: opening index")
     t0 = time.perf_counter()
     db()
-    m = model()
-    # Run one trivial encode so lazy backend init happens now, not on first query.
-    log.info("Running a warm-up embedding...")
-    m.encode(["warm up"], normalize_embeddings=True)
     log.info("Warm-up complete in %.2fs -- server ready to serve queries",
              time.perf_counter() - t0)
+
+
+def _image_url(rel_path: str) -> str:
+    """Build the served URL for a repo-relative image/markdown path."""
+    if not rel_path:
+        return ""
+    base = cfg.static_base_url.rstrip("/")
+    return f"{base}/{rel_path}" if base else f"/static/{rel_path}"
+
+
+_WORD_RE = re.compile(r"\w+", re.UNICODE)
+
+
+def _run_fts(conn: sqlite3.Connection, query: str, pool: int) -> list[sqlite3.Row]:
+    """Run an FTS5 MATCH, tolerating queries that use FTS operator characters.
+
+    Raw user queries can hit FTS5 special syntax — a paren ('GS ( k'), or a token
+    read as a column filter ('model-dependent' -> "no such column"). Any such
+    error on the raw query triggers a retry with the bare word tokens quoted,
+    which preserves the terms (implicit AND) while neutralising the operators.
+    Errors from the (always-valid) sanitized form propagate as real failures.
+    """
+    sql = ("SELECT rowid, rank FROM fts_chunks WHERE fts_chunks MATCH ? "
+           "ORDER BY rank LIMIT ?")
+    try:
+        return conn.execute(sql, (query, pool)).fetchall()
+    except sqlite3.OperationalError as exc:
+        log.debug("FTS raw query %r rejected (%s); retrying sanitized", query, exc)
+    sanitized = " ".join(f'"{t}"' for t in _WORD_RE.findall(query))
+    if not sanitized:
+        return []
+    return conn.execute(sql, (sanitized, pool)).fetchall()
+
+
+def _neighbor_pages(conn: sqlite3.Connection, stem: str, page_no: int, span: int) -> list[dict]:
+    """Return the surrounding pages of `stem` within +/- span (page no + images)."""
+    if span <= 0:
+        return []
+    rows = conn.execute(
+        "SELECT page_no, image_small, image_big FROM pages "
+        "WHERE stem = ? AND page_no BETWEEN ? AND ? AND page_no <> ? ORDER BY page_no",
+        (stem, page_no - span, page_no + span, page_no),
+    ).fetchall()
+    return [
+        {
+            "page": r["page_no"],
+            "image_small_url": _image_url(r["image_small"]),
+            "image_big_url": _image_url(r["image_big"]),
+        }
+        for r in rows
+    ]
 
 
 @mcp.tool()
@@ -171,61 +194,27 @@ def get_document_summary(stem: str) -> dict:
 
 
 @mcp.tool()
-async def search_specs(query: str, vendor: str | None = None, k: int = 8) -> list[dict]:
+def search_specs(query: str, vendor: str | None = None, k: int = 8, neighbors: int = 1) -> list[dict]:
     """Search the corpus for a query and return ranked page-level results.
 
-    Hybrid retrieval: FTS5 keyword search (exact command tokens / hex codes)
-    fused with semantic vector search (conceptual questions) via Reciprocal
-    Rank Fusion. Each result includes the document, page number, a text
-    snippet, and the small/big JPEG image paths for that page.
+    Full-text (FTS5/BM25) retrieval over page bodies, headings, and per-document
+    summaries, with exact matching of command tokens (ESC/GS mnemonics, hex). Each
+    result includes the document, page number, a text snippet, URLs to that page's
+    small/big JPEG renders, and the `neighbors` pages around it (+/- `neighbors`).
     """
-    log.info("tool search_specs(query=%r, vendor=%r, k=%d)", query, vendor, k)
+    log.info("tool search_specs(query=%r, vendor=%r, k=%d, neighbors=%d)",
+             query, vendor, k, neighbors)
     t0 = time.perf_counter()
     conn = db()
     pool = max(k * 5, 30)
 
-    # Keyword ranks (FTS5).
-    fts_ranks: dict[int, int] = {}
-    try:
-        fts_rows = conn.execute(
-            "SELECT rowid FROM fts_chunks WHERE fts_chunks MATCH ? "
-            "ORDER BY rank LIMIT ?",
-            (query, pool),
-        ).fetchall()
-        for rank, r in enumerate(fts_rows):
-            fts_ranks[r["rowid"]] = rank
-        log.debug("FTS5 matched %d chunk(s)", len(fts_ranks))
-    except sqlite3.OperationalError as exc:
-        # Distinguish user query syntax errors from real infrastructure failures.
-        if "syntax error" in str(exc).lower():
-            log.debug("FTS5 query rejected (syntax error); relying on vector search")
-        else:
-            log.warning("FTS5 search unavailable (%s); relying on vector search only", exc)
-
-    # Semantic ranks (vector KNN) — encode off the event loop to avoid blocking.
-    # BGE retrieval models want the instruction prefix on the query side only.
-    t_emb = time.perf_counter()
-    prefixed = cfg.embed_query_prefix + query
-    emb = (await asyncio.to_thread(model().encode, [prefixed], normalize_embeddings=True))[0]
-    log.debug("Query embedded in %.3fs", time.perf_counter() - t_emb)
-    vec_rows = conn.execute(
-        "SELECT rowid FROM vec_chunks WHERE embedding MATCH ? "
-        "ORDER BY distance LIMIT ?",
-        (serialize(emb), pool),
-    ).fetchall()
-    vec_ranks = {r["rowid"]: rank for rank, r in enumerate(vec_rows)}
-    log.debug("Vector search matched %d chunk(s)", len(vec_ranks))
-
-    # Reciprocal Rank Fusion.
-    scores: dict[int, float] = {}
-    for ranks in (fts_ranks, vec_ranks):
-        for cid, rank in ranks.items():
-            scores[cid] = scores.get(cid, 0.0) + 1.0 / (RRF_K + rank)
-
-    ranked = sorted(scores, key=lambda cid: scores[cid], reverse=True)
-
-    if not ranked:
+    fts_rows = _run_fts(conn, query, pool)
+    if not fts_rows:
+        log.info("search_specs -> 0 result(s) in %.3fs", time.perf_counter() - t0)
         return []
+
+    ranked = [r["rowid"] for r in fts_rows]
+    rank_by_id = {r["rowid"]: r["rank"] for r in fts_rows}
 
     # Fetch all candidate chunks in one round-trip instead of N individual queries.
     placeholders = ",".join("?" * len(ranked))
@@ -254,26 +243,29 @@ async def search_specs(query: str, vendor: str | None = None, k: int = 8) -> lis
                 "stem": row["stem"],
                 "vendor": row["vendor"],
                 "page": row["page_no"],
-                "score": round(scores[cid], 5),
+                # FTS5 bm25 rank is negative (lower = better); flip for a positive score.
+                "score": round(-rank_by_id[cid], 5),
                 "snippet": text[:600] + ("..." if len(text) > 600 else ""),
                 "image_small": row["image_small"],
                 "image_big": row["image_big"],
+                "image_small_url": _image_url(row["image_small"]),
+                "image_big_url": _image_url(row["image_big"]),
+                "neighbors": _neighbor_pages(conn, row["stem"], row["page_no"], neighbors),
             }
         )
         if len(results) >= k:
             break
 
     log.info(
-        "search_specs -> %d result(s) in %.3fs (fts=%d, vec=%d, fused=%d)",
-        len(results), time.perf_counter() - t0,
-        len(fts_ranks), len(vec_ranks), len(scores),
+        "search_specs -> %d result(s) in %.3fs (fts candidates=%d)",
+        len(results), time.perf_counter() - t0, len(fts_rows),
     )
     return results
 
 
 @mcp.tool()
 def get_page(stem: str, page: int) -> dict:
-    """Return the full Markdown text and image paths for a specific page."""
+    """Return the full Markdown text and image URLs for a specific page."""
     log.info("tool get_page(stem=%r, page=%d)", stem, page)
     row = db().execute(
         "SELECT stem, vendor, page_no, text, image_small, image_big "
@@ -284,7 +276,10 @@ def get_page(stem: str, page: int) -> dict:
         log.warning("get_page: no page %d in document %r", page, stem)
         raise ValueError(f"No page {page} in document '{stem}'.")
     log.info("get_page -> %s page %d (%d chars)", stem, page, len(row["text"]))
-    return dict(row)
+    out = dict(row)
+    out["image_small_url"] = _image_url(row["image_small"])
+    out["image_big_url"] = _image_url(row["image_big"])
+    return out
 
 
 @mcp.tool()
@@ -293,10 +288,26 @@ def version() -> dict:
     return {"version": __version__}
 
 
+@mcp.custom_route("/static/{path:path}", methods=["GET"])
+async def serve_static(request: Request) -> Response:
+    """Serve page images / Markdown from the data tree (used when no CDN is set).
+
+    Guards against path traversal: the resolved file must live inside one of the
+    allowed data directories (jpeg/, md/), never elsewhere in the repo.
+    """
+    rel = request.path_params["path"]
+    target = (Path(cfg.repo_root) / rel).resolve()
+    if not target.is_file() or not any(
+        target == root or root in target.parents for root in _STATIC_ROOTS
+    ):
+        return PlainTextResponse("Not found", status_code=404)
+    return FileResponse(target)
+
+
 if __name__ == "__main__":
     log.info("=== printer-stream-docs MCP server starting ===")
-    log.info("Embedding model : %s", cfg.embed_model)
     log.info("Index path      : %s", cfg.index_path)
+    log.info("Static base URL : %s", cfg.static_base_url or "(serving /static locally)")
     log.info("Bind address    : %s:%s", cfg.host, cfg.port)
     log.info("Transport       : streamable-http (endpoint /mcp)")
     warm_up()

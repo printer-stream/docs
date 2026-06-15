@@ -9,8 +9,8 @@ answers in the exact page text and image.
 ```
 PDF push ──► md/ + jpeg/ (per-page text & images)
                  │
-                 ├─ build-index.yml (CI) ─► index/specs.db  (committed)
-                 │       chunks + FTS5 + vector embeddings + doc summaries
+                 ├─ search-index.yml (CI) ─► index/specs.db  (committed)
+                 │       chunks + FTS5 full-text + doc summaries
                  │
                  └─ Render web service loads index/specs.db read-only
                           │
@@ -18,11 +18,14 @@ PDF push ──► md/ + jpeg/ (per-page text & images)
 ```
 
 - **Text↔image alignment:** every page is `md/<doc>/page-NN.md` paired with
-  `jpeg/<doc>/{small,big}/page-NN.jpg`. Search results carry both.
-- **Hybrid search:** FTS5 keyword search (exact `ESC`/`GS`/hex command lookups)
-  fused with vector search (conceptual questions) via Reciprocal Rank Fusion.
-- **Summaries:** each document gets a "what devices/technologies it covers"
-  blurb, exposed via `get_document_summary` and searchable.
+  `jpeg/<doc>/{small,big}/page-NN.jpg`. Search results carry image URLs for the
+  hit page and the pages around it.
+- **Full-text search:** SQLite FTS5 / BM25 keyword search over page bodies,
+  headings, and summaries, with exact `ESC`/`GS`/hex command-token lookups. No
+  embeddings — startup is fast and the dependency stack is tiny. (Vector search
+  may return later behind a low-cost store; see TASK-1-SIMPLIFY.md.)
+- **Summaries:** each document gets an extractive "what devices/technologies it
+  covers" blurb, exposed via `get_document_summary` and searchable.
 
 ## Tools
 
@@ -30,10 +33,14 @@ PDF push ──► md/ + jpeg/ (per-page text & images)
 |------|---------|
 | `list_documents()` | All docs with vendor, title, page count |
 | `get_document_summary(stem)` | What devices/technologies a doc covers |
-| `search_specs(query, vendor?, k?)` | Ranked page results with snippet + image paths |
-| `get_page(stem, page)` | Full page Markdown + image paths |
+| `search_specs(query, vendor?, k?, neighbors?)` | Ranked page results with snippet, image URLs, and neighbouring-page images |
+| `get_page(stem, page)` | Full page Markdown + image URLs |
 
 `stem` is the repo-relative path without extension, e.g. `star/star_graphic_cm_en`.
+
+Page images are returned as URLs built from `DOCS_STATIC_BASE_URL` (e.g. a CDN);
+when it is unset the server serves them itself under `/static/...` and returns
+relative URLs.
 
 ## Build the index
 
@@ -42,9 +49,8 @@ pip install -r mcp-server/requirements.txt
 python mcp-server/indexer.py          # writes index/specs.db
 ```
 
-Set `OPENAI_API_KEY` to generate higher-quality LLM summaries; otherwise an
-extractive fallback is used. Embedding model defaults to
-`BAAI/bge-small-en-v1.5` (CPU, no key) and runs in CI on every `md/` change.
+Document summaries are extractive (title + leading text) — deterministic, free,
+and built in CI on every `md/` change. No model download is involved.
 
 ## Run locally
 
@@ -54,22 +60,19 @@ cd mcp-server && python server.py     # Streamable HTTP on :8000 (/mcp)
 ```
 
 > Requires Python 3.10+ (the `mcp` package does not support 3.9; CI and Render
-> pin 3.13). On startup the
-> server logs every step. The slow part is loading the embedding model (a few
-> seconds warm, longer on first run while it downloads + caches). You will see:
+> pin 3.13). Startup just opens the committed index — there is no model to load,
+> so it is effectively instant. You will see:
 >
 > ```
-> INFO [printerrr-docs] === printerrr-docs MCP server starting ===
-> INFO [printerrr-docs] Index ready in 0.08s: 1 document(s), 59 chunk(s)
-> INFO [printerrr-docs] Loading embedding model 'BAAI/bge-small-en-v1.5' ...
-> INFO [printerrr-docs] Embedding model loaded in 5.33s (dim=384)
-> INFO [printerrr-docs] Warm-up complete in 6.79s -- server ready to serve queries
+> INFO [printer-stream-docs] === printer-stream-docs MCP server starting ===
+> INFO [printer-stream-docs] Index ready in 0.08s: 9 document(s), 2153 chunk(s)
+> INFO [printer-stream-docs] Warm-up complete in 0.09s -- server ready to serve queries
 > INFO Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
 > ```
 >
-> Logging env vars: `DOCS_LOG_LEVEL=DEBUG` for per-query detail (FTS/vector hit
-> counts, embed timing); `DOCS_VERBOSE_DEPS=1` to also show the underlying
-> HuggingFace/httpx download chatter (hidden by default).
+> Logging env vars: `DOCS_LOG_LEVEL=DEBUG` for per-query detail (FTS candidate
+> counts, timing); `DOCS_VERBOSE_DEPS=1` to also show the underlying httpx
+> chatter (hidden by default).
 
 ## Validation
 
@@ -79,39 +82,38 @@ After building the index, verify the index and the server before deploying.
 
 ```bash
 python - <<'PY'
-import sqlite3, sqlite_vec
-from pathlib import Path
+import sqlite3
 db = sqlite3.connect("index/specs.db")
-db.enable_load_extension(True); sqlite_vec.load(db); db.enable_load_extension(False)
 docs   = db.execute("SELECT COUNT(*) FROM documents").fetchone()[0]
 chunks = db.execute("SELECT COUNT(*) FROM chunks").fetchone()[0]
-vecs   = db.execute("SELECT COUNT(*) FROM vec_chunks").fetchone()[0]
 fts    = db.execute("SELECT COUNT(*) FROM fts_chunks").fetchone()[0]
-print(f"documents={docs} chunks={chunks} vec_chunks={vecs} fts_chunks={fts}")
-assert chunks == vecs == fts, "chunk / vector / fts counts must match"
+print(f"documents={docs} chunks={chunks} fts_chunks={fts}")
+assert chunks == fts and chunks > 0, "chunk / fts counts must match and be non-zero"
 print("OK: index is internally consistent")
 PY
 ```
 
-Expected: `chunks`, `vec_chunks`, and `fts_chunks` are equal and non-zero.
+Expected: `chunks` and `fts_chunks` are equal and non-zero (no `vec_chunks`
+table exists — search is FTS-only).
 
 ### 2. Exercise the tools directly (no HTTP)
 
 ```bash
 cd mcp-server && python - <<'PY'
 import server
-server.warm_up()                                   # logs index + model load timing
+server.warm_up()                                   # logs index load timing
 print("docs   :", [d["stem"] for d in server.list_documents()])
 print("summary:", server.get_document_summary("star/star_graphic_cm_en")["title"])
 hits = server.search_specs("how to print a bit image graphic", k=3)
 for h in hits:
-    print(f"  p{h['page']:>3}  {h['score']}  {h['image_small']}")
-print("page 1 :", server.get_page("star/star_graphic_cm_en", 1)["image_big"])
+    print(f"  p{h['page']:>3}  {h['score']}  {h['image_small_url']}  +{len(h['neighbors'])} neighbours")
+print("page 1 :", server.get_page("star/star_graphic_cm_en", 1)["image_big_url"])
 PY
 ```
 
-Each `search_specs` result must include a `page` and the matching
-`image_small` / `image_big` path for that page.
+Each `search_specs` result must include a `page`, the matching
+`image_small_url` / `image_big_url` for that page, and a `neighbors` list of the
+surrounding pages.
 
 ### 3. Smoke-test the HTTP transport
 
@@ -172,8 +174,8 @@ Notes:
 - No-LLM numbers are optimistic (queries share vocabulary with the page).
   LLM-generated queries are the honest measure of conceptual retrieval -- use
   them before trusting the numbers.
-- Re-run after changing the embedding model, chunking, or fusion weights to
-  catch regressions. The `--seed` flag keeps the page sample reproducible.
+- Re-run after changing the indexer or query handling to catch regressions.
+  The `--seed` flag keeps the page sample reproducible.
 
 ## Deploy on Render
 
