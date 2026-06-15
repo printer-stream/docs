@@ -8,6 +8,10 @@ on:
       - 'md/**'
       - 'mcp-server/indexer.py'
       - 'mcp-server/corpus.py'
+      - 'mcp-server/chunking.py'
+      - 'mcp-server/summarizer.py'
+      - 'mcp-server/config.py'
+      - 'mcp-server/utils.py'
   workflow_dispatch:
 
 permissions:
@@ -50,15 +54,12 @@ jobs:
           ghcr.io/${{ github.repository }}/mcp-index-image:${{ steps.index_image_version.outputs.version }}
 
       - name: Build index
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY || '' }}
         run: |
           docker run --rm \
             -v "${{ github.workspace }}:/workspace" \
             -e DOCS_REPO_ROOT=/workspace \
             -e DOCS_INDEX_PATH=/workspace/index/specs.db \
             -e DOCS_EMBED_MODEL=BAAI/bge-small-en-v1.5 \
-            -e OPENAI_API_KEY \
             ghcr.io/${{ github.repository }}/mcp-index-image:${{ steps.index_image_version.outputs.version }} \
             python /workspace/mcp-server/indexer.py
 

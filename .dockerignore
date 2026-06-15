@@ -1,0 +1,20 @@
+# Keep the Docker build context lean. NOTE: the server image bakes in the data
+# tree (index/, md/, md-bulk/, jpeg/), so those are intentionally NOT ignored.
+
+# Version control and OS metadata
+.git/
+.gitignore
+**/.DS_Store
+
+# Python bytecode and local virtual environments — never belong in an image
+# (and the venv can be gigabytes with torch installed).
+**/__pycache__/
+**/*.py[cod]
+**/.virtualenv/
+**/.venv/
+.venv/
+venv/
+
+# Local-only config/secrets. The image sets its configuration via ENV / the
+# render dashboard, not a committed .env.
+**/.env

@@ -85,6 +85,7 @@ jobs:
           name: "${{ github.repository }}/${{ env.APP_NAME }}"
           planned_version: "${{ env.PLANNED_VERSION }}"
           dockerfile: "mcp-server/Dockerfile"
+          default_branch: main
           build_args: |-
             APP_VERSION=${{ env.PLANNED_VERSION }}
             DEPS_IMAGE=ghcr.io/${{ github.repository }}/mcp-dependencies-image

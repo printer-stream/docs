@@ -93,10 +93,14 @@ def _verify_index_compatibility(conn: sqlite3.Connection) -> None:
     Querying with a model that doesn't match the one used to build the index
     embeds into a different vector space, silently returning garbage results.
     """
-    meta = {
-        row["key"]: row["value"]
-        for row in conn.execute("SELECT key, value FROM meta").fetchall()
-    }
+    try:
+        rows = conn.execute("SELECT key, value FROM meta").fetchall()
+    except sqlite3.OperationalError as exc:
+        raise RuntimeError(
+            "Index has no 'meta' table -- it was built by an older indexer. "
+            "Rebuild it with mcp-server/indexer.py."
+        ) from exc
+    meta = {row["key"]: row["value"] for row in rows}
     built_with = meta.get("embed_model")
     if built_with and built_with != cfg.embed_model:
         raise RuntimeError(
