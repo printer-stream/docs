@@ -1,5 +1,8 @@
 mcp>=1.2.0
 sentence-transformers>=3.0.0
 sqlite-vec>=0.1.6
-# Optional: enables LLM-generated document summaries during indexing.
-# openai>=1.40.0
+pydantic-settings>=2.0.0
+# Local document summarisation (flan-t5 via transformers). transformers + torch
+# already ship with sentence-transformers; sentencepiece is the T5 tokenizer.
+transformers>=4.40.0
+sentencepiece>=0.2.0

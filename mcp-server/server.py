@@ -15,10 +15,9 @@ easy to follow. Set DOCS_LOG_LEVEL=DEBUG for per-query detail.
 """
 from __future__ import annotations
 
+import asyncio
 import logging
-import os
 import sqlite3
-import struct
 import time
 
 import sqlite_vec
@@ -26,28 +25,28 @@ from mcp.server.fastmcp import FastMCP
 from sentence_transformers import SentenceTransformer
 
 from version import __version__
-from corpus import INDEX_PATH
+from config import cfg
+from utils import serialize
 
-EMBED_MODEL = os.environ.get("DOCS_EMBED_MODEL", "BAAI/bge-small-en-v1.5")
 RRF_K = 60  # reciprocal-rank-fusion constant
 
 logging.basicConfig(
-    level=os.environ.get("DOCS_LOG_LEVEL", "INFO").upper(),
+    level=cfg.log_level.upper(),
     format="%(asctime)s %(levelname)-7s [%(name)s] %(message)s",
 )
 log = logging.getLogger("printer-stream-docs")
 
 # Quiet noisy third-party loggers so our own step-by-step logs stay readable.
 # Set DOCS_VERBOSE_DEPS=1 to see the underlying HF/httpx download chatter.
-if not os.environ.get("DOCS_VERBOSE_DEPS"):
+if not cfg.verbose_deps:
     for noisy in ("httpx", "httpcore", "sentence_transformers",
                   "transformers", "urllib3", "filelock"):
         logging.getLogger(noisy).setLevel(logging.WARNING)
 
 mcp = FastMCP(
     "printer-stream-docs",
-    host=os.environ.get("HOST", "0.0.0.0"),
-    port=int(os.environ.get("PORT", "8000")),
+    host=cfg.host,
+    port=cfg.port,
 )
 
 _db: sqlite3.Connection | None = None
@@ -58,25 +57,26 @@ def db() -> sqlite3.Connection:
     """Open (once) a read-only connection to the committed index."""
     global _db
     if _db is None:
-        log.info("Opening index database: %s", INDEX_PATH)
-        if not INDEX_PATH.exists():
-            log.error("Index not found at %s -- run mcp-server/indexer.py first", INDEX_PATH)
+        log.info("Opening index database: %s", cfg.index_path)
+        if not cfg.index_path.exists():
+            log.error("Index not found at %s -- run mcp-server/indexer.py first", cfg.index_path)
             raise FileNotFoundError(
-                f"Index not found at {INDEX_PATH}. Run mcp-server/indexer.py first."
+                f"Index not found at {cfg.index_path}. Run mcp-server/indexer.py first."
             )
-        size_kb = INDEX_PATH.stat().st_size // 1024
+        size_kb = cfg.index_path.stat().st_size // 1024
         log.info("Index file size: %d KB", size_kb)
         t0 = time.perf_counter()
         conn = sqlite3.connect(
-            f"file:{INDEX_PATH}?mode=ro",
+            f"file:{cfg.index_path}?mode=ro",
             uri=True,
             check_same_thread=False
         )
         conn.row_factory = sqlite3.Row
         log.info("Loading sqlite-vec extension...")
-        # conn.enable_load_extension(True)
+        conn.enable_load_extension(True)
         sqlite_vec.load(conn)
-        # conn.enable_load_extension(False)
+        conn.enable_load_extension(False)
+        _verify_index_compatibility(conn)
         ndocs = conn.execute("SELECT COUNT(*) FROM documents").fetchone()[0]
         nchunks = conn.execute("SELECT COUNT(*) FROM chunks").fetchone()[0]
         log.info(
@@ -87,14 +87,35 @@ def db() -> sqlite3.Connection:
     return _db
 
 
+def _verify_index_compatibility(conn: sqlite3.Connection) -> None:
+    """Fail fast if the index was built with a different embedding model.
+
+    Querying with a model that doesn't match the one used to build the index
+    embeds into a different vector space, silently returning garbage results.
+    """
+    meta = {
+        row["key"]: row["value"]
+        for row in conn.execute("SELECT key, value FROM meta").fetchall()
+    }
+    built_with = meta.get("embed_model")
+    if built_with and built_with != cfg.embed_model:
+        raise RuntimeError(
+            f"Index was built with embedding model {built_with!r} but the server "
+            f"is configured to use {cfg.embed_model!r}. Rebuild the index or set "
+            f"DOCS_EMBED_MODEL={built_with!r}."
+        )
+    log.info("Index metadata: embed_model=%s schema_version=%s built_at=%s",
+             meta.get("embed_model"), meta.get("schema_version"), meta.get("built_at"))
+
+
 def model() -> SentenceTransformer:
     """Load (once) the embedding model. This is the slow part of a cold start."""
     global _model
     if _model is None:
         log.info("Loading embedding model '%s' (first run downloads + caches it; "
-                 "this can take a while)...", EMBED_MODEL)
+                 "this can take a while)...", cfg.embed_model)
         t0 = time.perf_counter()
-        _model = SentenceTransformer(EMBED_MODEL)
+        _model = SentenceTransformer(cfg.embed_model)
         try:
             dim = _model.get_embedding_dimension()
         except AttributeError:  # older sentence-transformers
@@ -110,16 +131,12 @@ def warm_up() -> None:
     log.info("Warm-up starting: index + embedding model")
     t0 = time.perf_counter()
     db()
-    model()
+    m = model()
     # Run one trivial encode so lazy backend init happens now, not on first query.
     log.info("Running a warm-up embedding...")
-    model().encode(["warm up"], normalize_embeddings=True)
+    m.encode(["warm up"], normalize_embeddings=True)
     log.info("Warm-up complete in %.2fs -- server ready to serve queries",
              time.perf_counter() - t0)
-
-
-def _serialize(vec) -> bytes:
-    return struct.pack(f"{len(vec)}f", *vec)
 
 
 @mcp.tool()
@@ -144,13 +161,13 @@ def get_document_summary(stem: str) -> dict:
     ).fetchone()
     if row is None:
         log.warning("get_document_summary: no document with stem %r", stem)
-        return {"error": f"No document with stem '{stem}'."}
+        raise ValueError(f"No document with stem '{stem}'.")
     log.info("get_document_summary -> %r (%d pages)", row["title"], row["page_count"])
     return dict(row)
 
 
 @mcp.tool()
-def search_specs(query: str, vendor: str | None = None, k: int = 8) -> list[dict]:
+async def search_specs(query: str, vendor: str | None = None, k: int = 8) -> list[dict]:
     """Search the corpus for a query and return ranked page-level results.
 
     Hybrid retrieval: FTS5 keyword search (exact command tokens / hex codes)
@@ -175,16 +192,22 @@ def search_specs(query: str, vendor: str | None = None, k: int = 8) -> list[dict
             fts_ranks[r["rowid"]] = rank
         log.debug("FTS5 matched %d chunk(s)", len(fts_ranks))
     except sqlite3.OperationalError as exc:
-        log.debug("FTS5 query rejected (%s); relying on vector search", exc)
+        # Distinguish user query syntax errors from real infrastructure failures.
+        if "syntax error" in str(exc).lower():
+            log.debug("FTS5 query rejected (syntax error); relying on vector search")
+        else:
+            log.warning("FTS5 search unavailable (%s); relying on vector search only", exc)
 
-    # Semantic ranks (vector KNN).
+    # Semantic ranks (vector KNN) — encode off the event loop to avoid blocking.
+    # BGE retrieval models want the instruction prefix on the query side only.
     t_emb = time.perf_counter()
-    emb = model().encode([query], normalize_embeddings=True)[0]
+    prefixed = cfg.embed_query_prefix + query
+    emb = (await asyncio.to_thread(model().encode, [prefixed], normalize_embeddings=True))[0]
     log.debug("Query embedded in %.3fs", time.perf_counter() - t_emb)
     vec_rows = conn.execute(
         "SELECT rowid FROM vec_chunks WHERE embedding MATCH ? "
         "ORDER BY distance LIMIT ?",
-        (_serialize(emb), pool),
+        (serialize(emb), pool),
     ).fetchall()
     vec_ranks = {r["rowid"]: rank for rank, r in enumerate(vec_rows)}
     log.debug("Vector search matched %d chunk(s)", len(vec_ranks))
@@ -195,17 +218,27 @@ def search_specs(query: str, vendor: str | None = None, k: int = 8) -> list[dict
         for cid, rank in ranks.items():
             scores[cid] = scores.get(cid, 0.0) + 1.0 / (RRF_K + rank)
 
-    ranked = sorted(scores, key=scores.get, reverse=True)
+    ranked = sorted(scores, key=lambda cid: scores[cid], reverse=True)
+
+    if not ranked:
+        return []
+
+    # Fetch all candidate chunks in one round-trip instead of N individual queries.
+    placeholders = ",".join("?" * len(ranked))
+    rows_by_id = {
+        r["id"]: r
+        for r in conn.execute(
+            f"SELECT id, stem, vendor, page_no, text, image_small, image_big "
+            f"FROM chunks WHERE id IN ({placeholders})",
+            ranked,
+        ).fetchall()
+    }
 
     results: list[dict] = []
     seen: set[tuple] = set()
     for cid in ranked:
-        row = conn.execute(
-            "SELECT stem, vendor, page_no, kind, text, image_small, image_big "
-            "FROM chunks WHERE id = ?",
-            (cid,),
-        ).fetchone()
-        if row is None or (vendor and row["vendor"] != vendor):
+        row = rows_by_id.get(cid)
+        if row is None or (vendor is not None and row["vendor"] != vendor):
             continue
         key = (row["stem"], row["page_no"])
         if key in seen:
@@ -225,6 +258,7 @@ def search_specs(query: str, vendor: str | None = None, k: int = 8) -> list[dict
         )
         if len(results) >= k:
             break
+
     log.info(
         "search_specs -> %d result(s) in %.3fs (fts=%d, vec=%d, fused=%d)",
         len(results), time.perf_counter() - t0,
@@ -239,25 +273,27 @@ def get_page(stem: str, page: int) -> dict:
     log.info("tool get_page(stem=%r, page=%d)", stem, page)
     row = db().execute(
         "SELECT stem, vendor, page_no, text, image_small, image_big "
-        "FROM chunks WHERE stem = ? AND page_no = ? AND kind = 'body'",
+        "FROM pages WHERE stem = ? AND page_no = ?",
         (stem, page),
     ).fetchone()
     if row is None:
         log.warning("get_page: no page %d in document %r", page, stem)
-        return {"error": f"No page {page} in document '{stem}'."}
+        raise ValueError(f"No page {page} in document '{stem}'.")
     log.info("get_page -> %s page %d (%d chars)", stem, page, len(row["text"]))
     return dict(row)
+
 
 @mcp.tool()
 def version() -> dict:
     """Return the server version."""
     return {"version": __version__}
 
+
 if __name__ == "__main__":
     log.info("=== printer-stream-docs MCP server starting ===")
-    log.info("Embedding model : %s", EMBED_MODEL)
-    log.info("Index path      : %s", INDEX_PATH)
-    log.info("Bind address    : %s:%s", os.environ.get("HOST", "0.0.0.0"), os.environ.get("PORT", "8000"))
+    log.info("Embedding model : %s", cfg.embed_model)
+    log.info("Index path      : %s", cfg.index_path)
+    log.info("Bind address    : %s:%s", cfg.host, cfg.port)
     log.info("Transport       : streamable-http (endpoint /mcp)")
     warm_up()
     log.info("Starting HTTP transport; press Ctrl-C to stop")

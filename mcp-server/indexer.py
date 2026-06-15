@@ -1,12 +1,18 @@
 """Build the search index from the Markdown corpus.
 
 Output: a single SQLite file (default index/specs.db) containing
-  - documents:  one row per doc, with an LLM/extractive summary
-  - chunks:     page bodies + heading chunks + per-doc summary chunks
-  - fts_chunks: FTS5 full-text index (exact command-token / hex lookups)
-  - vec_chunks: sqlite-vec embeddings (semantic / conceptual search)
+  - meta:        index metadata (embed model + dim, schema version, build time)
+  - documents:   one row per doc, with a local-LLM/extractive summary
+  - pages:       full page Markdown (source of truth for get_page)
+  - chunks:      retrieval units — windowed page bodies + headings + summaries
+  - fts_chunks:  FTS5 full-text index (exact command-token / hex lookups)
+  - vec_chunks:  sqlite-vec embeddings (semantic / conceptual search)
 
-Run from anywhere:  python mcp-server/indexer.py
+Pages are stored whole, but embedded in token-sized windows so no content is
+lost to the embedding model's context limit. Run from anywhere:
+
+    python mcp-server/indexer.py
+
 The index is committed to the repo and loaded read-only by the MCP server.
 """
 from __future__ import annotations
@@ -14,28 +20,22 @@ from __future__ import annotations
 import os
 import re
 import sqlite3
-import struct
-from pathlib import Path
+import time
 
 import sqlite_vec
 from sentence_transformers import SentenceTransformer
 
-from corpus import (
-    INDEX_PATH,
-    Document,
-    discover_documents,
-    headings,
-)
+from chunking import token_windows
+from config import cfg
+from corpus import discover_documents, headings
+from summarizer import summarize
+from utils import serialize
 
-EMBED_MODEL = os.environ.get("DOCS_EMBED_MODEL", "BAAI/bge-small-en-v1.5")
-EMBED_DIM = 384  # bge-small-en-v1.5
+# Bump when the table layout changes so the server can detect incompatibility.
+SCHEMA_VERSION = 2
 
 # Command-style tokens worth indexing for exact lookup: ESC/GS mnemonics and hex.
 _TOKEN_RE = re.compile(r"\b(?:ESC|GS|FS|DLE|[0-9A-Fa-f]{2}h?|0x[0-9A-Fa-f]{2})\b")
-
-
-def serialize(vec) -> bytes:
-    return struct.pack(f"{len(vec)}f", *vec)
 
 
 def command_tokens(text: str) -> str:
@@ -43,62 +43,46 @@ def command_tokens(text: str) -> str:
     return " ".join(seen)
 
 
-def summarize(doc: Document) -> str:
-    """One-paragraph 'what devices/technologies this doc covers' blurb.
-
-    Uses an LLM if OPENAI_API_KEY is set; otherwise an extractive fallback
-    (title + leading text of the first content pages).
-    """
-    head = "\n".join(p.text for p in doc.pages[:3])[:6000]
-    api_key = os.environ.get("OPENAI_API_KEY")
-    if api_key:
-        try:
-            from openai import OpenAI
-
-            client = OpenAI(api_key=api_key)
-            model = os.environ.get("DOCS_SUMMARY_MODEL", "gpt-4o-mini")
-            resp = client.chat.completions.create(
-                model=model,
-                temperature=0.2,
-                messages=[
-                    {
-                        "role": "system",
-                        "content": (
-                            "You summarize printer/device technical specs. In 2-4 "
-                            "sentences, state which devices, models, protocols, and "
-                            "command sets the document covers, and who would use it."
-                        ),
-                    },
-                    {"role": "user", "content": f"Title: {doc.title}\n\n{head}"},
-                ],
-            )
-            return resp.choices[0].message.content.strip()
-        except Exception as exc:  # noqa: BLE001 - never fail the build on summaries
-            print(f"  summary LLM failed ({exc}); using extractive fallback")
-
-    snippet = " ".join(head.split())[:500]
-    return f"{doc.title}. {snippet}"
-
-
 def build() -> None:
     docs = discover_documents()
     print(f"Discovered {len(docs)} document(s).")
 
-    INDEX_PATH.parent.mkdir(parents=True, exist_ok=True)
-    if INDEX_PATH.exists():
-        INDEX_PATH.unlink()
+    # Load the embedding model first: we need its real output dimension to size
+    # the vec table, and its tokenizer to window long pages exactly.
+    print(f"Loading embedding model: {cfg.embed_model}")
+    embed_model = SentenceTransformer(cfg.embed_model)
+    try:
+        embed_dim = embed_model.get_embedding_dimension()
+    except AttributeError:  # older sentence-transformers
+        embed_dim = embed_model.get_sentence_embedding_dimension()
+    tokenizer = embed_model.tokenizer
+    print(f"Embedding dimension: {embed_dim}")
 
-    db = sqlite3.connect(INDEX_PATH)
+    cfg.index_path.parent.mkdir(parents=True, exist_ok=True)
+
+    # Write to a temp file and atomically rename on success so the live index
+    # is never left in a partial state if the process is interrupted mid-build.
+    tmp_path = cfg.index_path.with_name(cfg.index_path.name + ".tmp")
+    if tmp_path.exists():
+        tmp_path.unlink()
+
+    db = sqlite3.connect(tmp_path)
     db.enable_load_extension(True)
     sqlite_vec.load(db)
     db.enable_load_extension(False)
 
     db.executescript(
         """
+        CREATE TABLE meta (key TEXT PRIMARY KEY, value TEXT);
         CREATE TABLE documents (
             id INTEGER PRIMARY KEY,
             stem TEXT UNIQUE, vendor TEXT, title TEXT,
             summary TEXT, page_count INTEGER
+        );
+        CREATE TABLE pages (
+            doc_id INTEGER, stem TEXT, vendor TEXT, page_no INTEGER,
+            text TEXT, image_small TEXT, image_big TEXT,
+            PRIMARY KEY (stem, page_no)
         );
         CREATE TABLE chunks (
             id INTEGER PRIMARY KEY,
@@ -112,13 +96,23 @@ def build() -> None:
         """
     )
     db.execute(
-        f"CREATE VIRTUAL TABLE vec_chunks USING vec0(embedding float[{EMBED_DIM}])"
+        f"CREATE VIRTUAL TABLE vec_chunks USING vec0(embedding float[{embed_dim}])"
     )
 
-    print(f"Loading embedding model: {EMBED_MODEL}")
-    model = SentenceTransformer(EMBED_MODEL)
+    db.executemany(
+        "INSERT INTO meta(key, value) VALUES (?,?)",
+        [
+            ("schema_version", str(SCHEMA_VERSION)),
+            ("embed_model", cfg.embed_model),
+            ("embed_dim", str(embed_dim)),
+            ("summary_backend", cfg.summary_backend),
+            ("summary_model", cfg.summary_model if cfg.summary_backend == "local" else ""),
+            ("built_at", time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())),
+        ],
+    )
 
-    chunk_rows: list[tuple] = []  # (doc_id, stem, vendor, page_no, kind, text, small, big)
+    # (doc_id, stem, vendor, page_no, kind, text, small, big)
+    chunk_rows: list[tuple] = []
     for doc_id, doc in enumerate(docs, start=1):
         summary = summarize(doc)
         db.execute(
@@ -128,10 +122,22 @@ def build() -> None:
         # Per-doc summary chunk (great for conceptual / 'what covers X' queries).
         chunk_rows.append((doc_id, doc.stem, doc.vendor, 0, "summary", summary, "", ""))
         for page in doc.pages:
-            chunk_rows.append(
-                (doc_id, doc.stem, doc.vendor, page.page_no, "body",
-                 page.text, page.image_small, page.image_big)
+            # Full page is stored whole for get_page ...
+            db.execute(
+                "INSERT INTO pages VALUES (?,?,?,?,?,?,?)",
+                (doc_id, doc.stem, doc.vendor, page.page_no,
+                 page.text, page.image_small, page.image_big),
             )
+            # ... but embedded in token windows so long pages aren't truncated.
+            for window in token_windows(
+                page.text, tokenizer, cfg.chunk_tokens, cfg.chunk_overlap
+            ):
+                if not window:
+                    continue
+                chunk_rows.append(
+                    (doc_id, doc.stem, doc.vendor, page.page_no, "body",
+                     window, page.image_small, page.image_big)
+                )
             for h in headings(page.text):
                 chunk_rows.append(
                     (doc_id, doc.stem, doc.vendor, page.page_no, "title",
@@ -141,7 +147,7 @@ def build() -> None:
 
     texts = [r[5] for r in chunk_rows]
     print(f"Embedding {len(texts)} chunk(s)...")
-    embeddings = model.encode(
+    embeddings = embed_model.encode(
         texts, batch_size=32, normalize_embeddings=True, show_progress_bar=False
     )
 
@@ -162,8 +168,11 @@ def build() -> None:
 
     db.commit()
     db.close()
-    size_kb = INDEX_PATH.stat().st_size // 1024
-    print(f"Wrote {INDEX_PATH} ({size_kb} KB, {len(chunk_rows)} chunks).")
+
+    # Atomic promotion — only replaces the live index once the new one is complete.
+    os.replace(tmp_path, cfg.index_path)
+    size_kb = cfg.index_path.stat().st_size // 1024
+    print(f"Wrote {cfg.index_path} ({size_kb} KB, {len(chunk_rows)} chunks).")
 
 
 if __name__ == "__main__":

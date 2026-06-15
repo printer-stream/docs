@@ -20,14 +20,21 @@ HTTP transport. For transport/interactive testing use the MCP Inspector.
 from __future__ import annotations
 
 import argparse
+import asyncio
 import logging
-import os
 import random
 import re
 import time
 
 import server  # reuses the same index + model + search_specs
+from config import cfg
 from corpus import discover_documents
+
+try:
+    from openai import OpenAI as _OpenAI  # type: ignore[import-untyped]
+    _OPENAI_AVAILABLE = True
+except ImportError:
+    _OPENAI_AVAILABLE = False
 
 log = logging.getLogger("printerrr-eval")
 
@@ -41,16 +48,12 @@ _STOP = {
 
 def llm_question(text: str) -> str | None:
     """Ask an LLM for one natural question answerable by this page."""
-    api_key = os.environ.get("OPENAI_API_KEY")
-    if not (api_key or os.environ.get("DOCS_EVAL_LLM")):
+    if not (cfg.openai_api_key or cfg.eval_llm) or not _OPENAI_AVAILABLE:
         return None
     try:
-        from openai import OpenAI
-
-        client = OpenAI()  # honors OPENAI_API_KEY / OPENAI_BASE_URL
-        model = os.environ.get("DOCS_EVAL_MODEL", "gpt-4o-mini")
+        client = _OpenAI()  # honors OPENAI_API_KEY / OPENAI_BASE_URL
         resp = client.chat.completions.create(
-            model=model,
+            model=cfg.eval_model,
             temperature=0.3,
             messages=[
                 {
@@ -123,7 +126,7 @@ def evaluate(sample: int, k: int, seed: int, use_llm: bool) -> None:
 
     for i, (query, stem, page_no) in enumerate(queries, start=1):
         t0 = time.perf_counter()
-        results = server.search_specs(query, k=max(k, 10))
+        results = asyncio.run(server.search_specs(query, k=max(k, 10)))
         latencies.append(time.perf_counter() - t0)
 
         rank = next(
@@ -168,9 +171,7 @@ def main() -> None:
     ap.add_argument("--no-llm", action="store_true", help="force fallback queries")
     args = ap.parse_args()
 
-    use_llm = (not args.no_llm) and bool(
-        os.environ.get("OPENAI_API_KEY") or os.environ.get("DOCS_EVAL_LLM")
-    )
+    use_llm = (not args.no_llm) and bool(cfg.openai_api_key or cfg.eval_llm)
     evaluate(args.sample, args.k, args.seed, use_llm)
 
 

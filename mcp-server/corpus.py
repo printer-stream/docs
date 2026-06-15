@@ -1,20 +1,17 @@
-"""Shared helpers: locate the repo, discover documents, derive image paths.
-
-The repo root is the parent of this `mcp-server/` directory, i.e. the folder
-that holds `md/`, `md-bulk/`, and `jpeg/`.
-"""
+"""Shared helpers: locate the repo, discover documents, derive image paths."""
 from __future__ import annotations
 
-import os
 import re
 from dataclasses import dataclass, field
 from pathlib import Path
 
-REPO_ROOT = Path(os.environ.get("DOCS_REPO_ROOT", Path(__file__).resolve().parent.parent))
-MD_DIR = REPO_ROOT / "md"
-MD_BULK_DIR = REPO_ROOT / "md-bulk"
-JPEG_DIR = REPO_ROOT / "jpeg"
-INDEX_PATH = Path(os.environ.get("DOCS_INDEX_PATH", REPO_ROOT / "index" / "specs.db"))
+from config import cfg
+
+REPO_ROOT: Path = cfg.repo_root
+MD_DIR: Path = cfg.md_dir  # type: ignore[assignment]
+MD_BULK_DIR: Path = cfg.md_bulk_dir  # type: ignore[assignment]
+JPEG_DIR: Path = cfg.jpeg_dir  # type: ignore[assignment]
+INDEX_PATH: Path = cfg.index_path  # type: ignore[assignment]
 
 _PAGE_RE = re.compile(r"page-(\d+)\.md$")
 _HEADING_RE = re.compile(r"^#{1,6}\s+(.*\S)\s*$", re.MULTILINE)

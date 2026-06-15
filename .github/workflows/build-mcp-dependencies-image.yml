@@ -1,12 +1,13 @@
 ---
-name: Build MCP Server
+name: Build MCP Dependencies Image
 
 on:
   push:
     branches:
       - main
     paths:
-      - 'mcp-server/**'
+      - 'mcp-dependencies-image/**'
+      - 'mcp-server/requirements.txt'
   workflow_dispatch:
 
 jobs:
@@ -33,7 +34,7 @@ jobs:
         id: prepare_version_file
         shell: bash
         run: >-
-          grep __version__ mcp-server/version.py | cut -d "=" -f 2 | tr -d "'\" " > .version
+          grep __version__ mcp-dependencies-image/version.py | cut -d "=" -f 2 | tr -d "'\" " > .version
 
       - name: Use latest released action
         id: validate_new_version
@@ -59,7 +60,7 @@ jobs:
       CAN_CREATE_RELEASE: ${{ needs.validate_new_version.outputs.can_create }}
       TAG_EXISTS: ${{ needs.validate_new_version.outputs.tag_exists }}
       BRANCH_NAME: ${{ needs.validate_new_version.outputs.branch_name }}
-      APP_NAME: "mcp-server"
+      APP_NAME: "mcp-dependencies-image"
 
     if: >
       github.event_name == 'push'
@@ -71,27 +72,24 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Read deps image version
-        id: deps_version
-        shell: bash
-        run: >-
-          grep __version__ mcp-dependencies-image/version.py | cut -d "=" -f 2 | tr -d "'\" " > .deps-version
-          && echo "version=$(cat .deps-version)" >> $GITHUB_OUTPUT
-
-      - name: Build Docker image
-        id: build_docker_image
-        uses: reinvented-stuff/build-docker-image-action@2.7.0
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
         with:
-          registry_address: "ghcr.io"
-          registry_username: "${{ github.actor }}"
-          registry_token: "${{ secrets.GITHUB_TOKEN }}"
-          name: "${{ github.repository }}/${{ env.APP_NAME }}"
-          planned_version: "${{ env.PLANNED_VERSION }}"
-          dockerfile: "mcp-server/Dockerfile"
-          build_args: |-
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push deps image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: mcp-dependencies-image/Dockerfile
+          push: ${{ env.CAN_CREATE_RELEASE == 'true' }}
+          tags: |
+            ghcr.io/${{ github.repository }}/${{ env.APP_NAME }}:${{ env.PLANNED_VERSION }}
+            ghcr.io/${{ github.repository }}/${{ env.APP_NAME }}:${{ env.TAG_HASH }}
+          build-args: |
             APP_VERSION=${{ env.PLANNED_VERSION }}
-            DEPS_IMAGE=ghcr.io/${{ github.repository }}/mcp-dependencies-image
-            DEPS_VERSION=${{ steps.deps_version.outputs.version }}
             VCS_REF=${{ github.sha }}
             BUILD_DATE=${{ github.event.head_commit.timestamp }}
 
