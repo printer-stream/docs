@@ -76,6 +76,34 @@ jobs:
           grep __version__ mcp-dependencies-image/version.py | cut -d "=" -f 2 | tr -d "'\" " > .deps-version
           && echo "version=$(cat .deps-version)" >> $GITHUB_OUTPUT
 
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      # This image is built FROM the dependencies layer. When a push bumps the
+      # deps version, the deps build runs concurrently with this one, so wait
+      # until the exact deps tag is published to GHCR before building. No-op when
+      # the deps image already exists (deps not rebuilt, or already finished).
+      - name: Wait for the dependencies image to be published
+        shell: bash
+        env:
+          DEPS_IMAGE: "ghcr.io/${{ github.repository }}/mcp-dependencies-image:${{ steps.deps_version.outputs.version }}"
+        run: |
+          echo "Ensuring ${DEPS_IMAGE} exists before building (it may be mid-build)..."
+          for attempt in $(seq 1 60); do
+            if docker manifest inspect "${DEPS_IMAGE}" >/dev/null 2>&1; then
+              echo "Dependencies image is available; proceeding."
+              exit 0
+            fi
+            echo "  [${attempt}/60] not available yet; sleeping 15s"
+            sleep 15
+          done
+          echo "::error::Timed out (15 min) waiting for ${DEPS_IMAGE}. Did the dependencies image build succeed?"
+          exit 1
+
       - name: Build Docker image
         id: build_docker_image
         uses: reinvented-stuff/build-docker-image-action@2.7.0
