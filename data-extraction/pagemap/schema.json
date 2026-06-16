@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://printerrr.com/schemas/pagemap.json",
+  "$id": "https://printer-stream.com/schemas/pagemap.json",
   "title": "Pagemap",
   "description": "Authoritative page<->artifact map for one source document, assembled from the per-phase outputs.",
   "type": "object",

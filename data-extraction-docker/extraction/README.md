@@ -18,7 +18,7 @@ Every phase also writes `data-extraction/meta/<stem>/<phase>.json` (tool, versio
 params, start/end, duration, per-page timing, status). `assemble` folds a summary
 of those into the pagemap's `phases` field.
 
-The `describe` phase is optional and off by default (not part of `run`). It is
+The `describe` phase is optional and off by default (not part of `all-phases`). It is
 gated to the pages the quality phase flagged plus image-only/empty pages, and
 needs an OpenAI-compatible vision endpoint (local vLLM or a hosted model):
 
@@ -27,15 +27,15 @@ needs an OpenAI-compatible vision endpoint (local vLLM or a hosted model):
 docker run --rm -v "$PWD":/work \
   -e DESCRIBE_BASE_URL=http://host.docker.internal:8000/v1 \
   -e DESCRIBE_MODEL=Qwen/Qwen2.5-VL-7B-Instruct \
-  printerrr-extraction describe --all
+  printer-stream-extraction describe --all
 # then re-run assemble so the pagemap references the new descriptions:
-docker run --rm -v "$PWD":/work printerrr-extraction assemble --all
+docker run --rm -v "$PWD":/work printer-stream-extraction assemble --all
 ```
 
 ## Build
 
 ```
-docker build -t printerrr-extraction data-extraction-docker/extraction
+docker build -t printer-stream-extraction data-extraction-docker/extraction
 ```
 
 ## Run
@@ -45,26 +45,26 @@ Each phase takes a scope: `--all`, `--stem <vendor/doc>`, or
 `--shard-index i --shard-count n`.
 
 ```bash
-# All phases over the whole corpus
-docker run --rm -v "$PWD":/work printerrr-extraction run --all
+# All phases over the whole corpus (render -> text -> markdown -> quality -> assemble)
+docker run --rm -v "$PWD":/work printer-stream-extraction all-phases --all
 
 # A single phase over one doc (e.g. just re-render JPEGs)
-docker run --rm -v "$PWD":/work printerrr-extraction render --stem star/star_graphic_cm_en
+docker run --rm -v "$PWD":/work printer-stream-extraction render --stem star/star_graphic_cm_en
 
 # Just re-run the markdown (slow) phase, sharded across N CI runners
-docker run --rm -v "$PWD":/work printerrr-extraction markdown --shard-index 0 --shard-count 4
+docker run --rm -v "$PWD":/work printer-stream-extraction markdown --shard-index 0 --shard-count 4
 
 # Re-run only quality + assemble after tweaking the gate (cheap, no Docling)
-docker run --rm -v "$PWD":/work printerrr-extraction quality --all --quality-threshold 0.55
-docker run --rm -v "$PWD":/work printerrr-extraction assemble --all
+docker run --rm -v "$PWD":/work printer-stream-extraction quality --all --quality-threshold 0.55
+docker run --rm -v "$PWD":/work printer-stream-extraction assemble --all
 
 # Manifest for the CI matrix; corpus QA report
-docker run --rm -v "$PWD":/work printerrr-extraction manifest
-docker run --rm -v "$PWD":/work printerrr-extraction report
+docker run --rm -v "$PWD":/work printer-stream-extraction manifest
+docker run --rm -v "$PWD":/work printer-stream-extraction report
 ```
 
 Mount a model cache to avoid re-downloading Docling models each run:
-`-v "$HOME/.cache/printerrr-models":/models`.
+`-v "$HOME/.cache/printer-stream-models":/models`.
 
 ## Re-running and sharding
 

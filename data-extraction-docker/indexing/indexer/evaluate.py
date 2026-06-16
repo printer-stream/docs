@@ -15,7 +15,7 @@ from pathlib import Path
 from typing import Dict, List, Optional
 
 from .config import LOGGER_NAME, Settings
-from .search import search_fulltext, search_trigram
+from .search import search_pages
 
 log = logging.getLogger(LOGGER_NAME)
 
@@ -43,30 +43,30 @@ def run_eval(settings: Settings, queries_path: Path, k: int = 10) -> Dict:
         expect_stem = item.get("expect_stem")
         expect_labels = item.get("expect_labels", [])
 
-        ft = search_fulltext(con, q, k)
-        tg = search_trigram(con, q, k)
+        # Use the canonical combined search (AND -> OR -> trigram), i.e. exactly
+        # what the MCP server serves, so the gate reflects real behaviour.
+        results = search_pages(con, q, k)
 
-        ft_rank = _stem_rank(ft, expect_stem) if expect_stem else None
-        tg_hit = any(r["stem"] == expect_stem for r in tg) if expect_stem else None
-        ft_labels = {r["label"] for r in ft if r["stem"] == expect_stem}
-        labels_found = [lb for lb in expect_labels if lb in ft_labels]
+        rank = _stem_rank(results, expect_stem) if expect_stem else None
+        found_labels = {r["label"] for r in results if r["stem"] == expect_stem}
+        labels_found = [lb for lb in expect_labels if lb in found_labels]
 
         ok = True
-        if expect_stem and ft_rank is None and not tg_hit:
+        if expect_stem and rank is None:
             ok = False
         if expect_labels and not labels_found:
             ok = False
         passed += 1 if ok else 0
 
         log.info(
-            "[%s] %-22s ft_rank=%s trgm=%s labels=%s/%s",
-            "PASS" if ok else "FAIL", q, ft_rank, tg_hit,
+            "[%s] %-22s rank=%s labels=%s/%s",
+            "PASS" if ok else "FAIL", q, rank,
             len(labels_found), len(expect_labels),
         )
         details.append(
             {
                 "query": q, "expect_stem": expect_stem, "ok": ok,
-                "ft_rank": ft_rank, "trigram_hit": tg_hit,
+                "rank": rank,
                 "labels_found": labels_found, "labels_expected": expect_labels,
             }
         )

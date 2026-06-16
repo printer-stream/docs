@@ -126,7 +126,7 @@ phases (e.g. a VLM `describe` step) between existing ones.
 | `assemble` | all the above | `pagemap/<stem>.json` + `markdown/<stem>/document.md` + reports |
 
 `describe` runs after `quality` because it is gated on the quality phase's output
-(flagged + image-only/empty pages); it is excluded from the `run` convenience and
+(flagged + image-only/empty pages); it is excluded from the `all-phases` convenience and
 only fires when an endpoint is configured. It is provider-pluggable via any
 OpenAI-compatible vision endpoint (local vLLM or a hosted model) and writes
 supplementary descriptions that the index treats as a separate, lower-signal

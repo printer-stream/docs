@@ -44,15 +44,15 @@ jobs:
         with:
           context: data-extraction-docker/indexing
           load: true
-          tags: printerrr-indexing:ci
+          tags: printer-stream-indexing:ci
           cache-from: type=gha,scope=indexing
           cache-to: type=gha,scope=indexing,mode=max
 
       - name: Build index
-        run: docker run --rm -v "$PWD":/work printerrr-indexing:ci build
+        run: docker run --rm -v "$PWD":/work printer-stream-indexing:ci build
 
       - name: Eval gate (recall@k)
-        run: docker run --rm -v "$PWD":/work printerrr-indexing:ci evaluate --min-recall 0.8
+        run: docker run --rm -v "$PWD":/work printer-stream-indexing:ci evaluate --min-recall 0.8
 
       - name: Commit index to LFS
         run: |

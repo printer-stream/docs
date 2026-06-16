@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "printer-stream-docs": {
+      "type": "http",
+      "url": "https://docs-mcp-server.onrender.com/mcp"
+    }
+  }
+}
