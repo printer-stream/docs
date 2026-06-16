@@ -1,10 +1,10 @@
 {
   "builder": {
     "name": "indexer",
-    "version": "0.1.0"
+    "version": "0.2.0"
   },
   "sqlite_version": "3.46.1",
-  "generated_at": "2026-06-16T19:40:19Z",
+  "generated_at": "2026-06-16T22:23:33Z",
   "params": {
     "fts_tokenize": "unicode61 remove_diacritics 0 tokenchars '@/*^<>=&|~#+'",
     "trigram_tokenize": "trigram case_sensitive 0",
