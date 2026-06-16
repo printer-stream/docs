@@ -4,7 +4,7 @@
     "version": "0.3.0"
   },
   "sqlite_version": "3.46.1",
-  "generated_at": "2026-06-16T22:48:49Z",
+  "generated_at": "2026-06-16T22:53:13Z",
   "params": {
     "fts_tokenize": "unicode61 remove_diacritics 0 tokenchars '@/*^<>=&|~#+'",
     "trigram_tokenize": "trigram case_sensitive 0",
@@ -22,7 +22,7 @@
       "doc_count": 12,
       "page_count": 2808,
       "bytes": 30638080,
-      "sha256": "4c663b480c78e120150ce5a13c64c301a53255d36c24876cb471c583cd9df4fe"
+      "sha256": "4db2d0757802777e04d2a0b66e7415400d0fa4de7ae9175da455ce4d162d3423"
     }
   }
 }
