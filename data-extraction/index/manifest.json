@@ -1,10 +1,10 @@
 {
   "builder": {
     "name": "indexer",
-    "version": "0.2.0"
+    "version": "0.3.0"
   },
   "sqlite_version": "3.46.1",
-  "generated_at": "2026-06-16T22:23:33Z",
+  "generated_at": "2026-06-16T22:48:49Z",
   "params": {
     "fts_tokenize": "unicode61 remove_diacritics 0 tokenchars '@/*^<>=&|~#+'",
     "trigram_tokenize": "trigram case_sensitive 0",
@@ -21,8 +21,8 @@
       ],
       "doc_count": 12,
       "page_count": 2808,
-      "bytes": 30617600,
-      "sha256": "4ed3f505338ec342aad91f5281cb719d9c234fcd80a5c0ac3fa6b38d3b6a96ae"
+      "bytes": 30638080,
+      "sha256": "4c663b480c78e120150ce5a13c64c301a53255d36c24876cb471c583cd9df4fe"
     }
   }
 }
