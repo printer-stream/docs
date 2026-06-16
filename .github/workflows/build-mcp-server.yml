@@ -19,8 +19,11 @@ permissions:
   contents: read
   packages: write
 
+# Shared with the Index workflow: the build must wait for any in-progress index
+# rebuild (so it bakes a finished, current index, never a stale or half-written
+# one). Index completion also re-triggers this build via workflow_run above.
 concurrency:
-  group: build-mcp-server
+  group: index-and-image
   cancel-in-progress: false
 
 jobs:

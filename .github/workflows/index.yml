@@ -19,8 +19,10 @@ on:
 permissions:
   contents: write
 
+# Shared with build-mcp-server so the image build never runs concurrently with
+# (or ahead of) an index rebuild - the build must bake a finished index.
 concurrency:
-  group: data-extraction-index
+  group: index-and-image
   cancel-in-progress: false
 
 jobs:
