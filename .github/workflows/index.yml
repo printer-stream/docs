@@ -2,7 +2,13 @@ name: Index
 
 # Builds the SQLite FTS5 search index from the extraction outputs, gates on the
 # eval query set, and commits the index to Git LFS. Runs automatically after a
-# successful Extract run, on human pushes to the relevant paths, or manually.
+# successful Extract run, on pushes to the relevant paths, or manually.
+#
+# Note mcp-server/** is included: build-mcp-server runs ONLY downstream of this
+# workflow (via workflow_run), so server-code changes must enter the pipeline
+# here. Index is a fast no-op when only server code changed (it commits nothing),
+# but it still chains to the image build with a current index - guaranteeing the
+# build never runs ahead of, or concurrently with, indexing.
 
 on:
   workflow_run:
@@ -15,6 +21,7 @@ on:
       - "data-extraction/pagemap/**"
       - "data-extraction/markdown/**"
       - "data-extraction-docker/indexing/**"
+      - "mcp-server/**"
 
 permissions:
   contents: write

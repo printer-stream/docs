@@ -1,19 +1,19 @@
 name: Build MCP Server
 
 # Builds both image variants (lean + stuffed) from mcp-server/Dockerfile and
-# pushes them to GHCR, then optionally triggers a Render deploy. Runs after a
-# successful Index run (the baked index changed), on pushes to mcp-server/**, or
-# manually. The stuffed image bakes jpeg + markdown, so checkout pulls LFS.
+# pushes them to GHCR, then optionally triggers a Render deploy. The stuffed
+# image bakes jpeg + markdown, so checkout pulls LFS.
+#
+# Runs ONLY downstream of the Index workflow (or manual dispatch) - never on a
+# raw push - so it can never run ahead of, or concurrently with, indexing.
+# mcp-server/** pushes trigger Index, which chains here once a current index is
+# committed.
 
 on:
   workflow_run:
     workflows: ["Index"]
     types: [completed]
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - "mcp-server/**"
 
 permissions:
   contents: read
