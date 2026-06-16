@@ -24,9 +24,19 @@ _PAGE_COLS = (
 )
 
 
-def fts_query(text: str) -> str:
-    """Turn arbitrary user text into a safe FTS5 phrase query."""
+def fts_phrase(text: str) -> str:
+    """Whole text as one quoted FTS5 phrase (exact substring for trigram)."""
     return '"' + text.replace('"', '""') + '"'
+
+
+def _terms(text: str) -> List[str]:
+    """Quoted per-word terms, dropping tokens with no alphanumeric content
+    (a bare '(' tokenizes to an empty phrase, which is a MATCH syntax error)."""
+    terms: List[str] = []
+    for raw in text.split():
+        if any(ch.isalnum() for ch in raw):
+            terms.append('"' + raw.replace('"', '""') + '"')
+    return terms
 
 
 def _connect() -> sqlite3.Connection:
@@ -71,9 +81,9 @@ def get_document(stem: str) -> Optional[Dict]:
     return dict(r) if r else None
 
 
-def search_fulltext(con, query: str, vendor: Optional[str], k: int) -> List[Dict]:
+def _fts_pages(con, match_expr: str, vendor: Optional[str], k: int) -> List[Dict]:
     where = "pages_fts MATCH ?"
-    params: list = [fts_query(query)]
+    params: list = [match_expr]
     if vendor:
         where += " AND p.vendor = ?"
         params.append(vendor)
@@ -92,7 +102,7 @@ def search_trigram(con, query: str, vendor: Optional[str], k: int) -> List[Dict]
     if len(query.strip()) < TRIGRAM_MIN:
         return []
     where = "pages_trgm MATCH ?"
-    params: list = [fts_query(query)]
+    params: list = [fts_phrase(query)]
     if vendor:
         where += " AND p.vendor = ?"
         params.append(vendor)
@@ -106,18 +116,30 @@ def search_trigram(con, query: str, vendor: Optional[str], k: int) -> List[Dict]
 
 
 def search_pages(con, query: str, vendor: Optional[str], k: int) -> List[Dict]:
-    """Ranked full-text, topped up with trigram recall to fill k."""
+    """Canonical search: ranked AND of terms, OR top-up for recall, then trigram.
+
+    A multi-word query matches documents containing all terms (not only the exact
+    phrase); OR and trigram fill remaining slots so symbol/command sequences and
+    looser matches are not missed.
+    """
     k = _clamp_k(k)
-    hits = search_fulltext(con, query, vendor, k)
+    terms = _terms(query)
+    hits = _fts_pages(con, " ".join(terms), vendor, k) if terms else []
     seen = {(h["stem"], h["page"]) for h in hits}
-    if len(hits) < k:
-        for r in search_trigram(con, query, vendor, k):
+
+    def _add(rows: List[Dict]) -> None:
+        for r in rows:
             key = (r["stem"], r["page"])
             if key not in seen:
                 hits.append(r)
                 seen.add(key)
             if len(hits) >= k:
                 break
+
+    if len(hits) < k and len(terms) > 1:
+        _add(_fts_pages(con, " OR ".join(terms), vendor, k))
+    if len(hits) < k:
+        _add(search_trigram(con, query, vendor, k))
     return hits[:k]
 
 

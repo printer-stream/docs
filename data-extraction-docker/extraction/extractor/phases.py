@@ -35,6 +35,19 @@ log = logging.getLogger(LOGGER_NAME)
 PRIOR_PHASES = ["render", "text", "markdown", "quality", "describe"]
 
 
+class Progress:
+    """Running page counter across all documents in a phase run, so per-page
+    logs read 'page 100/9000' rather than just 'page 100'."""
+
+    def __init__(self, total: int) -> None:
+        self.total = total
+        self.done = 0
+
+    def advance(self) -> int:
+        self.done += 1
+        return self.done
+
+
 def _pkg_version(name: str) -> str:
     try:
         return pkg_version(name)
@@ -51,8 +64,19 @@ def _open(settings: Settings, stem: str) -> Tuple["fitz.Document", int, int]:
     return doc, page_count, pad_width(page_count)
 
 
+def _log_page(phase, stem, label, n, page_count, progress, extra=""):
+    """Per-page progress. With a corpus Progress, shows the running count across
+    all docs (page 100/9000); otherwise the per-doc count (page 100/377)."""
+    if progress is not None:
+        done, total = progress.advance(), progress.total
+    else:
+        done, total = n, page_count
+    msg = "  %s %s %s  page %d/%d" % (phase, stem, label, done, total)
+    log.info(msg + (" " + extra if extra else ""))
+
+
 # --- phase: render ---------------------------------------------------------
-def render_doc(settings: Settings, stem: str) -> Dict:
+def render_doc(settings: Settings, stem: str, progress: Optional["Progress"] = None) -> Dict:
     doc, page_count, width = _open(settings, stem)
     rec = PhaseRecorder(
         "render", "pymupdf", _pkg_version("pymupdf"),
@@ -69,6 +93,7 @@ def render_doc(settings: Settings, stem: str) -> Dict:
             with rec.time_page(label):
                 render_small(page, settings.doc_jpeg_dir(stem) / "small" / (label + ".jpg"), settings)
                 render_big(page, settings.doc_jpeg_dir(stem) / "big" / (label + ".jpg"), settings)
+            _log_page("render", stem, label, n + 1, page_count, progress)
         meta = rec.to_dict(stem, page_count)
     finally:
         doc.close()
@@ -96,7 +121,10 @@ def text_doc(settings: Settings, stem: str) -> Dict:
 
 
 # --- phase: markdown (Docling, the expensive one) --------------------------
-def markdown_doc(settings: Settings, converter: DoclingPageConverter, stem: str) -> Dict:
+def markdown_doc(
+    settings: Settings, converter: DoclingPageConverter, stem: str,
+    progress: Optional["Progress"] = None,
+) -> Dict:
     doc, page_count, width = _open(settings, stem)
     rec = PhaseRecorder(
         "markdown", "docling", _pkg_version("docling"),
@@ -110,7 +138,7 @@ def markdown_doc(settings: Settings, converter: DoclingPageConverter, stem: str)
             with rec.time_page(label):
                 markdown = converter.convert_page(doc, n)
             (out_dir / (label + ".md")).write_text(markdown.rstrip() + "\n", encoding="utf-8")
-            log.info("  %s %s converted (%d chars)", stem, label, len(markdown))
+            _log_page("markdown", stem, label, n + 1, page_count, progress, "(%d chars)" % len(markdown))
         meta = rec.to_dict(stem, page_count)
     finally:
         doc.close()
@@ -197,7 +225,8 @@ def describe_doc(
 
     described = 0
     failed = 0
-    for label in targets:
+    total_targets = len(targets)
+    for i, label in enumerate(targets, 1):
         jpeg = settings.doc_jpeg_dir(stem) / size / (label + ".jpg")
         if not jpeg.exists():
             log.warning("describe: missing %s; run the render phase first", jpeg)
@@ -208,7 +237,7 @@ def describe_doc(
                 text = client.describe_image(jpeg.read_bytes())
             (out_dir / (label + ".txt")).write_text(text.rstrip() + "\n", encoding="utf-8")
             described += 1
-            log.info("  %s %s described (%d chars)", stem, label, len(text))
+            log.info("  describe %s %s  page %d/%d (%d chars)", stem, label, i, total_targets, len(text))
         except Exception:
             failed += 1
             log.exception("describe failed for %s %s", stem, label)
@@ -322,10 +351,18 @@ def assemble_doc(settings: Settings, stem: str) -> Dict:
     return meta
 
 
-# --- convenience: run all phases for one doc -------------------------------
-def run_doc(settings: Settings, converter: DoclingPageConverter, stem: str) -> Dict:
-    render_doc(settings, stem)
+# --- convenience: all phases for one doc, in order -------------------------
+def run_all_phases(
+    settings: Settings,
+    converter: DoclingPageConverter,
+    stem: str,
+    render_progress: Optional["Progress"] = None,
+    markdown_progress: Optional["Progress"] = None,
+) -> Dict:
+    # Separate counters per page-logging phase so the corpus running count stays
+    # correct across docs without double-counting render and markdown.
+    render_doc(settings, stem, progress=render_progress)
     text_doc(settings, stem)
-    markdown_doc(settings, converter, stem)
+    markdown_doc(settings, converter, stem, progress=markdown_progress)
     quality_doc(settings, stem)
     return assemble_doc(settings, stem)

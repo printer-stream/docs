@@ -28,4 +28,4 @@ COPY . .
 # phase and/or a shard, e.g.:
 #   docker run --rm -v "$PWD":/work img markdown --shard-index 0 --shard-count 4
 ENTRYPOINT ["python", "-m", "extractor.cli", "--root", "/work"]
-CMD ["run", "--all"]
+CMD ["all-phases", "--all"]

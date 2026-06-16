@@ -11,10 +11,10 @@ on:
   workflow_dispatch:
     inputs:
       phase:
-        description: "Extraction phase to run"
+        description: "Phase (all-phases = render+text+markdown+quality+assemble in order)"
         type: choice
-        default: run
-        options: [run, render, text, markdown, quality, assemble]
+        default: all-phases
+        options: [all-phases, render, text, markdown, quality, assemble]
       scope:
         description: "Process the whole corpus or a single document"
         type: choice
@@ -52,14 +52,14 @@ jobs:
         with:
           context: data-extraction-docker/extraction
           load: true
-          tags: printerrr-extraction:ci
+          tags: printer-stream-extraction:ci
           cache-from: type=gha,scope=extraction
           cache-to: type=gha,scope=extraction,mode=max
 
       - name: Cache Docling models
         uses: actions/cache@v4
         with:
-          path: ~/.cache/printerrr-models
+          path: ~/.cache/printer-stream-models
           key: docling-models-v1
 
       - name: Run phase
@@ -68,7 +68,7 @@ jobs:
           SCOPE: ${{ inputs.scope }}
           STEM: ${{ inputs.stem }}
         run: |
-          mkdir -p "$HOME/.cache/printerrr-models"
+          mkdir -p "$HOME/.cache/printer-stream-models"
           scope_args="--all"
           if [ "$SCOPE" = "stem" ]; then
             if [ -z "$STEM" ]; then echo "::error::scope=stem requires a stem"; exit 1; fi
@@ -76,8 +76,8 @@ jobs:
           fi
           docker run --rm \
             -v "$PWD":/work \
-            -v "$HOME/.cache/printerrr-models":/models \
-            printerrr-extraction:ci "$PHASE" $scope_args
+            -v "$HOME/.cache/printer-stream-models":/models \
+            printer-stream-extraction:ci "$PHASE" $scope_args
 
       - name: Commit outputs to LFS
         run: |

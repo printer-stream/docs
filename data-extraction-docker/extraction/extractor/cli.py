@@ -6,7 +6,7 @@
   markdown   pdf  -> markdown/<stem>/page-NN.md      (Docling; the slow phase)
   quality    md+text -> quality/<stem>.json
   assemble   all  -> pagemap/<stem>.json + document.md + reports
-  run        render+text+markdown+quality+assemble, in order
+  all-phases render+text+markdown+quality+assemble, in order
   report     aggregate per-doc QA -> quality/report.html
 
 Each phase processes whole documents (all-or-none) and writes meta/<stem>/<phase>.json.
@@ -35,7 +35,7 @@ from .version import __version__
 log = logging.getLogger(LOGGER_NAME)
 
 # Phases that need the (expensive) Docling converter built once before the loop.
-_NEEDS_CONVERTER = {"markdown", "run"}
+_NEEDS_CONVERTER = {"markdown", "all-phases"}
 
 
 def _add_scope(p: argparse.ArgumentParser) -> None:
@@ -56,12 +56,17 @@ def build_parser() -> argparse.ArgumentParser:
     m = sub.add_parser("manifest", help="Discover PDFs and emit a doc manifest as JSON")
     m.add_argument("--out", default=None, help="Write JSON here (default: stdout)")
 
-    for phase in ("render", "text", "markdown", "quality", "assemble", "run"):
-        sp = sub.add_parser(phase, help="Phase: %s" % phase)
+    # "all-phases" runs render -> text -> markdown -> quality -> assemble in order.
+    for phase in ("render", "text", "markdown", "quality", "assemble", "all-phases"):
+        help_text = (
+            "Run all phases in order (render, text, markdown, quality, assemble)"
+            if phase == "all-phases" else "Phase: %s" % phase
+        )
+        sp = sub.add_parser(phase, help=help_text)
         _add_scope(sp)
-        if phase in ("markdown", "run"):
+        if phase in ("markdown", "all-phases"):
             sp.add_argument("--no-ocr", action="store_true", help="Disable OCR in Docling")
-        if phase in ("quality", "run"):
+        if phase in ("quality", "all-phases"):
             sp.add_argument(
                 "--quality-threshold", type=float, default=None, help="Flag pages below this"
             )
@@ -145,35 +150,47 @@ def _run_phase(settings: Settings, args: argparse.Namespace, phase: str) -> int:
             api_key=args.describe_api_key or "",
         )
 
+    # Corpus-wide running page counters so per-page logs read "page 100/9000".
+    total_pages = sum(d.page_count for d in docs)
+    render_progress = phases_mod.Progress(total_pages) if phase in ("render", "all-phases") else None
+    markdown_progress = phases_mod.Progress(total_pages) if phase in ("markdown", "all-phases") else None
+
     fn: Callable[[str], object]
     if phase == "render":
-        fn = lambda stem: phases_mod.render_doc(settings, stem)
+        fn = lambda stem: phases_mod.render_doc(settings, stem, progress=render_progress)
     elif phase == "text":
         fn = lambda stem: phases_mod.text_doc(settings, stem)
     elif phase == "markdown":
-        fn = lambda stem: phases_mod.markdown_doc(settings, converter, stem)
+        fn = lambda stem: phases_mod.markdown_doc(settings, converter, stem, progress=markdown_progress)
     elif phase == "quality":
         fn = lambda stem: phases_mod.quality_doc(settings, stem)
     elif phase == "describe":
         fn = lambda stem: phases_mod.describe_doc(settings, client, stem, all_pages=args.all_pages)
     elif phase == "assemble":
         fn = lambda stem: phases_mod.assemble_doc(settings, stem)
-    elif phase == "run":
-        fn = lambda stem: phases_mod.run_doc(settings, converter, stem)
+    elif phase == "all-phases":
+        fn = lambda stem: phases_mod.run_all_phases(
+            settings, converter, stem,
+            render_progress=render_progress, markdown_progress=markdown_progress,
+        )
     else:
         raise SystemExit("unknown phase: %s" % phase)
 
+    n_docs = len(docs)
     failures = 0
-    for doc in docs:
+    for i, doc in enumerate(docs, 1):
         try:
-            log.info("Phase %s starting on %s", phase, doc.stem)
+            log.info(
+                "Phase %s starting on %s [doc %d/%d, %d pages, %d total]",
+                phase, doc.stem, i, n_docs, doc.page_count, total_pages,
+            )
             fn(doc.stem)
         except Exception:
             failures += 1
             log.exception("Phase %s failed on %s", phase, doc.stem)
 
     # Phases that change QA refresh the corpus-level report for convenience.
-    if phase in ("quality", "assemble", "run"):
+    if phase in ("quality", "assemble", "all-phases"):
         report_mod.write_corpus_report(settings)
 
     log.info("Phase %s done: %d docs, %d failures", phase, len(docs), failures)
