@@ -1,0 +1,29 @@
+## 5.7  Overview of External Dimensions (TM-T88II/TM-T88III)
+
+## 5.7.1  External Dimensions
+
+The dimensions in the figure below are common to both the TM-88III and TM-88III.
+
+- ❏ Height 148 mm {5.83"}
+
+- ❏ Width
+
+145 mm {5.71"}
+
+- ❏ Depth
+
+195 mm {7.68"}
+
+- ❏
+
+- Weight
+
+Approx. 1.8 kg {3.97 lb} (without roll paper)
+
+[Units: mm]
+
+<!-- image -->
+
+Figure 5-3  Dimensions
+
+<!-- image -->

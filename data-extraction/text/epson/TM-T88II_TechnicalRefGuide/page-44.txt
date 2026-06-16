@@ -1,0 +1,59 @@
+3-8   Application Development Information
+Rev. A
+3.3.3.1  Error Codes
+There are three possible error types: automatically recoverable errors, recoverable errors, and 
+unrecoverable errors. 
+❏
+For automatically recoverable errors, the user does not have to take any action. The error 
+recovers automatically when the head temperature returns to normal or the cover is 
+correctly closed. 
+❏
+A recoverable error recovers by resetting the printer or sending a command from the driver 
+after the cause of the error is eliminated.
+❏
+For unrecoverable errors, the printer or the power supply may be malfunctioning and must 
+be repaired.
+Automatically recoverable errors
+Although normal printer operation is no longer possible when automatically recoverable errors 
+occur, they do not represent printer failure. They can be recovered easily, as described below. 
+Note:
+If the temperature cannot be detected correctly, a drive circuit error occurs.
+Recoverable errors
+Although normal printer operation is not possible after a recoverable error occurs, this is not a 
+printer malfunction. These errors can be recovered easily by turning the power on again or 
+sending an error recovery command from the driver after eliminating the cause of the error.
+ Table 3-4  Automatically recoverable errors
+Error
+Error description
+Error LED flash code
+Recovery measure
+Roll paper cover 
+open error
+The roll paper cover was 
+opened during printing.
+Recovers automatically 
+when the roll paper cover 
+is closed.
+Print head 
+temperature error
+A high temperature outside 
+the head drive operating 
+range was detected.
+Recovers automatically 
+when the print head cools.
+ Table 3-5  Recoverable errors
+Error
+Error description
+Error LED flash code
+Recovery measure
+Autocutter error
+Autocutter does not work 
+correctly.
+ 
+Remove the jammed paper or 
+foreign matter in the printer, 
+close the roll paper cover, send 
+the error recover command, or 
+turn the power on to recover.
+Approx. 160 ms
+Approx. 160 ms

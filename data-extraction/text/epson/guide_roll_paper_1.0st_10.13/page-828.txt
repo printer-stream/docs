@@ -1,0 +1,34 @@
+C O N F I D E N T I A L
+Paper roll
+Printing paper commands     FS ( L
+ 
+Ver. 10.13
+p. 828
+With the operation of this function, paper feed is executed until the paper layout "eject 
+reference" reaches the mechanical peeling position.
+When the peeling issuing mode is selected, the status changes to label removal standby when this 
+function is executed. You can check the label removal standby status with DLE EOT (n = 8, a = 3: 
+Peeler status) or the basic ASB status.
+The peeling issuing mode/continuous issuing mode is selected with the operation shown below.
+Selecting the peeling issuing mode
+Selecting the continuous issuing mode
+Step
+Operation
+1
+Press the cover open button, and open the peeler cover.
+2
+If the paper roll cover was open in Step 1, close the paper roll cover.
+3
+Press the peeler changeover lever. The peeler holder is raised.
+4
+Close the peeler cover.
+Step
+Operation
+1
+Press the cover open button, and open the peeler cover.
+2
+If the paper roll cover was open in Step 1, close the paper roll cover.
+3
+Fold up the peeler holder.
+4
+Close the peeler cover.

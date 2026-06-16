@@ -1,0 +1,21 @@
+C O N F I D E N T I A L
+Paper roll
+Command classification     
+ 
+Ver. 10.13
+p. 8
+Command classification
+ESC/POS printer commands are classified by functions such as print, character, print position, printing paper, line spacing, 
+panel button, paper sensor, mechanism control, status, bar code, bit-image, macro function, control option, and miscellaneous 
+functions. The classification is called function classification.
+ESC/POS printer commands are also classified by sheet and grade. The sheet and grade classification is called matrix 
+classification. 
+The sheet classification is divided into single sheet commands and multiple sheet commands. The grade classification is 
+separated into basic commands and extension commands.
+Basic commands are defined as fundamental printer controls, including print commands and character type selection 
+commands. Extension commands are defined as control codes for functions specific to individual printers. These commands 
+are further divided into mechanical extension commands that relate to additional mechanical functions such as stamp and 
+autocutter units, hardware extension commands that relate to additional hardware functions such as panel button and status 
+transmission controls, and software extension commands that relate to additional software functions such as user-defined and 
+bar code controls. The next screen is an overview diagram of the matrix classification of ESC/POS.
+COMMAND CLASSIFICATION

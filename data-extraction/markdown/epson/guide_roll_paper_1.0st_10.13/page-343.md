@@ -1,0 +1,9 @@
+## C O N F I D E N T I A L
+
+Bit 5, and 6 of the printer status is undefined.
+
+## ■ Roll paper sensor status ( n = 4)
+
+The roll paper near-end sensor is an option. If the printer is not equipped with the paper near-end sensor, bits 2 and 3 of the third byte are always ON, 'Paper adequate.'
+
+When the cover is open, the status of the roll paper end sensor (bit 5, 6) retain the value when the cover was closed immediately before.

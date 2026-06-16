@@ -1,0 +1,21 @@
+14
+Product configuration
+Interface
+• Serial interface model (RS-232C)
+• Parallel interface model (IEEE1284)
+• USB interface model (full-speed)
+• Ethernet interface model (10/100BASE-T)
+• Wireless LAN interface model (IEEE802.11b)
+Buzzer
+• Model with the buzzer function
+• Model without the buzzer function
+Color
+• ECW (Epson Cool White)
+• EDG (Epson Dark Gray)
+Accessories
+Attachments
+• Roll paper (for operation check)
+• User’s manual
+• Power switch cover
+• Connector cover
+• Locking wire saddle (only for USB interface model)

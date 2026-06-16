@@ -1,0 +1,41 @@
+## HP-41 RPN Example:
+
+- 01OLBL 'FTC'
+
+```
+02 RUTDIU 03 CF 21 04 "PH1000,1000 DC' 05 UUTR OB INH 0? HVIEN 08 TUNE 8 03 PSE 10 IIUIII 11 UUTH 12 INH 13 HVIEN 14 END HP-41beeps and displays: 1000, 1000, O HP-41 display is then replaced with:
+```
+
+## HP-75 BASICExample:
+
+At the time of this printing, the I/O functions necessary to obtain data from the plotter are not available for the HP-75. Please contact your dealer or HP Sales and Support Officefor more information. (Data can be sent to the plotter without additional I/O functions. Refer to the example in the previous section.)
+
+## HP Series 80 BASIC Example:
+
+- 10 PRINTER IS 901
+
+```
+20 PRINT 'PH1000,1000;UC' 30 ENTER801;H,B,C 40 PRINT 'DI;' so ENTER 901;H$ so DISP R,B,c,Rs 70 END
+```
+
+Displayed current pen position and identification (HP-85):
+
+1000
+
+0
+
+1000
+
+?4?0H
+
+Displayed current pen position and identification (HP-86/ 87):
+
+1000
+
+1000
+
+0
+
+?4?0H
+
+74 ?0F1

@@ -1,0 +1,95 @@
+                                                                                   Rev. 2.31  
+―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+STAR Graphic Mode Command Specifications 
+24 
+ 
+ESC GS L DC2 m n1 n2 
+[Name] 
+LED blink 
+[Code] 
+ASCII 
+ESC GS 
+L 
+DC2 
+m 
+n1 
+n2 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Hex 
+1B 
+1D 
+4C 
+12 
+m 
+n1 
+n2 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Decimal 
+27 
+29 
+76 
+18 
+m 
+n1 
+n2 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+[Defined Area] 1≦m≦3, 49≦m≦51 
+1≦n1≦20 
+n2 = 0 
+[Initial Value] 
+--- 
+[Function] 
+Repeatedly flashes the LED according to the ON/OFF conditions set by the LED flashing condition 
+setting command <ESC><GS>”L”<DC1> m t1 t2. 
+m specifies the LED to flash. 
+m 
+LED 
+1, 49 
+ERROR LED (Red) 
+2, 50 
+READY LED (Blue) 
+3, 51 
+ERROR LED (Red), READY LED (Blue) 
+Specifies the number of repetitions of the LED flash with (n2 x 256 + n1). 
+After the command is executed, the LED display pattern occurs after according to the status of the 
+printer. 
+ 
+<Example> 
+(Special note) If off time=0, it can be set to continously lit only for n1 number of times 
+For example, if on=5 seconds, off=0 and n1=20 times, it will be lit for  
+100 seconds. 
+ 
+OFF 
+ON 
+LED 
+on off 
+ 
+n1 = 8 
+ 

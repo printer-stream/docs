@@ -1,0 +1,40 @@
+Select Supporting Features        R-55
+Select Supporting Features
+Other features that affect the appearance of characters and graphics are
+unidirectional and color printing.
+Selecting unidirectional print head movement
+ESC/P 2
+ESC/P
+9-Pin ESC/P
+Normally, printing is bidirectional. Although the print head positions dots very
+accurately, print head movement has a slight effect on dot position. This effect is
+sometimes noticeable when printing graphics that include continuous vertical
+lines or large point-size characters.
+To achieve maximum alignment accuracy, use the unidirectional feature. During
+unidirectional printing, the print head prints only from left to right.
+Select unidirectional printing as follows:
+ESC U 0
+Selects bidirectional printing (cancels unidirectional)
+ESC U 1
+Selects unidirectional printing
+Selecting print color
+ESC/P 2
+ESC/P
+9-Pin ESC/P
+Use the ESC r command to select the print color on printers capable of color
+printing.
+The format of the ESC r command is as follows:
+ESC r 0
+Black
+ESC r 1
+Magenta
+ESC r 2
+Cyan
+ESC r 3
+Violet
+ESC r 4 
+Yellow
+ESC r 5 
+Red
+ESC r 6 
+Green

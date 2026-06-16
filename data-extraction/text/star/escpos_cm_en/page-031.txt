@@ -1,0 +1,19 @@
+ESC/POS Command Specifications
+31
+Rev.2.52
+• Chinese character base line 
+	
+1.	
+Normal direction character (Standard Mode/Page Mode) 
+	
+2.	
+Rotated characters (Standard Mode)
+•	 ASB Function
+	
+Sends the automatic status to the host each time the printer’s status changes.
+Base Line
+20 Dots
+24 Dots
+ 
+24Dots
+Base Line

@@ -1,0 +1,11 @@
+## Built-in features
+
+Print method 24-nozzle ink jet Speed LQ 165 cps @ 10 cpi 198 cps @ 12 cpi Draft 450 cps @ 10 cpi 540 cps @ 12 cpi Print width 8 inches Paper types Continuous, Single sheets, Labels Paper paths Rear, Top Paper parking Not available Buffer size 8KB Interfaces Parallel, Serial Fonts (typefaces) Roman, Sans Serif, Courier, Prestige, Script Nonprintable area 22.0 mm at the top of single sheets
+
+## Options (with model numbers)
+
+Cut-sheet feeders #7342 (Single-bin), #7336 (Double-bin) Tractor #7305 (Pull) Interfaces #8145, #8148, #8149, #8149M, #8161, #8165, #8172, #8172M Ink cartridge #7760
+
+## Note:
+
+## The SQ-2500 has no DIP switches.

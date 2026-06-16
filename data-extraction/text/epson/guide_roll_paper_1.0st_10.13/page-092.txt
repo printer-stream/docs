@@ -1,0 +1,27 @@
+C O N F I D E N T I A L
+Paper roll
+Print commands     ESC K
+ 
+Ver. 10.13
+p. 92
+[Model-dependent variations]
+TM-U230, TM-U220
+TM-U230, TM-U220
+This command must not be executed consecutively more than two times.
+Reverse direction paper feeding causes the following problems:
+■Paper feed pitch is incorrect.
+■Printer noise is louder than normal.
+■The paper may rub against the ribbon and become dirty.
+The vertical motion unit is 0.176 mm {1/144 inch}. This value equals a half dot pitch. In the reverse 
+direction, the maximum paper feed amount is 8.467 mm {48/144 inch}. If the specified amount 
+exceeds 8.467 mm {48/144 inch}, the printer only prints the data and does not feed the paper.
+Program Example for all printers
+Print Sample
+AAAAACCCCC
+BBBBB                      
+ESC K used to print one line and then reverse 
+feed the paper by 30/180 inch 
+PRINT #1, CHR$(&H1D);"P";CHR$(180);CHR$(180);
+PRINT #1, "AAAAA"; CHR$(&HA);
+PRINT #1, "BBBBB"; CHR$(&H1B);"K";CHR$(30);
+PRINT #1, "     CCCCC"; CHR$(&HA);

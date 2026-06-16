@@ -1,0 +1,25 @@
+## C O N F I D E N T I A L
+
+```
+( dyL + dyH × 256) = 1476 ( dyL = 196, dyH = 5) TM-P60 : [Peeler model] ( dxL + dyH × 256) = 388 ( dxL = 132, dxH = 1) ( dxL + dyH × 256) = 1200 ( dyL = 176, dyH = 4) [Other than peeler model] ( dxL + dxH × 256) = 420 ( dxL = 164, dxH = 1) (when paper width is set to 58mm) ( dyL + dyH × 256) = 1200 ( dyL = 176, dyH = 4) ( dxL + dxH × 256) = 432 ( dxL = 176, dxH = 1)(when paper width is set to 60 mm) ( dyL + dyH × 256) = 1200 ( dyL = 176, dyH = 4)
+```
+
+[Printers not featuring this command] TM-U230 , TM-U220
+
+[Description] In page mode, sets the size and the logical origin of the print area as follows:
+
+- Horizontal logical origin = ( xL + xH × 256) × (horizontal motion unit) from absolute origin.
+- Vertical logical origin = ( yL + yH × 256) × (vertical motion unit) from absolute origin.
+- Print area width = ( dxL + dxH × 256) × (horizontal motion unit)
+- Print area height = ( dyL + dyH × 256) × (vertical motion unit)
+- ■ This command can be used when the page mode is selected by ESC L .
+- ■ With this command, the printing position is moved to a starting point selected by ESC T in the print area set.
+- ■ For this command, the horizontal direction means the direction perpendicular to paper feeding direction and the vertical direction means the paper feeding direction.
+- ■ Both print area width and height cannot be set to 0.
+- ■ The absolute origin is the upper left of the printable area.
+- ■ Horizontal logical origin and print area width are calculated using the vertical motion unit.
+- ■ Vertical logical origin and print area height are calculated using the horizontal motion unit.
+- ■ The horizontal logical origin and the vertical logical origin cannot be set outside the printable area.
+- ■ If the horizontal or vertical logical origin is set outside the printable area, this command is canceled, and the following data is processed as normal data.
+
+[Notes]

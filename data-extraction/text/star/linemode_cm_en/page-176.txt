@@ -1,0 +1,218 @@
+  
+ 
+• 2 Character set code table 
+ 
+   <Control Codes> 
+ 
+<Control Codes> 
+ 
+<Control Codes> 
+ 
+Code 
+Format 
+ 
+Code 
+Format 
+ 
+ 
+NUL 00H 
+%@ 25H 40H 
+% 25H 
+%0 25H 30H 
+ 
+ 
+SOH 01H 
+%A 25H 41H 
+ 
+ 
+ 
+STX 02H 
+%B 25H 42H 
+ 
+ 
+<Function Codes> 
+ 
+ETX 03H 
+%C 25H 43H 
+Code 
+Format 
+ 
+ 
+EOT 04H 
+%D 25H 44H 
+FNC1 
+%1 25H 31H 
+ 
+ 
+ENQ 05H 
+%E 25H 45H 
+FNC2 
+%2 25H 32H 
+ 
+ 
+ACK 06H 
+%F 25H 46H 
+FNC3 
+%3 25H 33H 
+ 
+ 
+BEL 07H 
+%G 25H 47H 
+FNC4 
+%4 25H 34H 
+ 
+ 
+BS  08H 
+%H 25H 48H 
+ 
+ 
+ 
+HT  09H 
+%I 25H 49H 
+ 
+<Start Codes> 
+ 
+ 
+LF  0AH 
+%J 25H 4AH 
+Code 
+Format 
+ 
+ 
+VT  0BH 
+%K 25H 4BH 
+START A 
+%6 25H 36H 
+ 
+ 
+FF  0CH 
+%L 25H 4CH 
+START B 
+%7 25H 37H 
+ 
+ 
+CR  0DH 
+%M 25H 4DH 
+START C 
+%8 25H 38H 
+ 
+ 
+SO  0EH 
+%N 25H 4EH 
+ 
+ 
+ 
+SI  0FH 
+%O 25H 4FH 
+ 
+ 
+ 
+ 
+DLE 10H 
+%P 25H 50H 
+ 
+ 
+ 
+ 
+DC1 11H 
+%Q 25H 51H 
+ 
+ 
+ 
+ 
+DC2 12H 
+%R 25H 52H 
+ 
+ 
+ 
+ 
+DC3 13H 
+%S 25H 53H 
+ 
+ 
+ 
+ 
+DC4 14H 
+%T 25H 54H 
+ 
+ 
+ 
+ 
+NAK 15H 
+%U 25H 55H 
+ 
+ 
+ 
+ 
+SYN 16H 
+%V 25H 56H 
+ 
+ 
+ 
+ 
+ETB 17H 
+%W 25H 57H 
+ 
+ 
+ 
+ 
+CAN 18H 
+%X 25H 58H 
+ 
+ 
+ 
+ 
+EM  19H 
+%Y 25H 59H 
+ 
+ 
+ 
+ 
+SUB 1AH 
+%Z 25H 5AH 
+ 
+ 
+ 
+ 
+ESC 1BH 
+%[ 25H 5BH 
+ 
+ 
+ 
+ 
+FS  1CH 
+% ¥25H 5CH 
+ 
+ 
+ 
+ 
+GS  1DH 
+%] 25H 5DH 
+ 
+ 
+ 
+ 
+RS  1EH 
+%^ 25H 5EH 
+ 
+ 
+ 
+ 
+US  1FH 
+%_ 25H 5FH 
+ 
+ 
+ 
+ 
+DEL 7FH 
+%5 25H 35H 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+STAR Line Mode Command Specifications 
+5-4 

@@ -1,0 +1,22 @@
+## C O N F I D E N T I A L
+
+## GS ( D
+
+[Name] Enable/disable real-time command [Format] ASCII GS ( D pL pH m [a1 b1]...[ak bk] Hex 1D 28 44 pL pH 14 [a1 b1]...[ak bk] Decimal 29 40 68 pL pH 20 [a1 b1]...[ak bk] [Printers not featuring this command] TM-U230 [Range] ( pL + pH × 256) = 3, 5 ( pL = 3, 5, pH = 0) m = 20 TM-J2000/J2100 , TM-T90 , TM-T20 , TM-T88IV , TM-T88V , TM-T70 , TM-L90 : a = 1, 2 b = 0, 1, 48, 49 TM-P60 : a = 2 b = 0, 1, 48, 49 TM-U220: a = 1 b = 0, 1, 48, 49
+
+[Default]
+
+[Description]
+
+|   a | Real-time command type                          | Default          |
+|-----|-------------------------------------------------|------------------|
+|   1 | DLE DC4 ( fn = 1): Generate pulse in real-time. | enable ( b = 1)  |
+|   2 | DLE DC4 ( fn = 2): Execute power-off sequence.  | disable ( b = 0) |
+
+Enables or disables the real-time command.
+
+- pL , pH specifies ( pL + pH × 256) as the number of bytes after pH ( m and [a1 b1]...[ak bk] ).
+- a specifies the type of real-time command.
+- b specifies enable/disable of real-time command processing.
+
+SETTING COMMAND

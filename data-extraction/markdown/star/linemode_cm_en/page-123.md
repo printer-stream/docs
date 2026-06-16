@@ -1,0 +1,84 @@
+<!-- image -->
+
+## ESC GS SUB DC3 m t1 t2
+
+[Name]
+
+Snout LED output
+
+ESC
+
+GS  SUB
+
+DC3
+
+m
+
+t1
+
+t2
+
+[Code]
+
+ASCII
+
+1B
+
+1D
+
+1A
+
+13
+
+m
+
+t1
+
+t2
+
+Hexadecimal
+
+Decimal
+
+27 29 26 19 m t1 t2
+
+[Defined Area]
+
+1 ≤ m ≤ 2, 49 ≤ m ≤ 50, ('1' ≤ m ≤ '2')
+
+0 ≤ t1 ≤ 255, 0 ≤ t2 ≤ 255
+
+[Initial Value]
+
+---
+
+[Function]
+
+Outputs Snout LED.
+
+m specifies the snout LED output terminal.
+
+| m     | LED output terminal        |
+|-------|----------------------------|
+| 1, 49 | External output terminal 1 |
+| 2, 50 | External output terminal 2 |
+
+t1 specifies the ON time for snout LED output.
+
+When 1 ≤ t1 ≤ 255:  ON time = t1 x 50 msec
+
+When t1 = 0:   When ON time is default value (t1=2)
+
+t2 specifies the OFF time for snout LED output.
+
+When 0 ≤ t2 ≤ 255:  OFF time = t2 x 50 msec
+
+When t2 = 0:   When OFF time is default value (t2=2)
+
+This command is valid when a presenter is connected.
+
+When the snout is not connected, this command is prohibited from use.
+
+This  command  has  priority  if  received  while  outputting  the  snout  LED  in  the  operation  mode specified by the &lt;ESC&gt;&lt;GS&gt;&lt;EM&gt;&lt;DC1&gt; m t1 t2 command.
+
+-----------------------------------------------------------------------------

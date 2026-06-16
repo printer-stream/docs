@@ -1,0 +1,37 @@
+<!-- image -->
+
+## · Star Original  Audio Commands
+
+| Commands   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   |
+|------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|
+| Commands   | TSP700       | TSP600       | TSP800       | TUP900       | TSP1000      | TSP700II     | TSP650       | TUP500       | TSP800II     | FVP10        | BSC10        | TSP043       | TSP650II     | TSP650IISK   |
+| ESC GS s O | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○            | x            | x            | x            | x            |
+| ESC GS s P | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○            | x            | x            | x            | x            |
+| ESC GS s R | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○            | x            | x            | x            | x            |
+| ESC GS s I | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○            | x            | x            | x            | x            |
+| ESC GS s U | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○            | x            | x            | x            | x            |
+| ESC GS s T | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○            | x            | x            | x            | x            |
+
+## · Star Original Hold print control Command
+
+| Commands    | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   |
+|-------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|
+| Commands    | TSP700       | TSP600       | TSP800       | TUP900       | TSP1000      | TSP700II     | TSP650       | TUP500       | TSP800II     | FVP10        | BSC10        | TSP043       | TSP650II     | TSP650IISK   |
+| ESC SYN DC3 | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○            |
+| ESC SYN DC4 | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○            |
+| ESC GS ) s  | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○            |
+
+## · Ethernet I/F Status Specifications
+
+| Commands                               | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name                                | Model Name                                | Model Name                             | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   |
+|----------------------------------------|--------------|--------------|--------------|--------------|--------------|-------------------------------------------|-------------------------------------------|----------------------------------------|--------------|--------------|--------------|--------------|--------------|--------------|
+| Commands                               | TSP700       | TSP600       | TSP800       | TUP900       | TSP1000      | TSP700II                                  | TSP650                                    | TUP500                                 | TSP800II     | FVP10        | BSC10        | TSP043       | TSP650II     | TSP650IISK   |
+| Status Specifications for Ethernet I/F | x            | x            | x            | x            | Spec. A      | To Ver. 1.4 Spec. A From Ver. 2.0 Spec. B | To Ver. 1.4 Spec. A From Ver. 2.0 Spec. B | Ver. 1.0 Spec. A From Ver. 2.0 Spec. B | Spec. B      | Spec. B      | Spec. B      | Spec. B      | Spec. B      | Spec. B      |
+
+## (*1) The following is the status of support for Ethernet I/F.
+
+Affected by the combination with the following Ethernet I/F (F/W versions).
+
+· IFBD-HE05/06 F/W Version (Main) Ver. 1.0.1:  Command Invalid
+
+· IFBD-HE05/06 F/W Version (Main) Ver. 1.1.0:  Command Enabled

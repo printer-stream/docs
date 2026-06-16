@@ -1,0 +1,43 @@
+C O N F I D E N T I A L
+Paper roll
+Customize commands     GS ( E
+ 
+Ver. 10.13
+p. 724
+65530 ≤  (nL + nH × 256) ≤  65535 [a = 5]
+(0 ≤  nL ≤  4, nH = 0), (nL = 100, nH = 0), (250 ≤  nL ≤  255, nH = 255)
+1 ≤  (nL + nH ≤  256) ≤  9 (1 ≤  nL ≤  9, nH = 0) [a = 6]
+0 ≤  (nL + nH × 256) ≤ 1 (0 ≤  nL ≤ 1, nH = 0) [a = 7]
+(nL + nH ≤  256) = 1, 2 (nL = 1, 2, nH = 0) [a = 97]
+[Japanese model (paper width 80 mm)]
+a = 5, 6, 97
+0 ≤  (nL + nH × 256) ≤  4, (nL + nH × 256) = 100,
+65530 ≤  (nL + nH × 256) ≤  65535 [a = 5]
+(0 ≤  nL ≤  2, nH = 0), (nL = 100, nH = 0), (250 ≤  nL ≤  255, nH = 255)
+1 ≤  (nL + nH ≤  256) ≤  9 (1 ≤  nL ≤  9, nH = 0) [a = 6]
+(nL + nH ≤  256) = 1, 2 (nL = 1, 2, nH = 0) [a = 97]
+[Japanese model (paper width 58 mm)]
+a = 5, 6, 97
+0 ≤  (nL + nH × 256) ≤ 4, (nL + nH × 256) = 100,
+65530 ≤  (nL + nH × 256) ≤  65535 [a = 5]
+(0 ≤  nL ≤ 2, nH = 0), (nL = 100, nH = 0), (250 ≤  nL ≤  255, nH = 255)
+1 ≤  (nL + nH ≤  256) ≤  9 (1 ≤  nL ≤  9, nH = 0) [a = 6]
+(nL + nH ≤  256) = 1, 2, 128 (nL = 1, 2, 128 , nH = 0) [a = 97]
+TM-L90:
+a = 1, 2, 3, 5, 6, 97, 116, 118
+1 ≤  (nL + nH × 256) ≤  4 (1 ≤  nL ≤  4, nH = 0) [a = 1]
+1 ≤  (nL + nH × 256) ≤  7 (1 ≤  nL ≤  7, nH = 0) [a = 2]
+0 ≤  (nL + nH × 256) ≤  8, 65530 ≤  (nL + nH × 256) ≤  65535 [a = 5]
+(0 ≤  nL ≤  8, nH = 0), (250 ≤  nL ≤  255, nH = 255)
+1 ≤  (nL + nH × 256) ≤  9 (1 ≤  nL ≤  9, nH = 0) [a = 6]
+1 ≤  (nL + nH × 256) ≤  4 (1 ≤  nL ≤  4, nH = 0) [a = 97]
+(nL + nH × 256) = 1257 (nL = 1, nH = 0, 1) [a = 116]
+38 ≤  (nL + nH × 256) ≤  80 (38 ≤  nL ≤  80, nH = 0) [a = 117]
+(nL + nH × 256) = 70, 85, 100 (nL = 70, 85, 100, nH = 0) [a = 118]
+TM-P60:
+a = 5, 116
+[Peeler model]
+a = 3, 5, 116
+[TM-P60 models without Peeler]
+(nL + nH × 256) = 2,3 (nL = 2,3 , nH = 0) [a = 3]
+0 ≤  (nL + nH × 256) ≤  6, 65530 ≤  (nL + nH × 256) ≤  65535 [a = 5]

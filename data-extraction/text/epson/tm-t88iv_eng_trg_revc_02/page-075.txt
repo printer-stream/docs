@@ -1,0 +1,25 @@
+Chapter 5   Replacement of 
+75
+5
+Electrical Characteristics
+The operating voltage of the TM-T88IV is DC24 ± 7%, the same as the TM-T88III. The current 
+consumption differs depending on the print duty.
+DIP Switches
+The functional assignments of DIP switches are the same as those of the TM-T88III. With the 
+same settings as for the TM-T88III, the same functions are enabled for the TM-T88IV.
+Printer Status
+The TM-T88IV goes to the same status under the same conditions as the TM-T88III. You can 
+replace the TM-T88IV with the TM-T88III without modifying applications.
+Hexadecimal Dumping
+Command operation during hexadecimal dumping
+During hexadecimal dumping, most commands do not function.
+• TM-T88IV: Only DLE EOT functions.
+• TM-T88III: Only DLE EOT, DLE ENQ, and DLE DC4 function.
+Ending hexadecimal dumping
+After the hexadecimal dumping, the TM-T88IV performs autocutting (partial cut), but the 
+TM-T88III does not.
+Logo Registration
+The TM-T88IV can register logos in the NV memory (NVRAM) with the TM Flash LOGO Setup 
+Utility for NVRAM (TM-Flogo) as can the TM-T88III.
+For detailed information about ESC/POS commands, see the ESC/POS Application 
+Programing Guide.

@@ -1,0 +1,31 @@
+“IP; sc o,1o,o,1o;~
+—
+10.1 ,1o.23
+_
+P2‘10,10/1
+_ P1 0,0
+USER UNITS
+4’
+1
+1
+1
+1
+1
+1
+L
+1
+1
+—o.3,—o.35
+“IF o,o,1oo0,1ooo; sc o,1o,0,1o;~
+°'76‘6
+124 766
+- P2
+1000, 1000 PLOTTER UNITS
+uses;
+UNITS
+P1 0,0
+usen
+UNITS AND PLOTTER UNITS
+124 0
+2-8
+ESTABLISHING BOUNDARIES ANI) UNITS

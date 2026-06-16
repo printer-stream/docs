@@ -1,0 +1,58 @@
+## C O N F I D E N T I A L
+
+## GS :
+
+[Name]
+
+Start/end macro definition
+
+[Format]
+
+ASCII
+
+GS
+
+:
+
+Hex
+
+1D 3A
+
+Decimal
+
+29 58
+
+[Range]
+
+None
+
+[Default]
+
+None
+
+[Printers not featuring this command] TM-P60 , TM-U230 , TM-U220
+
+[Description]
+
+[Notes]
+
+Starts or ends macro definition.
+
+- ■ Macro definition starts when this command is processed during normal operation and ends when it is processed during macro definition.
+- ■ While the macro is defined, the printing is also executed.
+- ■ The maximum number of data to be defined as a macro is different, depending on the printer model. If the macro definition exceeds the maximum number of data, the excess data is not stored.
+- ■ If the printer processes this command again immediately after previously processing it, the printer clears the definition.
+- ■ Macro is not defined when the power is turned on.
+- ■ The defined contents of the macro are not cleared by ESC @ . Defined content of the macro is effective until the printer is reset, or the power is turned off.
+- ■ The macro is executed by GS ^ .
+- ■ The following commands cannot be contained in a macro. Do not use these commands while the macro is being defined.
+- GS ( A , GS ( C (part of functions), GS ( E (part of functions), GS ( L / GS 8 L (part of functions),
+- GS ( M (part of functions), GS Q 0 , GS ^, GS g 0 , GS v 0 , FS g 1 , FS q .
+
+[Model-dependent variations]
+
+TM-J2000/J2100 , TM-T90 , TM-T20 , TM-T88IV , TM-T88V , TM-L90
+
+See program example and print sample for GS : and GS ^ .
+
+SETTING COMMAND

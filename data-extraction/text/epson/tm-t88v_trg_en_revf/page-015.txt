@@ -1,0 +1,24 @@
+Chapter 1   Product Overview
+15
+1
+Part Names and Functions
+Power Switch
+Turns the printer on or off. The marks on the switch: (
+: OFF/
+: ON)
+CAUTION
+Before turning on the printer, be sure to check that the AC adapter is connected to 
+the power supply.
+Before turning the printer off, it is recommended to send a power-off command to the 
+printer. If you use the power-off sequence, the latest maintenance counter values are 
+saved. (Maintenance counter values are usually saved every two minutes.)
+For detailed information about ESC/POS commands, see the ESC/POS Application 
+Programming Guide.
+Roll paper cover
+Control panel
+Cover open button
+Power switch
+Cutter cover
+Power switch cover
+Connector
+cover

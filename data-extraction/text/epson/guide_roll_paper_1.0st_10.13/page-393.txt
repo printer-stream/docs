@@ -1,0 +1,45 @@
+C O N F I D E N T I A L
+Paper roll
+Bar code commands     GS k
+ 
+Ver. 10.13
+p. 393
+■When the bar code height set with GS h is smaller than [13 times the module width], a bar code with a 
+height (excluding the HRI characters) of [module width x 13] is printed, without reference to the GS h 
+setting.
+[Description: Applied to GS1 DataBar Limited (m = 77)]
+■Transmit the 13-digit product identification number, excluding the application identifier (AI) and check 
+digit, from the host.
+■Adds the application identifier (AI) automatically. The AI is "01".
+■Adds the check digit (1 character) automatically.
+■Adds the guard pattern and finder pattern automatically.
+■Prints the 18 characters of ["(01)", (d1...d13), check digit] as HRI characters when HRI characters are 
+designated to be added.
+■An example of bar code data is shown below.
+When printing a bar code with the product identification number [1501234567890].
+  GS k 77 13 "1501234567890"
+When HRI characters are designated to be added, the HRI characters are [(01)15012345678909].
+■When the bar code height set with GS h is smaller than [10 times the module width], a bar code with a 
+height (excluding the HRI characters) of [module width x 10] is printed, without reference to the GS h 
+setting.
+[Description: Applied to GS1 DataBar Expanded (m = 78)]
+■Transmit the 2-byte data shown in the following table ([Hexadecimal = 7BH / Decimal = 123] + character 
+code) from the host for the special character (FNC1) and symbol data "(", ")". ("+" in the table is not 
+included in the transmission data)
+Transmit data from the host
+Data
+ASCII
+Decimal
+Hex
+FNC1
+{ + 1
+7B + 31
+123 + 49
+(
+{ + (
+7B + 28
+123 + 40
+)
+{ + )
+7B + 29
+123 + 41

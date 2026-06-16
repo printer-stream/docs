@@ -1,0 +1,41 @@
+C-42        Individual Command Explanations
+ESC J
+Advance print position vertically
+9-Pin ESC/P
+Format
+ASCII
+ESC
+J
+n
+Hex
+1B
+4A
+n
+Decimal
+27
+74
+n
+Parameter range
+0 ≤ n ≤ 255
+Function
+• 
+Prints data in buffer
+• 
+Advances the vertical print position n/216 inch
+Notes
+• 
+ESC J does not affect the horizontal print position.
+• 
+If the ESC J command moves the print position on continuous paper below the bottom-
+margin position set with the ESC N command, the printer advances to the top-of-form
+position on the next page.
+• 
+If ESC J moves the print position on single-sheet paper below the end of the printable
+area, the printer ejects the paper (if loaded by cut-sheet feeder) or ejects paper and then
+feeds next sheet remaining distance (if loaded manually).
+Printers not featuring this command
+None
+Model-dependent variations
+None
+Related topics
+CR, LF, FF, VT, ESC B, Moving the vertical position

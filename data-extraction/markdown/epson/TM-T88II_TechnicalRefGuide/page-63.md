@@ -1,0 +1,115 @@
+## Interfaces and Connectors
+
+## A.1  RS-232 Serial Interface
+
+## A.1.1  Interface Board Specifications (RS-232-compliant)
+
+Table A-1  Serial interface specifications
+
+Item
+
+Specifications
+
+Data transfer method
+
+Serial
+
+Synchronization
+
+Asynchronous
+
+Handshake
+
+Select one of the following with DIP SW1-3:
+
+- [ ] ❏ DTR/DSR
+
+(DIP SW1-3 OFF)
+
+default
+
+- [ ] ❏ XON/XOFF
+
+(DIP SW1-3 ON)
+
+Signal level
+
+MARK
+
+-3 V to -15 V logic '1' /ON
+
+SPACE
+
++3 V to +15 V logic '0' /OFF
+
+Bit length
+
+Select one of the following with DIP SW1-4:
+
+- [ ] ❏ 7 bit
+
+(DIP SW1-4 ON)
+
+- [ ] ❏ 8 bit
+
+(DIP SW1-4 OFF) default
+
+Baud rate
+
+Select one of the following with DIP SW1-7 and SW1-8:
+
+- [ ] ❏ 19200 bps
+
+(DIP SW1-7 OFF, DIP SW1-8 OFF)
+
+- [ ] ❏ 9600 bps
+
+(DIP SW1-7 ON, DIP SW1-8 OFF)default
+
+- [ ] ❏ 4800 bps
+
+(DIP SW1-7 OFF, DIP SW1-8 ON)
+
+- [ ] ❏ 2400 bps (T88ii) or
+
+38400 bps (T88III)
+
+(DIP SW1-7 ON, DIP SW1-8 ON)
+
+[bps: bits per second]
+
+Parity check
+
+Select one of the following with DIP SW1-5:
+
+- [ ] ❏ Yes
+
+(DIP SW1-5 ON)
+
+- [ ] ❏ No
+
+(DIP SW1-5 OFF)
+
+Parity selection
+
+Select one of the following with DIP SW1-6:
+
+- [ ] ❏ Even
+
+(DIP SW1-6 ON)
+
+- [ ] ❏ Odd
+
+(DIP SW1-6 OFF)
+
+Stop bit
+
+1 or more bits
+
+However, the stop bit for data transfer from the printer is fixed to 1 bit.
+
+Connector
+
+Printer side
+
+DSUB 25-pin (female) connector

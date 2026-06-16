@@ -1,0 +1,51 @@
+C O N F I D E N T I A L
+Paper roll
+Customize commands     GS ( E
+ 
+Ver. 10.13
+p. 708
+[Explanation for memory switch 1] (a = 1):]
+■Power on notice specified by [Msw1-1] (the first bit):
+■The printer transmits the power on notice for the following processes:
+•
+Initializing by turning on the power by switch.
+•
+Initializing by hardware reset.
+•
+Initializing by software reset, such as by transmitting Function 2.
+•
+Initializing after the self test.
+■With a serial interface, when communication with the printer uses XON/XOFF control, the XOFF code may 
+interrupt the “Header to NUL” data string.
+■With a parallel interface, it is desirable for the host to be in a reverse idle state; however, because the host 
+computer cannot always be in the reverse idle state, it is necessary to enter reverse mode regularly to 
+watch for a power-on notice. 
+[Explanation for memory switch 2] (a = 2):]
+•
+Changes the number of characters that can be printed depending on the [Msw2-3] setting. 
+Character code system is specified by [Msw2-3] (the third bit) as shown in the following table.:
+[Model-dependent variations]
+TM-J2000/J2100, TM-T90, TM-T20, TM-T88IV, TM-T88V, TM-T70, TM-L90, 
+TM-P60, TM-U220
+Power ON notice
+Hex
+Decimal
+Data quantity
+Header
+3BH
+59
+1 byte
+Identifier
+31H
+49
+1 byte
+NUL
+00H
+0
+1 byte
+Character code system
+Number of characters
+GB2312
+7,580
+GB18030
+28,553

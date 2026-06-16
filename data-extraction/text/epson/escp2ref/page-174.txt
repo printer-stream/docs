@@ -1,0 +1,38 @@
+Individual Command Explanations        C-167
+ESC s
+Select low-speed mode
+ESC/P
+Format
+ASCII
+ESC
+s
+n
+Hex
+1B
+73
+n
+Decimal
+27
+115
+n
+Parameter range
+n = 0, 1, 48, 49
+Function
+Controls printing speed as follows:
+n = 0 or 48
+Prints at normal speed
+1 or 49
+Prints at low speed
+Default
+Normal-speed printing
+Notes
+• 
+This is a nonrecommended command.
+• 
+This command has been deleted in ESC/P 2.
+Printers not featuring this command
+ActionPrinter L-1000, ActionPrinter 3000, ActionPrinter 4000, ActionPrinter 4500, DLQ-
+2000, LQ-200, LQ-400, LQ-500, LQ-510, LQ-850, LQ-850+, LQ-860, LQ-860+, LQ-950, LQ-
+1050, LQ-1050+, LQ-1060, LQ-1060+, LQ-2550, All ESC/P2 printers
+Model-dependent variations
+None

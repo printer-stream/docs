@@ -1,0 +1,77 @@
+ESC/POS Command Specifications
+248
+Rev.2.52
+<Function 81> ESC GS ) B pL pH fn m  (fn = 81)
+Name	
+Initialize text search settings and definitions
+Code	
+ASCII	
+ESC	
+GS	
+)	
+B	
+pL	
+pH	
+fn	
+m
+	
+Hex.	
+1B	
+1D	
+29	
+42	
+pL	
+pH	
+fn	
+m
+	
+Decimal	
+27	
+29	
+41	
+66	
+pL	
+pH	
+fn	
+m
+Defined Region	
+pL = 2, pH = 0
+	
+fn = 81
+	
+m = 0 
+Initial Value	
+---
+Function	
+Initialize text search settings and definitions
+	
+The following shows the contents to initialize. 
+Function No
+Contents
+Initial Value
+Function 48
+Enable and disables text search
+Invalid
+Function 49
+Set the number of times to run the text search macro
+ 1 time
+Function 50
+Set to print the string that matches in the text search
+Prints the string
+Function 64
+Define the text search string
+No text search string definition 
+Function 65
+Define the text search macro
+No text search macro definition 
+Function 66
+Define the timing of the text search macro execution
+soon after cutting
+	
+This setting is applied to printer operations when this command is processed. 
+	
+This setting is registered to non-volatile memory by the ESC GS ) B <Function 80) command. 
+	
+This command is ignored when the text search macro is running. 
+	
+Disabled in Page Mode. 

@@ -1,0 +1,23 @@
+ESC/POS Command Specifications
+304
+Rev.2.52
+6-8 
+Appendix 8
+ 
+Explanation of Print Startup Control Starting Printing When Set to Page Units 
+When print startup control is set to page units, printing starts when the image buffer length is full or the following 
+commands are run. 
+If the following commands are not received, start printing after a 1-second timeout. 
+For details on image buffer length and how to set print startup control, see the product specifications manual. 
+	
+  Print starting trigger 
+	
+   • Cutter command:	
+	
+<GS> V n, <GS> V m n
+	
+   • BM detection command: 	
+<GS> <FF>, <FF> (When BM is valid)
+	
+   • Print startup command:	
+<ESC><GS> g 0 m n

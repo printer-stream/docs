@@ -1,0 +1,97 @@
+<!-- image -->
+
+## 3.3.10. Bar
+
+Code
+
+## ESC b n1 n2 n3 n4 d1...dk RS
+
+[Name] [Code]
+
+ASCII
+
+ESC
+
+b
+
+n1
+
+n2
+
+n3
+
+n4
+
+d1
+
+...
+
+dk
+
+RS
+
+Hex.
+
+1B 62 n1 n2 n3 n4 d1 ... dk 1E
+
+Decimal
+
+27 98 n1 n2 n3 n4 d1 ... dk 30
+
+## [Defined Area]
+
+0 ≤ n1 ≤ 8,  48 ≤ n1 ≤ 56 ('0 ≤ n1 ≤
+
+'8') 255
+
+1 ≤ n2 ≤ 4,  49 ≤ n2 ≤ 52 ('1' ≤ n2 ≤ '4')
+
+1 ≤ n4 ≤
+
+n3 (bar code mode), d (bar code data), k (bar code data count) definitions differ according to the type of bar code.
+
+[Initial Value] [Function]
+
+- - -
+
+Bar code printing is executed according to the following parameters. If  n1, n2, n3 and n4 are acquired and detected to be out of the defined area, data up to RS is discarded.
+
+## · n1 bar code type selection
+
+| n1    | Bar code type   |
+|-------|-----------------|
+| 0, 48 | UPC-E           |
+| 1, 49 | UPC-A           |
+| 2, 50 | JAN/EAN8        |
+| 3, 51 | JAN/EAN13       |
+| 4, 52 | Code39          |
+| 5, 53 | ITF             |
+| 6, 54 | Code128         |
+| 7, 55 | Code93          |
+| 8, 56 | NW-7            |
+
+## · n2 Under-bar character selection and added line feed selection
+
+| n2    | Under-bar character selection and added line feed selection                       |
+|-------|-----------------------------------------------------------------------------------|
+| 1, 49 | No added under-bar charactersExecutes line feed after printing a bar code         |
+| 2, 50 | Adds under-bar characters Executes line feed after printing a bar code            |
+| 3, 51 | No added under-bar charactersDoes not execute line feed after printing a bar code |
+| 4, 52 | Adds under-bar characters Does not execute line feed after printing a bar code    |
+
+## · n3 bar code mode selection
+
+| n3    | Bar code type                                     | Bar code type            | Bar code type            |
+|-------|---------------------------------------------------|--------------------------|--------------------------|
+| n3    | UPC-E, UPC-A, JAN/EAN8 JAN/EAN13, Code128, Code93 | Code39, NW-7             | ITF                      |
+| 1, 49 | Minimum module 2 dots                             | Narrow: Wide = 2:6 dots  | Narrow: Wide = 2:5 dots  |
+| 2, 50 | Minimum module 3 dots                             | Narrow: Wide = 3:9 dots  | Narrow: Wide = 4:10 dots |
+| 3, 51 | Minimum module 4 dots                             | Narrow: Wide = 4:12 dots | Narrow: Wide = 6:15 dots |
+| 4, 52 | - - -                                             | Narrow: Wide = 2:5 dots  | Narrow: Wide = 2:4 dots  |
+| 5, 53 | - - -                                             | Narrow: Wide = 3:8 dots  | Narrow: Wide = 4:8 dots  |
+| 6, 54 | - - -                                             | Narrow: Wide = 4:10 dots | Narrow: Wide = 6:12 dots |
+| 7, 55 | - - -                                             | Narrow: Wide = 2:4 dots  | Narrow: Wide = 2:6 dots  |
+| 8, 56 | - - -                                             | Narrow: Wide = 3:6 dots  | Narrow: Wide = 3:9 dots  |
+| 9, 57 | - - -                                             | Narrow: Wide = 4:8 dots  | Narrow: Wide = 4:12 dots |
+
+-----------------------------------------------------------------------------

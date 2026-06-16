@@ -1,0 +1,112 @@
+  
+2. COMMAND FUNCTION LIST 
+• Standard Commands 
+ 
+ 
+ 
+Commands 
+Name 
+Class 
+ 
+Font style 
+ESC RS F 
+Select font 
+And character set 
+ESC GS t  
+Specify code page 
+ 
+ESC GS =  
+Write blank code page data 
+ 
+ESC R  
+Specify international character set  
+ 
+ESC /  
+Specify/cancel slash zero  
+ 
+ESC SP 
+Set ANK right space 
+ 
+ESC M 
+Specify ANK 12 dot pitch 
+ 
+ESC P 
+Specify ANK 15 dot pitch 
+ 
+ESC : 
+Specify ANK 16 dot pitch 
+ 
+ESC g 
+Specify ANK 14 dot pitch 
+Character 
+ESC i  
+Set/cancel the double wide/high printing 
+expansion settings 
+ESC W  
+Set/cancel the double wide printing  
+ 
+ESC h  
+Set/cancel the double high printing  
+ 
+SO 
+Set double wide printing 
+ 
+DC4 
+Cancel double wide printing 
+ 
+ESC SO 
+Set printing magnified double character height  
+ 
+ESC DC4 
+Cancel printing magnified character height  
+Print modes 
+ESC E 
+Select emphasized printing 
+ 
+ESC F 
+Cancel emphasized printing  
+ 
+ESC -  
+Select/cancels underling mode  
+ 
+ESC _   
+Select/cancels upperline mode  
+ 
+ESC 4 
+Select white/black inverted printing  
+ 
+ESC 5 
+Cancel white/black inverted printing  
+ 
+SI 
+Select upside-down printing  
+ 
+DC2 
+Cancel upside-down printing  
+Line spacing 
+LF 
+Line feed 
+ 
+CR 
+Carriage return  (same as line feed) 
+ 
+ESC a  
+Feed paper n lines 
+ 
+ESC z  
+Select line feed amount  
+ 
+ESC 0 
+Specify line spacing to 3 mm  
+ 
+ESC J  
+n/4 mm line feed 
+ 
+ESC I  
+n/8 mm line feed 
+ 
+ 
+ 
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+STAR Line Mode Command Specifications 
+2-1 

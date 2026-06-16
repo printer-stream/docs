@@ -1,0 +1,36 @@
+<!-- image -->
+
+Details
+
+- If using DTR/DSR control when using a serial interface, the printer sends its ID after it has verified that the host has entered a data ready state (the DSR signal is a space).  If the host is not able to receive data (DSR signal is a mark), the printer will wait until it is ready.
+
+The using XON/XOFF control, the printer transmits its ID without verifying whether the host can receive data.
+
+- Because this command is executed while expanding the print buffer, there may be a delay between the reception of the command and printer ID transmission, depending on the reception buffer status.
+- (1 ≤ n ≤ 3, 49 ≤ n ≤ 51) sends 1 byte of the printer ID.
+- When ASB is enabled, the printer ID transmitted by this command and the ASB status must be differentiated. See Appendix-2 for details on how to identify.
+- (65 ≤ n ≤ 69) sends the following printer information.
+- The following processes occur when preparations for transmitting data have been completed.
+1. Executes a READY to BUSY process If the printer is already in a BUSY state, the printer does nothing.
+2. Executes the [Header + Data + NUL] transmission
+3. Executes a BUSY to READY process If the printer is already in a BUSY state for some other reason, it does nothing.
+
+Header:
+
+Hex. = 5FH/Decimal = 95 (1 byte)
+
+Data:
+
+Printer Information
+
+NUL:
+
+Hex. = 00H/Decimal = 0 (1 byte)
+
+STAR
+
+Spec. A: STAR printers ignore this command if 65 ≤ n ≤ 69 is specified.
+
+Reference
+
+See Appendix -2 for details.

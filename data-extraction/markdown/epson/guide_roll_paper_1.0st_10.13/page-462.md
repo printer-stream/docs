@@ -1,0 +1,11 @@
+## C O N F I D E N T I A L
+
+[Model-dependent variations]
+
+TM-J2000/J2100
+
+See program example and print sample for ESC L, FS L, and ESC S .
+
+## TM-J2000/J2100
+
+ESC r is disabled in page mode with this printer. This is an addition to the standard specification.

@@ -1,0 +1,30 @@
+| Paper length   | 11.7 inches   | 12 inches   | 8.5 inches   | 11 inches   |
+|----------------|---------------|-------------|--------------|-------------|
+| 2-1            | ON            | ON          | OFF          | OFF         |
+| 2-2            | ON            | OFF         | ON           | OFF         |
+
+|     | ON                 | OFF                   |
+|-----|--------------------|-----------------------|
+| 2-3 | Automatic tear-off | No automatic tear-off |
+| 2-4 | Auto line feed     | No auto line feed     |
+
+## DIP-switch settings for IBM emulation mode
+
+<!-- image -->
+
+| Character table (1-6 ON)   | 437   | 850   | 860   | 863   | 865   | 437 Greek   | 853   | 852   |
+|----------------------------|-------|-------|-------|-------|-------|-------------|-------|-------|
+| 1-1                        | ON    | ON    | ON    | ON    | OFF   | OFF         | OFF   | OFF   |
+| 1-2                        | ON    | ON    | OFF   | OFF   | ON    | ON          | OFF   | OFF   |
+| 1-3                        | ON    | OFF   | ON    | OFF   | ON    | OFF         | ON    | OFF   |
+
+<!-- image -->
+
+|     | ON                                | OFF                               |
+|-----|-----------------------------------|-----------------------------------|
+| 1-4 | Character set 1                   | Character set 2                   |
+| 1-8 | Alternate graphics mode on*       | Alternate graphics mode off       |
+| 2-1 | 12-inch page length (cont. paper) | 11-inch page length (cont. paper) |
+| 2-2 | Auto CR enabled                   | Auto CR disabled                  |
+
+*With DIP-switch 1-8 ON, ESC 3, ESC A, ESC J, and ESC * function the same as in ESC/P.

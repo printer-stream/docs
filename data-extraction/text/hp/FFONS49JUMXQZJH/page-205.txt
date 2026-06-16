@@ -1,0 +1,56 @@
+SA
+SC
+SI
+SL
+SM
+The Select Alternate Character Set
+Page5-5
+Instruction
+SA
+(;)
+Purpose:
+Selects the alternate character set designated by the CA
+instruction as the character set to be used for subsequent
+labeling.
+The Scale Instruction
+Page2-6
+SC
+Xmin, Xmax, Ymin,Ymax
+Purpose:
+Scales the plotting area into user units.
+Parameters: Integers.
+The Absolute Character Size Instruction
+Page5-15
+SI
+width, height ;
+Purpose:
+Sets character width and height in centimetres for‘labels.
+Parameters:
+width, height —decimals representing centimetres, —128
+to +127.9999.
+Omitting parameters establishes size of 0.19,0.27, the
+same as the default SR sizing with default P1,P2.
+The Character Slant Instruction
+SL
+tan 0 (;)
+Page 5-18
+Establishes the slant for labeled characters.
+decimal, -128 to +127.9999,interpreted as the tangent of
+the angle from vertical.
+Purpose:
+Parameters:
+Omitting parameters establishes no slant, the same as
+the default or SLO.
+The Symbol Mode Instruction
+Page4-4
+SM
+character (;)
+Purpose:
+Causes specified symbol to be drawn at each plotted
+point.
+Parameter:
+Any printing character ASCII 38through 127excluding
+semicolon (ASCII 59). SM space, SM control character,
+or SM; cancels symbol mode.
+INSTRUCTION SYNTAX
+B-9

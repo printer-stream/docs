@@ -1,0 +1,215 @@
+F-86        Feature Summary
+DFX-5000+ DIP-switch settings (continued)
+ON
+OFF
+3-3
+Skip-over-perforation on
+Skip-over-perforation off
+3-4
+Paper memory setting 2
+Paper memory setting 1
+3-5
+Overlapping multipart forms printing enabled
+Overlapping multipart forms printing disabled
+3-6
+Multipart forms with labels printing enabled
+Multipart forms with labels printing disabled
+3-7
+Skip over binding on
+Skip over binding off
+3-8
+Automatic tear off enabled
+Automatic tear off disabled
+Table A (EPSON ESC/P mode only)
+Character table
+1-4
+1-5
+1-6
+1-7
+1-8
+Italic U.S.A.
+OFF
+OFF
+OFF
+OFF
+OFF
+Italic France
+OFF
+OFF
+OFF
+OFF
+ON
+Italic Germany
+OFF
+OFF
+OFF
+ON
+OFF
+Italic U.K.
+OFF
+OFF
+OFF
+ON
+ON
+Italic Denmark
+OFF
+OFF
+ON
+OFF
+OFF
+Italic Sweden
+OFF
+OFF
+ON
+OFF
+ON
+Italic Italy
+OFF
+OFF
+ON
+ON
+OFF
+Italic Spain
+OFF
+OFF
+ON
+ON
+ON
+PC437
+OFF
+ON
+OFF
+OFF
+OFF
+PC850
+OFF
+ON
+OFF
+OFF
+ON
+PC860
+OFF
+ON
+OFF
+ON
+OFF
+PC863
+OFF
+ON
+OFF
+ON
+ON
+PC865
+OFF
+ON
+ON
+OFF
+OFF
+PC861
+OFF
+ON
+ON
+OFF
+ON
+BRASCII
+OFF
+ON
+ON
+ON
+OFF
+Abicomp
+OFF
+ON
+ON
+ON
+ON
+PC437 Greek*
+ON
+OFF
+OFF
+OFF
+OFF
+PC869*
+ON
+OFF
+OFF
+OFF
+ON
+ISO 8859-7*
+ON
+OFF
+OFF
+ON
+OFF
+PC853*
+ON
+OFF
+OFF
+ON
+ON
+PC857*
+ON
+OFF
+ON
+OFF
+OFF
+ISO Latin 1T*
+ON
+OFF
+ON
+OFF
+ON
+PC855*
+ON
+OFF
+ON
+ON
+OFF
+PC866*
+ON
+OFF
+ON
+ON
+ON
+PC852*
+ON
+ON
+OFF
+OFF
+OFF
+MAZOWIA*
+ON
+ON
+OFF
+OFF
+ON
+Code MJK*
+ON
+ON
+OFF
+ON
+OFF
+Bulgaria
+ON
+ON
+OFF
+ON
+ON
+Table B (IBM ProPrinter emulation mode)
+ON
+OFF
+1-4
+Auto carriage return enabled
+Auto carriage return disabled
+1-5
+—
+—
+1-6
+80–9FH characters printed
+80–9FH commands
+1-7
+—
+—
+1-8
+PC865 character table selected
+PC437 character table selected

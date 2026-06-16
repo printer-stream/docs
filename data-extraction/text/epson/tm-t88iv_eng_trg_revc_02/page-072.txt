@@ -1,0 +1,24 @@
+72
+Cleaning the Thermal Head
+Epson recommends cleaning the thermal head periodically (generally every 3 months) to 
+maintain receipt print quality.
+Turn off the printer, open the roll paper cover, and clean the thermal elements of the thermal 
+head with a cotton swab moistened with an alcohol solvent (ethanol or IPA).
+Preparing for Transport
+Follow the steps below to transport the printer.
+1
+Turn off the printer.
+2
+Confirm that 
+ LED is off.
+3
+Remove the power supply connector.
+4
+Remove the roll paper.
+5
+Pack the printer upright.
+CAUTION
+After printing, the thermal head can be very hot. Do not touch it and let it cool before 
+you clean it. Do not damage the thermal head by touching it with your fingers or any 
+hard object.
+Thermal head

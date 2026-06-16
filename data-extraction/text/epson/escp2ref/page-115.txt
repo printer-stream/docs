@@ -1,0 +1,37 @@
+C-108        Individual Command Explanations
+ESC SP
+Set intercharacter space
+ESC/P 2
+ESC/P
+Format
+ASCII
+ESC
+SP
+n
+Hex
+1B
+20
+n
+Decimal
+27
+32
+n
+Parameter range
+0 ≤ n ≤ 127
+Function
+Increases the space between characters by n/180 inch in LQ mode and n/120 inch in draft
+mode
+Default
+No extra space
+Notes
+• 
+This command cancels the HMI (horizontal motion unit) set with the ESC c command.
+• 
+The extra space set with this command doubles during double-width mode.
+Printers not featuring this command
+None
+Model-dependent variations
+None
+Related topics
+ESC c, ESC M, ESC P, ESC g, ESC !, ESC I, ESC Q, ESC D, HT, Selecting the pitch, Setting left
+and right margins

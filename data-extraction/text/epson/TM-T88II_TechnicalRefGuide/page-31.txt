@@ -1,0 +1,41 @@
+Rev. A
+Setup   2-11
+TM-T88II/T88III Technical Reference Guide
+2.4.2  Parallel Interface Connection
+The parallel interface model TM printer is connected to the host computer via the parallel port. 
+When a customer display (DM-D) is to be connected, connect the TM printer to the host 
+computer via the serial port.
+2.4.2.1  Parallel interface connection diagram
+ Figure 2-10  Parallel interface connection
+2.4.2.2  Connecting the parallel interface cable
+1.
+Insert the interface cable connector firmly into the interface connector on the connector 
+panel.
+2.
+Press down the clips on either side of the connector to lock it in place.
+3.
+When using interface cables equipped with a ground line, attach the ground line to the 
+screw hole marked “FG” on the printer.
+4.
+Connect the other end of the interface cable to the host computer.
+2.4.3  USB Interface Connection
+Connect the TM printer to the host computer with a USB cable. A second TM printer can be 
+connected via a self-powered USB hub from a printer connected to the host computer.
+Note:
+A customer display (DM-D) can be connected to a USB model TM-T88II/T88III by the exclusive modular 
+cable (RJ-45). When connecting the customer display, connect the modular jack from the customer display 
+to the DM connector (refer to “Installing the locking wire saddle” (page 2-12)).
+When connecting the customer display to a USB model TM-T88II/T88III, set the communication 
+conditions of the customer display as follows: 
+•
+Baud rate:
+19200 bps
+•
+Bit length:
+8-bit
+•
+Parity:
+no parity
+•
+Stop bit:
+1

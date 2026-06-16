@@ -1,0 +1,62 @@
+The program lines which plot the two lower lines and the correspond­
+ing legend lines are:
+260 PRINT "SP1;LT3,B;F’FI1
+2'
+12
+2?F’U"
+270
+PRINT “PDS 27
+7 2?
+9 1 ‘5
+J
+290 PRINT "SF’2;L.T8,8;F’F11,45'
+E
+n
+;
+9
+4
+280 PRINT ”PH?.8,185
+PDS.n 155 PU
+,PD;PPz,5o,3,52,4,53,5,52“
+300 PRINT"Pn5,51,?,55,s,5
+,9,5E,10,S8,11,58,12,EOPU“
+310 PRINT “PH10.1,165
+PU11.5,1s5
+PU”
+The third line is plotted from data read by the program at execution
+time using a FOR...NEXT loop and a READ statement. This technique
+would be used to plot a graph that will be replotted often with new
+data. If the necessary ﬁle statements were added, the data could be on
+a tape or disk ﬁle instead of in a DATA statement as shown here. The
+line type for this line is the default solid line, reverted to by the LT’
+command with no parameters. Since we are using variables as plot
+parameters, you need to be sure they are sent to the plotter with a space
+between numeric variables. Computers often send a leading and/or
+trailing blank or allow for a sign space before numeric variables. The
+7470will treat a blank, comma, or sign as a separator between numeric
+parameters. Know your computer before sending variables with plot
+commands. As with the two previously drawn lines, after the line is
+plotted, the corresponding line is placed in the legend.
+The loop to plot this third line and the statements to place a line in the
+legend are:
+320
+PRINT “LT”
+330
+FUR x=1
+TO 12
+340
+RERD Y
+350 PRINT “PH”;X;Y;“PD”
+350
+NEXT x
+370 PRINT "PUB,165PD?.1,1E5PU“
+410 DHTH55,80,83,52,59,s4,5o,4s,47,43,53,5s
+The last line is drawn using a subroutine. The subroutine is designed to
+read data that have been stored with a third value for pen control. This
+third value controls a branch to two different plot statements, one with
+the pen up and the other with the pen down. In this program, a zero as
+a pen control parameter results in a pen up move, a 1 causes plotting
+with the pen down, and 3 signifies the end of the data. The legend line
+is drawn at the end of the subroutine, completing the graph.
+PUTTING THE COMMANDS TO WORK
+8-7

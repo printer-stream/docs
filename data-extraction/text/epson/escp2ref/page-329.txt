@@ -1,0 +1,52 @@
+R-98        Printing Bar Codes
+example 25: Code 128, CD: Host, HRI: print, mixed Data Character Set A, B and C
+1B 28 42 14 00
+; Barcode command and data length
+06
+; Barcode type k = Code 128
+02
+; Module width m = 2 dots / 180 inch
+00
+; Space adjustment value s = +0 dots / 360 inch
+7D 00
+; Bar length v1, v2 = 125 / 180 inch
+00
+; Control flags c
+41 30  62 61 64 70 1C
+; Barcode Data
+37 39 3A 62 1B 3D 61
+;
+example 26: POSTNET, CD: Host
+1B 28 42 10 00
+; Barcode command and data length
+07
+; Barcode type k = POSTNET
+02
+; Module width m = 2 dots / 180 inch
+00
+; Space adjustment value s = +0 dots / 360 inch
+00 00
+; Bar length value v1 and v2 are ignored. POSTNET
+  uses the fixed bar length.
+00
+; Control flags c 
+31 32 33 34 35 36 37
+; Barcode Data
+38 39 30
+example 27: POSTNET, CD: Printer
+1B 28 42 0F 00
+; Barcode command and data length
+07
+; Barcode type k = POSTNET
+02
+; Module width m = 2 dots / 180 inch
+00
+; Space adjustment value s = +0 dots / 360 inch
+00 00
+; Bar length value v1 and v2 are ignored. POSTNET
+  uses the fixed bar length.
+01
+; Control flags c
+31 32 33 34 35 36 37
+; Barcode Data
+38 39

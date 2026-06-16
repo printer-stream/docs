@@ -1,0 +1,23 @@
+## C O N F I D E N T I A L
+
+## GS ( E pL pH fn sa ; sb ; sc ; sd ; se ; sf ; sg ; sh; &lt;Function 49&gt;
+
+```
+[Name] Set the paper layout [Format] ASCII GS ( E pL pH fn sa ; sb ; sc ; sd ; se ; sf ; sg ;    sh  ; Hex 1D 28 45 pL pH 31 sa 3B sb 3B sc 3B sd 3B se 3B sf 3B sg 3B sh  3B Decimal 29 40 69 pL pH 49 sa 59 sb 59 sc 59 sd 59 se 59 sf 59 sg 59 sh  59 [Range] 9 ≤ ( pL + pH × 256) ≤ 36 (9 ≤ pL ≤ 36, pH = 0) fn = 49 TM-L90 : sa = '48', '49', '64' '135' ≤ sb ≤ '3000' '25' ≤ sc ≤ '100' '0' ≤ sd ≤ '3000' '0' ≤ se ≤ '3000' '38' ≤ sf ≤ '3000' '27' ≤ sg ≤ '507' ( sa = '48' or '49') '47' ≤ sg ≤ '507' ( sa = '64') '240' ≤ sh ≤ '720' ( sa = '48' or '49') '240' ≤ sg ≤ '700' ( sa = '64')
+```
+
+Some combinations of parameters do not work. See the model-dependent variation section for details.
+
+[Default] [Description]
+
+Nothing is set.
+
+Sets the paper layout (origin of layout, layout in the vertical direction and horizontal direction) in the NV memory.
+
+- Sets the origin of layout by sa .
+
+|   sa | Origin of layout               | Paper type                                     |
+|------|--------------------------------|------------------------------------------------|
+|   48 | None (does not use the layout) | Receipt (without black mark), continuous label |
+|   49 | Top of a black mark            | Paper with black mark                          |
+|   64 | Bottom of a label              | Label paper (die-cut label)                    |

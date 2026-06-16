@@ -1,0 +1,3 @@
+## C O N F I D E N T I A L
+
+TM-J2000/J2100 , TM-T90 , TM-T20 , TM-T88IV , TM-T88V , TM-T70 , TM-L90 The maximum number of data to be defined is 2048 bytes.

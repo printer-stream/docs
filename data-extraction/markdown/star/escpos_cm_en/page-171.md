@@ -1,0 +1,39 @@
+<!-- image -->
+
+## 4-3-3 ESC/POS	Black	Mark	Commands
+
+ESC/POS black mark related commands are to control the top of form (black mark) functions.  These commands are effective only when the black mark function is valid.
+
+## &lt;Black	mark	specifications&gt;
+
+1. Top	of	form	(black	mark	detection)	operation
+- A. Selectable when power is turned on (when a reset signal is input), when a self-print test is completed, when the cover is closed and by the memory switch.
+3. B.
+4. When the Feed switch is pressed
+5. Performs Top of Form (black mark detection) operation
+- C.  Command
+
+See the following command details.
+
+## 2 Black	Mark	Errors
+
+- A. Black mark error is entered
+- When white detection is detected continuously over 400mm when feeding paper - A black mark error occurs
+- When black detection is detected continuously over 9mm when feeding paper - A paper out error occurs
+4. (On models that dually use paper out sensor for the black mark sensor, the error is a paper out error.)
+- B. Operations during a black mark error
+- Error LED flashes
+- Feed switch is invalid
+- Only the following commands are invalid.  Other commands are ignored.
+- ASB Status is valid.
+- C. How to cancel a black mark error
+- Turn power on again (reset signal is input)
+- Real-time request command (Black mark error cancel command) DLE ENQ n cancel the er ror.
+
+DLE EOT n:
+
+Real-time Status Command
+
+DLE ENQ n:
+
+Real-time Request Command (Black Mark Error Cancel Com mand)

@@ -1,0 +1,69 @@
+Command List by Function        C-5
+Command names
+ESC/P2
+ESC/P
+9-Pin ESC/P
+Page
+Deleted commands
+ESC j
+Reverse paper feed
+—
+—
+•
+C-214
+ESC i
+Select immediate print mode
+—
+—
+•
+C-215
+Binary mode commands for ESC . 2 raster graphics compression mode
+<XFER>
+Transfer raster graphics data
+•
+ —
+—
+C-217
+<MOVX>
+Set relative horizontal position
+•
+—
+—
+C-218
+<MOVY>
+Set relative vertical position
+•
+—
+—
+C-219
+<COLR>
+Select printing color
+•
+—
+—
+C-220
+<CR>
+Carriage return to left-most print
+position
+•
+—
+—
+C-221
+<EXIT>
+Exit TIFF compressed mode
+•
+—
+—
+C-222
+<MOVXBYTE>
+Set <MOVX> unit to 8 dots
+•
+—
+—
+C-223
+<MOVXDOT>
+Set <MOVX> unit to 1 dot
+•
+—
+—
+C-224

@@ -1,0 +1,24 @@
+Chapter 3   Handling
+53
+3
+Cleaning the Printer
+Cleaning the Printer Case
+Be sure to unplug the AC cable from the wall socket, and turn off the printer before cleaning. 
+Wipe the dirt off the printer case with a dry cloth or a damp cloth.
+Cleaning the Thermal Head/Platen Roller
+Epson recommends cleaning the thermal head periodically (generally every 3 months) to 
+maintain receipt print quality.
+Depending on the roll paper used, paper dust may stick to the platen roller and cause an 
+irregular paper feed. To remove the paper dust, clean the platen roller with a cotton swab 
+moistened with water. Turn on the printer power only after the water has completely dried.
+Turn off the printer, open the roll paper cover, and clean the thermal elements of the thermal 
+head with a cotton swab moistened with an alcohol solvent (ethanol or IPA).
+Never clean the product with alcohol, benzine, thinner, or other such solvents. 
+Doing so may damage or break the parts made of plastic and rubber.
+•
+After printing, the thermal head can be very hot. Do not touch it and let it cool before you
+clean it. 
+•
+Do not damage the thermal head by touching it with your fingers or any hard object.
+Thermal head
+Platen Roller

@@ -1,0 +1,19 @@
+You are now ready to send data with the ESC . command.
+
+The method of sending data in standard raster graphics mode depends on whether you select full graphics (ESC.0) or compressed mode (ESC . 1). For a discussion of extended raster graphics compressed modes, see 'Extended raster graphics (ESC . 2).'
+
+Full graphics mode (ESC . 0)
+
+## ESC/P 2
+
+If you set the ESC . command's parameter c to 0, you select full graphics mode. During full graphics mode, all data received is treated as print data.
+
+## Note:
+
+Full graphics mode requires more data to be sent. Use compressed raster graphics mode whenever possible.
+
+During full graphics mode, simply divide the image grid into bytes and send the bytes one after another, in the following order.
+
+<!-- image -->
+
+After sending the data for the graphics band, send a CR and LF command.

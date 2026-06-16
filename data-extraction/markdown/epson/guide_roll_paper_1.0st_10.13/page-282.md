@@ -1,0 +1,15 @@
+## C O N F I D E N T I A L
+
+- ■ Feeds the paper the required distance when printing graphics data, regardless of line feed pitch settings entered using the Set line feed command.
+- ■ Moves print position to the left side of the print area after printing of graphics data is completed. The printer then enters the 'beginning of the line' or 'no data in print buffer' state.
+- ■ When printing downloaded graphic files, use ESC U to specify unidirectional print for vertical alignment of printed text.
+
+[Model-dependent variations] TM-J2000/J2100 , TM-T90 , TM-T88IV , TM-T70 , TM-L90 , TM-P60
+
+## TM-J2000/J2100
+
+The model information for this function (the dot density and maximum print area and others) is same as Function 69. See the model information of Function 69.
+
+TM-T90 , TM-T88IV , TM-T70 , TM-L90 , TM-P60
+
+The printer does not support this function.

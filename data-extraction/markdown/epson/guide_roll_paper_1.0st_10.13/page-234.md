@@ -1,0 +1,33 @@
+## C O N F I D E N T I A L
+
+| The following printing color is available.   | The following printing color is available.   | The following printing color is available.   |
+|----------------------------------------------|----------------------------------------------|----------------------------------------------|
+| Color selection                              | Printing color                               | Control                                      |
+| Color 1                                      | Monochrome (digital)                         | Printing high energy                         |
+
+## TM-T88IV
+
+The printer supports Functions 48, 50, 51, 64 to 67, 69 and 112.
+
+The NV graphics data domain is 256 KB.
+
+The following printing colors are available when two-color printing control is selected with GS ( E &lt;Function 5&gt;.
+
+| Color selection   | Printing color   | Control              |
+|-------------------|------------------|----------------------|
+| Color 1           | Black            | Printing high energy |
+| Color 2           | Red              | Printing low energy  |
+
+Characters printed with Color 2 may fade, depending on the storage environment. Therefore, when the printing needs to last a long time, print with Color 1.
+
+The NV graphic definition information can be printed in the "NV graphics print mode" by operating the panel switch when turning on the power.
+
+## TM-T88V
+
+The printer supports Functions 48, 50, 51, 52, 64 to 67, 69, 80 to 83, 85 and 112.
+
+The NV graphics data domain is 256 KB.
+
+The NV graphic definition information can be printed in the "NV graphics print mode" by operating the panel switch when turning on the power.
+
+Downloaded graphics is not initialized with ESC @.

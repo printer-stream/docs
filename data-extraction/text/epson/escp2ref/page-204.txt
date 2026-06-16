@@ -1,0 +1,42 @@
+Individual Command Explanations        C-197
+The valid data of each bar code type are following.
+If an invalid data is included in the BarCodeData string, the bar code is not
+printed.
+Bar code type
+Valid range of BarCodeData
+EAN-13
+0-9 (30H-39H)
+EAN-8
+0-9 (30H-39H)
+Interleaved 2 of 5
+0-9 (30H-39H)
+UPC-A
+0-9 (30H-39H)
+UPC-E
+0-9 (30H-39H)
+Code 39
+0-9 (30H-39H), (41H-5AH)
+(20H, 24H, 25H, 2BH, 2DH, 2EH, 2FH)
+Code 128
+Code Set A, Set B, Set C
+POSTNET
+0-9 (30H-39H)
+Notes
+• 
+Bar code printing is always performed unidirectionally.
+• 
+The bar code is not printed when part of the bar code is out of the right margin.
+• 
+Bar code and text data are mixed in a line.
+• 
+A kind of Code 128 character sets (A, B or C) is identified by the first data of Code 128.
+The first data must be a hexadecimal 41 (A), 42 (B) and 43 (C).
+• 
+When Code 128 Character Set C and Interleaved 2 of 5 is selected and the number of
+characters are ODD, “0” is added to the data string.
+Printers featuring this command
+DLQ-3000 (’96 ~), LQ-670, LQ-2070, LQ-2170
+Model-dependent variations
+None
+Related topics
+ESC <, ESC Q, ESC U, Printing Bar Codes

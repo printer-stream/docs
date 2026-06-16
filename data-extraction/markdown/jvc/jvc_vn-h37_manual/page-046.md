@@ -1,0 +1,55 @@
+## Getting Alarm Trigger
+
+Format  /api/param?application.event(Number).trigger
+
+Example When Getting Trigger of Alarm No. 1
+
+/api/param?application.event(1).trigger
+
+## Example of Response  application.event(1).trigger=m1&amp;200 OK
+
+Interpretation Acquire Trigger of the alarm action for the specified alarm number. Up to 5 alarm actions can be specified, periodic FTP is assigned to event No.6, pre/post FTP assigned to No.7, SD Card constant recording to event No.8 and SD Card alarm recording to No.10. Therefore the number of event(number) can be set between the range of 1 to 8 and 10.  Note that alarm numbers are different from the alarm input pin numbers.
+
+When only 1 Trigger is set:
+
+m1 will be returned in the case of make for alarm input 1. [VN-H57/157WP/257/257VP Only]
+
+b1 will be returned in the case of break for alarm input 1. [VN-H57/157WP/257/257VP Only]
+
+m2 will be returned in the case of make for alarm input 2. [VN-H57/157WP/257/257VP Only]
+
+b2 will be returned in the case of break for alarm input 2. [VN-H57/157WP/257/257VP Only]
+
+camera.position(num).status will be returned for preset position. "num" is from 0 to 19.
+
+v1 will be returned for motion detection of video.
+
+audio\_detect1 will be returned for audio detection1. [VN-H57/157WP/257/257VP Only]
+
+audio\_detect2 will be returned for audio detection2. [VN-H57/157WP/257/257VP Only]
+
+tampering\_detect will be returned for tampering detect of video.
+
+ncbwe will be returned for IR filter ON.
+
+ncbws will be returned for IR filter OFF.
+
+i(second) will be returned for periodic FTP trigger.
+
+time/hhmmss will be returned for time trigger.
+
+When a combination of 2 Triggers are set, responses such as m1(10)b2 will be returned. The example indicates that trigger will be activated when break is invoked at alarm input 2 within 10 seconds after make is invoked at alarm input 1.
+
+Example of Response  application.event(1).trigger=m1(100)b2&amp;200 OK
+
+Allowed users admin, operator
+
+## Setting Alarm Trigger
+
+Format  /api/param?application.event(Number).trigger=data
+
+Example When setting Trigger of Alarm No. 1
+
+/api/param?application.event(1).trigger=m1
+
+Example of Response

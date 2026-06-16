@@ -1,0 +1,38 @@
+Chapter 1   Product Overview
+31
+1
+Option Specifications
+Power Supply Unit (PS-180)
+Material
+No specific brominated flame retardants, such as PBBE and PBB, are used in this product.
+AC cable selection
+Select an AC cable that satisfies the following conditions.
+• Safety standard product
+• Plug with PE terminal
+Ground connections
+Be sure to ground for safety.
+Electric 
+characteristics
+Input conditions
+input voltage (rating): 90 to 264VAC
+(100VAC -10% to 230VAC +15%)
+Frequency (rating): 50/60 Hz ± 3 Hz
+Power consumption (rating): 100VA
+Output conditions
+Output voltage (rating): 24VDC ± 5%
+Output current (rating): 2.0A
+Output electric power (rating): 48VA
+Output peak current: 4.5A
+Case specifications
+Dimensions
+(H × W × D)
+68 × 136 × 32 mm {2.68 × 5.35 × 1.26"}
+(excluding projections)
+Weight
+Approx. 0.4 kg {14.11 oz} (excluding the AC cable)
+Color
+Black (matte)
+[Unit: mm]
+136
+68
+32

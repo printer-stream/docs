@@ -1,0 +1,281 @@
+T-20        24/48-Pin Printers
+24/48-Pin Printers
+1991
+1990
+S: Standard model   N: NLSP model
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+S
+LQ-
+450
+LQ-
+510
+LQ-
+550
+LQ-
+1010
+Action
+Printe
+r 3000
+Action
+Printe
+r 4000
+Action
+Printe
+r 4500
+LQ-
+200
+LQ-
+400
+LQ-
+860+
+LQ-
+1060
++
+LQ-
+860
+LQ-
+1060
+LQ-
+850
+LQ-
+1050
+DLQ-
+2000
+Action
+Printe
+r 4000
+Action
+Printe
+r 4500
+ESC l
+Set left margin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ESC p
+Turn proportional mode on/off
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ESC q
+Select character style
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ESC r
+Select printing color
+
+
+
+
+
+* ESC s
+Select low-speed mode
+ESC t
+Select character table
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0
+Table 0
+Italic
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1
+Table 1
+Graphics
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2
+Table 2
+User-defined
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3
+Table 3
+ESC w
+Turn double-height printing on/off
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ESC x
+Select letter quality or draft
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* DEL
+Delete last character in buffer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*
+Nonrecommended or deleted command

@@ -1,0 +1,45 @@
+## Glossary
+
+## application program (software)
+
+A program designed to perform a specific function. Examples are word processing, spreadsheet, and database programs.
+
+## ASCII
+
+The American Standard Code for Information Interchange. ASCII codes are assigned to particular characters and control codes used in operating computers and printers. The ASCII code table is included in the Appendix.
+
+## attribute byte(s)
+
+Parameters used when defining user-defined characters. Depending on the type of printer, the attribute byte can determine the width of a character, beginning and ending columns, and which pins to use in the print head.
+
+## automatic tear off
+
+A printer feature that feeds the last page of a print job on continuous paper to a position where paper can be conveniently torn off. When more print data is sent, the paper feeds back to the loading position and begins printing on the following page. This feature is only available when using a push tractor.
+
+## bar code
+
+A group of vertical bars and spaces with varying widths that represent numbers and letters. Bar codes are usually used to identify items such as commercial goods, products, and books.
+
+## baseline
+
+The imaginary line where the bottom of characters such as A and b are printed (descenders on characters such as g or y descend below the baseline). The baseline on 24-pin printers is located 20/180 inch below the print position; on 9-pin printers, 7/72 inch below the print position.
+
+## baud rate
+
+The rate at which data is transferred from one machine to another. The baud rate is adjustable when using a serial interface. Some printers allow adjustment by DIP switch.
+
+## bidirectional printing
+
+Printing in which the print head prints in both directions. This method increases the speed of printing. See high speed printing .
+
+## binary
+
+The base 2 number system. All numbers are represented by a 1 or 0.
+
+## binary command mode
+
+A subset of binary printer commands used to control compressed raster graphics printing in the extended raster graphics mode. These commands are available only in ESC . 2 TIFF compressed mode.
+
+## bit
+
+A digit (equal to 1 or 0) in the binary number system. A byte of data consists of 8 bits.

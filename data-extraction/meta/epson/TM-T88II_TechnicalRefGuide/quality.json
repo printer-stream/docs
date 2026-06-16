@@ -1,0 +1,17 @@
+{
+  "stem": "epson/TM-T88II_TechnicalRefGuide",
+  "phase": "quality",
+  "tool": "builtin",
+  "tool_version": "0.3.0",
+  "pipeline_version": "0.3.0",
+  "params": {
+    "threshold": 0.5
+  },
+  "page_count": 88,
+  "started_at": "2026-06-16T14:42:33Z",
+  "ended_at": "2026-06-16T14:42:33Z",
+  "duration_seconds": 0.154,
+  "per_page_seconds_avg": 0.002,
+  "status": "ok",
+  "flagged_count": 5
+}

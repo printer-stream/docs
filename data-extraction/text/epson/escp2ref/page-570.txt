@@ -1,0 +1,59 @@
+Index        I-5
+L
+Left margin
+printing area and, R-5
+setting, C-23–C-24, R-9
+Letter Quality
+printing, C-93–C-94, R-43
+typeface, C-95–C-96
+user-defined characters, R-19
+Line drawing, C-127–C-128
+Line feed, C-27–C-28, R-62
+Line spacing
+graphics with, R-70
+setting 1/6 inch, C-53
+setting 1/8 inch, C-51–C-52
+setting 7/72 inch, C-60
+setting n/180 inch, C-55
+setting n/216 inch, C-56
+setting n/360 inch, C-57
+setting n/60 inch, C-58
+setting n/72 inch, C-59
+Loading paper, C-157–C-158
+Low nibble value, C-217, C-218, C-219, R-103
+LQ. See Letter Quality.
+M
+Margin
+bottom, C-17–C-18, C-19–C-20, R-13
+left, C-23–C-24, R-9
+printing area and, R-5
+right, C-21–C-22, R-9
+top/bottom, C-11–C-12, R-13
+Master select, C-118–C-120, R-49
+MicroWeave, C-171, R-99, R-101
+MOD, 4
+Moving print position
+absolute horizontal, C-31–C-32
+absolute vertical, C-37–C-38
+horizontal, R-57–R-59
+relative horizontal, C-33–C-36
+relative vertical, C-39–C-40
+to the next horizontal tab, C-43–C-44
+to the next vertical tab, C-45–C-46
+vertical, C-41–C-42, R-60
+Multipoint mode
+commands ignored during, C-98, R-44
+commands that cancel, C-98, R-44
+entering, C-97–C-98, R-43, R-45
+proportional width in, A-21
+standard fonts in, A-38
+N
+Near-Letter Quality
+printing, R-43
+Nibble value, C-217, C-218, C-219, R-103
+Noncompressed mode, C-172
+Nonrecommended commands, 3
+Normal characters, switching to, C-91–C-92
+O
+Optional interface specifications, A-37
+Outline, C-133, R-52

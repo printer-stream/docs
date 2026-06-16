@@ -1,0 +1,7 @@
+<!-- image -->
+
+(The pre-registered and complete data is effective.)
+
+The printer should be reset if audio data registration is completed or register processing is forceably aborted.
+
+Error processing, mechanical operations and status processing and the like cannot executed while registering audio data (the time from when the first parameter is determined to be OK until printer initialization is completed after registering audio data).

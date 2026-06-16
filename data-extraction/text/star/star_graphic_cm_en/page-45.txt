@@ -1,0 +1,109 @@
+                                                                                   Rev. 2.31  
+―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+STAR Graphic Mode Command Specifications 
+45 
+ 
+ 
+--- Specification(2) --- 
+ 
+transmission 
+Tag 
+Parameter information 
+↓ PrHwV Printer main body HW version 
+ 
+↓ PrSrN 
+Product serial number 
+up to 16 digits 
+(Information less than 16 digits is NUL.) 
+↓ UsSrN 
+USB serial number 
+ 
+↓ BtDvN 
+Bluetooth device name 
+Fixed 16 digits 
+(Information less than 16 digits is NUL.) 
+↓ BtAtC 
+Bluetooth auto connection  
+Auto connection  
+Invalid: BtAtC=00  Valid:BtAtC=01 
+↓ BtIpN 
+Bluetooth iOS port name  
+Fixed 16 digits 
+(Information less than 16 digits is NUL.) 
+↓ BtDsC 
+Bluetooth Search Permitted 
+Setting 
+Search Prohibited: BtDsC=00 
+Search Permitted: BtDsC=01 
+ 
+ 
+ 
+ESC # * LF NUL 
+[Name] 
+Inquire printer version 
+[Code] 
+ASCII 
+ESC 
+# 
+* 
+LF 
+NUL 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Hex 
+1B 
+23 
+2A 
+0A 
+00 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Decimal 
+27 
+35 
+42 
+10 
+0 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+[Defined Area] --- 
+[Initial Value] 
+--- 
+[Function] 
+Sends the printer version. 
+ESC # * , print version LF NUL 
+<Example TSP100IIIW Ver1.0： ESC # * , TSP100IIIWVer1.0 LF NUL > 
+ 

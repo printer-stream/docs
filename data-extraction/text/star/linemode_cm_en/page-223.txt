@@ -1,0 +1,532 @@
+  
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+STAR Line Mode Command Specifications 
+6-24 
+6.5. W ireless LAN I/F 
+ 
+• Standard Commands 
+Class 
+Commands 
+Model Name 
+ 
+ 
+TSP800 
+TSP700
+TSP600
+TUP900
+TSP1000
+TSP800L
+TSP700II 
+TSP650 
+TUP500 
+TSP800II
+FVP10
+Font Style 
+ESC RS F 
+ NO  
+ NO  
+ NO  
+ NO  
+OK 
+ NO  
+OK 
+ NO  
+ NO  
+ NO  
+ NO  
+and Character  
+ESC GS t  
+OK 
+OK 
+ NO  
+ NO  
+OK 
+ NO  
+OK 
+ NO  
+ NO  
+ NO  
+ NO  
+Set 
+ESC GS =  
+Ver. 3.0 or 
+later 
+Spec. A. 
+Spec. A.
+ NO 
+ NO 
+Spec. A.
+ NO 
+Spec. B. 
+ NO 
+ NO  
+ NO  
+ NO  
+ 
+ESC R  
+OK 
+OK 
+ NO  
+ NO  
+OK 
+NO 
+OK 
+ NO  
+ NO  
+ NO  
+ NO  
+ 
+ESC /  
+OK 
+OK 
+ NO  
+ NO  
+OK 
+NO 
+OK 
+ NO  
+ NO  
+ NO  
+ NO  
+ 
+ESC SP 
+OK 
+OK 
+ NO  
+ NO  
+OK 
+NO 
+OK 
+ NO  
+ NO  
+ NO  
+ NO  
+ 
+ESC M 
+OK 
+OK 
+ NO  
+ NO  
+OK 
+NO 
+OK 
+ NO  
+ NO  
+ NO  
+ NO  
+ 
+ESC P 
+OK 
+OK 
+ NO  
+ NO  
+OK 
+NO 
+OK 
+ NO  
+ NO  
+ NO  
+ NO  
+ 
+ESC : 
+OK 
+OK 
+ NO  
+ NO  
+OK 
+NO 
+OK 
+ NO  
+ NO  
+ NO  
+ NO  
+ 
+ESC 
+p 
+(Not 
+recommended) 
+OK 
+OK 
+ NO  
+ NO  
+OK 
+NO 
+OK 
+ NO  
+ NO  
+ NO  
+ NO  
+ 
+ESC g 
+Spec. A. 
+Spec. A.
+NO 
+NO 
+Spec. B.
+NO 
+Spec. A.
+ NO  
+ NO  
+ NO  
+ NO  
+Character  
+ESC ｉ  
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+ NO  
+ NO  
+ NO  
+ NO  
+expansion  
+ESC W  
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+ NO  
+ NO  
+ NO  
+ NO  
+settings 
+ESC h  
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+ NO  
+ NO  
+ NO  
+ NO  
+ 
+SO 
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+ NO  
+ NO  
+ NO  
+ NO  
+ 
+DC4 
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+ NO  
+ NO  
+ NO  
+ NO  
+ 
+ESC SO 
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+ NO  
+ NO  
+ NO  
+ NO  
+ 
+ESC DC4 
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+ NO  
+ NO  
+ NO  
+ NO  
+Print mode 
+ESC E 
+Spec. A. 
+Spec. A.
+NO 
+NO 
+Spec. A.
+NO 
+Spec. A.
+Ver. 2.0 or 
+earlier
+Spec. B. 
+Ver. 2.0 or 
+later 
+ NO  
+ NO  
+ NO  
+ NO  
+ 
+ESC F 
+Spec. A. 
+Spec. A.
+NO 
+NO 
+Spec. A.
+NO 
+Spec. A.
+Ver. 2.0 or 
+earlier
+Spec. B. 
+Ver. 2.0 or 
+later 
+ NO  
+ NO  
+ NO  
+ NO  
+ 
+ESC -  
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+ NO  
+ NO  
+ NO  
+ NO  
+ 
+ESC _   
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC 4 
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC 5 
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+ 
+SＩ 
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+ 
+DC2 
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+Line spacing 
+LF 
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+ 
+CR 
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC a  
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC z  
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC 0 
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC J  
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC I  
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+Page Control 
+FF 
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC C  
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC C 0  
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+ 
+VT 
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC B  
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 

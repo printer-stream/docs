@@ -1,0 +1,72 @@
+Rev. A
+Product Specifications   5-1
+TM-T88II/T88III Technical Reference Guide
+Chapter 5
+Product Specifications
+5.1  Product Specifications (TM-T88II/TM-T88III)
+Table 5-1  Specifications
+Print method
+Thermal line printing
+Print width
+Standard:
+paper width of 80 mm —
+print width of 72 mm {2.84"}, 512 dot positions
+Factory option (with spacer): paper width of 58 mm {2.28"} —
+print width of 50.8 mm {2"}, 360 dot positions
+Cut type
+Partial cut (left-most one point uncut)
+Maximum paper thickness 
+for the manual cutter
+100 µm or less
+Character sets
+TM-T88III:
+95 alphanumeric, 37 international characters, 128 × 11 pages of 
+extended graphics
+TM-T88II
+95 alphanumeric, 32 international characters, 128 × 7 pages of 
+extended graphics
+Interface (compatible)
+RS-232C/bidirectional parallel
+Dealer option: USB, Ethernet
+Buffer
+Receive buffer: 4KB/45 bytes
+User-defined buffer
+For both downloaded bitmap images and fonts:
+Approx. 12KB
+Macro buffer: 2KB
+NV graphics data storage area:
+256KB
+NV user memory:
+1KB
+DKD function
+2 drives
+Power supply
+Power supplied by optional AC adapter, PS-180 or the previous adapter, the PS-170
+Operating voltage
+24 VDC ± 7%
+Current consumption
+High-speed mode
+Average:
+TM-T88II:
+Approx. 1.7 A
+TM-T88III:
+Approx. 1.8 A
+     (Font A, α-N, 36 capital letters, rolling pattern, 42-column printing)
+Peak:
+Approx. 7.7 A
+Low-power mode
+Average:
+Approx. 1.2 A
+     (Font A, α-N, 36 capital letters, rolling pattern, 42-column printing)
+Peak:
+Approx. 6.6 A
+Standby:
+Average:
+ Approx. 0.2 A
+Temperature/humidity
+Operating: 
+5 to 45°C (41 to 113°F), 10 to 90% RH
+Storage:
+Shipped packed state  –10 to +50°C (14 to 122°F), 10 to 90% RH
+Weight
+Approx. 1.8 kg {3.968 lb}

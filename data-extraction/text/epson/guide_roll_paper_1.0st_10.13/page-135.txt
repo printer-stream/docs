@@ -1,0 +1,49 @@
+C O N F I D E N T I A L
+Paper roll
+Character commands     ESC V
+ 
+Ver. 10.13
+p. 135
+ESC V
+SETTING COMMAND
+[Name]
+Turn 90° clockwise rotation mode on/off
+[Format]
+ASCII
+ESC V
+n
+Hex
+1B
+56
+n
+Decimal
+27
+86
+n
+[Range]
+0 ≤  n ≤  2, 48 ≤  n ≤  50
+[Default]
+n = 0
+[Printers not featuring this command]  TM-P60, TM-U230, TM-U220
+[Description]
+In standard mode, turns 90° clockwise rotation mode on or off for characters, using n as follows: 
+[Notes]
+■The 90° clockwise rotation mode is effective for alphanumeric, Kana, multilingual, and user-defined 
+characters.
+■When underline mode is turned on, the printer does not underline 90° clockwise-rotated characters.
+■When character orientation changes in 90° clockwise rotation mode, the relationship between vertical and 
+horizontal directions is reversed.
+■The 90° clockwise rotation mode has no effect in page mode. If this command is processed in page mode, 
+an internal flag is activated, and this flag is enabled when the printer returns to standard mode.
+■Some printer models support 90° clockwise rotation mode when n = 2 or 50.
+■Some printer models have a font for which 90° clockwise rotation mode is not effective.
+■The settings of this command are effective until ESC @ is executed, the printer is reset, or the power is 
+turned off.
+n
+Function
+0, 48
+Turns off 90° clockwise rotation mode.
+1, 49
+Turns on 90° clockwise rotation mode (1-dot character spacing).
+2, 50
+Turns on 90° clockwise rotation mode (1.5-dot character spacing).

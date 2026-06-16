@@ -1,0 +1,49 @@
+will set an error condition but all X,Y pairs which precede the un­
+matched parameter will be plotted.
+The X—coordinatespeciﬁes, in either plotter units or user units, the
+absolute X-location to which the pen will move. The Y-coordinate speci­
+fies, in either plotter units or user units, the absolute Y—locationto
+which the pen will move. If scaling is on, coordinates are in user units.
+If scaling is off,coordinates are in plotter units.
+The mnemonics PU and PD can be included ahead of, between, or after
+X,Ycoordinate pairs. PU lifts the pen; PD lowers the pen.
+Any number of coordinate pairs, as well as PU or PD mnemonics, can
+be listed after a PA instruction. (This is limited only by the ability of
+the controller to output without a line feed character which is an instruc­
+tion terminator.) The pen will move to each point in the order given.
+Commas, spaces, or a sign are required between numeric parameters
+and are optional after two—lettermnemonics. The last entry is followed
+by the terminator. In the following examples, commas are used to show
+optional and required separators. Optional commas or spaces which
+can be used between each letter of the mnemonics are not shown. The
+semicolon is used to indicate the terminator.
+PA,PD,X1,Y1,PU,X2,Y2,PD,X3,Y3,;
+I
+l
+I
+I
+I
+I
+l
+opnomxt
+PU,X1,Y1,PD,X2,Y2,X3,Y3,PU;
+I
+I
+I
+I
+OPTIONAL
+PD,X1,Y1,X2,Y2,X3,Y3,;
+I
+I
+OPTIONAL
+If no pen control parameter is given, the pen will assume the pen state
+(up or down) of the previous statement. The PU or PD mnemonics can
+also be substituted for the PA (or PR) mnemonic. This is equivalent to
+having PU; or PD; preceding the PA or PR instruction. Therefore, PU
+and PD with parameters are interpreted to be in place of PA or PR,
+depending upon which mnemonic, PA or PR, was last specified.
+PA is specified by any of the following:
+0 power—up,
+0 execution of an IN command,
+CONTROLLING THE PEN AND PLOTTING
+3-5

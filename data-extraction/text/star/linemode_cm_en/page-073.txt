@@ -1,0 +1,123 @@
+  
+ 
+ETB 
+[Name] 
+Update ASB ETB status  
+[Code] 
+ASCII 
+ETB 
+ 
+ 
+ 
+ 
+ 
+ 
+Hex. 
+17 
+ 
+ 
+ 
+ 
+ 
+ 
+Decimal 
+23 
+ 
+ 
+ 
+ 
+ 
+ 
+[Defined Area] 
+- - - 
+[Initial Value] 
+- - - 
+[Function] 
+Spec. Aifications  
+ 
+Sets the ASB ETB status when reading this command from the reception buffer, then sends ASB.  
+See Appendix 2, ASB Status for details. 
+ 
+ 
+Spec. Bifications  
+ 
+Sets the ASB ETB status when reading this command from the reception buffer.  Then, after 
+updating the ASB ETB counter, sends the ASB status. 
+ 
+See Appendix 2, ASB Status for details. 
+ 
+The following outlines the details of processes in this command. 
+ 
+(1) Reads ETB command from reception buffer. 
+ 
+(2) Waits for printing of the print data before the ETB command to end.  
+ 
+(3) Increments the ASB ETB counter by 1 after checking that printing has ended, then sets the ASB 
+ETB status. 
+ 
+(4) Sends ASB (only when ASB is enabled).  
+• Precautions when using Ethernet 
+ 
+When multi-session is valid the ASB (ETB counter) sent by <ETB> is sent to all hosts that are  
+ 
+ 
+connected.  
+ 
+For that reason, sending ETB from multiple sessions, can cause mis-recognition of the ETB  
+ 
+ 
+counter.  
+ 
+Therefore, we recommend the <ESC><GS><ETX> commands to confirm the print end counter.  
+ 
+See the Command List by Model.  
+ 
+ 
+ESC RS E n 
+[Name] 
+Initialize ASB ETB counter and ETB status 
+[Code] 
+ASCII 
+ESC RS 
+E 
+n
+ 
+ 
+ 
+ 
+Hex. 
+1B 
+1E 
+45 
+n
+ 
+ 
+ 
+ 
+Decimal 
+27 
+30 
+69 
+n
+ 
+ 
+ 
+ 
+[Defined Area] 
+n = 0 
+ 
+n = 48 (“0”) 
+[Initial Value] 
+ASB ETB counter = 0 
+[Function] 
+Clears the ASB ETB counter to zero, then clears the ETB status. 
+ 
+However, ASB status is not send when clearing the ETB counter to zero using this command.  The 
+ETB counter and ETB status are initialized by the following command, not this command. 
+ 
+• Cancel print data and initialize command <CAN> 
+ 
+ 
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+STAR Line Mode Command Specifications 
+3-55 

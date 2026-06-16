@@ -1,0 +1,23 @@
+## The Pen Instructions, PU and PD
+
+DE3cRlP-'UN The pen up instruction, PU, and the pen down instruc­ tion, PD, raise and lower the pen.
+
+m The instructions are used to raise and lowerthe pen during plotting. They may be used with parameters to plot or move to the points specified by the parameters.
+
+SYNTAX PU (terminator) or PD (terminator) and PU X,Y(,...)(terminator)
+
+or
+
+PD X,Y(,...)(terminator)
+
+EXPLANATIONWhen no parameters are included, the pen up instruc­ tion, PU, raises the pen without moving it to a new location. The pen down instruction, PD, lowers the pen without moving it to a new location, if the pen is within the window. If parameters are included, the pen will move, in order, to the X,Ycoordinates specified. The coor­ dinates are interpreted as plotter units if scaling is off and user units if scaling is on. Moves are either relative or absolute, depending on whether a PA or PR was the last plot command executed.
+
+If parameters are included, both coordinates of an X,Ycoordinate pair must be given. An odd number of parameters will set an error condi­ tion, but all X,Ypairs which precede the unmatched parameter will be plotted. For a description of the PU and PD commands with parameters, refer to The Plot Absolute Instruction, PA, and The Plot Relative Instruction, PR, which follow.
+
+NOTE:The plotter has an automatic pen lift feature which will lift the pen after it has been in the pen-down state for 55 seconds and no pen­ down plot commands or label commands have been sent to the plotter or no front-panel pen-down moves have been made for 55 seconds. I
+
+## The Select Pen Instruction, SP
+
+DESCRIPHDN The select pen instruction, SP, selects and/ or stores one of the two pens.
+
+The instruction is used to load a pen into the pen holder so that drawing will occur. It can be used to select a pen of a different color or width, during the plotting program. It can be used with a zero parameter or no parameter to store the pen currently in the pen holder into its stall at the end of a program. so

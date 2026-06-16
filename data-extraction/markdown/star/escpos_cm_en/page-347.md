@@ -1,0 +1,37 @@
+<!-- image -->
+
+| Commands   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name      | Model Name   | Model Name   | Model Name   | Model Name   |
+|------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|-----------------|--------------|--------------|--------------|--------------|
+| Commands   | TSP700       | TSP600       | TSP800       | TUP900       | TSP1000      | TSP700II     | TSP650       | TUP500       | TSP800II     | FVP10           | BSC10        | TSP043       | TSP650II     | TSP650IISK   |
+| GS E       | x            | x            | x            | x            | x            | x            | x            | x            | x            | Spec. B         | x            | x            | x            | x            |
+| GS H       | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○               | x            | x            | x            | x            |
+| GS I       | x            | x            | x            | x            | x            | x            | x            | x            | x            | Spec. B         | x            | x            | x            | x            |
+| GS L       | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○               | x            | x            | x            | x            |
+| GS P       | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○               | x            | x            | x            | x            |
+| GS T       | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○               | x            | x            | x            | x            |
+| GS V       | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○               | x            | x            | x            | x            |
+| GSW        | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○               | x            | x            | x            | x            |
+| GS \       | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○               | x            | x            | x            | x            |
+| GS ^       | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○               | x            | x            | x            | x            |
+| GS b       | x            | x            | x            | x            | x            | x            | x            | x            | x            | x               | x            | x            | x            | x            |
+| GS c       | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○               | x            | x            | x            | x            |
+| GS f       | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○               | x            | x            | x            | x            |
+| GS h       | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○               | x            | x            | x            | x            |
+| GS k       | x            | x            | x            | x            | x            | x            | x            | x            | x            | Spec. A Spec. B | x            | x            | x            | x            |
+| GS r       | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○               | x            | x            | x            | x            |
+| GS v 0     | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○               | x            | x            | x            | x            |
+| GS w       | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○               | x            | x            | x            | x            |
+
+## · Kanji Control Commands (DBCS Settings, Kanji Specifications Only)
+
+| Commands   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   |
+|------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|
+| Commands   | TSP700       | TSP600       | TSP800       | TUP900       | TSP1000      | TSP700II     | TSP650       | TUP500       | TSP800II     | FVP10        | BSC10        | TSP043       | TSP650II     | TSP650IISK   |
+| FS !       | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○            | x            | x            | x            | x            |
+| FS &       | x            | x            | x            | x            | x            | x            | x            | x            | x            | Spec. A      | x            | x            | x            | x            |
+| FS -       | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○            | x            | x            | x            | x            |
+| FS .       | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○            | x            | x            | x            | x            |
+| FS 2       | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○            | x            | x            | x            | x            |
+| FS C       | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○            | x            | x            | x            | x            |
+| FS S       | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○            | x            | x            | x            | x            |
+| FSW        | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○            | x            | x            | x            | x            |

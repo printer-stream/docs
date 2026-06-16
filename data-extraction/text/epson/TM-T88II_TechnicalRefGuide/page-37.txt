@@ -1,0 +1,41 @@
+Rev. A
+Application Development Information   3-1
+TM-T88II/T88III Technical Reference Guide
+Chapter 3
+Application Development Information
+This chapter describes how to control the printer and gives information useful for printer 
+application development.
+3.1  Introducing the Control Methods
+The TM printer can be controlled and can print using any of the following 3 methods.
+1.
+Windows printer driver (EPSON Advanced Printer Driver or APD)
+2.
+EPSON OPOS ADK
+3.
+ESC/POS commands
+Depending on the driver and interface used, the IP setup tool for the Ethernet model, USB 
+device driver, logo printing registration utility (TMFlash logo utility), etc. are available. Get the 
+latest information from one of the following URLs:
+For customers from North America, go to the following web site: http://pos.epson.com/
+For customers from other countries, go to the following web site: 
+http://www.epson-pos.com/ 
+Select the product name from the “Select any product” pull-down menu.
+3.1.1  Windows Driver (EPSON Advanced Printer Driver)
+The EPSON Advanced Printer Driver provides the TM printer with satisfactory control as a 
+Windows driver.
+3.1.1.1  EPSON Advanced Printer Driver overview
+EPSON Advanced Printer Driver has the following features:
+❏
+Supplies a Windows printer driver for the TM printer to enable printing from a general 
+Windows application.
+❏
+Can execute POS printer-specific functions, such as cutting paper and opening a drawer.
+❏
+Can print printer-resident fonts by selecting the font type.
+❏
+Can get the printer status using programming languages, such as Visual Basic (VB), via 
+status API. This uses the printer’s bidirectional communication capability in the Windows 
+standard printer driver operating environment.
+Note:
+The status API is a printer control API originally supplied by EPSON. This can be used to get the printer 
+status and send ESC/POS commands.

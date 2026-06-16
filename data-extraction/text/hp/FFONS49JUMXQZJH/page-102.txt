@@ -1,0 +1,52 @@
+will check the proper bit of the status byte. Insert as line 110 or line
+1010 a suitable BASIC read statement to read the status byte into a
+variable called Status.
+100 PRINT ”OS;”
+110
+I STORE STHTUS BYTE IN Status
+120 Status=INT(Status/2)
+!SHIFTS BITS RIGHTONEPOSITION
+130 Status=INT(Status/2)
+!SHIFTS BITS RIGHTHGHIN
+140 Status=Status
+MOD2
+!THIS RESULT IS
+0 IF
+LSB NOT 1
+150 IF Status=0
+THEN100
+180
+PRINT
+”OD;”
+!SEND OD SINCE
+POINT
+HVHILHBLE
+1000 PRINT ”OS;“
+1010
+I STORE STHTUS BYTE IN Status
+1020 Status=INT(Status/4)
+!SHIFTS BITS RIGHT2 POSITIONS
+1030 IF Status=INT(Status/2)*2
+THEN1000
+!1sb NOT1
+1040
+PRINT ”OD;“
+On some HP computers with an I/O ROM,the following three lines are
+equivalent to lines 100to 150of the ﬁrst program segment shown.
+2000 PRINT “OS;”
+2010
+!THIS
+IS
+THE STHTEMENT TO REHD THE STHTUS
+2050 IF BIT(Status,2)=0
+THEN2000
+In many applications, a large number of points need to be digitized.
+When the computer is used to monitor bit position 2,the points may or
+may not be processed immediately. In most applications, memory would
+be allocated for the total number of points to be digitized. A loop would
+be established to process the total number of points, calling the sub­
+routine each time to check that a point had been entered. A complete
+BASIC program for an HP-85 with an HP—IBinterface follows. This
+program prints out the 500points after they all have been entered.
+6-6
+DIGITIZING

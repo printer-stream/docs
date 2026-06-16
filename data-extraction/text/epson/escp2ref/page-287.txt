@@ -1,0 +1,43 @@
+R-56        Select Supporting Features
+Note:
+• 
+Printers not capable of color printing ignore this command.
+• 
+Other colors are possible by overprinting the above colors. When combining
+yellow with other colors, always print yellow dots first (this prevents soiling
+of the print side of the ribbon).
+• 
+ESC/P 2 printers can print only black, magenta, cyan, and yellow during
+graphics mode.
+• 
+When printing in extended graphics mode selected with the ESC . 2
+command, use the binary mode command <COLR> to select the color.
+Extended graphics mode is only available on the Stylus COLOR and later
+high-resolution printer models. For more information, see “Extended
+ESC/P 2 Programming Guide” later in this section.
+Select the Print Position
+ESC/P 2
+ESC/P
+9-Pin ESC/P
+The definition of the vertical print position differs for text and graphics printing.
+Physically, the print position corresponds to the top pin in the print head when
+graphics or 10.5-point characters are printed. However, to assure that the baseline
+of all characters is the same, the baseline is defined as 20/180 inch (7/72 inch for
+9-pin printers) below the vertical print position no matter what point-size
+characters you are printing.
+Text printing 
+The baseline of the character is printed 20/180 inch
+(7/72 inch for 9-pin printers) below the vertical print
+position; the left-most column of the characters is
+printed at the horizontal position.
+Graphics printing 
+The print position is the top printable row of dots.
+The following diagram illustrates the relationship between the print head and the
+text/graphics print position.
+10.5-point characters
+16-point characters
+Graphics
+Vertical print
+position
+Baseline
+Ag  Ag

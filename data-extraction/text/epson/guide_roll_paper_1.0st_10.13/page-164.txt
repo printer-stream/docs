@@ -1,0 +1,15 @@
+C O N F I D E N T I A L
+Paper roll
+Paper Sensor Commands     
+ 
+Ver. 10.13
+p. 164
+Paper Sensor Commands
+Command
+Name 
+ESC c 3
+Select paper sensor(s) to output paper-end signals 
+ESC c 4
+Select paper sensor(s) to stop printing 
+PAPER SENSOR COMMANDS
+Paper sensor commands

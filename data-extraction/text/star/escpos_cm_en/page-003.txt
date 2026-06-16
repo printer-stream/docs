@@ -1,0 +1,121 @@
+ESC/POS Command Specifications
+3
+Rev.2.52
+ESC G n 
+59
+ESC J n
+60
+ESC L
+61
+ESC M n 
+62
+ESC R n
+63
+ESC S
+64
+ESC T n 
+65
+ESC V n
+66
+ESC W xL xH yL yH dxL dxH dyL dyH 
+67
+ESC \ nL nH
+69
+ESC a n
+70
+ESC c 3 n
+71
+ESC c 4 n
+72
+ESC c 5 n
+73
+ESC d n
+74
+ESC p m t1 t2 
+75
+ESC t n 
+76
+ESC { n 
+77
+FS g 1 m a1 a2 a3 a4 nL nH d1 ... dk
+78
+FS g 2 m a1 a2 a3 a4 nL nH
+80
+FS p n m 
+82
+FS q n [xL xH yL yH d1...dk] 1... [xL xH yL yH d1...dk] n
+83
+GS ! n
+86
+GS $ nL nH
+88
+GS * xy d1 … d (xX yX 8)
+89
+<Function 49> GS ( K pL pH fn m  (Fn=49)
+92
+<Function 50> GS ( K pL pH fn m  (Fn=50)
+94
+GS ( L pL pH m fn [parameter] 
+95
+GS 8 L p1 p2 p3 p4 m fn [parameter] 
+95
+<Function 48> GS ( L pL pH m fn  (fn=48)
+96
+<Function 48> GS 8 L p1 p2 p3 p4 m fn  (fn=48)
+96
+<Function 51> GS ( L pL pH m fn  (fn=51)
+97
+<Function 51> GS 8 L p1 p2 p3 p4 m fn  (fn=51)
+97
+<Function 64> GS ( L pL pH m fn d1 d2   (fn=64)
+98
+<Function 64> GS 8 L p1 p2 p3 p4 m fn d1 d2  (fn=64)
+98
+<Function 65> GS ( L pL pH m fn d1 d2 d3   (fn=65)
+99
+<Function 65> GS 8 L p1 p2 p3 p4 m fn d1 d2 d3   (fn=65)
+99
+<Function 66> GS ( L pL pH m fn kc1 kc2   (fn=66)
+100
+<Function 66> GS 8 L p1 p2 p3 p4 m fn kc1 kc2   (fn=66)
+100
+<Function 67> GS ( L pL pH m fn a kc1 kc2 b xL xH y L yH [c d1 ... dk] 1 ... [c d1 ... dk] b   (fn=67) 101
+<Function 67> GS 8 L p1 p2 p3 p4 m fn a kc1 kc2 b xL xH y L yH [c d1 ... dk] 1 ... [c d1 ... dk] b   
+(fn=67)
+101
+<Function 69> GS ( L pL pH m fn kc1 kc2 x y   (fn=69)
+103
+<Function 69> GS 8 L p1 p2 p3 p4 m fn kc1 kc2 x y   (fn=69)
+103
+<Function 112> GS ( L pL pH m fn a bx by c xL xH yL yH d1...dk  (fn=112)
+105
+<Function 112> GS 8 L p1 p2 p3 p4 m fn a bx by c xL xH yL yH d1…dk (fn=112)
+105
+GS ( N pL pH n m 
+106
+GS ( k pL pH cn fn [parameter]
+107
+<Function 065> GS ( k pL pH m cn n  (cn=48, fn=65)
+108
+<Function 066> GS ( k pL pH m cn n  (cn=48, fn=66)
+109
+<Function 067> GS ( k pL pH cn fn n  (cn=48, fn=67)
+110
+<Function 068> GS ( k pL pH cn fn n  (cn=48, fn=68)
+110
+<Function 069> GS ( k pL pH cn fn m n  (cn=48, fn=69)
+111
+<Function 70> GS ( k pL pH cn fn m  (cn=48, fn=70)
+112
+<Function 080> GS ( k pL pH cn fn m d1...dk (cn=48, fn=80)
+112
+<Function 081> GS ( k pL pH cn fn m (cn=48, fn=81)
+113
+<Function 082> GS ( k pL pH cn fn m (cn=48, fn=82)
+114
+<Function 165> GS ( k pL pH cn fn n1 n2  (cn=49, fn=65)
+115
+<Function 167> GS ( k pL pH cn fn n (cn=49, fn=67)
+115
+<Function 169> GS ( k pL pH cn fn m n  (cn=49, fn=69)
+116

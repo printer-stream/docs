@@ -1,0 +1,28 @@
+Chapter 1   Product Overview
+13
+1
+Product Configurations
+Interfaces
+• Serial UB + built-in USB interface model
+• Parallel UB + built-in USB interface model
+• USB UB
+• Ethernet UB
+• Wireless LAN UB
+Buzzer
+• Model with the built-in buzzer
+• Optional external buzzer
+CAUTION
+For this printer, never use a LAN interface board or a wireless LAN interface board 
+with a buzzer function.
+Otherwise, the printer or the interface board may be damaged.
+The name of interface boards with a buzzer function has “A” at the end.
+Example) UB-E**A, UB-R**A (*: alphanumeric character)
+The optional external buzzer and the built-in buzzer cannot be used together at the same 
+time.
+㩷
+Built-in USB interface
+(May be covered with a
+plate for some models.)
+Interface board (UB):
+Serial/Parallel/USB/
+Ethernet/Wireless LAN

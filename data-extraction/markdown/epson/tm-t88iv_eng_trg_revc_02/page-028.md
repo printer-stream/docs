@@ -1,0 +1,7 @@
+## Electrical Characteristics
+
+|                                                          | High           | speed mode Low current consumption mode                                                                                                                                                                         |
+|----------------------------------------------------------|----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Supply voltage                                           | Supply voltage | DC24V ± 7%                                                                                                                                                                                                      |
+| Current consumption (at 24V, 25°C, normal print density) | Standby        | Mean: Approximately 0.1A Maximum 1A for drawer kick-out driving.                                                                                                                                                |
+| Current consumption (at 24V, 25°C, normal print density) | Operating      | Mean: Approximately 1.8A Mean: Approximately 1.2A Note) When print ratio is approximately 18% • Font A • 42 columns • ASCII character continuous printing for 100 lines (repeats 20H-7FH) #$%&' $%&' 42 columns |

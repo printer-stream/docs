@@ -1,0 +1,38 @@
+This information is stored within the attribute byte as shown below.
+
+<!-- image -->
+
+To determine the value of the attribute byte, add up the numbers for the parameters you wish to set.
+
+## Attribute byte table
+
+| Beginning Column   | Beginning Column   | Ending Column   | Ending Column   | Upper/Lower 8 pins   | Upper/Lower 8 pins   |
+|--------------------|--------------------|-----------------|-----------------|----------------------|----------------------|
+| Column number      | Value              | Column number   | Value           | Pin group            | Value                |
+| 0                  | 0                  | 1               | 1               | Upper 8 pins         | 128                  |
+| 1                  | 16                 | 2               | 2               | Lower 8 pins         | 0                    |
+| 2                  | 32                 | 3               | 3               |                      |                      |
+| 3                  | 48                 | 4               | 4               |                      |                      |
+| 4                  | 64                 | 5               | 5               |                      |                      |
+| 5                  | 80                 | 6               | 6               |                      |                      |
+| 6                  | 96                 | 7               | 7               |                      |                      |
+| 7                  | 112                | 8               | 8               |                      |                      |
+|                    |                    | 9               | 9               |                      |                      |
+|                    |                    | 10              | 10              |                      |                      |
+|                    |                    | 11              | 11              |                      |                      |
+
+## Note:
+
+- The beginning column and ending column settings are only used during proportional spacing. During proportional spacing, the columns to the left of the beginning column and to the right of the ending column are cut off.
+- Proportional spacing is not available on LX-series printers.
+
+For example, to define a character that begins in column 2 and ends in 9 (during proportional spacing) and is printed with the upper 8 pins, determine the attribute byte as follows:
+
+|                       | Value   |
+|-----------------------|---------|
+| Beginning column is 2 | 32      |
+| Ending column is 9    | 9       |
+| Upper 8 pins          | 128     |
+| Total attribute byte  | = 169   |
+
+You must send an attribute byte for each character you define.

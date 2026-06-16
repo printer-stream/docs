@@ -1,0 +1,15 @@
+R-3
+This section describes the recommended method and order of performing
+operations on an EPSON dot matrix printer. An outline of recommended
+operation order is provided first, followed by detailed explanations of each
+operation.
+Basic recommendations are provided for printers featuring ESC/P 2. You should
+follow these recommendations if you are writing programs for ESC/P 2 printers.
+In addition, this section provides information on newly added ESC/P 2
+commands, known as extended ESC/P 2, as well as programming examples for
+EPSON’s high-resolution (up to 720 by 720 dpi) color printer models.
+Where necessary, additional explanations are included for 24/48-pin printers at
+previous ESC/P levels, as well as for 9-pin printers. Although ESC/P 2 printers
+can operate using software written for earlier printers (if deleted and
+nonrecommended commands are avoided), you should use the ESC/P 2 level
+explanations to take full advantage of advanced ESC/P 2 features.

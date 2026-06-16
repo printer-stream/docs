@@ -1,0 +1,49 @@
+The Set Output Mode Instruction, ESC . M
+UESCRIPHUN The set output mode instruction,
+ESC . M, establishes
+parameters for the plotter’s communication format.
+m
+The instruction is used to establish a turnaround delay, an
+output trigger character, an echo terminate character, and an output
+initiator character. It is also used to change the output terminator from
+its default value, carriage return.
+SYNTAX
+. M [ (<DEC>) ;(<ASC>) ;(<ASC>) ;(<ASC>( ;(<ASC>))
+; (<ASC>) ] :
+DEFAULT
+. M:
+Sets the carriage return character (decimal equiva­
+lent 13) as the output terminator. It also speciﬁes that there is no
+turnaround
+delay and no output trigger, echo terminate, or output 1
+initiator character .
+EXPLANATIUNA colon must be used following the last parameter
+(if
+any). Use of the instruction without parameters is equivalent to
+ESC . M: (see DEFAULT).
+A description ofthe instruction’s parameters follows.
+<DEC>
+The first parameter is optional. If present, it is the
+turnaround delay. The delayimplementedis ((parame
+ter ><1.1875)mod 65 536)/ 1.2 milliseconds. The parameter
+range is 0 to 54 612.If parameters follow, the semicolon
+must be included even if this decimal parameter is
+omitted.
+<ASC>
+The second parameter is also optional and, if omitted,
+assumes its default value of 0 (no trigger character). If
+included, it speciﬁes a single character which becomes
+the output trigger character. The parametermay be
+the decimal equivalent of any ASCII character in the
+range 0 to 127.If parameters follow,the semicolon must
+always be included, even when this parameter is omitted.
+<ASC>
+The third parameter is optional and, if omitted, assumes
+its default value 0 (no echo terminate character). If
+included, it specifies a single character which becomes
+the echo terminate character. Theparametermaybe
+the decimal equivalent of any ASCII character in the
+range 0 to 127.If parameters follow,the semicolon must
+always be included, even when this parameter is omitted.
+RS-232—C/CCITTV.24 INTERFACING
+10-33

@@ -1,0 +1,21 @@
+## For Safety
+
+## Key to Symbols
+
+The symbols in this manual are identified by their level of importance, as defined below. Read the following carefully before handling the product.
+
+<!-- image -->
+
+<!-- image -->
+
+You must follow warnings carefully to avoid serious bodily injury.
+
+Provides information that must be observed to prevent damage to the equipment or loss of data.
+
+- Possibility of sustaining physical injuries.
+- Possibility of causing physical damage.
+- Possibility of causing information loss.
+
+Provides information that must be observed to avoid damage to your equipment or a malfunction.
+
+Provides important information and useful tips.

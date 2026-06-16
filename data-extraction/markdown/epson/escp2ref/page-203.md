@@ -1,0 +1,46 @@
+- s Space adjustment value
+- v1, v 2 Bar length
+
+| 24-pin printer   | -3 ≤ s ≤ 3 (unit 1/360 inch)   |
+|------------------|--------------------------------|
+| 9-pin printer    | -3 ≤ s ≤ 3 (unit 1/240 inch)   |
+
+| 24-pin printer   | bar length = v 1 + v 2 × 256 (unit 1/180   |
+|------------------|--------------------------------------------|
+| 9-pin printer    | bar length = v 1 + v 2 × 256 (unit 1/72    |
+
+The v1 and v2 values are ignored when POSTNET is selected. Long bar length of POSTNET is always 0.125 inch. Short bar length of POSTNET is always 0.050 inch.
+
+- c Control flag
+
+| c     | Control flag                                                                                                                              |
+|-------|-------------------------------------------------------------------------------------------------------------------------------------------|
+| bit 0 | Check digit 0: A check digit is not added by the printer. 1: A check digit is added by the printer.                                       |
+| bit 1 | Human readable character 0: The human readable characters are added by the printer. 1: The human readable characters are not added by the |
+| bit 2 | Position of flag character (for EAN-13 and UPC-A only) 0: Center 1: Under                                                                 |
+| bit 3 | (reserved)                                                                                                                                |
+| bit 4 | (reserved)                                                                                                                                |
+| bit 5 | (reserved)                                                                                                                                |
+| bit 6 | (reserved)                                                                                                                                |
+| bit 7 | (reserved)                                                                                                                                |
+
+BarCodeData Corresonds to the bar code symbology.
+
+The data number of each bar code type is constant.
+
+The bar code is not printed if the number of bar code characters are incorrect.
+
+| Bar code type    | Number of valid characters 1 (HEX)   | Number of valid characters 2 (HEX)   |
+|------------------|--------------------------------------|--------------------------------------|
+| EAN-13           | 0D                                   | 0C                                   |
+| EAN-8            | 08                                   | 07                                   |
+| Interleaved 2 of | 5 02 to FF                           | 02 to FF                             |
+| UPC-A            | 0C                                   | 0B                                   |
+| UPC-E            | 0C or 8                              | 0B or 7                              |
+| Code 39          | 01 to FF                             | 01 to FF                             |
+| Code 128         | 02 to FF                             | 02 to FF                             |
+| POSTNET          | 06 or 0A or 0C                       | 05 or 09 or 0B                       |
+
+Number of valid characters 1: control flag c bit 0 = 0
+
+Number of valid characters 2: control flag c bit 0 = 1

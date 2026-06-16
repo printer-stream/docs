@@ -1,0 +1,15 @@
+C O N F I D E N T I A L
+Paper roll
+Miscellaneous commands     <Function 64> FS ( E pL pH fn m a1 
+ 
+Ver. 10.13
+p. 560
+■n specifies enabling/disabling extended settings.
+[Notes]
+■NV memory is used as the storage area for set values (n).
+n
+Function
+48
+Disabled
+49
+Enabled

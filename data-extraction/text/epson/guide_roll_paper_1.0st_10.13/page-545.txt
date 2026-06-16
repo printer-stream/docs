@@ -1,0 +1,37 @@
+C O N F I D E N T I A L
+Paper roll
+Miscellaneous commands     GS z 0
+ 
+Ver. 10.13
+p. 545
+■The procedures for online recovery by pressing the paper feed button are as follows:
+Print status
+Status ➀:
+Normal operation
+Not printing because of a paper-end
+The printer stops printing and goes offline when the roll paper sensor detects a paper-end. The paper out LED 
+is on.
+Print Status:
+➁The printer starts loading. The 
+paper out LED is off.
+➂The printer starts a counter for 
+the paper to be inserted. The 
+paper out LED remains off.
+➃The printer starts a counter for 
+the recovery confirmation time. 
+The paper out LED blinks.
+➄The printer recovers online. The 
+paper out LED is off.
+User Operation:
+➀Open the printer cover and 
+insert a new roll paper.
+.
+➀Printing stops due to a paper 
+end. The paper out LED is on.
+➁Adjust the paper position. 
+Close the printer cover.
+➂Confirm that the paper out 
+LED blinks (if the paper out 
+LED is off, wait for it to 
+blink). Press the paper feed 
+button.

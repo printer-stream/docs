@@ -1,0 +1,43 @@
+2. have not executed an output error instruction; and
+3. the error light is not on at the end of your plot.
+(The fact that the error light is on does not necessarily mean out—of—
+range data has been encountered; an error in any HP—GLcommand
+will turn the light on.)
+The following strings of HP—GLinstructions, if sent to the plotter using
+a suitable output statement such as PRINT or OUTPUT, will draw two
+triangles and then move to the point 10900, 7650with the pen up.
+”IH'SP1;”
+J
+" F'l:l2OOC3,
+1 501:),
+PD,
+0,
+l‘3C1l'3v,2C3C'lU ' _
+F"“'|I:lC|, '1E
+‘,
+" F‘l:|PU*'l500_,
+1 5C]D,
+ET5C'J|I:J, 335CJ'L-'1, 25l'_HJ|‘_. ‘l 5'C_3'1_C|__.
+F'L|_, ‘l |I:|t||;?'l':)
+2000 , 3500
+2500 , 3500
+X‘
+/
+‘\
+/'
+V}
+1500
+2000 ,{500
+2500 , 1500
+4500 , 1500
+The next strings of HP—GLinstructions scale the plotting area into user
+units 0 to 100in each axis and again draws two triangles. Use an out­
+put statement implemented on your computer to send the strings to the
+plotter.
+“IN;SP1;SCO,1U0,0,1DO;“
+"F‘Fl2Cl, 15,
+F'ElV,O,1'EiV,EiCJ_,35,20,
+'l5_,F'|_|_,;-'-_’5_,15';"
+”PHPn45,15,25,35,25,15,Pu;“
+CONTROLLING THE PEN AND PLOTTING
+3-7

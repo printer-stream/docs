@@ -1,0 +1,40 @@
+G-4        Glossary
+double-height printing
+Printing in which each character is twice as tall as normal.
+double-strike printing
+A print enhancement that produces darker-than-normal characters. The print head passes
+over the paper twice, double-printing the characters.
+double-width printing
+Printing in which each character is twice as wide as normal.
+downloaded characters
+See user-defined characters.
+dpi
+See dots per inch.
+draft printing
+A method of printing in which fewer dots are used to form characters. Characters print
+faster, but have a rougher appearance.
+driver
+A program used to send commands and transfer data from the computer to the printer.
+Most application programs include drivers that support EPSON printers.
+ESC/P
+Abbreviation for EPSON Standard Code for Printers, a system of commands that lets you
+control your printer using your computer’s software. The system is standard for all EPSON
+printers and is supported by most software programs for personal computers.
+ESC/P 2
+The enhanced version of the ESC/P printer command language. Commands in this
+language provide the printer with laser-like features, such as scalable fonts and enhanced
+graphics printing.
+fixed-pitch printing
+A type of letter spacing in which characters are printed at equal intervals. Pitch is measured
+in characters per inch.
+font
+A complete set of characters or symbols that share the same size and style. In computer
+terminology, the term font has become confused with typeface to mean the entire family of
+type including all the sizes and styles.
+font cartridges
+Options that provide your printer with additional typefaces.
+form feed
+A control code or control panel button (on most printers) that advances the paper to the
+next top-of-form position.
+graphics
+Groups of dots or characters that are used to create a design or image.

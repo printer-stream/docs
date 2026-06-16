@@ -1,0 +1,48 @@
+C O N F I D E N T I A L
+Paper roll
+Customize commands     GS ( M
+ 
+Ver. 10.13
+p. 791
+GS ( M pL pH fn m <Function 1>
+[Name]
+Save the setting values from the work area into the storage area
+[Format]
+ASCII
+GS
+(
+M
+pL pH fn m
+Hex
+1D
+28
+4D
+02
+00 fn
+m
+Decimal
+29
+40
+77
+ 2
+ 0
+fn
+m
+[Range]
+(pL + pH × 256) = 2, (pL = 2, pH = 0), fn = 1, 49
+TM-J2000/J2100, TM-T90, TM-L90, TM-P60: m = 1, 49
+[Description]
+Saves the setting values of commands listed in the tables on the previous pages and stored in the work area in 
+the storage area specified by m.
+[Notes]
+■The values that have been already stored in the storage area specified by m are cleared by this command.
+■The values in the work area are not changed.
+■The values saved in the storage area are loaded to the work area by the following: 
+•
+Executed by Function 2 with the storage area specified.
+•
+Initialized when an autoload process has been specified by Function 3.
+■The values affected by this command are different, depending on the printer models. See model-
+dependent variations for details.
+■When multiple applications use the storage area at the same time, if this command is executed, the values 
+saved by other applications are deleted. Be sure to take this into account when using this command.

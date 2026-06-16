@@ -1,0 +1,12 @@
+76
+Driver Compatibility
+You can operate the TM-T88IV with a driver for the TM-T88III.
+Advanced Printer Driver
+When the TM-T88III is controlled by an APD, you can replace it with the TM-T88IV without 
+modifying the APD.
+OPOS ADK
+When the TM-T88III is controlled by an OPOS ADK, you can replace it with the TM-T88IV 
+without modifying the OPOS ADK.
+Accessories
+The same consumables and options are available for the TM-T88IV as for the TM-T88III.
+You cannot operate the TM-T88III with a driver for the TM-T88IV.

@@ -1,0 +1,26 @@
+<!-- image -->
+
+## 3.4.  Raster Graphics Command Details
+
+Raster graphics are command types and incidental specifications that enable high speed and high quality printing of graphics.
+
+The following shows the characteristics and specifications for raster graphics.
+
+- Defines the raster mode command as the STAR line mode extension set. Basically no restrictions set in use of conventional STAR line mode. STAR Page Mode cannot be used.
+- Handles high speed data transmission
+
+When using IEEE 1284, data transmission rate of 80 to 100 KB /sec ensured.
+
+- Handles IEEE 1284, USB and Ethernet I/F (RS-232C not applicable)
+- Handles both fixed length/variable length mode
+- Print speed selectable
+- Post printing cut operation selectable
+- All settings possible by Raster commands.
+- Most settings are possible without DIPSW/memory switch settings.
+- Supports printer driver handling raster mode
+
+The following shows the raster command details.
+
+Note that if not specifically noted, the following commands are effective only in raster mode and the commands are ignored (4 bytes ignored) when other than the raster mode.  The raster image buffer in the command details described below indicate the raster dedicated image buffer, the length thereof (vertical direction dot count) differing between models.
+
+-----------------------------------------------------------------------------

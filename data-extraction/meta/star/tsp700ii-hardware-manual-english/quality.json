@@ -1,0 +1,17 @@
+{
+  "stem": "star/tsp700ii-hardware-manual-english",
+  "phase": "quality",
+  "tool": "builtin",
+  "tool_version": "0.3.0",
+  "pipeline_version": "0.3.0",
+  "params": {
+    "threshold": 0.5
+  },
+  "page_count": 32,
+  "started_at": "2026-06-16T19:25:27Z",
+  "ended_at": "2026-06-16T19:25:27Z",
+  "duration_seconds": 0.062,
+  "per_page_seconds_avg": 0.002,
+  "status": "ok",
+  "flagged_count": 1
+}

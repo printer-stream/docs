@@ -1,0 +1,25 @@
+The pattern number parameter is in decimal format but is truncated to
+an integer. This parameter should be between 0 and 6; a parameter in
+this range sets the line type as shown in the preceding illustration. A
+parameter in the range 7 to 127.9999is ignored; the line type does not
+change and no error is set. A parameter 128 or greater sets error 3 and
+the line type does not change. A negative parameter between 0 and
+-128 defaults to a solid line type and no error is set. A negative
+parameter less than -128 sets error 3 and the line type does not change.
+When the first parameter is between 0 and 127.9999,the second param:
+eter is used. This optional pattern length parameter is in decimal
+format. Both integer and fractional parts are used. This parameter
+specifies the length of one complete pattern and is expressed as a per­
+centage of the diagonal distance between the scaling points P1 and P2.
+When this parameter is positive and less than 127.9999,the pattern .
+length is set to this length. When this parameter is negative or is
+greater than or equal to 128,the previous pattern length is used and
+error 3 is set. If a pattern length parameter is not speciﬁed, a length of
+4% is used.
+NOTE: If a vector ends in the pen-up portion of the pattern, a pen down
+command, PD, will not physically put the pen down until the next
+vector command is executed and the pen has moved so it is in a pen­
+down portion of a pattern segment. The pen up command clears the
+carry—overportion of a pattern segment. I
+ENHANCING THE PLOT
+4-7

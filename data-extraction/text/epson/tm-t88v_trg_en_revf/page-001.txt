@@ -1,0 +1,18 @@
+Technical Reference Guide
+Describes features of the Product. 
+Describes setup and installation of the product. 
+Describes how to handle the product.
+Describes advanced usage methods for the product. 
+Describes how to control the printer and necessary informa-
+tion when you develop applications. 
+Describes precautions for replacement.
+Describes general specifications and character codes.
+M00024306
+Rev. F
+  Product Overview
+  Setup
+  Application Development Information
+  Handling
+  Replacement of the TM-T88IV
+  Appendix
+  Advanced Usage

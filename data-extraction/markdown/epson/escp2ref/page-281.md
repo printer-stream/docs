@@ -1,0 +1,46 @@
+## Note:
+
+- When you select the 7.5-cpi and 15-cpi pitches the character height is reduced on most printers.
+- See ESC ! (the Master Select command) in the Command Summary.
+
+Use the ESC p command to select proportional spacing. In this type of spacing, the character width varies by character; thin characters like t receive less space than wide characters like M. The format for this command is as follows:
+
+<!-- image -->
+
+| Individual command   | Master select   |                              |
+|----------------------|-----------------|------------------------------|
+| ESC p 1              | ESC ! 2         | Selects proportional spacing |
+| ESC p 0              | N/A             | Cancels proportional spacing |
+
+See the proportional width table in the Appendix for the exact width of proportional width characters.
+
+A final way you can adjust the pitch is with the ESC SP command. Use this command to add a fixed amount of space to the right of every character. The format of this command is as follows:
+
+ESC SP n
+
+The additional space is either n/120 inch or n/180 inch, depending on the current printer settings; see ESC SP in the Command Summary for details. This additional space is added to both fixed-pitch and proportional characters.
+
+## Selecting the style
+
+<!-- image -->
+
+| ESC/P 2   | ESC/P   | 9-Pin ESC/P   |
+|-----------|---------|---------------|
+
+The term style refers to whether a character is upright or italic. Select the style attribute with the ESC 4 or ESC 5 commands.
+
+| ESC 4   | Select italic printing                           |
+|---------|--------------------------------------------------|
+| ESC 5   | Cancel italic printing (Select upright printing) |
+
+## ABCDEFGHI JKLMnopqrstuvwxyz
+
+Upright
+
+## ABCDEFGHI JKLMnopqrstuvwxyz
+
+Italic
+
+## Note:
+
+You cannot italicize graphics characters.

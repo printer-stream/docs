@@ -1,0 +1,30 @@
+C-166        Individual Command Explanations
+ESC 9
+Enable paper-out detector
+9-Pin ESC/P
+Format
+ASCII
+ESC
+9
+Hex
+1B
+39
+Decimal
+27
+57
+Function
+• 
+The printer stops printing when the end of the paper is reached
+• 
+The beeper sounds when the end of paper is reached, and the printer sets the PE
+(printer-error) signal to high and the parallel interface error signal to low
+Default
+Paper-out detector is enabled
+Notes
+This is a nonrecommended command.
+Printers not featuring this command
+DFX-5000, DFX-8000, DFX-5000+
+Model-dependent variations
+None
+Related topics
+ESC 8

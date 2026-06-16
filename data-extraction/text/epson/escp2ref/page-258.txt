@@ -1,0 +1,100 @@
+Select Characters        R-27
+9-pin draft
+9-pin NLQ
+1 goup of 8 dots
+2 groups of 8 dots, 1 group of 2 dots
+3. Each group of dots is represented by a byte of data, and each dot within that
+group has a value as shown below. Add up the value of each dot in the
+group; the result is the value for the byte of data.
+128
+128 G
+¥ 128
+64
+128
+64
+32 G
+¥
+32
+32
+16
+16 G
+¥
+16
+8
+64 G
+¥
+64
+8 G
+¥
+8
+4 G
+¥
+4
+4
+2
+2
+1 G
+¥
+1  Total 37
+32
+1 G
+¥
+1  Toal 153
+128
+64
+32
+16
+16 G
+¥
+16
+128
+8
+64 G
+¥
+64
+4
+8 G
+¥
+8
+32
+2
+16
+1 G
+¥
+1  Total 17
+8
+128 G
+¥ 128
+4 G
+¥
+4
+4 G
+¥
+4
+64
+2
+32
+1
+ Total 68
+16
+2
+8 G
+¥
+8
+4 G
+¥
+4
+2
+1
+128
+1
+ Total 140
+ Total 76
+64 G
+¥
+64  Total 64
+24-pin normal height
+9-pin draft
+9-pin NLQ
+(byte values are the same
+for super/subscript)

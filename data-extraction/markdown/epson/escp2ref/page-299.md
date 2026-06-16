@@ -1,0 +1,20 @@
+## Note:
+
+If the mode you select does not allow adjacent dot printing, the printer ignores the second of two consecutive horizontal dots as shown below:
+
+<!-- image -->
+
+## Preparing bit-image data
+
+Once you have determined the dot density, create a grid for plotting your design. If the horizontal density is not the same as the vertical density, make a grid that reflects this.
+
+See the sample grids below.
+
+<!-- image -->
+
+Divide the grid into columns of 1, 3, or 6 bytes, depending on the m parameter of the dot density you select. The illustrations in the next two sections depict the following examples:
+
+| m=0   | 60 × 60 dpi (60 × 72 dpi for 9-pin printers)   |
+|-------|------------------------------------------------|
+| m=39  | 180 × 180 dpi                                  |
+| m=72  | 360 × 360 dpi                                  |

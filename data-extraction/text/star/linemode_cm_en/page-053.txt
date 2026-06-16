@@ -1,0 +1,125 @@
+  
+ 
+ESC L n1 n2 d1...dk 
+[Name] 
+Standard density bit image 
+[Code] 
+ASCII 
+ESC 
+L 
+n1 
+n2
+d1
+...
+dk
+ 
+ 
+ 
+ 
+Hex. 
+1B 
+4C 
+n1 
+n2
+d1
+...
+dk
+ 
+ 
+ 
+ 
+Decimal 
+27 
+76 
+n1 
+n2
+d1
+...
+dk
+ 
+ 
+ 
+ 
+[Defined Area] 
+1 ≤ (n1 + n2 x 256) ≤ printable region 
+ 
+k = (n1 + n2 x 256)  
+ 
+0≤d≤255 
+[Initial Value] 
+- - - 
+[Function] 
+Prints bit images using 1 dot wide and 3 dots high per 1 dot of input data.   
+ 
+The following shows the data processing in this command.   
+ 
+• When (n1 + n2 x 256) exceeds the printable region, data after d1 is handled as normal data.   
+ 
+• When (n1 + n2 x 256) exceeds the printable region that is currently set, only the data in the 
+printing region is printed.   
+ 
+At this time, all data for the print region is discarded.   
+ 
+• If the current position already exceeds the print region, this command discards all data. 
+ 
+ 
+ 
+ 
+ 
+ 
+ b7 
+ b6  b5 
+ b4 
+ b3 
+b2  b1 
+ b0 
+ 
+ 
+    • 
+  • 
+  • 
+ 
+ 
+ 
+   • 
+  • 
+  • 
+ 
+ 
+   • 
+  • 
+  • 
+ 
+•
+ 
+   • 
+  • 
+  • 
+ 
+ 
+   • 
+  • 
+  • 
+ 
+ 
+   • 
+  • 
+  • 
+ 
+ 
+   • 
+  • 
+  • 
+ 
+ 
+   • 
+  • 
+  • 
+ 
+ 
+ 
+ 
+ 
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+STAR Line Mode Command Specifications 
+3-35 

@@ -1,0 +1,780 @@
+  
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+STAR Line Mode Command Specifications 
+6-1 
+6. SPECIAL APPENDIX COMMAND LIST FOR EACH MODEL IN EACH I/F 
+6.1. RS-232 C I/F  
+• Standard Commands 
+Class 
+Commands 
+Model Name 
+ 
+ 
+TSP800 
+TSP700
+TSP600
+TUP900
+TSP1000
+TSP828L
+TSP700II 
+TSP650 
+TUP500 
+TSP800II
+FVP10
+Font Style 
+ESC RS F 
+NO 
+NO 
+NO 
+NO 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+and 
+Character Set 
+ESC GS t  
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC GS =  
+Ver. 3.0 or later 
+Spec. A 
+Spec. A 
+Spec. A 
+Spec. A 
+Spec. A 
+Spec. B 
+Spec. B 
+Spec. B 
+Spec. B 
+Spec. B 
+ 
+ESC R  
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC /  
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC SP 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC M 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC P 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC : 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC 
+p 
+(Not 
+recommended) 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC g 
+Spec. A 
+Spec. A 
+Spec. A 
+Spec. B 
+Spec. B
+Spec. B
+Spec. A 
+Spec. A 
+Spec. B 
+Spec. A 
+Spec. A 
+Character  
+ESC i 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+expansion 
+ESC W  
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+settings 
+ESC h  
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+SO 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+DC4 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC SO 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC DC4 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+Print Mode 
+ESC E 
+Spec. A 
+Spec. A 
+Spec. A 
+Spec. B 
+Spec. B 
+Spec. B 
+Spec. A 
+Before Ver. 
+2.0 
+Spec. B 
+Ver. 2.0 or 
+later 
+Spec. A 
+Before Ver. 
+2.0 
+Spec. B 
+Ver. 2.0 or 
+later 
+Spec. A 
+Before Ver. 
+2.0 
+Spec. B 
+Ver. 2.0 or 
+later 
+Spec. B 
+Spec. B 
+ 
+ESC F 
+Spec. A 
+Spec. A 
+Spec. A 
+Spec. B 
+Spec. B 
+Spec. B 
+Spec. A 
+Before V. 2.0 
+Spec. B 
+V. 2.0 or later 
+Spec. A 
+Before V. 2.0 
+Spec. B 
+V. 2.0 or later 
+Spec. A 
+Before V. 2.0
+Spec. B 
+V. 2.0 or later
+Spec. B 
+Spec. B 
+ 
+ESC -  
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC _   
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC 4 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC 5 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+SI 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+DC2 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+Line spacing 
+LF 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+CR 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC a  
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC z  
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC 0 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC J  
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC I  
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+Page Control FF 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC C  
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC C 0  
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+VT 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC B  
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+Horizontal  
+ESC l  
+Spec. A 
+Spec. A 
+Spec. A 
+Spec. B 
+Spec. B
+Spec. B
+Spec. A 
+Spec. A 
+Spec. B 
+Spec. A 
+Spec. A 
+direction 
+ESC Q  
+Spec. A 
+Spec. A 
+Spec. A 
+Spec. B 
+Spec. B
+Spec. B
+Spec. A 
+Spec. A 
+Spec. B 
+Spec. A 
+Spec. A 
+position 
+HT 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC D  
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC GS A  
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC GS R  
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC GS a  
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+Download 
+ESC &  
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC %  
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+Bit Image 
+ESC K  
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+Graphics 
+ESC L  
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC k  
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC X  
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+Logo 
+ESC FS q  
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC FS p  
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC RS L 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+Spec. A for V. 
+1.2 or earier; 
+Spec. B for V. 
+1.3 or later 
+Spec. B 
+Spec. B 
+Spec. B 
+Spec. B 
+Bar Codes 
+ESC b  
+Spec. A 
+Spec. A 
+Spec. A 
+Spec. B 
+Spec. B
+Spec. B
+Spec. B 
+Spec. B 
+Spec. B 
+Spec. B 
+Spec. B
+Cutter Control ESC d  
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 

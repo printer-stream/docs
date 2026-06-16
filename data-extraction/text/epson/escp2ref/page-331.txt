@@ -1,0 +1,50 @@
+R-100        Extended ESC/P 2 Programming Guide
+Monochrome printing support
+Black and white printing support for the Stylus COLOR can be achieved most
+easily by renaming an existing ESC/P 2 monochrome driver. The ESC/P 2
+command language implements four scalable multipoint fonts: Roman, Sans
+Serif, Roman T, and Sans Serif H not available to ESC/P printers. In addition,
+ESC/P 2 printers support compressed graphics printing. In the monochrome
+multipoint mode, the Stylus COLOR printer supports the same four multipoint
+fonts available to current EPSON ESC/P 2 printers, including the LQ-150
+(ActionPrinter 3260), LQ-570+ (ActionPrinter 5000+), LQ-1070+, Stylus 400,
+Stylus 800+, Stylus 1000, Stylus 800, and Stylus 300. However, in order to access
+the new extended raster graphics compressed modes, the driver should
+incorporate the latest ESC/P 2 commands, including ESC . 2.
+Color bit-image graphics support
+The best way to support color printing on the Stylus COLOR is to write a new
+driver that includes all of the expanded ESC/P 2 commands available to the
+Stylus COLOR and other high-resolution EPSON printers. A simpler although
+less desirable method of supporting color printing would be to rename an
+existing ESC/P color driver. Driver examples include the LQ-860 or LQ-2550.
+This method would support the Stylus COLOR as an older ESC/P bit-image
+printer but would seriously limit its high-resolution printing capabilities and
+deny access to other advanced features such as multipoint fonts, raster graphics
+data compression (RLE or TIFF), and MicroWeave.
+ESC/P 2 color multipoint font support
+Color multipoint font ESC/P 2 drivers can be developed by adding the select
+print color command (ESC r n) to existing black and white ESC/P 2 drivers. In
+multipoint mode, insert the select print color command using the values below.
+n
+color
+0 
+Black (default)
+1
+Magenta
+2
+Cyan
+3
+Violet
+4
+Yellow
+5
+Red
+6
+Green
+The Stylus COLOR uses process color inks—Cyan, Magenta, Yellow, and Black
+(CMYK)—to produce other colors, including Violet, Red, and Green. Existing
+printer drivers that can be modified to support color multipoint fonts are the LQ-
+150 (ActionPrinter 3260), LQ-570+ (ActionPrinter 5000+), LQ-1070+, Stylus 400,
+Stylus 800+, Stylus 1000, Stylus 800, and Stylus 300. For more information, see
+programming Example 1: ESC/P 2 color multipoint font driver. Also see the ESC
+r command description in Individual Command Explanations.

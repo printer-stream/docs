@@ -1,0 +1,73 @@
+Example to move to relative multiple,  1.5 Wide   /api/param?camera.motion.zoom=-x1.5
+
+Example of Response  camera.motion.zoom&amp;200 OK
+
+Interpretation Move to specified zoom multiple. To move to absolute multiple, specify from 1.00 to 8.00 with "x".
+
+The API is valid when the resolution is 640x360 or 640x480.
+
+Allowed users admin, operator
+
+## Zoom Operation
+
+Format  /api/param?camera.motion.zoom.status=data
+
+Example to start zoom   /api/param?camera.motion.zoom.status=start
+
+Example of Response  camera.motion.zoom.status&amp;200 OK
+
+Interpretation
+
+Start or stop zoom operation. Specify start or stop.
+
+Allowed users
+
+admin, operator
+
+## Setting Direction of Zoom Operation
+
+Format  /api/param?camera.motion.zoom.mode=data
+
+Example to set to Tele   /api/param?camera.motion.zoom.mode=in
+
+Example of Response  camera.motion.zoom.mode&amp;200 OK
+
+Interpretation
+
+Set direction of zoom operation. Specify in or out.
+
+Allowed users
+
+admin, operator
+
+## Setting Speed of Zoom Operation
+
+Format  /api/param?camera.motion.zoom.speed=data
+
+Example to set maximum speed   /api/param?camera.motion.zoom.speed=100
+
+Example of Response  camera.motion.zoom.speed&amp;200 OK
+
+Interpretation Set speed of zoom operation. Specify 0 to 100. The speed is 4 steps internally.
+
+Allowed users
+
+admin, operator
+
+## Getting Zoom Operation Status
+
+Format  /api/param?camera.motion.zoom.status
+
+Example of Response  camera.motion.zoom.status=moving&amp;200 OK
+
+Interpretation Acquire current zoom status. "moving" or "stop" is returned.
+
+Allowed users
+
+admin, operator, user
+
+## Moving Specified Position to Center
+
+Format /api/param?camera.motion.clickoncenter=X-Y
+
+Example of Response camera.motion.clickoncenter&amp;200 OK

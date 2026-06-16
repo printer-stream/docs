@@ -1,0 +1,89 @@
+Chapter 4   Advanced Usage
+57
+4
+Transmission Speed (DIP Switches 1-7/1-8)
+bps: bits per second
+* The default value of transmission speed set with memory switches (customized value) is 38400 
+bps. (See "Setting the Memory Switches (Customized Value)" on page 63.)
+DIP Switch Bank 2
+Transmission speed (bps: bits per second)
+SW 1-7
+SW 1-8
+Depends on the memory switches (customized value) settings.*
+ON
+ON
+4800
+OFF
+ON
+9600 (default)
+ON
+OFF
+19200
+OFF
+OFF
+Depending on print conditions, such as print duty, print head temperature, and data
+transmission speed, print speed is automatically adjusted, which can cause white lines due
+to intermittent print (the motor sometimes stops). To avoid this, set the transmission speed
+higher or keep the print speed constant by setting it lower. 
+SW
+Function
+ON
+OFF
+Default
+setting
+2-1
+Handshaking (BUSY condition)
+Receive buffer full
+• Offline
+• Receive buffer full
+OFF
+2-2
+Reser ved (Do not change
+setting)
+Fixed to OFF
+OFF
+2-3 ∼
+2-4
+Selects print density
+See "Selecting the Print Density (DIP Switches
+2-3/2-4)" on page 62.
+OFF
+2-5
+Sets the release condition of the
+receive buffer BUSY state. (This
+function is effective when DIP
+Switch 1-2 is set to off.)
+Releases the BUSY
+state 
+when 
+the
+remaining capacity
+of the receive buffer
+reaches 138 bytes.
+Releases the BUSY
+state 
+when 
+the
+remaining capacity
+of the receive buffer
+reaches 256 bytes.
+OFF
+2-6
+Reser ved (Do not change
+setting)
+Fixed to OFF
+OFF
+2-7
+I/F pin 6 reset signal
+Enabled
+Disabled
+OFF
+2-8
+IF pin 25 reset signal
+Enabled
+Disabled
+OFF
+•
+For DIP Switch 2-1 (BUSY condition), see also "Selecting the BUSY Status" on page 62.
+•
+When you use the APD, change the setting of DIP switch 2-1 (BUSY condition) to ON.

@@ -1,0 +1,93 @@
+## Built-in features
+
+Print method
+
+9-pin impact
+
+Speed
+
+NLQ
+
+25 cps @ 10 cpi
+
+30 cps @ 12 cpi
+
+Draft
+
+150 cps @ 10 cpi
+
+180 cps @ 12 cpi
+
+Print width
+
+8 inches
+
+Paper types
+
+Continuous, Single sheets, Roll paper
+
+Multipart forms
+
+Original plus 2 copies
+
+Paper paths
+
+Rear, Top
+
+Tractor
+
+Pull
+
+Paper parking
+
+Not available
+
+Buffer size
+
+3KB
+
+Interface
+
+Parallel
+
+Fonts (typefaces)
+
+Roman, Sans Serif
+
+## Options (with model numbers)
+
+Roll-paper holder
+
+Interfaces
+
+Ribbon
+
+## LX-400 DIP-switch settings
+
+|                          | ON                              | ON                              | ON                              | ON                              | OFF                                     | OFF                                     | OFF                                     | OFF                                     |
+|--------------------------|---------------------------------|---------------------------------|---------------------------------|---------------------------------|-----------------------------------------|-----------------------------------------|-----------------------------------------|-----------------------------------------|
+| 1-1                      | User-defined characters         | User-defined characters         | User-defined characters         | User-defined characters         | ROM characters                          | ROM characters                          | ROM characters                          | ROM characters                          |
+| 1-2                      | Slashed zero (Ø)                | Slashed zero (Ø)                | Slashed zero (Ø)                | Slashed zero (Ø)                | Normal zero (0)                         | Normal zero (0)                         | Normal zero (0)                         | Normal zero (0)                         |
+| 1-3                      | Graphics character tables       | Graphics character tables       | Graphics character tables       | Graphics character tables       | Italics character table                 | Italics character table                 | Italics character table                 | Italics character table                 |
+| Paper length             | 11.7 inches                     | 11.7 inches                     | 12 inches                       | 12 inches                       | 8.5 inches                              | 8.5 inches                              | 11 inches                               | 11 inches                               |
+| 1-4                      | ON                              | ON                              | ON                              | ON                              | OFF                                     | OFF                                     | OFF                                     | OFF                                     |
+| 1-5                      | ON                              | ON                              | OFF                             | OFF                             | ON                                      | ON                                      | OFF                                     | OFF                                     |
+| Country (1-3 OFF)        | U.S.                            | France                          | Germany                         | U.K.                            | Denmark                                 | Sweden                                  | Italy                                   | Spain                                   |
+| 1-6                      | ON                              | ON                              | ON                              | ON                              | OFF                                     | OFF                                     | OFF                                     | OFF                                     |
+| 1-7                      | ON                              | ON                              | OFF                             | OFF                             | ON                                      | ON                                      | OFF                                     | OFF                                     |
+| 1-8                      | ON                              | OFF                             | ON                              | OFF                             | ON                                      | OFF                                     | ON                                      | OFF                                     |
+| Character table (1-3 ON) | PC437                           | PC437                           | PC850                           | PC860                           | PC860                                   | PC863                                   | PC865                                   | PC865                                   |
+| 1-6                      | ON                              | ON                              | ON                              | ON                              | ON                                      | ON                                      | OFF                                     | OFF                                     |
+| 1-7                      | ON                              | ON                              | ON                              | OFF                             | OFF                                     | OFF                                     | ON                                      | ON                                      |
+| 1-8                      | ON                              | ON                              | OFF                             | ON                              | ON                                      | OFF                                     | ON                                      | ON                                      |
+|                          | ON                              | ON                              | ON                              | ON                              | OFF                                     | OFF                                     | OFF                                     | OFF                                     |
+| 2-1                      | NLQ printing                    | NLQ printing                    | NLQ printing                    | NLQ printing                    | Draft printing                          | Draft printing                          | Draft printing                          | Draft printing                          |
+| 2-2                      | Cut-sheet feeder mode on        | Cut-sheet feeder mode on        | Cut-sheet feeder mode on        | Cut-sheet feeder mode on        | Cut-sheet feeder mode off               | Cut-sheet feeder mode off               | Cut-sheet feeder mode off               | Cut-sheet feeder mode off               |
+| 2-3                      | 1-inch skip-over-perforation    | 1-inch skip-over-perforation    | 1-inch skip-over-perforation    | 1-inch skip-over-perforation    | No skip-over-perforation                | No skip-over-perforation                | No skip-over-perforation                | No skip-over-perforation                |
+| 2-4                      | CR command produces a line feed | CR command produces a line feed | CR command produces a line feed | CR command produces a line feed | CR command does not produce a line feed | CR command does not produce a line feed | CR command does not produce a line feed | CR command does not produce a line feed |
+
+#8310
+
+#8143, #8148, #8165
+
+#8750 (Fabric)

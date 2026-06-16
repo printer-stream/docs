@@ -1,0 +1,17 @@
+{
+  "stem": "epson/guide_roll_paper_1.0st_10.13",
+  "phase": "quality",
+  "tool": "builtin",
+  "tool_version": "0.3.0",
+  "pipeline_version": "0.3.0",
+  "params": {
+    "threshold": 0.5
+  },
+  "page_count": 882,
+  "started_at": "2026-06-16T17:02:33Z",
+  "ended_at": "2026-06-16T17:02:34Z",
+  "duration_seconds": 1.489,
+  "per_page_seconds_avg": 0.002,
+  "status": "ok",
+  "flagged_count": 11
+}

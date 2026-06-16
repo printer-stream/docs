@@ -1,0 +1,65 @@
+C O N F I D E N T I A L
+Paper roll
+Customize commands     GS ( E
+ 
+Ver. 10.13
+p. 696
+GS ( E 
+EXECUTING + SETTING
+[Name]
+Set user setup commands
+[Printers not featuring this command] TM-U230
+[Description]
+Controls the user setting modes. The table below explains the functions available in this command.
+•
+Function code fn specifies the function.
+fn
+Function No. Function name
+1
+Function 1
+Change into the user setting mode.
+2
+Function 2
+End the user setting mode session.
+3
+Function 3
+Change the memory switch.
+4
+Function 4
+Transmit the settings of the memory switch.
+5
+Function 5
+Set  the customized setting values.
+6
+Function 6
+Transmit the customized setting values.
+7
+Function 7
+Copy the user-defined page.
+8
+Function 8
+Define the data (column format) for the character code page.
+9
+Function 9
+Define the data (raster format) for the character code page.
+10
+Function 10
+Delete the data for the character code page.
+11
+Function 11
+Set the communication item for the serial interface.
+12
+Function 12
+Transmit the communication item for the serial interface.
+13
+Function 13
+Set the configuration item for the Bluetooth interface.
+14
+Function 14
+Transmit the configuration item for the Bluetooth interface.
+15
+Function 15
+Set conditions for USB interface communication
+16
+Function 16
+Transmit conditions for USB interface communication

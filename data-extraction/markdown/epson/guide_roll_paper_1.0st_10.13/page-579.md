@@ -1,0 +1,75 @@
+## C O N F I D E N T I A L
+
+## FS C
+
+SETTING COMMAND
+
+[Name]
+
+Select Kanji character code system
+
+[Format]
+
+ASCII
+
+FS
+
+C
+
+n
+
+Hex
+
+1C
+
+43
+
+n
+
+Decimal
+
+28
+
+67
+
+n
+
+[Printers not featuring this command] None
+
+[Range]
+
+TM-J2000/J2100 , TM-T90 , TM-T20 , TM-T88IV , TM-T88V , TM-T70 , TM-L90 , TM-P60 : n = 0, 1, 48, 49
+
+TM-U230 , TM-U220 : n = 0, 1
+
+[Default]
+
+n = 0
+
+[Description]
+
+Selects a Kanji character code system for the Japanese model as follows:
+
+[Notes]
+
+- ■ This command is effective only with the Japanese Kanji models.
+
+- ■ When JIS code system is selected, Kanji mode should be specified by FS &amp; to print Kanji characters.
+
+- ■ When SHIFT JIS code system is selected, if the printer processes a character code that corresponds to the first byte of the Kanji code, the printer processes a consecutive byte as the second byte of the Kanji code. Therefore, when this code system is selected, ASCII code that corresponds to the first byte of the Kanji code cannot be printed.
+
+- ■ Kanji code processes the first byte and the second byte in order.
+
+- ■ The command is effective until ESC @ is executed, the printer is reset, or the power is turned off.
+
+n
+
+Kanji
+
+0, 48
+
+JIS code
+
+1, 49
+
+SHIFT JIS code

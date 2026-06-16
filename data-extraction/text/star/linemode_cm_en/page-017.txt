@@ -1,0 +1,65 @@
+  
+ 
+•Print Starting Trigger Control commands 
+ 
+ 
+ 
+Commands 
+Name 
+Class 
+ 
+Print starting  
+ESC GS g0  
+Print starting trigger 
+trigger 
+ESC GS g1  
+Print starting timer setting 
+ 
+•QR Code commands 
+ 
+ 
+ 
+Commands 
+Name 
+Class 
+ 
+QR code 
+ESC GS y S0  
+Set QR code model 
+ 
+ESC GS y S1  
+Set QR code mistake correction level  
+ 
+ESC GS y S2  
+Set QR code cell size  
+ 
+ESC GS y D1  
+Set QR code data  
+ 
+ESC GS y D2  
+Set QR code data (Manual) 
+ 
+ESC GS y P  
+Print QR code  
+ 
+ESC GS y I  
+Get QR code expansion information  
+ 
+•Page function commands 
+ 
+ 
+ 
+Commands 
+Name 
+Class 
+ 
+Page function 
+ESC GS h 0   
+180 degree turnover 
+ 
+ESC GS h 1   
+Water mark 
+ 
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+STAR Line Mode Command Specifications 
+2-7 

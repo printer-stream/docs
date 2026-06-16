@@ -1,0 +1,156 @@
+Individual Command Explanations        C-33
+ESC \
+Set relative horizontal print position
+ESC/P 2
+ESC/P
+Format
+ASCII
+ESC
+\
+nL
+nH
+Hex
+1B
+5C
+nL
+nH
+Decimal
+27
+92
+nL
+nH
+Parameter range
+0 ≤ nH ≤ 127
+0 ≤ nL ≤ 255
+Function
+Moves the horizontal print position left or right from the current position, as specified by
+the following formula:
+(horizontal position) = ((nH × 256) + nL) × (defined unit) + (current position)
+For positive (right) movement:
+nH =
+(
+)
+INT
+horizontal position
+current position
+defined unit
+(
+)
+(
+)
+(
+)
+−
+×
+
+
+
+
+
+
+
+
+
+
+
+
+1
+256
+nL =
+(
+)
+MOD
+horizontal position
+current position
+defined unit
+(
+) (
+)
+(
+)
+−
+×
+
+
+
+
+
+
+
+
+
+
+
+
+1
+256
+For negative (left) movement:
+nH =
+(
+)
+32768
+1
+256
+−
+−
+×
+
+
+
+
+
+
+
+
+
+
+
+
+INT
+current position
+horizontal position
+defined unit
+(
+) (
+)
+(
+)
+nL =
+(
+)
+32768
+1
+256
+−
+−
+×
+
+
+
+
+
+
+
+
+
+
+
+
+MOD
+current position
+horizontal position
+defined unit
+(
+) (
+)
+(
+)
+Notes
+• 
+Set the defined unit with the ESC ( U command.
+• 
+The default defined unit for this command is 1/120 inch in draft mode, and 1/180 inch
+in LQ mode.
+• 
+The printer ignores this command if it would move the print position outside the
+printing area.

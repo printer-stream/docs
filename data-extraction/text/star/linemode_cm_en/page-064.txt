@@ -1,0 +1,94 @@
+  
+ 
+BEL 
+[Name] 
+External device 1 drive instruction 
+[Code] 
+ASCII 
+BEL 
+ 
+ 
+ 
+ 
+ 
+ 
+Hex. 
+07 
+ 
+ 
+ 
+ 
+ 
+ 
+Decimal 
+7 
+ 
+ 
+ 
+ 
+ 
+ 
+[Defined Area] 
+- - - 
+[Initial Value] 
+- - - 
+[Function] 
+Executes the external device drive conditions set according to the command to set the external 
+drive device pulse width (ESC BEL n1 n2).   
+ 
+As with other commands, it temporarily stores data in the data buffer, then executes in the order 
+received.  
+ 
+External device 1 and external device 2 cannot be executed simultaneously.   
+ 
+ 
+ 
+ 
+ 
+ 
+FS 
+[Name] 
+External device 1 drive instruction 
+[Code] 
+ASCII 
+FS 
+ 
+ 
+ 
+ 
+ 
+ 
+Hex. 
+1C 
+ 
+ 
+ 
+ 
+ 
+ 
+Decimal 
+28 
+ 
+ 
+ 
+ 
+ 
+ 
+[Defined Area] 
+- - - 
+[Initial Value] 
+- - - 
+[Function] 
+Executes the external device drive conditions set according to the command to set the external 
+drive device pulse width (ESC BEL n1 n2).   
+ 
+As with other commands, it temporarily stores data in the data buffer, then executes in the order 
+received.  
+ 
+External device 1 and external device 2 cannot be executed simultaneously.   
+ 
+ 
+ 
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+STAR Line Mode Command Specifications 
+3-46 

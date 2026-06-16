@@ -1,0 +1,49 @@
+## C O N F I D E N T I A L
+
+Setting of this function can be changed by 'Memory switch setting mode' by the panel switch
+
+operation when the power supply is turned on.
+
+## TM-T20
+
+DIP switch for setting communication condition is not supported.
+
+7 baud rates are selectable.
+
+['2400 ','4800 ', '9600 ', '19200 ', '38400 ', '57600 ', '115200 ']
+
+TM-T88IV
+
+,
+
+TM-T88V
+
+,
+
+TM-T70
+
+DIP switches for setting communication condition are Sw 1-7 and Sw 1-8. When both DIP switches
+
+are ON, this function is enabled. Turn off the printer before changing DIP switch settings.
+
+7 baud rates are selectable.
+
+['2400 ','4800 ', '9600 ', '19200 ', '38400 ', '57600 ', '115200 ']
+
+## TM-P60
+
+DIP switch for setting communication condition is not supported. 3 baud rates are selectable. ['9600 ', '19200 ', '38400 ']
+
+## TM-U220
+
+- The serial communication setting is also specified by DIP switch.
+- There are 2 series (types) of this printer. They are identified on a sticker near the DIP switch on the main board. One is 'STD,' the other is 'US.' The DIP switch assignment is different between the 'STD' series and the 'US' series. The DIP switch selects either DIP switch or this function to specify the serial communication setting. The selecting DIP switch is shown in following table. When the DIP switch is ON, a setting value of this function is enabled. Turn off the printer before changing DIP switch settings.
+
+<!-- image -->
+
+| Printer series                         | DIP switch   |
+|----------------------------------------|--------------|
+| Type B, D with 'STD' sticker or Type A | [SW 2-4]     |
+| Type B, D with 'US' sticker            | [SW 2-8]     |
+
+5 baud rates are selectable by this command. ['1200', '2400 ','4800 ', '9600 ', '19200 '] Setting of this function can be changed by 'Memory switch setting mode' by the panel switch operation.

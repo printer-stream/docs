@@ -1,0 +1,22 @@
+Chapter 1   Product Overview
+21
+1
+NV Memory (Non-Volatile Memory)
+The printer has NV memory which includes the user NV memory and NV graphics memory that 
+users can use.
+NV Graphics Memory
+Graphics such as shop logos to be printed on receipts can be stored. Even with a serial interface 
+model whose communication speed is low, high speed graphic printing is possible.
+Use the TM Flash Logo Setup utility for NVRAM to register graphics.
+NV Graphics Print Mode
+In this mode the printer prints the following:
+• Capacity of the NV graphics
+• Used amount of the NV graphics
+• Unused capacity of the NV graphics
+• Number of the NV graphics that are registered
+• Key code, number of dots in X direction, number of dots in Y direction, number of colors to be 
+defined.
+• NV graphics data
+CAUTION
+NV memory can be rewritten about 100,000 times. As a guide, NV memory rewriting should 
+be 10 times or less a day when you program applications.

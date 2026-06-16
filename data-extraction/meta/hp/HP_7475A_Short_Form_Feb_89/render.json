@@ -1,0 +1,32 @@
+{
+  "stem": "hp/HP_7475A_Short_Form_Feb_89",
+  "phase": "render",
+  "tool": "pymupdf",
+  "tool_version": "1.27.2.3",
+  "pipeline_version": "0.3.0",
+  "params": {
+    "small_width": 1024,
+    "big_dpi": 200,
+    "jpeg_quality": 85
+  },
+  "page_count": 12,
+  "started_at": "2026-06-16T17:35:50Z",
+  "ended_at": "2026-06-16T17:35:53Z",
+  "duration_seconds": 2.844,
+  "per_page_seconds_avg": 0.237,
+  "status": "ok",
+  "page_seconds": {
+    "page-01": 0.257,
+    "page-02": 0.219,
+    "page-03": 0.265,
+    "page-04": 0.228,
+    "page-05": 0.213,
+    "page-06": 0.2,
+    "page-07": 0.307,
+    "page-08": 0.265,
+    "page-09": 0.237,
+    "page-10": 0.223,
+    "page-11": 0.204,
+    "page-12": 0.223
+  }
+}

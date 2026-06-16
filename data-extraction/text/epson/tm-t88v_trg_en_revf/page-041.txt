@@ -1,0 +1,19 @@
+Chapter 2   Setup
+41
+2
+Drawer Connection Circuitry
+F.G
++24V
+With shielded
+Drawer kick connector
+Printer side
+User side [Drawer kick side]
+Drawer open/close switch
+Drawer kick solenoid
+Control device
+1
+2
+3
+4
+5
+6

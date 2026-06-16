@@ -1,0 +1,54 @@
+C O N F I D E N T I A L
+Paper roll
+Character commands     ESC t
+ 
+Ver. 10.13
+p. 139
+ESC t
+SETTING COMMAND
+[Name]
+Select character code table
+[Format]
+ASCII
+ESC t
+n
+Hex
+1B
+74
+n
+Decimal
+27
+116 n
+[Range]
+TM-J2000/J2100, TM-T90, TM-L90 , TM-P60:
+0 ≤  n ≤  5, 16 ≤  n ≤  19, n = 255
+TM-U230:
+0 ≤  n ≤  5, n = 19, 254, 255 (Other than the following model)
+0 ≤  n ≤  8, n = 19, 254, 255  (Japanese model)
+TM-U220:     0 ≤  n ≤  5, 16 ≤  n ≤  19, n = 254, 255 (Other than the following model)
+0 ≤  n ≤  8, 16 ≤  n ≤  19, n = 254, 255 (Japanese model)
+TM-T88IV, TM-T70: 0 ≤  n ≤  5, 16 ≤  n ≤  19, n = 255 (Other than the following model)
+n = 0, 20, 21, 26, 30, 31 (South Asia model)
+TM-T20: 0 ≤  n ≤  5, 11 ≤  n ≤  21, n = 26, 30 ≤  n ≤  53, n = 255
+TM-T88V:
+0 ≤  n ≤  5, 11 ≤  n ≤  21, n = 26, 30 ≤  n ≤  53, n = 255 (Other than the following model)
+0 ≤  n ≤  5, 11 ≤  n ≤  21, n = 26, 30 ≤  n ≤  53 (South Asia model)
+[Default]
+n = 0
+[Printers not featuring this command] None
+[Description]
+Selects a page n from the character code table as follows: 
+n
+Character code table
+0
+Page 0 [PC437 (U.S.A., Standard Europe)]
+1
+Page 1 [Katakana]
+2
+Page 2 [PC850 (Multilingual)]
+3
+Page 3 [PC860 (Portuguese)]
+4
+Page 4 [PC863 (Canadian-French)]
+5
+Page 5 [PC865 (Nordic)]

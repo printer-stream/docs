@@ -1,0 +1,42 @@
+<!-- image -->
+
+## GS	(	N	pL	pH	n	m
+
+Name
+
+Specify print color
+
+Code
+
+ASCII GS ( N pL pH n m
+
+Hex.
+
+1D 28 4E pL pH n m
+
+Decimal 29 40 78 pL pH n m
+
+Defined Region
+
+$${pL+ (pH×256) } = 2 (pL = 2,pH = 0)$$
+
+n = 48
+
+m = 49,50
+
+Initial Value
+
+m = 49
+
+Function
+
+Specifies print color in 2 color print mode.
+
+- This command is effective only when in 2 color printing in mode. This command is ignored with in single color printing mode.
+
+- Use ESC @ to initial the print color (print color = black).
+
+|   m | Print color         |
+|-----|---------------------|
+|  49 | Black (High Energy) |
+|  50 | Red (Low Energy)    |

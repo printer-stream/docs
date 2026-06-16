@@ -1,0 +1,44 @@
+<!-- image -->
+
+## Header 2
+
+Header 2 is a 1-byte length information which is transmitted to the second byte of the standard status. Structure of the header 2 in the table below.
+
+Header 2, for bit 1 to bit 3, and bit 5 is indicating the standard status version (standard status version).
+
+The relationship of the actual version and header 2 is as shown in the chart below. Standard status version is to up new information for the bit position of the printer status that is empty until the addition of new feature in the future. If you do not maintain the standard status version on the host side, it is okay to ignore the received header 2.
+
+## &lt; Header 2 (the second byte) &gt;
+
+|   Bit |                         | Condition   | Condition   | TSP100   | TSP100   | TSP100   | TSP100   | TSP100   | TSP100   | TSP100   | TSP100   | TSP100   |
+|-------|-------------------------|-------------|-------------|----------|----------|----------|----------|----------|----------|----------|----------|----------|
+|       |                         | '0'         | '1'         | U        | PU       | IIU      | GT       | LAN      | IIIW     | IIILAN   | IIIBI    | IIIU     |
+|     7 | Fixed at '0'            |             | -           | 0        | 0        | 0        | 0        | 0        | 0        | 0        | 0        | 0        |
+|     6 | Not used (Fixed at '0') |             | -           | 0        | 0        | 0        | 0        | 0        | 0        | 0        | 0        | 0        |
+|     5 | Version number          |             |             | 0        | 0        | 0        | 0        | 0        | 0        | 0        | 0        | 0        |
+|     4 | Fixed at '0'            |             | -           | 0        | 0        | 0        | 0        | 0        | 0        | 0        | 0        | 0        |
+|     3 | Version number          |             |             | 0        | 0        | 0        | 0        | 0        | 0        | 0        | 0        | 0        |
+|     2 | Version number          |             |             | 1        | 1        | 1        | 1        | 1        | 1        | 1        | 1        | 1        |
+|     1 | Version number          |             |             | 1        | 1        | 1        | 1        | 1        | 1        | 1        | 1        | 1        |
+|     0 | Fixed at '0'            | -           |             | 0        | 0        | 0        | 0        | 0        | 0        | 0        | 0        | 0        |
+
+Support table between actual standard status version and header 2
+
+| Version number n   | Header 2           |
+|--------------------|--------------------|
+| 1                  | 00000010B (02 Hex) |
+| 2                  | 00000100B (04 Hex) |
+| 3                  | 00000100B (06 Hex) |
+| 4                  | 00001000B (08 Hex) |
+| 5                  | 00001010B (0A Hex) |
+| 6                  | 00001100B (0C Hex) |
+| 7                  | 00001110B (0E Hex) |
+| 8                  | 00100000B (20 Hex) |
+| 9                  | 00100010B (22 Hex) |
+| ・ ・                | ・ ・ ・              |
+| 30                 | 01101100B (6C Hex) |
+| 31                 | 01101110B (CE Hex) |
+
+--------------------------------------------------------------------------------------
+
+Rev. 2.31

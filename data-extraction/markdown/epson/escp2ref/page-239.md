@@ -1,0 +1,16 @@
+The printing area in ESC/P 2 differs for text and graphics printing.
+
+If the point size is larger than 10.5 points, and the print position is near the top or bottom-margin position, part of the character may print outside the printing area (above the top-margin or below the bottom-margin). The printer prints the full character, even though it falls outside the printing area, with the following exception:
+
+If part of the character falls outside the printable area on single-sheet paper (closer than 8.5 mm to the top edge or closer than 13.5 mm to the bottom edge), printing of that part is not assured.
+
+When setting the vertical print position, you must place enough room at the top and bottom of a page for a full character to print.
+
+The following diagram illustrates the differences between graphics and character printing areas near the top and bottom-margin positions.
+
+<!-- image -->
+
+## Note:
+
+- You can print characters outside the top and bottom-margin positions as long as the vertical print position is within the printing area. However, character printing within the nonprintable area is not assured; parts of characters may be cut off.
+- You cannot print any part of graphics outside the top and bottom-margin positions.

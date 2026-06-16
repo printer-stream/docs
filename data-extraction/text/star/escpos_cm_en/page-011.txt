@@ -1,0 +1,71 @@
+ESC/POS Command Specifications
+11
+Rev.2.52
+1-1-4 
+Timing for Transmitting XON/XOFF 
+When XON/XOFF control is selected, XON and XOFF are transmitted with the following timings.  
+The transmission timing varies according to the DIP switch settings or the memory switch settings.  
+XON code: <11> H 
+XOFF code: <13> H 
+For (3) below, XON is not transmitted when the reception buffer is full.  
+For (6) below, XOFF is not transmitted when the reception buffer is full.  
+	
+<XON/XOFF Transmission Timing>
+Printer Status
+Busy condition (*1) 
+OFF
+ON 
+XON 
+Transmission
+(1) When online for the first time after turning the power 
+on or a reset using the interface  
+Transmission 
+Transmission 
+(2) When the buffer full status was cancelled for recep-
+tion buffer  
+Transmission 
+Transmission 
+(3) When shifting from offline to online  
+-
+Transmission 
+(4) When recovered from a recoverable error using a 
+command  
+-
+Transmission 
+XOFF 
+Transmission
+(5) When the reception buffer entered buffer full status 
+Transmission 
+Transmission 
+(6) When shifting from online to offline  
+-
+Transmission 
+(*1) DIPSW Settings: Conditions for BUSY 	
+	
+ON	
+=	 Reception buffer full or printer is offline (Default) 
+	
+OFF	 =	 Reception buffer full
+1-1-5 
+Serial Interface Connection Example 
+• If the other connected party is DCE, be careful so that there is no status without a handshake (where data is 
+flows)  (DTE: Data Terminal Equipment; DCE: Data Circuit Terminating Equipment)
+• When transmitting data to the printer, turn on the power to the printer and initialize first.  
+	
+ 
+Host
+Printer
+TXD
+TXD
+DSR
+DTR
+CTS
+RTS
+RXD
+RXD
+DTR
+DSR
+F.G
+F.G
+S.G
+S.G

@@ -1,0 +1,26 @@
+## Format
+
+Class 1 ASCII &lt;EXIT&gt; Binary 1110 0011B
+
+## Function
+
+- Exits TIFF compressed raster graphics mode.
+- Starts printing of stored data.
+- Moves the horizontal print position to 0 (left-most print
+- position).
+
+## Notes
+
+This command is available when the ESC . 2 TIFF compressed mode is selected.
+
+## Printers featuring this command
+
+Stylus COLOR
+
+Model-dependent variations
+
+None
+
+## Related topics
+
+ESC . 2, ESC ( i, ESC ( G

@@ -1,0 +1,24 @@
+## C.10  Page 19 (PC858: Euro)
+
+<!-- image -->
+
+|               | XadH            | 8               | 8                  | 6                  | 6           | a Vv        | a Vv   | &#124; 0   | &#124; 0    | a           | a           | a           | a           |             | A     |
+|---------------|-----------------|-----------------|--------------------|--------------------|-------------|-------------|--------|------------|-------------|-------------|-------------|-------------|-------------|-------------|-------|
+| XaH           | OOOT &#124; NIA | OOOT &#124; NIA | &#124; TOOT &#124; | &#124; TOOT &#124; | &#124; OTOT | &#124; OTOT | TTOT   | TTOT       | &#124; OOTT | &#124; OOTT | &#124; TOTT | &#124; TOTT | &#124; OLTT | &#124; OLTT | TIIT  |
+| 0             | 0000}           |                 |                    |                    | G           |             |        |            |             | Q           | 806         | fe)         | VES         |             | Ove — |
+| T             | n &#124;1000)   |                 |                    |                    |             |             |        |            |             | a           | 606         | g           | SBS         | -           | 4     |
+| Z             | OT00&#124;      |                 |                    |                    |             |             |        |            |             | q           | Ole         | oO          | 966         | =           | AKA   |
+| TT00} €       |                 |                 |                    |                    |             |             |        |            |             | cl ci       | I1é         | Q           | Les         | e 4         | 8s    |
+| F             | e OOO)          | sl              | fe)                | SPT                | u           | POT         | L      | O8T __     | 96T         | a           | rand        | Q           | 866         | b           | VIG   |
+|               | eres            | est             |                    | 6¢T Neg            |             | SOT         | yo     | T8L        | L6T +       | BS          | 1d          | 9           | 636         | gs          | SHS   |
+| 9             | OTTO            | vel Ug          |                    | OST                | le          | 99T         |        | o8T ely    | 86T         |             | Ie dr       |             | 083         | +/          | 906   |
+|               |                 | géT             |                    | TST                |             | LOT         |        | est        | 66T         |             | STS         |             | T&S         |             | Lvs   |
+| 8             | g 000T'         | 9&T             |                    | GST                | ?           | B9T         | eo     | PBL        | 006 4       | tT          | 9T@         | dad         | 6ES         | o           | 8hS   |
+| 6             | a &#124;TOOT    | LET             |                    | est                | ®@          | 69T         | LL     | Sst        | 106 =&#124; | r           | LIB         | o           | ttrd        |             | 6F%   |
+| V             | 8 OTOT)         | 8st             | al                 | VST                | LL          | OLT         |        | 98T        | 606         | &#124;      | 8Ie         | n           | ves         |             | ose   |
+|               | IlOl I          | 68T             |                    | ScT                |             | TLT Lg      |        | L8T        | £06 4       | bp          | 616         | a.          | S&o         | ,           | TSé   |
+| &#124;OOTT) 0 | t gL            | OFT             | ¥                  | 9cT                | % y         | GLT         | _      | 881        | v0G         | =           | 066         | & 7         | 98%         | &           | 6So   |
+| a             | rf TOIT;        | Tel             | @                  | LST                | !           | LT          | >      | 68T        | 806 _       |             | T6s         | &           | LEG         | z           | 893   |
+| ©             | Vv OTIT&#124;   | aa5             | x                  | 8ST                | >           | PLT         | &      | O6T        | 906         | I           | 444         | _           | 88S         | 1           | A14   |
+|               | It yiltda       | evT             | 5s                 | 6ST                | «           | SLT         |        |            | oo          | m           |             |             | 683         | gS.         | SSS   |
+|               |                 |                 |                    |                    |             |             | F      | T6L        | L03         |             | 866         |             |             |             |       |

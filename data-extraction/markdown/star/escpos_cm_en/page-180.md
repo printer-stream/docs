@@ -1,0 +1,50 @@
+<!-- image -->
+
+Name
+
+Cut paper
+
+Code
+
+ASCII GS V m n
+
+Hex. 1D 56 m n
+
+Decimal
+
+29 86 m n
+
+Defined Region
+
+m = 65, 66, 0 ≤ n ≤ 255
+
+Function
+
+Executes the specified paper cut.
+
+|   m | Function                                                                                                      |
+|-----|---------------------------------------------------------------------------------------------------------------|
+|  65 | Feeds paper to (cutting position + [n x basic calculated pitch]) and performs a full cut                      |
+|  66 | Feeds paper to (cutting position + [n x basic calculated pitch]) and performs a partial cut (one point uncut) |
+|  67 | Not Used                                                                                                      |
+|  68 | Not Used                                                                                                      |
+
+## Details
+
+## STAR
+
+- This command is effective only when processed at the top of the line when standard mode is being used.
+- Feeds paper to the TOF position (black mark) when n = 0, then cuts the paper.
+- Feeds paper [n x basic calculated pitch] beyond the TOF position (black mark) when n ≠ 0, then cuts the paper.
+- The basic calculated pitch is set by GSP (Set basic calculated pitch).
+- Use the basic calculated pitch (y) relating to the vertical direction for the paper feed amount. If the calculation results in fractions, the pitch is corrected to a minimal mechanical pitch and the rest is discarded.
+- The auto-cut function differs according to the model.  A partial cut is executed on those models that cannot perform a full cut.
+
+A full cut is executed on those models that cannot perform a partial cut.  Refer to the product specifications manual for the specifications of the auto-cut function.
+
+- Models that do not have the auto-cut function do not cut paper.  However, commands that accompany a paper feed of (cutting position + [n x basic calculated pitch]) (n = 65, 66), a paper feed of (tear bar position + [n x basic calculated pitch]) is executed.
+- The TOF position (black mark) varies according to the paper used and to customer specifications.
+
+Reference
+
+ESC i, ESC m

@@ -1,0 +1,30 @@
+## Format
+
+| ASCII   | ESC   |   5 |
+|---------|-------|-----|
+| Hex     | 1B    |  35 |
+| Decimal | 27    |  53 |
+
+## Function
+
+Sets the style attribute of the font to normal (cancels the italic style attribute previously selected with the ESC 4 command)
+
+## Default
+
+Normal (non-italic) style
+
+## Notes
+
+Always cancel italics before defining user-defined characters.
+
+Printers not featuring this command
+
+None
+
+Model-dependent variations
+
+None
+
+## Related topics
+
+ESC 4, Select a font, Selecting the style

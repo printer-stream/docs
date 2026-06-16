@@ -1,0 +1,9 @@
+## C O N F I D E N T I A L
+
+## TM-T90 , TM-T70
+
+A set unit is one dot. For other than Japanese model, one dot corresponds to 0.141 mm {1/180 inch}. For Japanese model, one dot corresponds to 0.125 mm {1/203 inch}.
+
+## TM-T20 , TM-L90 , TM-P60
+
+A set unit is one dot. One dot corresponds to 0.125 mm {1/203 inch}.

@@ -1,0 +1,55 @@
+Plotting with Variables
+In many plotting applications, it is necessary to plot using variables
+rather than ﬁxed numbers to deﬁne the X—and Y—coordinatevalues.
+The values of all HP-GL statement parameters have the same restric­
+tions (integer or decimals in a valid range) when sent as variables as
+when sent as literals (ﬁxed numbers). The terminators and delimiters
+of HP-GL statements must be sent to the plotter too. The method of
+deﬁning output format and variable precision varies from computer to
+computer. Refer to your computer manual for the appropriate format
+statements that may be needed in your program.
+The following BASIC program illustrates the use of variables in plot­
+ting a circle and shows how PRINT statements can be used to send
+variables as parameters of HP-GL commands. Youwill use a similar
+method if you are programming in another language. Quotation marks
+are used by many computers and languages to delimit literal characters.
+Note the comma in line 70, which is part of the HP-GL statement to be
+sent to the plotter; it is speciﬁed as a literal in quotes. With the 7470,a
+space may be substituted for the literal comma, shown in quotes. If
+your computer automatically sends spaces between Variables, these
+spaces will delimit the coordinate parameters and a literal comma or
+space will not be necessary. Since scaling is turned on in line 20, the
+fractional portions of the Variables X and Y are used by the plotter.
+When the plotter is not in scaled mode,fractional portions are truncated
+by the plotter. Unless you are writing software to be compatible with
+other HP plotters such as the 9872, it is not necessary to add a
+formatting statement to assure variables are sent as integers by your
+computer.
+To run this program, be sure to change line 10 as necessary for your
+computer to define the plotter as the system printer. Also, if PI is not a
+function recognized by your computer, add a line before line 40 to
+deﬁne PI as a variable (PI = 3.1416).
+10
+PRINTER IS
+705,80
+20
+PRINT”IN;SP1;IP1000,1000,5000,E0O0;“
+30
+PRINT ”SCD,25000,0,25000;”
+40
+FOR T=0 TU 2*PI+PI/20
+STEP PI/20
+50
+X=4.S*1000*CDS(T)+12500
+B0
+Y=4.5*1000*SIN(T)+12500
+?0
+PRINT”PH”,X,“,“,Y,”;PD;“
+80
+NEXT T
+90
+PRINT ”PU;SPO;”
+100
+END
+CONTROLLING THE PEN AND PLOTTING
+3-11

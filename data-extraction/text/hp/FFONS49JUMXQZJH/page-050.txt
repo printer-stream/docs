@@ -1,0 +1,46 @@
+Error 3 will be set (parameter out of range). A PR command with out of
+range parameters will still establish, relative plotting mode for future
+occurrences of PD or PU with parameters.
+When scaling is off, in-range parameters are between -32 768 and
+32 767.When scaling is on, in-range parameters and their plotter unit
+equivalent must be between -32 768 and 32 767. To ﬁnd plotter unit
+equivalents, refer to the section Converting from User Units to Plotter
+Units in Appendix C.
+The following strings of HP—GLinstructions, when sent to the plotter
+using your computer’s output statements, cause triangles to be drawn
+that are identical to the ones previously drawn using only the PA in­
+struction. The numbers in parentheses on the plot are the X,Yincre­
+ments of the PR commands. The numbers without parentheses are the
+plotter unit coordinates of the vertices.
+"Il‘-l,'SF‘1;"
+" PFIZOOO,
+1500,
+PD,
+)=~)::—20:::u:n,0,
+-r_~0-:::u*:::_,
+2::::c::u::.-0
+—':;'E:n:3r.Z),
+PU,
+500,
+0;
+"
+"P1:I2000_,0_, —200r:y,20c:n0,0, -2000,):-)_I_;"
+2000 , 3500
+2500 , 3500
+(2000 , 2000)
+(-2000 , 2000)
+N
+/
+/
+0 , 1500
+START
+2500, 1500
+4500 .1500
+(-2000 ,0)
+2000, 1500
+(500 v0)
+‘2°°° I°’
+(0 , -2000)
+(0 , -2000) END
+3-10
+CONTROLLING THE PEN AND PLOTTING

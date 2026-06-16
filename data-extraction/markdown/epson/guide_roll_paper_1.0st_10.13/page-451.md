@@ -1,0 +1,15 @@
+## C O N F I D E N T I A L
+
+- ■ When the buzzer has stopped sounding, the printer transmits the buzzer sound end response as shown below to the host.
+- ■ When c = 0, repeats a sound pattern specified by n infinitely.
+- ■ The printer is offline during sounding.
+- ■ If the cover is opened during sounding and a sound stop is requested by DLE DC4 &lt;Function 3&gt;, the sound stops.
+
+| Buzzersoundend response   | Hex   |   Decimal | Data quantity   |
+|---------------------------|-------|-----------|-----------------|
+| Header                    | 37H   |        55 | 1 byte          |
+| Identifier                | 54H   |        84 | 1 byte          |
+| Data                      | 30H   |        48 | 1 byte          |
+| NUL                       | 00H   |         0 | 1 byte          |
+
+[Notes]

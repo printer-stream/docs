@@ -1,0 +1,148 @@
+Individual Command Explanations        C-11
+ESC ( c
+Set page format
+ESC/P 2
+Format
+ASCII
+ESC
+(
+c
+nL
+nH
+tL
+tH 
+bL
+bH
+Hex
+1B
+28
+63
+nL
+nH
+tL
+tH 
+bL
+bH
+Decimal
+27
+40
+99
+nL
+nH
+tL
+tH 
+bL
+bH
+Parameter range
+nL = 4, nH = 0
+((tH × 256) + tL) < ((bH × 256) + bL)
+top margin < bottom margin
+((bH × 256) + bL) × (defined unit) ≤ 22
+bottom margin < 22 inches
+Function
+Sets the top and bottom margins in the defined units—set with the ESC ( U command—
+according to the following formulas:
+(top margin) = ((tH × 256) + tL) × (defined unit)
+tH = INT
+top m
+in
+defined unit
+(
+arg
+)
+(
+)
+×
+
+
+
+
+
+
+
+
+
+
+
+
+1
+256
+tL = MOD
+top m
+in
+defined unit
+(
+arg
+)
+(
+)
+×
+
+
+
+
+
+
+
+
+
+
+
+
+1
+256
+(bottom margin) = ((bH × 256) + bL) × (defined unit)
+bH = INT
+bottom m
+in
+defined unit
+(
+arg
+)
+(
+)
+×
+
+
+
+
+
+
+
+
+
+
+
+
+1
+256
+bL =  MOD
+bottom m
+in
+defined unit
+(
+arg
+)
+(
+)
+×
+
+
+
+
+
+
+
+
+
+
+
+
+1
+256
+Default
+Continuous paper:
+None
+Single-sheet paper:
+(top margin) = top-of-form position
+(bottom margin) = last printable line

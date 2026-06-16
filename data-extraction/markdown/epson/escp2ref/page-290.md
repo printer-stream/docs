@@ -1,0 +1,32 @@
+## Note:
+
+- These commands have no effect on the vertical print position.
+- The printer ignores commands that would move the print position outside the left or right margins.
+- Character scoring (underline, overscore, and strikethrough) is not performed between the current and final print positions when the ESC $ command is used. Scoring is also not performed if the ESC \ command moves the print position in the negative direction.
+
+You can also use the tab command to move the horizontal print position to the next tab position.
+
+First set the tabs with the ESC D command. The format of the ESC D command is as follows:
+
+ESC D n1 n2 . . . nk NUL
+
+Sets horizontal tab positions (in the current character pitch) at the columns specified by n1 to nk, as measured from the left-margin position
+
+## Note:
+
+- The values for n must be in ascending order; a value of n less than the previous n ends tab setting (just like the NUL code).
+- Changing the character pitch does not affect current tab settings.
+- Send an ESC D NUL command to cancel all tab settings.
+- The tab settings move to match any movement in the left margin.
+- A maximum of 32 horizontal tabs can be set.
+- The printer does not move the print position to any tabs beyond the rightmargin position. However, all tab settings are stored in the printer's memory; if you move the right margin, you can access previously ignored tabs.
+- The printer calculates tab positions based on 10 cpi if proportional spacing is selected with the ESC p command.
+- Sending the ESC D command clears any previous tab settings.
+
+Sending the HT command moves the print position to the next tab position to the right of the current position.
+
+## Note:
+
+- The HT command has no effect on the vertical print position.
+- The printer ignores an HT command that would move the print position outside (to the right of) the right-margin position.
+- Character scoring (underline, overscore, and strikethrough) is not performed between the current and final print positions when the HT command is sent.

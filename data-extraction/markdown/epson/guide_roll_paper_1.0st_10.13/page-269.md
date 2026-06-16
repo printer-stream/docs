@@ -1,0 +1,23 @@
+## C O N F I D E N T I A L
+
+- (*2) If the number of downloaded graphics data groups is 40 or less, they are sent in a single batch, with the Identification status byte (byte 3) set to hexadecimal value 40H and decimal value 64.
+- (*3) The data groups are arranged according to the key codes.
+- ■ When no key codes are present, the data shown below (beginning with Header and ending with NUL) is sent.
+- ■ Do not use this function in conjunction with downloaded bit images ( GS ✻ ) or user-defined characters ( ESC &amp; ).
+- ■ See previous [Notes for transmission process] for process sending data group.
+- ■ See previous [Notes for ESC/POS Handshaking Protocol] for ESC/POS Handshaking Protocol.
+
+| Send data             | Hexadecimal   |   Decimal | Data length   |
+|-----------------------|---------------|-----------|---------------|
+| Header                | 37H           |        55 | 1 byte        |
+| Identifier            | 73H           |       115 | 1 byte        |
+| Identification status | 40H           |        64 | 1 byte        |
+| NUL                   | 00H           |         0 | 1 byte        |
+
+[Model-dependent variations]
+
+TM-T90 , TM-T88IV , TM-T70 , TM-L90 , TM-P60
+
+TM-T90 , TM-T88IV , TM-T70 , TM-L90 , TM-P60
+
+This printer does not support this function.

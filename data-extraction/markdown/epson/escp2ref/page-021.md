@@ -1,0 +1,39 @@
+## Format
+
+```
+ASCII ESC C n Hex 1B 43 n Decimal 27 67 n
+```
+
+## Parameter range
+
+1 ≤ n ≤ 127
+
+```
+0 < n × (current line spacing) ≤ 22 inches
+```
+
+## Function
+
+Sets the page length to n lines in the current line spacing
+
+## Default
+
+Depends on default-setting mode or DIP-switch setting
+
+## Notes
+
+- Set the page length before paper is loaded or when the print position is at the top-ofform position. Otherwise, the current print position becomes the top-of-form position.
+- Setting the page length cancels the bottom margin setting.
+- Changing the line spacing does not affect the current page-length setting.
+
+Printers not featuring this command
+
+None
+
+Model-dependent variations
+
+None
+
+## Related topics
+
+ESC N, FF, LF, Set the Printing Area, Setting page length

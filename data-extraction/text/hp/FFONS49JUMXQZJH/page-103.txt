@@ -1,0 +1,65 @@
+10 PRINTER IS ?o5,0o
+2O
+OPTION
+BHSE
+1
+30 INTEGERX(5OOJ,Y(5OOJ,P(500)
+40
+FOR c=1
+TO 500
+so PRINT ”DP;“
+so
+DISP "ENTER POINT ";c
+?o
+GUSUB 150
+so
+PRINT ”UD;”
+so ENTER?0S ; X(C),Y(C),PECJ
+100
+NEXT c
+110 PRINTER IS
+2
+120
+FOR c=1
+TO 500
+130 PRINT X(CJ;Y(CJ;P(CJ
+140
+NEXT c
+150
+STOP
+150
+! Check
+SUBRUUTINE
+170 PRINT “US;“
+180
+ENTER ?o5
+;
+5
+190 S=INT(S/4)
+200 IF S=INT(S/2)*2
+THEN1?0
+210
+RETURN
+220
+END
+HP-IBInterrupts and Polling
+A third method can be used by advanced programmers thoroughly
+familiar with the HP-IB interface, polling techniques, and interrupts. It
+should only be used when the computer can perform useful tasks while
+waiting for the digitized point to be entered. This method involves
+setting a value of 4 in the S-mask of the IM command, e.g., IM223,4 ,0;
+to cause the plotter to generate an RQS (service request) when a
+digitized point is available. With an interrupt routine enabled for
+service requests, the computer can send a DP command to initiate
+digitizing, and then proceed with some other task until the digitized
+point is entered. When the point is available, the computer is interrupted
+by the RQS, and program execution branches to the routine to process
+the digitized data. This routine could simply send an OD command and
+read the digitized point, or it could perform bit checking of the plotter
+status byte if multiple S-mask values have been specified to generate
+the RQS. The status byte can be obtained by serial polling or simply by
+sending an OS command. Because interrupts and polling are highly
+machine—dependentand beyond the scope of this manual, no examples
+are given.
+DIGITIZING
+6-7

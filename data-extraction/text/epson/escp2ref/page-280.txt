@@ -1,0 +1,94 @@
+Select a Font        R-49
+You can also set the pitch with the ESC c command. This command sets the
+horizontal motion index (HMI) in inches per character rather than in cpi. The
+format of this command is as follows:
+ESC c nL nH
+HMI = (
+)
+n
+n
+H
+L
+×
++
+256
+360
+ inch
+nH = INT HMI × 360
+256
+nL = MOD HMI × 360
+256
+The HMI set with the ESC c command cancels the pitch set with the ESC X
+command.
+The following commands cancel the HMI set with the ESC c command:
+ESC W
+Double-width
+ESC P
+Select 10 cpi
+ESC M
+Select 12 cpi
+ESC w
+Double-height
+ESC SP
+Additional space
+ESC g
+Select 15 cpi
+SI
+Condensed printing
+ESC p
+Select proportional
+SO
+Double-width
+ESC !
+Master select
+DC2
+Cancel condensed
+ESC @
+Reset
+DC4
+Cancel double-width
+ESC X
+Select pitch and point
+ESC/P 2
+ESC/P
+9-Pin ESC/P
+Non-ESC/P 2 printers and typefaces not available in multipoint mode
+For previous ESC/P-level printers, as well as ESC/P 2 printers that are not in
+multipoint mode, you can adjust the character pitch by setting the following
+features:
+Proportional spacing
+10-cpi character spacing
+12-cpi character spacing 
+15-cpi character spacing
+Condensed printing 
+Intercharacter spacing
+Double-width printing
+The following commands produce the fixed pitches indicated:
+Pitch
+Individual commands
+Master Select
+5 cpi
+ESC W 1, ESC P
+ESC ! 32
+6 cpi
+ESC W 1, ESC M
+ESC ! 33
+7.5 cpi*
+ESC W 1, ESC g
+ESC ! 32, ESC g
+10 cpi
+ESC P
+ESC ! 0
+12 cpi
+ESC M
+ESC ! 1
+15 cpi*
+ESC g
+N/A
+17 cpi
+ESC P, SI
+ESC ! 4
+20 cpi
+ESC M, SI
+ESC ! 5
+*These pitches are not available on 9-pin printers.

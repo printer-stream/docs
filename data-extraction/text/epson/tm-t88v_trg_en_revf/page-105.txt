@@ -1,0 +1,69 @@
+Appendix
+105
+Functions of each connector pin
+Pin no.
+Signal name
+Signal direction
+Function
+1
+FG
+—
+Frame ground
+2
+TXD
+Output
+Transmission data
+3
+RXD
+Input
+Reception data
+4
+RTS
+Output
+Equivalent to DTR signal (pin 20)
+6
+DSR
+Input
+This signal indicates whether the host computer can 
+receive data.
+SPACE indicates that the host computer can receive 
+data. MARK indicates that the host computer 
+cannot receive data.
+When DTR/DSR control is selected, the printer 
+transmits data after confirming this signal (except if 
+transmitted using some ESC/POS commands).
+When XON/XOFF control is selected, the printer does 
+not check this signal.
+Changing DIP switch 2-7 lets this signal be used as a 
+printer reset signal.
+When you use this signal as the printer’s reset signal, 
+the printer is reset when the signal remains MARK for 
+a pulse width of 1 ms or more.
+7
+SG
+—
+Signal ground
+20
+DTR
+Output
+1) When DTR/DSR control is selected, this signal 
+indicates whether the printer is BUSY.
+• SPACE status
+Indicates that the printer is ready to receive data.
+• MARK status
+Indicates that the printer is BUSY. Set BUSY conditions 
+with DIP switch 2-1.
+2) When XON/XOFF control is selected, the signal 
+indicates that the printer is properly connected and 
+ready to receive data from the host. The signal is 
+always SPACE, except in the following cases:
+• During the period from when power is turned on to
+when the printer is ready to receive data.
+• During the self-test.
+25
+INT
+Input
+Changing DIP switch 2-8 enables this signal to be 
+used as a reset signal for the printer. The printer is 
+reset if the signal remains at SPACE for a pulse width 
+of 1 ms or more.

@@ -1,0 +1,14 @@
+C O N F I D E N T I A L
+Paper roll
+Line spacing commands     
+ 
+Ver. 10.13
+p. 97
+Line spacing commands
+Command
+Name 
+ESC 2
+Select default line spacing
+ESC 3
+Set line spacing
+LINE SPACING COMMANDS

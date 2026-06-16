@@ -1,0 +1,47 @@
+## System level commands
+
+|   Class | Command    |   High nibble |   Low nibble | Description                        |
+|---------|------------|---------------|--------------|------------------------------------|
+|       1 | <CR>       |          1110 |         0010 | Move to left most position (x = 0) |
+|       1 | <EXIT>     |          1110 |         0011 | Exit TIFF binary mode              |
+|       1 | <MOVXBYTE> |          1110 |         0100 | Horizontal (x) moves are in bytes  |
+|       1 | <MOVDOT>   |          1110 |         0101 | Horizontal (x) moves are in dots   |
+
+## Movement commands
+
+|   Class | Command   |   High nibble | Low nibble   | Description                                    |
+|---------|-----------|---------------|--------------|------------------------------------------------|
+|       2 | <MOVX>    |          0100 | Count        | Move -8 to +7 units (dots/bytes), default dots |
+|       2 | <MOVX>    |          0101 | #BC          | Move ±# units (dots/bytes), default is dots    |
+|       2 | <MOVY>    |          0110 | Count        | Move 0 to 15 units                             |
+|       2 | <MOVY>    |          0111 | #BC          | Move # units                                   |
+
+## Graphics commands
+
+|   Class | Command   |   High nibble | Low nibble   | Description                          |
+|---------|-----------|---------------|--------------|--------------------------------------|
+|       3 | <XFER>    |          0010 | Count        | Transfer 1-15 bytes of graphics data |
+|       3 | <XFER>    |          0011 | #BC          | Transfer # bytes of graphics data    |
+|       3 | <COLR>    |          1000 | Color        | C,M,Y,K = 2, 1, 4, 0                 |
+
+## Note:
+
+When the color setting is changed with the &lt;COLR&gt; command, the print head moves to the left-most position (x = 0).
+
+See Example 3 and the following feature comparison table for further information.
+
+## EPSON ESC/P Printer Feature Comparison Table
+
+|                                  | Stylus COLOR         | LQ-150 (AP-3260)     | LQ-570+ (AP-5000+)   | LQ-860/ LQ-2550      | Stylus 300/ 800/1000   |
+|----------------------------------|----------------------|----------------------|----------------------|----------------------|------------------------|
+| Serial Printer Technology        | 112 nozzle ink jet   | 24-pin impact        | 24-pin impact        | 24-pin impact        | 24-nozzle ink jet      |
+| Multipoint Fonts                 | 4                    | 4                    | 4                    | 0                    | 4                      |
+| Compressed Raster Graphics       | TIFF, RLE            | RLE                  | RLE                  | None                 | RLE                    |
+| Color                            | Yes                  | Yes                  | No                   | Yes                  | No                     |
+| MicroWeave                       | Yes                  | No                   | No                   | No                   | No                     |
+| Max. Resolution (dpi) Color/Mono | 720 × 720/ 720 × 720 | 360 × 180/ 360 × 360 | N/A/360 × 360        | 360 × 180/ 360 × 360 | N/A/ 360 × 360         |
+| Top/Bottom Margins               | 3/13 mm              | 5.3/9 mm             | 5.3/9 mm             | 8.5/13.5 mm          | 3/13 mm                |
+
+## Note:
+
+Color printing is not available with the LQ-570+ (AP-5000+), Stylus 300, Stylus 400, Stylus 800, Stylus 800+, and Stylus 1000.

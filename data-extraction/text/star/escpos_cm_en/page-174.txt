@@ -1,0 +1,33 @@
+ESC/POS Command Specifications
+174
+Rev.2.52
+GS FF  
+Name	
+Top of form of mark paper 
+Code	
+ASCII	
+GS	
+FF
+	
+Hex.	
+1D	
+0C
+	
+Decimal	
+29	
+12
+Function	
+Top of form of mark paper 
+Details 	
+•	This command is effective only when BM is valid. This command is ignored when BM is 
+invalid. 
+	
+•	This command is enabled only when at the top of the line.
+	
+•	This command moves to the TOF position of BM.
+STAR	
+•	STAR printers ignore this command.  
+	
+•	Byte counts specified by (pL + pH x 256) are discarded.  
+Reference 	
+GS ( F, FF 

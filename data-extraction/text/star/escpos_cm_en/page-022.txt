@@ -1,0 +1,43 @@
+ESC/POS Command Specifications
+22
+Rev.2.52
+Fig. 2.3.3 Download Bit Image Expansion Position 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+A 
+20 dot 
+4 dot 
+Expansion Direction 
+Print Region 
+A 
+20 dot 
+4 dot A A 
+Download Bit Image 
+(GS * x y) 
+Base Line 
+Point B 
+Point B 
+Point B 
+Point B 
+(dx, dy) 
+(x0, y0) 
+Base Line 
+(GS * x y) 

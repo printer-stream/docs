@@ -1,0 +1,99 @@
+                                                                                   Rev. 2.31  
+―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+STAR Graphic Mode Command Specifications 
+33 
+ 
+k n1 n2 data 
+[Name] 
+Transfer raster data 
+[Code] 
+ASCII 
+k 
+n1 
+n2 
+d1 
+d2 
+... 
+dk 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Hex 
+6B 
+n1 
+n2 
+d1 
+d2 
+... 
+dk 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Decimal 
+107 
+n1 
+n2 
+d1 
+d2 
+... 
+dk 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+[Defined Area] 0≦n1≦255 
+ 
+0≦n2≦255 
+ 
+0≦d≦255 
+ 
+k= n1＋n2 x 256 
+ 
+1≦k 
+[Initial Value] 
+--- 
+[Function]  
+Transfers the raster data. 
+Raster data is send at (n1 + n2 x 256) bytes binary data. 
+Raster data beyond the print area that is currently set is cut off. 
+The deployed position of the image buffer, after deploying the data to one dot column image buffer by 
+this command, will not automatically line feed, and move to the left margin of the current line position. 
+In addition, data expansion is performed by overwriting processing (OR processing) the current image 
+buffer data. 
+For the set raster print color, the deployment image buffer is described below. 
+ 
+Print color 
+Deployment image buffer 
+Black 
+Black image buffer 
+Cyan 
+Colored image buffer 
+Magenta 
+Colored image buffer 
+Yellow 
+Colored image buffer 
+ 
+ 

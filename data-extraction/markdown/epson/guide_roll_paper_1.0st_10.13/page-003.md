@@ -1,0 +1,7 @@
+## how to use this guide
+
+| blue text    | Text Any text colored blue is a link to another screen. Click the text to go to that topic.                                                                                                                                                                                                                                                                    |
+|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| PRINTER name | Printer information Most information applies to all printers in a category. If there is information specific to one printer, you see its name in colored text, with a different color for each printer. The model dependent information appears if you click on the name of the printer or look at the bottom of the screen for text in the appropriate color. |
+
+<!-- image -->

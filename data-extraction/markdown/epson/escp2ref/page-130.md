@@ -1,0 +1,23 @@
+## Format
+
+ASCII ESC H Hex 1B 48 Decimal 27 72
+
+## Function
+
+Cancels double-strike printing selected with the ESC G command
+
+## Default
+
+Normal (nondouble-strike) printing
+
+## Printers not featuring this command
+
+None
+
+## Model-dependent variations
+
+None
+
+## Related topics
+
+ESC G, ESC E, ESC F, Double-strike

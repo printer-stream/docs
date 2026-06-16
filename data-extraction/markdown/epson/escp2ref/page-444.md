@@ -1,0 +1,18 @@
+## Built-in features
+
+| Print method   | 24-nozzle ink jet                                                            |
+|----------------|------------------------------------------------------------------------------|
+| Speed          | LQ 165 cps @ 10 cpi 198 cps @ 12 cpi Draft 450 cps @ 10 cpi 540 cps @ 12 cpi |
+| Print width    | 13.6 inches                                                                  |
+| Paper types    | Continuous, Single sheets, Envelopes, Labels                                 |
+| Paper paths    | Rear, Top                                                                    |
+| Tractor        | Push                                                                         |
+| Paper parking  | Available                                                                    |
+| Buffer size    | 8KB                                                                          |
+| Interfaces     | Parallel, Serial                                                             |
+
+## Options (with model numbers)
+
+Cut-sheet feeders C806101 (Single-bin), C806111 (Double-bin) Tractor C800042 (Pull) Interfaces #8143, #8148, #8165, #8641, #8642 Ink cartridge S020002
+
+## Note: The SQ-2550 has no DIP switches.

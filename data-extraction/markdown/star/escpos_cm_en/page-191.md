@@ -1,0 +1,25 @@
+<!-- image -->
+
+When s=3, s=4 (Document start command + document end command) , operates as though in data cancel mode.
+
+If there is an error after receiveing the document start command, reception data is received and discarded until the document end command is received when the printer is recovered from the error. If the document end com -mand cannot be recognized, all reception data is destroyed. Timeouts are 10 seconds. Automatically cancels the data intake mode.
+
+## Restrictions
+
+- 1) Sleep mode decrease
+- 2) Invalid when in Page mode
+- 3) Disabled in Page mode.
+
+When s = 3, initialize the following settings using the initializing process.
+
+- Set slash zero
+- Set specify/cancel external character (external register character data is retained)
+- Page length
+- Current position (move to top of page, top of line)
+- Horizontal tab/Vertical tab
+- Set upside-down, position alignment
+- Left/right margins
+
+## &lt;T: TOP Command/E: END Command&gt;
+
+<!-- image -->

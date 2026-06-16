@@ -1,0 +1,46 @@
+R-42        Select a Font
+Select a Font
+ESC/P 2
+ESC/P
+9-Pin ESC/P
+ESC/P 2 includes the ESC X command for selecting scalable fonts; differences in
+handling scalable fonts are discussed in each section.
+The term font is often confused with typeface. Because the electronic printer field
+has evolved from basic beginnings, these two terms have often been used
+interchangeably.
+However, fonts are defined by six attributes:
+Attributes
+ESC/P 2
+Previous ESC/P levels
+Character table
+ESC t, ESC ( t
+ESC t
+Point size (height)
+ESC X
+ESC w
+Typeface
+ESC k
+ESC k
+Pitch (proportional/fixed spacing)
+ESC X, ESC c
+ESC P, M, g, p, W,
+ESC SP, SO, SI, DC2, DC4
+Style (italics/normal)
+ESC 4, ESC 5
+ESC 4, ESC 5
+Weight (bold/normal)
+ESC E, ESC F
+ESC E, ESC F
+Each time you change one of the above attributes, the printer selects a new font.
+If a font matching the selected attributes is not available in the printer’s ROM
+memory, the printer manufactures a temporary font with those attributes.
+You can set these attributes in any order; changing one attribute does not affect
+any other attribute. However, the printer selects fonts internally in the above
+order, so using that order is the most efficient.
+You can modify each font with several enhancements, as follows:
+Double-strike 
+ESC G, ESC H
+Score 
+ESC ( -, ESC -
+Shadow/outline 
+ESC q

@@ -1,0 +1,47 @@
+Example When setting Sunday filter of Alarm No. 1
+
+/api/param?application.event(1).filter(sunday).status=on
+
+## Example of Response
+
+application.event(1).filter(sunday).status&amp;202 Accepted(application.event(1).status=restart)
+
+Interpretation Set filter setting of the alarm action for the specified alarm number. Up to 5 alarm actions can be specified, periodic FTP is assigned to event No.6, and pre/post FTP assigned to No.7. Therefore the number of event(number) can be set between the range of 1 to 7. Note that alarm numbers are different from the alarm input pin numbers.
+
+Specify sunday, monday, tuesday, wednesday, thursday, friday or saturday for WeekOfDay.
+
+Specify on to enable the filter, off to disable the filter.
+
+The changes to filter of alarm action is saved by /api/param?application.event(Number).status=restart.
+
+Allowed users admin, operator
+
+## Getting Alarm Filter Time
+
+Format  /api/param?application.event(Number).filter(WeekOfDay).time
+
+Example When Getting Time of Sunday filter of Alarm No. 1
+
+/api/param?application.event(1).filter(sunday).time
+
+Example of Response  application.event(1).filter(sunday).time=000000-240000&amp;200 OK
+
+Interpretation Acquire filter time of the alarm action for the specified alarm number. Up to 5 alarm actions can be specified, periodic FTP is assigned to event No.6, and pre/post FTP assigned to No.7. Therefore the number of event(number) can be set between the range of 1 to 7. Note that alarm numbers are different from the alarm input pin numbers.
+
+Specify sunday, monday, tuesday, wednesday, thursday, friday or saturday for WeekOfDay. Start time and end time is returned in the format like hhmmss-hhmmss. Start time can be from 000000 to 235959. End time can be from 000001 to 240000.
+
+Allowed users admin, operator
+
+## Setting Alarm Filter Time
+
+Format  /api/param?application.event(Number).filter(WeekOfDay).time=data
+
+Example When setting Sunday filter time of Alarm No. 1
+
+/api/param?application.event(1).filter(sunday).time=010200-040500
+
+Example of Response
+
+application.event(1).filter(sunday).time&amp;202 Accepted(application.event(1).status=restart)
+
+Interpretation Set filter time of the alarm action for the specified alarm number. Up to 5 alarm actions can be specified, periodic FTP is assigned to event No.6, and pre/post FTP assigned to No.7. Therefore the number of event(number) can be set between the range of 1 to 7. Note that alarm numbers are different from the alarm input

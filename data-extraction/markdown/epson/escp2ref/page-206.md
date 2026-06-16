@@ -1,0 +1,26 @@
+## Format
+
+| Hex     |   1B |   40 |
+|---------|------|------|
+| Decimal |   27 |   64 |
+
+## Function
+
+Resets the printer to its default settings
+
+## Notes
+
+- This command does not affect user-defined characters or control panel (SelecType) settings
+- See each command explanation for the settings after the ESC @ command is received.
+
+Printers not featuring this command
+
+None
+
+Model-dependent variations
+
+None
+
+## Related topics
+
+Recommended command order

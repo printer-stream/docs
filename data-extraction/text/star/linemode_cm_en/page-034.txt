@@ -1,0 +1,102 @@
+  
+ 
+3.3.3. Prin
+t Mode 
+ 
+ 
+ESC E 
+[Name] 
+Select emphasized printing 
+[Code] 
+ASCII 
+ESC 
+E 
+ 
+ 
+ 
+ 
+ 
+Hex. 
+1B 
+45 
+ 
+ 
+ 
+ 
+ 
+Decimal 
+27 
+69 
+ 
+ 
+ 
+ 
+ 
+[Defined Area] 
+- - - 
+[Initial Value] 
+Emphasized printing selected 
+[Function] 
+Specifies emphasized printing for ANK characters. 
+ 
+IBM block ignores emphasized printing. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ESC F 
+[Name] 
+Cancel emphasized printing  
+[Code] 
+ASCII 
+ESC 
+F 
+ 
+ 
+ 
+ 
+ 
+Hex. 
+1B 
+46 
+ 
+ 
+ 
+ 
+ 
+Decimal 
+27 
+70 
+ 
+ 
+ 
+ 
+ 
+[Defined Area] 
+- - - 
+[Initial Value] 
+Emphasized printing cancelled. 
+[Function] 
+ 
+ 
+ 
+Specification A 
+ 
+Cancels emphasized printing for ANK characters. 
+ 
+ 
+Specification B 
+ 
+Cancels emphasized printing for ANK and Kanji characters. 
+ 
+ 
+ 
+ 
+ 
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+STAR Line Mode Command Specifications 
+3-16 

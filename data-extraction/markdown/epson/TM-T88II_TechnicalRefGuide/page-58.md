@@ -1,0 +1,14 @@
+## 5.5  Printable Area (TM-T88II/TM-T88III)
+
+Figure 5-1  Printable area
+
+<!-- image -->
+
+Table 5-7  Dimensions
+
+| a (roll paper width)        |   b (left margin) | c (print width)   |   d (right margin) |
+|-----------------------------|-------------------|-------------------|--------------------|
+| 79.5 ± 0.5                  |               3.7 | 72.2 ± 0.2        |                3.7 |
+| 57.5 ± 0.5 (factory option) |               3.7 | 50.8 ± 0.2        |                3.0 |
+
+* Units: mm

@@ -1,0 +1,61 @@
+## Format
+
+| ASCII   | ESC   |   ( |   B | n L   | n H   | k   | m   | s   | v 1   | v 2   | c   | BarCodeData   |
+|---------|-------|-----|-----|-------|-------|-----|-----|-----|-------|-------|-----|---------------|
+| Hex     | 1B    |  28 |  42 | n L   | n H   | k   | m   | s   | v 1   | v 2   | c   | BarCodeData   |
+| Decimal | 27    |  40 |  66 | n L   | n H   | k   | m   | s   | v 1   | v 2   | c   | BarCodeData   |
+
+## Parameter range
+
+0 ≤ nL ≤ 255
+
+0 ≤ nH ≤ 127
+
+0 ≤ k ≤ 7
+
+2 ≤ m ≤ 5
+
+-3 ≤ s ≤ 3
+
+0 ≤ v1 ≤ 255
+
+0 ≤ v2 ≤ 127
+
+0 ≤ c ≤ 255
+
+## Function
+
+- Prints bar codes.
+- Parameters are used as described below:
+
+nL, nH Total number of data bytes to follow, determined by the following equation:
+
+(number of data bytes) = 6 bytes + BarCodeData bytes = ((nH × 256) + nL)
+
+(where 6 bytes are k, m, s, v1, v2, and c)
+
+<!-- formula-not-decoded -->
+
+<!-- formula-not-decoded -->
+
+- k Bar code type
+
+|   k (Hex) | Bar code type    |
+|-----------|------------------|
+|        00 | EAN-13           |
+|        01 | EAN-8            |
+|        02 | Interleaved 2 of |
+|        03 | UPC-A            |
+|        04 | UPC-E            |
+|        05 | Code 39          |
+|        06 | Code 128         |
+|        07 | POSTNET          |
+
+## m Module width
+
+| m            | 24-pin printer (unit 1/180 inch)   | 9-pin printer (unit 1/120   |
+|--------------|------------------------------------|-----------------------------|
+| 02 (default) | 2 dots                             | 2 dots                      |
+| 03           | 3 dots                             | 3 dots                      |
+| 04           | 4 dots                             | 4 dots                      |
+| 05           | 5 dots                             | 5 dots                      |

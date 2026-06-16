@@ -1,0 +1,9 @@
+## Built-in features
+
+Print method 24-pin impact Speed LQ 90 cps @ 10 cpi 108 cps @ 12 cpi Draft 270 cps @ 10 cpi 324 cps @ 12 cpi Print width 13.6 inches Paper types Continuous, Single sheets, Labels Multipart forms Original plus 4 copies Paper paths Rear, Top Tractor Push Paper parking Available Buffer size 8KB Interfaces Parallel, SerialFonts (typefaces)Roman, Sans Serif, Courier, Prestige, Script Nonprintable area 22.0 mm at the top of single sheets
+
+## Options (with model numbers)
+
+Cut-sheet feeders #8343 (Single-bin), #8346 (Double-bin) Tractor #8303 (Pull) Interfaces #8131, #8132(W), #8133, #8143, #8145, #8148, #8149, #8149M, #8161, #8165, #8172, #8172M Ribbons #7756 (Fabric), #7768 (Film), #7757 (Color) Color kit #8391E Font cartridge #7404 Image scanner kit #7392J
+
+## Note: The LQ-2500 has no DIP switches.

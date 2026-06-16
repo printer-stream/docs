@@ -1,0 +1,13 @@
+C O N F I D E N T I A L
+Paper roll
+Panel button commands     
+ 
+Ver. 10.13
+p. 159
+Panel button commands
+Command
+Name 
+ESC c 5
+Enable/disable panel buttons
+PANEL BUTTON COMMANDS
+Panel button command

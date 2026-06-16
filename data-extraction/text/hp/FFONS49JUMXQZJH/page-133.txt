@@ -1,0 +1,47 @@
+A computer must issue special commands to initiate and terminate a
+serial poll. During a serial poll, a device must be instructed to talk and
+the computer to listen. Therefore, a serial poll cannot be executed when
+a plotter is in listen-only mode.
+TheParallel Poll
+Parallel polling can only be done to plotters with an address 0 through
+7. Plotters with address settings from 8 through 30cannot respond to a
+parallel poll. The plotter will respond positively to a parallel poll only if
+the conditions speciﬁed in the P—maskare satisﬁed and parallel poll
+response is enabled. The P—maskparameter of the input mask instruc­
+tion, IM, is used to specify which status byte conditions will result in a
+logical 1 response to a parallel poll. The response to a parallel poll is
+limited to setting the appropriate data line to a logical 1. The line used
+is determined by the plotter’s address value as shown in the table below: 7
+Plotter
+Parallel Poll
+HP-IB Data
+Address
+Bit Position
+Line Number
+0
+7
+8
+4AC.ol\’>>—A
+>-P-O'lO3\1
+6
+5
+4
+3
+Plotter Preset Address
+7
+0
+1
+To execute a parallel poll, the controller sets the ATN and E01 lines
+to 1. The controller reads the eight data lines, and determines from
+these lines which instrument on the bus is requesting service.The com­
+puter then sends the parallel poll disable command. Not all computers
+have parallel poll capability.
+It is important to remember that the 7470 will not send a logical 1
+unless the P—maskbit value has been changed from the default value of
+O and some condition included in the new P—maskvalue is true. The
+plotter does not respond to a parallel poll in listen-only mode.
+Positive responses to parallel polls will continue to occur until all bits of
+the status byte included in the P—maskvalue have been reset to 0. (See
+The Output Status Instruction, OS, Chapter 7.)
+HP-IB INTERFACING
+9-5

@@ -1,0 +1,537 @@
+                                                                                   Rev. 2.31  
+―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+STAR Graphic Mode Command Specifications 
+56 
+ 
+4-4) Appendix-6 Supported Command List by Models 
+● Standard Commands 
+Class 
+Command 
+TSP100 
+U 
+TSP100 
+PU 
+TSP100 
+IIU 
+TSP100 
+GT 
+TSP100 
+LAN 
+TSP100 
+IIIW 
+TSP100 
+IIILAN 
+TSP100 
+IIIBI 
+TSP100 
+IIIU 
+External 
+device 
+drive 
+ESC BEL 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+BEL 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+FS 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+SUB 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+EM 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ESC GS BEL 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ESC GS EM DC1 
+V1.3～ 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ESC GS EM DC2 
+V1.3～ 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+Print 
+settings 
+ESC RS A 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ESC RS d 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ESC RS r 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ESC GS c 
+No 
+No 
+OK 
+No 
+No 
+Ver2.0 
+or later 
+Ver2.0 
+or later 
+Ver2.0 or 
+later 
+No 
+Status 
+ESC RS a 
+No 
+No 
+No 
+No 
+No 
+Ver1.4 or 
+later 
+Ver1.3 or 
+later 
+OK 
+OK 
+ 
+ESC ACK SOH 
+No 
+No 
+No 
+No 
+No 
+Ver1.4 or 
+later 
+Ver1.3 or 
+later 
+OK 
+OK 
+ 
+ETB 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC RS E 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC GS ETX 
+No 
+No 
+No 
+No 
+No 
+Ver1.4 or 
+later 
+Ver1.3 or 
+later 
+OK 
+OK 
+Other 
+ESC GS # 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC ? 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC GS L DC1 
+No 
+No 
+No 
+No 
+No 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC GS L DC2 
+No 
+No 
+No 
+No 
+No 
+OK 
+OK 
+OK 
+OK 
+ 
+● Raster related commands 
+Class 
+Command 
+TSP100 
+U 
+TSP100 
+PU 
+TSP100 
+IIU 
+TSP100 
+GT 
+TSP100 
+LAN 
+TSP100 
+IIIW 
+TSP100 
+IIILAN 
+TSP100 
+IIIBI 
+TSP100 
+IIIU 
+Raster 
+ESC * r R 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC * r A 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC * r B 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC * r C 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC * r D 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC * r E 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC * r F 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC * r P 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC * r Q 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC * r m l 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC * r m r 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC * r t 
+No 
+No 
+OK 
+No 
+No 
+No 
+No 
+No 
+No 
+ 
+ESC * r K 
+OK 
+OK 
+OK 
+OK 
+OK 
+V1.4 or 
+later 
+V1.3 or 
+later 
+OK 
+OK 
+ 
+b n1 n2 d1．．． dk 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+k n1 n2 d1．．． dk 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC * r Y 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC FF NUL 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC FF EOT 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+Raster 
+extension 
+ESC * r a 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ESC * r b 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC * r e 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC FF EM 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+ESC FF LF 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 

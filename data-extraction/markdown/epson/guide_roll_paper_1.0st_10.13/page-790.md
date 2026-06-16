@@ -1,0 +1,26 @@
+## C O N F I D E N T I A L
+
+| Setting value          | Command                                                |
+|------------------------|--------------------------------------------------------|
+| Bar code               | GS H, GS f, GS h, GS w                                 |
+| Two dimensions code    | GS ( k Function 065 to 070, 165, 167, 169, 265         |
+| Macro function         | GS :                                                   |
+| Kanji control          | FS !, FS &, FS ( A, FS -, FS ., FS 2, FS C, FS S, FS W |
+| Miscellaneous function | GS ( D, Function 49 of GS ( H, GS P, GS z 0            |
+
+## TM-P60
+
+## GS ( M affects the following commands:
+
+| Category of function   | Command                                                                                                                                                           |
+|------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Line spacing           | ESC 3                                                                                                                                                             |
+| Print character        | ESC SP, ESC -, ESC E, ESC M, ESC R, ESC t, ESC {, GS !, GS B, GS b                                                                                                |
+| Print paper            | FS (L <Function 33> <Function 80>                                                                                                                                 |
+| Panel switch           | ESC c 5                                                                                                                                                           |
+| Print position         | ESC D, ESC T, ESC a, GS L, GS W                                                                                                                                   |
+| Status                 | GS a                                                                                                                                                              |
+| Bar code               | GS H, GS f, GS h, GS w                                                                                                                                            |
+| Two dimension code     | GS (k <Function 065 ~ 070> <Function 165> <Function 167> <Function 169> <Function 265> <Function 367> <Function 371> <Function 467> <Function 471> <Function 472> |
+| Kanji control          | FS !, FS &, FS ( A, FS -, FS ., FS 2, FS C, FS S, FS W                                                                                                            |
+| Miscellaneous function | GS ( D, GS ( K <Function 48>                                                                                                                                      |

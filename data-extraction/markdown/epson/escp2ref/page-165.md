@@ -1,0 +1,40 @@
+## Format
+
+ASCII ESC EM n
+
+```
+Hex 1B 19 n Decimal 27 25 n
+```
+
+## Parameter range
+
+```
+n = 48, 49, 50, 52, 66, 70, 82
+```
+
+## Function
+
+Controls feeding of continuous and single-sheet paper, according to the parameters below:
+
+n = 48 '0' Exits cut-sheet feeder mode
+
+```
+49 '1' Selects loading from bin 1 of the cut-sheet feeder 50 '2' Selects loading from bin 2 of the cut-sheet feeder 52 '4' Enters cut-sheet feeder mode 66 'B' Loads paper from the rear tractor 70 'F' Loads paper from the front tractor 82 'R' Ejects one sheet of single-sheet paper
+```
+
+## Notes
+
+- This command was formerly known as 'Control cut-sheet feeder.'
+- The parameters '0' and '4' that control cut-sheet feeder mode are nonrecommended; cut-sheet feeder mode should be selected by DIP switch instead.
+
+## Printers not featuring this command
+
+DFX-5000, DFX-5000+
+
+## Model-dependent variations
+
+None
+
+## Related topics
+
+Set the Printing Area

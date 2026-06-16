@@ -1,0 +1,10 @@
+C O N F I D E N T I A L
+Paper roll
+Bit-image commands     GS D m fn a kc1 kc2 b c d1...dk <Function 67>
+ 
+Ver. 10.13
+p. 300
+■The [data value (k) + control information data value (24 bytes)] area of the NV graphics data domain is 
+used when this function is executed.
+■NV graphics and NV bit image ( FS q ) cannot be defined simultaneously. When this function is executed, 
+all NV bit images are deleted.

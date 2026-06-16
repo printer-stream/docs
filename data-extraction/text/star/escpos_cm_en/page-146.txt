@@ -1,0 +1,41 @@
+ESC/POS Command Specifications
+146
+Rev.2.52
+GS b n 
+Name	
+Specify/cancel smoothing 
+Code	
+ASCII	
+GS	
+b	
+n
+	
+Hex.	
+1D	
+62	
+n
+	
+Decimal	
+29	
+98	
+n
+Defined Region	
+0 ≤ n ≤ 255
+Initial Value	
+n = 0
+Function 	
+Specifies or cancels smoothing.  
+	
+• Cancels smoothing when n = <*******0>B.
+	
+• Specifies smoothing when n = <*******1>B.
+Details 	
+•	n is effective only when it is the lowest bit.  
+	
+•	Targets for smoothing are: embedded characters, download characters and external 
+characters  
+	
+•	Even if smoothing is specified, it will not be performed if the character is set for magnification 
+in either the vertical or horizontal directions.  
+Reference	
+ESC !, GS ! 

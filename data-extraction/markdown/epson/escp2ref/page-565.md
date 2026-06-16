@@ -1,0 +1,23 @@
+## throughput
+
+A measure of the number of printed pages per minute that can be produced by a printer.
+
+## top-of-form
+
+The first printable vertical position on the paper. Programs should be written so the actual top-of-form position matches the printer's top-of-form setting.
+
+## typeface
+
+Refers to a set of characters or symbols that share a common design. Typefaces are referred to by family names such as Roman, Prestige, or Script. In computer terminology, the term typeface is often used interchangeably with font.
+
+## unidirectional printing
+
+Printing in one direction only. Unidirectional printing is useful for printing graphics because it allows more precise vertical alignment than bidirectional printing.
+
+## user-defined characters
+
+Custom characters that you define and store in RAM memory. By switching to RAM character printing, you can print user-defined characters just as you would normal characters. Also known as downloaded characters.
+
+## weight
+
+The font attribute that determines the thickness of the lines composing each character. Two weight settings are bold and normal.

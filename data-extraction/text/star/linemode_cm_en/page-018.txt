@@ -1,0 +1,124 @@
+  
+ 
+ 
+• Reduced Printing Function Commands  
+ 
+ 
+ 
+Class 
+Commands 
+Name 
+ 
+Reduced Printing 
+Function 
+ESC GS c h v 
+Reduced Printing 
+ 
+ 
+• Page Mode Commands  
+ 
+ 
+ 
+Class 
+Commands 
+Name 
+ 
+Page Mode  
+ESC GS P 0 
+Selects page mode  
+ESC GS P 1 
+Cancels page mode  
+ 
+ESC GS P 2 
+Select printing direction 
+ 
+ESC GS P 3 
+Set print region 
+ 
+ESC GS P 4 
+Specify character vertical direction absolute position  
+ 
+ESC GS P 5 
+Specify character vertical direction relative position  
+ 
+ESC GS P 6 
+Prints   
+ 
+ESC GS P 7 
+Cancel printing and page mode  
+ 
+ESC GS P 8 
+Cancel print data 
+ 
+ 
+ 
+• Text Search Commands 
+ 
+ 
+ 
+Class 
+Commands 
+Name 
+ 
+ESC GS ) B  (fn = 48) 
+Enable and disables text search 
+Text Search 
+ESC GS ) B  (fn = 49) 
+Set the number of times to run the text search macro 
+ 
+ESC GS ) B  (fn = 50) 
+Set to print the string that matches in the text search 
+ 
+ESC GS ) B  (fn = 64) 
+Define the text search string 
+ 
+ESC GS ) B  (fn = 65) 
+Define the text search macro 
+ 
+ESC GS ) B  (fn = 80) 
+Register text search settings and definitions in the non-volatile 
+memory 
+ 
+ESC GS ) B  (fn = 81) 
+Initialize text search settings and definitions 
+ 
+ESC GS ) B  (fn = 96) 
+Print the text search settings and definitions 
+ 
+ESC GS ) B  (fn = 97) 
+Run the text search macro 
+ 
+ 
+ 
+• Audio Commands 
+ 
+ 
+ 
+Class 
+Commands 
+Name 
+ 
+Audio 
+ESC GS s O 
+Playback NV audio 
+ESC GS s P 
+Stop NV audio 
+ 
+ESC GS s R 
+Playback received audio 
+ 
+ESC GS s I 
+Register automatic audio setting information 
+ 
+ESC GS s U 
+Register user area NV audio data 
+ 
+ESC GS s T 
+Batch playback of NV audio 
+ 
+ 
+ 
+ 
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+STAR Line Mode Command Specifications 
+2-8 

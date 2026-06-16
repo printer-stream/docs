@@ -1,0 +1,38 @@
+69 
+Setting Tampering Detect Sensitivity 
+Format  /api/param?camera.detection(tampering).temporal=data 
+Example of response  camera.detection(tampering).temporal&202 Accepted(camera.status=save) 
+Interpretation  Change the tampering detect time. Specify a value between 0 to 120. The change is saved by the 
+API, camera.status=save. If the change is not saved, the setting is restored by reboot. 
+Allowed users  admin, operator 
+ 
+ 
+19. JVC API for Network Basics 
+The APIs below are related to the basics of networks. These are equivalent to the features on the Basic page of 
+the WEB setting page. Refer to the instruction manual for details on the Basic page. 
+ 
+Enabling Network Setting Changes 
+Format  /api/param?network.interface.status=restart 
+Example of Response  network.interface.status&200 OK 
+Interpretation  Changes of following network parameters become valid by this API.  
+   DHCP, IP Address, Subnet Mask, TTL, MTU, TOS, Negotiation, IPv6 
+Changes are not reflected in the actions until this API is used. APIs to get settings of those parameters return 
+previous values until this API is used. When this API is issued, the camera reboots in about 1 minute. 
+Allowed user admin 
+ 
+Getting DHCP Setting 
+Format  /api/param?network.interface.dhcp.status 
+Example of Response  network.interface.dhcp.status=off&200 OK 
+Interpretation  Acquire the current DHCP setting. 
+Allowed users  admin, operator, user 
+ 
+Setting DHCP 
+Format  /api/param?network.interface.dhcp.status=data 
+Example  /api/param?network.interface.dhcp.status=on 
+Example of Response  
+ network.interface.dhcp.status&202 Accepted(network.interface.status=restart) 
+Interpretation  Change the DHCP setting. Specify "on" or "off". To validate the change, use 
+"network.interface.status=restart" API that reboots the camera in about 1 minute. 
+Allowed user  admin 
+ 
+Downloaded from www.Manualslib.com manuals search engine 

@@ -1,0 +1,24 @@
+C O N F I D E N T I A L
+Paper roll
+Panel button command     ESC c 5
+ 
+Ver. 10.13
+p. 163
+When the cover is open, or the roll paper end sensor detects a paper end, the FEED button is 
+disabled regardless of the settings of this command. ("Cover" in the peeler specification indicates 
+the peeler cover.)
+TM-U230
+The panel button is PAPER FEED.
+When you change the roll paper after the printer stops printing because of roll paper end, the 
+following processing is done regardless of the settings of this command.
+•
+When the printer is waiting for the roll paper to be set (the LED is off), the PAPER FEED is enabled, and 
+paper can be fed.
+•
+When the LED blinks to indicate that the printer is confirming the status, the PAPER FEED is enabled. Even 
+if the switch is pressed, paper cannot be fed.
+TM-U220
+The panel button is FEED.
+When the roll paper end sensor detects a paper end, the FEED button is enabled regardless of the 
+setting of this command.
+When the cover is open, the FEED button is disabled regardless of the settings of this command.

@@ -1,0 +1,25 @@
+Introduction        3
+Command names and parameters
+Command names are normally referred to in their ASCII code version. ESC ( v and ESC C
+NUL are examples. You can find the decimal or hexadecimal values of the ASCII codes
+listed in the ASCII code table in the Appendix. The decimal and hexadecimal values are
+also listed for each command in the Command Summary section.
+Command parameters are listed as variables or as decimal numbers in the text.
+Information organization
+Commands in the Command Summary and explanations in the Recommended Operations
+section are organized according to the order described in Recommended Command Order.
+Commands in the Command Table are organized according to ASCII order. Printer models
+in the Command Table are organized by date of first manufacture, with the most recent
+models listed first.
+Printer models in the Feature Summary are divided into 24/48-pin and 9-pin sections and
+listed alphabetically.
+Non recommended and deleted commands
+As dot-matrix printer technology has developed, EPSON has added new commands and
+parameters to ESC/P, and now ESC/P 2. Because of these additions, the functions of
+several older commands have been duplicated or have become obsolete.
+Deleted commands have been deleted from ESC/P and are no longer featured on EPSON
+printers.
+Nonrecommended commands are commands that are no longer necessary and will
+eventually be deleted, but remain temporarily in order to preserve compatibility with
+existing printer drivers. At some point, these commands will be deleted; do not use these
+commands in new printer programs.

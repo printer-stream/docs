@@ -1,0 +1,380 @@
+  
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+STAR Line Mode Command Specifications 
+6-14 
+ 
+• Raster Related Commands 
+Class 
+Commands 
+Model Name 
+ 
+ 
+TSP800 
+TSP700
+TSP600
+TUP900
+TSP1000
+TSP828L
+TSP700II 
+TSP650 
+TUP500 
+TSP800II
+FVP10
+Raster 
+ESC * r R 
+Ver. 2.0 
+or later 
+OK 
+OK 
+OK 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC * r A 
+Ver. 2.0 
+or later 
+OK 
+OK 
+OK 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC * r B 
+Ver. 2.0 
+or later 
+OK 
+OK 
+OK 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC * r C 
+Ver. 2.0 
+or later 
+OK 
+OK 
+OK 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC * r D 
+Ver. 2.0 
+or later 
+OK 
+OK 
+OK 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC * r E 
+Spec. A 
+Ver. 2.0 
+or later 
+OK 
+OK 
+OK 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC * r F 
+Spec. A 
+Ver. 2.0 
+or later 
+OK 
+OK 
+OK 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC * r P 
+Ver. 2.0 
+or later 
+OK 
+OK 
+OK 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC * r Q 
+Ver. 2.0 
+or later 
+OK 
+OK 
+OK 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC * r m l 
+Ver. 2.0 
+or later 
+OK 
+OK 
+OK 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC * r m r 
+Ver. 2.0 
+or later 
+OK 
+OK 
+OK 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC * r T 
+Ver. 2.0 
+or later 
+OK 
+OK 
+OK 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC * r K 
+Ver. 2.0 
+or later 
+OK 
+OK 
+OK 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+b n1 n2 d1...dk 
+Ver. 2.0 
+or later 
+OK 
+OK 
+OK 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+k n1 n2 d1...dk 
+Ver. 2.0 
+or later 
+OK 
+OK 
+OK 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC * r Y  
+Ver. 2.0 
+or later 
+OK 
+OK 
+OK 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC FF NUL 
+Ver. 2.0 
+or later 
+OK 
+OK 
+OK 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC FF EOT 
+Ver. 2.0 
+or later 
+OK 
+OK 
+OK 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC * r N 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC * r V 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC * r e 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC * r S 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC * r s 0 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC * r s 1 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC * r s 2 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC * r s 3 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 

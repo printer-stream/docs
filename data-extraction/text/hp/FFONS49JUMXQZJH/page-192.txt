@@ -1,0 +1,93 @@
+important for you to be aware of the HP-IB functions implemented on
+each device in your HP-IB system to ensure the operational compati­
+bility of the system.
+The HP Interface Bus
+HP-IB Lines and
+Operations
+The HP Interface Bus trans-
+°EV'°EA
+lﬁgtjnzij
+fers data and commands
+be-
+|’“’t'en‘°a‘na(‘;‘-
+.___
+tween the components of an
+;f.,§,,;,.
+instrumentation
+system on
+<e~g-.
+calculaior)
+16signal lines. The interface
+functions for each system
+component are performed
+,
+,
+DEVICEB
+Dam BY“?
+within the component so
+Transfer
+Able to talk
+only
+passive
+cabling
+is
+aodhslen
+c°m'°'
+needed to connect
+the sys—
+(e.g,
+tems. The cables connect all
+mummeter)
+instruments, controllers, and
+other components
+of the sys—
+Genera’
+tnterface
+tem in parallel
+to the signal
+DEVICE0
+Management
+lines.
+Onlyable to
+_
+.
+hsten
+The eight
+Data
+I/O
+lines
+(8g_Sygna|
+(DIO1 through
+DIO8) are
+9e“e'a10'>
+reserved for the transfer
+of data and other messages
+in a byte-serial,
+bit—paral1el
+DEVICED
+manner. Data and message
+transfer is asynchronous,
+coordinated by the three
+handshake lines: Data Valid
+(DAV),Not Ready For Data
+(NRFD), and Not Data
+Accepted (NDAC). The other
+Only able to
+talk
+(e g
+counter
+IFC
+five lines are for manage-
+Q23
+ment of bus activity. See the
+'25?‘
+ﬁgure on the right.
+HP-IB Signal Lines
+Devices connected to the bus may be talkers, listeners, or controllers.
+The controller dictates the role of each of the other devices by setting
+the ATN (attention) line true and sending talk or listen addresses on
+the data lines. Addresses are set into each device at the time of system
+configuration either by switches built into the device or by jumpers on
+A-4
+AN HP-IB OVERVIEW
+V

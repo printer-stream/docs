@@ -1,0 +1,22 @@
+## C O N F I D E N T I A L
+
+| Command   | Classification      | Name                                            | Function type           |
+|-----------|---------------------|-------------------------------------------------|-------------------------|
+| ESC =     | SETTING COMMAND     | Select peripheral device                        | MISCELLANEOUS COMMANDS  |
+| ESC @     | EXECUTING + SETTING | Initialize printer                              | MISCELLANEOUS COMMANDS  |
+| ESC D     | SETTING COMMAND     | Set horizontal tab positions                    | PRINT POSITION COMMANDS |
+| ESC E     | SETTING COMMAND     | Turn emphasized mode on/off                     | CHARACTER COMMANDS      |
+| ESC J     | EXECUTING COMMAND   | Print and feed paper                            | PRINT COMMANDS          |
+| ESC L     | EXECUTING COMMAND   | Select page mode                                | MISCELLANEOUS COMMANDS  |
+| ESC M     | SETTING COMMAND     | Select character font                           | CHARACTER COMMANDS      |
+| ESC R     | SETTING COMMAND     | Select an international character set           | CHARACTER COMMANDS      |
+| ESC S     | EXECUTING COMMAND   | Select standard mode                            | MISCELLANEOUS COMMANDS  |
+| ESC T     | SETTING COMMAND     | Select print direction in page mode             | PRINT POSITION COMMANDS |
+| ESC W     | SETTING COMMAND     | Set print area in page mode                     | PRINT POSITION COMMANDS |
+| ESC \     | EXECUTING COMMAND   | Set relative print position                     | PRINT POSITION COMMANDS |
+| ESC a     | SETTING COMMAND     | Select justification                            | PRINT POSITION COMMANDS |
+| ESC c 5   | SETTING COMMAND     | Enable/disable panel buttons                    | PANEL BUTTON COMMAND    |
+| ESC d     | EXECUTING COMMAND   | Print and feed n lines                          | PRINT COMMANDS          |
+| ESC t     | SETTING COMMAND     | Select character code table                     | CHARACTER COMMANDS      |
+| ESC {     | SETTING COMMAND     | Turn upside-down print mode on/off              | CHARACTER COMMANDS      |
+| FS ( L    | EXECUTING COMMAND   | Select label and black mark control function(s) | PRINTING PAPER COMMANDS |

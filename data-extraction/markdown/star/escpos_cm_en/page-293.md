@@ -1,0 +1,31 @@
+<!-- image -->
+
+## · TSP650IISK
+
+## Page mode print region initial value (dxL, dxH, dyL, dyH) &lt;Print positions: ESC/POS compatible mode&gt;
+
+| Print region Setting (Memory Switch Setting)   | Basic Calculated   | Initial Value (= Maximum Value)   | Initial Value (= Maximum Value)   | Initial Value (= Maximum Value)   | Initial Value (= Maximum Value)   | Initial Value (= Maximum Value)   | Initial Value (= Maximum Value)   | Maximum Value          | Maximum Value          |
+|------------------------------------------------|--------------------|-----------------------------------|-----------------------------------|-----------------------------------|-----------------------------------|-----------------------------------|-----------------------------------|------------------------|------------------------|
+| Print region Setting (Memory Switch Setting)   | Basic Calculated   | dxL                               | dxH                               | dyL                               | dyH                               | Printable Region Width            | Printable Region Width            | Printable Region Width | Printable Region Width |
+| Print region Setting (Memory Switch Setting)   | (DIPSW             | dxL                               | dxH                               | dyL                               | dyH                               | X Dir.                            | Y Dir.                            | X Dir.                 | Y Dir.                 |
+| 72mm                                           | 203DPI             | 64                                | 2                                 | 84                                | 7                                 | 72mm                              | 117.3mm                           | 72mm                   | 250mm                  |
+| 72mm                                           | 180DPI             | 0                                 | 2                                 | 126                               | 6                                 | 64mm                              | 103.9mm                           | 72mm                   | 250mm                  |
+| 50.8mm                                         | 203DPI             | 150                               | 1                                 | 84                                | 7                                 | 50.8mm                            | 117.3mm                           | 50.8mm                 | 250mm                  |
+| 50.8mm                                         | 180DPI             | 104                               | 1                                 | 126                               | 6                                 | 45mm                              | 103.9mm                           | 50.8mm                 | 250mm                  |
+| 34.5mm                                         | 203DPI             | 20                                | 1                                 | 84                                | 7                                 | 50.8mm                            | 117.3mm                           | 50.8mm                 | 250mm                  |
+| 32mm                                           | 203DPI             | 0                                 | 1                                 | 84                                | 7                                 | 50.8mm                            | 117.3mm                           | 50.8mm                 | 250mm                  |
+
+Basic calculated pitch initial value:  X=1/180 (inch), Y=1/360 (inch)
+
+## Page mode print region initial value (dxL, dxH, dyL, dyH) &lt;Print positions: Maximum&gt;
+
+| Print region    | Basic Calculated   | Initial Value (= Maximum Value)   | Initial Value (= Maximum Value)   | Initial Value (= Maximum Value)   | Initial Value (= Maximum Value)   | Initial Value (= Maximum Value)   | Initial Value (= Maximum Value)   | Maximum Value          | Maximum Value          |
+|-----------------|--------------------|-----------------------------------|-----------------------------------|-----------------------------------|-----------------------------------|-----------------------------------|-----------------------------------|------------------------|------------------------|
+| Print region    | Basic Calculated   | dxL                               | dxH                               | dyL                               | dyH                               | Printable Region Width            | Printable Region Width            | Printable Region Width | Printable Region Width |
+| Switch Setting) | (DIPSW             | dxL                               | dxH                               | dyL                               | dyH                               | X Dir.                            | Y Dir.                            | X Dir.                 | Y Dir.                 |
+| 72mm            | 203/180DPI         | 64                                | 2                                 | 84                                | 7                                 | 72mm                              | 117.3mm                           | 72mm                   | 250mm                  |
+| 50.8mm          | 203/180DPI         | 150                               | 1                                 | 84                                | 7                                 | 50.8mm                            | 117.3mm                           | 50.8mm                 | 250mm                  |
+| 34.5mm          | 203DPI             | 20                                | 1                                 | 84                                | 7                                 | 34.5mm                            | 117.3mm                           | 34.5mm                 | 250mm                  |
+| 32mm            | 203DPI             | 0                                 | 1                                 | 84                                | 7                                 | 32mm                              | 117.3mm                           | 32mm                   | 250mm                  |
+
+Basic calculated pitch initial value:  X=1/180 (inch), Y=1/360 (inch)

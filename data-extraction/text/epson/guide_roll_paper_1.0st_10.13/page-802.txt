@@ -1,0 +1,20 @@
+C O N F I D E N T I A L
+Paper roll
+Counter printing commands     GS C ;
+ 
+Ver. 10.13
+p. 802
+Program Example
+Print Sample
+PRINT #1, CHR$(&H1D);"C;";"300;1;1;2;100;";
+PRINT #1, CHR$(&H1D);"C0";CHR$(4);CHR$(1);
+No. 0100
+PRINT #1, "No.";CHR$(&H1D);"c";CHR$(&HA);
+No. 0100
+PRINT #1, "No.";CHR$(&H1D);"c";CHR$(&HA);
+No. 0099
+PRINT #1, "No.";CHR$(&H1D);"c";CHR$(&HA);
+No. 0099
+PRINT #1, "No.";CHR$(&H1D);"c";CHR$(&HA);
+No. 0098
+PRINT #1, "No.";CHR$(&H1D);"c";CHR$(&HA);

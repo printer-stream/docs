@@ -1,0 +1,19 @@
+<!-- image -->
+
+## EPSON ESC/P
+
+## Reference Manual
+
+## December 1997
+
+All rights reserved. No part of this publication may be reproduced, stored in a retrieval system, or transmitted in any form or by any means, electronic, mechanical, photocopying, recording, or otherwise, without the prior written permission of SEIKO EPSON Corporation. No patent liability is assumed with respect to the use of the information contained herein. While every precaution has been taken in the preparation of this book, SEIKO EPSON Corporation assumes no responsibility for errors or omissions. Neither is any liability assumed for damages resulting from the use of the information contained herein.
+
+EPSON and EPSON ESC/P are registered trademarks and EPSON ESC/P 2 is a trademark of SEIKO EPSON Corporation.
+
+ActionPrinter is a trademark of EPSON America, Inc.
+
+Centronics is a trademark of Centronics Data Computer Corporation.
+
+General Notice: Other product names used herein are for identification purposes only and may be trademarks of their respective owners. EPSON disclaims any and all rights in those marks.
+
+Copyright © 1994-1997 by SEIKO EPSON Corporation, Nagano, Japan.

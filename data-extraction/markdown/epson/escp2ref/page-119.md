@@ -1,0 +1,26 @@
+## Format
+
+| ASCII   | ESC   |   F |
+|---------|-------|-----|
+| Hex     | 1B    |  46 |
+| Decimal | 27    |  70 |
+
+## Function
+
+Sets the weight attribute of the font to normal (cancels the bold weight previously set with the ESC E command)
+
+## Default
+
+Normal (nonbold) weight
+
+Printers not featuring this command
+
+None
+
+Model-dependent variations
+
+None
+
+## Related topics
+
+ESC E, ESC G, ESC H, Select a font, Selecting the weight

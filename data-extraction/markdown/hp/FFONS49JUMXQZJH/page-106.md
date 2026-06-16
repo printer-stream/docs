@@ -1,0 +1,19 @@
+## ABrief Wordabout Plotter Output
+
+There are slight differences in the timing of output when the plotter is used with the HP-IB, HP-IL, or RS-232-Cinterfaces. Read the para­ graph below which pertains to your system.
+
+## Notes for an HP-IB User
+
+When the 7470 has an HP-IB interface, the terminator for an output statement, denoted [TERM],is a carriage return followedby a line feed.
+
+The output instructions in this chapter should not be used when the plotter is in listen-onlymode since the plotter in listen-only mode can­ not output anything. Output instructions will be ignored by the plotter so the computer will get no response to its read statement, and, typi­ cally, the program will halt.
+
+A plotter with an HP-IB interface will respond only when the computer sends a read command (the plotter is instructed to talk). Therefore, a read statement should directly follow any output command. When a second output command is received before data from the first command has been read, the new data overwrites the old data and the old data is lost. Refer to Chapter 9 for more information.
+
+## Notes for an RS-232-C User
+
+With an RS-232-Cinterface, the 7470'sterminator for an output state­ ment, denoted [TERM], is a carriage return, unless the terminator is modified by an ESC . M command. As soon as an output command has been parsed by the plotter, output occurs according to the handshake protocol established by the ESC . M and ESC . N commands. Use of turnaround delays, intercharacter delays, and an output initiator should be specified as necessary to assure that output will not be lost because the computer is not prepared to receive it. The information nec­ essary to assure this should be contained in the documentation for your computer. Refer to Chapter 10of this manual for more information.
+
+## Notes for an HP-IL User
+
+When the 7470 has an HP-IL interface, the terminator for an output statement, denoted [TERM],is a carriage return followed by a line feed. Aplotter with an HP-IL interface will only respond when it is instructed by the controller to talk. Therefore, a read statement should follow any output command so that the plotter can send the requested information. There are no special output timing considerations with HP-IL. This is because data are sent through the interface bit-serially; only one mes­ sage can travel through the loop at a given time. Refer to Chapter 11 and your computer's documentation for more information.

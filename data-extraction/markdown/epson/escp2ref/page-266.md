@@ -1,0 +1,31 @@
+The resulting command is as follows:
+
+ESC &amp; 0 43 43 169
+
+The data (11 bytes) is as follows:
+
+130, 0, 130, 124, 130, 0, 130, 124, 130, 0, 130
+
+The command is now stored in location 43, the former + location. You can print the character by switching to RAM printing (see the following section) and then sending code 43 (the + character).
+
+The following example replaces the = character with the following 9-pin NLQ user-defined character:
+
+<!-- image -->
+
+First set the attributes. The following commands do this (see 'Setting userdefined character traits'):
+
+| ESC x 1   | Selects NLQ mode        |
+|-----------|-------------------------|
+| ESC 5     | Cancels italic printing |
+
+Next, send the data for the character. Since this is an NLQ character, you must set the attribute byte to equal the character width. In this case, the width is 12 columns.
+
+Send the pattern data following the attribute byte. The resulting command is as follows:
+
+ESC &amp; 0 61 61 0 12 0
+
+The data (36 bytes) is as follows:
+
+128, 8, 0, 128, 8, 0, 128, 8, 0, 255, 248, 0, 128, 8, 0, 128, 8, 0, 128, 8, 0, 128, 8, 0,255, 248, 0, 128, 8, 0, 128, 8, 0, 128, 8, 0
+
+The command is now stored in location 61, the former = location. You can print the character by switching to RAM printing (see the following section) and then sending code 61 (the = character).

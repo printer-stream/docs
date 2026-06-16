@@ -1,0 +1,29 @@
+The Plotting Area
+The plotting area is that area of the paper in which the pen can draw.
+The maximum plotting area for the HP 7470 Plotter is 191 X 272 mm
+(7.5 X 10.7 in.) when the paper switch is set to A4,and is 191 X 257 mm
+(7.5 X 10.2in.) when the paper switch is set to Us. These plotting areas
+permit plotting on either metric A4 size paper or English 8%-by-11-inch
+paper and allow for a margin beween the plotting area and the edges of
+the paper.
+The plotting area should be thought of as a two-dimensional Cartesian
+coordinate system. Remember, in a two-dimensional Cartesian coordi­
+nate system, a point is defined by its X—and Y-coordinates; for example,
+200,300 represents a distinct point where X=200 and Y=300. When
+paper is loaded, the orientation of the X—and Y-axes is established as
+shown in the following diagram. When looking at the plotter from the
+front, the origin is located near the upper—leftcorner of the paper. From
+now on, we will refer to that corner as lower left, since when a plot is
+viewed, the minimum point is generally at the lower-left corner of the
+plot.
+[.—..rEFmr—“*‘““‘“|
+I
+I
+HARD CLIP
+|
+LIMITS
+L_
+_ _ _ _
+_IDE_FeI£>_Pz.J
+2-2
+ESTABLISHING BOUNDARIES AND UNITS

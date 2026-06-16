@@ -1,0 +1,73 @@
+C O N F I D E N T I A L
+Paper roll
+Customize commands     FS g 1
+ 
+Ver. 10.13
+p. 677
+FS g 1 
+SETTING COMMAND
+[Name]
+Write to NV user memory
+[Format]
+ASCII
+FS 
+g
+1
+m
+a1
+a2
+a3
+ a4 nL
+nH
+d1...dk
+Hex
+1C
+67
+31
+m
+a1
+a2
+a3
+ a4 nL
+nH
+d1...dk
+Decimal
+28
+103 49
+m
+a1
+a2 a3
+ a4 nL
+nH
+d1...dk
+[Printers not featuring this command] TM-J2000/J2100, TM-T90, TM-L90, TM-P60, TM-U230, TM-U220
+[Range]
+TM-T70, TM-T20, TM-T88IV, TM-T88V:
+m = 0
+0 ≤  (a1 + a2 × 256) + a3 × 65536) + (a4 × 16777216) ≤  1023)
+(0 ≤ a1 ≤ 255, 0 ≤ a2 ≤ 3, a3 = 0, a4 = 0)
+1 ≤  (nL + nH × 256) ≤ 1024 (0 ≤ nL ≤ 255,  0 ≤ nH ≤ 4)
+32 ≤  d ≤  255
+k = (nL + nH × 256)
+The definition area is 1 KB
+[Description]
+Stores the data to NV user memory.
+•
+a1, a2, a3, and a4 specify the stored data starting address as (a1 + a2 × 256 + a3 × 65536 + a4 × 
+16777216).
+•
+nL and nH specifies the number of stored data bytes (nL + nH × 256).
+•
+d specifies the stored data.
+•
+k indicates the number of stored data. k is an explanation parameter; therefore, it does not need to be 
+transmitted. 
+[Recommended Functions]
+■This is an unrecommended command. It is supported by some printer models but will not be supported by 
+future models.
+■GS ( C is recommended to write to NV user memory. Operation of GS ( C offers the following 
+improvements:
+•
+Data can be controlled by the record.
+•
+Each record can be redefined, retrieved, or deleted by keycode.

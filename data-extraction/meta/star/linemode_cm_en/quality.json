@@ -1,0 +1,17 @@
+{
+  "stem": "star/linemode_cm_en",
+  "phase": "quality",
+  "tool": "builtin",
+  "tool_version": "0.3.0",
+  "pipeline_version": "0.3.0",
+  "params": {
+    "threshold": 0.5
+  },
+  "page_count": 228,
+  "started_at": "2026-06-16T19:19:05Z",
+  "ended_at": "2026-06-16T19:19:06Z",
+  "duration_seconds": 0.629,
+  "per_page_seconds_avg": 0.003,
+  "status": "ok",
+  "flagged_count": 0
+}

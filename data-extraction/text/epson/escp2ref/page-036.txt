@@ -1,0 +1,38 @@
+Individual Command Explanations        C-29
+FF
+Form feed
+ESC/P 2
+ESC/P
+Format
+ASCII
+FF
+Hex
+0C
+Decimal
+12
+Function
+• 
+Advances the vertical print position on continuous paper to the top-margin position of
+the next page
+• 
+Ejects single-sheet paper
+• 
+Moves the horizontal print position to the left-margin position
+• 
+Prints all data in the buffer
+Notes
+• 
+Always send a FF command at the end of each page and each print job.
+• 
+It is recommended to always send a CR command before the FF command.
+• 
+The FF command cancels one-line double-width printing selected with the SO or ESC
+SO commands.
+Printers not featuring this command
+None
+Model-dependent variations
+On non-ESC/P 2 printers:
+Advances continuous paper to the current top-of-form position on the next page
+Related topics
+LF, ESC l, ESC SO, SO, ESC <, ESC., ESC C, ESC N, Recommended Command Order,
+Graphics mode, Moving the vertical position, Send Print Data

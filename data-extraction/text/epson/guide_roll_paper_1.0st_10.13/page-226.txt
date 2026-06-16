@@ -1,0 +1,43 @@
+C O N F I D E N T I A L
+Paper roll
+Bit-image commands     GS ( L GS 8 L
+ 
+Ver. 10.13
+p. 226
+•
+Graphics [Functions 50, 112, and 113]
+Stores data in the print buffer. 
+When standard mode is selected, prints data using Function 50 and clears the print buffer.
+When page mode is selected, prints data using FF and ESC FF and clears the print buffer after FF is 
+executed.
+[Notes]
+■The functions of this command are determined by the (fn) setting. Actual command operation varies 
+according to function. 
+■The NV graphics and download graphics data is managed using key codes. 
+•
+Expressed as kc1 and kc2, the key codes are used to identify data groups. 
+•
+The key codes have a 2-byte configuration and can be specified using the full range of character codes 
+in Hexadecimal: 20H to 7EH /  in Decimal: 32 to 126. 
+•
+The data referred to here is image data specified using d1 through dk of Functions 67, 68, 83, and 84. 
+•
+The printer automatically adds control information when it stores the data. The image data domain is 
+used as the control information. Control information formats and data values vary according to 
+function. 
+■Note that it is not possible to create definitions for both NV graphics data (this command) and NV bit 
+image data (FS q). NV bit image data definitions are deleted when this command is used. 
+■Note that it is not possible to create definitions for both download graphics data (this command) and 
+download bit image data (GS ✻). Download bit image data definitions are deleted when this command is 
+used. 
+■With certain printers, it is not possible to create definitions for both download graphics data (this 
+command) and download character data (ESC &). 
+•
+Defined download character data is deleted when this command is used. 
+•
+Executing ESC & deletes download graphics data. 
+■Always execute Function 50 after executing this command 112 or 113 when the standard mode is selected. 
+■When printing the various types of graphics data, using the ESC U command will ensure that the printed 
+results are properly aligned vertically by printing in a single direction. 
+■Functions 65, 66, 67, or 68 write data to a non-volatile memory. Note the following items when using the 
+function. 

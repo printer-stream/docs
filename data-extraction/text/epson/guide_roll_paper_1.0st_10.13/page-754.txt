@@ -1,0 +1,22 @@
+C O N F I D E N T I A L
+Paper roll
+Customize commands     GS ( E
+ 
+Ver. 10.13
+p. 754
+TM-T90
+The setting value transmitted with customize value 116 (a = 116) is paper selection.
+The setting value transmitted with customize value 118 (a = 118) is the black-color density in two-
+color printing.
+TM-T88IV
+The setting value transmitted with customize value 116 (a = 116) is the print control selection 
+(single color/two-color).
+The setting value transmitted with customize value 118 (a = 118) is the black-color density in two-
+color printing.
+TM-L90
+The setting value transmitted with customize value 116 (a = 116) is paper selection.
+The setting value transmitted with customize value 117 (a = 117) is paper width.
+The setting value transmitted with customize value 118 (a = 118) is the black-color density in two-color 
+printing.
+TM-P60
+The setting value transmitted with customize value 116 (a = 116) is  automatic power off time selection.

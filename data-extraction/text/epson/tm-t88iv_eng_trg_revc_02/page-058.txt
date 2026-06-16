@@ -1,0 +1,31 @@
+58
+ESC/POS Command
+ESC/POS is the Epson original printer command system. With ESC/POS commands, you can 
+directly control all the TM printer functions, but detailed knowledge of printer specifications or 
+combination of commands is required compared to using a driver.
+To use ESC/POS commands, you need to make a nondisclosure contract first and get the  
+ESC/POS Application Programing Guide. Ask your dealer for details.
+The ESC/POS command functions are listed as follows. See the ESC/POS Application 
+Programing Guide for more details.
+ESC/POS command functions
+Commands for printing
+Print and line feed
+Print and feed n lines
+Print data in page mode
+Print and return to standard mode (in page mode)
+Commands for line spacing
+Set line spacing
+Select default line spacing
+Commands for print character
+Select character code table
+Select an international character set
+Set right-side character spacing
+Set all print decoration
+Turn underline mode on/off
+Turn emphasized mode on/off
+Select character font
+Select character size
+Turn smoothing mode on/off
+Turn upside-down print mode on/off
+Turn white/black reverse print mode on/off
+Set character decoration

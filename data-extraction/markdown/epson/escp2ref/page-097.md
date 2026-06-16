@@ -1,0 +1,44 @@
+## Format
+
+```
+ASCII ESC : NUL n m Hex 1B 3A 00 n m Decimal 27 58 0 n m
+```
+
+## Parameter range
+
+```
+n = 0, 1 m = 0
+```
+
+## Function
+
+Copies the data for the characters between 0 and 255 of the Roman or Sans Serif typeface from ROM to RAM memory according to the following values:
+
+n = 0 Roman
+
+```
+1 Sans serif
+```
+
+## Notes
+
+- Sending this command clears any previous characters copied to RAM.
+- Characters from 128 to 255 are copied from the italic character table
+
+## Printers not featuring this command
+
+None
+
+## Model-dependent variations
+
+DFX-5000, ActionPrinter T-750
+
+Only draft characters can be copied to RAM.
+
+LX-series printers, ActionPrinter Apex 80, ActionPrinter T-1000, ActionPrinter 2000
+
+Only characters from 58 to 63 can be copied to RAM.
+
+## Related topics
+
+ESC %, ESC &amp;, ESC x, Copying ROM characters to RAM memory

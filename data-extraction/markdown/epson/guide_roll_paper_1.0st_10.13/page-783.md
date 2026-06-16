@@ -1,0 +1,44 @@
+## C O N F I D E N T I A L
+
+## GS ( E pL pH fn n &lt;Function 50&gt;
+
+[Name]
+
+Transmit the paper layout information
+
+[Format]
+
+$$ASCII GS ( E pL pH fn n Hex 1D 28 45 02 00 32 n Decimal 29 40 69 2 0 50 n$$
+
+[Range]
+
+$$( pL + pH × 256) = 2 ( pL = 2, pH = 0) fn = 50$$
+
+n = 64, 80
+
+[Description]
+
+Transmits the paper layout information specified by n .
+
+|   n | Paper layout information                                 |
+|-----|----------------------------------------------------------|
+|  64 | Setting value of the paper layout (unit: 0.1 mm{0.004"}) |
+|  80 | Actual value of the paper layout (unit: dot)             |
+
+- "ESC/POS transmission handshake" is unnecessary with this function.
+- ■ This function works in user setting mode and standard mode.
+- ■ [Header to NUL] are transmitted by this function as follows.
+
+| Transmit data            | Hex        | Decimal   | Data        |
+|--------------------------|------------|-----------|-------------|
+| Header                   | 37H        | 55        | 1 byte      |
+| Identifier               | 39H        | 57        | 1 byte      |
+| Type of information (*1) | 30H ~ 39 H | 48 ~ 57   | 2 bytes     |
+| Separator                | 1FH        | 31        | 1 byte      |
+| Layout information (*2)  |            |           |             |
+| Origin of layout (sa)    | 30H ~ 39H  | 48 ~ 57   | 0 ~ 3 bytes |
+| Separator                | 1FH        | 31        | 1 byte      |
+| Vertical layout (sb)     | 30H ~ 39H  | 48 ~ 57   | 0 ~ 5 bytes |
+| Separator                | 1FH        | 31        | 1 byte      |
+
+[Notes]

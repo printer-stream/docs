@@ -1,0 +1,44 @@
+R-48        Select a Font
+Selecting the pitch
+ESC/P 2
+ESC/P 2 provides two ways of setting the pitch: the ESC X command and the
+ESC c command.
+If you plan to use multipoint mode typefaces, you can set the pitch with the ESC
+X command. This command puts the printer in multipoint mode and sets the
+pitch and point size of the font.
+The format of the ESC X command is as follows:
+ESC X m nL nH
+The m parameter sets the pitch and the nL and nH parameters set the point size,
+according to the following formulas:
+Pitch
+m = 0
+The pitch does not change
+1
+Proportional spacing is selected
+m ≥ 5
+360
+m  cpi character spacing
+Point size
+(point size) =
+(
+)
+n
+n
+H
+L
+×
++
+256
+2
+If nH and nL both equal 0, the point size does not change; use
+this value if you plan to change only the pitch.
+See the section on proportional character width during multipoint mode in the
+Appendix.
+Note:
+• 
+Some commands are ignored during multipoint mode and some commands
+cancel multipoint mode. See the list in “Standard and scalable fonts
+(multipoint mode).”
+• 
+You can select characters equivalent to previous ESC/P levels by adjusting
+the point and pitch with the ESC X command. See the Appendix for details.

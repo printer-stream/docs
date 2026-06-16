@@ -1,0 +1,115 @@
+ESC/POS Command Specifications
+2
+Rev.2.52
+Contents
+	1.	 INTERFACE CONFIGURATION
+9
+1-1	 RS-232 Serial Interface
+9
+1-1-1	 Specifications  (Conforming to RS-232)
+9
+1-1-2	 Switching Between Online and Offline
+9
+1-1-3	 Signal Array and Explanations According to Interface Connector Pin
+10
+1-1-4	 Timing for Transmitting XON/XOFF 
+11
+1-1-5	 Serial Interface Connection Example 
+11
+1-1-6	 Precautions When Switching the BUSY Conditions 
+12
+1-1-7	 Notes on resetting the printer using the interface
+13
+1-2	 Bi-directional Parallel Interface (IEEE1284) 
+14
+1-2-1	 Compatibility Mode (Host – Printer Communications: Conforms to Centronix)
+14
+1-2-2	 Reverse Mode (Printer to Host Communications)
+14
+1-2-3	 Interface Connector Pin Arrangement for Each Mode
+15
+1-2-4	 Data Reception Timing (Compatibility Mode) 
+16
+1-2-5	 	
+	
+Precautions When Resetting the Printer Using the Interface 
+17
+1-2-6	 Receiving Status from the Printer Using a Bidirectional Parallel Interface 
+17
+1-3	 USB Interface
+18
+1-4	 Ethernet Interface
+18
+1-5	 Wireless LAN Interface
+18
+1-6	 Powered USB
+18
+1-7     Bluetooth Interface
+18
+2	
+EXPLANATION OF THE PAGE MODE
+19
+2-1	 General Description
+19
+2-2	 Settings Using Commands in Standard Mode and Page Mode 
+19
+2-3	 Expanding Print Data to the Print Region 
+20
+3.	 COMMAND FUNCTION LIST
+23
+4.	 COMMAND DETAILS
+30
+4-1	 Explanation of Terms
+30
+4-2	 Exception Processing
+32
+4-3	 Command Details
+33
+4-3-1	 Standard Commands
+33
+HT
+33
+LF
+34
+FF
+35
+CR
+36
+CAN 
+37
+DLE EOT n
+38
+DLE ENQ n
+39
+DLE DC4 n m t 
+40
+ESC FF
+41
+ESC SP n
+42
+ESC !  n
+43
+ESC $ nL nH
+44
+ESC % n
+45
+ESC& yc1c2 [x1d1...d (y x x1) ] ... [axd1...d (yxax)] 
+46
+ESC * m nL nH d1…dk
+49
+ESC - n
+51
+ESC 2
+52
+ESC 3 n
+53
+ESC = n 
+54
+ESC ? n
+55
+ESC @ 
+56
+ESC D n1 … nk NUL 
+57
+ESC E n 
+58

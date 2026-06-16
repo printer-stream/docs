@@ -1,0 +1,39 @@
+<!-- image -->
+
+## · STAR Original Presenter Control Commands
+
+| Commands       | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   |
+|----------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|
+| Commands       | TSP700       | TSP600       | TSP800       | TUP900       | TSP1000      | TSP700II     | TSP650       | TUP500       | TSP800II     | FVP10        | BSC10        | TSP043       | TSP650II     | TSP650IISK   |
+| ESC SYN 0      | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            |
+| ESC SYN 1      | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            |
+| ESC SYN 3      | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            |
+| ESC SYN 4      | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            |
+| ESC GS SUB DC1 | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            |
+| ESC GS SUB DC2 | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            |
+| ESC GS SUB DC3 | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            |
+
+## · Star Original Mark Commands
+
+| Commands   | Model Name        | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   |
+|------------|-------------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|
+| Commands   | TSP700            | TSP600       | TSP800       | TUP900       | TSP1000      | TSP700II     | TSP650       | TUP500       | TSP800II     | FVP10        | BSC10        | TSP043       | TSP650II     | TSP650IISK   |
+| ESC GS * 0 | Ver 4 .0 or later | x            | x            | x            | ○            | ○            | x            | x            | x            | x            | x            | x            | x            | x            |
+| ESC GS * 1 | Ver 4 .0 or later | x            | x            | x            | ○            | ○            | x            | x            | x            | x            | x            | x            | x            | x            |
+| ESC GS * 2 | Ver 4 .0 or later | x            | x            | x            | ○            | ○            | x            | x            | x            | x            | x            | x            | x            | x            |
+| ESCGS * W  | Ver 4 .0 or later | x            | x            | x            | ○            | ○            | x            | x            | x            | x            | x            | x            | x            | x            |
+| ESC GS * C | Ver 4 .0 or later | x            | x            | x            | ○            | ○            | x            | x            | x            | x            | x            | x            | x            | x            |
+
+## ·  STAR Original Auto Logo Commands
+
+| Commands   | Model Name        | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   |
+|------------|-------------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|
+| Commands   | TSP700            | TSP600       | TSP800       | TUP900       | TSP1000      | TSP700II     | TSP650       | TUP500       | TSP800II     | FVP10        | BSC10        | TSP043       | TSP650II     | TSP650IISK   |
+| ESCGS / W  | Ver 4 .0 or later | x            | x            | x            | x            | ○            | x            | x            | x            | x            | x            | x            | x            | x            |
+| ESC GS / C | Ver 4 .0 or later | x            | x            | x            | x            | ○            | x            | x            | x            | x            | x            | x            | x            | x            |
+| ESC GS / 1 | Ver 4 .0 or later | x            | x            | x            | x            | ○            | x            | x            | x            | x            | x            | x            | x            | x            |
+| ESC GS / 2 | Ver 4 .0 or later | x            | x            | x            | x            | ○            | x            | x            | x            | x            | x            | x            | x            | x            |
+| ESC GS / 3 | Ver 4 .0 or later | x            | x            | x            | x            | ○            | x            | x            | x            | x            | x            | x            | x            | x            |
+| ESC GS / 4 | Ver 4 .0 or later | x            | x            | x            | x            | ○            | x            | x            | x            | x            | x            | x            | x            | x            |
+| ESC GS / 5 | Ver 4 .0 or later | x            | x            | x            | x            | ○            | x            | x            | x            | x            | x            | x            | x            | x            |
+| ESC GS / 6 | Ver 4 .0 or later | x            | x            | x            | x            | ○            | x            | x            | x            | x            | x            | x            | x            | x            |

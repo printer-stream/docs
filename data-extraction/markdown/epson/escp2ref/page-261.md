@@ -1,0 +1,5 @@
+On most 9-pin printers, you can copy directly to 241 of the 256 RAM memory locations (you can copy only 6 characters on LX printers, from locations 58 to 63). The following diagram illustrates the memory locations available.
+
+<!-- image -->
+
+The printer normally treats some of these codes as control codes. To print characters you store in these locations, see 'Switching to RAM character printing' later in this section.

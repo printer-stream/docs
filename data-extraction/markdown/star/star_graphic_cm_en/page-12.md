@@ -1,0 +1,71 @@
+<!-- image -->
+
+Rev. 2.31
+
+## ESC GS BEL m n1 n2
+
+[Name]
+
+Ring buzzer
+
+[Code]
+
+ASCII
+
+ESC GS  BEL m n1 n2
+
+Hex
+
+1B 1D 07 m n1 n2
+
+Decimal
+
+27 29 7 m n1 n2
+
+[Defined Area]  1
+
+≦ m ≦ 2
+
+1 ≦ n1 ≦ 255
+
+1 ≦ n2 ≦ 255
+
+## [Initial Value] [Function]
+
+---
+
+Rings the buzzer.
+
+m specifies the buzzer drive terminal.
+
+m
+
+Buzzer Drive Terminal
+
+1, 49
+
+Buzzer Drive Terminal 1
+
+2, 50
+
+Buzzer Drive Terminal 2
+
+| m     | Buzzer Drive Terminal   |
+|-------|-------------------------|
+| 1, 49 | Buzzer Drive Terminal 1 |
+| 2, 50 | Buzzer Drive Terminal 2 |
+
+n1 specifies energizing time; n2 specifies the delay time.
+
+- ・ Energizing time = 20 x n1 (ms)
+- ・ Delay time = 20 x n2 (ms)
+
+The buzzer will not ring while printing.
+
+Use of this command other than for ringing the buzzer is prohibited.
+
+(There is the possibility of damage if using this command for driving the drawer on models that support external device terminals.)
+
+<!-- image -->
+
+--------------------------------------------------------------------------------------

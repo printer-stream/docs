@@ -1,0 +1,51 @@
+Xon-XoffHandshake
+With the Xon-Xoffhandshake method, the plotter controls the data
+exchange sequence by telling the computer when it has room in its
+buffer for data and when to shut off the ﬂow. The plotter uses buffer
+threshold indicators (an Xon trigger character and an Xoff trigger
+character) to prevent buffer overﬂow.
+OVERSHOOT (DUE TO TIME REQUIRED TO
+REACT TO XOFF TRIGGER CHARACTER)
+BUFFER FULL
+l
+0
+XOFF THRESHOLD
+(XOFF TRIGGER
+/\
+r\
+CHARACTERSENT)
+3
+4
+5 ‘
+TOTAL
+_ BUFFER
+XON THRESHOLD
+SPACE
+\/
+2
+5
+(XON TRIGGER
+AVNLABLE
+CHARACTER SENT}
+BUFFER EMPTY
+TIME
+255
+Xon-XoffThreshold Levels
+As data is sent to the plotter by the computer, it is stored in the buffer
+and simultaneously acted on by the plotter. The preceding ﬁgure is
+representative of the way the Xon-Xoffhandshake works; the numbers
+represent the following:
+1. Data enters the buffer faster than it can be acted on by the plotter,
+and the buffer starts to ﬁll.
+2. The plotter begins processing the input data faster than the computer
+sends it, and the buffer starts to empty.
+3. The data enters the buffer at a faster rate than the plotter can
+process it. The amount of data stored in the buffer reaches the Xoff
+threshold level, at which point the plotter sends the Xoff trigger
+character stopping the ﬂow of data from the computer.
+4. Due to a ﬁnite delay between the time the plotter sends the Xoff
+trigger character and the time it takes the computer to react, a slight
+overshoot may occur. For this reason, the Xoffthreshold level should
+always be specified at least as large as the data block size or the
+RS-232-C/CCITTv.24 INTERFACING
+10-19

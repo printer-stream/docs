@@ -1,0 +1,26 @@
+## C O N F I D E N T I A L
+
+## &lt;Function 48&gt; GS ( P pL pH fn wxL wxH wyL wyH oxL oxH c
+
+```
+[Name] Printable area setting when page mode is selected [Format] ASCII GS ( P pL pH fn wxL wxH wyL wyH oxL oxH c Hex 1D 28 50 08 00 30 wxL wxH wyL wyH oxL oxH c Decimal 29 40 80 8 0 48 wxL wxH wyL wyH oxL oxH c [Range] ( pL + pH × 256) = 8 ( pL = 8, pH = 0) fn = 48 TM-P60 : ( wxL + wxH × 256) = 65535 ( wyL = 255, wxH = 255) 1 ≤ ( wyL + wyH × 256) ≤ 65535 (0 ≤ wyL ≤ 255, 0 ≤ wyH ≤ 255) ( oxL + oxH × 256) = 0 ( oxL = 0, oxH = 0) c = 1 [Default] TM-P60 : ( wxL + wxH × 256) = 65535 ( wxL = 255, wxH = 255) ( wyL + wyH × 256) = 1200 ( wyL = 176, wyH = 4) ( oxL + oxH × 256) = 0 ( oxL = 0, oxH = 0)
+```
+
+```
+c = 1
+```
+
+Sets the printable area when page mode is selected.
+
+- Sets the horizontal size to [( wxL + wxH × 256) × horizontal and vertical motion units] from the horizontal offset.
+- Sets the vertical size to [( wyL + wyH × 256) × horizontal  and vertical motion units] from the absolute origin.
+- Sets the horizontal offset to the [( oxL + oxH × 256) × horizontal and vertical motion units] position.
+- ■ Use this function when the standard mode is selected.
+- ■ In this function, horizontal indicates 'perpendicular to the feed direction,' while vertical indicates 'the feed direction.'
+- ■ A horizontal size or vertical size of 0 cannot be set.
+- ■ The horizontal motion unit is used to calculate the horizontal size and horizontal offset.
+- ■ The vertical motion unit is used to calculate the vertical size.
+
+[Description]
+
+[Notes]

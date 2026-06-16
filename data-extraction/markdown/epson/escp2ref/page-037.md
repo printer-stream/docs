@@ -1,0 +1,32 @@
+## Format
+
+ASCII FF
+
+Hex 0C
+
+Decimal 12
+
+## Function
+
+- Advances the vertical print position on continuous paper to the top-of-form position of the next page
+- Ejects single-sheet paper
+- Moves the horizontal print position to the left-margin position
+- Prints all data in the buffer
+
+## Notes
+
+- Always send a FF command at the end of each page and each print job.
+- It is recommended to always send a CR command before the FF command.
+- The FF command cancels one-line double-width printing selected with the SO or ESC SO commands.
+
+## Printers not featuring this command
+
+None
+
+Model-dependent variations
+
+None
+
+## Related topics
+
+LF, ESC l, SO, ESC &lt;, ESC C, ESC N, Recommended Command Order, Graphics mode, Moving the vertical position, Send Print Data

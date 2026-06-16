@@ -1,0 +1,99 @@
+<!-- image -->
+
+Rev. 2.31
+
+## ESC * r t n NUL
+
+[Name]
+
+Set the top margin of raster
+
+[Code]
+
+ASCII
+
+ESC * r t n NUL
+
+Hex
+
+1B 2A 72 74 n 00
+
+Decimal
+
+27 42 114 116 n 0
+
+[Defined Area]  0 ≦ n ≦ 11
+
+[Initial Value]
+
+n = 0
+
+[Function]
+
+Sets the top margin of the raster.
+
+nI is a decimal notation using ASCII characters (up to 255 digits)
+
+| n            | Top margin                                                                                           | Remarks                                   |
+|--------------|------------------------------------------------------------------------------------------------------|-------------------------------------------|
+| 0            | Set To Default                                                                                       | Default top margin differs with the model |
+| Other than 0 | When n value is for that model, enabled setting: set top margin disabled setting: Ignore the command | Enabled setting differs with the model    |
+
+## TSP100IIU
+
+| n                    | Top margin                | Remarks                                  |
+|----------------------|---------------------------|------------------------------------------|
+| 0                    | Set To Default (3mm)      | Setting is stored to non-volatile memory |
+| 3 to 11              | Set top margin (3 ～ 11mm) | Setting is stored to non-volatile memory |
+| Other than the above | Ignore the command        |                                          |
+
+Back feed operation by the top margin setting is performed only with the following timing.
+
+・ After the cutting operation (including error recovery operation)
+
+## ESC * r K n NUL
+
+[Name]
+
+Set raster print color
+
+[Code]
+
+ASCII
+
+ESC * r K n NUL
+
+Hex
+
+1B 2A 72 4B n 00
+
+Decimal 27 42 114 75 n
+
+0
+
+[Defined Area]  0 ≦ n ≦ 3
+
+[Initial Value]
+
+n = 0
+
+[Function]
+
+Sets the raster print color.
+
+This command is valid only if it is designated a two-color printing mode by the line mode.
+
+If not the two-color printing mode, ignore the command.
+
+nI is a decimal notation using ASCII characters (up to 255 digits)
+
+|   n | Print color   |
+|-----|---------------|
+|   0 | Black         |
+|   1 | Cyan          |
+|   2 | Magenta       |
+|   3 | Yellow        |
+
+Non-compatible models command ignored
+
+--------------------------------------------------------------------------------------

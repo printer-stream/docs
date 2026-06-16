@@ -1,0 +1,85 @@
+<!-- image -->
+
+Rev. 2.31
+
+## ESC ? LF NUL
+
+[Name]
+
+Reset printer (execute self print)
+
+[Code]
+
+ASCII ESC ? LF NUL
+
+Hex
+
+1B 3F 0A 00
+
+Decimal
+
+27 63 10 0
+
+[Defined Area]  ---
+
+[Initial Value] ---
+
+[Function]
+
+After executing a software reset, executes self print once.
+
+## ESC GS L DC1 m n1 n2
+
+[Name]
+
+Set LED blink condition
+
+[Code]
+
+ASCII
+
+ESC GS L DC1 m n1 n2
+
+Hex
+
+1B 1D 4C 11 m n1 n2
+
+Decimal
+
+27 29 76 17 m n1 n2
+
+[Defined Area]
+
+1 ≦ m ≦ 2, 49 ≦ m ≦ 50
+
+0 ≦ n1 ≦ 255
+
+0 ≦ n2 ≦ 255
+
+## [Initial Value] [Function]
+
+n1 = 0, n2 = 0
+
+Sets LED flashing conditions.
+
+m specifies the LED applicable to the condition settings.
+
+| m     | LED              |
+|-------|------------------|
+| 1, 49 | ERROR LED (Red)  |
+| 2, 50 | READY LED (Blue) |
+
+n1 specifies lit time; n2 specifies the time the LED turns off.
+
+- ・ Lit time = 20 x n1 (ms)
+- ・ Turn off time = 20 x n1 (ms)
+
+Perform LED flashing set with this command using &lt;ESC&gt;&lt;GS&gt;'L'&lt;DC2&gt; m n1 n2.
+
+When n1 = 0, regardless of the value of n2, the LED flash command &lt;ESC&gt;&lt;GS&gt;'L'&lt;DC2&gt; is ignored.
+
+This setting value is not initialized with a soft reset.
+
+<!-- image -->
+
+--------------------------------------------------------------------------------------

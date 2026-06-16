@@ -1,0 +1,28 @@
+Negative parameters greater than or equal to -32 768will be set to zero.
+Parameters outside the maximum plotting area (determined by the set­
+ting of the paper switch) but less than 32 767will be set to the limits of
+the plotting area. Parameters less than -32 768or greater than 32 767
+will cause error 3 and the coordinates of P1 and P2 will not change.
+An IP command without parameters will default P1 and P2 to the
+values 250, 279, 10 250,7479regardless of the paper switch setting.
+Upon receipt of a valid IP command, bit position 1 of the output status
+word is set true (1).
+\
+Upon power on, front-panel reset, or execution of an IN or DF com­
+mand, the character size is set relative (SR) to the locations of P1 and
+P2. Unless an SI command has been entered as part of the program,
+the character size will be directly affected by the IP command.
+The following HP—GLcommand relocates the scaling points P1 and P2
+to the positions shown in the figure.
+“IF 3ooo,2ooo,5ooo,50oo;“
+P2
+° (5ooo,5ooo)
+P1
+(3000,2000)
+The Output P1,and P2 Instruction, OP
+DESCMPTIUN The output P1 and P2 instruction,
+OP, provides the
+means to make the current coordinates of P1 and P2 available for
+output.
+ESTABLISHING BOUNDARIES AND UNITS
+2-5

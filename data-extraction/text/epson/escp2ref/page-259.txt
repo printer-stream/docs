@@ -1,0 +1,40 @@
+R-28        Select Characters
+4.
+Determine the value of the data bytes for all the columns in your design. The
+printer requires data in the order shown below.
+24-pin normal height
+24-pin super/subscript
+9-pin draft
+9-pin NLQ
+Note:
+The printer must receive complete columns of data. In other words, the number
+of bytes received must be a multiple of 3 for normal-height characters (on 24/48-
+pin printers) and 9-pin NLQ characters, or a multiple of 2 for super/subscript
+characters. Draft 9-pin character columns are only 1-byte high.
+1
+4
+7
+2
+5
+8
+3
+6
+9
+1
+3
+5
+2
+4
+6
+1
+2
+3
+1
+4
+7
+2
+5
+8
+3
+6
+9

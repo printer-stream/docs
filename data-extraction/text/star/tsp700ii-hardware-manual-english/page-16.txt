@@ -1,0 +1,72 @@
+3-6-1.	 Compliant Paper Roll Specifications
+Paper thickness
+65 to 75 μm: f18±1mm(Core outer), f18±1mm(Core outer)
+Thermal Paper
+65 to 75 μm: f32±1mm(Core outer), f25.4±1mm(Core outer)
+75 to 150 μm: f32±1mm(Core outer),f25.4±1mm(Core outer)
+Thermal Label Paper
+Max.150 μm
+Paper width
+Thermal Paper
+79.5 ± 0.5 mm or 82.5 ± 0.5 mm or 57.5 ± 0.5 mm
+Thermal Label Paper
+79.5 ± 0.5 mm or 82.5 ± 0.5 mm 
+External dimensions
+  • Roll diameter
+Max. f100 mm
+  • Take up paper roll width
+80 +0.5 mm / 83 +0.5 mm / 58 +0.5 mm
+Printed surface
+Outer edge of roll
+	Note 1:	Do not glue or tape the paper roll and shaft core together.
+	2:	Do not fold the tail end of the paper.
+	3:	For details on recommended thermal paper, see the following webpage.
+	
+	https://www.star-m.jp/prjump/000089.html
+- 1
+- 1
+- 1
+3-6-2.	 Removing the Tension Bar
+When using thermal paper roll, the tension bar unit may or may not be necessary, depending on the paper thickness, 
+paper width, or the installation layout. If the tension bar unit is unnecessary, remove it in accordance with the procedure 
+indicated below. The tension bar unit is unnecessary when using full-face thermal label paper roll or thermal label paper 
+roll (tack label paper).
+Installation layout
+Horizontal
+Vertical/wall-mount
+Paper width (mm)
+82.5
+79.5
+57.5
+82.5
+79.5
+57.5
+Paper thickness  
+between 65 μm and 100 μm
+Necessary
+Necessary
+Necessary
+Necessary
+Necessary
+Un-
+necessary
+Paper thickness  
+between 100 μm and 150 μm
+Un-
+necessary
+Un-
+necessary
+Un-
+necessary
+Un-
+necessary
+Un-
+necessary
+Un-
+necessary
+Use a flat head screwdriver as shown to remove the clips at both 
+ends of the tension bar. Then, remove the tension bar unit.
+- 16 -
+Vertical
+Wall-mount
+Horizontal

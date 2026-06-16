@@ -1,0 +1,136 @@
+<!-- image -->
+
+## ESC GS * 1  h  v
+
+Name]
+
+Specify mark height and line feed
+
+[Code]
+
+ASCII
+
+ESC
+
+GS
+
+*
+
+1
+
+h v
+
+Hex.
+
+1B
+
+1D
+
+2A
+
+31
+
+h
+
+v
+
+Decimal
+
+27 29 42 49 h v
+
+[Defined Area]
+
+'001' ≤ h ≤ '255'
+
+'001' ≤ v ≤ '255'
+
+h ≤ v
+
+[Initial Value] [Function]
+
+Non-volatile memory
+
+Specifies mark height and line feed amount
+
+h is the mark height (number of dots); v is the line feed amount for the mark (number of dots)
+
+h and v are ASCII character strings that are represented by decimals; They are composed of character codes '0' to '9.'
+
+If  a  small  line  feed  amount  is  specified,  missing  print  can  occur,  so  more  than  v  =  16  dots  is recommended.
+
+Invalid in page mode.
+
+## ESC GS * 2  m  c  w
+
+[Name] Specify mark color and mark horizontal width for each mark number
+
+## [Code]
+
+ASCII
+
+ESC
+
+GS
+
+*
+
+2
+
+m
+
+c
+
+w
+
+Hex.
+
+1B
+
+1D
+
+2A
+
+32
+
+m
+
+c
+
+w
+
+Decimal
+
+27 29 42 50 m c w
+
+[Defined Area]
+
+'0' ≤ m ≤ '9'
+
+'0' ≤ c ≤ '1'
+
+'001' ≤ w ≤ '999'
+
+[Initial Value] [Function]
+
+Non-volatile memory
+
+Specifies mark color and mark horizontal width for each mark number.
+
+m specifies the mark number.
+
+c specifies the mark color.
+
+w specifies the mark horizontal width (number of dots).
+
+If w exceeds the currently set print region, this command is ignored.
+
+m, c and w are ASCII character strings that are represented by decimals; They are composed of character codes '0' to '9.'
+
+Invalid in page mode.
+
+| c        | Mark Color   |
+|----------|--------------|
+| '0' (48) | White        |
+| '1' (49) | Black        |
+
+-----------------------------------------------------------------------------

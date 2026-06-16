@@ -1,0 +1,37 @@
+## C O N F I D E N T I A L
+
+Bits 2 and 3 of the roll paper sensor status are not supported.
+
+When the cover is open, the status of the roll paper end sensor (bit 5, 6) retain the value when the cover was closed immediately before.
+
+## ■ Peeler status ( n = 8, a = 3)
+
+Bit 0: When the continuous issuing mode is selected, this bit is always 0.
+
+Bit 2: When the peeling issuing mode is selected, this bit is changed during paper feeding or when a label is in the peeling position.  When the continuous issuing mode is selected, this bit is always 1.
+
+The peeling issuing mode/continuous issuing mode is selected with the operation shown below.
+
+## Selecting the peeling issuing mode
+
+|   Step | Operation                                                               |
+|--------|-------------------------------------------------------------------------|
+|      1 | Press the cover open button, and open the peeler cover.                 |
+|      2 | If the paper roll cover was open in Step 1, close the paper roll cover. |
+|      3 | Press the peeler changeover lever. The peeler holder is raised.         |
+|      4 | Close the peeler cover.                                                 |
+
+## Selecting the continuous issuing mode
+
+|   Step | Operation                                                               |
+|--------|-------------------------------------------------------------------------|
+|      1 | Press the cover open button, and open the peeler cover.                 |
+|      2 | If the paper roll cover was open in Step 1, close the paper roll cover. |
+|      3 | Fold up the peeler holder.                                              |
+|      4 | Close the peeler cover.                                                 |
+
+## TM-P60 other than Peeler
+
+Use this command according to the following rule; otherwise, the status might not be transmitted.
+
+The next data is not transmitted until the status is received when this command is transmitted.

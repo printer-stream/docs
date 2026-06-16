@@ -1,0 +1,49 @@
+ESC/POS Command Specifications
+250
+Rev.2.52
+4-3-15 Star Original Printer Information Transmission Commands
+ESC GS ) I pL pH fn [parameter]
+Name	
+Set graphics data
+Code	
+ASCII	
+ESC	
+)	
+I	
+pL	
+pH	
+fn	
+	[parameter]	
+	
+Hex.	
+1B	
+29	
+49	
+pL	
+pH	
+fn	
+	[parameter]	
+	
+Decimal	
+27	
+41	
+73	
+pL	
+pH	
+fn	
+	[parameter]		
+	
+	
+	
+Function	
+Executes printer information processing.
+	
+• pL and pH specify the parameter count (pL + pH x 256) in bytes after fn. 
+	
+• See the function specifications for details on [parameter]. 
+fn
+Function No
+Function Name
+48
+Function 48
+Send the all kind of multibyte fonts

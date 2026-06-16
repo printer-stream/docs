@@ -1,0 +1,32 @@
+R-6        Set the Printing Area
+The printable area
+ESC/P 2
+ESC/P
+9-Pin ESC/P
+The printable area for continuous and single-sheet paper is shown below.
+Single sheets (also envelopes and
+single-type multipart forms)
+Continuous paper
+*, ** The nonprintable area varies
+on some printer models.
+(See Feature Summary for
+details.)
+Note:
+• 
+Make sure your program keeps printing within this area; otherwise, print
+quality cannot be assured.
+• 
+Make sure the margins stay within the printable area. The area within these
+margins is called the printing area.
+*8.5 mm
+**13.5 mm
+3 mm                     3mm
+9 mm
+9 mm
+3 mm                                                 3mm
+Printable
+area
+Printable
+area
+Printable
+area

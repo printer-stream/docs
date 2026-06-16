@@ -1,0 +1,70 @@
+TEK 4051 Example:
+CommodorePET 2001 Example:
+100
+110
+.120
+130
+140
+150
+150
+DIM FI$ [5]
+PPINT ®5:”PH1000,1000;UC;“
+INPUT @5:H,B,C
+PRINT @5:”UI;”
+INPUT @5:H$
+PRINT H,B,C,H$
+END
+Displayed current pen position and identiﬁcation.
+1000
+10
+20
+30
+40
+50
+80
+?0
+1000
+0
+7470A
+DPEN 5,5
+PRINT#5,“PH1000,1000;DC”
+INPuTu5,P,D,c
+PPINTu5,"DI"
+INPuTu5,Hs
+PRINT H,B,C,H$
+END
+Displayed current pen position and identiﬁcation.
+1000
+1000
+0
+7470A
+CommodorePET 8032 Example:
+9-12
+On the PET 8032,all alphabetic characters are displayed as lowercase.
+This is true for both BASIC program statements and for the p1otter’s
+respOIISB.
+A dummy string Variable should be included at the end of every input
+COIDmand which reads data from the plotter because the PET 8032
+sends an untalk command after it receives a carriage return character.
+Since the plotter with an HP-IB interface terminates all output with a
+Carr
+this
+iage return followed by a line feed, the line feed must be read into
+dummy string variable in order to clear the plotter’s output buffer
+for future output.
+‘IO
+20
+30
+40
+SD
+50
+70
+HP—I
+DPEN 5,5
+PRINT#5,“PH1000,1000;UC”
+INPuTu5,P,D,c,Bs
+PRINTw5,”DI“
+INPUT#5,H$,B$
+PPINT H,B,C,H$
+END
+B INTERFACING

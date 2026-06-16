@@ -1,0 +1,57 @@
+CMYK
+
+Cyan (blue-green), magenta, yellow, and black. These colored inks, also known as process colors, are used to create the subtractive system array of printed colors.
+
+compression
+
+A method of reducing the amount graphics data sent to the printer during raster graphics printing. In standard compressed raster graphics, two bytes of data (a counter byte and a data byte) can specify up to 1,016 dots. Also, repetitive and nonrepetitive data can be sent in the same data string. See also TIFF compressed mode .
+
+## condensed printing
+
+Printing in which the characters are spaced approximately 40% to 50% closer than normal. Useful for fitting wide tables or spreadsheets onto the paper.
+
+## continuous paper
+
+Paper that has sprocket-feed holes on each side, is perforated between pages, and comes in a folded stack. Also called fanfold paper.
+
+## control code
+
+Special codes used to control printer functions, such as performing a carriage return or line feed. Many control codes also have characters assigned to them; you can print these characters after using commands to change from control-code to character printing.
+
+cpi
+
+See
+
+cps
+
+See characters per second .
+
+## cut sheets
+
+See single-sheet paper .
+
+## cut-sheet feeder
+
+A device that automatically feeds single sheets of paper into the printer.
+
+decimal
+
+A number expressed in powers of 10. The decimal system uses base 10, in which all numbers are represented by the digits 1 to 9, with 0 used as a place holder.
+
+default
+
+The value or setting that is in effect when a printer is turned on, reset, or initialized. Defaults are sometimes affected by DIP-switch or panel setting.
+
+## DIP switch
+
+Stands for dual in-line package switch. Small switches included on most printers used for selecting various features or default settings.
+
+dot matrix
+
+A method of printing in which each character is formed by printing a pattern (matrix) of dots based on the number of dots in the print head.
+
+## dots per inch (dpi)
+
+Measures the resolution of an image. See also resolution .
+
+characters per inch .

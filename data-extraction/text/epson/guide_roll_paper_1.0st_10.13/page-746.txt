@@ -1,0 +1,57 @@
+C O N F I D E N T I A L
+Paper roll
+Customize commands     GS ( E
+ 
+Ver. 10.13
+p. 746
+■Thai character print mode setting (a = 7)
+■Number of division of thermal head energizing (a = 97)
+•
+When "Automatic control (128)" is selected, normally printing is performed with one-part energizing, and 
+when high duty data is printed, there is a possibility that printing is performed temporarily with two-part 
+energizing.
+•
+The Japanese specification (paper width 80 mm) does not support "Divide into four" and “Automatic 
+control”.
+•
+The Japanese specification (paper width 58 mm) does not support "Divide into four".
+■Setting the TM-T88IV command-compatible mode (a = 120)
+TM-L90
+We recommend that Number of division of thermal head energizing be set to Divide into two for best print 
+quality in 2-color printing.
+7
+Print speed level 7
+|
+8
+Print speed level 8
+|
+9
+Print speed level 9
+Fast
+(nL + nH × 256)
+Thai character print mode
+0
+Thai 3 pass
+1
+Thai 1 pass
+(nL + nH × 256) Division number
+1
+Divide into one
+2
+Divide into two
+4
+Divide into four
+128
+Automatic control
+(nL + nH × 256) Mode
+Japanese Model
+Other model
+0
+Disables the TM-T88IV-compatible mode.
+--
+Y (Default)
+1
+Enables the TM-T88IV-compatible mode.
+--
+--
+(nL + nH × 256) Print speed

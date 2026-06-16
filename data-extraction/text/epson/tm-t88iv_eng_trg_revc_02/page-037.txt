@@ -1,0 +1,78 @@
+Chapter 2   Setup
+37
+2
+DIP Switch Bank 2
+•
+The transmission speed can be set with a command or the memory switch utility. 
+(Setting values: 2400, 4800, 9600, 19200, 38400, 57600, 115200) The value set with a 
+command or the memory switch utility is enabled only when DIP switches 1-7 and 1-8 
+are on. For other settings, the value set with the DIP switches is enabled.
+•
+Depending on print conditions such as print duty, print head temperature, and data 
+transmission speed, print speed is automatically adjusted, which can cause white lines 
+due to intermittent print (the motor sometimes stops). To avoid this, set the transmission 
+speed higher or keep the print speed constant by setting it lower. (See "Setting the 
+Memory Switches" on page 43.)
+SW
+Function
+ON
+OFF
+Factory
+setting
+2-1
+Handshaking (BUSY condition)
+Receive buffer full
+• Offline
+• Receive buffer full
+OFF
+2-2
+Reserved (Do not change 
+settings)
+Fixed to OFF
+OFF
+2-3 ∼
+2-4
+Selects print density/Low 
+power consumption mode
+See "Selecting the Print Density (DIP Switch 
+2-3/2-4)" on page 41.
+OFF
+2-5
+Setting the release condition 
+of the receive buffer BUSY 
+state (This function is effective 
+when DIP switch 1-2 is set to 
+off.)
+Releases the BUSY 
+state when the 
+remaining capacity 
+of the receive 
+buffer reaches 138 
+bytes.
+Releases the BUSY 
+state when the 
+remaining capacity 
+of the receive 
+buffer reaches 256 
+bytes.
+OFF
+2-6
+Reserved (Do not change 
+settings)
+Fixed to OFF
+OFF
+2-7
+I/F pin 6 reset signal
+Enabled
+Disabled
+OFF
+2-8
+IF pin 25 reset signal
+Enabled
+Disabled
+OFF
+•
+For DIP switch 2-1 (BUSY condition), see also "Selecting the BUSY Status" on page 42.
+•
+Do not change the setting of DIP switches 2-2 and 2-6. Otherwise, the printer may not 
+operate normally.

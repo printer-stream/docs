@@ -1,0 +1,144 @@
+                                                                                   Rev. 2.31  
+―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+STAR Graphic Mode Command Specifications 
+19 
+ 
+ETB 
+[Name] 
+Update ETB status of normal status 
+[Code] 
+ASCII 
+ETB 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Hex 
+17 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Decimal 
+23 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+[Defined Area] --- 
+[Initial Value] 
+--- 
+[Function]  
+Sets the ETB status of the normal status and updates the ETB counter. 
+If unprinted data exists when processing this command, the data is printed out and then the command is 
+executed. 
+(Cutting and feeding operations are not performed.) 
+This command is executed after the print operation is stopped. 
+For information on the normal status, see Appendix-1. 
+ 
+ 
+ 
+ 
+ 
+ESC RS E n 
+[Name] 
+Initialize normal status ETB counter and ETB status 
+[Code] 
+ASCII 
+ESC RS 
+E 
+n 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Hex 
+1B 
+1E 
+45 
+n 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Decimal 
+27 
+30 
+69 
+n 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+[Defined Area] n = 0 
+ 
+n = 48 (“0”)  
+[Initial Value] 
+Normal status ETB counter = 0 
+[Function]  
+Clears the normal status ETB counter to zero and ETB status. 
+ 
+ 

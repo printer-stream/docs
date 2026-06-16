@@ -1,0 +1,94 @@
+Plotter Instruction Set (Continued)
+IP
+P1x,P1y (, P2x,P2y>
+IW
+Xlo,Y1o,Xhi,Yhi
+c....c
+LT
+t(,l)
+PA
+x,y(,x,y(....))
+PD
+(x,y(,...))
+PR
+x,y(,x,y(,...))
+PU
+(x,y(,...))
+SC
+Xmin,Xmax,Ymin,Ymax
+SI
+Width,height
+SL
+tan 6
+SM
+c
+SP
+n
+SR
+width, height
+SS
+TL
+tp(,tn)
+UC
+(pen,>x,y,pen(,...)
+VS
+V
+Instruction
+Description
+DI
+run, rise
+Absolute direction
+DP
+Digitize point
+DR
+run, rise
+Relative direction
+DT
+c
+Deﬁne label terminator
+IM
+e(,s(,p))
+Input e, s, and p masks
+IN
+Initialize
+Input P1 and P2
+Input window
+Label ASCII string
+Designate linetype and length
+Output actual position
+and pen status
+Output commanded position
+and pen status
+Output digitized point
+and pen status
+Output error
+Output factors
+Output identiﬁcation
+Output options
+Output P1 and P2
+Output status
+Output window
+Plot absolute
+Pen down
+Plot relative
+Pen up
+Selectalternate character set
+Scale
+Absolute character size
+Absolute character slant
+(from vertical)
+Symbol mode c
+Select pen
+\
+Relative character size
+Selectstandard character set
+Tick length
+User deﬁned character**
+Select velocity v
+X—axistick
+Y—axistick
+*Available only with Option O01plotters that have the serial preﬁx number
+2308Aor higher.
+**Not available with Option 003.
+GETTING STARTED
+1-9

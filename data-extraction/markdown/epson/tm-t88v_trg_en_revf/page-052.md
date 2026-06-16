@@ -1,0 +1,2 @@
+- 4 Close the cutter cover.
+- 5 Open the roll paper cover and remove the jammed paper.

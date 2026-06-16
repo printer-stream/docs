@@ -1,0 +1,11 @@
+C O N F I D E N T I A L
+Paper roll
+Miscellaneous commands     ESC ( A
+ 
+Ver. 10.13
+p. 455
+•
+Process the [integrated beeper stop (c = 0)] in this function.
+•
+Reset or turn off power.
+■Setting of this function is enabled until reset or power off. 

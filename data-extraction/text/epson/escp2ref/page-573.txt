@@ -1,0 +1,54 @@
+I-8        Index
+T
+TIFF compressed mode
+entering, C-175–C-176
+exiting, C-222
+extended raster graphics and, R-83, R-101
+programming guide to, R-99
+Top margin
+point size and, R-8, R-60
+position, R-8, R-60
+printing area and, R-5
+setting, C-11–C-12, R-13
+Top-of-form (TOF) position, C-10
+Typeface, C-95–C-96, R-47
+U
+Uncompressed mode for raster graphics, R-99
+Underlining
+scoring, C-127, R-53
+turning on and off, C-125–C-126
+Unidirectional printing, C-159–C-162, R-55
+Unit, C-50
+User-defined characters
+deciding where to store, R-29
+defining, R-17
+preparing, R-19, R-25
+recommended size, R-19
+selecting table, C-77
+sending to memory, C-84–C-88, C-89–C-90
+sending to printer, R-31
+switching to, C-91–C-92, R-36
+traits, R-22–R-23
+V
+Vertical dot density
+of bit-image graphics, R-67
+of raster graphics, R-75
+Vertical position, relative in binary mode, C-219
+Vertical print position
+absolute, C-37–C-38
+advancing, C-41–C-42
+graphics printing and, R-56
+moving, R-60–R-63
+moving to the next tab, C-45–C-46
+relative, C-39–C-40
+text printing and, R-56
+Vertical tab, C-63–C-64
+W
+Weight
+canceling bold, C-112–C-113
+character, R-51
+selecting bold, C-110–C-111, R-51
+Width, character
+commands affecting, R-9
+proportional spacing and, R-9
+user-defined characters and, R-19

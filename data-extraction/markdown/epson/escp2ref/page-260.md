@@ -1,0 +1,3 @@
+On 24/48-pin printers, you can copy characters directly into RAM memory in character locations 0 to 127. You can also use the ESC t 2 command to copy the characters you have defined to locations 128 to 255; then you can print all characters, including those at locations normally treated as control codes. See 'Switching to RAM character printing' for details.
+
+<!-- image -->

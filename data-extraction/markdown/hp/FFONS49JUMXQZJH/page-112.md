@@ -1,0 +1,28 @@
+## The Output Status Instruction, OS
+
+DESCRIPTIONThe output status instruction, OS, is used to output the decimal equivalent of the status byte.
+
+W This instruction is useful in debugging operations and in digitizing applications.
+
+SYNTAX OS (terminator)
+
+EXPI-ANA]-'0' No parameters are used. The instruction will execute even if no terminator is received.
+
+Upeipt of the OS instruction, the internal eight-bit status byte is "*1 Ledto an integer between 0 and 255. Output is in ASCII in the Iorm:
+
+status [TERM)
+
+The status bits are defined as follows:
+
+|   Bit Value |   Bit Position | Meaning                                                                                                                         |
+|-------------|----------------|---------------------------------------------------------------------------------------------------------------------------------|
+|           1 |              0 | Pen down.                                                                                                                       |
+|           2 |              1 | P1 or P2 changed; cleared by reading output of OP in HP-IBor HP-ILsystem or by actual output of P1,P2 in RS-232-C system.       |
+|           4 |              2 | Digitized point available; cleared by reading digitized value in HP-IB or HP-IL system or by output of point in RS-232-Csystem. |
+|           8 |              3 | Initialized; cleared by reading OS output in HP-IBor HP-ILsystem or by output of the status byte in RS-232-C system.            |
+|          16 |                | Ready for data; pinch wheels down.                                                                                              |
+|          32 |              5 | Error; cleared by reading OE output in HP-IB or HP-IL system or by output of the error in RS-232-C system.                      |
+|          64 |              6 | Require service message set (always 0 for OS ;0 or 1 for HP-IB serial poll).                                                    |
+|         128 |              7 | Not used                                                                                                                        |
+
+Upon power up, the status is decimal 24, the sum of 8 (initialized) and 16 (ready for data). Upon output of the status byte after an OS command, bit position 3 is cleared.

@@ -1,0 +1,5 @@
+## C O N F I D E N T I A L
+
+```
+Bit 0: Font 1 = Font A (12 × 24) Font 2 = Font B (9 × 17) Each character's baseline is as follows: Font A (12 × 24): 21 dots from the top of a character. Font B (9 × 17): 16 dots from the top of a character. [Japanese model] Bit 0: Font 1 = Font A: 12 × 24 Font 2 = Font B: 8 × 16 Each character's baseline is as follows: Font A (12 × 24): 21 dots from the top of a character. Font B (8 × 16): 15 dots from the top of a character. TM-U230 , TM-U220 Character configurations Bit 0: Font 1 = Font A (9 × 9) Font 2 = Font B (7 × 9) Both fonts have no baseline.
+```

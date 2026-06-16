@@ -1,0 +1,17 @@
+{
+  "stem": "epson/escp2ref",
+  "phase": "quality",
+  "tool": "builtin",
+  "tool_version": "0.3.0",
+  "pipeline_version": "0.3.0",
+  "params": {
+    "threshold": 0.5
+  },
+  "page_count": 573,
+  "started_at": "2026-06-16T15:51:29Z",
+  "ended_at": "2026-06-16T15:51:31Z",
+  "duration_seconds": 1.17,
+  "per_page_seconds_avg": 0.002,
+  "status": "ok",
+  "flagged_count": 19
+}

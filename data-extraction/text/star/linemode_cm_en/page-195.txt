@@ -1,0 +1,91 @@
+  
+ 
+5.5. Appendix 8 TSP828L Cut Command Specifications 
+ 
+<Line Mode> 
+Label Paper 
+Command 
+Normal Thermal Paper
+Tear Bar 
+Peel Mode 
+<FF> 
+Form Feed 
+Label Gap Detection 
+Label Gap Detection 
++ 
+Peeling Position 
+Conveyance 
+n = 0, 48 
+n = 1, 49 
+Tear 
+Bar 
+Position 
+Conveyance 
+Label Gap Detection 
++ 
+Tear Bar Position 
+Conveyance 
+Label Gap Detection 
++ 
+Peeling Position 
+Conveyance 
+<ESC> d n  
+n = 2, 50 
+Tear 
+Bar 
+Position 
+Conveyance 
+Label Gap Detection 
+Label Gap Detection 
+n = 3, 51 
++ 
++ 
+n = 116 
+(“t”) 
+Tear Bar Position 
+Conveyance 
+Peeling Position 
+Conveyance 
+ 
+<Raster Mode FF/EOT> 
+Label Paper 
+Command 
+Normal Thermal Paper
+Tear Bar 
+Peel Mode 
+Valid 
+Print 
+Print 
++ 
+Label Gap Detection 
+Print 
++ 
+Label Gap Detection 
+Form Feed 
+Invalid 
+Print 
+Print 
+Print 
++ 
++ 
+Label Gap Detection 
+Label Gap Detection 
+Valid 
+Tear Bar Position 
+Conveyance 
+Tear Bar Position 
+Conveyance 
+Peeling Position 
+Conveyance 
+Cut Feed 
+Invalid 
+--- 
+--- 
+Peeling Position 
+Conveyance 
+ 
+ 
+ 
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+STAR Line Mode Command Specifications 
+5-23 

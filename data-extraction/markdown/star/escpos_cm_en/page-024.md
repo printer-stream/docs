@@ -1,0 +1,55 @@
+<!-- image -->
+
+| Commands              | Name                                                                    | Command Class   | Command Class   | Std Mode   | Rev.25 Page Mode   | GS P Effect   |
+|-----------------------|-------------------------------------------------------------------------|-----------------|-----------------|------------|--------------------|---------------|
+| FS p                  | Print NV bit image                                                      | Exe. ○          | Set.            | ○          | Invalid            |               |
+| FS q                  | Define NV bit image                                                     |                 | ○               | (L)        | Invalid            |               |
+| GS !                  | Select character size                                                   |                 | ○               | ○          | ○                  |               |
+| GS $                  | Specify absolute position for character vertical direction in page mode | ○               |                 | Ignored    | ○                  | ○             |
+| GS *                  | Define download bit images                                              |                 | ○               | ○          | ○                  |               |
+| GS ( A                | Test print                                                              | ○               |                 | ○          | Ignored            |               |
+| GS ( K (fn=48)        | Set print density                                                       |                 | ○               | ○          | ○                  |               |
+| GS ( K (fn=49)        | Set print speed                                                         |                 | ○               | ○          | ○                  |               |
+| GS ( L                | Specify raster graphics data                                            | ○               |                 | ○          | Ignored            |               |
+| GS 8 L                | Specify raster graphics daa                                             | ○               |                 | ○          | Ignored            |               |
+| GS ( N                | Select 2 color printing                                                 |                 | ○               | ○          | ○                  |               |
+| GS ( k (cn=48, fn=65) | PDF417: Set number of positions                                         |                 | ○               | ○          | ○                  |               |
+| GS ( k (cn=48, fn=66) | PDF417: Set number of levels                                            |                 | ○               | ○          | ○                  |               |
+| GS ( k (cn=48, fn=67) | PDF417: Set module width                                                |                 | ○               | ○          | ○                  |               |
+| GS ( k (cn=48, fn=68) | PDF417: Set level height                                                |                 | ○               | ○          | ○                  |               |
+| GS ( k (cn=48, fn=69) | PDF417: Set error correction level                                      |                 | ○               | ○          | ○                  |               |
+| GS ( k (cn=48, fn=70) | PDF417: Set options                                                     |                 | ○               | ○          | ○                  |               |
+| GS ( k (cn=48, fn=80) | PDF417: Store data in symbol saving region                              |                 | ○               | ○          | ○                  |               |
+| GS ( k (cn=48, fn=81) | PDF417: Print symbol data of symbol saving region                       | ○               |                 | ○          | ○                  |               |
+| GS ( k (cn=48, fn=82) | PDF417: Send size information of symbol data in symbol saving region    | ○               |                 | ○          | ○                  |               |
+| GS ( k (cn=49, fn=65) | QR Code: Set model                                                      |                 | ○               | ○          | ○                  |               |
+| GS ( k (cn=49, fn=67) | QR Code: Set module size                                                |                 | ○               | ○          | ○                  |               |
+| GS ( k (cn=49, fn=69) | QR Code: Set error correction level                                     |                 | ○               | ○          | ○                  |               |
+| GS ( k (cn=49, fn=80) | QR Code: Store data in symbol saving region                             |                 | ○               | ○          | ○                  |               |
+| GS ( k (cn=49, fn=81) | QR Code: Print symbol data of symbol saving region                      | ○               |                 | ○          | ○                  |               |
+| GS ( k (cn=49, fn=82) | QR Code: Send size information of symbol data in symbol saving region   | ○               |                 | ○          | ○                  |               |
+| GS /                  | Print download bit images                                               | ○               |                 | (D)        | ○                  |               |
+| GS :                  | Start/end macro definition                                              | ○               | ○               | ○          | ○                  |               |
+| GS B                  | Specify/cancel white/black inverted printing                            |                 | ○               | ○          | ○                  |               |
+| GS C 0                | Set counter print mode                                                  |                 | ○               | ○          | ○                  |               |
+| GS C 1                | Set Counter Mode (A)                                                    |                 | ○               | ○          | ○                  |               |
+| GS C 2                | Set counter value                                                       |                 | ○               | ○          | ○                  |               |
+| GS C ;                | Set Counter Mode (B)                                                    |                 | ○               | ○          | ○                  |               |
+| GS E                  | Set print speed                                                         |                 | ○               | ○          | ○                  |               |
+| GS H                  | Select HRI character print position                                     |                 | ○               | ○          | ○                  |               |
+| GS I                  | Send Printer ID Set left margin                                         | ○               |                 | ○ (L)      | ○ (S)              | ○             |
+| GS L GS P             | Set basic calculation pitch                                             |                 | ○ ○             | ○          | ○                  |               |
+| GS T                  | Move to top of line                                                     |                 |                 | ○          | Ignored            |               |
+| GS V                  | Cut paper                                                               | ○ ○             |                 | (L)        | ○                  | ○             |
+| GSW                   | Set print region width                                                  |                 | ○               | (L)        | (S)                | ○             |
+| GS \                  | Specify relative position for character vertical direction in page mode | ○               |                 | Ignored    | ○                  | ○             |
+| GS ^                  | Execute macro                                                           |                 |                 | ○          | ○                  |               |
+| GS b                  | Specify/cancel smoothing                                                | ○               | ○               | ○          | ○                  |               |
+|                       | Print counter                                                           | ○               |                 | ○          | ○                  |               |
+| GS c GS f             | Select HRI character font                                               |                 | ○               | ○          | ○                  |               |
+| GS h                  | Set bar code height                                                     |                 |                 | ○          | ○                  |               |
+| GS k                  | code                                                                    |                 | ○               |            | ○                  |               |
+|                       | Print bar                                                               | ○               |                 | (D)        |                    |               |
+| GS r                  | Transmission of status                                                  | ○               |                 | ○          | ○                  |               |
+| GS v 0                | Print raster bit images                                                 | ○               |                 | (D)        | Invalid            |               |
+| GS w                  | Set bar code horizontal size                                            |                 | ○               | ○          | ○                  |               |

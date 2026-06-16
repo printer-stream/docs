@@ -1,0 +1,69 @@
+HP 9835/9845 Example:
+10
+20
+30
+40
+50
+50
+?O
+PRINTER 15 7,5
+PRINT ”PH1000,1000;DC“
+ENTER?05;H,B,C
+PRINT “DI”
+ENTER ?O5;H$
+DISP H,B,C,H$
+END
+Displayed current pen position and identiﬁcation.
+1000
+1000
+0
+7470A
+HP 2647 Example:
+'10
+20
+30
+40
+50
+B0
+70
+HSSIGN “H35”
+TD :1
+PRINT u1;~PR1ooo,1ooo;Dc"
+REPDa1;P,B,c
+PRINT a1;"DI"
+REPD u1;Ps
+PRINT H,B,C,H$
+END
+Displayed current pen position and identiﬁcation.
+1000
+1000
+0
+7470A
+HP-85/ 86/ 87Example:*
+10
+20
+30
+40
+SE‘:
+50
+‘R0
+PRINTER
+I 5
+‘P05
+PRINT "PR1ooD,1ooo;Dc"
+ENTER ?O5 ;
+P,B,c
+PRINT ”UI;”
+ENTER 705
+;
+Rs
+DISP H,B,C,H$
+END
+Displayed current pen position and identiﬁcation.
+1000
+0
+1000
+7470A
+*Requires I/O ROM HP Part Number 00087-15003.
+HP-IB INTERFACING
+9-1 1

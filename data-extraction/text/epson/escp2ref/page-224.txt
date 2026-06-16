@@ -1,0 +1,55 @@
+Binary Mode Commands        C-217
+<XFER>
+Transfer raster graphics data
+ESC/P 2
+Format
+Class
+3
+ASCII
+<XFER>
+n
+d1
+. . .
+dn
+Binary 001F xxxxB
+n
+d1
+. . .
+dn
+Parameter range
+#BC = Low nibble value
+F = 0 then #BC = number of raster image data, where 0 ≤ #BC ≤ 15
+F = 1 then #BC = number of raster image data counter, where #BC = 1, 2
+number of raster data = n1 or n1 + n2 × 256
+Function
+Horizontal print position is moved to the next dot after this command
+is received
+(TIFF format)
+• 
+Moves raster data to the band buffer of the selected color.
+• 
+Current data does not affect next raster data.
+Notes
+• 
+This command is available when the ESC . 2 TIFF compressed graphics mode is
+selected.
+• 
+The compressed data format is the same as that for current ESC/P raster compression
+(ESC . 1).
+• 
+This command does not affect the vertical print position.
+• 
+Current data does not affect subsequent raster data.
+• 
+Do not change the image density in raster graphics mode.
+• 
+Do not specify the vertical movement in increments smaller than the current print
+density.
+• 
+Print data that exceeds the right margin is ignored.
+Printers featuring this command
+Stylus COLOR
+Model-dependent variations
+None
+Related topics
+ESC . 2, ESC ( i, ESC ( G

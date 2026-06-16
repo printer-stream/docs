@@ -1,0 +1,12 @@
+C O N F I D E N T I A L
+Paper roll
+Miscellaneous commands     GS z 0 (TM-L90 w/ Peeler)
+ 
+Ver. 10.13
+p. 550
+■The printer automatically in the status of not waiting for the label to be removed when an operator 
+removes the label at the peeling position. If the printer is in an area where the label peeling detector 
+cannot detect paper due to direct sunlight, the operator needs to press the FEED button once after 
+removing the label. Installing the printer in a place with no direct sunlight is recommended.
+Program Example for all printers
+PRINT #1, CHR$(&h1D);"z0";CHR$(0);CHR$(60) ← Sets the online recovery wait time to 30 sec.

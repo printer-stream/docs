@@ -1,0 +1,12 @@
+82
+Buzzer
+For the TM-T88IV, models with the buzzer function are available.
+You can beep the buzzer with the pulse signal using a command. (See "Setting the Buzzer" on 
+page 56.)
+Power Supply Box
+For the TM-T88IV, the optional power supply box (OT-BX88) is added. You can store the power 
+supply unit in the box attached to the printer.
+For detailed information about ESC/POS commands, see the ESC/POS Application 
+Programing Guide.
+For detailed information about the power supply box, see the OT-BX88 Installation Manual.
+Power supply box

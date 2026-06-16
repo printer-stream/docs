@@ -1,0 +1,54 @@
+C O N F I D E N T I A L
+Paper roll
+Panel button command     ESC c 5
+ 
+Ver. 10.13
+p. 160
+ESC c 5
+SETTING COMMAND
+[Name]
+Enable/disable panel buttons
+[Format]
+ASCII
+ESC c
+5
+n
+Hex
+1B
+63
+35
+n
+Decimal
+27
+99
+53
+n
+[Range]
+0 ≤  n ≤  255
+[Default]
+n = 0
+[Printers not featuring this command] None
+[Description]
+Enables or disables the panel buttons.
+•
+When the LSB of n is 0, all buttons are enabled.
+•
+When the LSB of n is 1, all buttons are disabled.
+[Notes]
+■If panel buttons are disabled, the function of the panel button, such as feeding, will be executed when the 
+panel button is turned on.
+■When the printer cover is open, there are buttons that are always enabled or disabled regardless of this 
+command. The buttons are different, depending on the printer model.
+■Even if the panel buttons are disabled by this command, paper feed button will be enabled temporarily 
+while printer is waiting for the buttons to be pressed in the following states. Whether the paper can be 
+fed or not depends on the state:
+•
+When a new roll of paper is installed in the TM-U230 (see GS z 0 to determine if paper can be fed or 
+not)
+•
+When waiting for an online recovery for the TM-L90 with Peeler (see GS z 0 (Peeler specification) for 
+details)
+•
+When the printer is waiting for the button to be pressed while GS ^ is executed (but paper cannot be 
+fed)
+■To prevent problems caused by accidentally pressing the buttons, use this command to disable the buttons.

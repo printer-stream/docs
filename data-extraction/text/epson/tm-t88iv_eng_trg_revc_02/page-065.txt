@@ -1,0 +1,42 @@
+Chapter 3   Application Development Infor-
+65
+3
+Hexadecimal Dumping Mode
+In the hexadecimal dumping mode, the printer prints the data transmitted from a host computer 
+in hexadecimal numbers and their corresponding characters.
+Starting hexadecimal dumping
+Follow the steps below to perform the hexadecimal dumping.
+1
+Open the roll paper cover.
+2
+While pressing the FEED button, turn on the printer.
+3
+Close the roll paper cover.
+Data received from then on is printed out from the printer in hexadecimal numbers and 
+their corresponding characters.
+4
+To quit the hexadecimal dumping mode, turn off the printer or press the 
+FEED button three times.
+Printing example
+•
+If there is no character corresponding to print data, “.” is printed.
+•
+If print data is less than one line, press the FEED button to print the line.
+•
+Applications that confirm printer status may not work correctly during the hexadecimal 
+dumping mode. The printer returns only the status for “Transmit real-time status.”
+ Hexadecimal Dump 
+ To terminate hexadecimal dump, 
+ press FEED button three times. 
+ 
+ 
+ 
+ 
+1B 21 00 1B 26 02 40 40 1B 69  .!..&.@@.i 
+1B 25 01 1B 63 34 00 1B 30 31  .%..c4..01 
+41 42 43 44 45 46 47 48 49 4A  ABCDEFGHIJ 
+ 
+***  completed  *** 
+. ! . . & . @ @ . i 
+. % . . c 4 . . 0 1 
+A B C D E F G H I J 

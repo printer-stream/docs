@@ -1,0 +1,37 @@
+ESC/POS Command Specifications
+266
+Rev.2.52
+ESC GS ) s pL pH fn m (fn = 48)
+Name	
+Send paper hold sensor installation data. 
+Code	
+ASCII	
+ESC	 SYN	 DC4	
+n	
+Hex.	
+1B	
+16	
+14	
+n	
+Decimal	
+27	
+22	
+20	
+n	
+Defined Region	
+		pL = 2,  pH = 0
+fn = 48
+m = 1
+Function		
+Hold print sensor installation data is sent in the format below.
+<ESC> <GS> “)” “s” pL pH fn m n <NUL>
+n
+installation data
+0
+Not installed
+1
+Installed
+When outside the parameter definitions or out of the specified sensor installation 
+specifications, <ESC> <GS> “)” “s” <0> <0> fn <LF> <NUL> is returned.
+If unprinted data exists in the image buffer at the time this command is processed, the 
+command is executed without executing printing first.	

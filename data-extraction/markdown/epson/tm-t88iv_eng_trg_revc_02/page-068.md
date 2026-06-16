@@ -1,0 +1,9 @@
+- 3 In the correct direction of the roll paper, install the roll paper.
+- 4 Pull out some roll paper, and close the roll paper cover.
+- 5 Tear off the roll paper with the manual cutter.
+
+<!-- image -->
+
+<!-- image -->
+
+<!-- image -->

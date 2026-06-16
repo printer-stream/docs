@@ -1,0 +1,494 @@
+  
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+STAR Line Mode Command Specifications 
+6-10 
+ 
+• PDF417 Commands  
+Class 
+Commands 
+Model Name 
+ 
+ 
+TSP800 
+TSP700
+TSP600
+TUP900
+TSP1000
+TSP828L
+TSP700II 
+TSP650 
+TUP500 
+TSP800II
+FVP10
+PDF417 
+ESC GS x S 0 
+NO 
+NO 
+NO 
+Ver. 3.1 
+or later
+OK 
+OK 
+OK 
+NO 
+OK 
+OK 
+OK 
+Commands ESC GS x S 1 
+NO 
+NO 
+NO 
+Ver. 3.1 
+or later
+OK 
+OK 
+OK 
+NO 
+OK 
+OK 
+OK 
+ 
+ESC GS x S 2 
+NO 
+NO 
+NO 
+Ver. 3.1 
+or later
+OK 
+OK 
+OK 
+NO 
+OK 
+OK 
+OK 
+ 
+ESC GS x S 3 
+NO 
+NO 
+NO 
+Ver. 3.1 
+or later
+OK 
+OK 
+OK 
+NO 
+OK 
+OK 
+OK 
+ 
+ESC GS x D 
+NO 
+NO 
+NO 
+Ver. 3.1 
+or later
+OK 
+OK 
+OK 
+NO 
+OK 
+OK 
+OK 
+ 
+ESC GS x P 
+NO 
+NO 
+NO 
+Ver. 3.1 
+or later
+OK 
+OK 
+OK 
+NO 
+OK 
+OK 
+OK 
+ 
+ESC GS x I 
+NO 
+NO 
+NO 
+Ver. 3.1 
+or later
+OK 
+OK 
+OK 
+NO 
+OK 
+OK 
+OK 
+ 
+• Print Start Trigger Control Commands  
+Class 
+Commands 
+Model Name 
+ 
+ 
+TSP800 
+TSP700
+TSP600
+TUP900
+TSP1000
+TSP828L
+TSP700II 
+TSP650 
+TUP500 
+TSP800II
+FVP10
+Print Start 
+ESC GS g 0 
+NO 
+NO 
+NO 
+NO 
+Ver. 1.1 
+or later
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+Trigger 
+Control 
+ESC GS g 1 
+NO 
+NO 
+NO 
+NO 
+Ver. 1.1 
+or later
+OK 
+OK 
+OK 
+OK 
+OK 
+OK 
+ 
+• QR Commands  
+Class 
+Commands 
+Model Name 
+ 
+ 
+TSP800 
+TSP700
+TSP600
+TUP900
+TSP1000
+TSP828L
+TSP700II 
+TSP650 
+TUP500 
+TSP800II
+FVP10
+QR Code 
+ESC GS y S 0 
+NO 
+NO 
+NO 
+NO 
+Ver. 1.2 
+or later
+OK 
+OK 
+NO 
+OK 
+OK 
+OK 
+ 
+ESC GS y S 1 
+NO 
+NO 
+NO 
+NO 
+Ver. 1.2 
+or later
+OK 
+OK 
+NO 
+OK 
+OK 
+OK 
+ 
+ESC GS y S 2 
+NO 
+NO 
+NO 
+NO 
+Ver. 1.2 
+or later
+OK 
+OK 
+NO 
+OK 
+OK 
+OK 
+ 
+ESC GS y D 1 
+NO 
+NO 
+NO 
+NO 
+Ver. 1.2 
+or later
+OK 
+OK 
+NO 
+OK 
+OK 
+OK 
+ 
+ESC GS y D 2  
+NO 
+NO 
+NO 
+NO 
+Ver. 1.2 
+or later
+OK 
+OK 
+NO 
+OK 
+OK 
+OK 
+ 
+ESC GS y P 
+NO 
+NO 
+NO 
+NO 
+Ver. 1.2 
+or later
+OK 
+OK 
+NO 
+OK 
+OK 
+OK 
+ 
+ESC GS y I 
+NO 
+NO 
+NO 
+NO 
+Ver. 1.2 
+or later
+OK 
+OK 
+NO 
+OK 
+OK 
+OK 
+ 
+• Page Function Commands  
+Class 
+Commands 
+Model Name 
+ 
+ 
+TSP800 
+TSP700
+TSP600
+TUP900
+TSP1000
+TSP828L
+TSP700II 
+TSP650 
+TUP500 
+TSP800II
+FVP10
+Page  
+ESC GS h 0 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+OK 
+NO 
+OK 
+OK 
+OK 
+Function 
+ESC GS h 1 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+OK 
+NO 
+OK 
+OK 
+OK 
+ 
+• Reduced Printing Function Commands  
+Class 
+Commands 
+Model Name 
+ 
+ 
+TSP800 
+TSP700
+TSP600
+TUP900
+TSP1000
+TSP828L
+TSP700II 
+TSP650 
+TUP500 
+TSP800II
+FVP10
+Reduced Printing 
+Function 
+ESC GS c  
+No 
+No 
+No 
+No 
+No 
+No 
+No 
+No 
+No 
+No 
+Yes 
+ 
+• Page Mode Commands  
+Class 
+Commands 
+Model Name 
+ 
+ 
+TSP800 
+TSP700
+TSP600
+TUP900
+TSP1000
+TSP828L
+TSP700II 
+TSP650 
+TUP500 
+TSP800II
+FVP10
+Page Mode 
+ESC GS P 0 
+No 
+No 
+No 
+No 
+No 
+No 
+No 
+No 
+No 
+No 
+Yes 
+ 
+ESC GS P 1 
+No 
+No 
+No 
+No 
+No 
+No 
+No 
+No 
+No 
+No 
+Yes 
+ 
+ESC GS P 2 
+No 
+No 
+No 
+No 
+No 
+No 
+No 
+No 
+No 
+No 
+Yes 
+ 
+ESC GS P 3 
+No 
+No 
+No 
+No 
+No 
+No 
+No 
+No 
+No 
+No 
+Yes 
+ 
+ESC GS P 4 
+No 
+No 
+No 
+No 
+No 
+No 
+No 
+No 
+No 
+No 
+Yes 
+ 
+ESC GS P 5 
+No 
+No 
+No 
+No 
+No 
+No 
+No 
+No 
+No 
+No 
+Yes 
+ 
+ESC GS P 6 
+No 
+No 
+No 
+No 
+No 
+No 
+No 
+No 
+No 
+No 
+Yes 
+ 
+ESC GS P 7 
+No 
+No 
+No 
+No 
+No 
+No 
+No 
+No 
+No 
+No 
+Yes 
+ 
+ESC GS P 8 
+No 
+No 
+No 
+No 
+No 
+No 
+No 
+No 
+No 
+No 
+Yes 
+ 

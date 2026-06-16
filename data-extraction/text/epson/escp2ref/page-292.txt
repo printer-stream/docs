@@ -1,0 +1,198 @@
+Select the Print Position        R-61
+New commands are available in ESC/P 2 that simplify setting the vertical print
+position. These commands are:
+ESC ( V 
+Set absolute vertical print position
+ESC ( v 
+Set relative vertical print position
+The unit of movement for both these commands is the unit set with the ESC ( U
+command. See ESC ( U in the Command Summary and “Setting the page length”
+for more information.
+The format for the ESC ( V command is as follows:
+ESC ( V 2 0 mL mH
+The resulting vertical position is determined by the following formula:
+(vertical position) = ((mH × 256) + mL) × (defined unit) + (top-margin position)
+mH =
+(
+)
+INT
+vertical position
+top m
+in position
+defined unit
+(
+) (
+arg
+)
+(
+)
+−
+−
+×
+
+
+
+
+
+
+
+
+
+
+
+
+1
+256
+mL =
+(
+)
+MOD
+vertical position
+top m
+in position
+defined unit
+(
+) (
+arg
+)
+(
+)
+−
+−
+×
+
+
+
+
+
+
+
+
+
+
+
+
+1
+256
+The format for the ESC ( v command is as follows:
+ESC ( v 2 0 mL mH
+(horizontal position) = ((mH × 256) + mL) × (defined unit) + (current position)
+To move in the positive direction (down the page), the formula is as follows:
+mH =
+(
+)
+INT
+vertical position
+current position
+defined unit
+(
+) (
+)
+(
+)
+−
+×
+
+
+
+
+
+
+
+
+
+
+
+
+1
+256
+mL =
+(
+)
+MOD
+vertical position
+current position
+defined unit
+(
+) (
+)
+(
+)
+−
+×
+
+
+
+
+
+
+
+
+
+
+
+
+1
+256
+To move in the negative direction (up the page), the formula is as follows:
+mH =
+(
+)
+32768
+1
+256
+−
+−
+×
+
+
+
+
+
+
+
+
+
+
+
+
+INT
+current position
+vertical position
+defined unit
+(
+)
+(
+)
+(
+)
+mL =
+(
+)
+32768
+1
+256
+−
+−
+×
+
+
+
+
+
+
+
+
+
+
+
+
+MOD
+current position
+vertical position
+defined unit
+(
+) (
+)
+(
+)

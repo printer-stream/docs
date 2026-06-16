@@ -1,0 +1,73 @@
+  
+ 
+3.7. 2 Color Printing Command Details  
+ 
+The following commands control 2 color printing functions. 
+The following commands are effective only when using a model handling 2 color printing.  
+ 
+ 
+ 
+ 
+ 
+ESC RS c n 
+[Name] 
+Set print color in 2 color print mode 
+[Code] 
+ASCII 
+ESC RS 
+c 
+n
+ 
+ 
+ 
+ 
+Hex. 
+1B 
+1E 
+63 
+n
+ 
+ 
+ 
+ 
+Decimal 
+27 
+30 
+99 
+n
+ 
+ 
+ 
+ 
+[Defined Area] 
+0≤n≤1 
+ 
+48≤n≤49 (”0”≤n≤”1”) 
+[Initial Value] 
+n = 0, 48 (When in 2 color print mode) 
+[Function] 
+Specifies print color in 2 color print mode. 
+ 
+This command is ignored when not in the 2 color print mode.   
+ 
+Specifies black for the print color when in 2 color print mode. 
+ 
+This command is cleared only when the printer is reset. 
+ 
+The specification of this command is not cleared by ESC @ CAN.   
+ 
+However, print color is initialized to black by the ESC @ and CAN only when in the compatible 2 
+color print mode.   
+ 
+n 
+Specifies 2 color print mode color  
+0, 48 
+Black 
+1, 49 
+Red 
+ 
+ 
+ 
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+STAR Line Mode Command Specifications 
+3-92 

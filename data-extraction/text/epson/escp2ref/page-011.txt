@@ -1,0 +1,209 @@
+C-4        Command List by Function
+Command names
+ESC/P2
+ESC/P
+9-Pin ESC/P
+Page
+Control-code character printing
+ESC ( ^
+Print data as characters
+•
+—
+—
+C-150
+ESC 6
+Enable printing of upper control codes
+•
+•
+•
+C-151
+ESC 7
+Enable upper control codes
+•
+•
+•
+C-153
+ESC I
+Enable printing of control codes
+—
+—
+•
+C-155
+ESC m
+Select printing of upper control codes
+—
+—
+•
+C-156
+Mechanical control
+ESC EM
+Control paper loading/ejecting
+•
+•
+•
+C-157
+ESC U
+Turn unidirectional mode on/off
+•
+•
+•
+C-159
+ESC <
+Unidirectional mode (one line)
+•
+•
+•
+C-161
+BEL
+Beeper
+•
+•
+•
+C-163
+ESC 8
+Disable paper-out detector
+—
+—
+•
+C-165
+ESC 9
+Enable paper-out detector
+—
+—
+•
+C-166
+ESC s
+Select low-speed mode
+—
+•
+•
+C-167
+Printing color and graphics
+ESC ( G
+Select graphics mode
+•
+—
+—
+C-169
+ESC ( i
+Select MicroWeave print mode
+•
+—
+—
+C-171
+ESC .
+Print raster graphics
+•
+—
+—
+C-172
+ESC . 2
+Enter TIFF compressed mode
+•
+—
+—
+C-175
+ESC *
+Select bit image
+•
+•
+•
+C-177
+ESC ?
+Reassign bit-image mode
+•
+•
+•
+C-181
+ESC K
+Select 60-dpi graphics
+•
+•
+•
+C-183
+ESC L
+Select 120-dpi graphics
+•
+•
+•
+C-185
+ESC Y
+Select 120-dpi, double-speed graphics
+•
+•
+•
+C-187
+ESC Z
+Select 240-dpi graphics
+•
+•
+•
+C-189
+ESC ^
+Select 60/120-dpi, 9-pin graphics
+—
+—
+•
+C-191
+ESC r
+Select printing color
+•
+•
+•
+C-193
+Printing bar codes
+ESC ( B
+Bar code setup and print
+•
+•
+•
+C-195
+Data and memory control
+ESC @
+Initialize printer
+•
+•
+•
+C-198
+CAN
+Cancel line
+•
+•
+•
+C-200
+DEL
+Delete last character in buffer
+•
+•
+•
+C-202
+DC1
+Select printer
+•
+•
+•
+C-204
+DC3
+Deselect printer
+•
+•
+•
+C-206
+ESC #
+Cancel MSB control
+•
+•
+•
+C-208
+ESC =
+Set MSB to 0
+•
+•
+•
+C-210
+ESC >
+Set MSB to 1
+•
+•
+•
+C-212

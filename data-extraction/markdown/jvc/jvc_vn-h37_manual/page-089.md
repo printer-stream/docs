@@ -1,0 +1,75 @@
+Interpretation Change the password of admin(0), admin(1), admin(2) or admin(3). Set a password between 4 to
+
+16 characters.
+
+There is no API for Getting passwords.
+
+Allowed user admin
+
+## Setting Password of operator
+
+Format  /api/param?system.password.operator(num)=data2
+
+Example
+
+/api/param?system.password.operator(0)=someword
+
+Example of Response
+
+system.password. operator(0)&amp;200 OK
+
+Interpretation
+
+Change the password of operator(0), operator(1), operator(2) or operator(3). Set a password
+
+between 4 to 16 characters.
+
+There is no API for Getting passwords.
+
+Allowed user admin
+
+## Setting Password of user
+
+Format  /api/param?system.password.user(num)=data2
+
+Example
+
+/api/param?system.password.user(0)=someword
+
+Example of Response
+
+system.password. user(0)&amp;200 OK
+
+Interpretation characters.
+
+Change the password of user(0), user(1), user(2) or user(3). Set a password between 4 to 16
+
+There is no API for Getting passwords.
+
+Allowed user admin
+
+## Delete Acount
+
+## Format
+
+/api/param?system.password.admin(num).status=initialize
+
+/api/param?system.password.operator(num).status=initialize
+
+/api/param?system.password.user(num).status=initialize
+
+Example
+
+/api/param?system.password.admin(1)=initialize
+
+Example of Response
+
+system.password. admin(1)=unregistered&amp;200 OK
+
+Interpretation Delete specified account. admin(0), operator(0) and user(0) can not be deleted.
+
+Allowed user admin
+
+## 25.  JVC API for Maintenance
+
+The APIs below are related to maintenance. These are equivalent to the features on the Maintenance page of the

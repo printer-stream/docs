@@ -1,0 +1,40 @@
+<!-- image -->
+
+Name
+
+Specify pulse
+
+Code
+
+ASCII ESC p m t1 t2
+
+Hex. 1B
+
+70 m t1 t2
+
+Decimal 27 112 m t1 t2
+
+Defined Region
+
+0 ≤ m ≤ 1, 48 ≤ m ≤ 49
+
+0 ≤ t1 ≤ 255
+
+0 ≤ t2 ≤ 255
+
+Function
+
+This outputs a signal specified by t1 and t2 to the connector pin specified by m.
+
+| m     | Connector Pin                |
+|-------|------------------------------|
+| 0, 48 | Drawer kick connector pin #2 |
+| 1, 49 | Drawer kick connector pin #5 |
+
+Details Drawer kick on time is set to t1 x 2 ms; off time is set to t2 x 2 ms.
+
+When t1 &gt; t2, the value of t2 is processed as t2 = t1.
+
+<!-- image -->
+
+Reference DLE DC4

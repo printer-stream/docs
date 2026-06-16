@@ -1,0 +1,13 @@
+## C O N F I D E N T I A L
+
+## ESC &amp;
+
+```
+[Name] Define user-defined characters [Format] ASCII ESC  & y c1 c2  [x1 d1 ... d(y × x1)] ... [xk d1 ... d(y × xk)] Hex 1B 26 y c1 c2  [x1 d1 ... d(y × x1)] ... [xk d1 ... d(y × xk)] Decimal 27 38 y c1 c2  [x1 d1 ... d(y × x1)] ... [xk d1 ... d(y × xk)] [Range] TM-J2000/J2100 , TM-T90 , TM-L90 : [Other than Japanese model] y = 3 32 ≤ c1 ≤ c2 ≤ 126 0 ≤ x ≤ 12 (Font A (12 × 24)) 0 ≤ x ≤ 9 (Font B (9 × 17)) 0 ≤ d ≤ 255 k = c2 -c1 + 1 [Japanese model] y = 3 (Font A (12 × 24)/Font B (10 × 24)) y = 2 (Font C (8 × 16)) 32 ≤ c1 ≤ c2 ≤ 126 0 ≤ x ≤ 12 (Font A (12 × 24)) 0 ≤ x ≤ 10 (Font B (10 × 24)) 0 ≤ x ≤ 8 (Font C (8 × 16)) 0 ≤ d ≤ 255 k = c2 -c1 + 1 TM-T88IV : [Other than the following model] y = 3 32 ≤ c1 ≤ c2 ≤ 126 0 ≤ x ≤ 12 (Font A (12 × 24)) 0 ≤ x ≤ 9 (Font B (9 × 17)) 0 ≤ d ≤ 255 k = c2 -c1 + 1 [South Asia model] y = 3
+```
+
+```
+32 ≤ c1 ≤ c2 ≤ 126
+```
+
+SETTING COMMAND

@@ -1,0 +1,65 @@
+<!-- image -->
+
+## 3.3.2. Character Expansion Settings
+
+## ESC i n1 n2
+
+[Name]
+
+Set/cancel the double wide/high
+
+[Code]
+
+ASCII
+
+ESC i n1 n2
+
+Hex.
+
+1B 69 n1 n2
+
+Decimal
+
+27 105 n1 n2
+
+[Defined Area]
+
+0 ≤ n1 ≤ 5
+
+48 ≤ n1 ≤ 53 ('0' ≤ n1 ≤ '5')
+
+0 ≤ n2 ≤ 5
+
+48 ≤ n2 ≤ 53 ('0' ≤ n2 ≤ '5')
+
+[Initial Value]
+
+n1 = 0 (Double high cancelled)
+
+n2 = 0 (Double wide cancelled)
+
+[Function]
+
+Specifies/cancels double high/wide for ANK characters and Kanji characters.
+
+This command is ignored if either n1 or n2 is outside of the defined area.
+
+| n1    | Expanded high               |
+|-------|-----------------------------|
+| 0, 48 | Cancels expanded high       |
+| 1, 49 | Specifies 2x high expansion |
+| 2, 50 | Specifies 3x high expansion |
+| 3, 51 | Specifies 4x high expansion |
+| 4, 52 | Specifies 5x high expansion |
+| 5, 53 | Specifies 6x high expansion |
+
+| n2    | Expanded wide               |
+|-------|-----------------------------|
+| 0, 48 | Cancels expanded wide       |
+| 1, 49 | Specifies 2x wide expansion |
+| 2, 50 | Specifies 3x wide expansion |
+| 3, 51 | Specifies 4x wide expansion |
+| 4, 52 | Specifies 5x wide expansion |
+| 5, 53 | Specifies 6x wide expansion |
+
+-----------------------------------------------------------------------------

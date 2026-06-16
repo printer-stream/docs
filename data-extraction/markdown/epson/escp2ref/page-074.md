@@ -1,0 +1,37 @@
+## Format
+
+```
+ASCII ESC / m Hex 1B 2F m Decimal 27 47 m
+```
+
+## Parameter range
+
+0 ≤ m ≤ 7
+
+## Function
+
+Selects vertical tab set m
+
+## Default
+
+Tab channel 0
+
+## Notes
+
+- This is a nonrecommended command.
+- This command is deleted in ESC/P 2.
+- The value for m specifies the number of the tab set being changed; these sets of tabs are called vertical formatting unit (VFU) channels.
+- You must use this command to select a tab set (VFU channel) other than set 0; the VT (tab vertically) command then uses the settings for the selected channel.
+- You can select from eight sets of tabs (VFU channels).
+
+## Printers not featuring this command
+
+All ESC/P 2 printers, ActionPrinter 3000, LQ-200
+
+Model-dependent variations
+
+None
+
+## Related topics
+
+ESC b, ESC B, VT, Moving the vertical position

@@ -1,0 +1,59 @@
+R-44        Select a Font
+During multipoint mode, sending the commands below results in the following:
+Commands ignored
+Commands that cancel multipoint mode
+ESC W
+Double-width
+ESC P
+Select 10 cpi
+ESC w
+Double-height
+ESC M
+Select 12 cpi
+ESC SP
+Additional space
+ESC g
+Select 15 cpi
+SI
+Condensed printing
+ESC p
+Select proportional
+SO
+Double-width
+ESC !
+Master select
+DC2
+Cancel condensed
+ESC @
+Reset
+DC4
+Cancel double-width
+ESC k
+(if typeface is not available
+in multipoint mode)
+Selecting the character table
+Use the ESC t command to select the character table. The format for this
+command is as follows:
+ESC t n
+The parameter n is the number of the character table.
+ESC/P 2
+With ESC/P 2, you can select from four active character tables. See “Assign
+character tables” for details.
+Active Tables
+ESC/P
+9-Pin ESC/P
+With previous ESC/P versions, you can select from two character tables: italics
+and graphics.
+The character table is one attribute of the font. Selecting a different character table
+selects a different font.
+Current
+Table
+Current
+Table
+ESC t n
+Italics
+Graphics
+Table 0
+Table 1
+Table 2
+Table 3

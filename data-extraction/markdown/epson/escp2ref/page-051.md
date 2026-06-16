@@ -1,0 +1,29 @@
+## Format
+
+HT
+
+| ASCII   |    |
+|---------|----|
+| Hex     | 09 |
+| Decimal |  9 |
+
+## Function
+
+Moves the horizontal print position to the next tab to the right of the current print position
+
+## Notes
+
+- The printer ignores this command if no tab is set to the right of the current position or if the next tab is to the right of the right margin.
+- Underlines are not printed between the current print position and the next tab when this command is sent.
+
+## Printers not featuring this command
+
+None
+
+Model-dependent variations
+
+None
+
+## Related topics
+
+ESC D, ESC $, ESC \, CR, ESC l, ESC Q, Moving the horizontal position

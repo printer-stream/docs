@@ -1,0 +1,18 @@
+C O N F I D E N T I A L
+Paper roll
+Bar code commands     GS k
+ 
+Ver. 10.13
+p. 391
+•
+The HRI characters of special characters (SP, "(," ")") are printed as the respective characters (SP, "(," 
+")").
+•
+The HRI character of special character ("*") prints a check digit.
+•
+The HRI characters of bar code data ["{"+("(," ")," "*," "{")] are printed as the respective characters 
+("(," ")," "*," "{")
+■The range of data (d) that can be processed in each code set (CODE A, CODE B, CODE C) is shown in the 
+table below. Data where the character field is diagonal cannot be used. Transmit the 2-byte data shown in 
+the following table ([Hexadecimal = 7BH / Decimal = 123] + character code) from the host for the special 
+characters (FNC1, FNC3) and bar code data "(", ")", "*", and "{",.

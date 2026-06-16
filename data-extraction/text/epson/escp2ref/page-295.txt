@@ -1,0 +1,23 @@
+R-64        Send Print Data
+Send Print Data
+ESC/P 2
+ESC/P
+9-Pin ESC/P
+Once you have set the page format, defined the starting characters, and set the
+initial print position, you can begin sending print data.
+The following rules allow the printer to process data most efficiently.
+• 
+Send data from left to right on a line.
+• 
+End each line of data with a CR and LF command.
+• 
+Send lines from the top to the bottom of the page.
+• 
+Complete each page with a FF command. Also send a FF command at the end
+of each print job.
+Note:
+The exception to this data order is when you combine bit-image graphics with
+text printing. See “Mixing text and bit-image graphics” for details.
+To vary printed characters, you can change font attributes and enhancements at
+any time. See the following sections for information on preparing and sending
+graphics data.

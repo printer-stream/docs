@@ -1,0 +1,27 @@
+<!-- image -->
+
+Name
+
+Initialize presenter paper counter
+
+Code
+
+ASCII ESC  SYN 4 n
+
+Hex. 1B 16 34 n
+
+Decimal 27 22 52 n
+
+Defined Region
+
+n = 0
+
+Function
+
+Initializes the presenter paper counter (paper reel counter/paper recovery counter). Initialization of the paper counter using this command is executed when this command is
+
+processed.
+
+Reference
+
+ESC SYN 0, ESC SYN 1, ESC SYN 2, ESC SYN 3

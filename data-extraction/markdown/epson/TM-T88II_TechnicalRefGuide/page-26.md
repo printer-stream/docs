@@ -1,0 +1,49 @@
+Table 2-8  Selection of print density
+
+|       |                         | Switch no.   | Switch no.   |
+|-------|-------------------------|--------------|--------------|
+| Level | Print density           | 2-3          | 2-4          |
+| 1     | Low-power mode          | ON           | ON           |
+| 2     | Regular print density * | OFF          | OFF          |
+| 3     | ↔                       | ON           | OFF          |
+| 4     | Heavy print density     | OFF          | ON           |
+
+Table 2-9  Conditions for canceling receive buffer BUSY state
+
+TM-T88II
+
+Conditions to cancel receive buffer BUSY
+
+state
+
+BUSY state canceled when 26 bytes or
+
+more remain in receive buffer
+
+<!-- image -->
+
+## Note:
+
+With the TM-T88III, the DIP SW2-5 setting is enabled only when DIP SW1-2 is set to OFF and the receive buffer is set to 4KB.
+
+With the TM-T88II, be sure to set DIP SW2-5 to OFF before use. Otherwise, the printer may no longer function correctly.
+
+When the TM-T88II is used or when TM-T88III is used with DIP SW1-2 set to ON, the BUSY state is canceled when '26 bytes remaining in receive buffer' are reached regardless of the setting of DIP SW2-5.
+
+Do not change the settings of DIP SW2-2 and SW2-6. Otherwise, the printer may no longer function correctly.
+
+Switch no.
+
+2-5
+
+Fixed to
+
+OFF
+
+TM-T88III
+
+| Conditions to cancel receive buffer BUSY state (enabled only when DIP SW1-2 OFF)   | Switch no.   |
+|------------------------------------------------------------------------------------|--------------|
+| Conditions to cancel receive buffer BUSY state (enabled only when DIP SW1-2 OFF)   | 2-5          |
+| BUSY state canceled when 138 bytes remain                                          | ON           |
+| BUSY state canceled when 256 bytes remain *                                        | OFF          |

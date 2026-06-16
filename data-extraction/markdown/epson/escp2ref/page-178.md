@@ -1,0 +1,42 @@
+## Format
+
+| Hex     |   1B |   28 |   69 |   01 |   00 | n   |
+|---------|------|------|------|------|------|-----|
+| Decimal |   27 |   40 |  105 |   01 |   00 | n   |
+
+## Parameter range
+
+```
+n = 0, 1, 48, 49
+```
+
+## Function
+
+Turns MicroWeave print mode off and on:
+
+n = 0 or 48
+
+MicroWeave off
+
+1 or 49
+
+MicroWeave on
+
+## Notes
+
+- MicroWeave printing takes longer, but improves printout appearance by reducing banding.
+- This command is only available during raster graphics printing.
+- Sending an ESC @ or ESC ( G command turns MicroWeave printing off.
+- Always send this command before loading paper
+
+## Printers featuring this command
+
+Stylus COLOR
+
+Model-dependent variations
+
+None
+
+## Related topics
+
+ESC ., ESC . 2, ESC ( G, ESC @, Sending graphics data, Graphics mode

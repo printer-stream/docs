@@ -1,0 +1,25 @@
+## 3.8.2  Q: Why does the drawer kick-out not operate properly?
+
+- A: Drawer specifications differ depending on the manufacturer and the part number. Make sure the specifications of the drawer to be used meet the following conditions before connecting it to the drawer kick-out connector. These conditions also apply to any other devices that use the drawer kick-out connector. Any devices that do not satisfy all the following conditions must not be used.
+
+## Conditions
+
+- A load must be provided across drawer kick-out connector pins 4 and 2 or across pins 4 and 5. (*1)
+- When the drawer open/close signal is used, a switch must be provided across drawer kick-out connector pins 3 and 6. (*2)
+- The solenoid used for the cash drawer must have a resistance of 24 Ω or higher. (*3)
+
+NOTES
+
+- (*1) Operating the printer with incorrectly installed devices voids the warranty.
+- (*2) Connecting devices other than the drawer open/close switch voids the warranty.
+- (*3) Using a drawer or a drawer kick-out connector with an input current of 1 A or more may cause an overcurrent, which will cause the device to malfunction.
+
+## 3.8.3  Q: I cannot print part of Page 0 in Visual Basic. Why?
+
+Cannot print a part of Page 0 (for example: ) in Visual Basic.
+
+- A: Try printing using the following procedure:
+
+When programming with Visual Basic, limitations prevent data from 81H through 9FH and from E0H through FEH from being sent as characters. However, you can use the following procedure to send this data:
+
+Dim Send\_ data(0) As Byte Send\_data(0) = &amp;h81 '1 byte of sending data MSComm1.Output = Send\_data

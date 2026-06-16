@@ -1,0 +1,41 @@
+<!-- image -->
+
+## ESC GS a n
+
+[Name] [Code]
+
+Specify position alignment
+
+ASCII
+
+ESC GS a n
+
+Hex.
+
+1B 1D 61 n
+
+Decimal
+
+27 29 97 n
+
+[Defined Area]
+
+0 ≤ n ≤ 2
+
+48 ≤ n ≤ 50 ('0' ≤ n ≤ '2')
+
+[Initial Value]
+
+n = 0
+
+[Function]
+
+Specifies the alignment position in the printing region that has been set.
+
+| n     | Position alignment   |
+|-------|----------------------|
+| 0, 48 | Left alignment       |
+| 1, 49 | Center alignment     |
+| 2, 50 | Right alignment      |
+
+-----------------------------------------------------------------------------

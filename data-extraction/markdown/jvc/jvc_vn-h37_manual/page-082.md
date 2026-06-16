@@ -1,0 +1,55 @@
+Interpretation Acquire JPEG multicast frame rate of specified encode channel. 'num' is encoder channel from 1 to 3.  The API is valid when the encoder channel is set to JPEG.
+
+Allowed users admin, operator
+
+## Setting Frame Rate of JPEG Multicast
+
+Format  /api/param?network.destination(num).framerate=data
+
+Example  /api/param?network.destination(1).framerate=30
+
+Example of Response
+
+network.destination(1).framerate&amp;202 Accepted(network.destination(1).host=save)
+
+Interpretation Change JPEG multicast frame rate of specified encode channel. 'num' is encoder channel from 1 to 3.  The API is valid when the encoder channel is set to JPEG. Specify 30, 15, 10, 7.5, 6, 5, 3, 2, 1, -2, -3, -5, -10, -15, -20, or -30. -5 means 1/5fps for example. To validate the change, use "network.destination(num).host=save" API. After the save, start streaming by "network.destination(num).host=start" API.
+
+Allowed user admin
+
+## Getting Status of Audio Multicast Streaming
+
+Format  /api/param?network.destination(4).status
+
+Example of Response  network.destination(4).status=off&amp;200 OK
+
+Interpretation Acquire status of audio multicast streaming. Either on or off will be returned.
+
+Allowed users admin, operator
+
+## Setting Status of Audio Multicast Streaming, or Save Changes
+
+Format  /api/param?network.destination(4).status=data
+
+Example  /api/param?network.destination(4).status=start
+
+Example of Response  network.destination(4).status&amp;200 OK
+
+Interpretation Start/stop audio multicast streaming, or save changes to multicast streaming settings. Specify "start", "stop" or "save". Changes of multicast streaming settings become valid by "save".
+
+Multicast stream is RTP compliant. If power becomes off during multicast streaming, the streaming starts automatically after power on.
+
+Allowed users admin, operator
+
+## Getting Audio Multicast Address
+
+Format  /api/param?network.destination(4).host
+
+Example of Response  network.destination(4).host=225.0.1.3&amp;200 OK
+
+Interpretation
+
+Acquire audio multicast address.
+
+Allowed users
+
+admin, operator

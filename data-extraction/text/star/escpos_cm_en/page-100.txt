@@ -1,0 +1,59 @@
+ESC/POS Command Specifications
+100
+Rev.2.52
+<Function 66> GS ( L pL pH m fn kc1 kc2   (fn=66)
+<Function 66> GS 8 L p1 p2 p3 p4 m fn kc1 kc2   (fn=66)
+Name	
+Erase the specified NV graphics data 
+Code	
+ASCII	
+	GS	
+(	
+L	 pL	 pH	 m  	fn  kc1  kc2
+	
+Hex.   	
+	1D   28  4C  pL 	pH	 m  	fn  kc1  kc2
+	
+Decimal 	 	29   40  76  pL   pH	
+m  	fn  kc1  kc2  
+	
+ASCII   	 	GS   8    L  	
+	p1  p2 p3 p4  m  fn  kc1  kc2
+	
+Hex.   	
+	1D   38  4C  	 	p1  p2 p3 p4  m  fn  kc1  kc2 
+	
+Decimal	 	29   56  76  	
+	p1  p2 p3 p4  m  fn  kc1  kc2 
+Defined Region	
+• Parameter for GS ( L
+	
+ (pL+pH×256)=4  (pL=4, pH=0)
+	
+• Parameter for GS 8 L
+	
+(p1+p2×256+p3x65536+p4x16777216)=4  (p1=4, p2=0, p3=0, p4=0)
+	
+• Parameter are shared by for GS ( L and GS 8 L. 
+	
+m = 48, 
+	
+fn = 66
+	
+32 ≤ kc1 ≤ 126
+	
+32 ≤ kc2 ≤ 126
+Function	
+Erases the NV graphics data defined by key codes kc1 and kc2.
+	
+• The erased area is set to be an “unused area.”
+	
+• The erased key code becomes undefined.
+Details	
+• Effective only at the top of the line in standard mode.
+	
+• Data for this counter is discarded in page mode.
+	
+• Do not use this function for macro definition because this function is not compatible with the macros.
+Reference	
+GS ( L/GS 8 L <Function 67>

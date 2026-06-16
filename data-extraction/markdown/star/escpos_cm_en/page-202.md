@@ -1,0 +1,39 @@
+<!-- image -->
+
+Name
+
+Specify mark height and line feed
+
+Code
+
+ASCII ESC GS * 1 h v
+
+Hex 1B 1D 2A 31 h v
+
+Decimal 27 29 42 49 h v
+
+Defined Region
+
+'001' ≤ h ≤ '255'
+
+'001' ≤ v ≤ '255'
+
+h ≤ v
+
+Initial Value
+
+Non-volatile memory
+
+Function
+
+Specifies mark height and line feed amount
+
+h is the mark height (number of dots); v is the line feed amount for the mark (number of dots)
+
+h and v are ASCII character strings that are represented by decimals; They are composed of character codes '0' to '9.'
+
+If a small line feed amount is specified, missing print can occur, so more than v = 16 dots is recommended.
+
+Reference
+
+ESC GS * 0, ESC GS * 2, ESC GS * W, ESC GS * C

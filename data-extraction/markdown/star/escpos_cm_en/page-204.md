@@ -1,0 +1,71 @@
+<!-- image -->
+
+Name
+
+Register mark format to non-volatile memory
+
+Code
+
+ASCII ESC GS * W
+
+Hex. 1B 1D 2A 57
+
+Decimal 27 29 42 87
+
+Defined Region ---
+
+Initial Value
+
+---
+
+Function
+
+Registers the mark format (mark height, mark line feed amount, each mark color, and each mark horizontal width) to the non-volatile memory.
+
+After registering to the non-volatile memory, the printer is reset.
+
+Considering the non-volatile memory service life, avoid using this command frequently.
+
+Reference
+
+ESC GS * 0, ESC GS * 1, ESC GS * 2, ESC GS * C
+
+## ESC	GS	*	C
+
+Name
+
+Initialize mark format in the non-volatile memory
+
+Code
+
+ASCII ESC GS * C
+
+Hex. 1B 1D 2A 43
+
+Decimal 27 29 42 67
+
+Defined Region
+
+---
+
+Initial Value ---
+
+Function
+
+Initializes the registered mark format (mark height, mark line feed amount, each mark color, and each mark horizontal width) in the non-volatile memory.  After initialization, the printer is reset.
+
+Considering the non-volatile memory service life, avoid using this command frequently.
+
+Initial Value of the Mark Format
+
+- Mark Height: '016' (16 dots)
+
+- Mark line feed amount:   '032' (32 dots)
+
+- Mark Color:     '0' (White   → All mark numbers)
+
+- Mark Horizontal Width:   '080' (80 dots   → All mark numbers)
+
+Reference
+
+ESC GS * 0, ESC GS * 1, ESC GS * 2, ESC GS * W

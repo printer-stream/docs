@@ -1,0 +1,23 @@
+## TLQ-4800
+
+## Built-in features
+
+| Print method      | 48-pin impact                                                                |
+|-------------------|------------------------------------------------------------------------------|
+| Speed             | LQ 83 cps @ 10 cpi 100 cps @ 12 cpi Draft 250 cps @ 10 cpi 300 cps @ 12 cpi  |
+| Print width       | 13.6 inches                                                                  |
+| Paper types       | Continuous, Single sheets, Envelopes, Labels                                 |
+| Paper paths       | Rear, Top                                                                    |
+| Tractor           | Push                                                                         |
+| Paper parking     | Available                                                                    |
+| Buffer size       | 8KB                                                                          |
+| Interfaces        | Parallel, Serial                                                             |
+| Fonts (typefaces) | Roman, Sans Serif, Courier, Prestige, Script, OCR B, OCR A, Orator, Orator S |
+
+## Options (with model numbers)
+
+Cut-sheet feeder C806001 (Double-bin) Tractor C800001 (Pull) Interfaces #8143, #8148, #8165 Ribbons S015001 (Fabric), S015011 (Film)
+
+## Note:
+
+## The TLQ-4800 has no DIP switches.

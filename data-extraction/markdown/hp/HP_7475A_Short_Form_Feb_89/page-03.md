@@ -1,0 +1,40 @@
+## HP  7475A Color  Desktop  Plotter
+
+## Technical  Data
+
+## Features
+
+- Two small-fonnat  media sizes
+- Full  range  of  pen/media combinations
+- High-quality output
+- Strong  software support
+- Hardware  compatibility
+- Built-in  intelligence
+
+The  HP  74  75A  color  desktop plotter  produces  high-quality A4/A- and  A3/B-size  color graphics  for  business  and  PC CAD applications. The HP 7475A is  ideal  for  professionals  who need the larger  drawings  for PERT charts,  flow  charts,  pro­ ject  schedules,  and  design applications. It also  produces professional-quality  color overheads  for  presentations  and colorful  summary  charts  for handouts  and reports.
+
+## Full Bange  of Pen/Media Combinations
+
+HP  7475A  users  can select  from paper  (regular  and  glossy),  over­ head transparency  film,  and durable  double-matte  polyester film.  Fiber-tip  pens  for  paper and transparencies come  in  10 bright colors and two tip widths. Refillable  liquid-ink  pens  are available  for  final-quality  draw­ ings  on  polyester  film.
+
+## High-quality Output
+
+The HP  74  75A  color  desktop plotter  combines  high resolu­ tion and excellent repeatability to ensure professional-quality output. It has  an addressable resolution of  0.025 mm (0.001 in.),  so  it  can  plot  up  to 1000 points in a one-inch line.
+
+<!-- image -->
+
+<!-- image -->
+
+<!-- image -->
+
+The one plotter  for both  CAD and color business  graphics
+
+When commanded to return to the same point  with no  pen change,  it  does  so within 0.1 mm (0.004 in.).  This  preci­ sion  means  your  drawings  have straight  lines,  crisp  characters, circles  that  close,  and  corners that  meet.
+
+## Strong Software Support
+
+One  of  the  most  widely­ supported plotters  in the  world, the HP 7475A works with major  software packages from the entire spectrum  of  graphics applications-integrated soft­ ware,  business  graphics/presen­ tations,  computer-aided-design/ drafting,  scientific  and statis­ tical analysis,  project scheduling,  and  more.
+
+## Hardware Compatibility
+
+A  choice of  two interfaces makes it  easy  to  add  an HP  74  75A  to  almost any system-personal computers, mainframes,  even smart  instru­ ments. The HP 74  75A  comes with RS-232-C/CCI'IT V.24 and HP-m (IEEE 488-1978) inter­ face options. And with  an additional eavesdrop  cable,  the RS-232-C  plotter  can  be  con­ nected in series  between  a computer  and  a  tenninal.

@@ -1,0 +1,23 @@
+## C O N F I D E N T I A L
+
+| Send data             | Hex        | Decimal   | Data   |
+|-----------------------|------------|-----------|--------|
+| Separator             | 1FH        | 31        | 1 byte |
+| Fixed value           | 31H        | 49        | 1 byte |
+| Separator             | 1FH        | 31        | 1 byte |
+| Other information(*2) | 30H or 31H | 48 or 49  | 1 byte |
+| Error information(*3) | 30H - 39H  | 48 - 57   | 4 byte |
+| NUL                   | 00H        | 0         | 1 byte |
+
+The decimal value of the vertical size and horizontal size is converted to text data and sent starting from the high order end.
+
+(ex: When horizontal size is 120 dots, horizontal size is '120' (in hexadecimal: 31H, 32H, and 30H / in decimal: 49, 50, and 48 ), which is 3 bytes of data.)
+
+(*2)'Other information' indicates whether printing of the data in the symbol storage area is possible or impossible. The 'Other information' is the following.
+
+## Other information
+
+| Hex   |   Decimal | Condition              |
+|-------|-----------|------------------------|
+| 30H   |        48 | Printing is possible   |
+| 31H   |        49 | Printing is impossible |

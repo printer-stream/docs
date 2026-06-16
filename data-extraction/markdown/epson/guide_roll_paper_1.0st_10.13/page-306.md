@@ -1,0 +1,7 @@
+## C O N F I D E N T I A L
+
+## GS v 0
+
+```
+[Name] Print raster bit image [Format] ASCII GS v 0 m xL xH yL yH d1...dk Hex 1D 76 30 m xL xH yL yH d1...dk Decimal 29 118 48 m xL xH yL yH d1...dk [Range] TM-J2000/J2100 : 0 ≤ m ≤ 3, 48 ≤ m ≤ 51 1 ≤ ( xL + xH × 256) ≤ 255 (1 ≤ xL ≤ 255, xH = 0) 1 ≤ ( yL + yH × 256) ≤ 4607 (0 ≤ yL ≤ 255, 0 ≤ yH ≤ 17) 0 ≤ d ≤ 255 k = ( xL + xH × 256) × ( yL + yH × 256) TM-T90 , TM-L90 : 0 ≤ m ≤ 3, 48 ≤ m ≤ 51 1 ≤ ( xL + xH × 256) ≤ 128 (1 ≤ xL ≤ 128, xH = 0) 1 ≤ ( yL + yH × 256) ≤ 4095 (0 ≤ yL ≤ 255, 0 ≤ yH ≤ 15) 0 ≤ d ≤ 255 k = ( xL + xH × 256) × ( yL + yH × 256) TM-T88IV : 0 ≤ m ≤ 3, 48 ≤ m ≤ 51 1 ≤ ( xL + xH × 256) ≤ 256 (1 ≤ xL ≤ 128, xH = 0, 1) 1 ≤ ( yL + yH × 256) ≤ 2303 (0 ≤ yL ≤ 255, 0 ≤ yH ≤ 8) 0 ≤ d ≤ 255 k = ( xL + xH × 256) × ( yL + yH × 256) TM-T20 , TM-T88V : 0 ≤ m ≤ 3, 48 ≤ m ≤ 51 1 ≤ ( xL + xH × 256) ≤ 65535 (0 ≤ xL ≤ 255, 0 ≤ xH ≤ 255) 1 ≤ ( yL + yH × 256) ≤ 2303 (0 ≤ yL ≤ 255, 0 ≤ yH ≤ 8) 0 ≤ d ≤ 255 k = ( xL + xH × 256) × ( yL + yH × 256) TM-T70 : 0 ≤ m ≤ 3, 48 ≤ m ≤ 51 1 ≤ (xL + xH × 256) ≤ 65535 (0 ≤ xL ≤ 255, 1 ≤ xH ≤ 255) 1 ≤ (yL + yH × 256) ≤ 2303 (0 ≤ yL ≤ 255, 0 ≤ yH ≤ 8) 0 ≤ d ≤ 255 k = (xL + xH × 256) × (yL + yH × 256) [Default] None
+```

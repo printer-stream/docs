@@ -1,0 +1,27 @@
+74
+Number of Head Energizing Parts
+For the TM-T88IV, the initial setting of the number of head energizing parts is “Auto 
+energizing.” You can change the setting to a customized value (See "Setting the Memory 
+Switches" on page 43.); however it does not usually need to be changed.
+Printable Area
+The printable area (left/right margins, print start position from the autocutting position, print 
+start position from the manual cutting position) of the TM-T88IV is the same as that of the 
+TM-T88III.
+Cutting Method
+The TM-T88IV uses the partial cutting method (cutting with one point in left edge left uncut) as 
+does the TM-T88III.
+Receive Buffer
+You can set the receive buffer of the TM-T88IV to 4KB or 45 bytes with DIP switch 1-2 as with the 
+TM-T88III. The buffer full condition and buffer full release condition of the TM-T88IV are the 
+same as those of the TM-T88III.
+Memory Capacity
+The sizes of the download buffer and NV graphics data of the TM-T88IV are the same as those of 
+the TM-T88III. The TM-T88IV does not have the NV user memory.
+TM-T88IV
+TM-T88III
+Number of head energizing part
+• One-part energizing
+• Two-part energizing
+• Four-part energizing
+• Auto energizing
+Fixed to two-part energizing

@@ -1,0 +1,37 @@
+## Format
+
+ASCII
+
+ESC x n
+
+```
+Hex 1B 78 n Decimal 27 120 n
+```
+
+## Parameter range
+
+```
+n = 0, 1, 48, 49
+```
+
+## Function
+
+Selects either NLQ or draft printing according to the following values:
+
+n = 0 or 48 Draft printing is selected 1 or 49 NLQ printing is selected
+
+## Notes
+
+Double-strike printing is not possible when NLQ printing is selected
+
+Printers not featuring this command
+
+None
+
+Model-dependent variations
+
+None
+
+## Related topics
+
+ESC k, Print quality (draft, LQ, or NLQ)

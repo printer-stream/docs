@@ -1,0 +1,17 @@
+<!-- image -->
+
+## 1-1-7 Notes	on	resetting	the	printer	using	the	interface
+
+The printer can be reset using interface pins 6 and 25 by changing the DIP switch or the memory switch setting. But when a signal that does not satisfy the requirements above is input, printer operation is not guaranteed.
+
+Minimum reset pulse width: TRS 1 ms (minimum)
+
+When using pin 6 (DSR)
+
+<!-- image -->
+
+MARK
+
+When using pin 25 (INIT)
+
+<!-- image -->

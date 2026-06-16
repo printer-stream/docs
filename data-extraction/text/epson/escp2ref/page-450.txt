@@ -1,0 +1,66 @@
+F-74        Feature Summary
+ESC/P 2
+Stylus 1000
+Year introduced: 1993
+Market: America, Europe, Pacific
+Built-in features
+Print method
+48-nozzle ink jet
+Speed
+LQ
+150 cps @ 10 cpi
+180 cps @ 12 cpi
+Draft
+250 cps @ 10 cpi
+300 cps @ 12 cpi
+Print width
+8 inches
+Paper types
+Single sheets, Envelopes
+Paper paths
+Top, Front
+Buffer size
+64KB or 128KB
+Interface
+Parallel
+Fonts (typefaces)
+Roman, Sans Serif, Roman T, Sans Serif H, Courier, Prestige,
+Script
+Nonprintable area
+3.0 mm at the top of single sheets
+Options (with model numbers)
+Interfaces
+C82305*/C82306*, C82307*/C82308*, C82310*, C82313*, C82312*
+Push-tractor
+C80029*
+Ink cartridge
+S020025
+*The last digit of the option model numbers shown above as an asterisk varies by country.
+Stylus 1000 default-setting mode
+This printer has no DIP switches; however, the following settings can be made in a special default-
+setting mode.
+Setting
+Options
+Character table
+Italic, PC437, PC437 Greek*, PC850, PC851*, PC852*, PC853*, PC855*, PC857*, PC860, PC863,
+PC865, PC866*, BRASCII**, Abicomp**
+Auto print direction
+On or Off
+Continuous-paper page length
+11, 12, 8.5, or 70/6 (A4) inches
+Skip-over-perforation
+On or Off
+Network interface mode
+On or Off
+Mixed text / graphics mode
+On or Off
+Auto line feed
+On or Off
+Auto interface selection
+On or Off
+Auto interface wait time
+30 sec. or 10 sec.
+Tear off
+On or Off
+* Available only in European versions.
+** Available only in the American version.

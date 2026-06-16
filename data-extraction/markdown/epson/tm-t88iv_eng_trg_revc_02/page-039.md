@@ -1,0 +1,2 @@
+- For DIP switch 2-1 (BUSY condition), see also "Selecting the BUSY Status" on page 42.
+- Do not change the setting of DIP switches 2-2, 2-6, and 2-7. Otherwise, the printer may not operate normally.

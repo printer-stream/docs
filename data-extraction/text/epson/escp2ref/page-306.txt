@@ -1,0 +1,44 @@
+Sending Graphics Data        R-75
+2. Use the ESC ( U command to set the unit to match the vertical dot density
+selected.
+3. Divide your image into bands. These bands should be 1, 8, or 24-dots high.
+Parameter m in the ESC . command should be set to this value.
+4. Use the ESC + command to set line spacing to match the height of the vertical
+band. If you select 360-dpi dot density, the parameter for the ESC + command
+is the same as parameter m in the ESC . command. If you select 180, the ESC
++ parameter equals m × 2.
+5. Set the vertical and horizontal positions to begin the first graphics band.
+6. Use the ESC . command to send a graphics band m dots high.
+7. Send the CR and LF commands at the end of each block; then move the
+horizontal position to the beginning of the next graphics band.
+8. Repeat steps 6 and 7 until all graphics data is sent for the page.
+9. Send a FF command at the end of the page.
+10. Repeat steps 6 to 9 for all pages in the print job.
+The format of the ESC . (standard raster graphics) command is as follows:
+ESC . c v h m nL nH d1 d2 . . . dk
+c = 0
+Selects full graphics mode; all data bytes are treated
+as print data
+1 
+Selects run length encoded compressed mode; data
+treated as follows: counter byte, data, counter byte,
+data
+v 
+Specifies vertical dot density (independent of
+number of pinsin head)
+(vertical dot density) = 3600
+v
+ dpi
+h 
+Specifies horizontal dot density (independent of
+number of pins in head)
+(horizontal dot density) = 3600
+h
+ dpi
+m 
+Specifies vertical dot count (1, 8, or 24)
+nL, nH 
+Specifies horizontal dot count
+(horizontal dot count) = ((nH × 256) + nL)
+d1 . . . dk 
+Data or counter/data combination

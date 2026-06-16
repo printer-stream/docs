@@ -1,0 +1,32 @@
+<!-- image -->
+
+## · Kanji Control Commands (DBCS Settings, Kanji Specifications Only)
+
+| Commands   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   |
+|------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|
+| Commands   | TSP700       | TSP600       | TSP800       | TUP900       | TSP1000      | TSP700II     | TSP650       | TUP500       | TSP800II     | FVP10        | BSC10        | TSP043       | TSP650II     | TSP650IISK   |
+| FS !       | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            |
+| FS &       | Spec. A      | Spec. A      | Spec. A      | Spec. A      | Spec. A      | Spec. A      | Spec. A      | Spec. A      | Spec. A      | Spec. A      | Spec. B      | Spec.B       | Spec.A       | Spec.A       |
+| FS -       | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            |
+| FS .       | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            |
+| FS 2       | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            |
+| FS C       | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            | x            | x            | ○            | ○            |
+| FS S       | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            |
+| FSW        | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            | ○            |
+
+## · ESC/POS Black Mark Related Commands (When black marks are effective)
+
+| Commands   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   |
+|------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|
+| Commands   | TSP700       | TSP600       | TSP800       | TUP900       | TSP1000      | TSP700II     | TSP650       | TUP500       | TSP800II     | FVP10        | BSC10        | TSP043       | TSP650II     | TSP650IISK   |
+| FF         | ○            | ○            | ○            | ○            | ○            | ○            | x            | ○            | ○            | ○            | ○            | ○            | x            | x            |
+| DLE ENQ    | ○            | ○            | ○            | ○            | ○            | ○            | x            | ○            | ○            | ○            | ○            | ○            | x            | x            |
+| GS FF      | x            | x            | x            | ○            | ○            | ○            | x            | ○            | ○            | ○            | ○            | ○            | x            | x            |
+| GS ( F     | x            | x            | x            | ○            | ○            | x            | x            | x            | x            | x            | x            | x            | x            | x            |
+| GS ( M n=1 | x            | x            | x            | ○            | ○            | x            | x            | x            | x            | x            | x            | x            | x            | x            |
+| GS ( M n=2 | x            | x            | x            | ○            | ○            | x            | x            | x            | x            | x            | x            | x            | x            | x            |
+| GS ( M n=3 | x            | x            | x            | ○            | ○            | x            | x            | x            | x            | x            | x            | x            | x            | x            |
+| GS <       | ○            | ○            | ○            | x            | x            | ○            | x            | x            | ○            | ○            | ○            | ○            | x            | x            |
+| GS V       | ○            | ○            | ○            | ○            | ○            | ○            | x            | ○            | ○            | ○            | ○            | ○            | x            | x            |
+
+## · STAR Original Commands

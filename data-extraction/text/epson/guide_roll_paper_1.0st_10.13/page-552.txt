@@ -1,0 +1,10 @@
+C O N F I D E N T I A L
+Paper roll
+Miscellaneous commands     FS ( E pL pH fn [parameter]
+ 
+Ver. 10.13
+p. 552
+•
+While processing this command, the printer may become BUSY while writing the data to the NV 
+memory and stop receiving data.  Therefore, be sure not to transmit data, including the real-time 
+commands while the printer is BUSY.

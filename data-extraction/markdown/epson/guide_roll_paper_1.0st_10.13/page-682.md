@@ -1,0 +1,19 @@
+## C O N F I D E N T I A L
+
+- Data is the character string specified by d1... dk in Function 1 of the GS ( C command. (Control codes: Hexadecimal = 00H - 1FH, 7FH/Decimal = 0 - 31, 127.)
+- The terminator is a code, automatically assigned when the printer stores data.
+- ■ NV user memory data remains valid until the host sends a deletion or storage function command.
+- ■ Data is written to the non-volatile memory by Function 0, 1, or 6. When using those commands, note the following:
+- Do not turn off the power or reset the printer from the interface when the relevant functions are being executed.
+- The printer may be BUSY while the functions are performing. The printer does not process any received data while it is BUSY; therefore, under no circumstances should the host send data at this time.
+- Excessive use of this function may destroy the non-volatile memory. As a guideline, do not use any combination of the following commands more than 10 times per day for writing data in the nonvolatile memory: GS ( A , GS ( C , GS ( E , GS ( L / GS 8 L, GS ( M, GS g 0 , FS g 1 , FS q .
+- ■ Note the rules below for the operating NV memory (store data / cancel data):
+- Even if the paper feed button is pressed, the printer does not feed paper.
+- The printer does not process real-time commands.
+- Even if 'ASB is enabled' is specified, the printer does not send ASB status.
+- ■ You can use the NV user memory as an index of note for the following:
+- Customize information: index of the NV bit image definition contents, title of setting by GS ( M
+- Maintenance information: ink ribbon replacement date, telephone number of repair company, etc. [Notes for transmitting processing of the block data]
+- ■ Data is sent by Function 2, 3, 4, or 5. When you use these functions, obey the following rules.
+- When the host PC transmits the function data, transmit the next data after receiving the corresponding data from the printer.
+- With serial interface printers, use this function when the host is READY.

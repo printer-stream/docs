@@ -1,0 +1,40 @@
+## Note:
+
+- These commands have no effect on the horizontal print position.
+- The printer ignores the ESC ( v command if it would move the print position above the top margin.
+- If a command would move the print position below the bottom margin position, the print position moves to the top-margin position on the following page.
+- You cannot move the print position more than 179/360 inch in the negative direction from the current print position.
+- The printer ignores this command under the following conditions:
+- -The command would move the print position more than 179/360inch in the negative direction
+- -The command would move the print position in the negative direction after a graphics command is sent on the current line
+- -The command would move the print position in the negative direction beyond the position of any previous graphics printing
+
+<!-- image -->
+
+For Non-ESC/P 2 printers, the vertical position is defined as follows:
+
+- The position 20/180 inch (7/72 inch for 9-pin printers) above the baseline during character printing
+- The position of the top printable row of dots during graphics printing
+
+The following commands are recommended for moving the vertical print position within a page.
+
+```
+ESC J Advance the print position vertically LF Line feed
+```
+
+The format for the ESC J command is as follows:
+
+ESC J n
+
+This command moves the paper forward according to the following formula.
+
+```
+24/48-pin printers (distance down) = n/180 inches 9-pin printers (distance down) = n/216 inches
+```
+
+This command has no effect on the horizontal print position.
+
+The LF command affects both the vertical and horizontal positions. Sending the LF command performs the following functions:
+
+- Moves the print position one line forward in the currently selected line spacing
+- Moves the horizontal print position to the left-margin position

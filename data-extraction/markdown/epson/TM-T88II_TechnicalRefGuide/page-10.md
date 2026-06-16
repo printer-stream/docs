@@ -1,0 +1,52 @@
+| ESC/POS Commands . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                            | . . 3-5   |
+|---------------------------------------------------------------------------------------------------------|-----------|
+| Various Utilities . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                 | . . 3-6   |
+| Switches and Buttons . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                  | . . 3-6   |
+| . . Paper FEED Button . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                       | . . 3-6   |
+| . . Panel LEDs and Error Status . . . . . . . . . . . . . . . . . . . . . . . . . . . .                 | . . 3-7   |
+| Power LED . . . . . . . . . . . . . . . . . . . . .                                                     | . 3-7     |
+| . . . . . . . . . . . . . . . . . . No Roll Paper (PAPER OUT) LED . . . . . . . . . . . . . . . . . . . | . . . 3-7 |
+| Error LED . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .               | . . 3-7   |
+| Sensors . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   | . . 3-10  |
+| Paper Sensors . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                           | . . 3-10  |
+| . . . . . Printer Cover Sensor . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .            | . . 3-10  |
+| Offline . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .             | . . 3-11  |
+| . Busy State . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .            | . . 3-11  |
+| NVRAM(Non-volatile Memory) . . . . . . . . . . . . . . . . . . . . . . . . .                            | . . 3-12  |
+| Bar Code Printing . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .           | . . 3-12  |
+| Operating Mode (Switch Panel Operation) . . . . . . . . . . . . . . . .                                 | . . 3-13  |
+| Self-test Mode . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                | . . 3-13  |
+| FAQ List . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    | . . 3-14  |
+| Q: Why has my print data dropped out? . . . . . . . . . . . . . .                                       | . . 3-14  |
+| Q: Why does the drawer kick-out not operate properly?                                                   | . . 3-15  |
+| Q: I cannot print part of Page 0 in Visual Basic. Why? . . .                                            | . . 3-15  |
+| Chapter 4 ESC/POS Command-related Information                                                           |           |
+| NVMemory (Non-volatile Memory) . . . . . . . . . . . . . . . . . . . . .                                | . . 4-1   |
+| Using NVMemory . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                        | . . 4-1   |
+| Printer Status . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      | . . 4-2   |
+| Precautions When the Printer Is Offline . . . . . . . . . . . . . . . . . . .                           | . . 4-2   |
+| Outputting Hex Dumps . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                    | . . 4-2   |
+| Chapter 5 Product Specifications                                                                        |           |
+| Product Specifications (TM-T88II/TM-T88III) . . . . . . . . . . . . . .                                 | . . 5-1   |
+| Print Specifications (TM-T88II/TM-T88III) . . . . . . . . . . . . . . . .                               | . . 5-2   |
+| Character Specifications (TM-T88II/TM-T88III) . . . . . . . . . . .                                     | . . 5-3   |
+| Paper Specifications (TM-T88II/TM-T88III) . . . . . . . . . . . . . . .                                 | . . 5-3   |
+| Printable Area (TM-T88II/TM-T88III) . . . . . . . . . . . . . . . . . . . .                             | . . 5-4   |
+| Print Position versus Cutter Position (TM-88II/TM88III) . . .                                           | . . 5-5   |
+| . Overview of External Dimensions (TM-T88II/TM-T88III) . . .                                            | . . 5-6   |
+| External Dimensions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                       | . . 5-6   |
+| Operating Specifications (TM-T88II/TM-T88III) . . . . . . . . . . . .                                   | . . 5-7   |
+| Appendix A Interfaces and Connectors                                                                    |           |
+| RS-232 Serial Interface . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .             | . . A-1   |
+| Interface Board Specifications (RS-232-compliant) . . . . . .                                           | . . A-1   |
+| Functions of each Connector Pin . . . . . . . . . . . . . . . . . . . . .                               | . . A-2   |
+| XON/XOFF . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                  | . . A-2   |
+| Code . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .          | . . A-3   |
+| IEEE 1284 Parallel Interface . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                  | . . A-3   |
+| Modes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                         | . . A-3   |
+| . . . . . . . Interface Signals . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   | . . A-5   |
+| Appendix B Options and Consumables                                                                      |           |
+| Roll Paper . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      | . . B-1   |
+| Power Supply . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .          | . . B-1   |
+| PS-170 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .          | . . B-1   |
+| PS-180 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .          | . . B-2   |

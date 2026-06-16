@@ -1,0 +1,35 @@
+56
+Drawer Circuitry
+Setting the Buzzer
+Models with the buzzer function can beep the buzzer when the drawer is opened.
+The buzzer setting is performed by setting the DIP switches for the buzzer and specifying 
+connector pin numbers to which a command outputs a pulse signal.
+DIP 
+switch
+Specified connector pin
+ON
+OFF
+Initial setting
+1
+Drawer kick out connector pin 2
+Buzzer beeps.
+Buzzer does not 
+beep.
+ON
+2
+Drawer kick out connector pin 5
+Buzzer beeps.
+Buzzer does not 
+beep.
+OFF
+Since the buzzer drive signal and the cash drawer drive signal are common in the printer, 
+do not use the same connector pin numbers to output the signal for the buzzer and the 
+cash drawer.
+For detailed information about ESC/POS commands, see the ESC/POS Application 
+Programing Guide.
+With shielded
+Drawer kick-out connector
+Printer side
+User side [Drawer kick-out side]
+Drawer open/close switch
+Drawer kick-out solenoid

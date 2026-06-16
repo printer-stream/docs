@@ -1,0 +1,70 @@
+C O N F I D E N T I A L
+Paper roll
+Two-dimension code commands     GS ( k
+ 
+Ver. 10.13
+p. 669
+ (b) Concatenated code structure
+■The data shown below is added automatically in encoding.
+•
+Start character (CODE A, CODE B, CODE C) and FNC1
+•
+Check digit B (1 character)
+•
+Stop character
+■The 4 special characters (SP, "(," ")," "*") are processed as shown in the table below.
+■The HRI characters of special characters are processed as follows. (“SP” indicates a space)
+Start 
+character
+FNC
+1
+AI
+Data 
+part
+Check digit 
+A
+FNC
+1
+AI
+Data 
+part
+Check digit 
+A
+Check digit 
+B
+Stop 
+character
+Automatically 
+added
+<Function 480 (d1...dn)>
+Automatically added
+Special characters
+Character
+Hex
+Decimal
+Processing
+SP
+20
+32
+After d1, the first SP is processed as AI and the data part delimiter, and 
+a space is inserted for the HRI characters. Spaces are inserted for the 
+HRI characters for subsequent SP. These spaces do not constitute 
+encoded data.
+(
+28
+40
+ "(" is inserted for the HRI character. "(" does not constitute encoded 
+data.
+)
+29
+41
+After d1, the first ")" is processed as AI and the data part delimiter, 
+and ")" is inserted for the HRI characters. ")" are inserted for the HRI 
+characters for subsequent ")". In case of any, "(" does not constitute 
+encoded data.
+*
+2A
+42
+Check digit A (1 character), calculated with modulus 10 is added as the 
+data part at the position of *. "*" is not an HRI character, but check 
+digits are inserted for HRI characters.

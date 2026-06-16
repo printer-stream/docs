@@ -1,0 +1,21 @@
+Chapter 1   Product Overview
+13
+1
+Product Overview
+This chapter describes features and specifications of the product.
+Features
+Printing
+• Issuing of batch receipts is possible. (200 mm/s maximum)
+• Graphics are also printed with high-speed printing.
+• Two-color printing is possible on the two-color thermal paper.
+Handling
+• Easy drop-in paper loading
+Software
+• Command protocol is based on the ESC/POS® Proprietary Command System.
+• OPOS ADK and Windows® printer driver are available.
+• In addition to supporting several kinds of bar code printing, two-dimensional code (PDF417, 
+QR code) printing is possible.
+• Various layouts are possible by using page mode.
+• A maintenance counter function is supported.
+Interface
+Various interface boards (EPSON UB series) can be used.

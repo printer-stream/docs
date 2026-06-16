@@ -1,0 +1,8 @@
+C-70        Individual Command Explanations
+Printers not featuring this command
+DFX-5000+, DFX-5000, DFX-8000, FX-850, FX-1050
+Model-dependent variations
+None
+Related topics
+VT, HT, ESC B, ESC D, ESC P, ESC M, SO, ESC 0, ESC 2, ESC 3, Moving the horizontal
+position, Moving the vertical position

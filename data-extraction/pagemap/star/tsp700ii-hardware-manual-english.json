@@ -1,0 +1,414 @@
+{
+  "stem": "star/tsp700ii-hardware-manual-english",
+  "vendor": "star",
+  "doc": "tsp700ii-hardware-manual-english",
+  "source_pdf": "pdf/star/tsp700ii-hardware-manual-english.pdf",
+  "page_count": 32,
+  "pad_width": 2,
+  "pipeline_version": "0.3.0",
+  "generated_at": "2026-06-16T19:25:27Z",
+  "phases": {
+    "render": {
+      "tool": "pymupdf",
+      "tool_version": "1.27.2.3",
+      "duration_seconds": 7.621,
+      "per_page_seconds_avg": 0.238,
+      "started_at": "2026-06-16T19:24:18Z",
+      "ended_at": "2026-06-16T19:24:26Z",
+      "params": {
+        "small_width": 1024,
+        "big_dpi": 200,
+        "jpeg_quality": 85
+      },
+      "status": "ok"
+    },
+    "text": {
+      "tool": "pymupdf",
+      "tool_version": "1.27.2.3",
+      "duration_seconds": 0.164,
+      "per_page_seconds_avg": 0.005,
+      "started_at": "2026-06-16T19:24:26Z",
+      "ended_at": "2026-06-16T19:24:26Z",
+      "params": {},
+      "status": "ok"
+    },
+    "markdown": {
+      "tool": "docling",
+      "tool_version": "2.102.2",
+      "duration_seconds": 60.781,
+      "per_page_seconds_avg": 1.899,
+      "started_at": "2026-06-16T19:24:26Z",
+      "ended_at": "2026-06-16T19:25:27Z",
+      "params": {
+        "do_ocr": true
+      },
+      "status": "ok"
+    },
+    "quality": {
+      "tool": "builtin",
+      "tool_version": "0.3.0",
+      "duration_seconds": 0.062,
+      "per_page_seconds_avg": 0.002,
+      "started_at": "2026-06-16T19:25:27Z",
+      "ended_at": "2026-06-16T19:25:27Z",
+      "params": {
+        "threshold": 0.5
+      },
+      "status": "ok"
+    }
+  },
+  "pages": [
+    {
+      "page": 1,
+      "label": "page-01",
+      "markdown": "data-extraction/markdown/star/tsp700ii-hardware-manual-english/page-01.md",
+      "text": "data-extraction/text/star/tsp700ii-hardware-manual-english/page-01.txt",
+      "jpeg_small": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/small/page-01.jpg",
+      "jpeg_big": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/big/page-01.jpg",
+      "source": "text-layer",
+      "quality_score": 0.9375,
+      "flagged": false
+    },
+    {
+      "page": 2,
+      "label": "page-02",
+      "markdown": "data-extraction/markdown/star/tsp700ii-hardware-manual-english/page-02.md",
+      "text": "data-extraction/text/star/tsp700ii-hardware-manual-english/page-02.txt",
+      "jpeg_small": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/small/page-02.jpg",
+      "jpeg_big": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/big/page-02.jpg",
+      "source": "text-layer",
+      "quality_score": 0.85,
+      "flagged": false
+    },
+    {
+      "page": 3,
+      "label": "page-03",
+      "markdown": "data-extraction/markdown/star/tsp700ii-hardware-manual-english/page-03.md",
+      "text": "data-extraction/text/star/tsp700ii-hardware-manual-english/page-03.txt",
+      "jpeg_small": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/small/page-03.jpg",
+      "jpeg_big": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/big/page-03.jpg",
+      "source": "text-layer",
+      "quality_score": 0.85,
+      "flagged": false
+    },
+    {
+      "page": 4,
+      "label": "page-04",
+      "markdown": "data-extraction/markdown/star/tsp700ii-hardware-manual-english/page-04.md",
+      "text": "data-extraction/text/star/tsp700ii-hardware-manual-english/page-04.txt",
+      "jpeg_small": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/small/page-04.jpg",
+      "jpeg_big": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/big/page-04.jpg",
+      "source": "text-layer",
+      "quality_score": 0.85,
+      "flagged": false
+    },
+    {
+      "page": 5,
+      "label": "page-05",
+      "markdown": "data-extraction/markdown/star/tsp700ii-hardware-manual-english/page-05.md",
+      "text": "data-extraction/text/star/tsp700ii-hardware-manual-english/page-05.txt",
+      "jpeg_small": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/small/page-05.jpg",
+      "jpeg_big": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/big/page-05.jpg",
+      "source": "text-layer",
+      "quality_score": 0.85,
+      "flagged": false
+    },
+    {
+      "page": 6,
+      "label": "page-06",
+      "markdown": "data-extraction/markdown/star/tsp700ii-hardware-manual-english/page-06.md",
+      "text": "data-extraction/text/star/tsp700ii-hardware-manual-english/page-06.txt",
+      "jpeg_small": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/small/page-06.jpg",
+      "jpeg_big": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/big/page-06.jpg",
+      "source": "text-layer",
+      "quality_score": 0.85,
+      "flagged": false
+    },
+    {
+      "page": 7,
+      "label": "page-07",
+      "markdown": "data-extraction/markdown/star/tsp700ii-hardware-manual-english/page-07.md",
+      "text": "data-extraction/text/star/tsp700ii-hardware-manual-english/page-07.txt",
+      "jpeg_small": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/small/page-07.jpg",
+      "jpeg_big": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/big/page-07.jpg",
+      "source": "text-layer",
+      "quality_score": 0.5501,
+      "flagged": false
+    },
+    {
+      "page": 8,
+      "label": "page-08",
+      "markdown": "data-extraction/markdown/star/tsp700ii-hardware-manual-english/page-08.md",
+      "text": "data-extraction/text/star/tsp700ii-hardware-manual-english/page-08.txt",
+      "jpeg_small": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/small/page-08.jpg",
+      "jpeg_big": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/big/page-08.jpg",
+      "source": "text-layer",
+      "quality_score": 0.9333,
+      "flagged": false
+    },
+    {
+      "page": 9,
+      "label": "page-09",
+      "markdown": "data-extraction/markdown/star/tsp700ii-hardware-manual-english/page-09.md",
+      "text": "data-extraction/text/star/tsp700ii-hardware-manual-english/page-09.txt",
+      "jpeg_small": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/small/page-09.jpg",
+      "jpeg_big": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/big/page-09.jpg",
+      "source": "text-layer",
+      "quality_score": 0.9669,
+      "flagged": false
+    },
+    {
+      "page": 10,
+      "label": "page-10",
+      "markdown": "data-extraction/markdown/star/tsp700ii-hardware-manual-english/page-10.md",
+      "text": "data-extraction/text/star/tsp700ii-hardware-manual-english/page-10.txt",
+      "jpeg_small": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/small/page-10.jpg",
+      "jpeg_big": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/big/page-10.jpg",
+      "source": "text-layer",
+      "quality_score": 0.9496,
+      "flagged": false
+    },
+    {
+      "page": 11,
+      "label": "page-11",
+      "markdown": "data-extraction/markdown/star/tsp700ii-hardware-manual-english/page-11.md",
+      "text": "data-extraction/text/star/tsp700ii-hardware-manual-english/page-11.txt",
+      "jpeg_small": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/small/page-11.jpg",
+      "jpeg_big": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/big/page-11.jpg",
+      "source": "text-layer",
+      "quality_score": 0.9642,
+      "flagged": false
+    },
+    {
+      "page": 12,
+      "label": "page-12",
+      "markdown": "data-extraction/markdown/star/tsp700ii-hardware-manual-english/page-12.md",
+      "text": "data-extraction/text/star/tsp700ii-hardware-manual-english/page-12.txt",
+      "jpeg_small": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/small/page-12.jpg",
+      "jpeg_big": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/big/page-12.jpg",
+      "source": "text-layer",
+      "quality_score": 0.85,
+      "flagged": false
+    },
+    {
+      "page": 13,
+      "label": "page-13",
+      "markdown": "data-extraction/markdown/star/tsp700ii-hardware-manual-english/page-13.md",
+      "text": "data-extraction/text/star/tsp700ii-hardware-manual-english/page-13.txt",
+      "jpeg_small": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/small/page-13.jpg",
+      "jpeg_big": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/big/page-13.jpg",
+      "source": "text-layer",
+      "quality_score": 0.9979,
+      "flagged": false
+    },
+    {
+      "page": 14,
+      "label": "page-14",
+      "markdown": "data-extraction/markdown/star/tsp700ii-hardware-manual-english/page-14.md",
+      "text": "data-extraction/text/star/tsp700ii-hardware-manual-english/page-14.txt",
+      "jpeg_small": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/small/page-14.jpg",
+      "jpeg_big": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/big/page-14.jpg",
+      "source": "text-layer",
+      "quality_score": 0.9772,
+      "flagged": false
+    },
+    {
+      "page": 15,
+      "label": "page-15",
+      "markdown": "data-extraction/markdown/star/tsp700ii-hardware-manual-english/page-15.md",
+      "text": "data-extraction/text/star/tsp700ii-hardware-manual-english/page-15.txt",
+      "jpeg_small": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/small/page-15.jpg",
+      "jpeg_big": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/big/page-15.jpg",
+      "source": "text-layer",
+      "quality_score": 0.9964,
+      "flagged": false
+    },
+    {
+      "page": 16,
+      "label": "page-16",
+      "markdown": "data-extraction/markdown/star/tsp700ii-hardware-manual-english/page-16.md",
+      "text": "data-extraction/text/star/tsp700ii-hardware-manual-english/page-16.txt",
+      "jpeg_small": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/small/page-16.jpg",
+      "jpeg_big": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/big/page-16.jpg",
+      "source": "text-layer",
+      "quality_score": 0.85,
+      "flagged": false
+    },
+    {
+      "page": 17,
+      "label": "page-17",
+      "markdown": "data-extraction/markdown/star/tsp700ii-hardware-manual-english/page-17.md",
+      "text": "data-extraction/text/star/tsp700ii-hardware-manual-english/page-17.txt",
+      "jpeg_small": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/small/page-17.jpg",
+      "jpeg_big": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/big/page-17.jpg",
+      "source": "text-layer",
+      "quality_score": 0.85,
+      "flagged": false
+    },
+    {
+      "page": 18,
+      "label": "page-18",
+      "markdown": "data-extraction/markdown/star/tsp700ii-hardware-manual-english/page-18.md",
+      "text": "data-extraction/text/star/tsp700ii-hardware-manual-english/page-18.txt",
+      "jpeg_small": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/small/page-18.jpg",
+      "jpeg_big": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/big/page-18.jpg",
+      "source": "text-layer",
+      "quality_score": 0.9702,
+      "flagged": false
+    },
+    {
+      "page": 19,
+      "label": "page-19",
+      "markdown": "data-extraction/markdown/star/tsp700ii-hardware-manual-english/page-19.md",
+      "text": "data-extraction/text/star/tsp700ii-hardware-manual-english/page-19.txt",
+      "jpeg_small": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/small/page-19.jpg",
+      "jpeg_big": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/big/page-19.jpg",
+      "source": "text-layer",
+      "quality_score": 0.9953,
+      "flagged": false
+    },
+    {
+      "page": 20,
+      "label": "page-20",
+      "markdown": "data-extraction/markdown/star/tsp700ii-hardware-manual-english/page-20.md",
+      "text": "data-extraction/text/star/tsp700ii-hardware-manual-english/page-20.txt",
+      "jpeg_small": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/small/page-20.jpg",
+      "jpeg_big": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/big/page-20.jpg",
+      "source": "text-layer",
+      "quality_score": 0.85,
+      "flagged": false
+    },
+    {
+      "page": 21,
+      "label": "page-21",
+      "markdown": "data-extraction/markdown/star/tsp700ii-hardware-manual-english/page-21.md",
+      "text": "data-extraction/text/star/tsp700ii-hardware-manual-english/page-21.txt",
+      "jpeg_small": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/small/page-21.jpg",
+      "jpeg_big": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/big/page-21.jpg",
+      "source": "text-layer",
+      "quality_score": 0.9647,
+      "flagged": false
+    },
+    {
+      "page": 22,
+      "label": "page-22",
+      "markdown": "data-extraction/markdown/star/tsp700ii-hardware-manual-english/page-22.md",
+      "text": "data-extraction/text/star/tsp700ii-hardware-manual-english/page-22.txt",
+      "jpeg_small": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/small/page-22.jpg",
+      "jpeg_big": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/big/page-22.jpg",
+      "source": "text-layer",
+      "quality_score": 0.85,
+      "flagged": false
+    },
+    {
+      "page": 23,
+      "label": "page-23",
+      "markdown": "data-extraction/markdown/star/tsp700ii-hardware-manual-english/page-23.md",
+      "text": "data-extraction/text/star/tsp700ii-hardware-manual-english/page-23.txt",
+      "jpeg_small": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/small/page-23.jpg",
+      "jpeg_big": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/big/page-23.jpg",
+      "source": "text-layer",
+      "quality_score": 0.85,
+      "flagged": false
+    },
+    {
+      "page": 24,
+      "label": "page-24",
+      "markdown": "data-extraction/markdown/star/tsp700ii-hardware-manual-english/page-24.md",
+      "text": "data-extraction/text/star/tsp700ii-hardware-manual-english/page-24.txt",
+      "jpeg_small": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/small/page-24.jpg",
+      "jpeg_big": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/big/page-24.jpg",
+      "source": "text-layer",
+      "quality_score": 0.85,
+      "flagged": false
+    },
+    {
+      "page": 25,
+      "label": "page-25",
+      "markdown": "data-extraction/markdown/star/tsp700ii-hardware-manual-english/page-25.md",
+      "text": "data-extraction/text/star/tsp700ii-hardware-manual-english/page-25.txt",
+      "jpeg_small": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/small/page-25.jpg",
+      "jpeg_big": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/big/page-25.jpg",
+      "source": "text-layer",
+      "quality_score": 0.85,
+      "flagged": false
+    },
+    {
+      "page": 26,
+      "label": "page-26",
+      "markdown": "data-extraction/markdown/star/tsp700ii-hardware-manual-english/page-26.md",
+      "text": "data-extraction/text/star/tsp700ii-hardware-manual-english/page-26.txt",
+      "jpeg_small": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/small/page-26.jpg",
+      "jpeg_big": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/big/page-26.jpg",
+      "source": "text-layer",
+      "quality_score": 0.9946,
+      "flagged": false
+    },
+    {
+      "page": 27,
+      "label": "page-27",
+      "markdown": "data-extraction/markdown/star/tsp700ii-hardware-manual-english/page-27.md",
+      "text": "data-extraction/text/star/tsp700ii-hardware-manual-english/page-27.txt",
+      "jpeg_small": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/small/page-27.jpg",
+      "jpeg_big": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/big/page-27.jpg",
+      "source": "text-layer",
+      "quality_score": 0.9989,
+      "flagged": false
+    },
+    {
+      "page": 28,
+      "label": "page-28",
+      "markdown": "data-extraction/markdown/star/tsp700ii-hardware-manual-english/page-28.md",
+      "text": "data-extraction/text/star/tsp700ii-hardware-manual-english/page-28.txt",
+      "jpeg_small": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/small/page-28.jpg",
+      "jpeg_big": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/big/page-28.jpg",
+      "source": "text-layer",
+      "quality_score": 1.0,
+      "flagged": false
+    },
+    {
+      "page": 29,
+      "label": "page-29",
+      "markdown": "data-extraction/markdown/star/tsp700ii-hardware-manual-english/page-29.md",
+      "text": "data-extraction/text/star/tsp700ii-hardware-manual-english/page-29.txt",
+      "jpeg_small": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/small/page-29.jpg",
+      "jpeg_big": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/big/page-29.jpg",
+      "source": "text-layer",
+      "quality_score": 0.85,
+      "flagged": false
+    },
+    {
+      "page": 30,
+      "label": "page-30",
+      "markdown": "data-extraction/markdown/star/tsp700ii-hardware-manual-english/page-30.md",
+      "text": "data-extraction/text/star/tsp700ii-hardware-manual-english/page-30.txt",
+      "jpeg_small": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/small/page-30.jpg",
+      "jpeg_big": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/big/page-30.jpg",
+      "source": "text-layer",
+      "quality_score": 1.0,
+      "flagged": false
+    },
+    {
+      "page": 31,
+      "label": "page-31",
+      "markdown": "data-extraction/markdown/star/tsp700ii-hardware-manual-english/page-31.md",
+      "text": "data-extraction/text/star/tsp700ii-hardware-manual-english/page-31.txt",
+      "jpeg_small": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/small/page-31.jpg",
+      "jpeg_big": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/big/page-31.jpg",
+      "source": "text-layer",
+      "quality_score": 0.9864,
+      "flagged": false
+    },
+    {
+      "page": 32,
+      "label": "page-32",
+      "markdown": "data-extraction/markdown/star/tsp700ii-hardware-manual-english/page-32.md",
+      "text": "data-extraction/text/star/tsp700ii-hardware-manual-english/page-32.txt",
+      "jpeg_small": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/small/page-32.jpg",
+      "jpeg_big": "data-extraction/jpeg/star/tsp700ii-hardware-manual-english/big/page-32.jpg",
+      "source": "text-layer",
+      "quality_score": 0.0,
+      "flagged": true
+    }
+  ]
+}

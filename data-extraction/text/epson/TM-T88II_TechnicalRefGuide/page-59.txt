@@ -1,0 +1,18 @@
+Rev. A
+Product Specifications   5-5
+TM-T88II/T88III Technical Reference Guide
+5.6  Print Position versus Cutter Position (TM-88II/TM88III)
+The following illustration shows the relationship between print position and cutter position.
+ Figure 5-2  Print position versus cutter position
+Note:
+The values in the figure are center values. The margins vary, due to paper slack or paper variations from 
+piece to piece. Allow a certain margin of error when setting the paper cutter cut position.
+Autocutter blade position
+Maximum printable area
+Final line of previous 
+receipt
+Approx. 29 mm
+Approx. 15 mm
+Manual cutter position
+Print direction
+Cut position

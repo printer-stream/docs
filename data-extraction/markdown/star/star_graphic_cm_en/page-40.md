@@ -1,0 +1,41 @@
+<!-- image -->
+
+Rev. 2.31
+
+- --- Specification (2) power saving mode compatible model ---
+
+## ESC RS C n
+
+| [Name]   | Select print mode   | Select print mode   |    |    |    |
+|----------|---------------------|---------------------|----|----|----|
+| [Code]   | ASCII               | ESC                 | RS | C  | n  |
+|          | Hex                 | 1B                  | 1E | 43 | n  |
+|          | Decimal             | 27                  | 30 | 67 | n  |
+
+[Defined Area]  0
+
+≦ n ≦ 1, 48 ≦ n ≦ 49 ('0' ≦ n ≦ '1')
+
+[Initial Value]
+
+n = 0, 48
+
+[Function]
+
+Selects the print mode.
+
+| DIPSW setting         | n     | Printing Mode                        |
+|-----------------------|-------|--------------------------------------|
+| Enable energy-saving  | 0, 48 | Invalid                              |
+|                       | 1, 49 | Invalid                              |
+| Disable energy-saving | 0, 48 | Selection of standard print mode     |
+|                       | 1, 49 | Selection of two-color printing mode |
+
+## Setting details when selecting and canceling two-color print mode are as follows.
+
+| Selects/Cancels two-color print mode                     | Configuration details                                                                                                                                                                                                                                                                                                                                                                    |
+|----------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| When disengaged When the standard print mode is selected | When the two-color printing mode is released with this command, the following process is executed ・ If there is a non-printed data, print the non-printed data in a two-color mode. ・ Initialize the print color (two-color printing mode is set to black) ・ Set the print density setting in the monochromatic print mode ・ Set the print speed setting in the monochromatic print mode |
+| When selected When two-color printing mode is selected   | When the two-color printing mode is selected by this command, the following process is executed ・ If there is unprinted data, and prints the unprinted data in the monochrome mode ・ Initialize the print color (two-color printing mode is set to black) ・ And set the print density setting in the two-color printing mode                                                             |
+
+--------------------------------------------------------------------------------------

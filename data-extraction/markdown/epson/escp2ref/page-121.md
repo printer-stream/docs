@@ -1,0 +1,37 @@
+ESC 4
+
+Select italic font
+
+## Format
+
+| ASCII   | ESC   |   4 |
+|---------|-------|-----|
+| Hex     | 1B    |  34 |
+| Decimal | 27    |  52 |
+
+## Function
+
+Sets the style attribute of the font to italic
+
+## Default
+
+Normal (non-italic) style
+
+## Notes
+
+- This command selects italic printing even if the italic character table is not selected.
+- Always cancel italics before defining user-defined characters.
+
+## Printers not featuring this command
+
+None
+
+## Model-dependent variations
+
+None
+
+## Related topics
+
+ESC 5, Select a font, Selecting the style ESC/P 2
+
+ESC/P

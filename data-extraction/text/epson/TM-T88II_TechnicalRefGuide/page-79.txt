@@ -1,0 +1,4 @@
+Rev. B
+Character Code Tables   C-7
+TM-T88II/T88III Technical Reference Guide
+C.7  Page 16 (WPC1252) (TM-T88III only)

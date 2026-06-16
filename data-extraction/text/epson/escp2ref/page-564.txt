@@ -1,0 +1,41 @@
+G-8        Glossary
+RGB
+Red, green, and blue. These colors, in phosphors radiated by the computer monitor’s electron
+gun, are used to create the additive system array of screen colors.
+reset
+Returning the printer’s settings to their original values, or defaults. Performed by sending a
+command or an INIT  signal, or by turning the printer off and then back on.
+resolution
+The number of dots per inch used to represent an image.
+roll paper
+Paper that comes in rolls and that can be fed through the printer when an optional roll-paper
+holder is attached.
+scalable font(s)
+A font that can be selected on the basis of the point size and is available in specific increments
+over a wide range of values. Scalable fonts are available only on printers featuring ESC/P 2.
+SIDM
+Serial, impact, dot-matrix. Printers that process data line by line, and form characters by
+striking small pins against a ribbon that in turn strikes the paper.
+SNIJ
+Serial, non-impact, ink jet. Printers that process data line by line, and form characters by
+transferring ink dots onto paper through small ink jets.
+single-sheet paper
+Single, unconnected sheets of paper that can be fed into the printer by hand, by cut-sheet feeder,
+or by paper cassette.
+style
+The font attribute that determines whether or not characters are printed at a slant. Two style
+settings are available: italics and normal.
+subscript
+Printing in which each character is printed at about two-thirds the normal height, in the lower
+part of the character space.
+subtractive colors
+Colors produced by pigments that absorb some colors of light and reflect others. See also
+CMYK.
+superscript
+Printing in which each character is printed at about two-thirds the normal height, in the upper
+part of the character space.
+TIFF compressed mode
+Extended raster graphics compression mode available on the Stylus COLOR and later printer
+models. This mode uses TIFF (Tagged-Image File Format) compression.
+tof
+See top-of-form.

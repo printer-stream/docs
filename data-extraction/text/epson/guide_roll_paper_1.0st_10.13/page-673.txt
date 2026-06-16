@@ -1,0 +1,64 @@
+C O N F I D E N T I A L
+Paper roll
+Two-dimension code commands     GS ( k
+ 
+Ver. 10.13
+p. 673
+(*3)[Error information] indicates mainly detailed information when [Other information] is [Unprintable]. 
+■The quiet zone is not included in the size information.
+Error 
+information
+Error content
+Solution
+"0000"
+No error (printing is possible)
+ - 
+"1001"
+The line element symbol data is invalid
+Transmit vaild data (Function 480)
+"1002"
+The 2D composite element symbol data is 
+invalid
+Transmit valid data (Function 480)
+"1003"
+There is too much 2D composite element data 
+When something other than GS1-128 is 
+specified for line element, and when 
+“automatic selection“ is specified for 2D 
+composite element and the 2D composite 
+element data exceeds 399 bytes
+Reduce the amount of 2D composite 
+element data (Function 480)
+Change the line element to GS1-128 
+(Function 480)
+"1005"
+The combination of line element and 2D 
+composite element is invalid
+When something other than GS1-128 is 
+specified for line element, and “Fixed (CC-C)“ 
+is specifed for the 2D composite element
+Change the line element to GS1-128 
+(Function 480)
+Change the 2D composite element to 
+“automatic selection“ (when the amount 
+of data is 338 bytes or less) (Function 480)
+"1006"
+There is no data in the symbol storage area
+Transmit data (Function 480)
+"2001"
+When the standard mode is selected, there is 
+data in the print buffer
+Empty the print buffer (GS T or the print 
+command [LF, CR, ESC J, etc.])
+"2002"
+The symbol size is bigger than the current 
+printing area
+The symbol is bigger than the printing area
+The symbol is bigger than the <Function 471> 
+maximum width 
+Make the module size smaller (Function 
+467)
+Make the <Function 471> maximum width 
+bigger
+Make the printing area bigger (GS W, ESC 
+W, ESC $ etc)

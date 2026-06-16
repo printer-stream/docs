@@ -1,0 +1,19 @@
+44
+Selecting the number of head energizing parts
+• One-part energizing
+• Two-part energizing
+• Four-part energizing
+• Auto energizing (Initial setting)
+Selecting single-color printing/two-color printing
+• Single-color printing (Initial setting)
+• Two-color printing
+Selecting black-color density in two-color printing
+• Light
+• Standard (Initial setting)
+•
+Usually, the number of head energizing parts does not need to be changed.
+•
+When auto energizing is selected, the printer usually prints in one-part energizing, but it 
+automatically shifts to two-part energizing if print duty is high.
+This setting affects black-color density only in two-color printing, but not that in single-color 
+printing.

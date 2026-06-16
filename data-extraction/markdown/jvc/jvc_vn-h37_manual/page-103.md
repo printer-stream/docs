@@ -1,0 +1,51 @@
+| C800<CRLF> data(2) of file1 (50 kB) ...   | Data(2) size of file1   |
+|-------------------------------------------|-------------------------|
+| C800<CRLF>                                | Data(1) size of file2   |
+| C800<CRLF> data(2) of file2 (50 kB)       | Data(2) size of file2   |
+
+0&lt;CRLF&gt;
+
+End of file
+
+Interpretation Specify start time and end time, then CHUNKED HTTP response and H.264 elementary stream data will be returned.
+
+Allowed users admin, operator
+
+## 33.  List of Protocols and Port Numbers Used
+
+The camera uses the following protocols and port numbers.
+
+| Protocol / Port Number   | Use                                                                                                   |
+|--------------------------|-------------------------------------------------------------------------------------------------------|
+| TCP 20, 21               | FTP                                                                                                   |
+| TCP 25                   | SMTP (Mail by Alarm Action)                                                                           |
+| TCP 80                   | WEB setting page, API for Getting status and changing settings, video/audio streaming by JVC protocol |
+| UDP 80                   | Search for the camera                                                                                 |
+| TCP 110                  | POP (Mail by Alarm Action)                                                                            |
+| UDP 123                  | SNTP                                                                                                  |
+| TCP 554                  | RTSP                                                                                                  |
+| UDP 9131                 | AMX Device Discovery Protocol                                                                         |
+| TCP 10020, 10021, 10023  | reserved for internal use                                                                             |
+| TCP 32040                | Alarm server                                                                                          |
+| TCP 49298                | Audio sending from a client to the camera                                                             |
+| TCP User Setting         | Alarm on TCP                                                                                          |
+| UDP User Setting         | Alarm on UDP                                                                                          |
+| UDP User Setting         | Multicast Streaming                                                                                   |
+
+## 34.  Customizing Built-in Viewer
+
+The built-in viewer of the camera consists of five ActiveX controls. These ActiveX controls are available for customized viewer.
+
+## 34.1. List of ActiveX
+
+- JPEG/H.264 Viewer
+
+It can show JPEG and H.264 video, and save still image.
+
+- PTZ Control Client
+
+It can control digital ptz.
+
+- Audio Monitor
+
+It can playback audio.

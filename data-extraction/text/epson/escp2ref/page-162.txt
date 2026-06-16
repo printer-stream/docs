@@ -1,0 +1,40 @@
+Individual Command Explanations        C-155
+ESC I
+Enable printing of control codes
+9-Pin ESC/P
+Format
+ASCII
+ESC
+I
+n
+Hex
+1B
+49
+n
+Decimal
+27
+73
+n
+Parameter range
+n = 0, 1
+Function
+n = 1
+Tells the printer to treat codes 0–6, 16, 17, 21–23, 25, 26, 28–31, and 128–159 as
+printable characters
+0
+Tells the printer to treat these codes as unprintable characters
+Default
+Codes are treated as control codes
+Notes
+• 
+This command has no effect when the italic character table is selected; no characters are
+defined for these codes in the italic character table.
+• 
+This command remains in effect even if you change the character table.
+Printers not featuring this command
+ActionPrinter Apex 80, ActionPrinter T-1000, ActionPrinter 2000, ActionPrinter 2250, LX-
+Series printers
+Model-dependent variations
+None
+Related topics
+ESC 6, ESC 7

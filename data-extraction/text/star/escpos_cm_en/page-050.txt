@@ -1,0 +1,43 @@
+ESC/POS Command Specifications
+50
+Rev.2.52
+<8Dots Double Density>
+<24Dots Single Density>
+<24Dots Double Density>
+<8Dots Single Density>
+MSB
+LSB
+MSB
+LSB
+MSB
+LSB
+MSB
+LSB
+d1
+d2
+d3
+d1
+d2
+d3
+d1
+d3
+d4
+d5
+d6
+d7
+d8
+d9
+d1
+d2
+d3
+d6
+d9
+d8
+d7
+d4
+d5
+d2
+24Dots
+24Dots
+24Dots
+24Dots

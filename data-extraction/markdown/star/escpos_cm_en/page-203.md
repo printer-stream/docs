@@ -1,0 +1,48 @@
+<!-- image -->
+
+Name
+
+Specify mark color and mark horizontal width for each mark number
+
+Code
+
+ASCII ESC GS * 2 m c w
+
+Hex. 1B 1D 2A 32 m c w
+
+Decimal 27 29 42 50 m c w
+
+Defined Region
+
+'0' ≤ m ≤ '9'
+
+'0' ≤ c ≤ '1'
+
+'001' ≤ w ≤ '999'
+
+Initial Value
+
+Non-volatile memory
+
+Function
+
+Specifies mark color and mark horizontal width for each mark number.
+
+m specifies the mark number.
+
+c specifies the mark color.
+
+w specifies the mark horizontal width (number of dots).
+
+If w exceeds the print region, this command is ignored.
+
+m, c and w are ASCII character strings that are represented by decimals; They are composed of character codes '0' to '9.'
+
+| c            | Mark Color   |
+|--------------|--------------|
+| n = '0' (48) | White        |
+| n = '1' (49) | Black        |
+
+Reference
+
+ESC GS * 0, ESC GS * 1, ESC GS * W, ESC GS * C

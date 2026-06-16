@@ -1,0 +1,21 @@
+- ❏ Power cable (model: AC-170) (*1)
+- (*1) The power supply unit and power cable may not come packaged with the TM-T88III. Purchase these separately, if necessary. (The PS-170 power supply has been replaced by the PS-180 and is no longer being sold.)
+
+## 1.1.4  Consumable products
+
+- ❏ Specified paper: Thermal paper
+
+## 1.1.5  TM-T88II/TM-88III Comparison Table
+
+Table 1-1  Differences between the TM-T88II and TM-T88III
+
+|                                                         | TM-T88III (current model)                                                                                                                                                                                                                                                                                                                                                 | TM-T88II (legacy model)          |
+|---------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------|
+| 1. High-speed print mode                                | Approx. 150 mm/s (4.72") maximum                                                                                                                                                                                                                                                                                                                                          | Approx. 120 mm/s (4.72") maximum |
+| 2. High-speed power consumption mode                    | Average approx. 1.8 A                                                                                                                                                                                                                                                                                                                                                     | Average approx. 1.7 A            |
+| 3. Serial interface selectable baud rates               | 4800, 9600, 19200, 38400, (2400 discontinued, 38400 added). 38400 is selected by setting DIP SW1-7 and 1-8 to ON. (See 'DIP Switch Functions' (page 2-3).)                                                                                                                                                                                                                | 2400, 4800, 9600, 19200          |
+| 4. Conditions for canceling receive buffer BUSY state * | Set with DIP SW2-5 *                                                                                                                                                                                                                                                                                                                                                      | Cannot be changed.               |
+| 5. Supported character sets (extended graphics)         | 11 pages including WPC 1252, PC866 [Cyrillic #2], PC852 [Latin2])                                                                                                                                                                                                                                                                                                         | 8 pages                          |
+| 6. Driver (EPSON OPOS ADK, Advanced Printer Driver)     | Also can be operated by the driver for the TM-T88II. Functions, however, are restricted as follows: • Some baud rates cannot be used in serial communications (38400 bps, 2400 bps). Note: The driver cannot set a 38400 bps baud rate. Selecting a 2400 bps baud rate with the driver will cause garbled characters (the printer does not support a 2400 bps baud rate). | -                                |
+
+* For details on the conditions for canceling the receive buffer BUSY state, refer to 'DIP Switch Functions' (page 2-3).

@@ -1,0 +1,34 @@
+<!-- image -->
+
+## ESC	GS	)	s	pL	pH	fn	m	(fn	=	48)
+
+Name
+
+Send paper hold sensor installation data.
+
+Code
+
+ASCII ESC  SYN  DC4 n
+
+Hex. 1B 16 14 n
+
+Decimal 27 22 20 n
+
+Defined Region
+
+$$pL = 2,  pH = 0 fn = 48 m = 1$$
+
+Function
+
+Hold print sensor installation data is sent in the format below.
+
+&lt;ESC&gt; &lt;GS&gt; ')' 's' pL pH fn m n &lt;NUL&gt;
+
+|   n | installation data   |
+|-----|---------------------|
+|   0 | Not installed       |
+|   1 | Installed           |
+
+When outside the parameter definitions or out of the specified sensor installation specifications, &lt;ESC&gt; &lt;GS&gt; ')' 's' &lt;0&gt; &lt;0&gt; fn &lt;LF&gt; &lt;NUL&gt; is returned.
+
+If unprinted data exists in the image buffer at the time this command is processed, the command is executed without executing printing first.

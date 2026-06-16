@@ -1,0 +1,38 @@
+36 
+action. 5 alarm actions, 1 periodic FTP assigned to No.6, 1 pre/post FTP assigned to No.7, and 1 SD Card 
+constant recording assigned to No.8, and SD Card alarm recording assigned to No.10 are available, so alarm 
+action number can be 1 to 8 and 10.  Note that alarm numbers are different from the alarm input pin numbers. 
+Either on or off will be returned. 
+Specify "on", "off" or "restart". By "restart", changes to alarm action and alarm trigger are enabled. By "on" after 
+"restart", the alarm action starts working with the changed settings. If "restart" is not set after changes to alarm 
+action and alarm trigger, APIs to get settings of alarm action and alarm trigger return previous values. 
+Allowed users  admin, operator 
+ 
+Getting Alarm Action 
+Format  /api/param?application.event(Number).action 
+Example  When Getting action of alarm action No. 1 
+    /api/param?application.event(1).action 
+Example of Response 
+application.event(1).action=mailto/somebody@somecompany.com/none/Message&200 OK 
+Interpretation  Acquire the alarm action of the specified alarm action number. 5 alarm actions, 1 periodic FTP 
+assigned to No.6, 1 pre/post FTP assigned to No.7, 1 SD Card constant recording assigned to No.8, and 1 SD 
+Card alarm recording assigned to No.10 are available, so alarm action number can be 1 to 8, and 10.   Note that 
+alarm numbers are different from the alarm input pin numbers. A separate API 
+(/api/param?application.event(Number).status) is used to acquire the on/off status of the alarm action. 
+When no action is specified, response below is returned. 
+Example of Response  application.event(1).action=&200 OK 
+ 
+When sending mail is specified, mailto, mail address, JPEG attaching and the character string to be sent will be 
+returned. When spaces are included in the character string, the character string with spaces will be returned. 
+Segments are indicated by /. If JPEG attaching is on, "object(Number)" is returned, and if JPEG attaching is off, 
+"none" is returned. 
+Example of Response 
+application.event(1).action=mailto/somebody@somecompany.com/object(1)/Message&200 OK 
+ 
+When sending via TCP is specified, tcpto, IP address, port number and the character string to be sent will be 
+returned. Segments are indicated by /. If JPEG attaching is on, "object(Number)" is returned, and if JPEG 
+attaching is off, "none" is returned. 
+Example of Response application.event(1).action=tcpto/10.0.0.100/20000/object(1)/Message&200 OK 
+ 
+When sending via UDP is specified, udpto, IP address, port number and the character string to be sent will be 
+Downloaded from www.Manualslib.com manuals search engine 

@@ -1,0 +1,53 @@
+## Format  /api/param?camera.private\_mask.area=data
+
+Example of Response  camera.private\_mask.area&amp;202 Accepted(camera.status=save)
+
+Interpretation Change the area of privacy masking. Specify bitmap by 510 characters of hexadecimal number. A bit for privacy masking is 32x32 pixels block, and 1920x1080 is divided to 60x34 blocks. For example, specify f  to mask 8 blocks. The change is saved by the API, camera.status=save. If the change is not saved, the setting is restored by reboot.
+
+Allowed users admin, operator
+
+## 17. JVC API for Motion Detect
+
+The APIs below are related to motion detection. These are equivalent to the features on the Motion Detection page of the WEB setting page. Refer to the instruction manual for details on the Motion Detection page.
+
+## Getting Motion Detect On/Off Status
+
+Format  /api/param?camera.detection.status
+
+Example of response  camera.detection.status=on&amp;200 OK
+
+Interpretation Acquire the on/off status of motion detect.
+
+Allowed users
+
+admin, operator, user
+
+## Setting Motion Detect to On/Off
+
+Format  /api/param?camera.detection.status=data
+
+Example of Response  camera.detection.status&amp;202 Accepted(camera.status=save)
+
+Interpretation Change the on/off status of motion detect. The change is saved by the API, camera.status=save.
+
+If the change is not saved, the setting is restored by reboot.
+
+Allowed users admin, operator
+
+## Getting Motion Detect Sensitivity
+
+Format  /api/param?camera.detection.level
+
+Example of response  camera.detection.level=20&amp;200 OK
+
+Interpretation Acquire the motion detect sensitivity. A value between 0 to 100 will be returned. The larger the value, the higher will be the sensitivity.
+
+Allowed users
+
+admin, operator, user
+
+## Setting Motion Detect Sensitivity
+
+Format  /api/param?camera.detection.level=data
+
+Example of response  camera.detection.level&amp;202 Accepted(camera.status=save)

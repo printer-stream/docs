@@ -1,0 +1,15 @@
+C O N F I D E N T I A L
+Paper roll
+Macro Function commands     
+ 
+Ver. 10.13
+p. 401
+Macro Function commands
+Command
+Name 
+GS :
+Start/end macro definition 
+GS ^
+Execute macro 
+MACRO FUNCTION COMMANDS
+Macro function commands

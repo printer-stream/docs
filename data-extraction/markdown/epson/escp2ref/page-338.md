@@ -1,0 +1,57 @@
+## Example 3: MicroWeave ESC/P 2 extended color raster graphics and TIFF compressed raster graphics driver
+
+## Step 1 Start Job
+
+Send ESC @ to initialize the printer, reset printer to defaults
+
+## Step 2 Enter Raster Graphics Mode
+
+Send ESC ( G to select graphics mode
+
+## Note:
+
+- The appropriate driver commands depend on the application.
+- New or expanded ESC/P 2 commands are shown in bold.
+
+## Step 3 Set Specific Configuration
+
+Send ESC ( i 01 00 n to turn MicroWeave on/off
+
+```
+where    n = 0 MicroWeave off 1 MicroWeave on
+```
+
+## Note:
+
+- If the EPSON ESC/P 2 printer does not support MicroWeave, it will ignore the command. The Stylus COLOR supports MicroWeave.
+- Execute the ESC ( i command prior to paper feed.
+
+## Send:
+
+ESC ( U
+
+to set units
+
+ESC ( C
+
+to set page length in defined unit-continuous paper only
+
+ESC ( c
+
+to set page format-top and bottom margins
+
+ESC U
+
+to turn unidirectional mode on/off
+
+## Step 4 Enter TIFF Raster Graphics Mode
+
+Send ESC . 2 to enter TIFF compressed raster graphics mode
+
+## Note:
+
+Only binary commands can be used after entering TIFF compressed mode.
+
+Send &lt;MOVXDOT&gt; or &lt;MOVXBYTE&gt; to set horizontal move units to one dot or eight dots (1 byte)
+
+Send &lt;MOVY&gt; to move vertically to first line of the image block Send &lt;COLR&gt; to select color (Black, Magenta, Cyan, or Yellow) Send &lt;MOVX&gt; or &lt;CR&gt; to move horizontally to first part of image block Send &lt;XFER&gt; to send TIFF raster graphics data Repeat as necessary for the existing line of the image block. Repeat as necessary for the existing image block

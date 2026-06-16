@@ -1,0 +1,29 @@
+## C O N F I D E N T I A L
+
+[Notes]
+
+- ■ This function works in user setting mode.
+- ■ User defined code pages are page 255 or page 254 in the character code pages of alphanumeric Katakana characters built in the printer. Character data defined in the user-defined code page can be printed by specifying the character code after selecting the page with ESC t .
+- ■ Work area means RAM area that is used to edit character data.
+- ■ Storage area means non-volatile memory area that is used to store page data of user-defined code pages.
+- ■ Character data can be specified as follows:
+- Character data can be changed in the work area.
+- Rewrites the data in the user-defined code page (storage area) by Function 4.
+- Function 2 should be executed before defining character data, and Function should be executed after defining character data.
+- Specify the same font number in Function 2 and Function 4.
+
+|   Procedure | Processing                                 | Used function                  |
+|-------------|--------------------------------------------|--------------------------------|
+|           1 | Shifts to the user setting mode            | Function 1                     |
+|           2 | Copy data from storage area into work area | Function 7 ( d1 = 31, d2 = 30) |
+|           3 | Change pattern of the character data       | Function 8 or Function 9       |
+|           4 | Copy data from work area into storage area | Function 7 ( 1 = 30, d2 = 31)  |
+|           5 | Exit user setting mode                     | Function 2                     |
+
+[Model-dependent variations]
+
+TM-J2000/J2100 , TM-T90 , TM-L90 , TM-T20 , TM-T88IV , TM-T88V , TM-T70 , TM-P60 , TM-U220
+
+## TM-J2000/J2100 , TM-T90 , TM-L90
+
+The relation between the font number and code page is as follows:

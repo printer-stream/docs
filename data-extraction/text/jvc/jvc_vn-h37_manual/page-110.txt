@@ -1,0 +1,64 @@
+107 
+</OBJECT> 
+ 
+<!-- PTZ Control ActiveX --> 
+<OBJECT ID="PTZCtrl"  
+    WIDTH = 1 
+    HEIGHT= 1 
+    CLASSID="CLSID:5506B06A-9FED-4dc0-99E1-9AEF2F2B0509"> 
+</OBJECT> 
+ 
+<FORM NAME="myForm"> 
+<table> 
+    <tr> 
+        <td> 
+            VN-H37 IP Address 
+            <INPUT TYPE="TEXT" NAME="IP" VALUE="192.168.0.2"> 
+            HTTP Port 
+            <INPUT TYPE="TEXT" NAME="HTTP_PORT" VALUE="80"> 
+        </td> 
+    </tr> 
+    <tr> 
+        <td> 
+            Viewer 
+            <INPUT TYPE="BUTTON" NAME="PLAY_BTN" style="width:70px" 
+                                                           VALUE="Play" 
+onclick="play_click(PLAY_BTN, 
+IP, 
+HTTP_PORT)"> 
+            <INPUT TYPE="BUTTON" NAME="CAPTURE_BTN" style="width:70px" 
+                                                           VALUE="Capture"  onclick="capture_click()"> 
+        </td> 
+    </tr> 
+</table> 
+ 
+<p STYLE="top:506px;left:21px;position:absolute" >PTZ Control</p> 
+<INPUT TYPE="BUTTON" VALUE="Up"    
+            STYLE="width:40px;top:530px;left:61px;position:absolute" 
+            onmousedown="PTControl(8)" onmouseup="mouse_up()" onmouseout="mouse_up()"> 
+<INPUT TYPE="BUTTON" VALUE="Left"  
+            STYLE="width:40px;top:550px;left:41px;position:absolute"  
+            onmousedown="PTControl(4)" onmouseup="mouse_up()" onmouseout="mouse_up()"> 
+<INPUT TYPE="BUTTON" VALUE="Right" 
+            STYLE="width:40px;top:550px;left:81px;position:absolute" 
+            onmousedown="PTControl(6)" onmouseup="mouse_up()" onmouseout="mouse_up()"> 
+<INPUT TYPE="BUTTON" VALUE="Down"  
+            STYLE="width:40px;top:570px;left:61px;position:absolute"  
+            onmousedown="PTControl(2)" onmouseup="mouse_up()" onmouseout="mouse_up()"> 
+ 
+<INPUT TYPE="BUTTON" NAME="TELE_BTN" VALUE="+"  
+            STYLE="width:40px;top:535px;left:134px;position:absolute"  
+            onmousedown="ZoomControl(0)" onmouseup="mouse_up()" onmouseout="mouse_up()"> 
+<INPUT TYPE="BUTTON" NAME="WIDE_BTN" VALUE="-"  
+            STYLE="width:40px;top:565px;left:134px;position:absolute"  
+            onmousedown="ZoomControl(1)" onmouseup="mouse_up()" onmouseout="mouse_up()"> 
+ 
+</FORM> 
+</BODY> 
+</HTML> 
+ 
+34.6 Notes 
+- Enable the JPEG/H.264 frame size that you want in “Basic Settings2” or “Encoding” page of the camera. 
+- Start Multicast stream on the camera Web page to use Multicast. The ActiveX control does not send request to 
+the camera for starting Multicast stream. 
+Downloaded from www.Manualslib.com manuals search engine 

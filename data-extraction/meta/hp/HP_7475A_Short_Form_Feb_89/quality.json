@@ -1,0 +1,17 @@
+{
+  "stem": "hp/HP_7475A_Short_Form_Feb_89",
+  "phase": "quality",
+  "tool": "builtin",
+  "tool_version": "0.3.0",
+  "pipeline_version": "0.3.0",
+  "params": {
+    "threshold": 0.5
+  },
+  "page_count": 12,
+  "started_at": "2026-06-16T17:36:56Z",
+  "ended_at": "2026-06-16T17:36:56Z",
+  "duration_seconds": 0.064,
+  "per_page_seconds_avg": 0.005,
+  "status": "ok",
+  "flagged_count": 0
+}

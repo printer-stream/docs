@@ -1,0 +1,39 @@
+3-12   Application Development Information
+Rev. A
+Note:
+When DIP SW2-1 is ON, the printer will not become BUSY even if printer hardware stops operating.
+•
+When an error has occurred
+•
+When the cover is open
+•
+When printing has stopped for a paper out
+•
+When paper is fed by the paper FEED button
+3.5  NVRAM (Non-volatile Memory)
+NVRAM is mounted on this printer, and bitmap images (for example, business logos) or other 
+data are written to it. Pay attention to the following when using NVRAM.
+❏
+The following restriction applies when performing operations (including storing and 
+deleting data) in NVRAM.
+•
+Do not use the paper FEED button.
+❏
+The printer sometimes enters the BUSY state when data is being written to NVRAM. It is 
+important not to send data from the host computer while the printer is in the BUSY state, 
+because the printer cannot process any received data.
+❏
+Frequent use of the functions for writing data to and deleting data from NVRAM may 
+damage the memory. As a rule, in using the various commands to write to NVRAM, avoid 
+writing more than an average of ten times per day. 
+3.6  Bar Code Printing
+This printer can print the following types of bar codes:
+UPC-A, UPC-E
+JAN 8 (EAN 8), JAN 13 (EAN 13)
+CODE 39
+ITF (Interleaved 2 of 5)
+CODABAR (NW-7)
+CODE 93
+CODE 128
+To set and print each bar code, refer to the OPOS, Advanced Printer Driver, and ESC/POS 
+command documentation, respectively.

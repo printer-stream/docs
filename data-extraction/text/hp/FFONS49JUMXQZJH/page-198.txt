@@ -1,0 +1,58 @@
+AR*The Arc Relative Instruction
+CA
+CI*
+CP
+Page 3-19
+AR
+X-increment,Y-increment,arc angle(,chord angle);
+Purpose:
+Draws arc of speciﬁed number of degrees with speciﬁed
+smoothness; centered relative to current pen position,
+using current pen status (up or down).
+Parameters:
+X—and Y-increments — integer, in plotter units unless
+scaling in effect;then in user units.
+are angle — integer, negative value speciﬁes clockwise
+are, positive value speciﬁes counterclockwise arc.
+chord angle —integer, deﬁnes arc smoothness in degrees.
+Default is 5 degrees.
+The Designate Alternative Character Set
+Instruction
+CA
+n( ;)
+Purpose:
+Page 5-4
+Designates the alternate character set.
+Parameter:
+integer 0 through 4; default set 0.
+The Circle Instruction
+CI
+radius(,chord angle);
+Page 3-12
+Purpose:
+Draws a circle of speciﬁed radius centered at current pen
+position.
+Parameters: radius —integer, in plotter units unless scaling in effect;
+then in user units. Starting point at 0 degrees with
+positive parameter; 180degrees withnegative parameter.
+chord angle — integer, deﬁnes circle smoothness in de­
+grees. Default is 5 degrees.
+The Character Plot Instruction
+CP
+spaces, lines;
+Page 5-13
+Movethe pen the number of spaces and lines speciﬁed.
+spaces — decimal, 2 -128 and < 128, number of CP
+spaces, positive value moves pen in current label direc­
+tion, negative value moves pen in opposite direction.
+lines ——
+decimal, 2 -128 and < 128, number of CP lines,
+positive value moves pen up, negative value moves pen
+down in relation to current label direction.
+Purpose:
+Parameters:
+Omitting parameters causes carriage return, line feed.
+*Available only with RS-232-Cplotters that have the serial preﬁx number 2308Aor
+higher.
+B-2
+INSTRUCTION SYNTAX

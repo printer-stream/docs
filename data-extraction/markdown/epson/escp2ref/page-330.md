@@ -1,0 +1,21 @@
+To accommodate the high-resolution color graphics available to the Stylus COLOR and later inkjet printer models, EPSON has expanded the ESC/P 2 command set. The Stylus COLOR and later high-resolution ink jet printers are fully EPSON ESC/P 2 compliant. They support four multipoint fonts, the new MicroWeave command, and four raster graphics modes:
+
+## Standard raster graphics
+
+Uncompressed raster graphics printing (ESC . 0) Compressed raster graphics-Run Length Encoding (RLE) (ESC . 1)
+
+## Extended raster graphics (Stylus COLOR and later inkjet models only)
+
+Compressed raster graphics-TIFF (ESC . 2)
+
+To select one of these four raster graphics modes, set the c parameter in the print raster graphics command ESC . c v h m nL nH d1 . . . dk as follows:
+
+c mode 0 Uncompressed raster graphics 1 RLE compression 2 TIFF compression
+
+The TIFF mode command is only implemented in the Stylus COLOR and later inkjet model printers. These commands also make use of a subset of binary mode commands new to the ESC/P 2 command language. The Stylus COLOR is, of course, backward compatible with the ESC/P command language. To make full use of the new commands and features supported by the Stylus COLOR, we suggest writing an ESC/P 2 color printer driver specifically for this model. In addition, all future color printers, both ink jets and SIDMs, will include the expanded ESC/P 2 commands. By incorporating a new color printer driver in your application, you will be able to take full advantage of the program's powerful color features when printing with EPSON's high-resolution printers.
+
+## MicroWeave technology
+
+The MicroWeave feature added to the ESC/P 2 command set reduces the banding-uniform horizontal lines in graphics-usually associated with serial printers. The command syntax is ESC ( i 01 00 n, where n = 0 MicroWeave off (default), and n = 1 MicroWeave on. Banding is caused by the misalignment of printed dots at the boundary of two adjacent raster bands owing to mechanical limitations of the printer. MicroWeave technology compensates for these limitations by moving the print head in smaller vertical increments than the height of a non-MicroWeave raster band and firing the nozzles in a staggered sequence. This process shortens the band heights, making them less distinct.
+
+To use MicroWeave, the band height (m) in the ESC . command must be set to 1. This feature also increases printing time, but it completely eliminates banding and yields sharp, near photographic-quality color images. For more information about this command, see its description in Individual Command Explanations.

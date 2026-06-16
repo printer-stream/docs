@@ -1,0 +1,90 @@
+## Interface  and Cable  Requirements
+
+|                                                                                                                             | Cable                                                                   |
+|-----------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|
+| HP Vectra PC with HP 24540AlB seriaVparaliel interface card or HP 24541AlB dual serial interface card using 9-pin connector | HP 24542G                                                               |
+| HP Vactra PC with HP 24541AlB dual serial interface card using 25-pin connector                                             | HP 17255M                                                               |
+| HP Touchscreen PC using serial interface                                                                                    | HP 17255M                                                               |
+| HP Touchscreen PC using HP-IB interface                                                                                     | HP 10833A (1.0 mJ HP 10833B 12.0 ml HP 10833C 13.0 m) HP 10833D 10.5 mJ |
+| HP 3000 or DEC VAX in eavesdrop configuration                                                                               | HP 17455A                                                               |
+| IBM PS/2, ' PC, PC-Xl, and compatibles                                                                                      | HP 17255D                                                               |
+| IBM AT and compatibles                                                                                                      | HP 24542G                                                               |
+| Apple Macintosh 128K and 512K                                                                                               | HP 92219M                                                               |
+| Apple Macintosh SE, Macintosh Plus, and Macintosh 11                                                                        | HP 17302A                                                               |
+| Apple lie                                                                                                                   | HP 17355M                                                               |
+
+## Ordering Information
+
+## Standard Unit
+
+7475A
+
+Color  desktop  plotter
+
+## Option  numbers:
+
+001
+
+RS-232-C/CCI'IT  V.24
+
+interface
+
+HP-IB  (IEEE  488-1978)
+
+002
+
+interface
+
+Note: Interface  cables  must  be ordered  separately
+
+## Accessories Included
+
+Operation and  Interconnection
+
+Manual (language  appropriate
+
+to plotter  destination)
+
+Reference  Card
+
+Power cord (appropriate  to
+
+plotter  destination)
+
+Plotter  paper
+
+50
+
+sheets,  A4/A size (paper
+
+sizes  determined by  plotter
+
+destination)
+
+Transparency  film  sampler, A4/A size  (film  sizes  deter­ mined by plotter  destination)
+
+Six-pen carousel  for  fiber-tip pens
+
+Assorted fiber-tip  paper  and transparency pens
+
+HP  Plotter  Supplies  Catalog
+
+## Accessories Available
+
+07475·90000
+
+07475·90001
+
+5061·5080
+
+07475-60030
+
+Hardware  Suppan  Manual
+
+Interfacing/Programming  Manual
+
+Additional  fiber  ·tip  pen  carousel
+
+liquid�nk drafting  pen  carousel
+
+For  a  complete  list  of  available supplies,  check  the  current  ver­ sion of  the  HP  Plotter  Supplies Catalog or  the  Hewlett-Packard PC Peripherals  Price  Guide.

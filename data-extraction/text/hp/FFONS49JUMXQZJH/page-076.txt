@@ -1,0 +1,47 @@
+The Define Terminator Instruction, DT
+DESCRIPHUN
+The deﬁne terminator
+instruction,
+DT, provides the
+means to specify the character to be used as the label terminator.
+USE3 The command can be used to change the label terminator from
+its default value if ETX (decimal equivalent 3) cannot be used by your
+computer.
+SYNTAX DT
+t (terminator) where t is the label terminator.
+The label mode can only be terminated by sending a
+label terminator at the end of the label character string. ASCII control
+characters (decimal equivalent 1 through 32) can be deﬁned as label
+terminators and will not print when invoked, although the function
+normally performed by the character will be performed (i.e., LF will
+terminate a label but will also cause a line feed).ASCII characters with
+decimal equivalent values 33 through 127 can also be deﬁned as the
+terminator, but the character will be printed at the end of the label
+character string. The ASCII control characters NULL (decimal equiva­
+lent 0) and ESC (decimal equivalent 27) cannot be used as label termi­
+nators. Also in the RS-232-Cenvironment, ENQ (decimal equivalent 5)
+is not a valid terminator.
+NOTE: A DT command with no parameter does not establish ETX as
+the default terminator, since the character immediately following the
+mnemonic DT is taken as a parameter. Only a DF or IN command or
+use of the ETX character itself as the instruction’s parameter can be
+used to reestablish ETX as the label terminator. I
+The following examples of text in a label command demonstrate the
+use ofthe label terminator.
+”IN;SP2;SCO,5UOO,D,SOOO;”
+”PHO,45OD;LBUefault central
+character
+ETK%H&“
+”LBterm1nates
+by performing
+end*%%§”
+“LEO?-text function.§“
+”PHD,39OU;UT#;LBPrintingcharacters
+term1nate,§h#”
+”LBbut are also printed.#”
+”PHO,3400;DT$;LBCuntrolcharacters
+terminateH§”
+”LBand perform their
+Function.%”
+5-6
+LABELING

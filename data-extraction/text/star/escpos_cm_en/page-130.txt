@@ -1,0 +1,92 @@
+ESC/POS Command Specifications
+130
+Rev.2.52
+GS C 1 aL aH bL bH n r 
+Name	
+Set Counter Mode (A)
+Code	
+ASCII	
+GS	
+C	
+1	
+aL	
+aH	
+bL	
+bH	
+n	
+r
+	
+Hex.	
+1D	
+43	
+31	
+aL	
+aH	
+bL	
+bH	
+n	
+r
+	
+Decimal	
+29	
+67	
+49	
+aL	
+aH	
+bL	
+bH	
+n	
+r
+Defined Region	
+0 ≤ aL ≤ 255
+	
+0 ≤ aH ≤ 255
+	
+0 ≤ bL ≤ 255
+	
+0 ≤ bH ≤ 255
+	
+0 ≤ n ≤ 255
+	
+0 ≤ r ≤ 255
+Initial Value	
+aL = 1, aH = 0
+	
+bL = 255, bH = 255
+	
+n = 0
+	
+r = 1
+Function 	
+Sets the counter mode for the serial counter. 
+Details 	
+•	aL, aH and bL, bH specify the counter range. 
+	
+•	n specifies the number of steps to count up or down. 
+	
+•	r specifies the number of times to repeat printing with the counter value fixed.  
+	
+•	If {(aL + aH x 256) < (bL + bH x 256) and n ≠ 0 and r ≠ 0} this command sets the count up 
+mode.  
+	
+•	If {(aL + aH x 256) > (bL + bH x 256) and n ≠ 0 and r ≠ 0} this command sets the count down 
+mode.  
+	
+•	If {(aL + aH x 256) = (bL + bH x 256) and n = 0 and r = 0} this command stops counting.  
+	
+•	When the count up mode is set, (aL + aH x 256) is the counter minimum value and (bL + bH 
+x 256) is the counter maximum value.  
+	
+	 Also, if the counter exceeds the maximum value, it starts counting up again from the 
+minimum value. 
+	
+•	When the count down mode is set, (aL + aH x 256) is the counter maximum value and (bL + 
+bH x 256) is the counter minimum value.  
+	
+	 Also, if the counter is smaller than the minimum value, it starts counting down again from the 
+maximum value. 
+	
+•	Executing this command clears the internal counter that shows the number of times printing 
+was repeated. 
+Reference 	
+GS C 0, GS C 2, GS C ; , GS c 

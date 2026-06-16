@@ -1,0 +1,56 @@
+The following example labels the years 1978through 1985,in a circular
+pattern starting with vertical labeling. The direction in which each
+year is labeled is changed by 45 degrees. Then the labels in the center
+are drawn to illustrate the use of cosine and sine values as parameters.
+The label _*_2000 contains both a carriage return and a line feed
+character before the label terminator, ETX, so the pen position at the
+end ofthat label is one line belowthe beginning of that label. The fact
+that DI commands update the carriage return point can be clearly seen
+by observing the pen’s position at the end of the program. The ﬁnal
+character in the last label is a carriage return and the pen returns to .
+the carriage return point, the position of the pen at the last ’DI
+command.
+"1N;sP2,PH1o5o,445o;"
+”DIO,1;LB_*_1S78§ UI1,1;LB_*_19?9§“
+“DI1,0;LB_*_19B0§ DI1,-1;LB_*_1981R“
+“BIO,-1;LB_*_1S82§ DI-1,-1;LB_*_1SB3&”
+“DI-1,0;LB_*_1S84§ DI-1,1;LB_*_1985§”
+“PH1500,5350;DI”,CDS(OJ,SIN(O);”LB_*_2000$%E“
+“DI”,CUSL-45);S1N(-45J;”LB_RElURN Polwraa“
+é\g_*_1 980\ ‘I
+_
+>
+\'/.9
+§L”n“RL.XE§
+E%°+'Jé§’N”p6.~T
+*
+__*_2ooo
+<9,
+TQL~\’p
+[*
+0’
+6‘
+"1
+"<4.
+ls
+tl
+Iﬁao
+O0
+9
+o
+/N
+/\
+/3,
+‘W786I-079’
+NOTE: Check the format of the COS and SIN functions on your
+computer, and change these accordingly. Also, check your computer
+documentation to see how your computer interprets angles. If angles
+are interpreted as radians, you need to change to degrees before using
+the COS and SIN functions. On the HP Series 80 computers, execute
+the BASIC statement DEG. I
+The Relative Direction Instruction, DR
+DESCRIPTHJNThe relative direction instruction,
+DR, speciﬁes the direc­
+tion in which characters are lettered.
+LABELING
+5-1 1

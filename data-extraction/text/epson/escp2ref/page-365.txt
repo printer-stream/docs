@@ -1,0 +1,576 @@
+T-26        9-Pin Printers
+9-Pin Printers
+1995
+1994
+1993
+1992
+S: Standard model   N: NLSP model
+S
+N
+S
+N
+S
+S
+N
+S
+N
+S
+N
+S
+S
+N
+FX-
+2170
+FX-
+2170
+LX-
+300
+LX-
+300
+LX-
+1050
++
+DFX-
+5000
++
+DFX-
+5000
++
+FX-
+1170
+FX-
+1170
+FX-
+870
+FX-
+870
+Action
+Printe
+r 2250
+LX-
+100
+LX-
+100
+ESC (  t
+20
+0
+TIS 18 (GENERAL) (Thai)
+(continued) 21
+0
+TIS 17 (SIC STD.) (Thai)
+22
+0
+TIS 13 (IBM STD.) (Thai)
+23
+0
+TIS 16 (SIC OLD) (Thai)
+24
+0
+PC 861 (Icelandic)
+
+
+
+
+
+
+
+
+25
+0
+BRASCII (Braz. Portuguese)
+
+
+
+
+
+
+
+26
+0
+Abicomp (Braz. Portuguese)
+
+
+
+
+
+
+
+27
+0
+MAZOWIA (Poland)
+
+
+
+28
+0
+Code MJK (CSFR)
+
+
+
+29
+7
+ISO 8859-7 (Latin/Greek)
+
+
+
+29
+16
+ISO 8859-1 (Latin 1)
+30
+0
+TSM (Thai system manager)
+31
+0
+ISO Latin 1 T (Turkish)
+
+
+
+32
+0
+Bulgaria
+
+
+
+33
+0
+Hebrew 7
+34
+0
+Hebrew 8
+35
+0
+Roman 8
+
+36
+0
+PC774 (Lithuania)
+
+37
+0
+Estonia (Estonia)
+
+38
+0
+ISCII
+39
+0
+PC-ISCII
+40
+0
+PC APTEC
+41
+0
+PC708
+42
+0
+PC720
+112 0
+OCR-B
+127 1
+ISO Latin 1
+
+127 2
+ISO 8859-2 (ISO Latin 2)
+
+127 7
+ISO Latin 7 (Greek)
+ESC *
+Select bit image
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7
+
+
+
+
+
+
+ESC -
+Turn underline on/off
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* ESC /
+Select vertical tab channel
+
+
+
+
+
+
+
+
+
+
+
+
+ESC 0
+Select 1/8-inch line spacing
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ESC 1
+Select 7/72-inch line spacing
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ESC 2
+Select 1/6-inch line spacing
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ESC 3
+Set n/216-inch line spacing
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ESC 4
+Select italic font
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ESC 5
+Cancel italic font
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ESC 6
+Enable printing of upper control codes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ESC 7
+Enable upper control codes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* ESC 8
+Disable paper-out sensor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* ESC 9
+Enable paper-out sensor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ESC :
+Copy ROM to RAM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0
+Roman
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1
+Sans serif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* ESC <
+Unidirectional mode (one line)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* ESC =
+Set MSB to 0
+
+
+
+
+
+
+* ESC >
+Set MSB to 1
+
+
+
+
+
+
+*
+Nonrecommended or deleted command

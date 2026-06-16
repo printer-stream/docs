@@ -1,0 +1,7 @@
+## Connecting the USB interface cable
+
+- 1 Attach the locking wire saddle at the location shown in the figure below.
+- 2 Put the USB cable through the locking wire saddle.
+- 3 Connect the USB cable from the host computer to the USB upstream connector.
+
+<!-- image -->

@@ -1,0 +1,93 @@
+C O N F I D E N T I A L
+Paper roll
+Character commands     ESC !
+ 
+Ver. 10.13
+p. 108
+ESC !
+SETTING COMMAND
+[Name]
+Select print mode(s)
+[Format]
+ASCII
+ESC !
+n
+Hex
+1B
+21
+n
+Decimal
+27
+33
+n
+[Range]
+0 ≤  n ≤  255
+[Default]
+TM-J2000/J2100, TM-T90, TM-T20, TM-T88IV, TM-T88V, TM-T70, TM-L90: n = 0
+TM-U230, TM-U220: n = 1
+[Printers not featuring this command]  TM-P60
+[Description]
+Selects the character font and styles (emphasized, double-height, double-width, and underline) together as 
+follows: 
+n: Bit
+Off/On
+Hex
+Decimal
+Function
+0
+Off
+00
+0
+Character font 1 selected.
+... how to use
+this table
+On
+01
+1
+Character font 2 selected.
+1, 2
+—
+—
+—
+Undefined.
+3
+Off
+00
+0
+Emphasized mode is turned off.
+On
+08
+8
+Emphasized mode is turned on.
+4
+Off
+00
+0
+Double-height canceled.
+On
+10
+16
+Double-height selected.
+5
+Off
+00
+0
+Double-width canceled.
+On
+20
+32
+Double-width selected.
+6
+–
+–
+–
+Undefined.
+7
+Off
+00
+0
+Underline mode is turned off.
+On
+80
+128
+Underline mode is turned on.

@@ -1,0 +1,53 @@
+<!-- image -->
+
+## ESC	W	xL	xH	yL	yH	dxL	dxH	dyL	dyH
+
+Name
+
+Set print region in page mode
+
+Code
+
+ASCII ESC W xL xH yL yH dxL   dxH dyL   dyH
+
+Hex. 1B 57 xL xH yL yH dxL   dxH dyL   dyH
+
+Decimal 27 87 xL xH yL yH dxL   dxH dyL   dyH
+
+Defined Region
+
+0 ≤ xL, xH, yL, yH, dxL, dxH, dyL, dyH ≤ 255
+
+However, this excludes dxL = dxH = 0 or dyL = dyH = 0
+
+Initial Value
+
+xL = xH = yL = yH = 0
+
+See Appendix-5 for details relating to dxL, dxH, dyL, dyH.
+
+Function
+
+Sets the print region position and size.
+
+- Horizontal direction starting point [(xL + xH x 256) x basic calculated pitch]
+
+- Vertical direction starting point [(yL + yH x 256) x basic calculated pitch]
+
+- Horizontal direction length [(dxL + dxH x 256) basic calculated pitch]
+
+- Vertical direction length = [(dyL + dyH x 256) basic calculated pitch]
+
+Details
+
+- In standard mode, the printer executes only internal flag operations with this command is input.
+- If the horizontal direction starting point or vertical direction starting point is outside of the printable region, the command is stopped and normal printing commences from subsequent data.
+- If the horizontal direction length or vertical direction length is 0, the command is stopped and normal printing commences from subsequent data.
+- The character expansion starting point is the point specified by selecting the character printing direction (ESC T) in page mode in the print region.
+- If (horizontal direction starting position + horizontal direction length) exceeds the printable region in the horizontal direction, the horizontal direction length is set to (horizontal direction printable region - horizontal direction starting point).
+- If (vertical direction starting position + vertical direction length) exceeds the printable region in the vertical direction, the vertical direction length is set to (vertical direction printable region - vertical direction starting point).
+- The basic calculated pitch is set by GSP (Set basic calculated pitch).  Also, the set printing region is not changed even if the basic calculated pitch is changed after setting the print region.
+- If the calculation results in fractions, the pitch is corrected to a minimal mechanical pitch and the rest is discarded.
+- The basic calculated pitch (x) is used in the calculated pitch for the horizontal direction starting point and the length in the horizontal direction; and the basic calculated pitch (y) is used in the calculated pitch for the vertical direction starting point and the length in the vertical direction.
+- The print region shown in the figure below when the horizontal direction starting is X; the vertical direction starting point is Y; the horizontal direction length is Dx; and the vertical direction length is Dy.
+- See Appendix-5 for details on print regions.

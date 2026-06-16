@@ -1,0 +1,45 @@
+NOTE: A buffer overﬂow condition may also cause an HP-GL‘error to
+occur. In this case, an HP-GL IN or OE command or a front-panel reset
+must be executed in order to clear the ERRORlight. See Chapter 7 for an
+explanation ofthe output error instruction, OE. I
+Handshaking
+The 7470uses a 255-byte input buffer to synchronize the processing of
+data with the rate at which it is received. The presence of an input
+buffer requires that the computer and the plotter transfer information
+to one another in such a way that data will not be lost or misinterpreted.
+This is the purpose of handshaking.
+The 7470is capable of using any one of four handshaking methods to
+prevent buffer overﬂow and the resulting loss of data. The computer
+system’scapabilities and requirements dictate which handshake method
+is appropriate.
+0 Hardwire Handshake —uses a physical wire, pin 20 of the RS-232-C
+cable, to control handshaking. It can be used if the computer system
+can or does monitor pin 20 (DTR).
+0 Xon-XoffHandshake —is managed by the peripheral device. It can
+be used if the computer system follows an Xon-Xoffprotocol (control
+characters are transmitted from the peripheral to the computer).
+0 Enquire/Acknowledge Handshake — is managed by the computer
+system and interface. This handshake
+is often used in Hewlett­
+Packard systems and is so named because the ASCII characters
+ENQ and ACK may be used to control the handshake.
+0 Software Checking Handshake — is managed by the applications
+programmer. It can be used on almost any computer system, but it
+must be used if the system cannot implement any of the other three
+handshaking methods.
+Once the handshake
+method is selected, the 7470 can be program­
+matically instructed to match the computer system requirements, imple­
+ment the chosen handshake method, and function properly within the
+system-dependent communication environment. This is done by specify­
+ing certain variables in device control commands which are issued to
+the 7470at the beginning of each computer session or graphics program.
+The variables, which may be specified by using the decimal value of
+the character desired to establish one of the four handshake methods
+available to the 7470,are:
+0 Output Trigger Character — The output trigger character, when
+used, is the last character output by the computer when making a
+request of a graphics peripheral. Deﬁning this character in a com­
+mand tells the plotter, “Don’t respond to my request until you receive
+10-14
+RS-232—C/CCITTV.24INTERFACING

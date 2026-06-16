@@ -1,0 +1,74 @@
+  
+3.10. 
+AUTO LOGO Function Command Details 
+ 
+This command functions to print logos, like the one below, by only changing the product name, when only product 
+names can be changed in systems that are already in use.  Also, this function has two operating modes. 
+ 
+1) Standard Auto Logo Function 
+The Auto Logo function is preset and executes the following operations using the print cut command under the current 
+system as a trigger. 
+  1. Starts up the Auto Logo function using the current system cut command as a trigger 
+  2. Prints if there is print data in the image buffer 
+3. Executes user macro 1 
+  4. Prints the Auto Logo 
+  5. Executes user macro 2 
+Logo 2 is printed by #4 Auto Logo printing according to the command character “/” that was preset in the current print 
+data and embedding the logo number “2” to print. Specifically, if the product is registered with “CHEESE BURGER/2” 
+the logo 2 coupon ticket is automatically printed for the purchaser of a cheese burger. Also, Logo 1 for the header is 
+used for company logos.  By registering to the user macro 2 of #5, cut command + Logo 1 print command, the company 
+logo of logo1 will be printed. User macro 1 of #3 is used when it is necessary to position the Auto Logo in the center. 
+When doing so, register the left alignment command using the user macro 2 of #5 and return to its original setting. 
+ 
+*************** 
+ MACDONALDS 
+*************** 
+1.CHEESBUGER       $2.00 
+2.COKE                    $1.00 
+ 
+---------------------- 
+TOTAL                     $3.00 
+******************** 
+ MACDONALDS 
+******************** 
+1.CHEESEBURGER  $2.00 
+2.COKE                      $1.00 
+ 
+-------------------------------------- 
+TOTAL                       $3.00 
+******************** 
+ MACDONALDS 
+******************** 
+1.CHEESEBURGER  $2.00 
+2.COKE                      $1.00 
+ 
+-------------------------------------- 
+TOTAL                       $3.00 
+Header 
+     Header 
+COKE 
+Cheeseburger 
+Logo 1 
+Logo 2 
+Logo 3 
+Current System Print Data 
+Current  
+System  
+Print Data 
+Partial Cut 
+Partial Cut 
+Header 
+******************** 
+ MACDONALDS 
+1. Starts Auto Logo with trigger  
+    of cutting command. 
+2. Executes user macro 1. 
+4. Executes user macro 2. 
+     - Executes cut. 
+     - Executes Header logo 
+       printing. 
+3. Prints Auto Logo. 
+ 
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+STAR Line Mode Command Specifications 
+3-111 

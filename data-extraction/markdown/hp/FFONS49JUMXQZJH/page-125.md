@@ -1,0 +1,21 @@
+The first routine performs the following tasks:
+
+1. Obtains, in plotter units, the coordinates of the corners of the bar.
+2. Turns scaling off so plotting is in plotter units. This routine can, therefore, be used in any program, and there is no need to recompute the increment P for different scaling in different graphs.
+3. Beginning at the X,YminValue, draws a line to the top of the bar, moves over slightly less than one pen width, and draws to the bottom of the bar.
+4. Increments the X-Valueone pen width and repeats step 3 until the bar is filled.
+5. Rescales the plot to the original scaling.
+
+The second routine repeatedly moves with the pen up to the X-coordinate' at the base of the bar and draws a line to the top of the bar. All fill lines are drawn in the same direction.
+
+## Segment 1 -Plotting on Paper
+
+```
+120 PRINT 'PH2.?,O,PD,2.?,18,3.3,1S,3.3,0,2.?,O;PU;' 130 PRINT 'UH;' 140 ENTER 705 ; H,B,C 150 PRINT 'PH2.?,18;DH;' 150 ENTER T05 ; U,E, 170 PRINT 'PH3.3,18; 180 ENTER 705 ; G,H, 190 PRINT'PP2.?,o;s.;" zoo P=2O 210 FOR x=R TD G-P STEP 2*P 220 PRINT'Pn';x;B;x;E 230 PRINT "Pm~;x+P;E;r+P;B 240 NEXT X 250 PRINT 'PU;SC1,12,0,1SO;'
+```
+
+## Segment 2 -Plotting on Transparency Film
+
+```
+120 PRINT 'PR2.T,o,Pn,2.T,1a,3.3,1a,3.3,o,2.T,o;Pu;~ 130 PRINT 'DH;' 140 ENTER 705 ; P,B,c 150 PRINT"PP2.7,1a;0P;' 150 ENTER 705 ; D,E,F 1?O PRINT 'PR3.3,18;UH;' 130 ENTER 705 ; G,H,I 190 PRINT 'PH2.?,0;SC;' 200 P=2o 210 EUR x=R TU G STEP P 220 PRINT'Pu";x;s;~Pn~;x;E 230 NEXT x 240 PRINT 'PU;SC1,12,0,1SO;'
+```

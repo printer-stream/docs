@@ -1,0 +1,32 @@
+C O N F I D E N T I A L
+Paper roll
+Character commands     ESC &
+ 
+Ver. 10.13
+p. 118
+[Model-dependent variations]
+TM-J2000/J2100, TM-T90, TM-T20, TM-T88IV, TM-T88V, TM-T70, TM-L90, 
+TM-U230, TM-U220
+See program example and print sample for ESC %, ESC &, and ESC ?.
+TM-J2000/J2100
+Only the MSB can be printed in the third byte for vertical direction of Font B of other than 
+Japanese model. A user-defined character, downloaded graphics, and downloaded bit image 
+cannot be defined simultaneously. 
+TM-T90
+Only the MSB can be printed in the third byte for vertical direction of Font B of other than 
+Japanese model. Expect for the Japanese Kanji model, a user-defined character and downloaded 
+bit image cannot be defined simultaneously when the memory switch 8-7 is ON. See Function 3 of 
+GS ( E for the memory switch.
+TM-T20, TM-T88IV, TM-T88V
+Only the MSB can be printed in the third byte for vertical direction of Font B. A user-defined 
+character and downloaded bit image cannot be defined simultaneously.
+TM-T70
+Only the MSB can be printed in the third byte for vertical direction of Font B of models other than 
+Japanese model. A user-defined character and downloaded bit image cannot be defined 
+simultaneously.
+TM-L90
+Only the MSB can be printed in the third byte for vertical direction of Font B of other than 
+Japanese model. 
+TM-U230
+The dots adjoining each other horizontally cannot be printed. Only the MSB can be printed in the 
+second byte for vertical direction.

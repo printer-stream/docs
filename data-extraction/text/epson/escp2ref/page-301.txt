@@ -1,0 +1,57 @@
+R-70        Sending Graphics Data
+Sending bit-image data to the printer
+The order for sending data depends on the mode selected with the m parameter.
+The table at the beginning of this section lists the number of bytes of data
+required for each column.
+Count the number of resulting columns in each line. The nL and nH parameters
+tell the printer how many columns to expect. Calculate nL and nH as follows:
+nH = INT number of dot columns
+(
+)
+256
+nL = MOD number of dot columns
+(
+)
+256
+If you are going to send more than one line of graphics, send the following
+commands to set the line spacing:
+24/48-pin printers
+ESC + 48
+48/360-inch line spacing
+9-pin printers
+ESC 3 24
+24/216-inch line spacing
+This matches the line spacing to the height of the print head. After this, sending
+the CR and LF commands moves the vertical print position so the next line of
+graphics begins right where the previous line ended, with no space between.
+Now send the data for the first line to the printer as follows:
+ESC * 0 nL nH d1 d2 . . . dk
+ESC * 39 nL nH d1 d2 . . . dk
+ESC * 72 nL nH d1 d2 . . . dk
+1
+7
+13
+2
+8
+14
+3
+9
+15
+4
+10 16
+5
+11 17
+6
+12 18
+1
+4
+7
+2
+5
+8
+3
+6
+9
+1
+2
+3

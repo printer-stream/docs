@@ -1,0 +1,101 @@
+## example 13: UPC-E, CD: Printer, HRI: none
+
+Next example is that of the barcode data compacted in accordance with specifications by the printer.
+
+1B 28 42 11 00
+
+; Barcode command and data length
+
+04
+
+; Barcode type k = UPC-E
+
+02
+
+; Module width m = 2 dots / 180 inch
+
+00
+
+; Space adjustment value s = +0 dots / 360 inch
+
+7D 00
+
+; Bar length v1 , v2 = 125 / 180 inch
+
+03
+
+; Control flags c
+
+31 32 33 34 35 36
+
+; Barcode Data
+
+37 38 39 30 31 ;
+
+<!-- image -->
+
+## example 14: UPC-E, CD: Host, HRI: print
+
+1B 28 42 0E 00
+
+; Barcode command and data length
+
+04
+
+; Barcode type k = UPC-E
+
+02
+
+; Module width m = 2 dots / 180 inch
+
+00
+
+; Space adjustment value s = +0 dots / 360 inch
+
+7D 00
+
+; Bar length v1 , v2 = 125 / 180 inch
+
+00
+
+; Control flags c
+
+30 31 32 33 34 35
+
+; Barcode Data
+
+30 33 ;
+
+<!-- image -->
+
+example 15: UPC-E, CD: Printer, HRI: print
+
+1B 28 42 0D 00
+
+; Barcode command and data length
+
+04
+
+; Barcode type k = UPC-E
+
+02
+
+; Module width m = 2 dots / 180 inch
+
+00
+
+; Space adjustment value s = +0 dots / 360 inch
+
+7D 00
+
+; Bar length v1 , v2 = 125 / 180 inch
+
+01
+
+; Control flags c
+
+30 31 32 33 34 35 30
+
+; Barcode Data
+
+<!-- image -->

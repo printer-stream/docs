@@ -1,0 +1,145 @@
+C O N F I D E N T I A L
+Paper roll
+Character commands     ESC R
+ 
+Ver. 10.13
+p. 134
+[Model-dependent variations]
+TM-P60, TM-U220, TM-T20, TM-T88V
+TM-P60
+Settings of this command do not affect special font (24 × 48) printing. Special fonts (24 × 48) print 
+characters when USA is selected, irrespective of the settings of this command.
+TM-U220
+The character code table (GB18030 / GB2312) of Simplified Chinese model is selected by using 
+Memory switch {Msw2-3}. See GS ( E <Function 3> for details on the Memory switch.
+TM-T20, TM-T88V
+When the default of the international character set is changed with GS ( E <Function 5> <a = 9>, 
+the default value becomes the one specified by GS ( E.
+Program Example for all printers
+Print Sample
+FOR n=0 TO 10
+  PRINT #1, CHR$(&H1B);"R";CHR$(n);
+  PRINT #1, "# $ @ [ \ ] ^ ` { - } ~"; CHR$(&HA);
+NEXT n
+#       $
+@
+[ \
+]
+^
+` { -
+}
+~
+← n=0 (Default setting)
+#         $
+ˆ
+û
+•
+¤
+^
+`
+Ž
+•
+•
+¬
+← n=1
+#         $
+¤
+€
+…
+† ^ `
+Š
+š
+Ÿ
+§
+← n=2
+£      $
+@
+[
+\
+]
+^
+`
+{ -
+}
+~
+← n=3
+#       $ @
+®
+¯
+•
+^
+` ¾
+¿ Œ
+~
+← n=4
+#         Û
+ƒ
+€
+…
+•
+†
+Ž
+Š
+š
+Œ
+Ÿ
+← n=5
+#         $
+@
+û
+\
+Ž
+^
+•
+ˆ
+˜
+•
+“
+← n=6
+Pt         $
+@
+Á
+„
+À
+^
+` ¬
+–
+}
+~
+← n=7
+#      $
+@
+[
+´
+]
+^
+`
+{
+-
+}
+~
+← n=8
+#         Û
+ƒ
+®
+¯
+•
+†
+Ž
+¾
+¿
+Œ
+Ÿ
+← n=9
+#          $
+ƒ
+®
+¯
+•
+†
+Ž
+¾
+¿
+Œ
+Ÿ
+← n=10

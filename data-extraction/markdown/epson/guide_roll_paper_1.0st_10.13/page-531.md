@@ -1,0 +1,43 @@
+## C O N F I D E N T I A L
+
+## Printer model:
+
+TM-P60
+
+- Model dependent printer information A ( n = 96):
+
+Sends 3 byte data group composed of [header + DIP switches information (1 byte) + NUL].
+
+| Bit   | Binary   | Hex   | Decimal   | Function           |
+|-------|----------|-------|-----------|--------------------|
+| 0     | -        | -     | -         | Reserved           |
+| 1     | 0        | 00    | 0         | DIP switch 1-2 OFF |
+| 1     | 1        | 02    | 2         | DIP switch 1-2 ON  |
+| 2, 3  | -        | -     | -         | Reserved           |
+| 4     | 0        | 00    | 0         | DIP switch 1-2 OFF |
+| 4     | 1        | 10    | 16        | DIP switch 1-2 ON  |
+| 5     | -        | -     | -         | Reserved           |
+| 6     | 1        | 40    | 64        | Fixed              |
+| 7     | 0        | 00    | 0         | Fixed              |
+
+## TM-U230
+
+- Printer model ID ( n = 1, 49)
+- Type ID ( n = 2, 50)
+- Printer model ( n = 67)
+
+Hex = 2AH / Decimal = 42
+
+Bit 1: The bit always indicates Autocutter is installed.
+
+Bit 2: The bit [DM-D (Customer display) connection] isn't supported.
+
+Printer model:
+
+TM-U230
+
+## TM-U220
+
+- Printer model ID ( n = 1, 49)
+
+Hex = 0DH / Decimal = 13

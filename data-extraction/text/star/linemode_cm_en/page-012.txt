@@ -1,0 +1,146 @@
+  
+ 
+ 
+ 
+ 
+Commands 
+Name 
+Class 
+ 
+Page control 
+FF 
+Form feed 
+commands 
+ESC C  
+Set page length to n lines 
+ 
+ESC C 0  
+Set page length in 24 mm units 
+ 
+VT 
+Feed paper to vertical tab position 
+ 
+ESC B  
+Set vertical tab position 
+ 
+ESC N  
+Set bottom margin to n lines 
+ 
+ESC O 
+Cancel bottom margin 
+Horizontal 
+ESC l  
+Set left margin  
+direction 
+ESC Q  
+Set right margin 
+position 
+HT 
+Move print position to horizontal tab position 
+ 
+ESC D  
+Set/cancel horizontal tab position 
+ 
+ESC GS A  
+Move absolute position 
+ 
+ESC GS R  
+Move relative position 
+ 
+ESC GS a  
+Specify position alignment 
+Download 
+ESC &  
+Register/delete 12 x 24 dot font download characters 
+ 
+ESC %  
+Set/cancel download characters 
+Bit image 
+ESC K  
+Standard density bit image 
+graphics 
+ESC L  
+High density bit image 
+ 
+ESC k  
+Fine bit image 
+ 
+ESC X  
+Fine bit image 
+Logos 
+ESC FS q  
+Register logo data 
+ 
+ESC FS p  
+Print logo data 
+ 
+ESC RS L 
+Print registered logo in batch/ Batch control of registered logos 
+Bar code 
+ESC b  
+Print bar code 
+Cutter control 
+ESC d  
+Paper cutter instruction 
+External device 
+ESC BEL  
+Set pulse width for external device drive 
+Drive 
+BEL 
+External device 1 drive instruction 
+ 
+FS 
+External device 1 drive instruction 
+ 
+SUB 
+External device 2 drive instruction 
+ 
+EM 
+External device 2 drive instruction 
+ 
+ESC GS BEL 
+Ring buzzer 
+ 
+ESC GS EM DC1 
+External buzzer drive pulse condition settings 
+ 
+ESC GS EM DC2 
+External buzzer drive execution 
+Print settings 
+ESC RS d 
+Set print density 
+ 
+ESC RS r 
+Set printing speed 
+Status 
+ESC RS a  
+Set status transmission conditions 
+ 
+ESC ACK SOH 
+Real-time printer status  (ASB Status) 
+ 
+ENQ 
+Real-time printer status  (1) 
+ 
+EOT 
+Real-time printer status  (2) 
+ 
+ESC ACK CAN 
+Real-time printer reset 
+ 
+ETB 
+Update ETB status 
+ 
+ESC RS E 
+Clear ETB counter, ETB status 
+ 
+ESC GS ETX 
+Send print end counter and initialize 
+ 
+ 
+Print data cancel function 
+ 
+ 
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+STAR Line Mode Command Specifications 
+2-2 

@@ -1,0 +1,46 @@
+## Format
+
+ASCII ESC S n
+
+```
+Hex 1B 53 n Decimal 27 83 n
+```
+
+## Parameter range
+
+```
+n = 0, 1, 48, 49
+```
+
+## Function
+
+Prints characters that follow at about 2/3 their normal height; the printing location depends on the value of n as follows:
+
+```
+n = 1 or 49 Lower part of the character space 0 or 48 Upper part of the character space
+```
+
+## Default
+
+Normal (non-super/subscript) characters
+
+## Notes
+
+- This command does not affect graphics characters.
+- The width of super/subscript characters when using proportional spacing differs from that of normal characters; see the super/subscript character proportional width table in the Appendix.
+- The underline strikes through the descenders on subscript characters during underlining.
+- Use the ESC T command to cancel super/subscript printing.
+- When point sizes other than 10 (10.5) and 20 (21) are selected in multipoint mode, super/subscript characters are printed at the nearest point size less than or equal to 2/3 the current size.
+- When 8-point characters are selected, super/subscript characters are also 8-point characters.
+
+## Printers not featuring this command
+
+None
+
+Model-dependent variations
+
+None
+
+## Related topics
+
+ESC T, Super/subscript

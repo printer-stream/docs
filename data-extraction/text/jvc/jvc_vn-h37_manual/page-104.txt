@@ -1,0 +1,76 @@
+101 
+- Audio Sending Client 
+It can send audio from PC to the camera. 
+ 
+ How to download ActiveX controls: 
+ i) Please input URL below in Internet Explorer’s url form. 
+  http://(IP Address)/ IntegratedViewer.cab 
+  Ex.) When IP address of the camera is “192.168.0.2”: 
+    http://192.168.0.2/IntegratedViewer.cab 
+ 
+ ii) Download dialog box is showed. Please click save button and copy to some folder in the PC. 
+ 
+34.2. Properties of ActiveX 
+JPEG /H.264 Viewer 
+Property 
+Meaning 
+IP 
+IP Address of the camera: Required when RcvMode is unicast. 
+Default: 192.168.0.2 
+HttpPort 
+Port Number of the camera: Required when RcvMode is unicast. 
+(1 - 65535）  Default: 80 
+MultiIP 
+IP Address of multicast: Required when RcvMode is multicast. 
+Default: 225.0.1.1 
+MultiPort 
+Port Number of multicast: Required when RcvMode is multicast. 
+(1 - 65535) Default: 49152 
+RcvMode 
+Desired stream 
+(0: unicast,  1: multicast) 
+FrameRate 
+*JPEG only 
+Frame Rate of JEPG 
+To specify a frame rate lower than 1fps, use “-“. For example, specify -5 for 1/5 fps.
+(15,  10, 7.5, 6, 5, 3, 2, 1, -2, -3, -5, -10, -15, -20, -30, -60) 
+Default: 5 
+DispWidth 
+Width of Display 
+When the size is different from original frame size, the image is scaled. 
+Default: 640 
+DispHeight 
+Height of Display 
+When the size is different from original frame size, the image is scaled. 
+Default: 360 
+DispTitle 
+Display of Camera ID 
+(0: hide, 1: display)  Default: 0 
+DispMotion 
+*JPEG only 
+Display of Motion Detection 
+(0: hide, 1: display)  Default: 0 
+DispPosTitle 
+Display of Position Title 
+(0: hide, 1: display)  Default: 0 
+DispTimeCode 
+Display of Time Code 
+(0: hide, 1: display)  Default: 0 
+TimeFormat 
+Format of Time Code 
+( 0:  YYYY/MM/DD HH:MM:SS.mm 
+1:  YYYY/MM/DD HH:MM:SS 
+2:  DD/MM/YYYY HH:MM:SS 
+3:  MM/DD/YYYY HH:MM:SS 
+4:  MM/DD HH:MM:SS 
+5:  HH:MM:SS 
+6:  HH:MM) 
+*Y: Year  M: Month  D: Day  H: Hour  M: Minute  S: Second  m: milli second 
+Default: 1 
+FolderName 
+*JPEG only 
+Folder Name of saving still images. 
+This folder is created in 
+ WindowsXP 
+: MyDocuments 
+Downloaded from www.Manualslib.com manuals search engine 

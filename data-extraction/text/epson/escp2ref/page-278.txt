@@ -1,0 +1,44 @@
+Select a Font        R-47
+ESC/P 2
+ESC/P
+9-Pin ESC/P
+Non-ESC/P 2 and typefaces not available in multipoint mode
+Characters normally have a size of 10.5 points. You can also print 21-point
+characters as shown below.
+ESC w 1
+Selects double-height (21-point) characters
+ESC w 0 
+Selects normal (10.5-point) characters
+Selecting the typeface
+ESC/P 2
+ESC/P
+9-Pin ESC/P
+Select the typeface using the ESC k command. The parameters for selecting each
+available typeface setting are shown below:
+Command
+Typeface name
+            Character samples (24-pin)
+ESC k 0
+ESC k 1
+*ESC k 2
+*ESC k 3
+*ESC k 4
+*ESC k 5
+*ESC k 6
+*ESC k 7
+*ESC k 8
+*ESC k 9
+Roman
+Sans serif
+Courier
+Prestige
+Script
+OCR-B
+OCR-A
+Orator
+Orator-S
+Script C
+*Only available on 24/48-pin printers
+Note:
+Not all typefaces are available in multipoint mode; see the Feature Summary for
+the typefaces available in multipoint mode.

@@ -1,0 +1,14 @@
+## C O N F I D E N T I A L
+
+| GS \    | EXECUTING COMMAND   | Set relative vertical print position in page mode   | PRINT POSITION COMMANDS   |
+|---------|---------------------|-----------------------------------------------------|---------------------------|
+| Command | Classification      | Name                                                | Function type             |
+| GS a    | EXECUTING + SETTING | Enable/disable Automatic Status Back (ASB)          | STATUS COMMANDS           |
+| GS b    | SETTING COMMAND     | Turn smoothing mode on/off                          | CHARACTER COMMANDS        |
+| GS f    | SETTING COMMAND     | Select font for HRI characters                      | BAR CODE COMMANDS         |
+| GS g 0  | SETTING COMMAND     | Initialize maintenance counter                      | MISCELLANEOUS COMMANDS    |
+| GS g 2  | EXECUTING COMMAND   | Transmit maintenance counter                        | MISCELLANEOUS COMMANDS    |
+| GS h    | SETTING COMMAND     | Set bar code height                                 | BAR CODE COMMANDS         |
+| GS k    | EXECUTING COMMAND   | Print bar code                                      | BAR CODE COMMANDS         |
+| GS r    | EXECUTING COMMAND   | Transmit status                                     | STATUS COMMANDS           |
+| GS w    | SETTING COMMAND     | Set bar code width                                  | BAR CODE COMMANDS         |

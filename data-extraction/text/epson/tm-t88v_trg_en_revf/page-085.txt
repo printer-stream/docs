@@ -1,0 +1,27 @@
+Chapter 6   Replacement of the TM-T88IV
+85
+6
+DIP Switches
+The functional assignments of DIP switches are the same as those of the TM-T88IV except for 
+DIP switches 2-3 and 2-4.
+Since the TM-T88V does not have a low power consumption mode, do not set DIP switches 2-3 
+and 2-4 both to ON.
+Printer Status
+The TM-T88V goes to the same status under the same conditions as the TM-T88IV. You can 
+replace the TM-T88V with the TM-T88IV without modifying applications.
+Logo Registration
+The TM-T88V can register logos in the NV memory (NVRAM) with the TM-T88V Utility, while 
+the TM-T88IV can register logos with the TM Flash LOGO Setup Utility for NVRAM (TM-Flogo).
+Driver Compatibility
+You can operate the TM-T88V with a driver for the TM-T88IV or the TM-T88III.
+Advanced Printer Driver
+When the TM-T88IV was controlled by APD Ver. 4.00 ~ 4.04, you need to change the TM-T88V 
+printer model name to “TM-T88IV” using the customized value. (See "Setting the Memory 
+Switches (Customized Value)" on page 63.)
+When the TM-T88IV was controlled by an APD other than Ver. 4.00 ~ 4.04, you can replace it 
+with the TM-T88V without modifying the APD.
+OPOS ADK
+If the TM-T88IV was controlled by an OPOS ADK, you can replace it with the TM-T88V without 
+modifying the OPOS ADK.
+For detailed information about the TM-T88V Utility, see the TM-T88V Utility User’s Manual.
+You cannot operate the TM-T88IV with a driver for the TM-T88V.

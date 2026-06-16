@@ -1,0 +1,27 @@
+Plot showing symbol mode:
+33
+The Line Type Instruction, LT
+DESCRIPHDN The line type instruction,
+LT, speciﬁes the type of line
+that will be used with PA and PR commands.
+m
+This instruction can be used with PA and PR commandsto
+draw dashed or dotted lines. This facilitates trace differentiation on
+multipleline graphs and enables emphasis or deemphasis of plotted
+lines or grids. One line type causes only dots to be plotted at each data
+point.
+3YNTAX LT
+pattern number (,pattern length) (terminator)
+or
+LT
+(terminator)
+EXPLANATIONShown below are the line patterns
+and their pattern
+numbers.
+0- specifiesdots only at the points that are plotted.
+One pattern length
+No parameter (Default Value)
+The shaded portion of each of the line patterns above is one complete
+segment ofthe pattern.
+4-6
+ENHANCING THE PLOT

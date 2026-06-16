@@ -1,0 +1,63 @@
+Decimal
+Set I]
+Set 1
+Set 2
+Set 3
+Set 4
+v(llU9
+Stmdurd
+9825
+French/Geruan Scandinavim
+SpanishlLatin
+ASCII
+Set
+Aneri can
+35
+#
+#
+.€
+39
+'
+91
+[
+92
+\
+93
+1
+94
+"
+95
+96
+‘
+123
+{
+124
+I
+125
+}
+126
+”
+The Designate Standard Character Set
+Instruction, CS
+DESCFHPTIUNThe designate
+standard
+character
+set instruction,
+CS,
+provides the means of designating one of the ﬁve character sets (0
+through 4) as the standard character set.
+USES The instruction can be used to change the standard character
+set to one with characters appropriate for your application. It is espe­
+cially useful when labels are in a language other than English.
+SYNTAX CS
+character set number (terminator)
+EXPLANAHONThe character set number can be 0 through 4. The set
+designated by the CS instruction is used for all labeling operations
+when the standard set is selectedby the SS instruction or by the control
+character shift-in (decimal equivalent 15)in a label string. Character
+set 0 is automatically designated as the standard character set when­
+ever the plotter is initialized or set to default values.
+A CS command executed while the standard set is selected will imme­
+diately change the character set used for labeling. CS commands
+LABELING
+5-3

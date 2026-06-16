@@ -1,0 +1,14 @@
+98
+Printing and Cutting Positions
+The values above may vary slightly as a result of paper slack or variations in the paper. 
+Take this into account when setting the cutting position of the autocutter.
+Autocutter blade position
+Approx. 29
+Approx. 15
+Manual-cutter position
+Center of the print dotline
+[units: mm (All the numeric values are typical.)]
+Paper feed direction
+Printable area
+Last line of 
+a previous receipt

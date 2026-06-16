@@ -1,0 +1,42 @@
+## Format
+
+```
+ASCII ESC ? n m Hex 1B 3F n m Decimal 27 63 n m
+```
+
+## Parameter range
+
+```
+n = 75, 76, 89, 90 m = 0, 1, 2, 3, 4, 6, 32, 33, 38, 39, 40, 71, 72, 73
+```
+
+## Function
+
+Assigns the dot density used during the ESC K, ESC L, ESC Y, or ESC Z commands to the density specified by parameter m in the ESC * command
+
+## Default
+
+ESC K is assigned density 0
+
+ESC L is assigned density 1
+
+ESC Y is assigned density 2
+
+ESC Z is assigned density 3
+
+## Notes
+
+- This is a nonrecommended command; use the ESC * command to print graphics rather than the ESC K, ESC L, ESC Y, or ESC Z commands.
+- Bit-image modes that handle data in 48-dot columns can only be printed on 48-dot printers.
+
+## Printers not featuring this command
+
+None
+
+## Model-dependent variations
+
+See the Command Table for the m values that can be reassigned in each printer model.
+
+## Related topics
+
+ESC *

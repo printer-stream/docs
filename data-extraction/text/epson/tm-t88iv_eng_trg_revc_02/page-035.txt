@@ -1,0 +1,25 @@
+Chapter 2   Setup
+35
+2
+Setting the DIP Switches
+On this printer, you can make various settings with DIP switches.
+Functions of the DIP switches differ depending on the interface.
+Setting Procedure
+Follow the steps below to change the DIP switch settings.
+1
+Make sure the power supply for the printer is turned off.
+2
+Unscrew the screw to remove the DIP switch cover from the base of the 
+printer.
+3
+Set the DIP switches, using the tip of a tool, such as a small screwdriver.
+4
+Replace the DIP switch cover, and screw it in place.
+For models with the buzzer function, see also "Setting the Buzzer" on page 56.
+CAUTION
+Before you remove the DIP switch cover, turn the printer off. 
+Otherwise, a short-circuit may cause the printer to malfunction.
+DIP switch settings are enabled only when the power is turned on or the printer is reset via 
+the interface. If the settings are changed after that, the functions will not change.
+DIP switch bank 1
+DIP switch bank 2

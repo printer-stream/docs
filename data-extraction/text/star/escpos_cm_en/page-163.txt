@@ -1,0 +1,35 @@
+ESC/POS Command Specifications
+163
+Rev.2.52
+ 
+<Command Ignored>
+<Command Ignored>
+<Command Ignored>
+·FS C n(n=0)
+ANK Characters
+(Font -A/Font-B)
+[Japanese Kanji Installed]
+FS &
+FS
+Code System
+Code System
+JIS
+·FS C n(n=0)
+·FS C n(n=1)
+FS C n(n=0)
+·FS .
+·FS &
+·FS &
+FS C n(n=1)
+FS C n(n=1)
+SHIFT-JIS
+[Chinese Kanji Installed]
+ANK Characters
+(Font-A/Font-B)
+<Command Ignored>
+<Command Ignored>
+·FS C n(n=0 / n=1)
+·FS C n(n=0 / n=1)
+FS &
+FS .
+Chinese Kanji

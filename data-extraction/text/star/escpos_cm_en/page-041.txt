@@ -1,0 +1,34 @@
+ESC/POS Command Specifications
+41
+Rev.2.52
+ESC FF
+Name	
+Print data in page mode 
+Code	
+ASCII	
+ESC	
+FF
+	
+Hex.	
+1B	
+0C
+	
+Decimal	
+27	
+12
+Function 	
+Prints all buffered data in the print area collectively in page mode.  
+Details 	
+•	This command is enabled only in page mode.  
+	
+•	Holds the following information after printing.  
+	
+a.  Expanded data 
+	
+b. Character print direction selection in page mode (ESC T) 
+	
+c. Set print region (ESC W) in the page mode.  
+	
+d. Character expansion position 
+Reference 	
+FF, ESC L, ESC S

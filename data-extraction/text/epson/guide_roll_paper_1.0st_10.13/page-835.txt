@@ -1,0 +1,11 @@
+C O N F I D E N T I A L
+Paper roll
+Character code tables     
+ 
+Ver. 10.13
+p. 835
+ Character code tables
+SP in a table represents space. See Using the character code tables for information on how to read these tables.
+Page 0 (PC437: U.S.A., Standard Europe) (International character set: U.S.A.)
+CHARACTER CODE TABLES
+FS

@@ -1,0 +1,45 @@
+(0.80)
+URCLECENTER
+(50,50)
++13o°ARC.
+0
+(o,5o)
+(0,40)
+START
+(0,20)
+The Arc Relative Instruction, AR
+DESCRIPTHJNThe are relative instruction, AR, provides the means to
+draw an arc with the center point located relative to the present pen
+position. The are can be drawn clockwise (CW) or counterclockwise
+(CCW),with a specified are angle and chord angle. It is only included
+in the instruction
+set of RS—232—C
+plotters that have the serial preﬁx
+number 2308Aor higher.
+M
+The instruction can be used to draw an arc of any radius,
+length, and smoothness with a single command. The are is drawn from
+the current pen position, and its center point is located by relative X,Y
+coordinates.
+SYNTAX AR
+X—increment, Y—increment, arc angle (, chord angle)
+terminator
+CURRENT
+X-INCREMENT
+CURRENT PEN
+PENPOSITIONX"NCREME“T
+TV
+p0s|T|0N
+f_____A_____‘
+Y­
+Y‘
+INCREMENT
+INCREMENT
+RELATIVE x.v
+RE‘-AT'VE X-Y
+COORDINATE
+COORWNATE
+(ARC CENTER)
+(ARC CENTER)
+CONTROLLING THE PEN AND PLOTTING
+3-19

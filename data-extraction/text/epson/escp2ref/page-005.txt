@@ -1,0 +1,41 @@
+2        Introduction
+About This Manual
+This manual is composed of four main sections.
+Command Summary
+Contains a detailed description of all commands available in
+EPSON ESC/P, with new commands available in ESC/P 2
+clearly identified. Also, the following information is
+included:
+• 
+Differences between 9-pin and 24/48-pin commands
+• 
+Printers that do not feature particular commands
+• 
+Differences in command functions among printers
+Recommended Operations
+Detailed explanations on how to use commands to perform
+specific functions in the most efficient manner.
+Command Table
+Tables that show the commands and command parameters
+featured on all EPSON printers.
+Feature Summary
+Features and options available on all EPSON printer
+models, as well as DIP-switch settings on applicable
+printers.
+In addition, the Appendix contains information on character tables, widths of proportional
+characters, and interfaces.
+A Glossary and Index also provide convenient reference information.
+The information in this manual will be updated on a regular basis to continually provide
+the most current information on commands and printer models.
+Conventions Used in This Manual
+A number of conventions are used in this manual to aid in describing commands and
+distinguishing between ESC/P versions.
+Icons
+One or more of the following icons appear next to the command description, indicating
+availability to a particular printer type.
+ESC/P 2
+Available on EPSON ESC/P 2 printers
+ESC/P
+Available on EPSON 24 /48-pin printers featuring a previous ESC/P level
+9-Pin ESC/P
+Available on 9-pin printers

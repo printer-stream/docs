@@ -1,0 +1,41 @@
+The parameter c specifies the control flag.
+
+| c     | Control flag                                                                                                                                 |
+|-------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| bit 0 | Check digit 0: If check d igit is to be printed, the host generates it and it to the printer 1: Printer generates and prints the check digit |
+| Bit 1 | Human readable character 0: Prints 1: Does not print                                                                                         |
+| Bit 2 | Position of flag character (for EAN-13 and UPC-A only) 0: Center 1: Under                                                                    |
+| bit 3 | (reserved)                                                                                                                                   |
+| bit 4 | (reserved)                                                                                                                                   |
+| bit 5 | (reserved)                                                                                                                                   |
+| bit 6 | (reserved)                                                                                                                                   |
+| bit 7 | (reserved)                                                                                                                                   |
+
+Barcode Data Corresponds to the bar code symbology. The data number of each bar code type is constant. The bar code is not printed if the number of bar code characters are incorrect.
+
+<!-- image -->
+
+| Bar code type    | Actual number of Barcode Data (HEX)   | Actual number of Barcode Data (HEX)   |
+|------------------|---------------------------------------|---------------------------------------|
+| Bar code type    | control flag c bit = 0                | 0 control flag c = 1                  |
+| EAN-13           | 0D                                    | 0C                                    |
+| EAN-8            | 08                                    | 07                                    |
+| Interleaved 2 of | 02 to FF                              | 02 to FF                              |
+| UPC-A            | 0C                                    | 0B                                    |
+| UPC-E            | 0C or 8                               | 0B or 7                               |
+| Code 39          | 01 to FF                              | 01 to FF                              |
+| Code 128         | 02 to FF                              | 02 to FF                              |
+| POSTNET          | 06 or 0A or 0C                        | 05 or 09 or 0B                        |
+
+The valid data of each bar code type are as follows. If invalid data is included in the Barcode Data string, the bar code is not printed.
+
+| Bar code type    | Valid range of BarCodeData                                   |
+|------------------|--------------------------------------------------------------|
+| EAN-13           | 0-9 (30H-39H)                                                |
+| EAN-8            | 0-9 (30H-39H)                                                |
+| Interleaved 2 of | 50-9 (30H-39H)                                               |
+| UPC-A            | 0-9 (30H-39H)                                                |
+| UPC-E            | 0-9 (30H-39H)                                                |
+| Code 39          | 0-9 (30H-39H), (41H-5AH) (20H, 24H, 25H, 2BH, 2DH, 2EH, 2FH) |
+| Code 128         | See the code sets A, B, and C on the following pages.        |
+| POSTNET          | 0-9 (30H-39H)                                                |

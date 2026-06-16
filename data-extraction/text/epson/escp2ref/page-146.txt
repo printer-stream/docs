@@ -1,0 +1,21 @@
+Individual Command Explanations        C-139
+DC2
+Cancel condensed printing
+9-Pin ESC/P
+Format
+ASCII
+DC2
+Hex
+12
+Decimal
+18
+Function
+Cancels condensed printing selected by the SI or ESC SI commands
+Default
+Normal (noncondensed) printing
+Printers not featuring this command
+None
+Model-dependent variations
+None
+Related topics
+SI

@@ -1,0 +1,13 @@
+ESC/POS Command Specifications
+68
+Rev.2.52
+Reference 	
+CAN, ESC L, ESC T, GSP, Appendix-5 
+ 
+(X ,Y)
+Dx
+Dy
+Paper
+(X+Dx-1, Y+Dy-1)
+Print Region
+Paper Feed Direction

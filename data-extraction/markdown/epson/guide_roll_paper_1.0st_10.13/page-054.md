@@ -1,0 +1,22 @@
+## C O N F I D E N T I A L
+
+| Command   | Classification      | Name                                              | Function type               |
+|-----------|---------------------|---------------------------------------------------|-----------------------------|
+| GS !      | SETTING COMMAND     | Select character size                             | CHARACTER COMMANDS          |
+| GS $      | EXECUTING COMMAND   | Set absolute vertical print position in page mode | PRINT POSITION COMMANDS     |
+| GS ( C    | EXECUTING + SETTING | Edit NV user memory                               | CUSTOMIZE COMMANDS          |
+| GS ( D    | SETTING COMMAND     | Enable/disable real-time command                  | MISCELLANEOUS COMMANDS      |
+| GS ( E    | EXECUTING + SETTING | Set user setup commands                           | CUSTOMIZE COMMANDS          |
+| GS ( H    | EXECUTING COMMAND   | Request transmission of response or status        | MISCELLANEOUS COMMANDS      |
+| GS ( K    | SETTING COMMAND     | Select print control method(s)                    | MISCELLANEOUS COMMANDS      |
+| GS ( L GS | EXECUTING + SETTING | Set graphics data                                 | BIT-IMAGE COMMANDS          |
+| GS ( M    | SETTING COMMAND     | Customize printer control value(s)                | CUSTOMIZE COMMANDS          |
+| GS ( P    | EXECUTING COMMAND   | Page mode control                                 | CUSTOMIZE COMMANDS          |
+| GS ( Q    | EXECUTING COMMAND   | Commands for drawing graphics                     | CUSTOMIZE COMMANDS          |
+| GS ( k    | EXECUTING + SETTING | Set up and print the symbol                       | TWO DIMENSION CODE COMMANDS |
+| GS B      | SETTING COMMAND     | Turn white/black reverse print mode on/off        | CHARACTER COMMANDS          |
+| GS H      | SETTING COMMAND     | Select print position of HRI characters           | BAR CODE COMMANDS           |
+| GS I      | EXECUTING COMMAND   | Transmit printer ID                               | MISCELLANEOUS COMMANDS      |
+| GS L      | SETTING COMMAND     | Set left margin                                   | PRINT POSITION COMMANDS     |
+| GS V      | EXECUTING COMMAND   | Select cut mode and cut paper                     | MECHANISM CONTROL COMMANDS  |
+| GS W      | SETTING COMMAND     | Set print area width                              | PRINT POSITION COMMANDS     |

@@ -1,0 +1,75 @@
+  
+ 
+• FVP10 
+Initial Value 
+Maximum Value 
+Printable Region Width
+Printable Region Width 
+Printing 
+Region 
+dxL
+dxH 
+dyL 
+dyH
+Set 
+X 
+Direction 
+Y Direction 
+X 
+Direction 
+Y 
+Direction  
+(Memory 
+Switch 
+Setting)  
+72mm 
+64 
+2 
+AA 
+3 
+72mm 
+117.3mm
+72mm 
+300mm 
+52.5mm 
+164
+1 
+AA 
+3 
+52.5mm 
+117.3mm
+52.5mm 
+300mm 
+50.8mm 
+150
+1 
+AA 
+3 
+50.8mm 
+117.3mm
+50.8mm 
+300mm 
+52mm 
+160
+1 
+AA 
+3 
+52mm 
+117.3mm
+52mm 
+300mm 
+30mm 
+240
+0 
+AA 
+3 
+30mm 
+117.3mm
+30mm 
+300mm 
+ 
+Basic Calculated Pitch: X = 1/203 (inch), Y = 1/203 (inch) 
+ 
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+STAR Line Mode Command Specifications 
+3-138 

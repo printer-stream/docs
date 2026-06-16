@@ -1,0 +1,44 @@
+C-156        Individual Command Explanations
+ESC m
+Select printing of upper control codes
+9-Pin ESC/P
+Format
+ASCII
+ESC
+m
+n
+Hex
+1B
+6D
+n
+Decimal
+27
+109
+n
+Parameter range
+n = 0, 4
+Function
+Selects between the following:
+n = 0
+Tells the printer to treat codes from 128 to 159 as  printable characters
+4
+Tells the printer to treat codes from 128 to 159 as control codes
+Default
+Codes 128 to 159 treated as control codes
+Notes
+• 
+This is a nonrecommended command; use the ESC I, ESC 6, or ESC 7 commands
+instead, when possible.
+• 
+This command has no effect when the italic character table is selected; no characters are
+defined for these codes in the italic character table.
+• 
+This command remains in effect even if you change the character table.
+Printers not featuring this command
+ActionPrinter 2000, ActionPrinter 2250, ActionPrinter 2500, DFX-5000, DFX-5000+, DFX-
+8000, FX-850, FX-870, FX-1050, FX-1070, LX-100, LX-300, LX-800, LX-810, LX-850, LX-1050,
+LX-1050+
+Model-dependent variations
+None
+Related topics
+ESC 6, ESC 7, ESC I

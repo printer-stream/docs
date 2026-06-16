@@ -1,0 +1,39 @@
+3-6   Application Development Information
+Rev. A
+3.1.4  Various Utilities
+We provide the utilities described below for developers of TM printer applications. You can 
+obtain the utilities from one of the following URLs:
+For customers from North America, go to the following web site: http://pos.epson.com/
+For customers from other countries, go to the following web site: 
+http://www.epson-pos.com/ 
+Select the product name from the “Select any product” pull-down menu.
+3.1.4.1  IP address setup utility for UB-E02
+This utility and its detailed manual for developers allow you to set an IP address for a 10Base-T/
+100Base-TX Ethernet interface installed in the TM printer. Customers who have purchased the 
+Ethernet model TM printer need this utility.
+3.1.4.2  Electronic logo storage utility for NVRAM
+This utility is designed to save logos (bitmaps) to NVRAM (non-volatile RAM). By storing shop 
+logos to NVRAM, the print speed can be increased.
+3.1.4.3  USB interface ID code rewrite utility
+This utility is designed to edit the identification code (ID) of a USB interface.
+Note:
+Each USB model TM printer has its own ID. So, two TM-88IIIs can be controlled independently from a 
+host computer. Therefore, when replacing a TM printer that has been connected to a host computer with 
+another printer (including same model), you must change the USB port in the printer driver on the host 
+computer. Use of this utility, for example, frees you from changing the USB port in the printer driver.
+3.2  Switches and Buttons
+On this printer, you can disable or enable the paper FEED button. For details on how to switch 
+between disabled or enabled, refer to the documentation for OPOS Advanced Printer Driver and 
+ESC/POS commands, respectively. 
+3.2.1  Paper FEED Button
+The printer feeds paper based on the line spacing set by the control method (OPOS, Advanced 
+Printer Driver, ESC/POS commands). However, you cannot feed paper using the paper FEED 
+button under the following conditions:
+•
+When the roll paper cover is open.
+•
+When performing a self-test (Press the FEED button to stop the self-test and press it again 
+to resume it).
+•
+When the paper FEED button has a function defined in a macro definition command 
+(when ESC/POS commands are used).

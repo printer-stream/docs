@@ -1,0 +1,58 @@
+C O N F I D E N T I A L
+Paper roll
+Miscellaneous commands     DLE DC4 (fn = 7 )
+ 
+Ver. 10.13
+p. 435
+DLE DC4 (fn = 7)
+EXECUTING + SETTING
+[Name]
+Transmit specified status in real time
+ASCIIDLE
+DC4
+fn
+m
+Hex
+10
+14
+fn
+m
+Decimal
+16
+20
+fn
+m
+[Range]
+fn = 7
+TM-P60: m = 1, 5
+[Printers not featuring this command] TM-J2000/J2100, TM-T90, TM-T20, TM-T88IV, TM-T88V, TM-T70, TM-L90, 
+TM-U230, TM-U220
+[Description]
+Transmits specified status in real-time as follows.
+[Notes]
+■This is a real-time command that the printer executes upon receiving it. Take the following into 
+consideration:
+•
+If this command interrupts the code string of another command, this command is processed as a 
+parameter of the other command; therefore, the print result will not be correct.
+•
+If a command such as graphic or defined data has a code string that is the same as a code string in a 
+parameter, the printer processes this command and then continues with the bit-image or other 
+command.
+■The status or response format is the same as the format of the related command in the table above. 
+See the description of the related command corresponding to m.
+■Basic ASB status transmission has the following rules.
+•
+This function makes the printer transmit the specified ASB to the host PC regardless of whether the 
+setting for ASB is enabled or disabled. 
+•
+This function doesn’t affect the setting of whether ASB is enabled or disabled.
+m
+Function
+Related command
+1
+Transmits basic ASB status.
+GS a
+5
+Transmits battery status.
+None

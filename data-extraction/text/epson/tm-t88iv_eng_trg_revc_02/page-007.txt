@@ -1,0 +1,20 @@
+7
+About this Manual
+Aim of the Manual
+This manual was created to provide information on development, design, and installation of 
+POS systems and development and design of printer applications for developers.
+Manual Content
+The manual is made up of the following sections:
+Chapter 1
+Product Overview
+Chapter 2
+Setup
+Chapter 3
+Application Development Information
+Chapter 4
+Handling
+Chapter 5
+Replacement of the TM-T88III
+Appendix
+Specifications of Interface and Connector
+Character Code Tables

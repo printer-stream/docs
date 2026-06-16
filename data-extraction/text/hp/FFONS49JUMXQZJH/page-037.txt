@@ -1,0 +1,42 @@
+The Input WindowInstruction, IW
+DESCRIPTION The input window instruction,
+IW, provides the means
+to restrict programmed pen motion to a rectangular area of the plotting
+surface. This area is called the “window.”
+E
+Theinstructioncan be usedto establish a hard cliparea, i.e.,
+restrict plotting to a certain area of the paper. The instruction is
+especially useful when your data should fall in a certain range but your
+scaling is larger (perhaps you have left room for labels) and you don’t
+want lines outside the normal data area. It is also useful when hatching
+(shading) rectangular areas.
+IW Xlowerleft,Ylowerleft,Xupperright,Yupperright(terminator)
+01'
+I W (terminator)
+EXPLANATIONParameters
+are always
+interpreted
+as plotter units.
+When four parameters are included, the hard clip limits are set accord­
+ing to the parameters. If no parameters are included, the hard clip
+limits are set to the maximum plotting area. That area was determined
+by the setting of the rear—pane1paper switch as read when the plotter
+was last initialized by either power up, front—panelreset, or execution of
+an IN command.
+The four parameters
+specify, in absolute plotter units, the X—and
+Y—coordinatesof the lower-left and upper-right corners of the window
+area. The parameters should be positive and less than or equal to
+10 900 or 10300 for X (depending on the setting of the paper switch)
+and less than 7650for Y.Parameters between -32 768 and 0 are set to 0,
+and parameters larger than the limits of the absolute plotting area but
+less than 32 767 are set to 10 300 or 10 900 for X and 7650 for Y.If Xlower
+leftis greater than Xupperright or Ylowerleftis greater than Yupperright, no
+error is set but no plotting can occur.
+At power on, or when an IN or DF command is executed, the window is
+automatically set to the current mechanical limits i.e., maximum plot­
+ting area. The window set by DF may not correspond with the current
+setting of the paper switch if the setting has been changed since power
+on, a front—panelreset, or the last IN command was executed.
+ESTABLISHING BOUNDARIES AND UNITS
+2-9

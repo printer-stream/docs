@@ -1,0 +1,45 @@
+The Reset Handshake Instruction,
+ESC . R
+DESCRIPTIONThe reset handshake
+instruction,
+ESC. R, resets all
+handshake parameters to their default values.
+E
+The instruction may be used to set the p1otter’shandshake
+responses to a known state with hardwire handshake enabled.
+svumx
+, R
+EXPLANAHUNExecuting this command is the same as executing the
+following commands without parameters: ESC . @, ESC . H, ESC . I,
+enquiry character
+acknowledgment string
+turnaround delay
+output trigger character
+echoterminate character
+output terminator
+output initiator
+intercharacter delay
+immediate response string
+monitor mode
+hardwire handshake (pin20)
+ESC . M, and ESC . N.
+K
+The following table shows the default values of parameters used to
+establish handshakes.
+Parameter
+Value
+block size
+80
+0 —no enquiry character
+0 —no acknowledgment string
+0 — no delay
+0 —no trigger character
+0 —no echo terminate character
+13;0; —carriage return
+0 —no output initiator
+O— no delay
+0 —no immediate response string
+disabled
+enabled
+10-40
+RS-232-C/CCITT V24 INTERFACING

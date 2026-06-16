@@ -1,0 +1,273 @@
+T-18        24/48-Pin Printers
+24/48-Pin Printers
+ESC/P 2
+1997
+1996
+1995
+1994
+S: Standard model   N: NLSP model
+S
+N
+S
+N
+S
+N
+S
+N
+S
+N
+S
+N
+S
+N
+S
+N
+LQ-
+670
+LQ-
+670
+DLQ-
+3000
+(’96~)
+DLQ-
+3000
+(’96~)
+LQ-
+2070
+LQ-
+2070
+LQ-
+2170
+LQ-
+2170
+LQ-
+300
+LQ-
+300
+Stylus
+COL-
+OR
+Stylus
+COL-
+OR
+Stylus
+400
+Stylus
+400
+Stylus
+800+
+Stylus
+800+
+ESC l
+Set left margin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ESC p
+Turn proportional mode on/off
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ESC q
+Select character style
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ESC r
+Select printing color
+
+
+
+
+
+
+* ESC s
+Select low-speed mode
+ESC t
+Select character table
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0
+Table 0
+Italic
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1
+Table 1
+Graphics
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2
+Table 2
+User-defined
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3
+Table 3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ESC w
+Turn double-height printing on/off
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ESC x
+Select letter quality or draft
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* DEL
+Delete last character in buffer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*
+Nonrecommended or deleted command

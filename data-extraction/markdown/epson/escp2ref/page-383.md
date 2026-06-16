@@ -1,0 +1,37 @@
+<!-- image -->
+
+## Built-in features
+
+| Print method      | 24-pin impact                                                              |
+|-------------------|----------------------------------------------------------------------------|
+| Speed             | LQ 66 cps @ 10 cpi 79 cps @ 12 cpi Draft 180 cps @ 10 cpi 216 cps @ 12 cpi |
+| Print width       | 8 inches                                                                   |
+| Paper types       | Continuous, Single sheets, Envelopes, Labels                               |
+| Multipart forms   | Original plus 1 copy                                                       |
+| Paper paths       | Rear, Front                                                                |
+| Tractor           | Push                                                                       |
+| Paper parking     | Available                                                                  |
+| Buffer size       | 11KB, 1.75KB                                                               |
+| Interface         | Parallel                                                                   |
+| Fonts (typefaces) | Roman, Sans Serif, Courier, Prestige, Script                               |
+| Nonprintable area | 5.3 mmat the top of single sheets                                          |
+
+## Options (with model numbers)
+
+Color upgrade kit C83201* Tractor C80026* (Pull) Ribbon S015060 (Fabric), S015061 (Color) *The last digit of the option model numbers shown above as an asterisk varies by country.
+
+## ActionPrinter 3260 default-setting mode
+
+This printer has no DIP switches; however, the following settings can be made in a special defaultsetting mode.
+
+| Setting                            | Options                                                            |
+|------------------------------------|--------------------------------------------------------------------|
+| Character table                    | PC437, PC850, PC860, PC863, PC865, PC861, BRASCII, Abicomp, Italic |
+| Page length (for continuous paper) | 8.5, 11, 12, or 70/6 (A4) inches                                   |
+| Skip-over-perforation              | On or Off                                                          |
+| Tear-off position                  | On or Above cutter                                                 |
+| Graphic print direction            | Unidirectional or Bidirectional                                    |
+| TOF position                       | -3, -2, -1, ±0, 1, 2, 3                                            |
+| Download                           | On or Off                                                          |
+| Auto line feed                     | On or Off                                                          |
+| Hex dump/Demonstration             | Hex dump or Demonstration                                          |

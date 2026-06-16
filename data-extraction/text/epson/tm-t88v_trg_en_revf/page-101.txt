@@ -1,0 +1,41 @@
+Appendix
+101
+Environmental Conditions
+Temperature/
+Humidity
+Operating
+5 to 45°C {41 to 113°F}, 10 to 90% RH (See the operating 
+temperature and humidity range below.)
+Storage
+(Factory packing)
+-10 to 50°C {14 to 122°F}, 10 to 90% RH (except for paper)
+Acoustic noise (operating)
+Approximately 55 dB (bystander position)
+Note:
+The values above are measured in the Epson evaluation 
+condition.
+Acoustic noise differs depending on the paper used, printing 
+contents, and the setting values, such as print speed or print 
+density.
+Relative humidity
+Operating environment
+ range
+90
+65
+10
+5
+34
+40 45
+Ambient temperature
+[%RH]
+34°C, 90%
+40°C, 65%
+45°C, 50%
+[°C]
+31°C, 90%
+34°C, 75%
+45°C, 43%
+Specified original paper 
+other than below
+Specified original paper:
+P300, P310, P350

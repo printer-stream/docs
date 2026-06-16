@@ -1,0 +1,30 @@
+<!-- image -->
+
+## · Text Search Commands
+
+| Class       | Commands             | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   |
+|-------------|----------------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|
+|             |                      | TSP800       | TSP700       | TSP600       | TUP900       | TSP1000      | TSP828L      | TSP700II     | TSP650       | TUP500       | TSP800II     | FVP10        |
+| Text Search | ESC GS ) B (fn = 48) | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○            |
+| Text Search | ESC GS ) B (fn = 49) | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○            |
+| Text Search | ESC GS ) B (fn = 50) | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○            |
+| Text Search | ESC GS ) B (fn = 64) | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○            |
+| Text Search | ESC GS ) B (fn = 65) | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○            |
+| Text Search | ESC GS ) B (fn = 80) | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○            |
+| Text Search | ESC GS ) B (fn = 81) | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○            |
+| Text Search | ESC GS ) B (fn = 96) | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○            |
+| Text Search | ESC GS ) B (fn = 97) | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○            |
+
+## · Audio Commands
+
+| Class   | Commands   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   | Model Name   |
+|---------|------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|
+|         |            | TSP800       | TSP700       | TSP600       | TUP900       | TSP1000      | TSP828L      | TSP700II     | TSP650       | TUP500       | TSP800II     | FVP10        |
+| Audio   | ESC GS s O | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○            |
+| Audio   | ESC GS s P | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○            |
+| Audio   | ESC GS s R | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○            |
+| Audio   | ESC GS s I | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○            |
+| Audio   | ESC GS s U | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○            |
+| Audio   | ESC GS s T | x            | x            | x            | x            | x            | x            | x            | x            | x            | x            | ○            |
+
+-----------------------------------------------------------------------------

@@ -1,0 +1,43 @@
+Interpretation Change limit of sense up. Specify 0, 2, 4, 8, 16, 32, 60, "+" or "-". It becomes bigger 1 step by specifying "+", smaller 1 step by specifying "-". The change of scene file 0 is saved by the API, camera.scene(0).status=save. If the change is not saved, the setting is restored by reboot.
+
+Allowed users admin, operator
+
+## Getting ALC priority of Scene File
+
+Format  /api/param?camera.scene(number).auto\_exposure.priority
+
+Example of response  camera.scene(0).auto\_exposure.priority=combo&amp;200 OK
+
+Interpretation Acquire ALC priority. ALC priority decides what is used first for auto exposure. 'combo', 'motion'
+
+or 'quality'is returned.
+
+Allowed users admin, operator, user
+
+## Setting ALC priority of Scene File
+
+Format  /api/param?camera.scene(number).auto\_exposure.priority=data
+
+Example  /api/param?camera.scene(0).auto\_exposure.priority=combo
+
+Example of response  camera.scene(0).auto\_exposure.priority&amp;202
+
+Accepted(camera.scene(0).status=save)
+
+Interpretation  Change ALC priority. ALC priority decides what is used first for auto exposure. 'combo', 'motion' or 'quality'is returned. In case of 'combo', selects the best combination automatically. In case of 'motion', assigns priority to AGC. In case of 'quality', assigns priority to the Sense Up function.
+
+Allowed users admin, operator, user
+
+## Getting Shutter Speed of a Scene File
+
+Format  /api/param?camera.scene(number).shutter
+
+Example of response  camera.scene(0).shutter=60&amp;200 OK
+
+Interpretation Acquire shutter speed setting. 'auto', "auto100", "auto1000", 30, 50, 60, 100, 250, 500, 1000, 2000, 4000, 10000 or "flickerless" is returned. For example, 60 means shutter speed 1/60. In case of 'auto', the shutter speed is adjusted from 1/30 to 1/10000. In case of "auto100", the shutter speed is adjusted from 1/30 to 1/100. In case of "auto1000", the shutter speed is adjusted from 1/30 to 1/1000. In case of "flickerless", the shutter speed that avoids flicker is selected automatically.
+
+Allowed users admin, operator, user
+
+## Setting Shutter Speed of a Scene File
+
+Format  /api/param?camera.scene(number).shutter=data Example of setting a value  /api/param?camera.scene(0).shutter=60 Example of 1 step change  /api/param?camera.scene(0).shutter=+

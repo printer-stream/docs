@@ -1,0 +1,215 @@
+C-2        Command List by Function
+Command List by Function
+The following section lists commands by their function. The shaded areas are discontinued
+or nonrecommended commands. For alternative command recommendations, see the
+command description.
+Command names
+ESC/P2
+ESC/P
+9-Pin ESC/P
+Page
+Setting the page format
+ESC ( C
+Set page length in defined unit
+•
+—
+—
+C-10
+ESC ( c
+Set page format
+•
+—
+—
+C-11
+ESC C
+Set page length in lines
+•
+•
+•
+C-13
+ESC C NUL
+Set page length in inches
+•
+•
+•
+C-15
+ESC N
+Set bottom margin
+•
+•
+•
+C-17
+ESC O
+Cancel bottom margin
+•
+•
+•
+C-19
+ESC Q
+Set right margin
+•
+•
+•
+C-21
+ESC l
+Set left margin
+•
+•
+•
+C-23
+Moving the print position
+CR
+Carriage return
+•
+•
+•
+C-25
+LF
+Line feed
+•
+•
+•
+C-27
+FF
+Form feed
+•
+•
+•
+C-29
+ESC $
+Set absolute horizontal print position
+•
+•
+•
+C-31
+ESC \
+Set relative horizontal print position
+•
+•
+•
+C-33
+ESC ( V
+Set absolute vertical print position
+•
+—
+—
+C-37
+ESC ( v
+Set relative vertical print position
+•
+—
+—
+C-39
+ESC J
+Advance print position vertically
+•
+•
+•
+C-41
+HT
+Tab horizontally
+•
+•
+•
+C-43
+VT
+Tab vertically
+•
+•
+•
+C-45
+ESC f
+Horizontal/vertical skip
+•
+C-47
+BS
+Backspace
+•
+•
+•
+C-48
+Setting the units
+ESC ( U
+Set unit
+•
+—
+—
+C-50
+ESC 0
+Select 1/8-inch line spacing
+•
+•
+•
+C-51
+ESC 2
+Select 1/6-inch line spacing
+•
+•
+•
+C-53
+ESC 3
+Set n/180-inch line spacing
+•
+•
+—
+C-55
+ESC 3
+Set n/216-inch line spacing
+—
+—
+•
+C-56
+ESC +
+Set n/360-inch line spacing
+•
+•
+—
+C-57
+ESC A
+Set n/60-inch line spacing
+•
+•
+—
+C-58
+ESC A
+Set n/72-inch line spacing
+—
+—
+•
+C-59
+ESC 1
+Select 7/72-inch line spacing
+—
+—
+•
+C-60
+ESC D
+Set horizontal tabs
+•
+•
+•
+C-61
+ESC B
+Set vertical tabs
+•
+•
+•
+C-63
+ESC b
+Set vertical tabs in VFU channels
+—
+•
+•
+C-65
+ESC /
+Select vertical tab channel
+—
+•
+•
+C-67
+ESC e
+Set fixed tab increment
+—
+—
+•
+C-69

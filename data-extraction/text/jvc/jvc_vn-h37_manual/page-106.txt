@@ -1,0 +1,75 @@
+103 
+ 
+34.3. Method of ActiveX Control 
+JPEG /H.264 Viewer 
+Method 
+Meaning 
+Play() 
+Start playback 
+Stop() 
+Stop playback 
+Capture() 
+*JPEG only 
+Save still image of JPEG 
+(Saved folder is specified by “Folder Name” of property) 
+ 
+PTZ Control Client 
+Method 
+Meaning 
+Initialize() 
+Initialize PTZ Control Client 
+*It must be called before using ptz control 
+Destroy() 
+Finalizing PTZ Control Client 
+*It must be called when the application using ActiveX control is closed. 
+ManualCtrl(n) 
+Start Pan/Tilt according to specified direction 
+            Direction                    Number of  “n” 
+upper-left    up      upper-right                         7  8  9 
+left                         right                                   4  5  6 
+under-left   down   under-right                        1  2  3 
+ZoomCtrl(n) 
+Start Zoom-In/Zoom-Out 
+(n = 0: Zoom-In, n = 1: Zoom-Out) 
+Stop() 
+Stop Pan/Tilt/Zoom 
+SetAutoFunction(n) 
+Control Auto Patrol 
+(n = 0: stop auto patrol, n = 2: start auto patrol) 
+OnePushAWC() 
+Issue one push AWC 
+SetPosition(n, str) 
+Register current position as preset position 
+n: Position Number (0 – 19) 
+str: Position Title (0 - 32 characters) 
+DeletePosition(n) 
+Unregister specified preset position 
+n: Position Number (1 – 19) *Cannot unregister Home Position 
+MovePosition(n) 
+Move to specified preset position 
+n: Position Number (0 – 19) 
+ 
+Audio Monitor/Audio Sending Client 
+Method 
+Meaning 
+Play() 
+[Audio Monitor] 
+ Start playback 
+[Audio Sending Client] 
+   Start audio stream 
+ *Result of starting audio stream is stored in “Result” of property 
+Stop() 
+[Audio Monitor] 
+ Stop playback 
+[Audio Sending Client] 
+ Stop audio stream 
+Destroy() 
+*Audio Sending 
+          Client only
+Finalize Audio Sending Client 
+*It must be called when the application using ActiveX control is closed. 
+ 
+34.4. How to use ActiveX Control by HTML 
+If write the next code in <Body> of HTML source code, It comes to be able to use ActiveX in HTML. 
+ 
+Downloaded from www.Manualslib.com manuals search engine 

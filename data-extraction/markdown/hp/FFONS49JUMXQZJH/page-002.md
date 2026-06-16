@@ -1,0 +1,16 @@
+The United States Federal Communications Commission (in 47 CFR 15.838)has specified that the following notice be brought to the attention of users ofthis product.
+
+## FEDERAL COMMUNICATIONS COMMISSION RADIO FREQUENCY INTERFERENCE STATEMENT
+
+'Thisequipmentgeneratesand uses radiofrequencyenergyand ifnot installed and used properly, that is, in strict accordance with the manufacturer's instructions, may cause interference to radio and television reception. it has been type tested and found to comply with the limits for a Class B computing device in accordance withthe specifications in Subpart J of Part 15of FCC Rules, which are designed to provide reasonable protection against such interference in a residential installation. However. there is no guarantee that interference will not occur in a particular installation. lfthis equipment does cause interference to radio or television reception, which can be determined by turningtheequipmentoffand on,the useris encouragedtotryto correct the interference by one or more of the following measures:
+
+- -reorient the receiving antenna
+- -relocate the computer with respect to the receiver
+- -move the computer away from the receiver
+- -plug the computer into a different outlet so that computer and receiver are on different branch circuits.
+
+Ifnecessary, the user should consult the dealer or an experienced radio/television technician for additional suggestions. The user may find the following booklet prepared by the Federal Com­ munications Commission helpful:
+
+'Howto Identify and Resolve Radio-TV Interference Problems'. Printing Office,
+
+This booklet is available from the US Government Washington, DC20402, Stock No. 004-000-00345-4."

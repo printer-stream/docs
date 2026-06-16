@@ -1,0 +1,13 @@
+## Print position:
+
+A bar code is placed the left upper end of a bar code to the current vertical and horizontal print position. Also printing position after the printing of a bar code returns to the print position before bar code printing.
+
+<!-- image -->
+
+## Notes:
+
+- (1) Bar code printing is always performed uni-directionally.
+- (2) The bar code is not printed when part of the bar code is past the right margin.
+- (3) Start/stop characters(*) of Code39 are generated automatically by the printer, and added to human readable characters.
+- (4) A kind of Code 128 character sets (A, B or C) is identified by the first data of Code 128. The first data must be a hexadecimal 41 (A), 42 (B) and 43 (C).
+- (5) When Code 128 Character Set C and Interleaved 2 of 5 is selected and the number of Barcode data are ODD, '0' is added to the data string.

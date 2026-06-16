@@ -1,0 +1,3 @@
+A-16        Character Tables
+ISO 8859-7 (Latin/Greek)
+TSM/WIN (Thai system manager)

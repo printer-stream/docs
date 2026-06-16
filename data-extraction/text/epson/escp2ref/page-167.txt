@@ -1,0 +1,40 @@
+C-160        Individual Command Explanations
+ESC U
+Turn unidirectional mode on/off
+9-Pin ESC/P
+Format
+ASCII
+ESC
+U
+n
+Hex
+1B
+55
+n
+Decimal
+27
+85
+n
+Parameter range
+n = 0, 1, 48, 49
+Function
+Selects bidirectional or unidirectional printing, according to the parameters below:
+n = 0 or 48
+Bidirectional printing
+1 or 49
+Unidirectional printing
+Default
+Bidirectional printing (may depend on DIP-switch setting)
+Notes
+• 
+Unidirectional printing provides better alignment of vertical lines, while bidirectional
+printing is faster.
+• 
+If unidirectional is selected by DIP switch, you cannot select bidirectional printing with
+this command.
+Printers not featuring this command
+None
+Model-dependent variations
+None
+Related topics
+Selecting unidirectional print head movement

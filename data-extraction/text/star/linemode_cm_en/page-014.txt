@@ -1,0 +1,123 @@
+  
+• Black mark related commands 
+ 
+ 
+ 
+Commands 
+Name 
+Class 
+ 
+Black mark 
+ESC d  
+Paper cut instruction 
+Related 
+FF 
+Form feed 
+Commands 
+ESC C  
+Set page length to n lines 
+ 
+ESC C 0  
+Set page length in 24 mm units 
+ 
+VT 
+Feed paper to vertical tab position 
+ 
+ESC B  
+Set vertical tab position 
+ 
+ESC N 
+Set n line bottom margin  
+ 
+ESC O 
+Cancel bottom margin 
+ 
+• 2-Color Printing Related Commands 
+ 
+ 
+ 
+Commands 
+Name 
+Class 
+ 
+2-Color Printing 
+ESC RS c  
+Specify printing color in 2-color printing mode 
+Related 
+commands 
+ESC RS C 
+Select/cancel 2-color printing mode 
+ 
+ESC 4 
+Specify white/black inversion and printing color red 
+ 
+ESC 5 
+Cancel white/black inversion and specify printing color black 
+ 
+ESC FS q 
+Register logo 
+ 
+ESC FS p 
+Print logo 
+ 
+• 2 color printing related commands 
+ 
+ 
+ 
+Commands 
+Name 
+Class 
+ 
+2 color printing 
+ESC RS c  
+Specify printing color in 2 color printing mode 
+Related 
+ESC RS C 
+Select/cancel 2 color printing mode 
+Commands 
+ESC 4 
+Specify white/black inversion and printing color red 
+ 
+ESC 5 
+Cancel white/black inversion and specify printing color black 
+ 
+ESC FS q 
+Register logo 
+ 
+ESC FS p 
+Print logo 
+ 
+ 
+•Presenter related commands 
+ 
+ 
+ 
+Commands 
+Name 
+Class 
+ 
+Presenter 
+ESC SYN 0  
+Execute presenter paper recovery 
+related 
+ESC SYN 1 
+Set presenter automatic recovery function and recovery time  
+commands 
+ESC SYN 3 
+Acquire presenter paper counter 
+ 
+ESC SYN 4 
+Initialize presenter paper counter 
+ 
+ESC GS SUB DC1 
+Specify snout operation mode 
+ 
+ESC GS SUB DC2 
+Specify snout LED ON/OFF time 
+ 
+ESC GS SUB DC3 
+Snout LED output 
+ 
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+STAR Line Mode Command Specifications 
+2-4 

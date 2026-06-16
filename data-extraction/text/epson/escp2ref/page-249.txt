@@ -1,0 +1,27 @@
+R-18        Select Characters
+3 
+The printer stores user-defined characters in RAM memory; you must tell the
+printer to find characters in RAM memory if you want to print user-defined
+characters. If you plan to use many of the standard characters along with
+your user-defined characters, use the ESC : command to copy the currently
+selected character table to the printer’s RAM memory. This allows you to
+print user-defined characters without having to switch from ROM to RAM
+characters and back again each time.
+4 
+Define and send the data to the printer’s RAM memory using the ESC &
+command.
+5 
+Switch to RAM characters. The printer then uses the user-defined characters
+when printing text.
+Note:
+• 
+On 24/48-pin printers, you can use the ESC t 2 command to copy character
+data (including user-defined characters) from codes 0 to 127 to codes 128 to
+255. This is desirable if you wish to print codes between 0 and 127 as usual
+while having access to user-defined characters.
+• 
+If you plan to use the ESC t 2 command to access user-defined characters on
+an ESC/P 2 printer, make sure you do not assign a registered character table
+to active Table 2 with the ESC ( t command. Once you have assigned a
+registered table to Table 2, you cannot use it for user-defined characters (until
+you reset the printer with the ESC @ command).

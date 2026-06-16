@@ -1,0 +1,44 @@
+<!-- image -->
+
+## ESC $ n
+
+[Name] [Code]
+
+Specify/cancel Shift JIS Kanji character mode
+
+ASCII
+
+ESC $ n
+
+Hex.
+
+1B 24 n
+
+Decimal
+
+27 36 n
+
+<!-- image -->
+
+[Defined Area]
+
+[Initial Value]
+
+[Function]
+
+- - -
+
+Memory switch setting
+
+Specifies and cancels the shift JIS Kanji character mode.
+
+When in shift JIS Kanji character mode, character codes are all handled as 2 byte Kanji characters (First byte: upper code; second byte: lower code).
+
+This command is ignored for models not equipped with Japanese and Kanji characters and when the specification for the location of use is specified as SBCS (single byte countries) by the memory switch.
+
+| n     | Shift JIS Kanji character mode           |
+|-------|------------------------------------------|
+| 0, 48 | Cancels shift JIS Kanji character mode   |
+| 1, 49 | Specifies shift JIS Kanji character mode |
+
+-----------------------------------------------------------------------------

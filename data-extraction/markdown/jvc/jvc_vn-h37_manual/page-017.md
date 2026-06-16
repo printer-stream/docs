@@ -1,0 +1,42 @@
+| Pan position           |   16 | digipan = 123   | Indicates pan position in pixels from 0 to 1278.                                                 |
+|------------------------|------|-----------------|--------------------------------------------------------------------------------------------------|
+| Tilt position          |   17 | digitilt = 123  | Indicates tilt position in pixels from 0 to 958.                                                 |
+| Zoom position          |   17 | digizoom = 1.23 | Indicates zoom value from 1.00 to 8.00.                                                          |
+| Preset Posision Number |   15 | position = 19   | Indicates preset position number after moving to preset position. In other cases, position = NA. |
+
+## 4.  JVC Protocol: MPEG-4 Streaming
+
+## 4.1. Basic Procedures
+
+- 1) The client establishes a TCP connection to port number 80.
+- 2) The client sends out API.
+
+## Example
+
+GET /api/video?encode=mpeg4 HTTP/1.1&lt;CRLF&gt;
+
+Host: 192.168.0.2&lt;CRLF&gt;&lt;CRLF&gt;
+
+Note &lt;CRLF&gt; denotes the line feed code (0x0D, 0x0A).
+
+- 3) The camera returns HTTP response and MPEG-4 stream.
+
+HTTP Response and MPEG-4 stream sent out by the camera are as follows.
+
+| HTTP Response                |
+|------------------------------|
+| VOP of MPEG_4 (First Frame)  |
+| VOP of MPEG-4 (Second Frame) |
+| ,,,                          |
+
+- 4) When the client wants to stop current MPEG-4 transmission, the client disconnects TCP80.
+
+The camera does not accept further API via current TCP that is used for H.264 transmission. To change parameter, disconnect current TCP to stop the MPEG-4 transmission, connect new TCP, and send API with new parameter.
+
+## 4.2. API Format
+
+## Structure
+
+| GET   | space   | API                  | space HTTP/1.1      |
+|-------|---------|----------------------|---------------------|
+| Host: | space   | IP Address of Camera | 0x0D 0x0A 0x0D 0x0A |

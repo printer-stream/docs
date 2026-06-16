@@ -1,0 +1,119 @@
+10 
+Refer the instruction manual for detailed infomation. 
+ 
+2.5. 
+JPEG File Format Sent Out by the camera 
+JPEG file from the camera is JFIF compliant and consist of the following. 
+ 
+FFD8 
+ Start Code 
+ FFE0 
+ Application Segment 
+ FFFE 
+ Comment Segment 1 
+ FFFE 
+ Comment Segment 2 (reserved) 
+ FFC4 
+ DHT Huffman Table 
+ FFDB 
+ DQT Quantization Table 
+ FFDD 
+ DRI Restart Interval 
+ FFC0 
+ SOF Frame Information 
+ FFDA 
+ Data Start Segment 
+ FFD9 
+ End Code 
+ 
+The following information is stored in the comment segment 1. Each item has a fixed length. 
+ 
+ Item 
+ Size 
+ Example 
+ Note 
+ Version Information  9 
+ JVC V1.0 
+ Indicates the version of information stored in the 
+comment segment. 
+ File Size 
+ 18 
+ size = 123456 
+ Indicates JPEG size in bytes. 
+ Width 
+ 13 
+ width = 1920 
+ Width of JPEG. 
+ Height 
+ 14 
+ height = 1080 
+ Height of JPEG. 
+ Model Name 
+ 18 
+ type = VN-H137 
+ Name of model that created the JPEG. 
+ (reserved) 
+ 12 
+ reverse = 0 
+ (reserved) 
+ Time Stamp 
+ 70 
+timestamp 
+= 
+2012030623341253
+8UTC 
+Indicates the time when the JPEG is created. This is
+made up of the year/month/day, hour/minute/second, 
+millisecond and timezone code. 
+ (reserved) 
+ 13 
+ alarm = 00000000  (reserved) 
+ Camera ID 
+ 50 
+ camera = input01  Stores camera information set at VN-X35/235.  
+ Motion Detect Setting 11 
+ motion = 1 
+ Specified as 1 when the motion detect is ON. 
+ Motion Detect Result  7 
+ md = 1 
+ Specified as 1 if motion is detected at the time when 
+JPEG is created. 
+ Tampering Detect  
+Result 
+ 14 
+ tampering = 0 
+Specified as 1 if tampering is detected at the time when 
+JPEG is created. 
+ Pan position 
+ 16 
+ digipan = 123  
+ Indicates pan position in pixels from 0 to 1278.  
+ Tilt position 
+ 17 
+ digitilt = 123  
+ Indicates tilt position in pixels from 0 to  958.  
+ Zoom position 
+ 17 
+ digizoom = 1.23  
+ Indicates zoom value from 0.25 to 8.00. 
+ Preset Posision   
+ Number 
+ 15 
+ position = 19 
+ Indicates preset position number after moving to 
+preset position. In other cases, position = NA. 
+ 
+Item names and values, excluding the version information that does not include =, are stored in the following 
+format. 
+ 
+ 
+ 
+ 
+name 
+=
+space
+space
+value
+(stuffed with 0x00)
+fixed length for each item 
+Downloaded from www.Manualslib.com manuals search engine 

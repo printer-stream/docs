@@ -1,0 +1,63 @@
+C-218        Binary Mode Commands
+<MOVX>
+Set relative horizontal position
+ESC/P 2
+Format
+Class
+2
+ASCII
+<MOVX>
+nL
+nH
+Binary 010F xxxxB
+nL
+nH
+Parameter range
+#BC = Low nibble value
+F = 0, 1
+0 ≤ nL ≤ 255
+0 ≤ nH ≤ 127
+F
+#BC value
+Positioning parameter (k)
+Command
+F = 0
+#BC = k
+#BC (–8 ~ 7)
+<MOVX>
+F = 1
+#BC = 1
+nL (–128 ~ 127)
+<MOVX> nL
+#BC = 2
+nL + nH × 256
+nH (–32768 ~ 32767)
+<MOVX> nH
+F = 0 then #BC = parameter where –8 ≤ #BC ≤ 7
+F = 1 then #BC = number of parameter counter where #BC = 1, 2
+Increment unit is 8 or 1 and is selected by the <MOVXDOT> or <MOVXBYTE> command
+Function
+• 
+This command is available when the ESC . 2 TIFF compressed graphics mode is
+selected.
+• 
+Sets relative horizontal position. The new horizontal position = current position +
+(parameter) × <MOVX> unit.
+• 
+<MOVX> unit is set by the <MOVXDOT> or <MOVXBYTE> command.
+• 
+If #BC has a negative value, it is described with two’s complement.
+Notes
+• 
+The unit for this command is determined by the ESC ( U set unit command.
+• 
+The parameter of the new horizontal position should be a multiple of eight when the
+dot unit horizontal move is used.
+• 
+Settings that exceed the right or left margin will be ignored.
+Printers featuring this command
+Stylus COLOR
+Model-dependent variations
+None
+Related topics
+ESC . 2, ESC ( U, <MOVXDOT>, <MOVXBYTE>

@@ -1,0 +1,66 @@
+Rev. A
+Application Development Information   3-11
+TM-T88II/T88III Technical Reference Guide
+3.4.3  Offline
+This printer is not equipped with an online/offline switch. The printer automatically goes 
+offline under the following conditions:
+•
+During power on (including resetting with the interface) until the printer is ready
+•
+When the printer is waiting to receive data
+•
+During the self-test
+•
+When the roll paper cover is open
+•
+During paper feeding using the paper FEED button
+•
+When the printer stops printing due to a paper-end (if an empty paper supply is 
+detected by the roll paper end sensor or if the driver has been set to stop printing when a 
+roll paper near-end is detected)
+•
+When an error has occurred
+•
+During macro executing standby status
+3.4.4  Busy State
+3.4.4.1  Selecting conditions for invoking a BUSY state
+With DIP SW2-1, you can select conditions for invoking a BUSY state as either of the following:
+❏
+When the receive buffer is full
+❏
+When the receive buffer is full or the printer is offline
+Note:
+In either case above, the printer enters the BUSY state after power is turned on (including resetting with 
+the interface), while the printer is in the standby state waiting for data, and when a self-test is being run. 
+For details on how to change the DIP switch setting for receive buffer full, see “Setting the DIP Switches” 
+on page 2-2.
+You do not need to change this item when using OPOS or the Advanced Printer Driver.
+ Table 3-7  Printer BUSY conditions and status of DIP SW2-1
+Printer status
+DIP SW2-1 status
+ON
+OFF
+Offline
+During the period after power is turned on (including resetting with 
+the interface) to when the printer is ready to receive data.
+BUSY
+BUSY
+During the self-test.
+BUSY
+BUSY
+When the cover is open.
+—
+BUSY
+During paper feed with the paper FEED button.
+—
+BUSY
+When the printer stops printing due to a paper-end (when printer has 
+run out of roll paper).
+—
+BUSY
+When an error has occurred.
+—
+BUSY
+When the receive buffer is full
+BUSY
+BUSY

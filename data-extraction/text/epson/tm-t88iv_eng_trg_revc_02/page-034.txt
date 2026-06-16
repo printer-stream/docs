@@ -1,0 +1,20 @@
+34
+Installing the Printer
+You can install this printer horizontally. With an optional hanging bracket (WH-10), you can also 
+attach the printer to a wall.
+Important Notes on Horizontal Installation
+• The printer must be installed horizontally.
+• Do not place the printer in dusty locations.
+• Do not put heavy impacts on the printer. They may cause defective print.
+• Do not catch cables or foreign matter under the printer.
+Important Notes on Wall Hanging
+You need to perform the following tasks to install the printer on a wall. For more details, see the 
+installation manual for the optional wall hanging bracket (WH-10).
+• Installing the roll-paper stoppers
+• Changing the location of the roll paper near-end sensor
+• Attaching the connector cover
+• Attaching the wall hanging bracket (WH-10)
+For the other notes, see the installation manual for the optional wall hanging bracket (WH-10).
+CAUTION
+Be sure to attach the connector cover when you use the printer on a wall using the 
+wall hanging bracket.

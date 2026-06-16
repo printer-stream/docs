@@ -1,0 +1,25 @@
+| ESC/P 2   | ESC/P   | 9-Pin ESC/P   |
+|-----------|---------|---------------|
+
+With the user-defined character function you can design your own characters and save them in the printer's memory for repeated use in a print job.
+
+The printer has two types of character memory: ROM and RAM. The printer stores its built-in character sets in ROM memory; you cannot modify ROM memory. You can modify RAM memory, however, in two ways: you can copy characters from ROM memory and you can save user-defined characters.
+
+The general method of defining characters (sometimes called downloading) is basically the same with all EPSON dot-matrix printers. However, the method of accessing user-defined characters depends on the ESC/P version. This section explains the basic process while describing the differences when necessary.
+
+## Note:
+
+You can only print user-defined characters as 10.5-point characters (or 21-point characters when double-height printing is selected). Even if you select a different point size with the ESC X command, characters in RAM can only be printed as 10.5 or 21-point characters.
+
+The steps below should be followed to create user-defined characters.
+
+- 1 Plan the data for your desired characters. The amount of data required depends on the following factors:
+- -The number of dots in the print head (9 or 24/48)
+- -The space you specify on the left and right of each character
+- -Character spacing (10 cpi, 12 cpi, 15 cpi, or proportional)
+- -The size of your characters (normal or super/subscript)
+- -The print quality of your characters (draft, LQ, or NLQ mode)
+- 2 Cancel italics with the ESC 5 command and set the following traits of the characters you plan to define:
+- -Print quality
+- -Size (either normal or super/subscript)-24/48-pin printers only
+- -Proportional or fixed character spacing-24/48-pin printers only

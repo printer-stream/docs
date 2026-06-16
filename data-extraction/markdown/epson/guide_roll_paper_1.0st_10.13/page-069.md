@@ -1,0 +1,22 @@
+## C O N F I D E N T I A L
+
+| Command   | Name                                     | Function type              |
+|-----------|------------------------------------------|----------------------------|
+| ESC SP    | Set right-side character spacing         | CHARACTER COMMANDS         |
+| ESC !     | Select print mode(s)                     | CHARACTER COMMANDS         |
+| ESC $     | Set absolute print position              | PRINT POSITION COMMANDS    |
+| ESC %     | Select/cancel user-defined character set | CHARACTER COMMANDS         |
+| ESC &     | Define user-defined characters           | CHARACTER COMMANDS         |
+| ESC ( A   | Control of the beeper                    | MISCELLANEOUS COMMANDS     |
+| ESC ✻     | Select bit-image mode                    | BIT-IMAGE COMMANDS         |
+| ESC -     | Turn underline mode on/off               | CHARACTER COMMANDS         |
+| ESC 2     | Select default line spacing              | LINE SPACING COMMANDS      |
+| ESC 3     | Set line spacing                         | LINE SPACING COMMANDS      |
+| ESC <     | Return home                              | MECHANISM CONTROL COMMANDS |
+| ESC =     | Select peripheral device                 | MISCELLANEOUS COMMANDS     |
+| ESC ?     | Cancel user-defined characters           | CHARACTER COMMANDS         |
+| ESC @     | Initialize printer                       | MISCELLANEOUS COMMANDS     |
+| ESC D     | Set horizontal tab positions             | PRINT POSITION COMMANDS    |
+| ESC E     | Turn emphasized mode on/off              | CHARACTER COMMANDS         |
+| ESC G     | Turn double-strike mode on/off           | CHARACTER COMMANDS         |
+| ESC J     | Print and feed paper                     | PRINT COMMANDS             |

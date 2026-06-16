@@ -1,0 +1,5 @@
+## Installation hole position for the wall hanging bracket
+
+If you attach the TM-T88IV without the wall hanging bracket (WH-10), pay attention tho the installation hole position, since it has been changed.
+
+<!-- image -->

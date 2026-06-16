@@ -1,0 +1,17 @@
+{
+  "stem": "epson/tm-t88iv_eng_trg_revc_02",
+  "phase": "quality",
+  "tool": "builtin",
+  "tool_version": "0.3.0",
+  "pipeline_version": "0.3.0",
+  "params": {
+    "threshold": 0.5
+  },
+  "page_count": 104,
+  "started_at": "2026-06-16T17:14:20Z",
+  "ended_at": "2026-06-16T17:14:20Z",
+  "duration_seconds": 0.195,
+  "per_page_seconds_avg": 0.002,
+  "status": "ok",
+  "flagged_count": 0
+}

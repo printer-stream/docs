@@ -1,0 +1,59 @@
+<!-- image -->
+
+## ESC - n
+
+Name
+
+Specify/cancels underline mode
+
+Code
+
+ASCII
+
+ESC \_ n
+
+Hex. 1B 2D n
+
+Decimal 27 45 n
+
+Defined Region
+
+0 ≤ n ≤ 2, 48 ≤ n ≤ 50
+
+Initial Value
+
+n = 0
+
+Function
+
+Specifies or cancels underlines.
+
+| n     | Function                                                  |
+|-------|-----------------------------------------------------------|
+| 0, 48 | Cancels underline                                         |
+| 1, 49 | Sets to one-dot width underline and specifies underlines. |
+| 2, 50 | Sets to two-dot width underline and specifies underlines. |
+
+## Details
+
+- An underline is applied to the entire character width, including the ESC SP (character right space amount).  However, underlines are not applied to portions that have been skipped using HT (horizontal tab) or ESC V (character 90 degree rotation).
+- Underlines are not applied to ESCV (characters rotated 90 degrees clockwise) or GSB (black/white inverted characters).
+- When underline mode is cancelled by setting the value of n = 0 or n = 48, subsequent data is not underlined, and the underline thickness set before the mode is turned off is maintained.
+
+The default underline thickness is 1 dot.
+
+- Character size does not affect the set underline thickness.
+- Underline mode can also be turned on or off by using ESC ! (batch specify print mode). Note, however, that the last received command is effective.  Therefore, if the underline mode is canceled using the ESC - command after specifying underlines using the ESC ! command, the ESC ! command is cancelled.
+- This command does not affect Chinese characters.
+
+STAR
+
+- Underlines are applied to the following positions for both Font A and Font B.
+
+- 1-dot thickness underline → 24 th dot
+
+- 2-dot thickness underline → 23 rd and 24 th dot
+
+Reference
+
+ESC !

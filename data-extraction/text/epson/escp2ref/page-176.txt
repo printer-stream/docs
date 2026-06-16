@@ -1,0 +1,84 @@
+Individual Command Explanations        C-169
+ESC ( G
+Select graphics mode
+ESC/P 2
+Format
+ASCII
+ESC
+(
+G
+nL
+nH
+m
+Hex
+1B
+28
+47
+nL
+nH
+m
+Decimal
+27
+40
+71
+nL
+nH
+m
+Parameter range
+nL = 1
+nH = 0
+m = 1, 49
+Function
+Selects graphics mode (allowing you to print raster graphics)
+Notes
+• 
+This command is available only on printers featuring ESC/P 2.
+• 
+Exit graphics mode by sending the ESC @ (Initialize printer) command.
+• 
+This command clears all user-defined characters and tab settings.
+• 
+Text printing is not possible during graphics mode.
+• 
+Do not mix text and graphics-mode printing on the same page.
+• 
+Only the following commands are available in graphics mode; the printer ignores all
+other commands:
+LF  
+Line feed
+FF  
+Form feed
+CR 
+Carriage return
+ESC EM  
+Control paper loading/ejecting
+ESC @  
+Initialize printer (exit graphics mode)
+ESC . 
+Print raster graphics
+ESC . 2
+Enter TIFF compressed mode*
+ESC ( i
+Select MicroWeave print mode*
+ESC ( c  
+Set page format
+ESC ( C  
+Set page length in defined unit
+ESC ( V  
+Set absolute vertical print position
+ESC ( v  
+Set relative vertical print position
+ESC \  
+Set relative vertical print position
+ESC $  
+Set absolute horizontal print position
+ESC r 
+Select printing color
+ESC U  
+Turn unidirectional mode on/off
+ESC +  
+Set n/360-inch line spacing
+ESC ( U  
+Set unit
+* The ESC . 2 and ESC ( i commands are available only with the Stylus COLOR and
+later inkjet printer models.

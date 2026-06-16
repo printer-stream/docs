@@ -1,0 +1,211 @@
+C-8        Command List by ASCII Order
+Command names
+ESC/P2
+ESC/P
+9-Pin ESC/P
+Page
+ESC X
+Select font by pitch and point
+•
+—
+—
+C-97
+ESC Y
+Select 120-dpi, double-speed graphics
+•
+•
+•
+C-187
+ESC Z
+Select 240-dpi graphics
+•
+•
+•
+C-189
+ESC \
+Set relative horizontal print position
+•
+•
+•
+C-33
+ESC ^
+Select 60/120-dpi, 9-pin graphics
+—
+—
+•
+C-191
+ESC a
+Select justification
+—
+•
+•
+C-71
+ESC b
+Set vertical tabs in VFU channels
+—
+•
+•
+C-65
+ESC c
+Set horizontal motion index (HMI)
+•
+—
+—
+C-99
+ESC e
+Set fixed tab increment
+—
+—
+•
+C-69
+ESC f
+Horizontal/vertical skip
+—
+—
+•
+C-47
+ESC g
+Select 10.5-point, 15-cpi
+•
+•
+—
+C-104
+ESC g
+Select 15-cpi
+—
+—
+•
+C-105
+ESC i
+Select immediate print mode
+—
+—
+•
+C-215
+ESC j
+Reverse paper feed
+—
+—
+•
+C-214
+ESC k
+Select typeface
+•
+•
+•
+C-95
+ESC l
+Set left margin
+•
+•
+•
+C-23
+ESC m
+Select printing of upper control codes
+—
+—
+•
+C-156
+ESC p
+Turn proportional mode on/off
+•
+•
+•
+C-106
+ESC q
+Select character style
+•
+•
+—
+C-133
+ESC r
+Select printing color
+•
+•
+•
+C-193
+ESC s
+Select low-speed mode
+•
+•
+C-167
+ESC t
+Select character table
+•
+•
+•
+C-77
+ESC w
+Turn double-height printing on/off
+•
+•
+•
+C-148
+ESC x
+Select LQ or draft
+•
+•
+—
+C-93
+ESC x
+Select NLQ or draft
+—
+—
+•
+C-94
+DEL
+Delete last character in buffer
+•
+•
+•
+C-202
+Binary mode commands for ESC . 2
+<XFER>
+Transfer raster graphics data
+•
+—
+—
+C-217
+<MOVX>
+Set relative horizontal position
+•
+—
+—
+C-218
+<MOVY>
+Set relative vertical position
+•
+—
+—
+C-219
+<COLR>
+Select printing color
+•
+—
+—
+C-220
+<CR>
+Carriage return to left-most print
+position
+•
+—
+—
+C-221
+<EXIT>
+Exit TIFF compressed mode
+•
+—
+—
+C-222
+<MOVXBYTE>
+Set <MOVX> unit to 8 dots
+•
+—
+—
+C-223
+<MOVXDOT>
+Set <MOVX> unit to 1 dot
+•
+—
+—
+C-224

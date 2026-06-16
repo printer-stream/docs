@@ -1,0 +1,59 @@
+To crosshatch a bar, add program lines to draw from the left to the
+right side of the bar, starting at G, B-(G—A).
+110 PRINT”PH1.?,O,PD,1.?,EO,2.3,50,2.3,0,1.?,O;PU;”
+120
+PRINT ”UH;“
+130
+ENTER,?05 ; H,B,C
+140
+PRINT ”PR1.?,50;DH;“
+150
+ENTER ?O5
+;
+D,E,F
+150
+PRINT"PR2.3,so;0P;"
+1?0
+ENTER 705
+;
+G,H,I
+130
+PRINT ”PH1.?,0;SC;”
+130
+P=1oo
+200
+PRINT ”IN”;R;B;G;H
+210
+EUR Y=B-(G-H)
+TU E STEP P
+220
+PRINT ”PU“;H;Y;“PD“;G;Y+(G-H)
+230
+NExT
+240
+PRINT“PU;SC1,12,0,150;IN;”
+r'\
+D,E
+G,H
+T
+\\\\\\‘
+A,B
+G,B
+J
+M
+J
+M
+,
+stanza:
+G B-(G—A)
+P : 100
+P : 300
+Filling Segments of Pie Charts
+The algorithms to fill slices of pie charts are much more complex be­
+cause the areas are not rectangular. Software packages such as the
+Graphics Presentations Pacs for various HP desktop computers make it
+easy to draw pie charts with area fill. Youmay wish to purchase such
+software so you do not have to invest hours of programming time in
+order to create ﬁlled pie charts.
+PUTTING THE COMMANDS TO WORK
+8-13

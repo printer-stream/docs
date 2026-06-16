@@ -1,0 +1,84 @@
+<!-- image -->
+
+## &lt;Function	112&gt;	GS	(	L	pL	pH	m	fn	a	bx	by	c	xL	xH	yL	yH	d1...dk		(fn=112) &lt;Function	112&gt;	GS	8	L	p1	p2	p3	p4	m	fn	a	bx	by	c	xL	xH	yL	yH	d1…dk	(fn=112)
+
+Name
+
+Stores raster-format graphics data in print buffer.
+
+Code
+
+ASCII GS ( L  pL pH m fn a bx by c xL  xH yL  yH d1  ... dk
+
+Hex.   1D   28  4C  pL  pH  m  fn  a  bx  by  c  xL  xH  yL  yH  d1 … dk
+
+Decimal   29   40  76  pL  pH  m  fn  a  bx  by  c  xL  xH  yL  yH  d1 … dk
+
+ASCII   GS   8    L  p1  p2 p3 p4  m  fn  a  bx  by  c  xL  xH  yL  yH  d1 ... dk
+
+Hex.   1D   38  4C  p1  p2 p3 p4  m  fn  a  bx  by  c  xL  xH  yL  yH  d1 ... dk
+
+Decimal   29   56  76  p1  p2 p3 p4  m  fn  a  bx  by  c  xL  xH  yL  yH  d1 ... dk
+
+## Defined Region
+
+- Parameter for GS ( L
+
+- 11 ≤ (pL+pH×256) ≤ 65535 (0 ≤ pL ≤ 255, 0 ≤ pH ≤ 255)
+
+- Parameter for GS 8 L
+
+- 11 ≤ (p1+p2×256+p3x65536+p4x16777216) ≤ 4294967295 (0 ≤ p1 ≤ 255, 0 ≤ p2 ≤ 255, 0 ≤ p3 ≤ 255, 0 ≤ p4 ≤ 255)
+
+- Parameter are shared by for GS ( L and GS 8 L.
+
+m = 48, fn = 112, a = 48,
+
+1 ≤ bx ≤ 2, 1 ≤ by ≤ 2
+
+49 ≤ c ≤ 50 (c=49: Single color, c=50: Two-color)
+
+- 1 U (xL+xHx256) ≤ 2047
+
+- When single color is specified
+
+1 ≤ (yL+yHx256) ≤ 1662 (When by=1)
+
+1 ≤ (yL+yHx256) ≤ 831 (When by=2)
+
+- When two-color is specified
+
+1 ≤ (yL+yHx256) ≤ 831 (When by=1)
+
+1 ≤ (yL+yHx256) ≤ 415 (When by=2)
+
+0 ≤ d ≤ 255
+
+k=(int((xL+yHx256)+7)/8) x (yL+yHx256)
+
+## Function
+
+## STAR
+
+Reference Stores raster-format graphics data in the print buffer using horizontal bx/vertical by.
+
+- xL and xH specify the horizontal direction of the raster graphic in (xL + xH×256) dots.
+- yL and yH specify the vertical direction of the raster graphic in (yL + yH×256) dots.
+- c specifies the color of the print data.
+- Prints using this command.
+
+|   c | Print Data Color                 |
+|-----|----------------------------------|
+|  49 | First Color (Black: High Energy) |
+|  50 | Second Color (Red: Low Energy)   |
+
+With EPSON specifications, 1) after the data is stored in the print buffer, 2) that data stored in the print buffer is printed, but with STAR specifications, 1) the command prints the graphics data, then 2) the printer receives the print command for the data stored in the printer buffer, and discards it.
+
+1) GS ( L pL pH m fn a bx by c xL xH yL yH d1 … dk (fn=112)
+
+2) GS ( L pL pH m fn (fn=2, 50)
+
+- When c=50 (Two color) is specified, the command is ignored.
+- The command is processed as normal data in Page mode.
+
+GS ( L pL pH m fn (fn=2, 50)

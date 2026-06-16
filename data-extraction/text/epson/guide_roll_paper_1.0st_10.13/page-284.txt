@@ -1,0 +1,43 @@
+C O N F I D E N T I A L
+Paper roll
+Bit-image commands     GS ( L GS 8 L
+ 
+Ver. 10.13
+p. 284
+(by = 1): 1 ≤  (yL + yH × 256) ≤  1662 (0 ≤  yL ≤  255, 0 ≤  yH ≤  6)
+(by = 2): 1 ≤  (yL + yH × 256) ≤  831 (0 ≤  yL ≤  255, 0 ≤  yH ≤  3)
+[Japanese Model]
+With recommended two-color paper 
+(by = 1): 1 ≤  (yL + yH × 256) ≤  738 (0 ≤  yL ≤  255, 0 ≤  yH ≤  2) 
+(by = 2): 1 ≤  (yL + yH × 256) ≤  369 (0 ≤  yL ≤  255, yH = 0, 1) 
+With recommended monochrome paper 
+(by = 1): 1 ≤  (yL + yH × 256) ≤  1476 (0 ≤  yL ≤  255, 0 ≤  yH ≤  5)
+(by = 2): 1 ≤  (yL + yH × 256) ≤  738 (0 ≤  yL ≤  255, 0 ≤  yH ≤  2)
+TM-T20:
+bx = 1, 2
+by = 1, 2
+c = 49
+1 ≤  (xL + xH ≤ 256) ≤  2047 (0 ≤  xL ≤  255, 0 ≤  xH ≤ 7)
+(by = 1) 1 ≤  (yL + yH ≤ 256) ≤  1662 (0 ≤  yL ≤  255, 0 ≤  yH ≤ 6) 
+(by = 2) 1 ≤  (yL + yH ≤ 256) ≤  831 (0 ≤  yL ≤  255, 0 ≤  yH ≤  3)
+TM-T88IV: 
+bx = 1, 2
+by = 1, 2
+c = 49 (when single-color printing control is selected)
+c = 49, 50 (when two-color printing control is selected) 
+1 ≤  (xL + xH × 256) ≤  2047 (0 ≤  xL ≤  255, 0 ≤  xH ≤  7)
+[When single-color printing control is selected]
+(by = 1): 1 ≤  (yL + yH × 256) ≤  1662 (0 ≤  yL ≤  255, 0 ≤  yH ≤  6) 
+(by = 2): 1 ≤  (yL + yH × 256) ≤  831 (0 ≤  yL ≤  255, 0 ≤  yH ≤  3) 
+[When two-color printing control is selected]
+(by = 1): 1 ≤  (yL + yH × 256) ≤  831 (0 ≤  yL ≤  255, 0 ≤  yH ≤  3) 
+(by = 2): 1 ≤  (yL + yH × 256) ≤  415 (0 ≤  yL ≤  255, yH = 0, 1) 
+TM-T88V:
+bx = 1, 2
+by = 1, 2
+c = 49 (when a = 48)
+49 ≤  c ≤  52 (when a = 52)
+1 ≤  (xL + xH × 256) ≤  2047 (0 ≤  xL ≤  255, 0 ≤  xH ≤  7)
+(by = 1): 1 ≤  (yL + yH × 256) ≤  1662 (0 ≤  yL ≤  255, 0 ≤  yH ≤  6) (when a = 48)
+(by = 2): 1 ≤  (yL + yH × 256) ≤  831 (0 ≤  yL ≤  255, 0 ≤  yH ≤  3) (when a = 48)
+(by = 1): 1 ≤  (yL + yH × 256) ≤  415 (0 ≤  yL ≤  255, 0 ≤  yH ≤  1) (when a = 52)

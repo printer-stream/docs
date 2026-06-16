@@ -1,0 +1,37 @@
+## Format
+
+```
+ASCII ESC : NUL n m Hex 1B 3A 00 n m Decimal 27 58 0 n m
+```
+
+## Parameter range
+
+```
+0 ≤ n ≤ 127 m = 0
+```
+
+## Function
+
+Copies the data for the characters between 0 and 126 of the n typeface from ROM to RAM memory
+
+## Notes
+
+- The following attributes are reflected in the copied font: typeface, international character set, size (super/subscript or normal), and quality (draft/LQ). Do not change any attributes before modifying characters in the copied font.
+- Always cancel italics with the ESC 5 command before copying ROM characters to RAM. You can italicize characters after copying by sending the ESC 4 command.
+- Sending this command clears any previous characters copied to RAM.
+- The printer ignores this command if the specified typeface is not available in ROM.
+- See ESC k for a list of the selectable fonts.
+
+## Printers not featuring this command
+
+None
+
+## Model-dependent variations
+
+- On non-ESC/P 2 printers:
+- The Orator and Orator-S fonts cannot be copied.
+- The Script C font is not available
+
+## Related topics
+
+ESC %, ESC &amp;, ESC ( ^, ESC x, ESC k, Copying ROM characters to RAM memory

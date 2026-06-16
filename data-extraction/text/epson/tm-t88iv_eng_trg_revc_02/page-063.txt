@@ -1,0 +1,12 @@
+Chapter 3   Application Development Infor-
+63
+3
+Other than listed in the previous page, UB-E02 Technical Reference Guide is provided to develop 
+applications for the LAN interface.
+Download
+Drivers, utilities, and manuals can be downloaded from one of the following URLs.
+For customers in North America, go to the following web site:
+http://www.epsonexpert.com/ and follow the on-screen instructions.
+For customers in other countries, go to the following web site: 
+http://www.epson-pos.com/
+Select the product name from the “Select any product” pulldown menu.

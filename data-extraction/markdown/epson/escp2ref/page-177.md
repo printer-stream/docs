@@ -1,0 +1,11 @@
+## Printers not featuring this command
+
+All non-ESC/P 2 printers
+
+## Model-dependent variations
+
+None
+
+## Related topics
+
+ESC ., ESC . 2, ESC ( i, Sending graphics data, Graphics mode, Binary Mode Commands

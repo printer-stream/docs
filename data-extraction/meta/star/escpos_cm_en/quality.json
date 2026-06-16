@@ -1,0 +1,17 @@
+{
+  "stem": "star/escpos_cm_en",
+  "phase": "quality",
+  "tool": "builtin",
+  "tool_version": "0.3.0",
+  "pipeline_version": "0.3.0",
+  "params": {
+    "threshold": 0.5
+  },
+  "page_count": 377,
+  "started_at": "2026-06-16T18:45:48Z",
+  "ended_at": "2026-06-16T18:45:49Z",
+  "duration_seconds": 0.925,
+  "per_page_seconds_avg": 0.002,
+  "status": "ok",
+  "flagged_count": 2
+}

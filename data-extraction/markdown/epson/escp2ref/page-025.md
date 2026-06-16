@@ -1,0 +1,36 @@
+## Format
+
+```
+ASCII ESC N n Hex 1B 4E n Decimal 27 78 n
+```
+
+## Parameter range
+
+```
+0 < n ≤ 127 0 < (current line spacing) × n < (page length)
+```
+
+## Function
+
+Sets the bottom margin on continuous paper to n lines (in the current line spacing) from the top-of-form position on the next page
+
+## Default
+
+Either no margin or 1-inch margin, depending on the default-setting mode or DIP-switch setting
+
+## Notes
+
+- The bottom margin is ignored when printing on single sheets.
+- This was formerly called the 'Set skip-over-perforation' command.
+
+Printers not featuring this command
+
+None
+
+Model-dependent variations
+
+None
+
+## Related topics
+
+ESC C, FF, LF, Set the Printing Area, Setting bottom margin

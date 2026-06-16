@@ -1,0 +1,4 @@
+Rev. B
+Character Code Tables   C-9
+TM-T88II/T88III Technical Reference Guide
+C.9  Page 18 (PC852: Latin2) (TM-T88III only)

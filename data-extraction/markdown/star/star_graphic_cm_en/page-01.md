@@ -1,0 +1,9 @@
+## Line Thermal Printer
+
+## STAR Graphic Mode
+
+## Command Specifications
+
+## Rev. 2.31
+
+Star Micronics Co., Ltd. Special Products Division

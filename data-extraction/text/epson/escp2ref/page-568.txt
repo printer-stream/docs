@@ -1,0 +1,59 @@
+Index        I-3
+upper codes treated as control codes, C-153–
+C-154
+upper codes treated as printable characters,
+C-151–C-152
+Copying characters to RAM, C-89–C-90, R-24
+Counter
+data-length, R-81–R-82
+repeat, R-81–R-82
+cpi. See Characters per inch.
+Cut-sheet feeder
+paper handling with, C-157–C-158
+printing area, R-5, R-7
+D
+Data-length counters, R-81–R-82
+Default unit, C-50, R-5, R-11, R-13, R-57
+Deleted commands, 3, C-5
+Dot columns of bit-image graphics, R-67
+Dot density
+of bit-image graphics, R-67
+of raster graphics, R-75
+Dot-matrix printer, 1
+Double-height, C-148–C-149, R-43–R-44
+Double-strike
+canceling, C-123–C-124, R-51
+selecting, C-121–C-122, R-51
+Double-width, R-43–R-44
+canceling for one line, C-144–C-145
+printing on/off, C-146–C-147
+selecting for one line, C-140–C-143
+Download characters, R-17
+Draft
+printing, C-93–C-94, R-43
+user-defined characters, R-19
+E
+Ejecting paper, C-157–C-158
+Enhancements
+double-height, C-148–C-149
+Double-strike, C-121–C-122, C-123–C-124, C-140–C-143, R-51
+double-width, C-144–C-145, C-146–C-147
+outline, C-133, R-52
+score, C-127–C-128, R-53
+selecting, C-118–C-120
+shadow, C-133, R-52
+ESC/P
+24/48-pin, 2, C-9
+9-pin, 2, C-9
+printer control language, 1
+ESC/P 2
+24/48-pin, 2, C-9
+extended, R-99
+printer control language, 1
+programming guide, R-99
+Extended raster graphics, R-65, R-83, R-99
+F
+Fixed-pitch, user-defined characters and, R-19
+Fonts
+attributes, C-118–C-120, R-42
+scalable, R-43

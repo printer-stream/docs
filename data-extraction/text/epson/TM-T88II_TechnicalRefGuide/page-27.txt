@@ -1,0 +1,50 @@
+Rev. A
+Setup   2-7
+TM-T88II/T88III Technical Reference Guide
+2.3  Adjusting the Roll Paper Near-End Detector
+Below are two situations where a roll paper NE detector adjustment is required.
+❏
+To adjust the detection position to suit the diameter of the roll paper core used.
+❏
+To adjust the detection position of remaining amount of paper.
+ 
+Note:
+Since roll paper cores vary slightly in shape, depending on paper roll design and manufacturing 
+tolerances, it impossible to detect the remaining paper exactly. Use roll paper with a core inner diameter of 
+12 mm {0.47"} and outer diameter of 18 mm {0.71"} so that the NE detector can detect the remaining 
+paper as accurately as possible.
+Follow the procedure below to adjust the roll paper NE detector position.
+1.
+Open the roll paper cover, and remove the roll paper.
+2.
+Loosen the adjustment screw fastening the detector, and align the upper edge of the 
+positioning plate with the adjustment position. Adjustment positions are as follows:
+ Figure 2-3  NE detector positions
+ 
+Note:
+The adjustment screw is set to the lower position before shipment.
+3.
+Tighten the adjustment screw.
+4.
+After adjustment, make sure that the detection lever operates smoothly.
+5.
+Load the roll paper.
+6.
+Close the roll paper cover.
+ERROR
+POWER
+PAPER
+OUT
+FEED
+FEED
+Adjustment 
+position
+Remaining amount of roll 
+paper (outer diameter: mm)
+Upper
+Approx. 27
+Lower
+Approx. 23
+Detection lever
+Positioning plate
+Adjustment screw

@@ -1,0 +1,48 @@
+## Format
+
+```
+Class 2 ASCII <MOVY> nL nH Binary 011F xxxxB nL nH
+```
+
+## Parameter range
+
+#BC = Low nibble value
+
+0 ≤ nL ≤ 255
+
+0 ≤ nH ≤ 127
+
+| F     | #BC value   | Positioning parameter           | (k)Command   |
+|-------|-------------|---------------------------------|--------------|
+| F = 0 | #BC = k     | #BC (0 ~ 15)                    | <MOVX>       |
+| F = 1 | #BC = 1     | n L (16 ~ 255)                  | <MOVX> n L   |
+| F = 1 | #BC = 2     | n L + n H × 256 n H (0 ~ 32767) | <MOVX> n H   |
+
+F = 0 then #BC = parameter where 0 ≤ #BC ≤ 15
+
+F = 1 then #BC = number of parameter counter where #BC = 1, 2
+
+## Function
+
+- Moves relative vertical position by dot. The new vertical position = current position + (parameter).
+- Moves the horizontal print position to 0 (left-most print position).
+- Positive value only is allowed. The print position cannot be moved in a negative direction (up).
+
+## Notes
+
+- This command is available when the ESC . 2 TIFF compressed graphics mode is selected.
+- The unit for this command is determined by the ESC ( U set unit command .
+- After the vertical print position is moved, all seed row(s) are copied to the band buffer.
+- Settings beyond 22 inches are ignored.
+
+## Printers featuring this command
+
+Stylus COLOR
+
+Model-dependent variations
+
+None
+
+## Related topics
+
+ESC . 2, ESC ( i, ESC ( U, ESC ( G

@@ -1,0 +1,40 @@
+1 PRINTER IS
+705,80
+10 PRINT“IN;PR300,2?s;sP2;PD;TL100;xT;"
+20
+FDR I=1
+T0
+10
+30 PRINT ”PR1000,0;XT;“
+40
+NEXT I
+50 PRINT ”TL;PU;PH300,2?S;PD”
+50 00503 1000
+?O PRINT"TL1,0;Pu;PP1300,2?s;P0;"
+so
+GUSUB 1000
+90 PRINT ”TLO,5;PU;PR2300,2?S;”
+100 00503
+1000
+110 PRINT “PHEOO,?4?S;TL100;YT;PU;SPO;“
+120 sT0P
+1000
+1 suBR0uTINE
+T0 DRHN TICKS
+1010
+E0R J=1
+T0 9
+1020 PRINT “PRO,?20;YT;”
+1030
+NExT J
+1040
+RETURN
+1050
+END
+The Symbol ModeInstruction, SM
+DESCRIPTION The symbol mode instruction,
+SM, is used with PA and
+PR commands, and provides the means to draw a single character
+which is centered at the end of each vector.
+4-4
+ENHANCING THE PLOT

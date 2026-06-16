@@ -1,0 +1,34 @@
+## Format
+
+```
+ASCII ESC 3 n Hex 1B 33 n Decimal 27 51 n
+```
+
+## Parameter range
+
+0 ≤ n ≤ 255
+
+## Function
+
+Sets the line spacing to n/180 inch
+
+## Default
+
+1/6-inch line spacing
+
+## Notes
+
+- This command uses the ASCII code for the character 3, not the number 3.
+- Changing the line spacing does not affect previous settings for vertical tabs or page length.
+
+## Printers not featuring this command
+
+None
+
+Model-dependent variations
+
+None
+
+## Related topics
+
+ESC 0, ESC 2, ESC +, ESC N, ESC C, ESC B, LF, Setting page length, Moving the vertical position

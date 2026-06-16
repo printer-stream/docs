@@ -1,0 +1,7 @@
+## C O N F I D E N T I A L
+
+## GS ( E pL pH fn [a1 b18...b11]...[ak nk8 nk1] &lt;Function 3&gt;
+
+```
+[Name] Change the memory switch [Format] ASCII GS ( E pL pH fn [a1 b18...b11]...[ak nk8 nk1] Hex 1D 28 45 pL pH 03  [a1 b18...b11]...[ak nk8 nk1] Decimal 29 40 69 pL pH 3 [a1 b18...b11]...[ak nk8 nk1] [Range] 10 ≤ ( pL + pH × 256) ≤ 65530 (0 ≤ pL ≤ 255, 0 ≤ pH ≤ 255: ( pL + pH × 256) = 9 × k + 1) fn = 3 b = 48, 49, 50 1 ≤ k ≤ 7281 TM-J2000/J2100 , TM-T90 : a = 1, 2, 8 TM-L90 : a = 1, 7, 8 ( TM-L90 with Peeler) a = 1, 2, 8 ( TM-L90 models without Peeler) TM-P60 : a =  8 TM-U220 : a = 2, 8 TM-T20 :a = 1 ~ 5, 1 ≤ k ≤ 5 [Default] TM-J2000/J2100 : [Msw2-1] and [Msw2-2] are ON ( b = 49) and the others are OFF ( b = 48). TM-T90 : [Msw2-1] and [Msw2-2] and [Msw8-8] are ON ( b = 49), and others are OFF ( b = 48). TM-L90 : [ TM-L90 with Peeler] [Msw8-2], [Msw8-6], and [Msw8-8] are ON ( b = 49), and others are OFF ( b = 48). [ TM-L90 models without Peeler] [Msw2-2], and [Msw8-8] are ON ( b = 49), and others are OFF ( b = 48). TM-P60 : [ TM-P60 with IEEE802.11b] [Msw8-1] ~ [Msw8-5] are ON ( b = 49). [ TM-P60 with the Bluetooth interface] [Msw8-1], [Msw8-2], [Msw8-4] and [Msw8-5] are ON ( b = 49), and [Msw8-3] is OFF ( b = 48). [ TM-P60 with Peeler] [Msw8-1] ~ [Msw8-5] are ON ( b = 49), and [Msw8-6] is OFF ( b = 48). TM-U220 :all memory switches are OFF ( b = 48). TM-T20 : all memory switches are OFF ( b = 48).
+```

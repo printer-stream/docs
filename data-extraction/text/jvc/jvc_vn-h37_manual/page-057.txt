@@ -1,0 +1,38 @@
+54 
+Allowed users  admin, operator 
+ 
+Getting SD Card Capacity 
+Format  /api/param?storage.disk(1).size 
+Example of Response  storage.disk(1).size=30543M&200 OK 
+Interpretation  Acquire the capacity of SD card in megabytes.  
+Allowed users  admin, operator 
+ 
+Getting SD Card Recording Status 
+Format  /api/param?storage.disk(1).rec 
+Example of Response  storage.disk(1).rec=on&200 OK 
+Interpretation  Acquire the status of SD card recording. “on” or “off”will be returned. In case of “on”, SD card 
+recording is in progress. In case of “off”, SD card recording is stopping. 
+Allowed users  admin, operator, user 
+ 
+Getting Encoder No. for SD Card Recording 
+Format  /api/param?application.object(8).source 
+Example of Response  application.object(8).source=encode(1)&200 OK 
+Interpretation  Acquire the encoder No. for SD card recording. “encode(1)”, “encode(2)”,  or “encode(3)”will be 
+returned.  
+Allowed users  admin, operator, user 
+ 
+Setting Encoder No. for SD Card Recording 
+Format  /api/param?application.object(8).source=data 
+Example  /api/param?application.object(8).source=encode(1) 
+Example of Response  application.object(8).source&200 OK 
+Interpretation  Change the encoder No. for SD card recording. Specify “encode(1)”, “encode(2)”,  or 
+“encode(3)”for encoder No. This parameter is valid when encode type is set to h264high or h264baseline. 
+Depending on Recording Quality setting, specify encoder as below, 
+To set recording quality to High 
+/api/param?encode(3).type=h264high 
+/api/param?encode(3).framesize=1920x1080 
+/api/param?encode(3).framerate=5 
+/api/param?encode(3).bitrate=1000000 
+/api/param?encode(3).cbr_mode=cbr 
+/api/param?encode(3).iframeinterval=5 
+Downloaded from www.Manualslib.com manuals search engine 

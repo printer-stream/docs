@@ -1,0 +1,114 @@
+  
+ 
+ESC W n 
+Specify/cancel expanded wide  
+[Name] 
+[Code] 
+ASCII 
+ESC 
+W 
+n 
+ 
+ 
+ 
+ 
+Hex. 
+1B 
+57 
+n 
+ 
+ 
+ 
+ 
+Decimal 
+27 
+87 
+n 
+ 
+ 
+ 
+ 
+[Defined Area] 
+0≤n≤5 
+ 
+48≤n≤53 (”0”≤n≤”5”) 
+[Initial Value] 
+n = 0 (Double wide cancelled) 
+[Function] 
+Specifies/cancels double wide for ANK characters and Kanji characters. 
+ 
+n 
+Expanded wide 
+0, 48 
+Cancels expanded wide  
+1, 49 
+Specifies 2x wide expansion 
+2, 50 
+Specifies 3x wide expansion 
+3, 51 
+Specifies 4x wide expansion 
+4, 52 
+Specifies 5x wide expansion 
+5, 53 
+Specifies 6x wide expansion 
+ 
+ 
+ 
+ 
+ 
+ 
+ESC h n 
+Specify/cancel expanded high  
+[Name] 
+[Code] 
+ASCII 
+ESC 
+h 
+n 
+ 
+ 
+ 
+ 
+Hex. 
+1B 
+68 
+n 
+ 
+ 
+ 
+ 
+Decimal 
+27 104 
+n 
+ 
+ 
+ 
+ 
+[Defined Area] 
+0≤n≤5 
+ 
+48≤n≤53 (”0”≤n≤”5”) 
+[Initial Value] 
+n = 0 (Double high cancelled) 
+[Function] 
+Specifies/cancels double high for ANK characters and Kanji characters. 
+ 
+ 
+n 
+Expanded high 
+0, 48 
+Cancels expanded high 
+1, 49 
+Specifies 2x expansion 
+2, 50 
+Specifies 3x expansion 
+3, 51 
+Specifies 4x expansion 
+4, 52 
+Specifies 5x expansion 
+5, 53 
+Specifies 6x expansion 
+ 
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+STAR Line Mode Command Specifications 
+3-13 

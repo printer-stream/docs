@@ -1,0 +1,15 @@
+3-6.	 Loading a Paper Roll
+Use a paper roll that complies with the printer specifications. 
+(1)	 Push the cover open lever, and open the printer cover.
+(2)	 If the thickness of the paper is 65 to 99 µm, install the tension bar on the printer as shown. If the thickness of the 
+paper is 100 to 150 µm, it is not necessary to install the tension bar.
+Note	:	 A tension bar cannot be installed when a roll paper guide is installed in a printer.
+	
+	 Please remove the roll paper guide and then install the tension bar.
+(3)	 Firmly press the tension bar until it clicks into place.
+(4)	 After the tension bar is installed, please install the roll paper guide again. 
+- 14 -
+Click
+Cover open lever
+Roll paper guide
+Tension bar

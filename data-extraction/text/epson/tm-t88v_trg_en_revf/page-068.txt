@@ -1,0 +1,34 @@
+68
+Setting/Checking Modes
+As well as print mode, the following modes are also provided for making various printer 
+settings and checking items.
+• Self-test mode
+• NV graphics information print mode
+• R/E (receipt enhancement) information print mode
+• Memory switch setting mode
+• Hexadecimal dumping mode
+The self-test mode or hexadecimal dumping mode is selected depending on the operation 
+performed when the power is turned on.
+NV graphic information print mode, R/E (receipt enhancement) information print mode, and 
+the Memory switch setting mode are selected depending on the Feed button operation 
+performed during a self-test.
+Close the roll paper cover, and turn on the printer while pressing the Feed button.
+Self-test
+Briefly press the Feed button.
+Continuing the Self-test
+Hold down the Feed button.
+Mode selection guidance
+Press the Feed button twice briefly 
+and then hold it down.
+R/E information print mode
+Press the Feed button once briefly 
+and then hold it down.
+NV graphics information print
+Press the Feed button three times 
+briefly and then hold it down.
+Memory switch setting mode
+Open the roll paper cover, and turn on the printer while pressing the Feed button, 
+and then close the roll paper cover.
+Hexadecimal dumping
+(2)
+(1)

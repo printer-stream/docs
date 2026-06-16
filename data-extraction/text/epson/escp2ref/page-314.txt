@@ -1,0 +1,58 @@
+Sending Graphics Data        R-83
+Extended raster graphics (ESC . 2)
+ESC/P 2
+Extended raster graphics provides one data compression mode: TIFF (ESC . 2).
+For more information on programming with this command, see “Extended
+ESC/P 2 Programming Guide” later in this section.
+A brief explanation of each mode is given below.
+TIFF compressed mode (ESC . 2)
+Uses the TIFF compression format. Image data for each color is written to the
+band buffer (of the current line) and has no effect on the next line. Image data
+must be sent for each line. The compression method is the same as that used in
+the RLE compressed mode (ESC . 1), which means that image data is sent in the
+“counter + image data” format. Although both compression methods use the
+same amount of image data, the amount of code data required by each method
+varies markedly. The TIFF mode uses a subset of binary commands that require
+much less data than the corresponding ESC commands used in the RLE mode.
+For example, the print position, color selection, and other operation codes can be
+specified with only 1 to 3 bytes in the TIFF mode, thereby reducing the overall
+amount of data sent to the printer. The TIFF mode provides a good balance
+between data handling speed and the amount of data compression, making it
+ideal for printing small graphics files.
+An example of the data compression methods used in extended raster graphics
+mode is shown below. For more information, see the explanation of each
+command in Individual Command Descriptions.
+Sample graphics image (3 lines, 3 × 24 dots)
+1st byte
+2nd byte
+3rd byte
+1st line 
+2nd line 
+3rd line 
+Sample graphics image expressed as byte data
+1st byte
+2nd byte
+3rd byte
+1st line 
+F0H
+F0H
+F0H
+2nd line 
+F0H
+F0H
+F0H
+3rd line 
+F0H
+AAH
+AAH
+TIFF compressed mode
+After sending ESC . 2 v h 1 0 0 (8 bytes) once to enter TIFF compressed mode,
+following data is sent in the “binary code data + image data” format, and can be
+used to print several lines. In this mode, all image data must be sent again even if
+the following line is identical to the previous one. For example, to print the first
+and second lines in the above example, 4 bytes (3 × F0H (twice)) of image data
+are needed. The total amount of data used to send the graphics image sample
+shown above is as follows:
+2 bytes (image data of 1st line) + 9 bytes (code data of 1st line) + 2 bytes
+(image data of 2nd line) + 2 bytes (code data of 2nd line) + 4 bytes (image
+data of 3rd line) + 2 bytes (code data of 3rd line) = 21 bytes

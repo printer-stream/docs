@@ -1,0 +1,123 @@
+ESC/POS Command Specifications
+4
+Rev.2.52
+<Function 180> GS ( k pL pH cn fn m n  (cn=49, fn=80)
+116
+<Function 181> GS ( k pL pH cn fn m (cn=49, fn=81)
+117
+<Function 182> GS ( k pL pH cn fn m (cn=49, fn=82)
+117
+<Function 367> GS ( k pL pH cn fn n (cn=51, fn=67)
+118
+<Function 371> GS ( k pL pH cn fn nL nH (cn=51, fn=71)
+118
+<Function 380> GS ( k pL pH cn fn m n d1...dk (cn=51, fn=80)
+119
+<Function 381> GS ( k pL pH cn fn m (cn=51, fn=81)
+120
+<Function 467> GS ( k pL pH cn fn n (cn=52, fn=67)
+121
+<Function 471> GS ( k pL pH cn fn nL nH (cn=52, fn=71)
+121
+<Function 472> GS ( k pL pH cn fn n (cn=52, fn=72)
+122
+<Function 480> GS ( k pL pH cn fn m a b d1...dk (cn=52, fn=80)
+123
+<Function 481> GS ( k pL pH cn fn m  (cn=52, fn=81)
+125
+GS / m 
+126
+GS: 
+127
+GS B n 
+128
+GS C 0 n m 
+129
+GS C 1 aL aH bL bH n r 
+130
+GS C 2 nL nH
+131
+GS C ; sa; sb; sn; sr; sc;
+132
+GS E n 
+133
+GS H n 
+134
+GS I n 
+135
+GS L nL nH
+137
+GS P x y
+138
+ GS T n 
+140
+GS V m 
+141
+GS V m n 
+142
+GS W nL nH
+143
+GS \ nL nH
+144
+GS ^ r t m 
+145
+GS b n 
+146
+GS c 
+147
+GS f n 
+148
+GS h n 
+149
+1. GS k m d1 … dk NUL, 
+150
+2.3. GS k m n d1 … dk 
+150
+GS r n 
+157
+GS v 0 m xL xH yL yH d1 … dk 
+158
+GS w n 
+160
+4-3-2	 Chinese Character Control Commands
+161
+FS ! n 
+161
+FS & 
+162
+FS – n 
+164
+FS . 
+165
+FS 2 c1 c2 d1 … dk 
+166
+FS C n 
+168
+FS S n1 n2 
+169
+FS W n 
+170
+4-3-3 	 ESC/POS Black Mark Commands 
+171
+FF  
+172
+DLE ENQ n 
+173
+GS FF  
+174
+GS ( F pL pH a m nL nH 
+175
+GS ( M pL pH n m (Function Code: n = 1, 49) 
+176
+GS ( M pL pH n m (Function Code: n = 2, 50) 
+177
+GS ( M pL pH n m (Function Code: n = 3, 51) 
+178
+GS < 
+179
+GS V m n 
+180
+4-3-4	 STAR Original Commands 
+181
+ESC GS = nL nH da1 … dak db1 …dbk 
+181

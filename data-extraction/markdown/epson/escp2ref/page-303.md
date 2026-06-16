@@ -1,0 +1,11 @@
+5. Move the vertical print position to the bottom of the 1/2-inch zone.
+6. Send all text data that has its baseline located in the next 48/360-inch band.
+7. Move the vertical print position to 1/360 inch below the bottom of the previous line of graphics.
+8. Continue sending alternating 48/360-inch bands of text, then data, with the text leading the graphics by 1/2 inch (as described in steps 4 to 7).
+9. When you reach the end of the text data, or the page's bottom margin, send all the remaining lines of graphics data.
+
+This order allows the printer to store text data in its memory first. Then, when you send the graphics data, the printer prints out the combined data.
+
+## Note:
+
+If you don't follow this order, the tops of some characters may be cut off. This can occur when part of a character overlaps previously printed graphics.

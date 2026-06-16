@@ -1,0 +1,56 @@
+Individual Command Explanations        C-177
+ESC *
+Select bit image
+ESC/P 2
+ESC/P
+Format
+ASCII
+ESC
+*
+m
+nL
+nH
+d1
+. . .
+dk
+Hex
+1B
+2A
+m
+nL
+nH
+d1
+. . .
+dk
+Decimal
+27
+42
+m
+nL
+nH
+d1
+. . .
+dk
+Parameter range
+0 ≤ nL ≤ 255
+0 ≤ nH ≤ 31
+m = 0, 1, 2, 3, 4, 6, 32, 33, 38, 39, 40, 71, 72, 73
+Function
+Prints dot-graphics in 8, 24, or 48-dot columns, depending on the following parameters:
+m
+Specifies the dot density (see table below)
+nL, nH
+Specifies the total number of columns of graphics data that follow
+(number of dot columns) = ((nH × 256) + nL)
+nH = INT number of dot columns
+(
+)
+256
+nL = MOD number of dot columns
+(
+)
+256
+ d1 . . . dk
+Bytes of graphics data; k is determined by multiplying the total number of
+columns times the number of bytes required for each column (see the table
+below)

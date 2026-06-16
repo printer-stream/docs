@@ -1,0 +1,27 @@
+To use USB model TM printers, the TM printer driver (EPSON OPOS ADK or advanced printer driver) must be installed on the host computer. Get the latest driver information from one of the following URLs:
+
+For customers from North America, go to the following web site: http://pos.epson.com/
+
+For customers from other countries, go to the following web site:
+
+http://www.epson-pos.com/
+
+Select the product name from the 'Select any product' pull-down menu.
+
+For details on EPSON OPOS ADK or advanced printer driver, refer to 'Introducing the Control Methods' (page 3-1).
+
+## 2.4.4  Ethernet Interface Connection
+
+Connect a TM printer with an Ethernet interface to a network by an Ethernet cable via a hub.
+
+## 2.4.4.1  Ethernet Interface Connection Diagram
+
+Example:
+
+<!-- image -->
+
+When a TM printer is connected to the host computer via a network interface, a customer display (DM-D) cannot be connected to the TM printer. If a customer display must be connected, connect it to the host computer's serial interface.
+
+Figure 2-13  Ethernet connection
+
+<!-- image -->

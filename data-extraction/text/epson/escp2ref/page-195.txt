@@ -1,0 +1,66 @@
+C-188        Individual Command Explanations
+ESC Y
+Select 120-dpi, double-speed graphics
+9-Pin ESC/P
+Format
+ASCII
+ESC
+Y
+nL
+nH
+d1
+d2
+. . .
+dk
+Hex
+1B
+59
+nL
+nH
+d1
+d2
+. . .
+dk
+Decimal
+27
+89
+nL
+nH
+d1
+d2
+. . .
+dk
+Parameter range
+0 ≤ nL ≤ 255
+0 ≤ nH ≤ 31
+0 ≤ d ≤ 255
+Function
+Prints bit-image graphics in 8-dot columns, at a density of 120 horizontal by 72 vertical dpi,
+according to the following parameters:
+nL, nH
+Specify the total number of columns (k) of graphics data following,
+according to the formula
+k = ((nH × 256) + nL)
+nH = INT
+k
+256
+nL = MOD
+k
+256
+d1 . . . dk
+Bytes of graphics data
+Notes
+• 
+This is a nonrecommended command. The ESC * 2 command is identical to this
+command; use ESC * 2 instead of this command.
+• 
+The speed is double because consecutive horizontal dots cannot be printed; the printer
+ignores the second continuous horizontal dot.
+• 
+The dot density printed with this command can be redefined with the ESC ? command.
+Printers not featuring this command
+None
+Model-dependent variations
+None
+Related topics
+ESC *

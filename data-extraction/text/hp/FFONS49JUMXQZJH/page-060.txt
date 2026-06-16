@@ -1,0 +1,51 @@
+EXPLANATWN The AR instruction
+requires
+that
+both X- and Y­
+increment parameters (coordinate pair) and are angle be specified.
+Increment parameters are in integer format and are interpreted as
+plotter units if scaling is off or user units if scaling is on. The X- and
+Y—incrementparameters locate the center of the arc with respect to the
+present pen position. The signs of the increment parameters determine
+the relative location of the center of the arc. A positive value locates
+that center in a positive direction and a negative value locates that
+center in a negative direction. The current pen position is the starting
+point of the arc.
+The arc center can be located on or off the plotting surface. The are
+angle is in integer format. It is the angle, in degrees, through which the
+arc is drawn; a positive arc angle draws CCW; a negative arc angle
+draws CW.
+The chord angle parameter is in integer format and governs the
+smoothness of the arc in the same way as deﬁned under the circle
+instruction, CI. The sign of the parameter is ignored, except to set the
+maximum in-range limit to -32 768or +32 767.The default chord angle
+is 5 degrees.
+Unlike circles, arcs are drawn using the previously commanded pen
+state (up or down) and line type. If no pen state has been commanded
+since initialization, pen up is assumed. If no line type has been
+commanded, a solid line is drawn.
+Arcs are drawn within the defined window, with clipping occurring
+outside the window limits. Drawing arcs within the window conforms
+to the definitions given for plotting under the PAinstruction.
+All parameters must be integers in the range -32 768to 32767.Specify­
+ing out-of—rangeparameters sets error 3 and the command is ignored.
+The following BASIC programs demonstrate the use of the AR
+instruction.
+1C1
+PRINTER‘.
+IS
+10
+20
+PRINT "IN;SF’1;IP2Ei50,1325,7Ei50,B.32‘5,3"
+30
+PRINT“EC-100,100,-100,100;“
+40
+PRINT ”PH4BO,—5O;PD;HRO,8O,SO;HR8O,O,BO;PU;”
+so
+END
+Line 10 defines the select code of the interface; change this statement
+as necessary for your computer.
+Line 20 enters the P1 and P2 points on which to scale the plotting area.
+Line 30 scales the plotting area into user units.
+3-20
+CONTROLLING THE PEN AND PLOTTING

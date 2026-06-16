@@ -1,0 +1,57 @@
+## Getting IP Address
+
+Format  /api/param?network.interface.ip
+
+Example of Response  network.interface.ip=192.168.0.2&amp;200 OK
+
+Interpretation Acquire the current IP address.
+
+Allowed users admin, operator, user
+
+## Setting IP Address
+
+Format  /api/param?network.interface.ip=data
+
+Example  /api/param?network.interface.ip=192.168.0.2
+
+Example of Response
+
+network.interface.ip&amp;202 Accepted(network.interface.status=restart)
+
+Interpretation Change the IP address. To validate the change, use "network.interface.status=restart" API that reboots the camera in about 1 minute. Set appropriate combination of IP address, subnet mask and default gateway before "network.interface.status=restart".
+
+Allowed user admin
+
+## Getting Subnet Mask
+
+Format  /api/param?network.interface.subnetmask
+
+Example of Response  network.interface.subnetmask=255.255.255.0&amp;200 OK
+
+Interpretation
+
+Acquire the current subnet mask.
+
+Allowed users admin, operator, user
+
+## Setting Subnet Mask
+
+Format  /api/param?network.interface.subnetmask=data
+
+Example  /api/param?network.interface.subnetmask=255.0.0.0
+
+Example of Response
+
+network.interface.subnetmask&amp;202 Accepted(network.interface.status=restart)
+
+Interpretation Change the subnet mask. To validate the change, use "network.interface.status=restart" API that reboots the camera in about 1 minute. Set appropriate combination of IP address, subnet mask and default gateway before "network.interface.status=restart".
+
+Allowed user admin
+
+## Getting Default Gateway
+
+Format  /api/param?network.gateway(version)
+
+Example to get default gateway of IPv4  /api/param?network.gateway(ipv4)
+
+Example of Response  network.gateway(ipv4)=192.168.0.254&amp;200 OK

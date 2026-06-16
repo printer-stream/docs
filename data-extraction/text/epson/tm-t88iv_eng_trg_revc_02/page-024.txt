@@ -1,0 +1,35 @@
+24
+Printing Specifications
+dpi: dots per inch
+*1: when the printer prints with the default print density level at 24V and 25°C {77°F}.
+Printing method
+Thermal line printing
+Dot density
+180 × 180 dpi
+Printing direction
+Unidirectional with friction feed (Reverse feed is not 
+supported.)
+Maximum printable width
+72.2 mm, 512 dots
+Character 
+per line
+Font A (12 × 24)
+42
+Font B (9 × 17)
+56
+Maximum 
+print speed*1
+High speed mode
+200 mm/s
+Low power consumption 
+mode
+150 mm/s
+Line spacing
+4.23 mm {1/6"} (Factory setting, programmable by 
+command)
+•
+Printing speed may be slower, depending on the such items as the data transmission 
+speed.
+•
+High speed mode/low power consumption mode can be shifted with a DIP switch  
+(2-3/2-4).

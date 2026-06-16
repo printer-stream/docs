@@ -1,0 +1,38 @@
+4 
+Preface 
+ 
+This document is for VMS to support JVC new cameras, VN-H37/137/237. 
+If VMS supports only streaming, i.e. VMS does not have camera setting pages, the chapter 
+"Streaming Protocol" provides how to get stream from a camera. 
+If VMS have setting page of the camera, focusing on necessary functionalities is 
+recommended. Typical necessary functionalities are Image settings and Encode settings. 
+Supporting all functionalities of camera will not pay. For example, if VMS does not get 
+multiple streams from a camera, Encode settings can be simple because setting multiple 
+resolution/encode to camera is not required. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Downloaded from www.Manualslib.com manuals search engine 

@@ -1,0 +1,77 @@
+  
+ 
+ESC * r R 
+[Name] 
+Initialize raster mode 
+[Code] 
+ASCII 
+ESC 
+*     r 
+R
+ 
+ 
+ 
+ 
+Hex. 
+1B 
+2A 
+72 
+52
+ 
+ 
+ 
+ 
+Decimal 
+27 
+42 114 
+82
+ 
+ 
+ 
+ 
+[Defined Area] 
+- - - 
+[Initial Value] 
+- - - 
+[Function] 
+Initializes raster mode. 
+ 
+This command is also effective when not in the raster mode.  
+ 
+However, initialization of the raster mode with this command is executed when entering the raster 
+mode.  
+ 
+The following settings are initialized using this command.  
+ 
+• Raster page length setting (ESC * r P n NUL) 
+ 
+• Raster print quality setting (ESC * Q n NUL)  
+ 
+• Raster print color setting (ESC * r K n NUL)  
+ 
+• Raster left margin setting (ESC * r m l n NUL) 
+ 
+• Raster right margin setting (ESC * r m r n NUL) 
+ 
+• Raster EOT mode setting (ESC FF EOT) 
+ 
+• Raster FF mode setting (ESC FF NUL) 
+ 
+• Raster image buffer clear 
+ 
+Note that when entering the raster mode, it executes the same process as initialization of the raster 
+mode using this command.  
+ 
+However, because initialization is not performed when entering the raster mode only for the 
+following settings, when initializing the following it sends this initialization command.   
+ 
+ 
+• Raster data print color setting (ESC * r K n NUL)  
+ 
+Invalid in page mode. 
+ 
+ 
+ 
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+STAR Line Mode Command Specifications 
+3-69 

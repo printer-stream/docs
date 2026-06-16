@@ -1,0 +1,37 @@
+R-4        Recommended Command Order
+Recommended Command Order
+Because some command results change based on the settings made with other
+commands, you should send commands and data in the order described in this
+section.
+Once you set the printing area and page length, send data line by line from top to
+bottom of each page. The printer can handle data most efficiently when received
+in this order (although commands can move the vertical print position both up
+and down on a page). The exception to this rule is when printing bit-image
+graphics and characters on the same line, as described in “Mixing text and bit-
+image graphics.”
+The following order is applicable to all ESC/P levels.
+1.
+Send an ESC @ command to initialize the printer.
+2.
+Set the unit of line spacing to the minimum vertical increment necessary.
+3. Set the printing area.
+4.
+Assign character tables to each of the four active tables as necessary (ESC/P 2
+printers only).
+5. Define any user-defined characters.
+6.
+Select the font.
+7.
+Set supporting features.
+8.
+Set the print position.
+9.
+Send one line’s print data.
+10. End the line of data with a CR and LF command.
+11. Repeat steps 6 to 10 as necessary for each following line on the page.
+12. End the page with a FF command.
+13. Repeat steps 6 to 12 as necessary for each following page (always send a FF
+command after the final page also).
+14. End printing by sending the ESC @ command.
+See the following sections in this chapter for additional information on the above
+steps.

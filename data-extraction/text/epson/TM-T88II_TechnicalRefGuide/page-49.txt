@@ -1,0 +1,33 @@
+Rev. A
+Application Development Information   3-13
+TM-T88II/T88III Technical Reference Guide
+3.7  Operating Mode (Switch Panel Operation)
+The printer has a self-test mode to check printer settings in addition to the regular print mode.
+3.7.1  Self-test Mode
+In the self-test mode, the following items are checked and printed out:
+•
+Control circuit functions
+•
+Printer mechanism functions
+•
+Print quality
+•
+Control software ROM version
+•
+DIP switch settings
+Follow the steps below to start a self-test:
+1.
+With the roll paper cover open, press and hold down the paper FEED button and turn on the 
+printer. The printer prints various printer settings.
+2.
+When the printer finishes printing the printer status, check whether the following message is 
+printed:
+“SELF-TEST printing. Please press PAPER FEED button”
+The printer is now in the self-test wait mode.
+3.
+To start a test print, press the paper FEED button while the printer is in the self-test wait 
+mode.
+4.
+Check that the following has been printed:
+ “***   completed   ***”
+This indicates that the printer has been initialized and returned to the normal mode.

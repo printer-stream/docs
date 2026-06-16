@@ -1,0 +1,15 @@
+## Howto Use the Examples in This Manual
+
+The examples in this manual are designed primarily to show the use of the instruction with which they appear. New programmers are strongly encouraged to enter and run all examples. When the example consists of only a few HP-GL commands, these commands are listed in quotes. No line numbers or BASIC statements are included. The literal string listed should be sent to the plotter; the quotation marks only serve to delimit the string and are included because many computer languages define literal strings by placing them inside quotation marks. Do not send the quotation marks to the plotter.
+
+Longer examples are given as programs or program segments in BASIC. The programs will run only if the plotter has been defined as the system printer. Since the statement to do this is highly system­ dependent, it is not included (except in Chapter 8). Unless specific mention is made in the text, the BASIC used is that of the HP-83/85. You may need to make slight changes in the BASIC statements for them to run on your computer. You may also need an I/O ROM to obtain output from the plotter. Check with the nearest HP dealer or HP Sales and Support Office. If you are operating in an RS-232-Cenviron­ ment, you will need to establish handshaking protocol and include the necessary devicecontrol statements in your program.
+
+If you are programming in another language, substitute the output or input commands of your language for the BASIC statements PRINT and ENTER. Change FOR...NEXT loops and replacement statements (X= 3.14)to whatever statements are comparable in your language. All characters enclosed in quotes in the program listing must be sent to the computer using output statements; in addition, some variables, which are not included in quotes, may need to be sent.
+
+Refer to Chapter 9 for some examples of complete simple programs to send and receive information between the plotter and specific com­ puters in an HP-IBenvironment. The Interconnection Guide (07470­ 90003)has some examples of sending HP-GL commands from specific computers; there are examples using RS-232-C, HP-IB,and HP-IL interfaces in that document.
+
+## The Default Instruction, DF
+
+DESCWPTWN The default instruction, DF, sets certain plotter func­ tions to a predefined state.
+
+The instruction can be used to return the plotter to a known state while maintaining the same settings of P1 and P2. This assures that unwanted graphics parameters such as character size, slant, or scaling are not inherited from another program but that the positions of P1 and P2 remain unchanged. a known

@@ -1,0 +1,46 @@
+|           | Command names                         | ESC/P2   | ESC/P   | 9-Pin ESC/P   | Page   |
+|-----------|---------------------------------------|----------|---------|---------------|--------|
+| ESC /     | Select vertical tab channel           | -        | •       | •             | C-67   |
+| ESC 0     | Select 1/8-inch line spacing          | •        | •       | •             | C-51   |
+| ESC 1     | Select 7/72-inch line spacing         | -        | -       | •             | C-60   |
+| ESC 2     | Select 1/6-inch line spacing          | •        | •       | •             | C-53   |
+| ESC 3     | Set n/180-inch line spacing           | •        | •       | -             | C-55   |
+| ESC 3     | Set n/216-inch line spacing           | -        | -       | •             | C-56   |
+| ESC 4     | Select italic font                    | •        | •       | •             | C-114  |
+| ESC 5     | Cancel italic font                    | •        | •       | •             | C-116  |
+| ESC 6     | Enable printing of upper control      | •        | •       | •             | C-151  |
+| ESC 7     | Enable upper control codes            | •        | •       | •             | C-153  |
+| ESC 8     | Disable paper-out detector            | -        | -       | •             | C-165  |
+| ESC 9     | Enable paper-out detector             | -        | -       | •             | C-166  |
+| ESC :     | Copy ROM to RAM                       | •        | •       | •             | C-89   |
+| ESC <     | Unidirectional mode (one line)        | •        | •       | •             | C-161  |
+| ESC =     | Set MSB to 0                          | •        | •       | •             | C-210  |
+| ESC >     | Set MSB to 1                          | •        | •       | •             | C-212  |
+| ESC ?     | Reassign bit-image mode               | •        | •       | •             | C-181  |
+| ESC @     | Initialize printer                    | •        | •       | •             | C-198  |
+| ESC A     | Set n/60-inch line spacing            | •        | •       | -             | C-58   |
+| ESC A     | Set n/72-inch line spacing            | -        | -       | •             | C-59   |
+| ESC B     | Set vertical tabs                     | •        | •       | •             | C-63   |
+| ESC C     | Set page length in lines              | •        | •       | •             | C-13   |
+| ESC C NUL | Set page length in inches             | •        | •       | •             | C-15   |
+| ESC D     | Set horizontal tabs                   | •        | •       | •             | C-61   |
+| ESC E     | Select bold font                      | •        | •       | •             | C-110  |
+| ESC F     | Cancel bold font                      | •        | •       | •             | C-112  |
+| ESC G     | Select double-strike printing         | •        | •       | •             | C-121  |
+| ESC H     | Cancel double-strike printing         | •        | •       | •             | C-123  |
+| ESC I     | Enable printing of control codes      | -        | -       | •             | C-155  |
+| ESC J     | Advance print position vertically     | •        | •       | •             | C-41   |
+| ESC K     | Select 60-dpi graphics                | •        | •       | •             | C-183  |
+| ESC L     | Select 120-dpi graphics               | •        | •       | •             | C-185  |
+| ESC M     | Select 10.5-point, 12-cpi             | •        | •       | -             | C-102  |
+| ESC M     | Select 12-cpi                         | -        | -       | •             | C-103  |
+| ESC N     | Set bottom margin                     | •        | •       | •             | C-17   |
+| ESC O     | Cancel bottom margin                  | •        | •       | •             | C-19   |
+| ESC P     | Select 10.5-point, 10-cpi             | •        | •       | -             | C-100  |
+| ESC P     | Select 10-cpi                         | -        | -       | •             | C-101  |
+| ESC Q     | Set right margin                      | •        | •       | •             | C-21   |
+| ESC R     | Select an international character     | •        | •       | •             | C-80   |
+| ESC S     | Select superscript/subscript printing | •        | •       | •             | C-129  |
+| ESC T     | Cancel superscript/subscript printing | •        | •       | •             | C-131  |
+| ESC U     | Turn unidirectional mode on/off       | •        | •       | •             | C-159  |
+| ESC W     | Turn double-width printing on/off     | •        | •       | •             | C-146  |

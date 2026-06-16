@@ -1,0 +1,72 @@
+  
+ 
+ESC C 0 n 
+[Name] 
+Set page length to n x 24 mm units 
+[Code] 
+ASCII 
+ESC 
+C 
+0 
+n
+ 
+ 
+ 
+ 
+Hex. 
+1B 
+43 
+00 
+n
+ 
+ 
+ 
+ 
+Decimal 
+27 
+67 
+0 
+n
+ 
+ 
+ 
+ 
+[Defined Area] 
+1≤n≤22 
+[Initial Value] 
+(Form feed amount initial value x 42) 
+[Function] 
+The position whereat this command is processed is considered the top of the page and sets the 
+page length to (n x 24 mm).  
+ 
+This command cancels the bottom margin setting when setting page length.   
+ 
+The page length set using this command is unaffected by changing the form feed amount later.   
+ 
+Moving to the top of the page is performed using the following commands.   
+ 
+• Form feed command (FF): 
+Executes a form feed.  
+ 
+• Cutter command (ESC d n): 
+Sets cutter position at top of page.   
+ 
+• Raster command (ESC * r B): 
+Sets top of page when quitting raster mode.   
+ 
+• Error cancel operations: 
+Sets position when quitting error cancellation operations  
+ 
+at top of page.   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+STAR Line Mode Command Specifications 
+3-24 

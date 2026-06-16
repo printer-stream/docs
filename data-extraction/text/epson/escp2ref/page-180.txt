@@ -1,0 +1,64 @@
+Individual Command Explanations        C-173
+k
+Total number of data bytes, according to the following formula:
+k = m
+INT n
+n
+H
+L
+×
+×
++
++
+(
+)
+256
+7
+8
+d
+During full graphics mode:
+Graphics data
+During RLE compressed raster graphics mode (ESC . 1):
+The first data byte is treated as a counter. Graphics data bytes then alternate
+with a data counter byte (run-length data compression), as follows:
+0 ≤ (counter byte) ≤ 127
+Counter specifies the number of data bytes following according to the
+formula below.
+(counter byte) + 1 = (number of data bytes to follow) or
+(counter byte) = (number of data bytes to follow) – 1
+128 ≤ (counter byte) ≤ 255
+Counter specifies the number of times to repeat the next byte of data
+according to the formula below.
+256 – (counter byte) + 1 = (number of times to repeat next byte)
+(counter byte) = 257 – (number of times to repeat next byte)
+Notes
+• 
+Use only one image density and do not change this setting once in raster graphics
+mode.
+• 
+Parameters in bold are new to this command and apply to the Stylus COLOR and later
+printer models.
+• 
+When MicroWeave is selected, the image height m must be set to 1.
+• 
+Special coated stock paper available from EPSON is required when printing raster
+graphics at 720 dpi.
+• 
+This command is available only on printers featuring ESC/P 2.
+• 
+This command can be used only during graphics mode, entered by sending the ESC ( G
+command.
+• 
+The combination of v = 10 and h = 20 (360 dpi by 180 dpi) is not possible.
+• 
+You can specify the horizontal dot count in 1-dot increments. If the dot count is not a
+multiple of 8, the remaining data in the data byte at the far right of each row is ignored.
+• 
+The final print position is the dot after the far right dot on the top row of the graphics
+printed with this command.
+• 
+Repetitive data bytes can be mixed with data blocks in the same command.
+• 
+You cannot move the print position in a negative direction (up) while in graphics mode.
+Also, the printer ignores commands moving the vertical print position in a negative
+direction if the final position would be above any graphics printed with this command.

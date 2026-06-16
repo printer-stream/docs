@@ -1,0 +1,87 @@
+  
+ 
+ 
+ESC GS P 5 nL nH 
+[Name] Specify character vertical direction relative position in page mode  
+[Code] 
+ASCII 
+ESC GS 
+P 
+5
+ 
+ 
+ 
+ 
+Hexadecima
+l 
+1B 
+1D 
+50 
+35
+ 
+ 
+ 
+ 
+Decimal 
+27 
+29 
+80 
+53
+ 
+ 
+ 
+ 
+[Defined Area] 
+0 ≤ nL ≤ 255, 0 ≤ nH ≤ 255 
+[Initial Value] 
+- - - 
+[Function]  
+Specify the position for character vertical direction of the data expansion starting position in page  
+ 
+mode with the relative position that uses the current position as a reference.  
+ 
+The subsequent data expansion starting position uses the position moved [(nL + nH x 256) x 1/8]  
+ 
+mm from the current position.  
+ 
+ 
+• This command is ignored when page mode is not selected.  
+ 
+• When specifying the characters downward from the current position the value is positive (plus);  
+ 
+ 
+when specifying upward, the value is negative (minus).  
+ 
+• Negative numbers are represented by a complement of 65536. For example, use the following to  
+ 
+ 
+move upward N pitches.  
+ 
+nL + nH x 256 = 65536-N 
+ 
+• Relative position specifications that exceed the specified print region are ignored.  
+ 
+• The following operations will occur depending on the ESC GS P 2 (select character print  
+ 
+ 
+direction in page mode).  
+ 
+a. When the starting point is “upper left” or “bottom right,” specify the absolute position of the  
+ 
+ 
+paper feed direction.   
+ 
+b. When the starting point is “upper right” or “bottom left,” specify the relative position of the  
+ 
+ 
+perpendicular direction to the paper feed.   
+ 
+• If the calculated results is a fraction, that is corrected to the minimum mechanical pitch and  
+ 
+ 
+excess is discarded.  
+ 
+ 
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+STAR Line Mode Command Specifications 
+3-140 

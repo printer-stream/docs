@@ -1,0 +1,12 @@
+## Model-dependent variations
+
+On non-ESC/P 2 printers:
+
+- Selects the character table to be used for printing from between the two below:
+- n = 0 Italic character table
+- 1 Graphic character table
+- When n = 2, this command copies the user-defined characters from positions 0 to 127 to positions 128 to 255.
+
+## Related topics
+
+ESC ( t, Selecting the character table, Assign character tables, Switching to RAM character printing

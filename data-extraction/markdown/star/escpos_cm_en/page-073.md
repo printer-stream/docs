@@ -1,0 +1,45 @@
+<!-- image -->
+
+Name
+
+Enable/disable panel switches
+
+Code
+
+ASCII ESC c 5 n
+
+Hex. 1B 63 35 n
+
+Decimal 27 99 53 n
+
+## Defined Region 0 ≤ n ≤ 255
+
+Initial Value
+
+n = 0
+
+Function
+
+Toggles the panel switches between enabled and disabled.
+
+- Enables panel switches when n = &lt;*******0&gt;B.
+
+- Disables panel switches when n = &lt;*******1&gt;B.
+
+Details
+
+- n is effective only when it is the lowest bit.
+
+- When disabled, all panel switches are disabled.
+
+- The paper feed switch is enabled regardless of this command if waiting for the switch while executing a macro.  However, there is no paper feed.
+
+STAR
+
+- Switches are disabled even if the panel switches are enabled using this command for the following cases.
+
+- a. When paper out errors occur
+
+- b. When cover open errors occur
+
+- Use the ESC @ command to reset the panel switches disabled using this command.

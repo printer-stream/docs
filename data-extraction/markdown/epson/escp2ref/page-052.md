@@ -1,0 +1,37 @@
+VT
+
+Tab vertically
+
+## Format
+
+ASCII VT Hex 0B Decimal 11
+
+## Function
+
+- Moves the vertical print position to the next vertical tab below the current print position
+- Moves the horizontal print position to the left-margin position
+
+## Notes
+
+- The printer advances to the top-margin position of the following page if the next tab is below the bottom-margin position or if no tab is set below the current position.
+- The VT command functions the same as a CR command (moves the horizontal print position to the left-margin position) if all tabs have been canceled with the ESC B NUL command.
+- The VT command functions the same as an LF command (advances one line in the current line spacing and moves the horizontal print position to the left-margin position) if no tabs have been set since the printer was turned on or was reset with the ESC @ command.
+- The VT command functions the same as an FF command (advances to the top-margin position on the next page) if some tabs have been set, but no tab is set between the current print position and the bottom-margin position.
+- This command cancels double-width printing set with the SO or ESC SO command.
+
+## Printers not featuring this command
+
+None
+
+## Model-dependent variations
+
+On non-ESC/P 2 printers:
+
+- The printer advances to the top-of-form position on the next page if the next tab is beyond the currently set page length.
+- The printer ignores a VT command that would move the print position inside the bottom margin.
+
+## Related topics
+
+ESC ( V, ESC ( v, ESC B, CR, LF, FF, Moving the vertical position ESC/P 2
+
+ESC/P

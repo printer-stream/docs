@@ -1,0 +1,51 @@
+<!-- image -->
+
+Name
+
+Print and feed paper n lines
+
+Code
+
+ASCII ESC d n
+
+Hex. 1B 64 n
+
+Decimal
+
+27 100 n
+
+Defined Region
+
+0 ≤ n ≤ 255
+
+Function
+
+Prints the data in the print buffer and performs a paper feed of n lines.
+
+Details
+
+- Sets the print position to the beginning of the next line after printing.
+
+- Line feeds set by the following commands are not affected.
+
+a. ESC 2:
+
+Set default line spacing
+
+b. ESC 3:
+
+Set line feed amount
+
+- Paper is fed approximately 1016 mm (40 inches) if the [n x line feed amount] exceeds approximately 1016 mm (40 inches) .
+
+STAR
+
+- When the setting for the line feed amount is smaller than the print data height in standard mode:
+
+- a. If there is no print data, a line feed operation is executed according to the line feed amount.
+
+- b. If there is print data, a line feed operation is executed for the height of the print data.
+
+Reference
+
+ESC 2, ESC 3

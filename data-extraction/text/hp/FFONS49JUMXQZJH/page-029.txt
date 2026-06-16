@@ -1,0 +1,35 @@
+Chapter2
+Establishing Boundaries
+and Units
+What You’llLearn in This Chapter
+In this chapter you will learn about the plotting area, how to deﬁne a
+point in this area, and the two kinds of units used to describe the plot­
+ting area. After reading this chapter, you will be able to decide which
+units to use for your data. In addition, you will be able to scale the
+plotting area into user units appropriate for your data, and to set or
+read the current scaling points. Youwill be able to restrict plotting to
+only a portion of the plotting area, and read the current limits of the
+plotting area.
+HP-GLInstructions Covered
+IP
+The Input P1 and P2 Instruction
+OP The Output P1 and P2 Instruction
+SC The Scale Instruction
+IW The Input Window Instruction
+OW The Output Window Instruction
+Terms YouShould Understand
+Scaling —dividing the plotting area into units convenient for your ap­
+plication. Units need not be the same physical size in both axes, nor do
+there need to be an equal number of units in the X—and Y—axes.
+Scaling Points —the points on the plotting surface moved to when the
+front panel buttons P1and P2are pressed. These points are assigned the
+user—unitvalues speciﬁed by the parameters of the scaling instruction
+SC.
+Window —that part of the plotting area in which plotting of points,
+lines, and labels can occur. At power on, the window is set to the
+mechanical limits of the plotter. Nothing can be drawn outside the
+current window.
+Clipping — restricting plotting to a portion of the plotting area by
+establishing a window of a certain size.
+ESTABLISHING BOUNDARIES AND UNITS
+2-1

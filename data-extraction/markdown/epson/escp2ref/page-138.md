@@ -1,0 +1,26 @@
+## Format
+
+| ASCII   | ESC   |   T |
+|---------|-------|-----|
+| Hex     | 1B    |  54 |
+| Decimal | 27    |  84 |
+
+## Function
+
+Cancels super/subscript printing selected by the ESC S command
+
+## Default
+
+Normal (non-super/subscript) printing
+
+## Printers not featuring this command
+
+None
+
+Model-dependent variations
+
+None
+
+## Related topics
+
+ESC S, Super/subscript

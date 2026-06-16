@@ -1,0 +1,42 @@
+C O N F I D E N T I A L
+Paper roll
+Customize commands     
+ 
+Ver. 10.13
+p. 675
+Customize commands
+Command
+Name 
+FS g 1
+Write to NV user memory
+FS g 2
+Read from NV user memory
+GS ( C
+Edit NV user memory
+Delete the specified record
+Store the data in the specified record
+Transmit the data in the specified record
+Transmit capacity of the NV user memory currently being used
+Transmit the remaining capacity of the NV user memory
+Transmit the key code list
+Delete all data in the NV user memory
+GS ( E
+Set user setup commands
+Change into the user setting mode
+End the user setting mode session
+Change the memory switch
+Transmit the settings of the memory switch
+Set the customized setting values
+Transmit the customized setting values
+Copy the user-defined page
+Define the data (column format) for the character code page
+Define the data (raster format) for the character code page
+Delete the data for the character code page
+Set the configuration item for the serial interface
+Transmit the configuration item for the serial interface
+Set the configuration item for the Bluetooth interface
+Transmit the configuration item for the Bluetooth interface
+Delete the paper layout
+Set the paper layout
+CUSTOMIZE COMMANDS
+Customize commands

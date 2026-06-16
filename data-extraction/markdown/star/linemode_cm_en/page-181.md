@@ -1,0 +1,73 @@
+<!-- image -->
+
+## 3. Printer Status
+
+Printer status is the status of the printer sent from the third byte of the automatic status.
+
+Printer status is returned for (transmitted byte count - 2 in Header - 1).
+
+Printer status is always updated for new information.  (No log exists.)  The following shows the composition of the status.
+
+## &lt;Printer status 1  Printer status (Third Byte)&gt;
+
+| Bit   | Contents                | Status       | Status   | Model Compatability   | Model Compatability   | Model Compatability   | Model Compatability   | Model Compatability   | Model Compatability   | Model Compatability   | Model Compatability   | Model Compatability   | Model Compatability   | Model Compatability   |
+|-------|-------------------------|--------------|----------|-----------------------|-----------------------|-----------------------|-----------------------|-----------------------|-----------------------|-----------------------|-----------------------|-----------------------|-----------------------|-----------------------|
+| Bit   | Contents                | '0'          | '1'      | TSP800                | TSP700                | TSP600                | TUP900                | TSP1000               | TSP828L               | TSP700II              | TSP650                | TUP500                | TSP800II              | FVP10                 |
+| 7     | Fixed at '0'            |              | -        | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     |
+| 6     | OFFLINE By Switch Input | No           | Yes      | No                    | No                    | No                    | No                    | No                    | NO                    | NO                    | NO                    | -                     | NO                    | NO                    |
+| 5     | Cover Status            | Closed       | Open     | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    |
+| 4     | Fixed at '0'            |              | -        | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     |
+| 3     | ONLINE/OFFLINE Status   | ONLINE       | OFFLINE  | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    |
+| 2     | Conversion SW           | Open         | Closed   | OK                    | OK                    | OK                    | No                    | No                    | NO                    | OK                    | OK                    | NO                    | OK                    | OK                    |
+| 1     | <ETB> Command           | Not Executed | Executed | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    |
+| 0     | Fixed at '0'            |              | -        | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     |
+
+## · &lt;ETB&gt; Command
+
+Cleared when received at the host (by clearing bit 1 to 0, automatic status is not targeted to occur).
+
+## &lt;Printer status 2  Error Information (Fourth Byte)&gt;
+
+| Bit   | Contents                         | Status      | Status   | Model Compatability   | Model Compatability   | Model Compatability   | Model Compatability   | Model Compatability   | Model Compatability   | Model Compatability   | Model Compatability   | Model Compatability   | Model Compatability   | Model Compatability   |
+|-------|----------------------------------|-------------|----------|-----------------------|-----------------------|-----------------------|-----------------------|-----------------------|-----------------------|-----------------------|-----------------------|-----------------------|-----------------------|-----------------------|
+| Bit   | Contents                         | '0'         | '1'      | TSP800                | TSP700                | TSP600                | TUP900                | TSP1000               | TSP828L               | TSP700II              | TSP650                | TUP500                | TSP800II              | FVP10                 |
+| 7     | Fixed at '0'                     |             | -        | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     |
+| 6     | Stopped by high head temperature | Not stopped | Stopped  | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    |
+| 5     | Non-recoverable Error            | No          | Yes      | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    |
+| 4     | Fixed at '0'                     |             | -        | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     |
+| 3     | Auto-cutter Error                | No          | Yes      | OK                    | OK                    | OK                    | OK                    | OK                    | NO                    | OK                    | OK                    | OK                    | OK                    | OK                    |
+| 2     | Mechanical Error                 | No          | Yes      | No                    | No                    | No                    | No                    | No                    | NO                    | NO                    | NO                    | -                     | NO                    | NO                    |
+| 2     | Head Thermistor Error            | No          | Yes      | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | OK                    | -                     | -                     |
+| 1     | Not Used (Fixed at '0')          |             |          | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     |
+| 0     | Fixed at '0'                     |             | -        | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     |
+
+## &lt;Printer status 3  Error Information (Fifth Byte)&gt;
+
+| Bit   | Contents                     | Status   | Status   | Model Compatability   | Model Compatability   | Model Compatability   | Model Compatability   | Model Compatability   | Model Compatability   | Model Compatability   | Model Compatability   | Model Compatability   | Model Compatability   | Model Compatability   |
+|-------|------------------------------|----------|----------|-----------------------|-----------------------|-----------------------|-----------------------|-----------------------|-----------------------|-----------------------|-----------------------|-----------------------|-----------------------|-----------------------|
+| Bit   | Contents                     | '0'      | '1'      | TSP800                | TSP700                | TSP600                | TUP900                | TSP1000               | TSP828L               | TSP700II              | TSP650                | TUP500                | TSP800II              | FVP10                 |
+| 7     | Fixed at '0'                 |          | -        | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     |
+| 6     | Receive Buffer Overflow      | No       | Yes      | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    |
+| 5     | Command Error (in Page Mode) | No       | Yes      | OK                    | No                    | No                    | No                    | No                    | NO                    | NO                    | NO                    | X                     | NO                    | NO                    |
+| 4     | Fixed at '0'                 |          | -        | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     |
+| 3     | BM Error                     | No       | Yes      | No                    | No                    | No                    | OK                    | OK                    | OK*                   | OK                    | NO                    | OK                    | OK                    | OK                    |
+| 2     | Presenter Paper Jam Error    | No       | Yes      | No                    | No                    | No                    | OK                    | No                    | NO                    | NO                    | NO                    | OK                    | NO                    | NO                    |
+| 1     | Head Up Error                | No       | Yes      | No                    | No                    | No                    | No                    | No                    | NO                    | NO                    | NO                    | -                     | NO                    | NO                    |
+| 1     | Electric Voltage Error       | No       | Yes      | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | OK                    | -                     | -                     |
+| 0     | Fixed at '0'                 |          | -        | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     |
+
+## · Receive Buffer Overflow
+
+Overflow errors cleared to 0 when returned to host.
+
+- Command Error (in Page Mode)
+
+Command errors cleared to 0 when returned to host.
+
+## · BM Error
+
+On models that use a common PE and BM sensor, if a continuous error is detected beyond a determined amount, it indicates not a black mark error, but a paper out error.
+
+- (*) TSP828L (Label Printer) BM errors occur for the following reasons.
+
+-----------------------------------------------------------------------------

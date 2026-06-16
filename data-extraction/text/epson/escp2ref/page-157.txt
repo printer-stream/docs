@@ -1,0 +1,61 @@
+C-150        Individual Command Explanations
+ESC ( ^
+Print data as characters
+ESC/P 2
+Format
+ASCII
+ESC
+(
+^
+nL
+nH
+d1
+. . .
+dk
+Hex
+1B
+28
+5E
+nL
+nH
+d1
+. . .
+dk
+Decimal
+27
+40
+94
+nL
+nH
+d1
+. . .
+dk
+Parameter range
+0 ≤ nH ≤ 127
+0 ≤ nL ≤ 255
+Function
+• 
+Prints data bytes d1 through dk as characters, not control codes
+• 
+The amount of data to be sent is calculated as follows:
+k = ((nH × 256) + nL)
+nH = INT
+k
+256
+nL = MOD
+k
+256
+Default
+Control-code data treated as control codes
+Notes
+• 
+This command is available only on printers featuring ESC/P 2.
+• 
+The printer ignores data if no character is assigned to that character code in the
+currently selected character table.
+Printers not featuring this command
+All non-ESC/P 2 printers
+Model-dependent variations
+None
+Related topics
+ESC 6, ESC 7

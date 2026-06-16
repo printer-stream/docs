@@ -1,0 +1,15 @@
+<!-- image -->
+
+The circle instruction includes an automatic pen down feature. When a circle command is received, the pen lifts (if it was down), moves from the center of the circle to the circle starting point on the circumference, lowers the pen, draws the circle, then returns, pen up, to the center of the circle. After drawing the circle, the pen assumes the pen state (up or down) that was in effect prior to the circle command. To avoid drawing lines to the center of the circle, move to and away from the circle's center with the pen up.
+
+Circles are drawn within the defined window, with clipping occurring outside the window limits. Drawing circles within the window conforms to the definitions given for plotting under the PA instruction.
+
+Each chord of the circle is drawn using the currently defined line type. Refer to The Line Type Instruction, LT, in Chapter 4.
+
+To demonstrate some of the features of the circle instruction, the follow­ ing strings of HP-GL instructions draw various circles with different line types, radii, and starting points.
+
+```
+"II-~1;SP1;IP2EJ50,13ZS, ?E;5C:_, E325; " "SC-100,100, -1C1C.1,1O0;" " PRO, 0; LT; CI 1C1,Ea;LTO; CI -20, 5_;LT'1;»:Z:I30, 5;" " LT2;CI-40, '5; LT:::_; C150, 5,; LT4;i'::I -EI:I_, 5;LT'E-; CI70,5;LTE;CISC1,5;"
+```
+
+## 3-14 CONTROLLING THE PEN AND PLOTTING

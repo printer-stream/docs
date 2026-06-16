@@ -1,0 +1,62 @@
+C O N F I D E N T I A L
+Paper roll
+Customize commands     GS ( E
+ 
+Ver. 10.13
+p. 769
+GS ( E pL pH fn a d1...dk <Function 13> 
+[Name]
+Set the configuration item for the Bluetooth interface
+[Format]
+ASCII
+GS
+(
+E
+pL pH fn a
+d1...dk
+Hex
+1D
+28
+45
+pL pH 0D a
+d1...dk
+Decimal
+29
+40
+69
+pL pH
+12
+a
+d1...dk
+[Range]
+TM-P60:
+6 ≤  (pL + pH x 256) ≤  18 (6 ≤  pL ≤  18, pH = 0)  [(a = 49)]
+3 ≤  (pL + pH x 256) ≤  66 (3 ≤  pL ≤  66, pH = 0)  [(a = 65)]
+fn = 13
+a = 49, 65
+3.01 ESC/POS or earlier: 32 ≤  d ≤  255
+3.02 ESC/POS or later: 32 ≤  d ≤  126 
+4 ≤  k ≤  16  [(a = 49)]
+3.01 ESC/POS or earlier: 1 ≤  k ≤  64  [(a = 65)]
+3.02 ESC/POS or later: 1 ≤ k ≤  31  [(a = 65)]
+[Default]
+TM-P60:
+d1...dk = "4254" [a = 49]
+3.01 ESC/POS or earlier: d1...dk = "TAIYO SPP" [Default value of (a = 65)]
+3.02 ESC/POS or later: d1...dk = "BT304" [Default value of (a = 65)]
+[Description]
+Sets the configuration item for the Bluetooth interface specified by a to the values specified by d.
+•
+The passkey (a = 49) is specified with a character string.
+Example: If 1234 is specified as the passkey, the string is the 4 bytes "1234" [Hexadecimal = 31H, 32H, 33H, 
+34H / Decimal = 49, 50, 51, 52].
+•
+The device name (a = 64) is specified with a character string.
+Example: If EPSON is specified as the device name, the string is the 5 bytes "EPSON" [Hexadecimal = 45H, 
+50H, 53H, 4FH, 4EH / Decimal = 69, 80, 83, 79, 78].
+a
+Configuration item
+49
+Bluetooth passkey
+65
+Bluetooth device name

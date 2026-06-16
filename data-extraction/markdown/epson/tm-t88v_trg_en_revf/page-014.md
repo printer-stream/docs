@@ -1,0 +1,24 @@
+## Accessories
+
+## Included
+
+- Roll paper (for operation check)
+- Power switch cover
+- Connector cover
+- Roll paper guide for 58 mm width paper*
+- Two strips for the roll paper guide*
+- Screw for the roll paper guide*
+- The TM-T88V Software &amp; Documents Disc (drivers, utilities, and documentation) *
+- Warranty certificate*
+- Setup Guide or User's manual
+* May not be included depending on the model.
+
+## Options
+
+- AC adapter
+- AC cable
+- Power supply box (Model: OT-BX88V)
+- Affixing tape for fixing the printer (Model: DF-10)
+- Wall hanging bracket (Model: WH-10)
+- Interface boards (UB series)
+- Optional external buzzer (Model: OT-BZ20)

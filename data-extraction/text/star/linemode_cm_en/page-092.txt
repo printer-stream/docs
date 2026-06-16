@@ -1,0 +1,180 @@
+  
+ 
+ESC * r F n NUL 
+[Name] 
+Set raster FF mode 
+[Code] 
+ASCII 
+ESC 
+* 
+r 
+F
+n
+NUL
+ 
+ 
+ 
+ 
+Hex. 
+1B 
+2A 
+72 
+46
+n
+00
+ 
+ 
+ 
+ 
+Decimal 
+27 
+42 114 
+70
+n
+0
+ 
+ 
+ 
+ 
+[Defined Area] 
+n = 0, 1, 2, 3, 8, 9, 12, 13, 36, 37 
+[Initial Value] 
+Models handling full cut: n = 9 
+ 
+Models connected with a presenter: n = 37 
+[Function] 
+Sets raster FF mode. 
+ 
+The FF mode operates to execute using the raster document quit command (ESC FF NUL).   
+ 
+n is a decimal description (max. 255 digits) using ASCII characters.  
+ 
+Invalid in page mode. 
+ 
+ 
+ 
+Specification A <FF mode setting format> 
+n 
+FormFeed 
+Cut Feed 
+Cutter 
+Presenter 
+0 
+Set To Default 
+Set To Default 
+Set To Default 
+Set To Default 
+1 
+○ 
+-- 
+-- 
+-- 
+2 
+○ 
+○ 
+-- 
+-- 
+3 
+○ 
+TearBar 
+-- 
+-- 
+8 
+○ 
+-- 
+Full Cut 
+-- 
+9 
+○ 
+○ 
+Full Cut 
+-- 
+12 
+○ 
+-- 
+Partial Cut 
+-- 
+13 
+○ 
+○ 
+Partial Cut 
+-- 
+36 
+○ 
+-- 
+Full Cut 
+Eject 
+37 
+○ 
+○ 
+Full Cut 
+Eject 
+ 
+ 
+ 
+Specification B <FF mode setting format> 
+n 
+FormFeed 
+Cut Feed 
+Cutter 
+Presenter 
+0 
+Set To Default 
+Set To Default 
+Set To Default 
+Set To Default 
+1 
+○ (*1) 
+-- 
+-- 
+-- 
+2 
+○ (*1) 
+○ 
+-- 
+-- 
+3 
+○ (*1) 
+TearBar 
+-- 
+-- 
+8 
+○ (*1) 
+-- 
+Full Cut 
+-- 
+9 
+○ (*1) 
+○ 
+Full Cut 
+-- 
+12 
+○ (*1) 
+-- 
+Partial Cut 
+-- 
+13 
+○ (*1) 
+○ 
+Partial Cut 
+-- 
+36 
+○ (*1) 
+-- 
+Full Cut 
+Eject 
+37 
+○ (*1) 
+○ 
+Full Cut 
+Eject 
+ 
+*1) Form Feed 
+When the printer is a model handling BM and is set for BM to be effective, the set raster mode page 
+length is ignored and BM detecting is performed.   
+ 
+ 
+ 
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+STAR Line Mode Command Specifications 
+3-74 

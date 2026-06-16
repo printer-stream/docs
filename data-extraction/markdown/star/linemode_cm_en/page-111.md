@@ -1,0 +1,46 @@
+<!-- image -->
+
+## ESC RS C n
+
+| [Name]   | Select/cancel 2 color print mode   | Select/cancel 2 color print mode   | Select/cancel 2 color print mode   | Select/cancel 2 color print mode   | Select/cancel 2 color print mode   |
+|----------|------------------------------------|------------------------------------|------------------------------------|------------------------------------|------------------------------------|
+| [Code]   | ASCII                              | ESC                                | RS                                 | C                                  | n                                  |
+|          | Hex.                               | 1B                                 | 1E                                 | 43                                 | n                                  |
+|          | Decimal                            | 27                                 | 30                                 | 67                                 | n                                  |
+
+## [Defined Area]
+
+Specification A
+
+0 ≤ n ≤ 2
+
+48 ≤ n ≤ 50 ('0' ≤ n ≤ '2')
+
+Specification B
+
+0 ≤ n ≤ 1
+
+48 ≤ n ≤ 49 ('0' ≤ n ≤ '1')
+
+Specification C
+
+0 ≤ n ≤ 2
+
+48 ≤ n ≤ 50 ('0' ≤ n ≤ '2')
+
+n = 16, n = 32
+
+## [Initial Value] [Function]
+
+n = 0, 48
+
+Specification A
+
+| n     | Select/cancel 2 color print mode                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+|-------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 0, 48 | Cancel 2-color printing mode When in two-color print mode, this command cancels 2-color printing mode. This command is ignored when the 2-color print mode is already cancelled. The specification of this command is not cleared by ESC @, CAN. The following processes are executed by canceling the 2-color print mode using this command. • Prints data in line buffer in 2-color print mode, if unprinted data exists in the line buffer. • Waits to stop printing when printing in 2-color print mode. • Recovers logo print setting to single color mode setting.                                                      |
+| 1, 49 | Select 2-color printing mode This command selects 2-color print mode, when in single color print mode. This command is ignored already in the 2-color print mode. The specification of this command is not cleared by ESC @, CAN. The following processes are executed by selecting the 2-color print mode using this command. • Prints data in line buffer in the single color print mode, if unprinted data exists in the line buffer. • Waits to stop printing when printing in single-color print mode. • Initializes print color setting (2-color print mode setting) • Sets logo print setting to 2 color mode setting. |
+
+Invalid in page mode.
+
+-----------------------------------------------------------------------------

@@ -1,0 +1,23 @@
+## Product Specifications
+
+| Printing method                       | Printing method                       | Thermal line printing                                                                                  |
+|---------------------------------------|---------------------------------------|--------------------------------------------------------------------------------------------------------|
+| Cutting method                        | Cutting method                        | Partial cut (cutting with one point in left edge left uncut)                                           |
+| Roll paper (single-ply)               | Roll paper (single-ply)               | Width: 79.5 ± 0.5 mm(3.13 ± 0.02")                                                                     |
+| Interface                             | Interface                             | Serial (RS232C), Parallel (IEEE1284), LAN (10/100BASE-T), USB (Full-speed), Wireless LAN (IEEE802.11b) |
+| Buffer                                | Receive buffer                        | 4 KB/45 bytes (selectable using the DIP switch 1-2)                                                    |
+| Buffer                                | Downloaded buffer                     | 12 KB (both for user-defined characters and downloaded images)                                         |
+| Buffer                                | NV graphics data                      | 256 KB                                                                                                 |
+| Barcode/two-dimensional code printing | Barcode/two-dimensional code printing | UPC-A, UPC-E JAN 8 (EAN 8), JAN 13 (EAN 13) CODE 39 ITF CODABAR (NW-7) CODE 93 CODE 128 PDF417 QR CODE |
+| DKD Function                          | DKD Function                          | 2 drives                                                                                               |
+| Supplied voltage                      | Supplied voltage                      | + 24 VDC ± 7%                                                                                          |
+| Life                                  | Mechanism                             | 15,000,000 lines                                                                                       |
+| Life                                  | Thermal head                          | 100 million pulses Single-color printing: 100 km Two-color printing: 50 km                             |
+| Life                                  | Autocutter                            | 1,5000,000 cuts                                                                                        |
+| Life                                  | MTBF                                  | 360,000 hours                                                                                          |
+| Life                                  | MCBF                                  | 52,000,000 lines                                                                                       |
+| Temperature/humidity                  | Temperature/humidity                  | Operating: 5 to 45°C {41 to 113°F}, 10 to 90% RH Storage: -10 to 50°C {14 to 122°F}, 10 to 90% RH      |
+| Overall dimensions                    | Overall dimensions                    | 148 × 145 × 195 mm{5.83 × 5.71 × 7.68"} (H × W×D)                                                      |
+| Weight (mass)                         | Weight (mass)                         | Approx. 1.8 kg {3.96 lb} (Roll paper excluded)                                                         |
+
+1

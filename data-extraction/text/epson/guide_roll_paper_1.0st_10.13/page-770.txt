@@ -1,0 +1,34 @@
+C O N F I D E N T I A L
+Paper roll
+Customize commands     GS ( E
+ 
+Ver. 10.13
+p. 770
+[Notes]
+■Note the following points when changing the communication conditions.
+•
+If the communication conditions between the host and printer no longer match, the printer is no 
+longer able to receive data from the host. Also data sent from the printer cannot be received by the 
+host. 
+■This function operates in the user setting mode.
+■The communication conditions set with this function are valid when <Function 2> of this command is 
+executed. Then the printer operates with the changed communication conditions. If the host is not 
+changed to the same communication conditions, communication is not possible.
+■The communication conditions set are valid until the following operations are executed. They are not 
+initialized when the power is turned off or by ESC @.
+•
+This function is executed.
+•
+The wireless communication initialization mode is executed using the panel switch when the power is 
+turned on.
+[Model-dependent variations]
+TM-J2000/J2100, TM-T90, TM-T20, TM-T88IV, TM-T88V, TM-T70, TM-L90, 
+TM-P60, TM-U220
+TM-J2000/J2100, TM-T90, TM-T20, TM-T88IV, TM-T88V,  TM-T70, TM-L90, TM-U220
+This function is not supported.
+TM-P60
+This function is enabled with a Bluetooth interface model.
+If the communication conditions of the Bluetooth interface are changed with this function, always 
+finish the user setting mode with <Function 2> of this command. If you turn off the power or 
+perform reset between executing this function and executing <Function 2>, the Bluetooth 
+interface communication conditions are not changed.

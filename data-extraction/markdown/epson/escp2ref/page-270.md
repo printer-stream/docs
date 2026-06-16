@@ -1,0 +1,3 @@
+The second method is to select ESC % 0 (ROM character printing) and then send the ESC t 2 command. ESC t 2 copies all user-defined characters to the upper half of the character memory, and leaves the lower half as ROM characters. (In other words, the ESC t 2 command adds 128 to the user-defined character codes.)
+
+<!-- image -->

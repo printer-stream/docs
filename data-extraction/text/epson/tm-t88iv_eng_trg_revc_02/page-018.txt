@@ -1,0 +1,35 @@
+18
+PAPER OUT LED
+• Lights when there is no more roll paper or there is little remaining.
+• Off when there is a sufficient amount of roll paper remaining.
+• Flashes when a self-test is in progress.
+FEED button
+Pressing this button once feeds the roll paper by one line. Holding this button down feeds the 
+roll paper continuously.
+Connectors
+All cables are connected to the connector panel on the lower rear of the printer.
+• Drawer kick-out connector:
+Connects the cash drawer.
+• Power supply connector:
+Connects the power supply unit
+• Interface connector:
+Connects the printer with the host computer interface.
+Offline
+The printer automatically goes offline under the following conditions:
+• During power on (including resetting with the interface) until the printer is ready
+• During the self-test
+• While roll paper is fed using the FEED button.
+• When the printer stops printing due to a paper-end (if an empty paper supply is detected by 
+the roll paper end sensor or if the driver has been set to stop printing when a roll paper near-
+end is detected)
+• When an error has occurred
+The picture above shows a serial interface model. For details on the various interfaces and 
+how to connect the power supply connector and cash drawer, see "Connecting the Printer 
+to the Host Computer" on page 46 and "Connecting the Cash Drawer" on page 55.
+DK
+DC24V
+FG
+FG
+Interface connector
+Drawer kick-out connector
+Power supply connector

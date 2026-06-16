@@ -1,0 +1,53 @@
+## Format
+
+ASCII
+
+ESC t n
+
+```
+Hex 1B 74 n Decimal 27 116 n
+```
+
+## Parameter range
+
+```
+n = 0, 1, 48, 49
+```
+
+## Function
+
+Selects from between the two character sets described below:
+
+n = 0 or 48 Character table 0 1 or 49 Character table 1
+
+## Default
+
+table 0
+
+Italic
+
+table 1
+
+PC437 (US)
+
+## Notes
+
+Use the ESC ( t command to assign any registered character table to any character table.
+
+## Printers not featuring this command
+
+None
+
+## Model-dependent variations
+
+ActionPrinter T-750, ActionPrinter T-1000, ActionPrinter Apex 80, ActionPrinter 2000, ActionPrinter 2500, DFX-5000, DFX-8000, FX-850, FX-1050, LX-400, LX-800, LX-810, LX-850, LX-1050
+
+Selects from between only the two character sets described below:
+
+```
+n = 0 or 48 Italic character table 1 or 49 Graphic character table
+```
+
+## Related topics
+
+ESC ( +, Selecting the character table

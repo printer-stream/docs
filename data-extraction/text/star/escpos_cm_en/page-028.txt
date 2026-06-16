@@ -1,0 +1,111 @@
+ESC/POS Command Specifications
+28
+Rev.2.52
+STAR Original Print Starting Trigger Control Commands 
+Commands
+Name
+Command 
+Class
+Std 
+Mode
+Page 
+Mode
+GS P 
+Effect
+Exe.
+Set.
+ESC GS g 0 
+Print starting trigger
+○
+○
+ESC GS g 1 
+Set print starting timer
+○
+○
+STAR Original QR Code Commands 
+Commands
+Name
+Command 
+Class
+Std 
+Mode
+Page 
+Mode
+GS P 
+Effect
+Exe.
+Set.
+ESC GS y S 0 
+Set QR code model
+○
+○
+○
+ESC GS y S 1 
+Set QR code mistake correction level
+○
+○
+○
+ESC GS y S 2 
+Set QR code cell size
+○
+○
+○
+ESC GS y D1 
+Set QR code data (auto) 
+○
+○
+○
+ESC GS y D2 
+Set QR code data (manual)
+○
+○
+○
+ESC GS y P 
+Print QR code 
+○
+○
+○
+ESC GS y I 
+Get QR code expansion information 
+○
+○
+○
+STAR Original Page Function Commands 
+Commands
+Name
+Command 
+Class
+Std 
+Mode
+Page 
+Mode
+GS P 
+Effect
+Exe.
+Set.
+ESC GS h 0 
+Invert 180˚
+○
+○
+ESC GS h 1 
+Water Mark
+○
+○
+○
+Star Original  Reduced Printing Function Command
+Commands
+Name
+Command 
+Class
+Std 
+Mode
+Page 
+Mode
+GS P 
+Effect
+Exe.
+Set.
+ESC GS c 
+Reduced printing
+○
+○

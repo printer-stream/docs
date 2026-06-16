@@ -1,0 +1,55 @@
+ESC/POS Command Specifications
+209
+Rev.2.52
+ESC GS / C
+Name	
+Initialize Auto Logo setting to non-volatile memory 
+Code	
+ASCII	
+ESC	
+GS	
+/	
+C
+	
+Hex.	
+1b	
+1d	
+2f	
+43
+	
+Decimal	
+27	
+29	
+47	
+67
+Defined Region	
+---
+Initial Value	
+---
+Function	
+Initializes registered data in the non-volatile memory of the Auto Logo function.  
+	
+After initialization, the printer is reset.  
+	
+This command is ignored when Auto Logo is being executed.
+	
+ Considering the non-volatile memory service life, avoid using this command frequently.
+	
+	
+The default values of the Auto Logo function are below.  
+Setting
+Initial Value 
+Auto Logo Function 
+OFF
+Command Character 
+None
+User Macro 1 
+None
+User Macro 2 
+None
+Command Character Switch 
+No print
+Partial Cut Before Auto Logo Printing 
+Invalid
+Reference 	
+ESC GS / W, ESC GS / 1, ESC GS / 2, ESC GS / 3, ESC GS / 4, ESC GS / 5, ESC GS / 6

@@ -1,0 +1,24 @@
+## C O N F I D E N T I A L
+
+You can also specify transmission of the effective value and acquire the dot count of the printable area with &lt;Function 34&gt; of this command.
+
+| ( sf ) setting value   | Horizontal size of the printable area                | Horizontal size of the printable area                |
+|------------------------|------------------------------------------------------|------------------------------------------------------|
+| ( sf ) setting value   | When ( sm = "0," "3") is specified                   | When ( sm = "1," "2") is specified                   |
+| "600" to "590"         | 54.0 mm(432 dots)                                    | 50.0 mm(400 dots)                                    |
+| "589" to "585"         | 53.0 mm(424 dots)                                    | 49.0 mm(392 dots)                                    |
+| "584" to "575"         | 52.5 mm(420 dots)                                    | 48.5 mm(388 dots)                                    |
+| "574" to "290"         | (int ( sf ÷ 10) - 5)mm (int ( sf ÷ 10) - 5) × 8 dots | (int ( sf ÷ 10) - 9)mm (int ( sf ÷ 10) - 9) × 8 dots |
+
+- The left edge of the printing area when the layout reference is specified ( sm = "1," "2"), is the position of the 17th dot when ( sm = "0," "3") is specified.
+
+The operation of the commands shown below differ according to the layout reference ( sm ) specified
+
+| Command              | sm = '0'   | sm = '1'   | sm = '2'   | sm = '3'   |
+|----------------------|------------|------------|------------|------------|
+| FS ( L <Function 65> | No         | Yes        | Yes        | No         |
+| FS ( L <Function 66> | No         | Yes        | Yes        | Yes        |
+| FS ( L <Function 67> | No         | Yes        | Yes        | Yes        |
+| GS V <Function B>    | Yes        | No         | No         | No         |
+
+[Yes: Operates / No: Does not operate]

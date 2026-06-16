@@ -1,0 +1,45 @@
+UC*The User Defined Character Instruction
+VS
+XT
+YT
+Page 5-19
+UC
+(pen control ,) X-increment, Y—increment(,...) (, pen control)
+(, . . .)
+;
+Purpose:
+Draws characters or symbols deﬁned by user.
+Parameters:
+pen control —2 +99 pen down or < -99 pen up.
+X-increment, Y-increment in grid units, range, i 98 grid
+units.
+Omitting parameters
+causes the pen to move one
+character-space ﬁeld to the right.
+The VelocitySelect Instruction
+VS
+pen velocity (;)
+Page 3-3
+Sets the pen velocity.
+decimal, Oto 127.9999.
+Purpose:
+Parameters:
+pen velocity ——1 through
+38.1 interpreted
+as cm/ s. De­
+faults to velocity of 38.1 cm/s, acceleration of 2 g. Any
+velocity parameter slows acceleration to 0.5g.
+The X-Tick Instruction
+Page4-2
+XT (;)
+Purpose:
+Draws a vertical tick mark of the length speciﬁed by the
+TL instruction at the current pen position.
+The Y-Tick Instruction
+Page4-2
+YT (;)
+Purpose:
+Draws a horizontal tick mark of the length speciﬁed by
+the TL instruction at the current pen position.
+*Not available with Option O03.
+INSTRUCTION SYNTAX B-11

@@ -1,0 +1,18 @@
+| Software        | Description                                                                                                                                                                                                                                                                       | Operating environment   |
+|-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------|
+| EpsonNet Config | A network setting tool for Epson network products. In the case of this printer, you can use this tool to check and/or set network parameters by connecting the Wireless LAN model to a computer for setup via the USB interface.                                                  | Windows, Mac            |
+| Monitoring Tool | Use to check a list of status for the Epson printers connected to the network.                                                                                                                                                                                                    | Windows                 |
+| Deployment Tool | Use to make network and printer settings simultaneously, via USB. Allows you to make settings efficiently at the time of introducing TM printers for the first time, or when configuring multiple TM printers at the same time.                                                   | Windows                 |
+| BmpToRaster     | This is a command line and GUI utility that converts Windows BMP files to raster graphics data for ESC/POS commands. You can create a variety of multiple tone or monochrome image print data. You can print graphics by sending the created binary file to the printer as it is. | Windows                 |
+
+## Download
+
+You can obtain software and manuals from one of the following URLs.
+
+For customers in North America, go to the following web site and follow the on-screen instructions.
+
+http://www.epsonexpert.com/
+
+For customers in other countries, go to the following web site:
+
+http://download.epson-biz.com/?service=pos

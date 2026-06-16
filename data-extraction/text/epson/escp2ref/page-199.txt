@@ -1,0 +1,7 @@
+C-192        Individual Command Explanations
+Printers not featuring this command
+None
+Model-dependent variations
+None
+Related topics
+ESC *

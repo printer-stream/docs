@@ -1,0 +1,381 @@
+  
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+STAR Line Mode Command Specifications 
+6-13 
+ 
+Class 
+Commands 
+Model Name 
+ 
+ 
+TSP800 
+TSP700
+TSP600
+TUP900
+TSP1000
+TSP828L
+TSP700II 
+TSP650 
+TUP500 
+TSP800II
+FVP10
+External 
+Device Drive 
+ESC BEL  
+OK 
+OK 
+OK 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+BEL 
+OK 
+OK 
+OK 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+FS 
+OK 
+OK 
+OK 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+SUB 
+OK 
+OK 
+OK 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+EM 
+OK 
+OK 
+OK 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC GS BEL 
+NO 
+Ver. 5.0 
+or later
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC GS EM DC1 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC GS EM DC2 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+Print Setting EM 
+OK 
+OK 
+OK 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC RS r  
+Spec. A 
+Spec. A
+Spec. A
+Spec. A
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+Status 
+ESC RS a  
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO  
+NO  
+NO  
+NO  
+ 
+ESC ACK SOH 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+ENQ 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+EOT 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO  
+NO  
+NO  
+NO  
+ 
+ESC ACK CAN 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO  
+NO  
+NO  
+NO  
+ 
+ETB 
+Spec. A 
+Spec. A
+Spec. A
+Spec. B
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC RS E 
+OK 
+OK 
+OK 
+OK 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+Kanji 
+character 
+ESC p 
+OK 
+OK 
+OK 
+OK 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC q 
+OK 
+OK 
+OK 
+OK 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC $  
+OK 
+OK 
+OK 
+OK 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC s  
+OK 
+OK 
+OK 
+OK 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC t  
+OK 
+OK 
+OK 
+OK 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC r  
+Spec. A 
+Spec. A
+Spec. A
+Spec. B
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+Others 
+CAN 
+OK 
+OK 
+OK 
+OK 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC @ 
+OK 
+OK 
+OK 
+OK 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC GS # m 
+Spec. A 
+(*) 
+Ver. 3.0 or 
+later 
+Spec. A
+(*) 
+Spec. A
+(*) 
+Spec. B
+(*) 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC ?  
+OK(*) 
+OK(*) 
+OK(*) 
+OK(*) 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 

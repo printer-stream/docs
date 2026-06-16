@@ -1,0 +1,59 @@
+page.
+
+## Getting Tampering Detect On/Off Status
+
+Format  /api/param?camera.detection(tampering).status
+
+Example of response  camera.detection(tampering).status=on&amp;200 OK
+
+Interpretation Acquire the on/off status of tampering detect.
+
+Allowed users
+
+admin, operator, user
+
+## Setting Tampering Detect to On/Off
+
+Format  /api/param?camera.detection(tampering).status=data
+
+Example of Response  camera.detection(tampering).status&amp;202 Accepted(camera.status=save)
+
+Interpretation Change the on/off status of tampering detect. The change is saved by the API,
+
+camera.status=save. If the change is not saved, the setting is restored by reboot.
+
+Allowed users
+
+admin, operator
+
+## Getting Tampering Detect Sensitivity
+
+Format  /api/param?camera.detection(tampering).level
+
+Example of response  camera.detection(tampering).level=20&amp;200 OK
+
+Interpretation Acquire the tampering detect sensitivity. A value between 0 to 100 will be returned. The larger the value, the higher will be the sensitivity.
+
+Allowed users
+
+admin, operator, user
+
+## Setting Tampering Detect Sensitivity
+
+Format  /api/param?camera.detection(tampering).level=data
+
+Example of response  camera.detection(tampering).level&amp;202 Accepted(camera.status=save)
+
+Interpretation Change the tampering detect sensitivity. Specify a value between 0 to 100. The larger the value, the higher will be the sensitivity. The change is saved by the API, camera.status=save. If the change is not saved, the setting is restored by reboot.
+
+Allowed users admin, operator
+
+## Getting Tampering Detect time
+
+Format  /api/param?camera.detection(tampering).temporal
+
+Example of response  camera.detection(tampering).level=5&amp;200 OK
+
+Interpretation Acquire the tampering detect time. A value between 0 to 120 will be returned.
+
+Allowed users admin, operator, user

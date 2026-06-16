@@ -1,0 +1,41 @@
+<!-- image -->
+
+Name
+
+Specify/cancel emphasized characters
+
+Code
+
+ASCII ESC E n
+
+Hex. 1B 45 n
+
+Decimal 27 69 n
+
+Defined Region
+
+0 ≤ n ≤ 255
+
+Initial Value
+
+n = 0
+
+Function
+
+Specifies or cancels emphasized characters.
+
+- Cancels emphasized characters when n = &lt;*******0&gt;B.
+
+- Specifies emphasized characters when n = &lt;*******1&gt;B.
+
+Details
+
+- n is effective only when it is the lowest bit.
+
+- The setting of the last received command is effective even when emphasized printing is executed by the ESC! (Batch specify print mode) command.
+
+- This command is enabled for ANK characters and Chinese characters.
+
+Reference
+
+ESC !

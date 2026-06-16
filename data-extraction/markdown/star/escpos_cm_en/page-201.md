@@ -1,0 +1,47 @@
+<!-- image -->
+
+## ESC	GS	*	0	n	m1	m2	m3	…	mk
+
+Name
+
+Print mark
+
+Code
+
+ASCII ESC GS * 0 n m1 m2 m3 . . . mk
+
+Hex. 1B 1D 2A 30 n m1 m2 m3 . . . mk
+
+Decimal 27 29 42 48 n m1 m2 m3 . . . mk
+
+Defined Region
+
+'001' ≤ n ≤ '255'
+
+'0' ≤ m ≤ '9'
+
+k = n
+
+Initial Value
+
+---
+
+Function
+
+Prints the mark number specified by m, based on the mark format (mark height, mark line feed amount, each mark color, and each mark horizontal width) that is preset.
+
+n indicates the number of marks to print; If the number of marks is 10 (m1 to m10), n = '010.' m specifies the mark number to print.
+
+n and m are ASCII character strings that are represented by decimals; They are composed of character codes '0' to '9.'
+
+This command is ignored if there is print data in the image buffer.  Therefore, other characters cannot be included (characters, bit images, bar codes, etc.).
+
+If there is no mark specified in the remaining print region, the number of bytes specified by n are discarded.
+
+Also, in page mode, if the value of n is out of the defined range, subsequent data are processed as normal data.
+
+This command is affected by position alignment, left margin, moved position, positions such as horizontal tab and upside down printing.
+
+Reference
+
+ESC GS * 1, ESC GS * 2, ESC GS * W, ESC GS *C

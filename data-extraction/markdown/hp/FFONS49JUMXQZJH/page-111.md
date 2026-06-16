@@ -1,0 +1,37 @@
+The plotter will always output the following:
+
+## 40 , 40 [TERM]
+
+These factors indicate that there are approximately 40 plotter units per millimetre in the X-axisand in the Y-axis(0.025 mm/ plotter unit). [TERM]is the output terminator for the interface installed.
+
+## The Output Identification Instruction, OI
+
+DESCRIPTION The output identification instruction, OI, is used to out­ put a plotter identifier.
+
+M This instruction is especiallyusefulin a remote operating en­ vironment to determine which model plotter is on-line. =
+
+SYNTAX OI (terminator)
+
+EXPLANATIONNo parameters are used. The instruction will execute even if no terminator is received.
+
+The plotter will always output the following character string:
+
+## 7470A [TERM]
+
+[TERM]is the output terminator for the interface installed.
+
+## The Output Options Instruction, OO
+
+DESCRIPTIONThe output options instruction, O0, is used to output eight option parameters.
+
+M This instruction is especiallyusefulin a remoteoperating en­ vironment to determine which options are available in the plotter which is on-line.
+
+SYNTAX 00 (terminator)
+
+EXPLANATIONNo parameters are used. The instruction will execute even if no terminator is received.
+
+The plotter will always output the appropriate combination of eight integers in ASCII, separated by commas. The options included in the plotter are indicated by a 1 as defined below.
+
+<!-- image -->
+
+[TERM]is the output terminator for the interface installed.

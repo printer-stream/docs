@@ -1,0 +1,34 @@
+C O N F I D E N T I A L
+Paper roll
+Miscellaneous commands     ESC ( A
+ 
+Ver. 10.13
+p. 451
+■When the buzzer has stopped sounding, the printer transmits the buzzer sound end response as shown 
+below to the host.
+[Notes]
+■When c = 0, repeats a sound pattern specified by n infinitely.
+■The printer is offline during sounding.
+■If the cover is opened during sounding and a sound stop is requested by DLE DC4  <Function 3>, the 
+sound stops.
+Buzzer sound end 
+response
+Hex
+Decimal
+Data quantity
+Header
+37H
+55
+1 byte
+Identifier
+54H
+84
+1 byte
+Data
+30H
+48
+1 byte
+NUL
+00H
+0
+1 byte

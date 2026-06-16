@@ -1,0 +1,21 @@
+C O N F I D E N T I A L
+Paper roll
+Mechanism control commands     
+ 
+Ver. 10.13
+p. 407
+Mechanism control commands
+Command
+Name 
+ESC <
+Return home
+ESC U
+Turn unidirectional print mode on/off
+ESC i
+Partial cut (one point left uncut)
+ESC m
+Partial cut (three points left uncut)
+GS V
+Select cut mode and cut paper
+MECHANISM CONTROL COMMANDS
+Mechanism control commands

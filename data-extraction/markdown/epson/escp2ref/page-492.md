@@ -1,0 +1,45 @@
+## LX-300 Year introduced: 1994
+
+## Built-in features
+
+| Print method      | 9-pin impact                                                                |
+|-------------------|-----------------------------------------------------------------------------|
+| Speed             | NLQ 44 cps @ 10 cpi 53 cps @ 12 cpi Draft 220 cps @ 10 cpi 264 cps @ 12 cpi |
+| Print width       | 8 inches                                                                    |
+| Paper types       | Continuous, Single sheets, Envelopes, Labels, Roll paper                    |
+| Multipart forms   | Original plus 2 copies                                                      |
+| Paper paths       | Rear                                                                        |
+| Tractor           | Detachable push and pull                                                    |
+| Paper parking     | Available                                                                   |
+| Buffer size       | 4KB                                                                         |
+| Interface         | Parallel, Serial                                                            |
+| Fonts (typefaces) | Roman, Sans Serif, Draft, Draft Condensed                                   |
+| Nonprintable area | 5.3 mmat the top of single sheets                                           |
+
+## Options (with model numbers)
+
+Color Upgrade Kit C83208* Cut-sheet feeder C80637* Pull tractor C80030* Roll-paper holder #8310 Ribbons #8750 (Black), S015073 (Color) *The last digit of the option model number shown above as an asterisk varies by country.
+
+## LX-300 default-setting mode
+
+This printer has no DIP switches; however, the following settings can be made in a special defaultsetting mode.
+
+| Setting                            | Options                                                                                                                                                                                     |
+|------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Page length                        | 11, 12, 8.5, 70/6 (A4) inches                                                                                                                                                               |
+| Character table                    | Italic, PC437, PC437 Greek*, PC850, PC852*, PC853*, PC855*, PC857*, PC860, PC861, PC863, PC865, PC866*, PC869*, ISO Latin 1T*, ISO 8859-7, Code MJK*, Mazovia*, Bulgaria*, BRASCII, Abicomp |
+| Page length (for continuous paper) | 11, 12, 8.5, or 70/6 (A4) inches                                                                                                                                                            |
+| Skip-over-perforation              | On or Off                                                                                                                                                                                   |
+| Auto tear off                      | On or Off                                                                                                                                                                                   |
+| Top-of-form position               | -3, -2, -1, 0, +1, +2, +3                                                                                                                                                                   |
+| Shape of zero                      | Normal zero (0) or slashed zero (Ø)                                                                                                                                                         |
+| Auto line feed                     | On or Off                                                                                                                                                                                   |
+| Character pitch                    | 10 or 12 cpi                                                                                                                                                                                |
+| Tractor                            | Single or Double                                                                                                                                                                            |
+| Interface                          | Auto (10 sec. wait), Auto (30 sec. wait), Parallel, Serial                                                                                                                                  |
+| Serial I/F bit rate                | 300, 600, 1200, 2400, 4800, 9600, 19200 bps                                                                                                                                                 |
+| Serial I/F parity bit              | None, Odd, or Even                                                                                                                                                                          |
+| Serial I/F data length             | 7 bit or 8 bit                                                                                                                                                                              |
+| Serial I/F ETX/ACK                 | Disable or Enable                                                                                                                                                                           |
+
+* Availability varies by country.

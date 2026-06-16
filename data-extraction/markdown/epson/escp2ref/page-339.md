@@ -1,0 +1,15 @@
+## Step 5 Repeat Above as Necessary within Page
+
+## Step 6 End Page
+
+Send &lt;EXIT&gt; to exit TIFF compressed raster graphics mode Send FF command-eject paper Prompt user for paper if in single-sheet mode
+
+## Step 7 Repeat Above as Necessary for the Job
+
+## Step 8 End Job
+
+Send ESC @ to reset printer to defaults (exit raster graphics mode)
+
+TIFF mode programming sequence
+
+<!-- image -->

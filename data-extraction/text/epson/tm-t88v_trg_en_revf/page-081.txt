@@ -1,0 +1,68 @@
+Chapter 5   Application Development Information
+81
+5
+Utilities
+TM-T88V Mac Printer 
+Driver
+Mac printer driver allows you to control the TM-T88V 
+using Common UNIX Printing System (CUPS) on Mac 
+OS X.
+This is a full raster printer driver. It is able to print images, 
+text, and vector graphics etc., that an application 
+displays. With this driver many printer controls are 
+possible, such as paper cut timing control, cash 
+drawer control, print speed control, blank line skip, 
+and upside-down printing. It also provides API and 
+dialogues for print setting, sample applications, and 
+logo setting utility.
+Mac
+Epson TM/BA Series 
+Thermal Printer Driver
+This driver allows you to control the TM-T88V using 
+Common UNIX Printing System (CUPS) on GNU/Linux.
+This is a full raster printer driver. It is able to print images, 
+text, and vector graphics etc., that an application 
+displays. With this driver many printer control are 
+possible, such as paper cut timing control, cash 
+drawer control, print speed control, blank line skip, 
+and upside-down printing.
+Linux
+Software
+Description
+Operating 
+environment
+TM-T88V Utility
+A utility for checking and changing various printer 
+settings. Use this utility to:
+•
+Checking current settings
+•
+Operation check
+•
+Storing logos
+•
+Coupon settings
+•
+Paper reduction settings
+•
+Automatic paper cut settings
+•
+Printing control settings
+•
+Font settings
+•
+Optional buzzer settings
+•
+Communication I/F settings
+•
+Backup/restore
+Windows
+TM-T88V Printer Model 
+Setting Utility
+Use to change the printer model name when you use 
+the TM-T88V with the APD Ver. 4.00 ~ 4.04.
+Windows
+Software
+Description
+Operating 
+environment

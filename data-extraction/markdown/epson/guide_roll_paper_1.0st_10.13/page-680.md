@@ -1,0 +1,24 @@
+## C O N F I D E N T I A L
+
+- The amount of definition area remaining can be confirmed.
+- ■ NV user memory is the memory area used for storing character font data in non-volatile memory.
+- ■ Transmission data [Header + data + NUL] as follows is transmitted:
+- ■ Writing data to the NV user memory is enabled by FS g 1 .
+- ■ When you use this function, obey the following rules.
+- When the host PC transmits the function data, transmit the next data after receiving the corresponding data (the header ~ NULL) from the printer
+- When operating with a serial interface, be sure to configure operation so that the host computer only uses the printer when it is READY.
+- With a parallel interface, a [Header to NUL] is stored first in the transmission buffer with the other transmission data (except for ASB status). When the host enters Reverse Mode, the data is transmitted in order from the beginning. Data that exceeds the transmission buffer (99 bytes) is ignored. When using the command, the host should enter Reverse Mode immediately and start processing the status.
+- ■ With serial interface, when communication with the printer uses XON/XOFF control, the XOFF code may interrupt the 'Header to NUL' data string.
+- ■ User NV memory data can be identified to other transmission data according to specific data of the transmission data block. When the header transmitted by the printer is [Hex=5FH/Decimal=95], treat NUL [hex = 00H/decimal =0] as a data group and identify it according to the combination of the header.
+
+| Transmitted data    | Hex       | Decimal   | Amount of data         |
+|---------------------|-----------|-----------|------------------------|
+| Header              | 5FH       | 95        | 1 byte                 |
+| NV user memory data | 20H ~ FEH | 32 ~ 254  | ( nL + nH × 256) bytes |
+| NULL                | 00H       | 0         | 1 byte                 |
+
+## Program Example
+
+PRINT #1, CHR$(&amp;H1C); Ó g2 Ó ;CHR$(0);CHR$(0);CHR$(0);CHR$(0);CHR$(0);CHR$(14);CHR$(0)
+
+[Notes]

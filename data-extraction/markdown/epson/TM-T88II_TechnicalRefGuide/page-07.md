@@ -1,0 +1,36 @@
+## About this Manual
+
+This manual describes the TM-T88III, a current EPSON thermal printer product.
+
+This manual also describes the TM-T88II, an obsolete product, for the purpose of supporting legacy systems. The TM-T88II has been replaced by the newer TM-T88III. However, even though the TM-T88II is no longer being sold, it is still in use by customers.
+
+In addition, the power supply that was originally available for the TM-T88II printer, the PS-170, is obsolete and no longer available. It is described only for legacy support. The currently available power supply, the PS-180, works with either printer model.
+
+## Aim of the Manual
+
+This manual was created to provide all the information necessary for system planning, design, installation, and application of the printer for designers and developers of POS system.
+
+## Manual Content
+
+| The manual is made up of the following sections:   | The manual is made up of the following sections:   |
+|----------------------------------------------------|----------------------------------------------------|
+| Chapter 1                                          | Product Overview                                   |
+| Chapter 2                                          | Setup                                              |
+| Chapter 3                                          | Application Development Information                |
+| Chapter 4                                          | ESC/POS Command-related Information                |
+| Chapter 5                                          | Product Specifications                             |
+| Appendix A                                         | Interfaces and Connectors                          |
+| Appendix B                                         | Options and Consumables                            |
+| Appendix C                                         | Character Code Tables                              |
+| Appendix D                                         | TM-T88II/TM-88III Comparison Table                 |
+
+## Related Software and Documents
+
+Documents relating to the TM-T88II/TM-T88III are listed below.
+
+| Name of document                               | Description                                                                                                                                          |
+|------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
+| TM-T88II User's Manual TM-T88III User's Manual | Provides information to enable POS operators to use the TM-T88II/TM-T88III safely and correctly. This manual is packed in the box with the printer.* |
+| ESC/POS Application Programming Guide          | Provides detailed ESC/POS command information. Contact us to obtain this guide.                                                                      |
+| TM-T88II/T88III Technical Reference Guide      | This guide.*                                                                                                                                         |
+| EPSON OPOS ADK                                 | This is an OCX driver.*                                                                                                                              |

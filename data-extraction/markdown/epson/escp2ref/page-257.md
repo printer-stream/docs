@@ -1,0 +1,5 @@
+<!-- image -->
+
+2. Divide each column into the following groups, depending on character and printer traits.
+
+24-pin normal height 24-pin super/subscript 3 goups of 8 dots 2 groups of 8 dots

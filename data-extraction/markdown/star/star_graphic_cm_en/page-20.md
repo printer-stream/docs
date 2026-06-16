@@ -1,0 +1,51 @@
+<!-- image -->
+
+Rev. 2.31
+
+## ESC GS ETX s n1 n2
+
+[Name]
+
+Document start , end
+
+[Code]
+
+ASCII
+
+ESC GS  ETX s n1 n2
+
+Hexadecimal 1B 1D 03 s n1 n2
+
+Decimal 27 30 3 s n1 n2
+
+[Defined Area]
+
+3 ≤ s ≤ 5
+
+Refer to the table below for the n1 and n2 defined area of n1 and n2.
+
+[Function]
+
+This command is run when reading from the reception buffer. Processes the print end counter according to the s parameter.
+
+|   s | Name                      | Function                                                                                                                                                                                                                          |
+|-----|---------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|   3 | Start document n1, n2 = 0 | (1) Sets data intake mode (2) Initialize                                                                                                                                                                                          |
+|   4 | End document n1, n2 = 0   | (1) Prints data in line buffer, if data exists. (2) Waits until printing ends (motor stops). (3) Cancels data intake mode                                                                                                         |
+|   5 | Data timeout setting      | n1=0 : Initializes to the content of MSW. (n2=0) n1=1 : Data timeout setting n2=0 : Timeout disabled Others: n2 = Data timeout time (units: seconds 1 to 255 seconds) n1=2: Sends the current timeout setting to the host. (n2=0) |
+
+When s = 3, and s = 4 (Document start command + document end command), printer operates as though in data cancel mode. If there is an error after receiving the document start command, reception data is received and discarded until the document end command is received when the printer is recovered from the error. If the document end command cannot be recognized, all reception data is destroyed. Timeouts are 10 seconds. Automatically cancels the data intake mode.
+
+## Restrictions
+
+- 1)  Sleep mode decrease
+- 2)  Erroneous printing occurs if the same data as the End command is contained in the raster data.
+- 3)  If the interval of data transmission is longer than the timeout time for some reason, it will be judged as an error even though the transmission is not actually disconnected.   In case of data cancellation, data up to the document end command will be cancelled.   Be sure to check by ETB to control.
+
+When s = 3, initialize the following settings using the initializing process.
+
+## &lt;T:TOP Command/E:END Command&gt;
+
+<!-- image -->
+
+--------------------------------------------------------------------------------------

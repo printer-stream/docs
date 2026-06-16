@@ -1,0 +1,31 @@
+## Format
+
+ASCII ESC M
+
+| Hex     |   1B |   4D |
+|---------|------|------|
+| Decimal |   27 |   77 |
+
+## Function
+
+Selects 12-cpi character pitch
+
+## Default
+
+10-cpi characters
+
+## Notes
+
+If you change the pitch with this command during proportional mode (selected with the ESC p command), the change takes effect when the printer exits proportional mode.
+
+## Printers not featuring this command
+
+None
+
+Model-dependent variations
+
+None
+
+## Related topics
+
+ESC P, ESC p, ESC !, Selecting the pitch

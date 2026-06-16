@@ -1,0 +1,28 @@
+26
+Printable Area
+The printable area of a paper with width of 79.5 ± 0.5 mm {3.13 ± 0.02"} is 72.2 ± 0.2 mm {2.84 ± 
+0.008"} (512 dots) and the space on the right and left sides are approximately 3.7 ± 2 mm {0.15 ± 
+0.079"}.
+In 2-divided energizing, the print position within the printable area of the thermal elements 
+for dots 1 to 256 and 257 to 512 is shifted approximately 0.07 mm {0.0028"} as shown in the 
+figure below in the paper feed direction.
+In 4-divided energizing, the print position within the printable area of the thermal elements 
+for dots 1 to 96, 97 to 240, 241 to 368, and 369 to 512 is shifted approximately 0.04 mm 
+{0.0016"} as shown in the figure below in the paper feed direction.
+OO]̍_
+
+
+
+
+
+OO]_
+
+
+OO]̍_
+
+OO]_
+
+
+OO]_
+All the numeric values are typical.
+Paper width

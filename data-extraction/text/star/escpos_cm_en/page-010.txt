@@ -1,0 +1,106 @@
+ESC/POS Command Specifications
+10
+Rev.2.52
+1-1-3 
+Signal Array and Explanations According to Interface Connector Pin
+<Signal Array and Functions>
+Pin 
+No.
+Signal 
+Name
+Signal 
+Dir.
+Function
+1
+FG
+-
+Frame ground
+2
+TXD
+Output
+Transmission Data
+3
+RXD
+Input
+Reception Data
+4
+RTS
+Output
+Same as DTR signal 
+6
+DSR
+Input
+Signal indicating whether host can receive data.
+The SPACE status indicates the host can receive data; the MARK status indicates that the host 
+cannot receive data.  When DTR/DSR control is selected, the status of this signal is checked to 
+transmit data.   (Excludes data transmissions using DLEEOT .)
+When XON/XOFF control is selected, the status of this signal is not checked.  This signal can 
+be used to reset the printer according by switching the DIP switches or the memory switches.  
+7
+SG
+-
+Signal ground
+20
+DTR
+Output
+ (1) When DTR/DSR control is selected: 
+Indicates whether the printer is BUSY.  
+The SPACE status indicates the printer is READY; the MARK status indicates that the printer 
+is BUSY.  
+The DIP switch or the memory switch settings change the conditions for the printer to be BUSY.  
+(*1) 
+The following conditions are required to enter a BUSY (MARK) state.  
+(2) XON/XOFF control is selected: 
+Indicates whether the printer is connected normally and is ready to receive data from the host.  
+A SPACE status indicate that the printer is connected normally and that data can be received.  
+The SPACE status is always entered except for the following cases.  
+• The time after initializing the mechanism when turning on the power until communication is 
+possible. 
+• While executing a self-test
+25
+INIT
+Input
+This signal can be used to reset the printer according by switching the DIP switches or the 
+memory switches.  
+(*1) DIPSW Settings: Conditions for BUSY 
+	
+ON	
+=	
+Reception buffer full or printer is offline  (Default) 
+	
+OFF	
+=	
+Reception buffer full
+(*2) When the reception buffer empty region is 0 bytes, received data is ignored.  
+	
+Printer Status
+Busy condition (*1)
+OFF
+ON
+• During the period from when the power is turned 
+on (including resetting using the interface) to 
+when the printer is ready to receive data.
+BUSY
+BUSY
+• When executing a self-test
+BUSY
+BUSY
+• When the cover is open
+-
+BUSY
+• When printing stopped because of paper out
+-
+BUSY
+• When waiting to switch at macro execution
+-
+BUSY
+• While there is a temporary error in the power
+-
+BUSY
+• When there is an error
+-
+BUSY
+• When reception buffer is full (*2) BUSY
+BUSY
+BUSY
+OFFLINE

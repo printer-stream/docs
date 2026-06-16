@@ -1,0 +1,67 @@
+  
+ 
+ 
+ESC g 
+[Name] 
+Specify 14 dot pitch 
+[Code] 
+ASCII 
+ESC 
+g 
+ 
+ 
+ 
+ 
+ 
+Hex. 
+1B 
+67 
+ 
+ 
+ 
+ 
+ 
+Decimal 
+27 103 
+ 
+ 
+ 
+ 
+ 
+[Defined Area] 
+- - - 
+[Initial Value] 
+Memory switch setting 
+[Function]  
+Specify the right space amount of ANK characters in 2 dots.  
+ 
+ 
+The ANK character width is "left space amount” + "ANK font dot count” + right space amount.”  
+ 
+ 
+(See the information on character specifications in the appropriate printer specifications manual  
+ 
+ 
+for details on the ANK font dot count.) 
+ 
+ 
+ 
+Standard mode and page mode can be set independently of each other. 
+ 
+ 
+Specification A 
+ 
+This command is enabled only when the memory switch setting is set for DBCS (2 byte countries).  
+It is ignored when the memory switch setting is set for SBCS (1 byte countries). 
+ 
+Specification B 
+ 
+This command is enabled for both when the memory switch setting is set for either DBCS (2 byte 
+countries) or SBCS (1 byte countries).   
+ 
+ 
+ 
+ 
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+STAR Line Mode Command Specifications 
+3-11 

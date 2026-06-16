@@ -1,0 +1,64 @@
+Individual Command Explanations        C-183
+ESC K
+Select 60-dpi graphics
+ESC/P 2
+ESC/P
+Format
+ASCII
+ESC
+K
+nL
+nH
+d1
+d2
+. . .
+dk
+Hex
+1B
+4B
+nL
+nH
+d1
+d2
+. . .
+dk
+Decimal
+27
+75
+nL
+nH
+d1
+d2
+. . .
+dk
+Parameter range
+0 ≤ nL ≤ 255
+0 ≤ nH ≤ 31
+0 ≤ d ≤ 255
+Function
+Prints bit-image graphics in 8-dot columns, at a density of 60 horizontal by 60 vertical dpi,
+according to the following parameters:
+nL, nH
+Specify the total number of columns (k) of graphics data following,
+according to the formula
+k = ((nH × 256) + nL)
+nH = INT
+k
+256
+nL = MOD
+k
+256
+d1 . . . dk
+Bytes of graphics data
+Notes
+• 
+This is a nonrecommended command. The ESC * 0 command is identical to this
+command; use ESC * 0 instead of this command.
+• 
+The dot density printed with this command can be redefined with the ESC ? command.
+Printers not featuring this command
+None
+Model-dependent variations
+None
+Related topics
+ESC *

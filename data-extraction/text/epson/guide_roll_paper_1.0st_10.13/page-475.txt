@@ -1,0 +1,27 @@
+C O N F I D E N T I A L
+Paper roll
+Miscellaneous commands     GS ( H
+ 
+Ver. 10.13
+p. 475
+[Notes for response transmission process]
+■When the host PC isn’t able to receive when the response is transmitted, the response is reserved and the 
+printer starts processing the next data. The reserved response is processed again at the next time for 
+transmitting responses.
+•
+When specifying any response with a serial interface, make sure that the host PC is able to receive data. 
+When host is unable to receive data, responses cannot be received correctly.
+■When operating with a parallel interface, the data sent by this function (starting with Header and ending 
+with NUL), as with other data, is first stored in the send buffer, then output in sequential order when the 
+host computer changes to the reverse mode. Note that the send buffer capacity is 99 bytes, and any data 
+exceeding this volume limit will be lost; therefore, when using this command, it is important to configure 
+the operation so that the host computer’s change to the reverse mode and the subsequent status send/
+receive process is performed quickly.
+■The printer enters the BUSY state just before the data header is sent. After NUL has been sent, the printer 
+enters the READY state (except when other factors cause it to enter the BUSY state). 
+■When communication with the printer uses XON/XOFF control with a serial interface, the XOFF code may 
+interrupt the “Header to NUL” data string.
+■The response for each function can be identified to other transmission data according to specific data of 
+the transmission data block. When the header transmitted by the printer is [hex = 37H/decimal =55], treat 
+NUL [hex = 00H/decimal =0] as a data group and identify it according to the combination of the header 
+and the identifier.

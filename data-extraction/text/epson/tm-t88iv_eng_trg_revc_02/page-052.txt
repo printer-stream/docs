@@ -1,0 +1,25 @@
+52
+Connect a 10/100BASE-T cable to the 10/100BASE-T LAN connector by pressing firmly until the 
+connector clicks into place.
+To use the LAN interface, the IP Address Setup Utility for UB-E02 is required. For detailed 
+information about the setup methods, see the UB-E02 Technical Reference Guide. You can 
+obtain the IP Address Setup Utility for UB-E02 and the UB-E02 Technical Reference Guide 
+from one of the following URLs or ask your dealer:
+•
+For customers in North America, go to the following web site:
+http://www.epsonexpert.com/
+•
+For customers in other countries, go to the following web site: 
+http://www.epson-pos.com/
+016(146'.'%1//70+%#6+1075'
+-'+06'.'(10#05%*.755/
+10/100BASE-T LAN 
+interface connector
+LED 
+(Green)
+LED
+(Yellow) 
+Switch
+Press down the switch for a 
+while when the power is on to 
+initialize to the factory settings.

@@ -1,0 +1,19 @@
+## Bus Commands
+
+## Reaction to Bus Commands DCL, SDC, and IFC
+
+The computer can set all devices on the HP-IB system to a predefined or initialized state by sending the device clear command, DCL. The computer can also set selected devices to a predefined or initialized state by sending a selected device clear command, SDC, along with the addresses of the devices. The basic difference is that devices will obey SDC only if they are addressed to listen, whereas DCL clears all de­ vices on the bus. The interface clear command, IFC, is used by the computer to override all bus operations and return the bus to a known quiescent state.
+
+Upon receipt of either a DCL, SDC, or IFC command, the plotter resets the I/O to begin accepting a new instruction, and disables any current output. Any partially parsed HP-GL instruction or parameters will be lost.
+
+The device clear and interface clear commands do not reset parameters in the plotter to their default values. They are not the same as the HP-GL commands, DF or IN.
+
+## Serial and Parallel Polling
+
+Polling is the process used by the computer to determine which device on the HP-IB bus has initiated a require service message. The condi­ tions which will cause the require service message to be sent to the computer are defined by the input mask instruction, IM, in Chapter 1.
+
+## TheSerial Poll
+
+A serial poll enables the computer to learn the status or condition of devices on the bus. It is commonly used by the computer to determine who is requiring service.
+
+The serial poll is so named because the computer polls devices one at a time rather than all at once. The plotter will respond to a serial poll by sending the status byte as described under the output status instruction, OS (Chapter 7). The S-mask parameter of the input mask instruction, IM, is used to specify which status byte conditions will send the service request message and when polled, respond with request service. Unless the user changes the S-mask value from the default setting of 0, the plotter will never give a positive response to a serial poll, i.e., request service (see The Input Mask Instruction, IM, Chapter 1). Bit position 6 of the status byte will be set to 1 (if the S-mask value is not 0) when any of the conditions designated by the S-mask are true. Bit position 6 will be set to 0 after all conditions which would cause a service request no longer exist. See IM, Chapter 1, and OS, Chapter 7. Until bit position 6 has been reset to 0, no additional service request messages, and there­ fore, no responses to a serial poll are possible.

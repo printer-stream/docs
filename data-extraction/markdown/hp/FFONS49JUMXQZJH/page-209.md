@@ -1,0 +1,67 @@
+Page10-28
+
+$$. H [(<DEC>) ; (<ASC>) ; (<ASC>( ; . . . <ASC>)) ]: ]:$$
+
+Purpose:
+
+Establishes parameters for handshake mode 1,used when response to enquiry character requires ESC . M parameters.
+
+Parameters:
+
+&lt;DEC&gt; -Block size or Xoffthreshold level.
+
+&lt;ASC&gt; -Enquiry character or not used.
+
+&lt;ASC&gt; . . .&lt;ASC&gt; -Acknowledgment string of 1 to 10 characters or Xontrigger characters.
+
+## Set Handshake Mode 2
+
+Page10-29
+
+$$. I [(<DEC>) ; (<ASC>) ; (<ASC>( ; . . . <ASC>)) ]:$$
+
+Purpose:
+
+Establishes parameters for handshake mode 2,used when response to enquiry character does not require ESC . M parameters.
+
+Parameters:
+
+&lt;DEC&gt; -Block size or Xoffthreshold level.
+
+&lt;ASC&gt; -Enquiry character or omitted.
+
+&lt;ASC&gt; . . .&lt;ASC&gt; -Acknowledgment string of 1 to 10 characters or Xontrigger characters.
+
+## Abort Device Control
+
+. J J
+
+Purpose:
+
+Page10-31
+
+Aborts any partially decoded or executed device control instructions including outputs.
+
+## Abort Graphic Instruction
+
+. K .K
+
+Purpose:
+
+Page10-32
+
+Aborts any partially decoded HP-GL instruction and dis­ cards instructions in buffer.
+
+## Output Buffer Size
+
+. L .L
+
+Purpose:
+
+Outputs the buffer size.
+
+Response:
+
+255. Not output until the buffer is empty.
+
+Page10-32

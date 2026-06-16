@@ -1,0 +1,65 @@
+C O N F I D E N T I A L
+Paper roll
+Status commands     GS j
+ 
+Ver. 10.13
+p. 361
+GS j
+EXECUTING + SETTING
+[Name]
+Enable/disable Automatic Status Back (ASB) for ink
+[Format]
+ASCII
+GS
+j
+n
+Hex
+1D
+6A
+n
+Decimal
+29
+106 n
+[Range]
+0 ≤  n ≤  255
+[Default]
+When DIP switch or memory switch (BUSY condition) is Off: n = 0
+When DIP switch or memory switch (BUSY condition) is On: n = 1
+[Printers not featuring this command] TM-T90,  TM-T20, TM-T88IV, TM-T88V, TM-T70, TM-L90, TM-P60, TM-U230, 
+TM-U220
+[Description]
+Enables or disables the ink ASB (Automatic Status Back) and specifies the status items to include, using n as 
+follows:
+[Notes]
+■ASB (Automatic Status Back) transmits the status such as ink near-end, ink cartridge installed/not installed 
+automatically to the printer in real-time. It is called [ASB function] and the status is [ASB status]. If you use 
+ASB, application can acquire the printer change in real-time and passively.
+■Enabling any status (except n = 0) starts ink ASB. Then the current ink ASB status is transmitted. After that, 
+when ASB is active, the selected enabled ink ASB status is transmitted each time the status changes. 
+■When n = 0, ink ASB is disabled. When ASB is disabled, ink ASB status is not transmitted.
+■If ASB is enabled when the printer is disabled by ESC =, the printer transmits a 4-byte status message 
+whenever the status changes. 
+n: 
+Bit
+Function
+Binary Hexadecimal Decimal
+0
+Disable online/offline status of the ink mechanism 0
+00
+0
+Enable online/offline status of the ink mechanism 1
+01
+1
+1
+Disable ink status detection
+0
+00
+0
+Enable ink status detection
+1
+02
+2
+2~7 Reserved
+0
+00
+0

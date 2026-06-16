@@ -1,0 +1,153 @@
+                                                                                   Rev. 2.31  
+―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+STAR Graphic Mode Command Specifications 
+30 
+ 
+ESC * r m l n NUL 
+[Name] 
+Set the left margin of raster 
+[Code] 
+ASCII 
+ESC 
+* 
+r 
+m 
+l 
+n 
+NUL 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Hex 
+1B 
+2A 
+72 
+6D 
+6C 
+n 
+00 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Decimal 
+27 
+42 114 109 108 
+n 
+0 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+[Defined Area] Print width: 72 mm mode 0≦n≦71 
+ 
+Print width 51 mm mode 0≦n≦50 
+[Initial Value] 
+n = 0 
+[Function]  
+Sets the left margin of the raster. 
+By this command set the left margin to (nx 8) dots. 
+If the left margin exceeds the printable area, or if there is no print area by the left margin specified 
+((printable area - right margin) ≧ left margin specified value), it ignores this command. 
+nI is a decimal notation using ASCII characters (up to 255 digits) 
+If raster data exists in the image buffer of raster mode, this command is ignored. 
+ 
+ 
+ 
+ 
+ESC * r m r n NUL 
+[Name] 
+Set the right margin of raster 
+[Code] 
+ASCII 
+ESC 
+* 
+r 
+m 
+r 
+n 
+NUL 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Hex 
+1B 
+2A 
+72 
+6D 
+72 
+n 
+00 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Decimal 
+27 
+42 114 109 114 
+n 
+0 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+[Defined Area] Print width: 72 mm mode 0≦n≦71 
+ 
+Print width 51 mm mode 0≦n≦50 
+[Initial Value] 
+n = 0 
+[Function]  
+Sets the right margin of the raster. 
+By this command set the right margin to (nx 8) dots. 
+If the right margin exceeds the printable area, 
+or if there is no print area by the right margin specified ((printable area - left margin) ≧ right margin 
+specified value),  
+this command is ignored. 
+nI is a decimal notation using ASCII characters (up to 255 digits) 
+If raster data exists in the image buffer of raster mode, this command is ignored. 
+ 
+ 

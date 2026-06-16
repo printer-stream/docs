@@ -1,0 +1,29 @@
+Auto Connection ON
+Auto Connection OFF
+Reconnecting without changing 
+the master device
+After the printer is turned on, it 
+automatically connects to the last 
+master device that was connected.
+After turning on the printer, tap 
+this printer's name on the Blue-
+tooth settings screen on the mas-
+ter device.
+Changing the connected master 
+device
+Disconnect the Bluetooth connec-
+tion in such a way as to turn OFF 
+the power to the upper-level de-
+vice automatically connected.
+Then, establish a pairing with a 
+desired master device.
+After turning on the printer, es-
+tablish a pairing with a desired 
+master device.
+Example (recommended)
+When connecting directly to the 
+printer from one master device.
+When using the printer with mul-
+tiple master device.
+See the table below for details of Auto Connection setting.
+- 20 -

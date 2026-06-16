@@ -1,0 +1,16 @@
+C O N F I D E N T I A L
+Paper roll
+Character commands     GS B
+ 
+Ver. 10.13
+p. 157
+[Model-dependent variations]
+None
+Program Example for all printers
+Print Sample
+PRINT #1, CHR$(&H1D);"B";CHR$(1); ← Select
+PRINT #1, "AAAAA"; CHR$(&HA);
+PRINT #1, CHR$(&H1D);"B";CHR$(0); ← Cancel
+PRINT #1, "BBBBB"; CHR$(&HA);
+BBBBB ← Normal printing
+AAAAA ← White/black reverse printing

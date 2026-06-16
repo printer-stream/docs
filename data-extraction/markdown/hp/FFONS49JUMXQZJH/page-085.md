@@ -1,0 +1,23 @@
+plot command in the second line. Inserting carriage return and line feed characters directly into the label string in the third line causes the same effect as the CP; command in the last line. If the carriage return and line feed characters are available on your keyboard, you may prefer that method.
+
+```
+" BF ,' SP1 ,' PFH CJC'JD_, 1OOOF'DPF!3fIJlIiIIZJ.,OPU; PR-3CJCItfJ, O; " " CPS, . 35,' LBFIBUVETHE LINER PFI2000,1000;" " 2><'.T; CPO, -. 85 ; LBBELCIN THE L.I NEW:HHND NI TH Fl NEHTE' " CF'; LBMHRGI NR.-'
+```
+
+<!-- image -->
+
+## The Absolute Character Size Instruction, SI
+
+DESCRIPTIONThe absolute character size instruction, SI, specifies the size of characters and symbols in centimetres.
+
+USES The instruction can be used to change the character size from its default value or to another value and establish absolute character sizing in centimetres so character size is not dependent on the settings of P1 and P2. =
+
+```
+SYNTAX SI width, height terminator or SI terminator
+```
+
+EXPLANATIONIf parameters are included, two parameters are re­ quired, width and height. The defined width and height are interpreted as centimetres, must be in decimal format, and may have any value between -128 and 127.9999.An SI command with no parameters will default to the values 0.19 for width and 0.27 for height.
+
+An SI command remains in effect until another valid SI or SR com­ mand is executed or the plotter is initialized or set to default conditions. An SI command which sets an error condition is ignored and the character size does not change.
+
+The following example letters the plotter's model number, 7470A,at the specified width of 1 cm and height of 1.5 cm.

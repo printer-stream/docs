@@ -1,0 +1,15 @@
+R-36        Select Characters
+Switching to RAM character printing
+ESC/P 2
+ESC/P
+9-Pin ESC/P
+Once you store user-defined characters in the printer (using the ESC &
+command), use the ESC % command to tell the printer to switch to RAM
+character printing. The format of the command is as follows:
+ESC % 0
+Selects ROM characters
+ESC % 1
+Selects user-defined characters (RAM memory)
+After sending the ESC % 1 command, you can print the characters in the memory
+locations outlined below:
+24/48-pin printer

@@ -1,0 +1,18 @@
+Rev. A
+Setup   2-1
+TM-T88II/T88III Technical Reference Guide
+Chapter 2
+Setup
+Before using the printer, you need to make various settings to increase the printer's 
+functionality. Configure the printer appropriately depending on the environment.
+ Figure 2-1  Setup flowchart
+1. Install the printer (page 2-2)
+5. Connect the power supply and cash drawer (page 2-15)
+4. Connect the printer to the host computer (page 2-8)
+Detailed setup
+2. Set the DIP switches (page 2-2)
+3. Set the roll paper near-end detector (page 2-7)
+End
+6. Install the driver (page 2-16)
+Note: Detailed setup sometimes 
+can be omitted.

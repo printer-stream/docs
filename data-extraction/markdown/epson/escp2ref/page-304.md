@@ -1,0 +1,22 @@
+ESC/P 2
+
+ESC/P 2 printers feature a method of printing graphics, called raster graphics. To prevent conflicts with existing commands, EPSON uses a special graphics mode. You can send raster graphics commands only when in this mode.
+
+Raster graphics gives the programmer a simple, consistent method of printing bit-map images. Raster graphics provides the following advantages:
+
+- Prints images in a consistent manner, regardless of the print head configuration (24 or 48 pins)
+- Eliminates necessity for interleaving lines to achieve maximum dot density
+- Eliminates complicated calculations for handling data in specific band heights
+- Provides for data compression; two bytes of data (a counter byte and a data byte) can specify up to 1,016 dots. Also, repetitive and nonrepetitive data can be sent in the same data string.
+
+Standard raster graphics commands are available to all ESC P/2 printers. An additional set of raster graphics commands, known as extended raster graphics, was developed for EPSON's line of high-resolution color ink jet printers. This new set of commands provides one additional compressed raster graphics mode, which can be accessed by sending the ESC . 2 command.
+
+Entering and exiting graphics mode
+
+ESC/P 2
+
+Graphics mode is entered by sending the ESC ( G command. The format of the command is as follows:
+
+ESC ( G 1 0 1
+
+You can only enter graphics mode with this command. Use the ESC @ (initialize printer) command to exit graphics mode.

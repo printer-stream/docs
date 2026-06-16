@@ -1,0 +1,27 @@
+20
+Unrecoverable Errors
+Printing is no longer possible when unrecoverable errors occur. The printer must be repaired.
+CAUTION
+Turn off the power immediately when unrecoverable errors occur.
+Error
+Error description
+Error LED flash code
+Memory R/W error
+After R/W checking, the printer does not 
+work correctly.
+High voltage error
+The power supply voltage is extremely 
+high.
+Low voltage error
+The power supply voltage is extremely low.
+CPU execution error
+The CPU is executing an incorrect address.
+Internal circuit 
+connection error
+Internal circuits are not connected 
+correctly.
+UIB error
+An abnormal operation occurs in UIB.
+Approx.
+160 ms
+Approx.2.56 s

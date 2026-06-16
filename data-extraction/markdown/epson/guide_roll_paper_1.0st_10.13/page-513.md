@@ -1,0 +1,21 @@
+## C O N F I D E N T I A L
+
+## GS I
+
+EXECUTING COMMAND
+
+[Name] Transmit printer ID [Format] ASCII GS I n Hex 1D 49 n Decimal 29 73 n [Range] TM-J2000/J2100 : 1 ≤ n ≤ 3, 49 ≤ n ≤ 51, 65 ≤ n ≤ 69, n = 112 TM-T90 : 1 ≤ n ≤ 3, 49 ≤ n ≤ 51, 65 ≤ n ≤ 69, n = 112 (Japanese model or memory switch [Msw 8-7] is OFF) 1 ≤ n ≤ 3, 49 ≤ n ≤ 51, 65 ≤ n ≤ 69 (memory switch [Msw 8-7] is ON) TM-T20 : 1, 2, 49, 50, 65 ≤ n ≤ 69, n = 35 TM-T88IV , TM-T88V : 1, 2, 49, 50, 65 ≤ n ≤ 69 TM-T70 : 1, 2, 49, 50, 110, 65 ≤ n ≤ 69 TM-L90 : n = 1, 2, 49, 50, 33, 112, 65 ≤ n ≤ 69 [ TM-L90 with Peeler] 1 ≤ n ≤ 3, 49 ≤ n ≤ 51, 65 ≤ n ≤ 69, n = 112 [ TM-L90 models without peeler TM-P60 : n = 1, 2, 49, 50, 33, 96, 65 ≤ n ≤ 69 TM-U230 : 1 ≤ n ≤ 3, 49 ≤ n ≤ 51, 65 ≤ n ≤ 69 TM-U220 : 1 ≤ n ≤ 3, 49 ≤ n ≤ 51, 65 ≤ n ≤ 68, n = 33 [Default] None
+
+[Printers not featuring this command] None
+
+[Description]
+
+Transmits the printer ID or printer information.
+
+- Transmits 1 byte of printer ID, using n as follows:
+
+| n     | Printer ID       | Specification    |
+|-------|------------------|------------------|
+| 1, 49 | Printer model ID | Printer model    |
+| 2, 50 | Type ID          | Printer type     |
+| 3, 51 | Version ID       | Firmware version |

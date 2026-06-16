@@ -1,0 +1,57 @@
+<!-- image -->
+
+## &lt;Function	380&gt;	GS	(	k	pL	pH	cn	fn	m	n	d1...dk	(cn=51,	fn=80)
+
+Name
+
+2D GS1 DataBar: Store data in symbol saving region
+
+Code
+
+ASCII GS ( k  pL  pH cn fn m n d1...dk
+
+Hex. 1D   28  6B  pL  pH cn fn m n d1...dk
+
+Decimal   29   40  107  pL  pH  cn fn m n d1...dk
+
+Defined Region
+
+4≤(pL+pH×256)≤259  (0≤ pL ≤255, pH = 0, 1)
+
+cn = 51
+
+fn = 80
+
+m = 48
+
+n = 72, 73, 76
+
+0 ≤ d ≤ 255
+
+k
+
+= (pL+pH×256) - 4
+
+Function
+
+Symbol data (d1...dk) for the 2D GS1 DataBar is stored in the symbol saving region.
+
+|   n | Type of Symbol                      | Data (k)   | ASCII                                                                          | Data (d)                                                                                                                              |
+|-----|-------------------------------------|------------|--------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
+|  72 | GS1 Databar Stacked                 | k = 13     | '0' to '9'                                                                     | 48 ≤ d ≤ 57                                                                                                                           |
+|  73 | GS1 Databar Stacked Omnidirectional | k = 13     | '0' to '9'                                                                     | 48 ≤ d ≤ 57                                                                                                                           |
+|  76 | GS1 Databar Expanded Stacked        | 2≤k≤255    | 0~9, A~Z, a~z SP, !, ', %, $, ', (,), *, +, ,, -, ., /, :, ;, <, =, >, ?, _, { | 48≤ d ≤57,65≤ d ≤90,97≤ d ≤122, 32≤ d ≤34, 37≤ d ≤47, 58≤ d ≤63, d = 95,123 [However d1 = 40, 48≤d2≤57,48≤ d3≤57,48≤ d1 ≤57,48≤d2≤57] |
+
+Note
+
+Data stored in the symbol saving region by this function is processed using function 381.
+
+After processing functions 381 and 382, data in the saving region is maintained.
+
+k bytes for d1...dk are processed as symbol data.
+
+This setting is valid until this function is reset, ESC@ is executed, the printer is reset, or the power is off.
+
+Reference
+
+GS ( k Function 381, ESC @

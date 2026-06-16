@@ -1,0 +1,52 @@
+## Format
+
+ASCII ESC r n
+
+```
+Hex 1B 72 n Decimal 27 114 n
+```
+
+## Parameter range
+
+0 ≤ n ≤ 6
+
+## Function
+
+Selects the color of printing, according to the parameters below:
+
+n = 0 Black
+
+1 Magenta
+
+2 Cyan
+
+3 Violet
+
+4 Yellow
+
+5 Red
+
+6 Green
+
+## Default
+
+```
+n = 0 (Black)
+```
+
+## Notes
+
+- The printer ignores this command if color printing is not available.
+- Print yellow first when overlapping colors.
+
+## Printers not featuring this command
+
+ActionPrinter Apex 80, ActionPrinter T-750, ActionPrinter T-1000, ActionPrinter 2000, ActionPrinter 2250, ActionPrinter 2500, DFX-5000, DFX-5000+, DFX-8000, FX-850, FX-870, FX-1050, FX-1170, FX-2170, LX-100, LX-400, LX-800, LX-810, LX-850, LX-1050, LX-1050+
+
+## Model-dependent variations
+
+None
+
+## Related topics
+
+Selecting print color

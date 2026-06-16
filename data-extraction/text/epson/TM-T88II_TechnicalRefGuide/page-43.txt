@@ -1,0 +1,43 @@
+Rev. A
+Application Development Information   3-7
+TM-T88II/T88III Technical Reference Guide
+3.3  Panel LEDs and Error Status
+3.3.1  Power LED
+3.3.2  No Roll Paper (PAPER OUT) LED
+Note:
+The macro function is available only when ESC/POS commands are used. 
+3.3.3  Error LED
+ Table 3-1  Power LED
+Item
+Specifications
+LED color
+Green
+LED states
+Off
+Power is not supplied.
+On
+Power is supplied.
+ Table 3-2  No roll paper (PAPER OUT) LED
+Item
+Specifications
+LED color
+Red
+LED states
+Off
+Roll paper is loaded.
+On
+A roll paper near end or paper end is detected.
+Flashing
+Self-test standby state or standby state when a macro execution command is used.
+ Table 3-3  Error LED
+Item
+Specifications
+LED color
+Red
+On states
+Off
+Printer is performing regular operations or is online.
+On
+Offline (excluding self-test with the paper FEED button).
+Flashing
+Error state.

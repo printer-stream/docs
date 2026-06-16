@@ -1,0 +1,59 @@
+C O N F I D E N T I A L
+Paper roll
+Two-dimension code commands     GS ( k
+ 
+Ver. 10.13
+p. 599
+GS ( k <Function 067>
+[Name]
+PDF417: Set the width of the module
+[Format]
+ASCII
+GS
+(
+k
+pL
+pH
+cn
+fn
+n
+Hex
+1D
+28
+6B
+03
+00 30
+43
+n
+Decimal
+29
+40
+107 3
+0
+48
+67
+n
+[Range]
+(pL + pH × 256) = 3 (pL =3, pH =0)
+cn = 48
+fn = 67
+TM-T90, TM-T20, TM-T88IV, TM-T88V, TM-T70, TM-L90, TM-P60: 2 ≤  n ≤  8
+[Default]
+TM-T90, TM-T20, TM-T88IV, TM-T88V, TM-T70, TM-L90, TM-P60: n = 3
+[Description]
+Sets the width of the module for PDF417 to n dots.
+[Notes]
+■Settings of this function affect the processing of Functions 081 and 082.
+■Settings of this function are effective until ESC @ is executed, the printer is reset, or the power is turned 
+off.
+[Model-dependent variations]
+TM-T90, TM-T20, TM-T88IV, TM-T88V, TM-T70, TM-L90, TM-P60
+TM-T90
+The setting unit is 1 dot.
+With all models other than the Japanese model, the width is set in units of 0.141 mm {1/180 inch}.
+With the Japanese model, the width is set in units of 0.125 mm {1/203 inch}.
+TM-T88IV, TM-T70
+This function is not supported in the Japanese specification.
+The setting unit is 1 dot. The width is set in units of 0.141 mm {1/180 inch}.
+TM-T88V
+The setting unit is 1 dot. The width is set in units of 0.141 mm {1/180 inch}.

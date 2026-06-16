@@ -1,0 +1,27 @@
+## 2.5  Connecting Power Supply Unit and Cash Drawer
+
+Always use one of the following power supplies: the EPSON PS-180 (the currently available power supply that can be used with either the TM-T88III or the TM-T88II); the PS-170 (the legacy power supply  used with the TM-T88II printer when that model printer was available); or use an equivalent product as the power supply unit.
+
+Use the cash drawer handled by EPSON or your dealer.
+
+<!-- image -->
+
+Always use the EPSON PS-180,  the preceding model, the PS-170, or an equivalent product as the power supply unit. Using a nonstandard power supply can result in electric shock and even fire.
+
+Should a fault ever occur in the EPSON PS-170, PS-180, or equivalent product, immediately turn off the power to the printer and remove the power supply cable from the wall socket.
+
+## 2.5.1  Connecting the Power Supply Unit
+
+1. Make sure the printer's power supply is turned off and the power supply unit's power cable has been removed from the wall socket.
+2. Check the specifications label on the power supply unit to confirm that the wall socket power supply meets the rated voltage requirements.
+3. Insert the connector of the power supply cable onto the power supply connector (labeled DC24V ).
+
+Figure 2-15  Connecting the power supply
+
+<!-- image -->
+
+## CAUTION:
+
+Be sure to remove the power supply unit's cable from the wall socket whenever connecting or disconnecting the power supply unit to the printer. Failure to do so may result in damage to the power supply unit or the printer.
+
+Make sure the wall socket power supply satisfies the rated voltage requirements of the power supply unit. Never insert the power supply cable plug into a socket that does not meet the rated voltage requirements of the power supply unit. Doing so may result in damage to both the power supply unit and the printer.

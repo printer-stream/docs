@@ -1,0 +1,25 @@
+Trademark acknowledgments
+TSP700II :  Star Micronics Co., Ltd.
+Notice
+•	All rights reserved. Reproduction of any part of this manual in any form whatsoever, without STAR’s express 
+permission is forbidden.
+•	The contents of this manual are subject to change without notice.
+•	All efforts have been made to ensure the accuracy of the contents of this manual at the time of going to press. 
+However, should any errors be detected, STAR would greatly appreciate being informed of them.
+•	The above notwithstanding, STAR can assume no responsibility for any errors in this manual.
+•	All company and product names are trademarks or registered trademarks of their respective owners. 
+(https://www.star-m.jp/eng/trademarks.html)
+	
+Copyright © 2007-2024  Star Micronics Co., Ltd..
+Caution Symbol
+Caution for connections: This is an external device drive connector. 
+Connecting to a telephone line may result in electric shock or malfunction. 
+Do not connect to a telephone line.
+Caution for static electricity: Do not touch the print head as it may be 
+damaged by static electricity accumulated in the human body.
+Caution for burns: The print head may be hot. Do not touch the print head. 
+There is a risk of burns.
+Caution for electric shock: The device contains high-voltage parts. Touching 
+these parts may result in electric shock. 
+Do not remove the fixed screw if you are not a service person.
+Caution for injury: Do not touch sharp parts. There is a risk of injury.

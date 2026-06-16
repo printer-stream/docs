@@ -1,0 +1,51 @@
+C O N F I D E N T I A L
+Paper roll
+Kanji Commands     FS –
+ 
+Ver. 10.13
+p. 571
+FS –
+SETTING COMMAND
+[Name]
+Turn underline mode on/off for Kanji characters
+[Format]
+ASCII
+FS
+–
+n
+Hex
+1C
+2D
+n
+Decimal
+28
+45
+n
+[Printers not featuring this command] None
+[Range]
+TM-J2000/J2100, TM-T90,TM-T20, TM-T88IV, TM-T88V, TM-T70, TM-L90, TM-P60: 0 ≤  n ≤  2, 
+48 ≤  n ≤  50
+TM-U230, TM-U220: n = 0, 1, 48, 49
+[Default]
+n = 0
+[Description]
+Turns on or off underline mode for multi-byte code character (Kanji-underline), using n as follows: 
+[Notes]
+■Settings of this command affect multilingual characters and user-defined characters.
+■The underline has the same color as the characters. The color can be selected by Function 48 of GS ( N.
+■Even if Kanji underline mode is specified, 90° clockwise-rotation characters, white/black reverse characters, 
+and spaces skipped by HT, ESC $, or ESC \ are not underlined.
+■When a character size is changed, an underline width is not changed.
+■When underline mode is canceled, the following characters are not underlined; however, an underline 
+width set right before the mode is canceled remains.
+■Settings of this command are effective until FS ! is executed, ESC @ is executed, the printer is reset, or the 
+power is turned off.
+■Some printer models support Kanji underline mode with 2-dot width.
+n
+Function
+0, 48
+Turns off Kanji-underline mode
+1, 49
+Turns on Kanji-underline mode (1-dot thick)
+2, 50
+Turns on Kanji-underline mode (2-dots thick)

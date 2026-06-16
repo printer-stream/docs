@@ -1,0 +1,637 @@
+  
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+STAR Line Mode Command Specifications 
+6-25 
+ 
+Class 
+Commands 
+Model Name 
+ 
+ 
+TSP800 
+TSP700
+TSP600
+TUP900
+TSP1000
+TSP800L
+TSP700II 
+TSP650 
+TUP500 
+TSP800II
+FVP10
+Horizontal 
+direction position 
+ESC I 
+Spec. A. 
+Spec. A.
+NO 
+NO 
+Spec. B.
+NO 
+Spec. A.
+NO 
+NO 
+NO 
+NO 
+ 
+ESC Q 
+Spec. A. 
+Spec. A.
+NO 
+NO 
+Spec. B.
+NO 
+Spec. A.
+NO 
+NO 
+NO 
+NO 
+ 
+HT 
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC D  
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC GS A  
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC GS R  
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC GS a  
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+Download  
+ESC &  
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC %  
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+Bit Image 
+ESC K  
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+graphics 
+ESC L  
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC k  
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC X  
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+Logo 
+ESC FS q  
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC FS p  
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC RS L 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+Ver. 1.2 or 
+earlier
+Spec. A.
+Ver. 1.3 or 
+later 
+Spec. B. 
+NO 
+NO 
+NO 
+NO 
+Bar Codes 
+ESC b 
+Spec. A. 
+Spec. A.
+NO 
+NO 
+Spec.
+.
+ B
+NO 
+Spec.
+. 
+ B
+NO 
+NO 
+NO 
+NO 
+Cutter Control 
+ESC d 
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+External device 
+drive 
+ESC BEL 
+OK 
+OK 
+NO 
+NO 
+NO 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+ 
+BEL 
+OK 
+OK 
+NO 
+NO 
+NO 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+ 
+FS 
+OK 
+OK 
+NO 
+NO 
+NO 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+ 
+SUB 
+OK 
+OK 
+NO 
+NO 
+NO 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+ 
+EM 
+OK 
+OK 
+NO 
+NO 
+NO 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC GS BEL 
+NO 
+Ver. 5.0 or 
+later 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC GS EM DC1
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+Ver. 1.3 or 
+later 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC GS EM DC2
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+Ver. 1.3 or 
+later 
+NO 
+NO 
+NO 
+NO 
+Print Setting 
+ESC RS d 
+Spec. A. 
+Spec. A.
+NO 
+NO 
+Spec. A.
+NO 
+Spec. A.
+NO 
+NO 
+NO 
+NO 
+ 
+ESC RS r 
+Spec. A. 
+Spec. A.
+NO 
+NO 
+Spec. A.
+NO 
+Spec. A.
+NO 
+NO 
+NO 
+NO 
+Status 
+ESC RS a 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC ACK SOH 
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+ 
+ENQ 
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+ 
+EOT 
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC ACK CAN 
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+ 
+ETB 
+Spec. A. 
+Spec. A.
+NO 
+NO 
+Spec. B.
+NO 
+Spec. B. 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC RS E 
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC GS ETX  
+NO 
+NO 
+NO 
+NO 
+NO 
+NO 
+Ver. 2.0 or 
+later 
+NO 
+NO 
+NO 
+NO 
+Chinese Character ESC p 
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC q 
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC $  
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC s  
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC t  
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC r  
+Spec.  
+A.
+Spec. A.
+NO 
+NO 
+Spec. B.
+NO 
+Spec. B. 
+NO 
+NO 
+NO 
+NO 
+Others 
+CAN 
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC @ 
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC GS # m 
+Spec. A. 
+Ver. 3.0 or 
+later 
+Spec. A.
+NO 
+NO 
+Spec. B.
+NO 
+Spec. B. 
+NO 
+NO 
+NO 
+NO 
+ 
+ESC ?  
+OK 
+OK 
+NO 
+NO 
+OK 
+NO 
+OK 
+NO 
+NO 
+NO 
+NO 
+ 

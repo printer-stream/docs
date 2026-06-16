@@ -1,0 +1,11 @@
+## Printers not featuring this command
+
+None
+
+## Model-dependent variations
+
+On non-ESC/P 2 printers, the unit of movement is fixed at 1/120 inch in draft mode and 1/180 inch in LQ mode.
+
+## Related topics
+
+ESC $, ESC l, ESC Q, ESC ( U, HT, CR, LF, FF, Moving the horizontal position

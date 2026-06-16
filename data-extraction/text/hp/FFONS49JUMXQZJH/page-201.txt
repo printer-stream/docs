@@ -1,0 +1,43 @@
+LB
+LT
+0A
+The Label Instruction
+Page5-7
+LB
+c . . . c
+t
+Purpose:
+Draws the character string using the currently selected
+character set.
+Parameters: c...c
+— ASCII characters which may include control
+characters.
+Terminator:
+t ——label terminator
+deﬁned by DT. Default is ETX,
+decimal 3.
+The Line Type Instruction
+Page4-6
+LT pattern number (,pattern length) (;)
+Purpose:
+Sets the line type used in drawing lines.
+Parameters: pattern number —integer between 0 and +6. Omitting
+parameter causes solid line.
+0— specifies dots only at the points that are plotted.
+One pattern length
+No parameter (Default Value)
+pattern length —decimal, 0 to 127.9999,a percentage of
+diagonal distance between P1 and P2. Default 4%.
+The Output Actual Position and
+Pen Status Instruction
+Page 7-3
+0A
+(;)
+Purpose:
+Used to output the pen’s physical position at time of
+command.
+Response:
+X,Y,P [TERM] —integers, in ASCII.
+X,Y—in plotter units within current window.
+P — 0, pen up or 1, pen down.
+INSTRUCTION SYNTAX B-5

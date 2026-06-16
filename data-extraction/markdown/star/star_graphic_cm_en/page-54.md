@@ -1,0 +1,19 @@
+<!-- image -->
+
+Rev. 2.31
+
+- 3) Status transmission specification list
+
+|                                                          |          |                 | Status Data                                 | Status Data                       | Status Data   | Status Data   | Status Data     | Status Data    | Status Data   |
+|----------------------------------------------------------|----------|-----------------|---------------------------------------------|-----------------------------------|---------------|---------------|-----------------|----------------|---------------|
+|                                                          |          |                 | Status Type                                 | Status Type                       |               | Data          |                 |                |               |
+| Status causes                                            | STAR ASB | Length          | The first and second byte occurrence factor | Third and fourth byte n parameter | Delimiter 1   | Type          | Status Length   | Printer Status | Delimiter 2   |
+| ASB Automatic status (*1)                                | ASB      | 0x0000          | --                                          | --                                | --            | --            | --              | --             | --            |
+| ESCACK SOH Printer Status Request                        | ASB      | 0x0000          | --                                          | --                                | --            | --            | --              | --             | --            |
+| ESC # * Request printer version                          | ASB      | Variable length | '11'                                        | Abridgment                        | ':'           | 'B'           | Variable length | Status         | ';'           |
+| ESC GS ETX s5 Setting request for time-out               | ASB      | 0x000F          | '23'                                        | Abridgment                        | ':'           | 'B'           | 0x0008          | Status         | ';'           |
+| ESC GS ) P fn49 ESC GS ) I fn49 Request command response | ASB      | Variable length | 'A1'                                        | Abridgment                        | ':'           | 'B'           | Variable length | Block Data     | ';'           |
+
+( * 1) For automatic status it is delivered to all hosts in the TCP # 9100 port connection.
+
+--------------------------------------------------------------------------------------

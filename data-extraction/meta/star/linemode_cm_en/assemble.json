@@ -1,0 +1,15 @@
+{
+  "stem": "star/linemode_cm_en",
+  "phase": "assemble",
+  "tool": "builtin",
+  "tool_version": "0.3.0",
+  "pipeline_version": "0.3.0",
+  "params": {},
+  "page_count": 228,
+  "started_at": "2026-06-16T19:19:06Z",
+  "ended_at": "2026-06-16T19:19:06Z",
+  "duration_seconds": 0.019,
+  "per_page_seconds_avg": 0.0,
+  "status": "ok",
+  "flagged_count": 0
+}

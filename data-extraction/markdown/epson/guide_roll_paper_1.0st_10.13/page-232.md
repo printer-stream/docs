@@ -1,0 +1,33 @@
+## C O N F I D E N T I A L
+
+## Program Sample 3 (Sending key code list)
+
+PRINT #1, CHR$(&amp;H1D);"(L";CHR$(4);CHR$(0);CHR$(48);CHR$(64);CHR$(75);CHR$(67); ← Function 64:
+
+*LOOP:
+
+GOSUB *RECEIVE ← Receives "Header to NUL" data and stores it in ST$ (description omitted) PRINT #1,CHR$(6); ← Sends response code
+
+PRINT MID$(ST$,4) ← Displays received data on the monitor
+
+IF MID$(ST$,3,1)=CHR$(65) THEN *LOOP ← Checks for presence of continuing data
+
+## Program Sample 4 (Sending information on capacity available in NV graphics domain)
+
+PRINT #1, CHR$(&amp;H1D);"(L";CHR$(2);CHR$(0);CHR$(48);CHR$(51); ← Function 51: GOSUB *RECEIVE ← Receives "Header to NUL" data and stores it in ST$ (description omitted) PRINT MID$(ST$,4) ← Displays available capacity information on monitor.
+
+## TM-J2000/J2100
+
+The printer supports all functions.
+
+NV graphics data shares the domain used by user NV memory [ GS ( C ] record data. The entire capacity is 384 KB.
+
+Only 'the Color 1' can be used in special ink cartridge (SJIC5) of TM-J2000 .
+
+The following printing colors are available when the SJIC3 and SJIC4 cartridge specially designed for the TM-J2100 printer, is used
+
+| Color selection   | Printing color                                       |
+|-------------------|------------------------------------------------------|
+| Color 1           | Black (SJIC3(K))                                     |
+| Color 2           | Red (SJIC4(R)), blue (SJIC4(B)) and green (SJIC4(G)) |
+| Color 3           | Color 1 + Color 2                                    |

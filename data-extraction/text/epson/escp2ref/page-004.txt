@@ -1,0 +1,21 @@
+Introduction        1
+Introduction
+When EPSON created the ESC/P printer control language, the industry standard for
+simple, sophisticated, efficient operation of dot-matrix printers was born.
+With the scalable fonts, high-resolution color raster graphics, and advanced page handling
+available with ESC/P 2, EPSON has narrowed the gap between dot-matrix and page
+printers. Features previously found only on laser printers are now available at affordable
+dot-matrix printer prices.
+This manual was developed as an aid in creating programs and drivers that take advantage
+of all the latest features of EPSON’s printers. It is assumed the reader understands basic
+concepts such as bytes, ASCII codes, commands, and parameters. It is also assumed the
+reader can use a programming language or application program to send commands to the
+printer. By following the recommendations within this manual, your programs will allow
+EPSON printers to perform at the optimum levels they were designed for.
+With the introduction of our line of high-resolution color printers, we have expanded some
+existing ESC/P commands and added several new ones. This manual describes all ESC/P
+commands, including two new compressed raster graphics modes and MicroWeave,
+EPSON’s revolutionary technology that virtually eliminates banding in graphics.
+In addition, we have provided a list of features and options available on all dot-matrix
+printers produced by EPSON for the American, European, and non-Japanese Pacific
+markets.

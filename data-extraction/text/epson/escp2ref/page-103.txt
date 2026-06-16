@@ -1,0 +1,39 @@
+C-96        Individual Command Explanations
+ESC k
+Select typeface
+9-Pin ESC/P
+Format
+ASCII
+ESC
+k
+n
+Hex
+1B
+6B
+n
+Decimal
+27
+107
+n
+Parameter range
+n = 0, 1
+Function
+Selects the typeface for LQ font printing according to the following values:
+0
+Roman
+1
+Sans serif
+Default
+n = 0 (Roman)
+Notes
+• 
+The printer ignores this command if the user-defined character set is selected.
+• 
+If draft mode is selected when this command is sent, the new typeface will be selected
+when the printer returns to LQ printing.
+Printers not featuring this command
+None
+Model-dependent variations
+None
+Related topics
+ESC x, ESC %, ESC :, Selecting the typeface, Copying ROM characters to RAM

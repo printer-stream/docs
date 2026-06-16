@@ -1,0 +1,53 @@
+3-4   Application Development Information
+Rev. A
+3.1.2.1  EPSON OPOS ADK (OPOS Control) overview
+OPOS Control included with the EPSON OPOS ADK has the following features:
+❏
+Supplies the CO for each device class and SO for EPSON devices.
+❏
+Direct IO with parameters available:
+•
+Gets the printer maintenance counter value
+•
+Prints NVRAM-stored bit images, etc.
+❏
+Power-on notification function (at power on, this function automatically restores the printer 
+to the state that was active before power off).
+❏
+Offline buffer clear processing (clears the print buffer contents in offline mode).
+❏
+Debugging function (trace function):
+•
+Obtains a log between the application and CO (target: used API and its return value)
+•
+Device status acquisition log (gets the offline and error causes that actually occurred in 
+the devices)
+3.1.2.2  EPSON OPOS ADK contents
+The installer of the EPSON OPOS ADK, Ver. 2.10 or later, has a silent installation function, 
+which can install the OPOS environment without a user interface and facilitate installation. With 
+the installer, the following OPOS-compliant OPOS Control for EPSON devices, manuals, 
+various utilities, and sample programs can be installed.
+❏
+OPOS Control for EPSON devices
+Header files for CO, SO, C++, header files for VB, TLB file of CO, device information files, etc., 
+can be installed.
+❏
+Manuals
+•
+User's guide (environment construction manual: installation/uninstallation, usage 
+methods for various utilities)
+•
+Application Development Guide (manual for OPOS-compliant application developer: 
+common manual, manual for each device)
+❏
+Various utilities
+•
+ SetUpPOS utility
+Facilitates selection of equipment and connection ports and various settings
+(print wait time, etc.).
+•
+TM Flash logo utility
+Saves a bitmap file to the printer or customer display, for example.
+•
+USB device driver
+This driver is necessary to connect a USB model printer.

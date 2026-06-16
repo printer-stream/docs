@@ -1,0 +1,69 @@
+  
+ 
+•Auto Logo commands 
+ 
+ 
+ 
+Commands 
+Name 
+Class 
+ 
+Auto Logo 
+ESC GS / W  
+Register Auto Logo setting in non-volatile memory 
+commands 
+ESC GS / C 
+Initialize Auto Logo setting in non-volatile memory 
+ 
+ESC GS / 1 
+ON/OFF setting of Auto Logo function 
+ 
+ESC GS / 2 
+Command character setting 
+ 
+ESC GS / 3 
+User macro 1 setting 
+ 
+ESC GS / 4 
+User macro 2 setting 
+ 
+ESC GS / 5 
+Command character rewriting method setting 
+ 
+ESC GS / 6 
+Setting of partial cut just prior to Auto Logo printing 
+ 
+ 
+•PDF417 commands 
+ 
+ 
+ 
+Commands 
+Name 
+Class 
+ 
+PDF417 
+ESC GS x S0  
+Set PDF417 bar code size 
+commands 
+ESC GS x S1  
+Set PDF417 ECC (security level) 
+ 
+ESC GS x S2  
+Set PDF417 module X direction size 
+ 
+ESC GS x S3  
+Set PDF417 module aspect ratio 
+ 
+ESC GS x D  
+Set PDF417 bar code data 
+ 
+ESC GS x P  
+Print PDF417 bar code 
+ 
+ESC GS x I  
+Get PDF 417 bar code expansion information  
+ 
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+STAR Line Mode Command Specifications 
+2-6 

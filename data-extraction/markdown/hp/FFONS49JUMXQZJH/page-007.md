@@ -1,0 +1,38 @@
+## Table of Contents (Continued)
+
+| Chapter 3: Controlling the Pen and Plotting (Continued) The Pen Instructions, PU and PD . . . . . . . . . . . . . . . . . . .                     | 3-2   |
+|---------------------------------------------------------------------------------------------------------------------------------------------------|-------|
+| The Select Pen Instruction, SP . . . . . . . . . . . . . . . . . . . . . .                                                                        | 3-2   |
+| The Velocity Select Instruction, VS . . . . . . . . . . . . . . . . . .                                                                           | 3-3   |
+| The Plot Absolute Instruction, PA . . . . . . . . . . . . . . . . . . .                                                                           | 3-4   |
+| The Plot Relative Instruction, PR . . . . . . . . . . . . . . . . . . .                                                                           | 3-8   |
+| Plotting with Variables . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                                                                 | 3-11  |
+| The Circle Instruction, CI . . . . . . . . . . . . . . . . . . . . . . . . . .                                                                    | 3-12  |
+| The Arc Absolute Instruction, AA . . . . . . . . . . . . . . . . . . .                                                                            | 3-17  |
+| The Arc Relative Instruction, AR . . . . . . . . . . . . . . . . . . .                                                                            | 3-19  |
+|                                                                                                                                                   | 4-1   |
+| Chapter 4: Enhancing the Plot . . . . . . . . . . . . . . . . . . . . . . . What You'll Learn in This Chapter . . . . . . . . . . . . . . . . . . | 4-1   |
+| HP-GL Instructions Covered . . . . . . . . . . . . . . . . . . . . . .                                                                            | 4-1   |
+| The Tick Instructions, XT and YT . . . . . . . . . . . . . . . . . . .                                                                            | 4-2   |
+| The Tick Length Instruction, TL . . . . . . . ._ . . . . . . . . . . . .                                                                          | 4-2   |
+| The Symbol Mode Instruction, SM . . . . . . . . . . . . . . . . . .                                                                               | 4-4   |
+| The Line Type Instruction, LT . . . . . . . . . . . . . . . . . . . . . .                                                                         | 4-6   |
+| Chapter 5: Labeling . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                                                             | 5-1   |
+| What You'll Learn in This Chapter . . . . . . . . . . . . . . . . . .                                                                             | 5-1   |
+| HP-GL Instructions Covered . . . . . . . . . . . . . . . . . . . . . .                                                                            | 5-1   |
+| Terms You Should Understand . . . . . . . . . . . . . . . . . . . .                                                                               | 5-1   |
+| Plotter Character Sets . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                                                                | 5-2   |
+| The Designate Standard Character Set Instruction, CS                                                                                              | 5-3   |
+| The Designate Alternate Character Set Instruction, CA                                                                                             | 5-4   |
+| The Select Standard Set Instruction, SS . . . . . . . . . . . . .                                                                                 | 5-4   |
+| The Select Alternate Set Instruction, SA . . . . . . . . . . . . .                                                                                | 5-5   |
+| The Define Terminator Instruction, DT . . . . . . . . . . . . . .                                                                                 | 5-6   |
+| The Label Instruction, LB . . . . . . . . . . . . . . . . . . . . . . . . . .                                                                     | 5-7   |
+| Labeling with Variables . . . . . . . . . . . . . . . . . . . . . . . . . . . .                                                                   | 5-9   |
+| The Absolute Direction Instruction, DI . . . . . . . . . . . . . .                                                                                | 5-10  |
+| The Relative Direction Instruction, DR . . . . . . . . . . . . . .                                                                                | 5-11  |
+| Spacing Between Characters . . . . . . . . . . . . . . . . . . . . . . .                                                                          | 5-12  |
+| The Character Plot Instruction, CP . . . . . . . . . . . . . . . . .                                                                              | 5-13  |
+| The Absolute Character Size Instruction, SI . . . . . . . . .                                                                                     | 5-15  |
+| The Relative Character Size Instruction, SR . . . . . . . . .                                                                                     | 5-16  |
+| The Character Slant Instruction, SL . . . . . . . . . . . . . . . .                                                                               | 5-18  |

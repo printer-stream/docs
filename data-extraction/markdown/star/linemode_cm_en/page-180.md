@@ -1,0 +1,52 @@
+<!-- image -->
+
+## 2. Header -2
+
+Header -2 is the 1 byte length information transmitted from the second byte of the automatic status.  The table below shows the composition of the Header -2.
+
+Header -2 represents the automatic status version (called automatic status version below) using bit 1 to bit 3 and bit 5. For reference, the table below shows the relationship of actual version bytes and the Header -2.  The automatic status version will be used as new information is added to the printer status bit positions that were empty, by adding new functions in the future.
+
+When the host does not control the automatic status version, it is acceptable to ignore Header - 2 received.
+
+## &lt;Header -2 (Second Byte)&gt;
+
+| Bit   | Contents                | Status       | Status    | Model Compatability   | Model Compatability   | Model Compatability   | Model Compatability   | Model Compatability   | Model Compatability   | Model Compatability   | Model Compatability   | Model Compatability   | Model Compatability   | Model Compatability   |
+|-------|-------------------------|--------------|-----------|-----------------------|-----------------------|-----------------------|-----------------------|-----------------------|-----------------------|-----------------------|-----------------------|-----------------------|-----------------------|-----------------------|
+| Bit   | Contents                | '0'          | '1'       | TSP800                | TSP700                | TSP600                | TUP900                | TSP1000               | TSP828L               | TSP700II              | TSP650                | TUP500                | TSP800II              | FVP10                 |
+| 7     | ASB Status Expansion    | No Expansion | Expansion | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     |
+| 6     | Not Used (Fixed at '0') |              | -         | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     |
+| 5     | Version No.             |              |           | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    |
+| 4     | Fixed at '0'            |              | -         | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     |
+| 3     | Version No.             |              |           | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    |
+| 2     | Version No.             |              |           | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    |
+| 1     | Version No.             |              |           | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    | OK                    |
+| 0     | Fixed at '0'            | -            |           | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     | -                     |
+
+## Actual automatic status version and header -2 table
+
+| Version No. n   | Header -2          |
+|-----------------|--------------------|
+| 1               | 00000010B (02 Hex) |
+| 2               | 00000100B (04 Hex) |
+| 3               | 00000110B (06 Hex) |
+| 4               | 00001000B (08 Hex) |
+| 5               | 00001010B (0A Hex) |
+| 6               | 00001100B (0C Hex) |
+| 7               | 00001110B (0E Hex) |
+| 8               | 00100000B (20 Hex) |
+| 9               | 00100010B (22 Hex) |
+| • • •           | • • •              |
+| 30              | 01101100B (6C Hex) |
+| 31              | 01101110B (6E Hex) |
+
+## Printer Status Version
+
+| Model Name                                 | Version No.                      | Status                                                                                                                                                              |
+|--------------------------------------------|----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| TSP800                                     | 1 (02 Hex) 1 (02 Hex)            | Up to printer status 5 (7 th byte) loaded Up to printer status 6 (8 th byte) loaded, Ver 4.0 and later                                                              |
+| TSP700                                     | 1 (02 Hex) 1 (02 Hex) 3 (06 Hex) | Up to printer status 5 (7 th byte) loaded Up to printer status 6 (8 th byte) loaded, Ver 3.0 and later Up to printer status 7 (9 th byte) loaded, Ver 3.2 and later |
+| TSP600                                     | 1 (02 Hex) 1 (02 Hex) 3 (06 Hex) | Up to printer status 5 (7 th byte) loaded Up to printer status 6 (8 th byte) loaded, Ver 3.0 and later Up to printer status 7 (9 th byte) loaded, Ver 3.2 and later |
+| TUP900                                     | 2 (04 Hex) 3 (06 Hex)            | Up to printer status 6 (8 th byte) loaded Up to printer status 7 (9 th byte) loaded, Ver 1.2 and later                                                              |
+| TSP1000, TSP800L, TSP700II, TSP650, TUP500 | 3 (06 Hex)                       | Up to printer status 7 (9 th byte) loaded                                                                                                                           |
+
+-----------------------------------------------------------------------------

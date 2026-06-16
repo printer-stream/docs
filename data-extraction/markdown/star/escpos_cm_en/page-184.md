@@ -1,0 +1,77 @@
+<!-- image -->
+
+## ESC	GS	#	m	N	n1	n2	n3	n4	LF	NUL
+
+Name
+
+Memory Switch Settings
+
+Code
+
+ASCII ESC GS # m N n1 n2 n3 n4 LF  NUL Hex. 1B 1D 23 m N n1 n2 n3 n4 0A 00 Decimal 27 29 35 m N n1 n2 n3 n4 10 0
+
+Defined Region
+
+48 ≤ n1 ≤ 57 ('0' ≤ n1 ≤ '9'), 65 ≤ n1 ≤ 70 ('A' ≤ n1 ≤ 'F'), 97 ≤ n1 ≤ 102 ('a' ≤ n1 ≤ 'f')
+
+48 ≤ n2 ≤ 57 ('0' ≤ n2 ≤ '9'), 65 ≤ n2 ≤ 70 ('A' ≤ n2 ≤ 'F'), 97 ≤ n2 ≤ 102 ('a' ≤ n1 ≤ 'f')
+
+48 ≤  n3 ≤ 57 ('0' ≤ n3 ≤ '9'), 65 ≤ n3 ≤ 70 ('A' ≤ n3 ≤ 'F'), 97 ≤ n3 ≤ 102 ('a' ≤ n3 ≤ 'f')
+
+48 ≤ n4 ≤ 57 ('0' ≤ n4 ≤ '9'), 65 ≤ n4 ≤ 70 ('A' ≤ n4 ≤ 'F'), 97 ≤ n4 ≤ 102 ('a' ≤ n4 ≤ 'f')
+
+Spec. A
+
+m = 87, 84, 44, 43, 45, 64 (m = 'W', 'T',  ',', '+', '-', '@')
+
+48 ≤ N ≤ 57 ('0' ≤ N ≤ '9'), 65 ≤ N ≤ (*)70 ('A' ≤ N ≤ (*)'F'), 97 ≤ N ≤ (*) 102, ('a' ≤ N ≤ (*) (*) 'f')
+
+Spec. B
+
+m = 87, 84, 44, 43, 45, 64 (m = 'W', 'T',  ',', '+', '-', '@')
+
+48 ≤ N ≤ 57 ('0' ≤ N ≤ '9'), 65 ≤ N ≤ (*)70 ('A' ≤ N ≤ (*)'F'), 97 ≤ N ≤ (*) 102, ('a' ≤ N ≤ (*) (*) 'f')
+
+N = 85 (N = 'U') User defined area
+
+Spec. C
+
+m = 87, 84, 44, 43, 45, 64, 42 (m = 'W', 'T', ',', '+', '-', '@', '*')
+
+48 ≤ N ≤ 57 ('0' ≤ N ≤ '9'), 65 ≤ N ≤ (*)70 ('A' ≤ N ≤ (*)'F'), 97 ≤ N ≤ (*) 102, ('a' ≤ N ≤ (*) (*) 'f')
+
+N = 85 (N = 'U') User defined area
+
+(*) The memory switch defined area differs according to the model.
+
+Initial Value
+
+Function
+
+---
+
+Sends command to write after defining memory switch using the definition command specified by the following classes.
+
+Memory switch information defined by the command to write is written to the volatile memory.
+
+When writing to the volatile memory by the command to write, the printer executes a reset.
+
+This command exists in models that have the specifications of A, B, and C as indicated in the above defined areas.
+
+Models having B and C specifications can register any 16 bit data by specifying N = 85 (U).
+
+Models with Spec. C can load the factory default settings by specifying m=42 ('*').
+
+(See the 'Special Appendix, Command Table per Model' for details per model.)
+
+Consider the life of the non-volatile memory and avoid over-use of this command.
+
+| Function                                       | Class      | m   | N            | n1 n2 n3 n4     |
+|------------------------------------------------|------------|-----|--------------|-----------------|
+| Definition data write and reset                | Write      | 'W' | Fixed at '0' | Fixed at '0000' |
+| Definition data write and reset and test print | Write      | 'T' | Fixed at '0' | Fixed at '0000' |
+| Data Definition (Data Specification)           | Definition | ',' | N            | n1 n2 n3 n4     |
+| Data definition (Set specified bit)            | Definition | '+' | N            | n1 n2 n3 n4     |
+| Data definition (Clear specified bit)          | Definition | '-' | N            | n1 n2 n3 n4     |
+| Data Definition (Initialize all data)          | Definition | '@' | Fixed at '0' | Fixed at '0000' |
+| Data Definition (Load Factory Default Setting) | Defiition  | '*' | Fixed at '0' | Fixed at '0000' |

@@ -1,0 +1,79 @@
+<!-- image -->
+
+## ESC GS y P
+
+[ N a m e ]
+
+Print QR code
+
+[Code]
+
+ASCII
+
+ESC GS y P
+
+Hex.
+
+1B 1D 79 50
+
+Decimal
+
+27 29  121 80
+
+[Defined Area]
+
+---
+
+[Initial Value]
+
+[Function]
+
+---
+
+Prints bar code data.
+
+When receiving this command, if there is unprinted data in the image buffer, the printer will print the bar code after printing the unprinted print data.
+
+A margin of more than 4 cells is required around the QR code.  The user should ensure that space. Always check printed bar codes in actual use.
+
+## ESC GS y I
+
+[ N a m e ]
+
+Get QR code expansion information
+
+[Code]
+
+ASCII
+
+ESC GS y I
+
+Hex.
+
+1B 1D 79 49
+
+Decimal
+
+27 29  121 73
+
+[Defined Area] [Initial Value] [Function]
+
+---
+
+---
+
+Sends information on generated image sizes and errors in bar code expansion using the current settings.  Therefore, it is possible to check whether printing is possible prior to actual printing.  If there is an error in the expanded bar code, this command is ignored even if the expand command (&lt;ESC&gt; &lt;GS&gt; 'y' 'P') is sent.
+
+In the even that errors like the ones below occurs, 'Error' information is sent to the printer.
+
+-  When  there  is  an  error  in  generating  a  bar  code  by  the  combination  of  bar  code  setting commands.
+- When the generated bar code data exceeds the printable size
+
+## Sending Format: &lt;ESC&gt; &lt;GS&gt; 'y' 'I' n1 n2
+
+| n1 n2            | Bar Code Information                         |
+|------------------|----------------------------------------------|
+| 0x0000           | Error                                        |
+| 0x0001 to 0xffff | Size around generated bar code (Units: Dots) |
+
+-----------------------------------------------------------------------------

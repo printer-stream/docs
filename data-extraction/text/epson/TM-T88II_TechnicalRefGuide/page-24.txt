@@ -1,0 +1,114 @@
+2-4   Setup
+Rev. A
+For details on DIP SW2-1: BUSY conditions, also refer to “Busy State” (page 3-11).
+Table 2-2  Baud rate selection (DIP SW1-7, 1-8)
+TM-T88II
+TM-T88III
+Baud rate 
+(BPS)
+Switch no.
+Baud rate 
+(BPS)
+Switch no.
+1-7
+1-8
+1-7
+1-8
+2400
+ON
+ON
+38400
+ON
+ON
+4800
+OFF
+ON
+4800
+OFF
+ON
+9600 *
+ON
+OFF
+9600 *
+ON
+OFF
+19200
+OFF
+OFF
+19200
+OFF
+OFF
+Table 2-3  Switch bank 2 settings
+SW
+Function
+ON
+OFF
+2-1
+Handshake (BUSY) conditions
+Receive buffer full
+Printer offline or 
+receive buffer full *
+2-2
+Reserved (do not change setting)
+Fixed to OFF
+2-3, 2-4
+Print density selection/low-power mode
+(See separate table.)
+2-5
+Conditions for canceling receive buffer BUSY state
+(See separate table.)
+2-6
+Reserved (do not change setting)
+Fixed to OFF
+2-7
+Pin # 6 reset signal
+Used
+Not used *
+2-8
+Pin # 25 reset signal
+Used
+Not used *
+Table 2-4  Print density selection (DIP SW2-3, 2-4)
+Level
+Print density
+Switch No.
+2-3
+2-4
+—
+Low-power mode
+ON
+ON
+1
+Regular print density *
+OFF
+OFF
+2
+↔
+ON
+OFF
+3
+Heavy print density
+OFF
+ON
+Table 2-5  Conditions for canceling receive buffer BUSY state (DIP SW2-5)
+TM-T88II
+TM-T88III
+Conditions to cancel receive buffer 
+BUSY state
+Switch No.
+Conditions to cancel receive buffer 
+BUSY state (enabled only when DIP 
+SW1-2 is OFF)
+Switch No.
+2-5
+2-5
+BUSY state canceled when 26 bytes or 
+more remain in receive buffer
+Fixed to 
+OFF
+BUSY state canceled when 138 bytes 
+remain in receive buffer
+ON
+BUSY state canceled when 256 
+bytes * remain in receive buffer
+OFF

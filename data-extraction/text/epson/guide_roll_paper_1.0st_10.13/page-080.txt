@@ -1,0 +1,8 @@
+C O N F I D E N T I A L
+Paper roll
+Print commands     LF
+ 
+Ver. 10.13
+p. 80
+■If the printer will print in the remaining printable area of the label, but the feed amount exceeds the 
+remaining printable area of the label, the printer prints the label and feeds to bottom of the label. 

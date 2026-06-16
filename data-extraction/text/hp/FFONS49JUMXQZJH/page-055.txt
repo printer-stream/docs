@@ -1,0 +1,55 @@
+‘\ K X
+Z
+/
+’,/
+\.. ~\_ \-—»/
+,/
+/
+\ \
+-2- /
+u\“
+-___
+//
+\__
+,—‘
+The following BASIC program shows that the circle instruction can
+also be used to define a series of circles that must be repeated in a
+particular pattern.
+10
+PRINTER Is
+10
+20
+PRINT"IN;sP1;IP2ssn,132s,7sso,s32s;“
+an
+PRINT ~sc—1nno,1non,—1ooo,1ooo;w
+4n
+PRINT “FR-BOO,800;”
+so
+nnsun 130
+so
+PRINT ”PH200,B00;“
+70
+nnsua
+130
+so
+PRINT “PH-BOO,-200;”
+so
+ensue
+130
+100
+PRINT "PR2nn,—2oo;"
+110
+ensue
+130
+120
+END
+130
+PRINT ”CI50;PRSO0,0;CI50;PR-300,—30m;CI25D;“
+140
+PRINT“PR-300,-300;CISO;PR600,0;CISU;”
+150
+RETURN
+Line 10 defines the select code of the interface; change this statement
+as necessary for your computer.
+CONTROLLING THE PEN AND PLOTTING
+3-15

@@ -1,0 +1,42 @@
+Select Characters        R-19
+Planning user-defined characters
+ESC/P 2
+ESC/P
+9-Pin ESC/P
+User-defined characters are defined based on a combination of several traits. This
+combination of traits determines the number of dots that can be defined (and the
+amount of data that must be sent) for each character.
+These traits, and the maximum recommended size for each combination of traits
+is shown in the table below. Exceeding the width for the following fixed pitches
+may not allow for sufficient spacing between characters.
+24/48-pin printers (height × width)
+Traits
+Recommended size
+Draft
+fixed-pitch
+24 × 12 (10 cpi)
+24 × 10 (12 cpi)
+24 × 8 (15 cpi)
+LQ
+fixed-pitch
+24 × 36 (10 cpi)
+24 × 30 (12 cpi)
+24 × 24 (15 cpi)
+proportional
+24 × 37
+super/subscript
+16 × 36 (10 cpi)
+16 × 30 (12 cpi)
+16 × 24 (15 cpi)
+super/subscript, proportional
+16 × 37
+9-pin printers (height × width)
+Traits
+Recommended size
+Draft
+8 × 11
+NLQ
+18 × 12
+Note:
+For 9-pin printers, NLQ user-defined characters are available only on LX-series
+printers.

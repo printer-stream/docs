@@ -1,0 +1,44 @@
+<!-- image -->
+
+Name
+
+Set character right space amount
+
+Code
+
+ASCII ESC SP n
+
+Hex. 1B 20 n
+
+Decimal 27 32 n
+
+Defined Region
+
+0 ≤ n ≤ 255
+
+Initial Value
+
+n = 0
+
+Function
+
+Sets the right space amount for the character to [n x basic calculated pitch].
+
+Details
+
+- If the character horizontal direction magnification ratio is more than 2, the right space amount is also enlarged accordingly.
+
+- This command does not affect Chinese characters.
+- Right space amounts can be set independently for both the standard and page modes.
+- The basic calculated pitch is set by GSP (Set basic calculated pitch).  Also, after setting the right space amount, it is not affected even if the basic calculated pitch is changed.
+- If the calculation results in fractions, the pitch is corrected to a minimal mechanical pitch and the rest is discarded.
+- In standard mode, the basic calculated pitch (x) for the horizontal direction is used.
+- The ANK character width is ('left space amount' + 'ANK font dot count' + 'right space amount') x (basic calculated pitch).    (See the information on character specifications in the appropriate printer specifications manual for details on the ANK font dot count.)
+- In page mode, the basic calculated pitch that is used according to the starting point varies.
+- a. When the starting point is specified to be upper left or lower right by the ESC T command (Character print direction selection in page mode), the basic calculated pitch (x) for the horizontal direction is used.
+- b. When the starting point is specified to be upper right or lower left by the ESC T command (Character print direction selection in page mode), the basic calculated pitch (y) for the horizontal direction is used.
+- The maximum value that can be set for the right space amount is approximately 35.983 mm (or 255/180 inch).  Specifications that exceed the maximum value are rounded off to that value.
+
+GS P
+
+Reference

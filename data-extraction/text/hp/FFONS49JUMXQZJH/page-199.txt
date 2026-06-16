@@ -1,0 +1,61 @@
+CS
+DC
+DF
+DI
+DP
+DR
+The Designate Standard Character Set
+Page5-3
+Instruction
+C8
+In
+(;)
+Purpose:
+Designates the standard character set.
+Parameter:
+integer, 0 through 4; default set 0.
+The Digitize Clear Instruction
+Page6-3
+DC
+( ;)
+Purpose:
+Clears digitize mode without entering a point from the
+front panel.
+The Default Instruction
+Page1-10
+DF
+;
+Purpose:
+Returns plotter to default conditions. See the table in
+Appendix C.
+The Absolute Direction Instruction
+Page5-10
+DI
+run, rise ;
+Purpose:
+Sets the direction of labels.
+Parameters: run, rise —decimal values, unitless. At least one must be
+nonzero, i.e.,|parameter|
+2 0.0004.
+Omitting parameters causes horizontal labels and is the
+same as Dl1,0.
+The Digitize Point Instruction
+Page6-2
+DP
+(;)
+Purpose:
+Places plotter in digitize mode waiting for point to be
+entered from front panel.
+The Relative Direction Instruction
+Page5-11
+DR
+run, rise ;
+Sets the direction of labels.
+decimals, -128 to +127.9999.
+run is % of (P2,; / Plx), rise is %of (P2y —Ply).
+Purpose:
+Parameters:
+Omitting parameters causes horizontal labels as does
+DR1,0.
+INSTRUCTION SYNTAX
+B-3

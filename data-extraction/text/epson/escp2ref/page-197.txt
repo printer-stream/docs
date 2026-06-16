@@ -1,0 +1,66 @@
+C-190        Individual Command Explanations
+ESC Z
+Select 240-dpi graphics
+9-Pin ESC/P
+Format
+ASCII
+ESC
+Z
+nL
+nH
+d1
+d2
+. . .
+dk
+Hex
+1B
+5A
+nL
+nH
+d1
+d2
+. . .
+dk
+Decimal
+27
+90
+nL
+nH
+d1
+d2
+. . .
+dk
+Parameter range
+0 ≤ nL ≤ 255
+0 ≤ nH ≤ 31
+0 ≤ d ≤ 255
+Function
+Prints bit-image graphics in 8-dot columns, at a density of 240 horizontal by 72 vertical dpi,
+according to the following parameters:
+nL, nH
+Specify the total number of columns (k) of graphics data following,
+according to the formula
+k = ((nH × 256) + nL)
+nH = INT
+k
+256
+nL = MOD
+k
+256
+d1 . . . dk
+Bytes of graphics data
+Notes
+• 
+This is a nonrecommended command. The ESC * 3 command is identical to this
+command; use ESC * 3 instead of this command.
+• 
+The speed is double because consecutive horizontal dots cannot be printed; the printer
+ignores the second continuous horizontal dot.
+• 
+The dot density printed with this command can be redefined with the ESC ? command.
+Printers not featuring this command
+None
+Model-dependent variations
+None
+Related topics
+ESC *

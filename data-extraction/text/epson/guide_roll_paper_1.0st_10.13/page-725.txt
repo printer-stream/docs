@@ -1,0 +1,40 @@
+C O N F I D E N T I A L
+Paper roll
+Customize commands     GS ( E
+ 
+Ver. 10.13
+p. 725
+(0 ≤  nL ≤  6, nH = 0), (250 ≤  nL ≤  255, nH = 255)
+0 ≤  (nL + nH × 256) ≤  60, (0 ≤  nL ≤  60, nH = 0) [a = 116]
+TM-U220:
+a = 3
+nL + nH × 256 = 2, 4, 5 (nL = 2, 4, 5, nH = 0)
+[Default]
+TM-J2000/J2100: (nL + nH × 256) = 5 (nL = 5, nH = 0) [default value when a = 3]
+TM-T90: (nL + nH × 256) = 1 (nL = 1, nH = 0) [default value when a = 1]
+(nL + nH × 256) = 7 (nL = 7, nH = 0) [default value when a = 2]
+(nL + nH × 256) = 6 (nL = 6, nH = 0) 
+[default value when a = 3: Other than Japanese model] 
+(nL + nH × 256) = 2 (nL = 2, nH = 0)  [default value when a = 3: Japanese model] 
+(nL + nH × 256) = 0 (nL = 0, nH = 0) [default value when a = 5]
+(nL + nH × 256) = 11 (nL = 11, nH = 0) 
+[default value when a = 6: Japanese model]
+(nL + nH × 256) = 9 (nL = 9, nH = 0) 
+[default value when a = 6: Other than Japanese model]
+(nL + nH × 256) = 1 (nL = 1, nH = 0) [default value when a = 97]
+(nL + nH × 256) = 1 (nL = 1, nH = 0) [default value when a = 116]
+(nL + nH × 256) = 85 (nL = 85, nH = 0) [default value when a = 118]
+TM-T20:(nL + nH × 256) = 6 (nL = 6, nH = 0) [default value when a = 3]
+(nL + nH × 256) = 0 (nL = 0, nH = 0) [default value when a = 5]
+(nL + nH × 256) = 13 (nL = 13, nH = 0) [default value when a = 6]
+(nL + nH × 256) = 0 (nL = 0, nH = 0) [default value when a = 8]
+(nL + nH × 256) = 0 (nL = 0, nH = 0) [default value when a = 9]
+(nL + nH × 256) = 0 (nL = 0, nH = 0) [default value when a = 11]
+(nL + nH × 256) = 1 (nL = 1, nH = 0) [default value when a = 100]
+(nL + nH × 256) = 0 (nL = 0, nH = 0) [default value when a = 111]
+(nL + nH × 256) = 1 (nL = 1, nH = 0) [default value when a = 112]
+(nL + nH × 256) = 0 (nL = 0, nH = 0) [default value when a = 119]
+(nL + nH × 256) = 65535 (nL = 255, nH = 255) [default value when a = 120]
+(nL + nH × 256) = 1 (nL = 1, nH = 0) [default value when a = 121, 123]
+(nL + nH × 256) = 2 (nL = 2, nH = 0) [default value when a = 125]
+(nL + nH × 256) = 1 (nL = 1, nH = 0) [default value when a = 122, 124, 126]

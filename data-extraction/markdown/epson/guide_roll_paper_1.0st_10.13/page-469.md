@@ -1,0 +1,18 @@
+## C O N F I D E N T I A L
+
+[Notes]
+
+- ■ This command is effective only when processed at the beginning of the line in standard mode.
+- ■ If this command is processed while a macro is being defined, the printer cancels macro definition and starts processing this command. At that time, the macro becomes undefined.
+- ■ After processing this command, the printer performs a software reset. Executing this command puts the printer in the same status as when the power is turned on. Transmit commands or data after confirming the complete software reset.
+- ■ If hexadecimal dump ( m = 1, 49) is specified, the printer prints a message. Transmit commands or data after the printing.
+- ■ When processing printer status printing ( m = 2, 50), rolling pattern printing ( m = 3, 51), and automatic setting of paper layout ( m = 64), there are the restrictions described below.
+- The printer does not process real-time commands.
+- Even if 'ASB is enabled' is specified, the printer does not send ASB status.
+- ■ When processing the automatic setting ( m = 64) of the paper layout, the printer feeds the current roll paper to measure the paper layout. During this time, the printer does not print. After the measuring, it writes the setting of layout from the measuring to the non-volatile memory. Please note the following points when you use this function.
+- Do not turn off the power or reset the printer from the interface when this command is being executed.
+- The printer may be BUSY when storing data and will not receive any data. In this case, be sure not to transmit data from the host.
+- Excessive use of this function may destroy the non-volatile memory. As a guideline, do not use any combination of the following commands more than 10 times per day for writing data to the nonvolatile memory: GS ( A (part of functions), GS ( C (part of functions), GS ( E (part of functions), GS ( L (part of functions), GS ( M (part of functions), GS g 0 , FS g 1 , FS q .
+- ■ When automatic setting ( m = 64) of the paper layout is executed, paper layout which is set by Function 49 of GS ( E is changed. See Function 49 of GS ( E for details of paper layout. Paper layout set is valid until the following operations are executed. They are not initialized by power off or ESC @ .
+- Execution of Function 48 or 49.
+- Execution of automatic setting mode of paper layout by panel operation when the power is turned on.

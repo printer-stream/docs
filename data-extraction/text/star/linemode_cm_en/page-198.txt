@@ -1,0 +1,85 @@
+  
+ 
+Fig. 5.6.3.1 Expansion Position of Character Data  
+ 
+ 
+ 
+ 
+(x0, y0) 
+ 
+ 
+ 
+ 
+ 
+Baseline 
+Ａ 
+Expansion Direction  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+(dx, dy)  
+ 
+ 
+ 
+ 
+Fig. 5.6.3.2 Expansion Position of Print Data  
+ 
+ 
+Bar Code  
+ 
+Height h dots  
+ 
+ 
+ 
+ 
+Bar code 
+ 
+40 dots 
+(GS k m) 
+ 
+ 
+ 
+Vertical  
+ 
+20 dots 
+double  
+24 dots 
+ 
+size  
+ 
+Expanded  
+Bit image 
+ 
+character  
+Baseline 
+ 
+4 dots 
+8 dots 
+ 
+ 
+ 
+ 
+ 
+HRI Character  
+Point B               Point B 
+Point B 
+24 Dots 
+ 
+ 
+20 dot 
+4 dot 
+Point Ａ 
+Print Region 
+ 
+Ａ
+Ａ 
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+STAR Line Mode Command Specifications 
+5-26 

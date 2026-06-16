@@ -1,0 +1,32 @@
+Chapter 2   Setup
+43
+2
+Setting the Memory Switches
+With the “memory switch (customized value,” which is a software switch of this printer, you can 
+set:
+• Print density
+• Print speed
+• Number of head energizing parts
+• Single-color printing/two-color printing
+• Black-color density in two-color printing
+Use the Memory Switch Setting Utility or a command to set the memory switches.
+Selecting the print density
+Selectable from levels 1 to 13 (light ∼ dark).
+Selecting the print speed
+Selectable from levels 1 to 9 (low ∼ high). (Initial setting: level 9)
+In power saving mode, all customized value settings are ignored.
+•
+For detailed information about the memory switch utility, see the user’s manual for the 
+Memory Switch Setting Utility.
+•
+For detailed information about ESC/POS commands, see the ESC/POS Application 
+Programing Guide.
+The print density can be set with DIP switches (2-3/2-4) or the customized value. (See 
+"Setting the Memory Switches" on page 43.) The initial setting of the customized value is 
+“Depends on the DIP switch settings.” If the customized value is changed, the value set 
+with the customized value is enabled.
+Depending on print conditions such as print duty, print head temperature, or data 
+transmission speed, print speed is automatically adjusted which may cause white lines due 
+to intermittent print (the motor sometimes stops). To avoid this, keep the print speed 
+constant by setting it lower, or set the transmission speed higher in case of the serial 
+interface. (See "Transmission speed (DIP switch 1-7/1-8)" on page 36.)

@@ -1,0 +1,99 @@
+Individual Command Explanations        C-175
+ESC . 2
+Enter TIFF compressed mode
+ESC/P 2
+Format
+ASCII
+ESC
+.
+2
+v
+h
+1
+0
+0
+Hex
+1B
+2E
+2
+v
+h
+1
+0
+0
+Decimal
+27
+46
+2
+v
+h
+1
+0
+0
+Parameter range
+v = 5,10, 20 
+vertical resolutions in dpi—720, 360, 180 (3600/v dpi)
+h = 5,10, 20 
+horizontal resolutions in dpi—720, 360, 180 (3600/h dpi)
+The following vertical and horizontal printing resolution combinations are available:
+v
+h
+v (dpi)
+h (dpi)
+20
+20
+180
+180
+20
+10
+180
+360
+10
+10
+360
+360
+Stylus COLOR only
+5
+5
+720
+720 (with special paper)
+Function
+• 
+Enters TIFF raster graphics compressed mode
+• 
+The following commands are availiable in TIFF mode (all other codes are ignored):
+<XFER>
+Transfer raster graphics data
+<MOVX>
+Set relative horizontal position
+<MOVY>
+Set relative vertical position
+<COLR>
+Select printing color
+<CR>
+Carriage return to left-most print position
+<EXIT>
+Exit TIFF mode
+<MOVXBYTE>
+Set <MOVX> unit to 8 dots
+<MOVXDOT>
+Set <MOVX> unit to 1 dot
+• 
+This mode allows compression of graphics data during raster graphics printing.
+Notes
+• 
+This command can be used only during graphics mode, which is entered by sending
+the ESC ( G command.
+• 
+This command pertains only to Stylus COLOR and later printer models.
+• 
+Use only one image density and do not change this setting after entering raster graphics
+mode.
+• 
+Do not overwrite image data.
+• 
+The horizontal positioning should be a multiple of 8, otherwise the printer’s throughput
+will decline.
+• 
+The combination of v = 10 and h = 20 (360 vertical dots by 180 horizontal dots) is not
+possible.

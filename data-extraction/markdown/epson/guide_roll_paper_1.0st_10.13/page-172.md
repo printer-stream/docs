@@ -1,0 +1,33 @@
+## C O N F I D E N T I A L
+
+## ESC $
+
+```
+[Name] Set absolute print position [Format] ASCII ESC $ nL    nH Hex 1B 24 nL    nH Decimal 27 36 nL    nH [Range] 0 ≤ nL ≤ 255 0 ≤ nH ≤ 255
+```
+
+[Printers not featuring this command] TM-U230 , TM-U220
+
+[Description]
+
+Moves the print position to ( nL + nH × 256) × (horizontal or vertical motion unit) from the left edge of the print area.
+
+[Notes]
+
+- ■ The printer ignores any setting that exceeds the print area.
+- ■ When standard mode is selected, the horizontal motion unit is used.
+- ■ When page mode is selected, the horizontal or vertical motion unit is used for the print direction set by ESC T .
+- When the starting position is set to the upper left or lower right of the print area using ESC T , the horizontal motion unit is used.
+- When the starting position is set to the upper right or lower left of the print area using ESC T , the vertical motion unit is used.
+- ■ If the horizontal or vertical motion unit is changed after this command is executed, the print position is not changed.
+- ■ Even if underline mode is turned on, the underline will not be printed under the space skipped by this command.
+
+[Model-dependent variations]
+
+TM-J2000/J2100 , TM-T90 , TM-T20 , TM-T88IV , TM-T88V , TM-T70 , TM-L90 , TM-P60
+
+See program example and print sample for ESC $ and ESC \ .
+
+TM-J2000/J2100 , TM-T90 , TM-T20 , TM-T88IV , TM-T88V , TM-T70 , TM-L90
+
+EXECUTING COMMAND

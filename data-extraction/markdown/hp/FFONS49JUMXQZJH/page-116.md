@@ -1,0 +1,19 @@
+## Problem
+
+Scale, draw, and label an X- and Y-axis in user units and plot 1981 sales by sales region. Use a different line type for each sales region and place a legend on the graph. The complete program is in the Listing section, following the Solution section.
+
+## Solution
+
+## Seuu)andScafing
+
+The first step is to set the plotter to known conditions, cancelling any parameters which may have been set in the previously run program. The IN or DF instruction may be used; IN resets P1 and P2; DF does not. IN is used here.
+
+Next, a pen is selected (SP1) and the scaling for this plot is established. The parameters of the IP command determine the location of the scaling points, P1 and P2. In this graph, all data will be plotted within this P1,P2 area. The points have been chosen to allow room for labels, titles, and margins outside the P1,P2 rectangle. The scaling statement SC1,12 ,0 ,150; assigns user unit values to the scaling points. Since we are plotting one year's sales by month, we have scaled the X-axis (commonly representing time) from 1 to 12. The Y-axis is scaled in thousands from 0 to 150 so all sales data fall well inside the scaled area.
+
+Youwill either need to know the range of your data or be willing to go through some trial plots with different scales to determine what your scale statement should be. This graph is scaled from 0 to 150, not 0 to 150000 -the actual range of sales dollars. There are two reasons for this. First, the largest number accepted by the plotter is 32 767; our numbers are too large so we need to divide all data by at least 10. In this program, both labels and data will be stated in thousands. It is easier to interpret a scale marked with short labels. The eye need only read a maximum of three characters (150) instead of six (150000). Thousands or millions of dollars are common scales for graphs.
+
+Having established our scaling, we shall draw a frame for the data area. This is done by moving to the point 1,0 with the pen up, lowering the pen and drawing to the four corners 12,0;12,150;1,150; and 1,0. The coordinates are interpreted as absolute (instead of relative) moves since absolute plotting is established by the IN command. The first three program lines with HP-GL commands are:
+
+```
+20 PRINT"IN;sP1;IP125o,?5o,a25o,525o;' 30 PRINT'sc1,12,o,15o;" 40 PRINT"PU1,o PD 12,o,12,15o,1,15o,1,o PU'
+```

@@ -1,0 +1,30 @@
+{
+  "stem": "hp/HP_7475A_Short_Form_Feb_89",
+  "phase": "markdown",
+  "tool": "docling",
+  "tool_version": "2.102.2",
+  "pipeline_version": "0.3.0",
+  "params": {
+    "do_ocr": true
+  },
+  "page_count": 12,
+  "started_at": "2026-06-16T17:35:53Z",
+  "ended_at": "2026-06-16T17:36:56Z",
+  "duration_seconds": 63.267,
+  "per_page_seconds_avg": 5.272,
+  "status": "ok",
+  "page_seconds": {
+    "page-01": 10.112,
+    "page-02": 3.882,
+    "page-03": 2.302,
+    "page-04": 1.39,
+    "page-05": 3.536,
+    "page-06": 1.3,
+    "page-07": 4.265,
+    "page-08": 9.429,
+    "page-09": 7.356,
+    "page-10": 9.128,
+    "page-11": 2.995,
+    "page-12": 7.57
+  }
+}

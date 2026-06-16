@@ -1,0 +1,33 @@
+C O N F I D E N T I A L
+Paper roll
+Two-dimension code commands     GS ( k
+ 
+Ver. 10.13
+p. 655
+■When "Add HRI characters" is selected, HRI characters are added to the bottom of the 1-dimensional 
+system line element. 
+■HRI characters are not added to the 2-dimensional system line element (GS1 DataBar Stacked, GS1 DataBar 
+Stacked Omnidirectional, GS1 DataBar Expanded Stacked), without reference to the setting of this 
+function.
+■The setting of this function is valid until ESC @, reset, or power off are executed.
+■HRI characters are characters (Human Readable Interpretation) that indicate the content of the line 
+element of the Composite Symbology printed using the composite symbol. 
+[Model-dependent variations]
+TM-T90, TM-T20, TM-T88IV, TM-T88V, TM-T70, TM-L90, TM-P60
+TM-T90, TM-T88IV, TM-T70, TM-L90
+This model does not support this function.
+TM-T20
+TM-T20 supports this function.
+Font constitution:Font A (12 × 24)
+           Font B (9 × 17)
+The function of automatic replacement of font does not apply to HRI characters.
+ TM-T88V
+TM-T88V supports this function.
+Font constitution:
+Font A (12 × 24)
+Font B (9 × 17)
+Special font A (12 × 24)
+Special B (9 × 24)
+The function of automatic replacement of font does not apply to HRI characters.
+TM-P60
+TM-P60 with peeler supports this function.

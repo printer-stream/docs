@@ -1,0 +1,24 @@
+R-20        Select Characters
+The diagrams below show the planning grids for LQ, NLQ, and draft mode
+characters.
+24/48-pin
+LQ
+Super/Subscript
+Draft
+9-pin
+NLQ
+Draft
+15 cpi
+12 cpi
+10 cpi
+Proportional
+15 cpi
+12 cpi
+10 cpi
+Proportional
+15 cpi
+12 cpi
+10 cpi
+10, 12 cpi
+12 cpi
+10 cpi

@@ -1,0 +1,48 @@
+C O N F I D E N T I A L
+Paper roll
+Miscellaneous commands     DLE DC4 (fn = 2)
+ 
+Ver. 10.13
+p. 431
+•
+When DIP switch or memory switch (BUSY condition) is off: offline, receive buffer full, or error status
+■This command is effective when the printer is disabled by ESC = (select peripheral device).
+■All information and data stored in RAM will be deleted by processing this command.
+■When the printer has executed setup of power off processing, the printer transmits the power-off notice 
+as shown below to the host.
+■Maintenance counter values are maintained by executing this command; therefore the maintenance 
+counter values will be more accurate if the user uses this command before turning off the power switch.
+■When you use this command, obey the following rules.
+•
+When host PC transmits the function data, transmit the next data after receiving the corresponding 
+data (header ~ NULL) from the printer.
+•
+When operating with a serial interface, be sure to configure operation so that the host computer uses 
+the printer only when it is READY.
+•
+When operating with a parallel interface, the data sent by this function (starting with Header and 
+ending with NUL), as with other data, is first stored in the send buffer, then output in sequential order 
+when the host computer changes to the reverse mode. Note that the send buffer capacity is 99 bytes, 
+and any data exceeding this volume limit will be lost; therefore, when using this command, it is 
+important to configure the operation so that the host computer’s change to the reverse mode and the 
+subsequent status send/receive process is performed quickly.
+■The power-off notice can be differentiated from other transmission data according to specific data of the 
+transmission data block. When the header transmitted from the printer is [Hex=3BH/Decimal=59], treat 
+NUL [hex = 00H/decimal =0] as a data group and identify it according to the combination of the header 
+and the identifier. 
+Power-off notice
+Hex
+Decimal
+Data quantity
+Header
+3BH
+59
+1 byte
+Identifier
+30H
+48
+1 byte
+NUL
+00H
+0
+1 byte

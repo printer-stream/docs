@@ -1,0 +1,68 @@
+R-74        Sending Graphics Data
+Commands available in graphics mode
+Only the following commands are available in standard raster graphics mode:
+LF
+Line feed
+CR 
+Carriage return
+ESC . 
+Print raster graphics
+ESC . 1
+Enter RLE compressed mode
+ESC . 2
+Enter TIFF compressed mode (Stylus COLOR only)
+ESC ( c 
+Set page format
+ESC ( V 
+Set absolute vertical position
+ESC $ 
+Set absolute horizontal position
+ESC r 
+Select printing color
+ESC +
+Set n/360-inch line spacing
+FF 
+Form feed
+ESC EM 
+Control paper loading/ejecting
+ESC @ 
+Initialize printer (exit graphics mode)
+ESC ( C
+Set page length in defined unit
+ESC ( v 
+Set relative vertical position
+ESC \ 
+Set relative horizontal position
+ESC U 
+Turn unidirectional on/off
+ESC ( U 
+Set unit
+ESC ( i
+MicroWeave (Stylus COLOR only)
+The following subset of binary mode commands is available in extended raster
+graphics mode, entered by sending the ESC . 2 command. All other commands
+are ignored.
+<XFER>
+Transfer raster graphics data
+<MOVX>
+Set relative horizontal position
+<MOVY>
+Set relative vertical position
+<COLR>
+Select printing color
+<CR>
+Carriage return to left-most print position
+<EXIT>
+Exit TIFF compressed mode
+<MOVXBYTE>
+Set <MOVX> unit to 8 dots
+<MOVXDOT>
+Set <MOVX> unit to 1 dot
+Other commands not listed above are ignored. Also, text cannot be sent during
+graphics mode.
+Standard raster graphics
+ESC/P 2
+Raster graphics allows the programmer to send image data in a format similar to
+that used by televisions, VDT monitors, and laser printers.
+Follow these steps to prepare and send raster graphics:
+1. Determine the dot density (resolution) of your image.

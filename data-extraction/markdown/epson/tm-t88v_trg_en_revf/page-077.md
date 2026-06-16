@@ -1,0 +1,35 @@
+## Controlling the Built-in Buzzer
+
+For specifications with a built-in buzzer, a pulse output is sent to the operating pin for the drawer kick connector, and the built-in buzzer beeps.
+
+You cannot change the volume or the sound emitted, but you can change the buzzing time by changing the signal pulse width.
+
+This is controlled by a driver or by commands.
+
+## ESC/POS Commands
+
+The output command for the specified pulse is used.
+
+For details, see the ESC/POS Command Reference.
+
+## For Windows Printer Drivers (APD)
+
+You can set so that the buzzer beeps at the start/end of printing or start/end of a page. For details, see the manual for drivers.
+
+For API, the API for opening the drawer is used. For details, see the manual for Status API of the driver.
+
+## OPOS (OCX Driver)
+
+Register a POS printer using the SetupPOS Utility and control using the DirectIO function. For details, see the "EPSON OPOS ADK MANUAL APPLICATION DEVELOPMENT GUIDE POSPrinter (TM Series)".
+
+## OPOS for .NET
+
+Register a POS printer using the SetupPOS Utility and control using the DirectIO function. For details, see the "EPSON OPOS ADK for .NET MANUAL Application Development Guide POSPrinter (TM-T88V)".
+
+## ePOS-Print SDK
+
+Use the output command for the drawer kick pulse provided in each SDK library. For details, see the user's manuals provided with each SDK.
+
+<!-- image -->
+
+When using a cash drawer operated by pin 5 with a built-in buzzer, you need to change the DIP switch settings for the buzzer circuit so that the buzzer beeps from a pulse signal for pin 2. For details, see "Setting the Built-in Buzzer  (for Model with a Built-in Buzzer)" on page 42.

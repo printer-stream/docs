@@ -1,0 +1,3 @@
+Character Tables        A-11
+TIS11 (TS 988 Thai)
+TIS18 (GENERAL Thai)

@@ -1,0 +1,21 @@
+## C O N F I D E N T I A L
+
+| Command   | Classification    | Name                                                 | Function type              |
+|-----------|-------------------|------------------------------------------------------|----------------------------|
+| ESC e     | EXECUTING COMMAND | Print and reverse feed n lines                       | PRINT COMMANDS             |
+| ESC i     | EXECUTING COMMAND | Partial cut (one point left uncut)                   | MECHANISM CONTROL COMMANDS |
+| ESC m     | EXECUTING COMMAND | Partial cut (three points left uncut)                | MECHANISM CONTROL COMMANDS |
+| ESC p     | EXECUTING COMMAND | Generate pulse                                       | MISCELLANEOUS COMMANDS     |
+| ESC r     | SETTING COMMAND   | Select print color                                   | CHARACTER COMMANDS         |
+| ESC t     | SETTING COMMAND   | Select character code table                          | CHARACTER COMMANDS         |
+| ESC u     | EXECUTING COMMAND | Transmit peripheral device status                    | STATUS COMMANDS            |
+| ESC v     | EXECUTING COMMAND | Transmit paper sensor status                         | STATUS COMMANDS            |
+| ESC {     | SETTING COMMAND   | Turn upside-down print mode on/off                   | CHARACTER COMMANDS         |
+| FS !      | SETTING COMMAND   | Select print mode(s) for Kanji characters            | KANJI COMMANDS             |
+| FS &      | SETTING COMMAND   | Select Kanji character mode                          | KANJI COMMANDS             |
+| FS -      | SETTING COMMAND   | Turn underline mode on/off for Kanji characters      | KANJI COMMANDS             |
+| FS .      | SETTING COMMAND   | Cancel Kanji character mode                          | KANJI COMMANDS             |
+| FS 2      | SETTING COMMAND   | Define user-defined Kanji characters                 | KANJI COMMANDS             |
+| FS C      | SETTING COMMAND   | Select Kanji character code system                   | KANJI COMMANDS             |
+| FS S      | SETTING COMMAND   | Set Kanji character spacing                          | KANJI COMMANDS             |
+| FS W      | SETTING COMMAND   | Turn quadruple-size mode on/off for Kanji characters | KANJI COMMANDS             |

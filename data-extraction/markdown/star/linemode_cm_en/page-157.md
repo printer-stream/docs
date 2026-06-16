@@ -1,0 +1,44 @@
+<!-- image -->
+
+## ESC GS P 4 nL nH
+
+[Name] Specify character vertical direction absolute position in page mode
+
+[Code]
+
+ASCII
+
+ESC GS P 4
+
+Hexadecima 1B 1D 50 34
+
+l
+
+Decimal
+
+27 29 80 52
+
+[Defined Area]
+
+[Initial Value]
+
+[Function]
+
+0 ≤ nL ≤ 255, 0 ≤ nH ≤ 255
+
+- - -
+
+Specify the position for character vertical direction of the data expansion starting position in page mode with the absolute position that uses the starting point as a reference.
+
+The position of the character vertical direction of the starting position for subsequent data expansion uses the position from the starting point [(nL + nH x 256) x 1/8]mm.
+
+- This command is ignored when page mode is not selected.
+- Absolute position specifications that exceed the specified print region are ignored.
+- The position of the character horizontal direction of the data expansion starting position does not move.
+- Specify the reference starting point using ESC GS P 2.
+- The following operations will occur depending on the starting point of ESC GS P 2 (select character print direction in page mode).
+- a. When the starting point is 'upper left' or 'bottom right,' specify the absolute position of the paper feed direction.
+- b. When the starting point is 'upper right' or 'bottom left,' specify the absolute position of the perpendicular direction to the paper feed.
+- If the calculated results is a fraction, that is corrected to the minimum mechanical pitch and excess is discarded.
+
+-----------------------------------------------------------------------------

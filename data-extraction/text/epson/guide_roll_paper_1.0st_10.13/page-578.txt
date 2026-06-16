@@ -1,0 +1,23 @@
+C O N F I D E N T I A L
+Paper roll
+Kanji Commands     FS 2
+ 
+Ver. 10.13
+p. 578
+TM-J2000/J2100
+It is possible to define 32 user-defined characters for each font. If 32 user-defined characters are 
+already defined, defined character code can be redefined; however, user-defined characters 
+cannot be defined to new character codes.
+TM-T90, TM-T20, TM-T88IV, TM-T88V, TM-T70, TM-L90, TM-P60
+The user-defined characters can be defined for all the character codes in a range.
+TM-U230
+A user-defined character for one character can be defined.
+If a user-defined character is already defined, defined character code can be redefined; however, 
+user-defined characters cannot be defined to new character codes. 
+Horizontal adjacent dots cannot be specified as print data.
+TM-U220
+5 characters can be defined as external characters.
+If 5 characters are already defined as external characters, although it is possible to redefine the 
+defined character codes, it is not possible to define new character codes as external characters.
+It is not possible to specify horizontally consecutive dots as print data for the external character 
+definition pattern.

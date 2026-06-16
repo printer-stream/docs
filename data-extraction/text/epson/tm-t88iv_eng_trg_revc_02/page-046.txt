@@ -1,0 +1,31 @@
+46
+Connecting the Printer to the Host Computer
+For Serial Interface
+Serial interface connection diagram
+When this printer is connected to a host computer by the serial interface, two connection forms 
+are possible:
+• Stand alone
+• Pass-through connection
+Stand alone
+This printer is connected to the host computer via the serial port. When a customer display 
+(DM-D) is to be connected, connect it to the host computer via the serial port.
+Pass-through connection
+This printer is connected to the host computer over the serial interface via a customer display 
+(DM-D).
+•
+Be sure to install the driver before connecting the printer to the host computer.
+•
+The printer uses the modular connectors specifically designed for the cash drawer. Do 
+not connect these connectors to an ordinary telephone line.
+TM-T88IV
+DM-D
+Serial cable
+Cash drawer
+Serial cable
+Modular cable
+DM-D
+TM-T88IV
+Cash drawer
+Serial cable
+Serial cable
+Modular cable

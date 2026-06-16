@@ -1,0 +1,178 @@
+<!-- image -->
+
+## &lt;Function	96&gt;	ESC	GS	)	B	pL	pH	fn	m		(fn	=	96)
+
+Name
+
+Print the text search settings and definitions
+
+Code
+
+ASCII
+
+ESC
+
+GS
+
+)
+
+B
+
+pL
+
+pH
+
+fn
+
+m
+
+Hex.
+
+1B
+
+1D
+
+29
+
+42
+
+pL
+
+pH
+
+fn
+
+m
+
+Decimal
+
+27
+
+29
+
+41
+
+66
+
+pL
+
+pH
+
+fn
+
+m
+
+Defined Region
+
+pL = 2, pH = 0
+
+fn = 96
+
+m = 0
+
+Initial Value
+
+---
+
+Function
+
+Prints text search settings and definitions
+
+The following shows the contents to print.
+
+| Function No   | Contents                                                |
+|---------------|---------------------------------------------------------|
+| Function 48   | Enable and disables text search                         |
+| Function 49   | Set the number of times to run the text search macro    |
+| Function 50   | Set to print the string that matches in the text search |
+| Function 64   | Define the text search string                           |
+| Function 65   | Define the text search macro                            |
+| Function 66   | Define the timing of the text search macro execution    |
+
+The text search macro is not run at this time.
+
+This command is ignored when the text search macro is running.
+
+Disabled in Page Mode.
+
+## &lt;Function	97&gt;	ESC	GS	)	B	pL	pH	fn	m		(fn	=	97)
+
+Name
+
+Run the text search macro
+
+Code
+
+ASCII
+
+ESC
+
+GS
+
+)
+
+B
+
+pL
+
+pH
+
+fn
+
+m
+
+Hex.
+
+1B
+
+1D
+
+29
+
+42
+
+pL
+
+pH
+
+fn
+
+m
+
+Decimal
+
+27
+
+29
+
+41
+
+66
+
+pL
+
+pH
+
+fn
+
+m
+
+Defined Region
+
+pL = 2, pH = 0
+
+fn = 97
+
+1 ≤ m ≤ 100
+
+Initial Value
+
+---
+
+Function
+
+Runs the text search macro for number m.
+
+This command is ignored when the text search macro is running.
+
+Disabled in Page Mode.

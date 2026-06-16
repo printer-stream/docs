@@ -1,0 +1,47 @@
+<!-- image -->
+
+## ESC C 0 n
+
+[Name]
+
+Set page length to n x 24 mm units
+
+[Code]
+
+ASCII
+
+ESC
+
+C
+
+0
+
+n
+
+Hex.
+
+1B
+
+43
+
+0
+
+n
+
+Decimal
+
+27 67 0 n
+
+[Defined Area]
+
+1 ≤ n ≤ 22
+
+[Initial Value]
+
+(Form feed amount initial value x 42)
+
+[Function]
+
+When black mark is effective, this command is ignored.
+
+-----------------------------------------------------------------------------

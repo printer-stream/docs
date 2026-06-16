@@ -1,0 +1,37 @@
+## C O N F I D E N T I A L
+
+## Beginning of the line
+
+The beginning of the line meets all of the following conditions:
+
+- No data exists in the print buffer.
+- No spaces are skipped by HT in the print buffer.
+- The print position has not been specified by ESC $ or ESC \ .
+
+In standard mode, the beginning of the line is the left margin.
+
+## Printable area
+
+This is the maximum printable area specified for each printer model.
+
+This can be changed by setting the paper width with GS ( E fn = 5 or DIP switch or setting of paper layout that is supported by the label printer model.
+
+## Printing area
+
+This is the printing range set by a command. The printing area should be equal to or smaller than the printable area. In standard mode, the printing area is set by GS L and GS W , and in page mode, it is set by ESC W .
+
+## Ignoring a command
+
+This is the printer state in which the printer does nothing after receiving all codes, including parameters.
+
+## Horizontal/vertical direction
+
+Horizontal direction is the direction that is perpendicular to the paper feed direction. Vertical direction is the paper feed direction. In page mode, however, horizontal/vertical direction differs, depending on the print direction of a character, not the paper feed direction.
+
+## Baseline
+
+The baseline for character sets that are 9 dots high (for example, 7 × 9 and 9 × 9) is the invisible line marking the bottom of the character matrix (the bottom of the lowest dot possible). For other character sets, the baseline is the bottom of all characters, excluding descenders, such as the bottom parts of 'g' and 'y', which are below the baseline.
+
+## Setting commands
+
+Setting commands change printer status by processing a command and affect printer operation and print results thereafter. The commands that can specify enhanced characters, set paper feed amount, and select a character are setting commands as are some of the normal commands.

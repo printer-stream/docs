@@ -1,0 +1,21 @@
+C O N F I D E N T I A L
+Paper roll
+Bar code commands     
+ 
+Ver. 10.13
+p. 371
+Bar code commands
+Command
+Name 
+GS H
+Select print position of HRI characters 
+GS f
+Select font for HRI characters 
+GS h
+Set bar code height 
+GS k
+Print bar code 
+GS w
+Set bar code width 
+BAR CODE COMMANDS
+Bar code commands

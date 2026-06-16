@@ -1,0 +1,39 @@
+R-66        Sending Graphics Data
+Note:
+For detailed information on programming for EPSON’s Stylus COLOR and other
+high-resolution color printers, see “Extended ESC/P 2 Programming Guide” at
+the end of this chapter.
+To eliminate potential command conflicts during raster graphics printing,
+EPSON provides a special graphics mode. In this mode, some commands are not
+available. See “Graphics mode” for details.
+Bit-image graphics
+ESC/P 2
+ESC/P
+9-Pin ESC/P
+Bit-image graphics is available on all printers. Data handling varies, however,
+depending on the number of pins in the print head.
+The steps for printing bit-image graphics are as follows:
+1. Determine vertical and horizontal dot density.
+2. Prepare and organize bit-image data.
+3. If you plan to send more than one line of graphics, set the line spacing to
+match the height of the print head.
+4. Set the vertical and horizontal print position to the top left corner of the
+graphics line.
+5. Send one line of bit-image data to the computer.
+6. Complete the line with a CR and LF command.
+7. Repeat steps 5 and 6 until the full graphics design is printed.
+Determining vertical and horizontal dot density
+ESC/P 2
+ESC/P
+9-Pin ESC/P
+The ESC * command is used to print bit-image graphics.
+The format of this command is as follows:
+ESC * m nL nH d1 d2 . . . dk
+m
+Specifies the dot density and printing speed. The dot
+density can be specified from 60 × 60 dpi (dots per
+inch) to up to 360 × 360 dpi, depending on the
+number of pins in the print head. The printing speed
+depends on the printing of adjacent horizontal dots;
+by not allowing the printing of adjacent dots, you
+increase the printing speed.

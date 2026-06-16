@@ -1,0 +1,66 @@
+E. Determine the Values for P1 and P2 which were set using DF
+or IN-commands:
+P1 = 250,279
+P2 = 10 250 ,7479
+therefore
+Plx = 250
+Ply = 279
+P2x = 10 250
+P2y = 7479
+F. Solving for X and Y:
+P2
+- P1
+P2
+—P1
+X:-';‘—X
+U2x _ Ulx
+U2x _ Ulx
+10 250 —250
+10 250 —250
++g
+2500cost+12500+250-0
+——:
+25000-0
+25000—0
+0.4 (2500 cos t + 12 500) + 250 ~ 0
+1000 cos t + 5250
+ll
+P2
+—P1
+P2
+—P1
+Y= _.y__y
+Ay+P1y_U1y—’——¥
+U2y _ Uly
+U2y _ Uly
+7479 —279
+_
+7479 —279
++ —-—— 2500s1nt+9000+279—0——
+18000-0
+18000-0
+0.4 (2500 sin t + 9000) + 279 - 0
+1000 sin t + 3879
+G. Sending the following program will plot the required circle
+using the default P1 and P2.
+H
+10
+PRINT”IP250,2?9,lO25D,T"?9;SP1“
+20
+FUR T=O TU 2%PI
+STEP
+PIMEO
+30
+X=1OOU%COStT)+525O
+40
+“r’=1OOU%éSIr~HZT)+:38?8
+50
+PRINT
+"F‘Fi";2><;‘1’;"PD"
+BU
+I-~-JE><T T
+?"
+PRINT
+" SPO"
+C-4
+REFERENCE MATERIAL

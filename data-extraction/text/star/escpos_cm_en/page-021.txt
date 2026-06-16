@@ -1,0 +1,40 @@
+ESC/POS Command Specifications
+21
+Rev.2.52
+Fig. 2.3.1 Character Data Expansion Position 
+Fig. 2.3.2 Character Data Expansion Position 
+A
+20 dot  
+4 dot 
+Expansion  
+Point A  
+Printing 
+(x0, y 0) 
+(dx, dy) 
+Base Line
+A 
+Bar Code 
+Height h dot 
+A 
+Bar code 
+(GS k m) 
+(y x8) dots 
+Download 
+Bit image
+(GS * x y)
+24 dot 
+Bit image 
+40dot  
+Double  
+high  
+Expanded 
+8dot 
+20 dot  
+4dot 
+B Point
+B Point
+B Point
+B Point
+Base Line 
+HRI Characters  
+24 DOTS

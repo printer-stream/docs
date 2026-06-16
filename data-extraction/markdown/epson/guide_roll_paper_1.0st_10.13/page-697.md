@@ -1,0 +1,24 @@
+## C O N F I D E N T I A L
+
+|   fn | Function No.   | Function name                         |
+|------|----------------|---------------------------------------|
+|   48 | Function 48    | Delete the paper layout               |
+|   49 | Function 49    | Set the paper layout                  |
+|   50 | Function 50    | Transmit the paper layout information |
+
+- pL , pH specifies ( pL + pH × 256) as the number of bytes after pH ( fn and [parameters] ). Description of the [parameters] is described in each function.
+- ■ The value of parameter fn determines the function number for this command. Command operation differs, depending on the function number.
+- ■ User setting mode is a special mode to change settings for the printer's built-in non-volatile memory.
+- ■ To change a setting, you must change the printer into user setting mode, using Function 1.
+- ■ Execute function 2 of this command after making the setting. The setting value is effective after executing the software reset of function 2.
+- ■ Note the rules below for the user setting mode:
+- The printer does not process character data.
+- The printer does not process commands other than this command and the GS I command.
+- The printer does not process real-time commands.
+- Even if the ASB function is enabled, the printer does not transmit the ASB status.
+- ■ Functions 4, 6, 12, 14 and 50, the functions used to transmit the current settings to the host, can be used at any time, without changing into the user setting mode.
+- ■ Data is written to the non-volatile memory by Functions 3, 5, 7, 11, 13,  48, and 49. Note the following when using those functions:
+- Do not turn off the power or reset the printer from the interface when the relevant functions are being executed.
+- The printer might be BUSY. In this case, be sure not to transmit a command from the host because the printer will not receive the data.
+
+## [Notes]

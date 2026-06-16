@@ -1,0 +1,57 @@
+C O N F I D E N T I A L
+Paper roll
+Miscellaneous commands     DLE DC4 (fn = 2)
+ 
+Ver. 10.13
+p. 430
+DLE DC4 (fn = 2)
+EXECUTING COMMAND
+[Name]
+Execute power-off sequence
+[Format]
+ASCII
+DLE DC4 fn
+a
+b
+Hex
+10
+14
+02
+a
+b
+Decimal
+16
+20
+2
+a
+b
+[Printers not featuring this command] TM-U230, TM-U220
+[Range]
+fn = 2
+a = 1
+b = 8
+[Description]
+Executes the printer power-off sequence and transmits the power-off notice.
+•
+Saving the maintenance counter values
+•
+Busy controlling for interface
+•
+Changing to waiting state of mechanism
+Executes power off processing (this processing depends on printer model).
+[Notes]
+■This command can be used after enabling real time command processing with GS ( D.
+■This is a real-time command that the printer executes upon receiving it. Note the following when using 
+this command.
+•
+If this command is embedded within the code string of another command, it is processed as a 
+parameter of the other command, and the print result is not correct.
+•
+If another command (such as graphics data or defined data) has a code string in a parameter that is the 
+same as this command, the printer starts processing this command.
+■This command cannot be used when sending the block data (Header ~ NUL).
+■With a serial interface, the printer executes this command even when it is in offline, receive buffer full, or 
+error status.
+■With a parallel interface, if the printer is BUSY, this command cannot be used in the following states.
+•
+When DIP switch or memory switch (BUSY condition) is on: receive buffer full

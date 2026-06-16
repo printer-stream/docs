@@ -1,0 +1,45 @@
+## C O N F I D E N T I A L
+
+## FF (in page mode)
+
+[Name]
+
+Print and return to standard mode (in page mode)
+
+[Format]
+
+ASCII
+
+FF
+
+Hex
+
+0C
+
+Decimal
+
+12
+
+[Default]
+
+None
+
+[Range]
+
+None
+
+[Printers not featuring this command] TM-U230 , TM-U220
+
+[Description]
+
+In page mode, prints all the data in the print buffer collectively and switches from page mode to standard mode.
+
+[Notes]
+
+- ■ This command is enabled only in page mode. See FF (in standard mode) to use this command in standard mode. Page mode can be selected by ESC L or FS L .
+- ■ The data is deleted in the print area after being printed.
+- ■ This command returns the values set by ESC W to the default values.
+- ■ The value set by ESC T is maintained.
+- ■ After printing, the print position moves to the beginning of the line. When a left margin is set, the position of the left margin is the beginning of the line.
+
+EXECUTING COMMAND

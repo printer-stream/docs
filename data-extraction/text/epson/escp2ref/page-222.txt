@@ -1,0 +1,36 @@
+Individual Command Explanations        C-215
+ESC i
+Select immediate print mode
+9-Pin ESC/P
+Format
+ASCII
+ESC
+i
+n
+Hex
+1B
+69
+n
+Decimal
+27
+105
+n
+Parameter range
+n = 0, 1
+Function
+Switches between character and line printing, as follows:
+n = 1
+Prints data on a character by character basis
+If no print data is sent for a short period, moves the vertical print position so
+that all print is visible
+0
+Prints data on a line by line basis
+Default
+Printing on a line by line basis
+Notes
+This is a deleted command.
+Printers featuring this command
+Only these printers feature this command: EX-800, EX-1000, FX-80, FX-85, FX-100, FX-185,
+FX-286, JX-80
+Model-dependent variations
+None

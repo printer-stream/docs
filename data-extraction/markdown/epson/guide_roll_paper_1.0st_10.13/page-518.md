@@ -1,0 +1,35 @@
+## C O N F I D E N T I A L
+
+[Notes for printer information B]
+
+- ■ Each printer information is composed of [header to  NUL] (when 65 ≤ n ≤ 69, or n = 112).
+- If the printer information is not prepared, [Header + NUL] (2 bytes) are sent.
+- ■ The firmware version can be confirmed by self test printing. The self test is executed by executing GS ( A , or by panel switch operation when power is turned on.
+- ■ With serial interface, when communication with the printer uses XON/XOFF control, the XOFF code may interrupt the 'Header to NUL' data string.
+- ■ Printer information can be identified to other transmission data according to specific data of the transmission data block. When the header transmitted by the printer is [hex = 5FH/decimal =95], treat NUL [hex = 00H/decimal =0] as a data group and identify it according to the following data.
+
+| Send data             | Hex                  | Decimal              | Data quantity   |
+|-----------------------|----------------------|----------------------|-----------------|
+| Header                | 5FH                  | 95                   | 1 byte          |
+| Printer information B | Depends on the model | Depends on the model | 0 to 80 bytes   |
+| NUL                   | 00H                  | 0                    | 1 byte          |
+
+[Model-dependent variations]
+
+TM-J2000/J2100 , TM-T90 , TM-T20 , TM-T88IV , TM-T88V , TM-T70 , TM-L90 , TM-P60 , TM-U230 , TM-U220
+
+## Program Example for all printers
+
+PRINT #1, CHR$(&amp;H1D);"I";CHR$(1); ← Transmits printer ID
+
+## TM-J2000/J2100
+
+- Printer model ID ( n = 1, 49)
+
+Hex = 2BH / Decimal = 43
+
+- Type ID ( n = 2, 50)
+
+Bit 1: The bit indicates [Autocutter is installed] always.
+
+Bit 2: [DM-D (Customer display) is connected/not connected] indicates the state of Memory switch 1-6.

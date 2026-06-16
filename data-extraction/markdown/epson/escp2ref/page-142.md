@@ -1,0 +1,36 @@
+## Format
+
+ASCII SI
+
+Hex 0F
+
+Decimal 15
+
+## Function
+
+Enters condensed mode, in which character width is reduced as follows:
+
+| Selected pitch   | Condensed pitch   |
+|------------------|-------------------|
+| 10 cpi           | 17.14 cpi         |
+| 12 cpi           | 20 cpi            |
+
+## Default
+
+Noncondensed printing
+
+## Notes
+
+Cancel condensed printing with the DC2 command.
+
+Printers not featuring this command
+
+None
+
+Model-dependent variations
+
+None
+
+Related topics
+
+DC2, Selecting the pitch

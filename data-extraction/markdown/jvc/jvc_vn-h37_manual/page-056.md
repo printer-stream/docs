@@ -1,0 +1,57 @@
+| read_only   | Use   | LOCK switch is enabled   |
+|-------------|-------|--------------------------|
+| on          | Use   | LOCK switch is disabled  |
+
+Allowed users admin, operator, user
+
+## Setting SD Card to Use/Disable
+
+Format  /api/param?storage.disk(1).status=data
+
+Example of Response  storage.disk(1).status&amp;200 OK
+
+Interpretation Change the Use/Disable status of SD Card. Specify 'on' or 'off'. In case of 'on', SD Card can be use. In case of 'off', SD Card is disabled.
+
+Allowed users admin, operator, user
+
+## Getting Status of SD Card formatting
+
+Format  /api/param?storage.disk(1).initialize
+
+Example of Response  storage.disk(1).initialize=on&amp;200 OK
+
+Interpretation Acquire status of SD Card formatting. 'on', 'off', or 'not\_initialized' will be returned. In case of 'on',
+
+SD Card formatting is in progress. In case of 'off'SD Card is formatted. In case of 'not\_initialized', SD Card is unformatted.
+
+Allowed users admin, operator
+
+## Formatting SD Card
+
+Format  /api/param?storage.disk(1).initialize=data
+
+/api/param?storage.disk(1).initialize=start
+
+Example of Response  storage.disk(1).initialize&amp;200 OK
+
+Interpretation Specify as start to format the SD. When this API is issued, the camera reboots in about 1 minute.
+
+Allowed users admin, operator
+
+## Getting SD Card Constant Recording On/Off Status
+
+Format  /api/param?application.event(8).status
+
+Example of Response  application.event(8).status=on&amp;200 OK
+
+Interpretation Acquire the on/off status of SD Card Constant Recording. 'on' or 'off'will be returned.
+
+Allowed users admin, operator, user
+
+## Setting SD Card Constant Recording On/Off
+
+Format  /api/param?application.event(8).status=data
+
+Example of Response  application.event(8).status&amp;200 OK
+
+Interpretation Change the on/off status of SD card Constant Recording. Specify "on" or "off" to change the status.

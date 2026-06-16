@@ -1,0 +1,107 @@
+example 7: Interleaved 2 of 5, CD: Printer, HRI: none
+
+1B 28 42 19 00
+
+; Barcode command and data length
+
+02
+
+; Barcode type k = Interleaved 2 of 5
+
+02
+
+; Module width m = 2 dots / 180 inch
+
+00
+
+; Space adjustment value s = +0 dots / 360 inch
+
+7D 00
+
+; Bar length v1 , v2 = 125 / 180 inch
+
+03
+
+; Control flags c
+
+31 32 33 34 35 36 37
+
+; Barcode Data
+
+38 39 30 31 32 33 34 ;
+
+35 36 37 38 39
+
+;
+
+example 8: Interleaved 2 of 5, CD: Host, HRI: print Next  example is that '0' is added automatically, in the case that the data number is odd.
+
+<!-- image -->
+
+1B 28 42 19 00
+
+; Barcode command and data length
+
+02
+
+; Barcode type k = Interleaved 2 of 5
+
+02
+
+; Module width m = 2 dots / 180 inch
+
+00
+
+; Space adjustment value s = +0 dots / 360 inch
+
+7D 00
+
+; Bar length v1 , v2 = 125 / 180 inch
+
+00
+
+; Control flags c
+
+31 32 33 34 35 36 37
+
+; Barcode Data
+
+38 39 30 31 32 33 34 ;
+
+35 36 37 38 39 ;
+
+<!-- image -->
+
+example 9: UPC-A, CD: Host, HRI: Print, Flag Char.: center
+
+1B 28 42 12 00
+
+; Barcode command and data length
+
+03
+
+; Barcode type k = UPC-A
+
+02
+
+; Module width m = 2 dots / 180 inch
+
+00
+
+; Space adjustment value s = +0 dots / 360 inch
+
+7D 00
+
+; Bar length v1 , v2 = 125 / 180 inch
+
+00
+
+; Control flags c
+
+30 31 32 33 34 35 36
+
+; Barcode Data
+
+37 38 39 30 35 ;
+
+<!-- image -->

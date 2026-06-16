@@ -1,0 +1,29 @@
+## C O N F I D E N T I A L
+
+When used together with the UB series with the buzzer function, the buzzer function of the UB series does not operate.
+
+|   Switch number | Setting   | Function                                                        |
+|-----------------|-----------|-----------------------------------------------------------------|
+|               1 | OFF       | Not use drawer kick connector pin no. 5 for sounding the buzzer |
+|                 | ON        | Use drawer kick connector pin no. 5 for sounding the buzzer     |
+|               2 | OFF       | Not use drawer kick connector pin no. 2 for sounding the buzzer |
+|                 | ON        | Use drawer kick connector pin no. 2 for sounding the buzzer     |
+
+## TM-T88V
+
+The BUSY condition is selected by DIP switch 2-1.
+
+When the optional external buzzer is enabled with GS ( E &lt;Function 5&gt;, the optional external buzzer sounds (a pulse signal is not output).
+
+With specifications that have a buzzer (optional internal buzzer), a pulse signal sounds the buzzer with this command. Buzzer control and drawer control is set with the buzzer circuit board DIP switches. Turn off the printer before changing DIP switch settings. When used together with the UB series with the buzzer function, the buzzer function of the UB series does not operate.
+
+|   Switch number | Setting   | Function                                                        |
+|-----------------|-----------|-----------------------------------------------------------------|
+|               1 | OFF       | Not use drawer kick connector pin no. 5 for sounding the buzzer |
+|                 | ON        | Use drawer kick connector pin no. 5 for sounding the buzzer     |
+|               2 | OFF       | Not use drawer kick connector pin no. 2 for sounding the buzzer |
+|                 | ON        | Use drawer kick connector pin no. 2 for sounding the buzzer     |
+
+## TM-U220
+
+The BUSY condition is selected by DIP switch 1-8.

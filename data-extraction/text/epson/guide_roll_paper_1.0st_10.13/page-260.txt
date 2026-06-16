@@ -1,0 +1,118 @@
+C O N F I D E N T I A L
+Paper roll
+Bit-image commands     GS ( L GS 8 L
+ 
+Ver. 10.13
+p. 260
+<TM-J2000 (single-color printing model)>
+<TM-J2100 (two-color printing model)>
+Vertical
+Horizontal
+Maximum print area (dot)
+Maximum print area (dot)
+Scaling
+Dot 
+density
+Paper 
+width 
+82.5 mm
+Paper 
+width 
+26 mm
+Paper 
+width 
+69.5 mm
+Paper 
+width
+57.5 mm
+Dot 
+density
+Paper 
+width
+82.5 mm
+Paper 
+width
+76 mm
+Paper 
+width
+69.5 mm
+Paper 
+width
+57.5 mm
+× 1
+180 dpi
+512
+480
+432
+360
+180 dpi
+832
+888
+984
+1184
+× 2
+90 dpi
+256
+240
+216
+180
+90   dpi
+416
+444
+492
+592
+Vertical
+Horizontal
+Maximum print area (dot)
+Maximum print area (dot)
+Scaling
+Dot 
+density
+Paper 
+width 
+82.5 mm
+Paper 
+width 
+26 mm
+Paper 
+width 
+69.5 mm
+Paper 
+width
+57.5 mm
+Dot 
+density
+Paper 
+width
+82.5 mm
+Paper 
+width
+76 mm
+Paper 
+width
+69.5 mm
+Paper 
+width
+57.5 mm
+× 1
+180 dpi
+512
+480
+432
+360
+180 dpi
+640
+680
+760
+912
+× 2
+90 dpi
+256
+240
+216
+180
+90   dpi
+320
+340
+380
+456

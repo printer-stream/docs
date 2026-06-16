@@ -1,0 +1,30 @@
+## C O N F I D E N T I A L
+
+- ■ In cases where there is insufficient capacity available for storing download graphics data, this function cannot be used. Use Function 52 to confirm the available capacity in the download graphics data area.
+- ■ One option is to delete items of download graphics data that were previously defined to the same key code.
+- ■ The data for byte k of d1 ... dk is processed as a single item of defined download graphics data. The defined data ( d ) specifies '1' for bits corresponding to dots that will be printed and '0' for bits corresponding to dots that will not be printed.
+- ■ Download graphics data is defined using the dot density set by Function 49.
+- ■ Specify single data groups [ c d1 ... dk ] when monochrome is selected ( b = 1) as the color.
+- ■ Specify b number of data groups [ c d1 ... dk ] when multiple colors are selected ( b ≠ 1). It is also important to specify different colors in units of data groups when specifying color ( c ).
+- ■ Download graphics data is printed using Function 85.
+- ■ Note that it is not possible to create definitions for both download graphics data (this command) and download bit image data ( GS ✻ ). download bit image data definitions are deleted when this command is used.
+- ■ For some models, downloaded graphics (this command) and user-defined characters ( ESC &amp; ) cannot be defined simultaneously.
+- User-defined characters defined are deleted by using this command.
+- Downloaded graphics data are deleted by ESC &amp; .
+- ■ The relationship between download graphics data (column format) and print results is shown in the table below.
+
+<!-- image -->
+
+| d1   | dY +1   | ...   | :     |
+|------|---------|-------|-------|
+| d2   | dY +2   | ...   | dk -2 |
+| :    | :       | ...   | dk -1 |
+| dY   | dY x2   | ...   | dk    |
+
+[Model-dependent variations]
+
+Y = ( yL + yH ✕ 256)
+
+TM-J2000/J2100 , TM-T90 , TM-T20 , TM-T88IV , TM-T88V , TM-T70 , TM-L90 , TM-P60
+
+TM-J2000/J2100

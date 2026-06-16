@@ -1,0 +1,32 @@
+C O N F I D E N T I A L
+Paper roll
+Status commands     DLE EOT
+ 
+Ver. 10.13
+p. 337
+When an ink near-end is detected, the INK OUT light blinks. It is possible to print approximately 
+20,000 characters using Font B with print control mode = economy printing specified from the 
+time an ink near-end is detected until an ink end is detected. However, the value is only a 
+reference value, it depends on environmental factors such as printing data, and the timing of 
+head cleaning. Therefore, replace an old ink cartridge with a new one when a ink near-end is 
+detected.
+TM-J2000 (single-color) does not support ink status B (n = 7, a = 2).
+Two ink cartridges combined are installed in the TM-J2100 (two-color), and the presence of the 
+cartridge is detected with one detector. Therefore, both of the following status items are the 
+same. 
+Bit 5 of Ink Status A 
+Bit 5 of Ink Status B 
+TM-T90
+BUSY condition for a parallel interface is selected by memory switch 1-3.
+■Roll paper sensor status (n = 4)
+When the cover is open, the status of the roll paper end sensor (bit 5, 6) retain the value when the 
+cover was closed immediately before.
+TM-L90
+TM-L90 with Peeler
+BUSY condition for a parallel interface is selected by memory switch 1-3.
+The peeling issuing mode or the continuous issuing mode (not using peeler) can be selected by a 
+switch on the printer. This is a slide switch that can be used when the roll paper cover is open.
+■Printer cause status (n = 1)
+Online recovery wait (bit 5) is changed when GS ^ is executed or the printer is in one of the 
+following status conditions when the peeling issuing mode is selected.
+Waiting for the FEED button to be pressed with the cover closed.

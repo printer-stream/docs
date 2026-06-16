@@ -1,0 +1,28 @@
+C O N F I D E N T I A L
+Paper roll
+Miscellaneous commands     DLE DC4 (fn = 8)
+ 
+Ver. 10.13
+p. 443
+When using the following commands, be sure there is no sequence that corresponds to the 
+sequence of this command in the data line.
+Graphics: GS ( L
+Bit image: ESC *, FS q, GS *, GS v 0
+Character pattern: ESC &, FS 2
+TM-T88IV, TM-T88V
+The BUSY condition is selected by DIP switch 2-1.
+When using the following commands, be sure there is no sequence that corresponds to the 
+sequence of this command in the data line.
+Graphics: GS ( L
+Bit image: ESC *, FS q, GS *, GS v 0
+Character pattern: ESC &, FS 2
+TM-T70
+The BUSY condition is selected by DIP switch 2-1.
+When using the following commands, be sure there is no sequence that corresponds to the 
+sequence of this command in the data line.
+Graphics: GS ( L
+Bit image: ESC *, GS *
+Character pattern: ESC &, FS 2
+TM-P60
+When using the graphic command GS ( L, be sure there is no sequence that corresponds to the 
+sequence of this command in the data line.

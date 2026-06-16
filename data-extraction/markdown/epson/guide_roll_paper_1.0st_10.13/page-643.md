@@ -1,0 +1,39 @@
+## C O N F I D E N T I A L
+
+- ■ k bytes of d1...dk are processed as symbol data.
+- ■ Settings of this function are effective until the following processing is performed:
+- Function 080 or 180 or 280 or 380 or 480 is executed
+- ESC @ is executed
+- The printer is reset or the power is turned off
+- ■ Refer to GS ( k
+- for printing the GS1 DataBar shown below. GS1 DataBar Omnidirectional, GS1 DataBar Truncated, GS1 DataBar Limited, GS1 DataBar Expanded
+
+[Description: Applied to GS1 DataBar Stacked and GS1 DataBar Stacked Omnidirectional]
+
+- ■ Transmit the 13-digit product identification number, excluding the application identifier (AI) and check digit, from the host.
+- ■ Transmit the 2-byte data shown in the following table ([Hexadecimal = 7BH / Decimal = 123] + character code) from the host for the special character (FNC1) and symbol data "(", ")". ("+" in the table is not included in the transmission data).
+
+[Description: Applied to GS1 DataBar Stacked]
+
+|      | Transmission data from host   | Transmission data from host   | Transmission data from host   |
+|------|-------------------------------|-------------------------------|-------------------------------|
+| Data | ASCII                         | Hexadecimal                   | Decimal                       |
+| FNC1 | { + 1                         | 7B + 31                       | 123 + 49                      |
+| (    | { + (                         | 7B + 28                       | 123 + 40                      |
+| )    | { + )                         | 7B + 29                       | 123 + 41                      |
+
+[Model-dependent variations]
+
+TM-T90 , TM-T20 , TM-T88IV , TM-T88V , TM-T70 , TM-L90 , TM-P60
+
+TM-T90 , TM-T88IV , TM-T70 , TM-L90
+
+This model does not support this function.
+
+## TM-T20 , TM-T88V
+
+This model supports this function.
+
+## TM-P60
+
+TM-P60 with peeler supports this function.

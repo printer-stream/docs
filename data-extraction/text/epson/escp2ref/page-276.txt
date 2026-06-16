@@ -1,0 +1,41 @@
+Select a Font        R-45
+Selecting the point size
+The height of characters is measured in points. One point is equal to 1/72 inch.
+Vertical print position
+20-point character
+10.5-point character
+ESC/P 2
+If you plan to use typefaces available in multipoint mode, you can set the point
+size with the ESC X command. This command puts the printer in multipoint
+mode and sets the point and pitch of the font.
+The format of the ESC X command is as follows:
+ESC X m nL nH
+The m parameter sets the pitch and the nL and nH parameters set the point size,
+according to the following formulas:
+Pitch
+m = 0
+the pitch does not change; use this value if you plan to
+change only the point size.
+1
+proportional spacing is selected.
+m ≥ 5
+360
+m  cpi character spacing
+Point size
+(point size) =
+(
+)
+n
+n
+H
+L
+×
++
+256
+2
+If nH and nL both equal 0, the point size does not change; use
+these values if you plan to change only the pitch.
+10.5/72
+inch
+20/72
+inch

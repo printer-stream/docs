@@ -1,0 +1,47 @@
+## C O N F I D E N T I A L
+
+## GS C ;
+
+[Name]
+
+Select counter mode (B)
+
+[Format]
+
+ASCII GS C ; sa ; sb ; sn ; sr ; sc ; Hex 1D 43 3B sa 3B sb 3B sn 3B sr 3B sc 3B Decimal 29 67 59 sa 59 sb 59 sn 59 sr 59 sc 59
+
+[Range]
+
+0 ≤ sa ≤ 65535
+
+0 ≤ sb ≤ 65535
+
+0 ≤ sn ≤ 255
+
+0 ≤ sr ≤ 255
+
+0 ≤ sc ≤ 65535
+
+[Default]
+
+sa = 1, sb = 65535, sn = 1, sr = 1, sc = 1
+
+[Printers not featuring this command] TM-J2000/J2100 , TM-T90 , TM-T20 , TM-T88IV , TM-T88V , TM-T70 , TM-P60 , TM-U230 , TM-U220
+
+[Description]
+
+Sets the serial number counter range, the serial number counter value, the stepping amount, and the repetition number by using character strings.
+
+|            |                                  | Counter range   | Counter range   |
+|------------|----------------------------------|-----------------|-----------------|
+| Count mode | Parameters                       | Minimum value   | Maximum value   |
+| Count-up   | sa < sb , sn ≠ '0', and sr ≠ '0' | sa              | sb              |
+| Count-down | sa > sb , sn ≠ '0', and sr ≠ '0' | sb              | sa              |
+| Count-stop | = sb , sn = '0', or sr = ' 0'    | ⎯               | sa ⎯            |
+
+- sa and sb specify the serial number counter ranges (maximum and minimum values).
+- sn specifies the stepping amount for counting up or down.
+- sr specifies the repetition number with the counter value fixed.
+- sc specifies the serial number counter value.
+
+SETTING COMMAND

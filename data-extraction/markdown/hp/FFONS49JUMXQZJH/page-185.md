@@ -1,0 +1,11 @@
+| Function                                       | Description                                                                                                                                                                                                 | Implementation                                                                                                                                                                               |
+|------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| TEO C0 DCO DTO PPO SRO AA1 AEO AMO RLO PDO DDO | Extended talker. Controller. Device clear. Device trigger. Parallel poll. Service request. Auto address. Auto extended address. Auto multiple address. Remote local. Power down. Device dependent commands. | No capability. No capability. No capability. ,, No capability. No capability. No capability. Complete capability. No capability. No capability. No capability. No capability. No capability. |
+
+## Reaction to Interface Commands and Messages
+
+All unsupported interface commands are ignored and retransmitted around the loop. Upon receipt of the interface clear (IFC) message, the plotter resets the parser and starts looking for a new HP-GL instruction. Any partially parsed HP-GL instruction or parameters will be lost. This message does not reset parameters in the plotter to their default values.
+
+## Addressingthe Plotter
+
+The default address of the plotter is 5. However, the plotter address in a program may vary; this is because the system controller generally assigns addresses automatically in a sequential manner around the loop. Refer to your computer's documentation for hints on writing programs so that they will run no matter what order the peripheral devices are interconnected. The examples in this chapter assume that the plotter is the only device connected to the computer. Therefore, the plotter's address is 1.

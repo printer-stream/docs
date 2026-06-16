@@ -1,0 +1,27 @@
+Chapter 1   Product Overview
+25
+1
+Character Specifications
+Note)
+1. Space between characters is not included.
+2. Characters can be scaled up to 64 times as large as the standard size.
+Number of characters
+Alphanumeric characters: 95
+Extended graphics: 128 × 11 pages (including user-defined page)
+International characters: 48
+GB18030-2000: 28,533 (for Simplified Chinese characters Model)
+Big 5: 13,535 (for Traditional Chinese characters Model)
+Character structure
+Font A (Initial setting): 12 × 24 (including 2-dot spacing in horizontal)
+Font B: 9 × 17 (including 2-dot spacing in horizontal)
+Character size
+Font A
+Standard: 1.41 × 3.39 mm
+Double-height: 1.41 × 6.77 mm
+Double-width: 2.82 × 3.39 mm
+Double-width, double-height: 2.82 × 6.77 mm
+Font B
+Standard: 0.99 × 2.40 mm
+Double-height: 0.99 × 4.80 mm
+Double-width: 1.98 × 2.40 mm
+Double-width, double-height: 1.98 × 4.80 mm

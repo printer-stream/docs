@@ -1,0 +1,36 @@
+Rev. A
+Product Overview   1-3
+TM-T88II/T88III Technical Reference Guide
+1.2  Part Names and Basic Operation
+1.2.1  Part Names
+ Figure 1-1 Printer part names
+* For details on DIP switch settings, refer to “DIP Switch Positions and Steps for Changing DIP Switch 
+Settings” (page 2-2).
+1.2.2  Control Panel
+ 
+ Figure 1-2 Control panels for the TM-T88II (legacy model) and TM-T88III (current model)
+ERROR
+POWER
+PAPER
+OUT
+FEED
+Printer cover
+Control panel
+Cover open button
+Power switch
+Cutter cover
+ERROR
+POWER
+PAPER
+OUT
+FEED
+POWER LED
+ERROR LED
+PAPER OUT LED
+FEED button
+POWER LED
+ERROR LED
+PAPER OUT LED
+FEED button
+TM-T88II
+TM-T88III

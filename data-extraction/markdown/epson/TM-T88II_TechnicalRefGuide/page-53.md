@@ -1,0 +1,31 @@
+## ESC/POS Command-related Information
+
+This chapter introduces the printer operation settings, which can be made by using ESC/POS commands, and precautions for those operation settings.
+
+## 4.1  NV Memory (Non-volatile Memory)
+
+The printer's NV memory can be roughly divided into three parts:
+
+- Firmware program area
+- NV memory area for product information (This area cannot be edited by the user.)
+- NV memory area that the user can access
+
+The following areas are in the NV memory that the user can access:
+
+- NV user memory
+- NV graphics memory
+- User-defined character code page (page 255 (blank page))
+- Area of user-defined command default values
+
+You can customize your printer by changing these values. Note the following when writing to and deleting from NV memory.
+
+- ❏ The following restrictions apply when performing non-volatile memory operations (including data writing and deleting).
+- Do not press the paper FEED button.
+- Do not execute a real-time command.
+- The ASB status is not sent, even when the ASB function in ESC/POS commands is set to Enabled .
+- ❏ The printer sometimes enters the BUSY state while data is written to NV memory. It is important not to send data from the host computer while the printer is BUSY, because the printer cannot process any received data.
+- ❏ Frequent use of the functions for writing data to and deleting data from NV memory may damage the memory. As a rule in using the various commands to write to NV memory, avoid writing more than an average of ten times per day.
+
+## 4.1.1 Using NV Memory
+
+You can use the free area in NV memory for writing memos, for other character information, for anything you like. Data written to this area is held in the memory even if you turn off the power. For details on how to read and write data, see the 'ESC/POS Application Programming Guide.'

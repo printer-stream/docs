@@ -1,0 +1,39 @@
+C O N F I D E N T I A L
+Paper roll
+Customize commands     GS ( E
+ 
+Ver. 10.13
+p. 726
+TM-T88IV: (nL + nH × 256) = 100 (nL = 100, nH = 0) [default value when a = 5]
+(nL + nH × 256) = 9 (nL = 9, nH = 0) [default value when a = 6]
+(nL + nH × 256) = 0 (nL = 0, nH = 0) [default value when a = 7]
+(nL + nH × 256) = 128 (nL = 128, nH = 0) [default value when a = 97]
+(nL + nH × 256) = 1 (nL = 1, nH = 0) [default value when a = 116]
+(nL + nH × 256) = 85 (nL = 85, nH = 0) [default value when a = 118]
+TM-T88V:(nL + nH × 256) = 6 (nL = 6, nH = 0) 
+[default value when a = 3 (80-mm paper width model)]
+(nL + nH × 256) = 2 (nL = 2, nH = 0) 
+[default value when a = 3 (58-mm paper width model)]
+(nL + nH × 256) = 100 (nL = 100, nH = 0) [default value when a = 5]
+(nL + nH × 256) = 13 (nL = 13, nH = 0) [default value when a = 6]
+(nL + nH × 256) = 1 (nL = 1, nH = 0) [default value when a = 7]
+(nL + nH × 256) = 0 (nL = 0, nH = 0) [default value when a = 8]
+(nL + nH × 256) = 0 (nL = 0, nH = 0) [default value when a = 9 
+                                                     (other than the Simplified Chinese model)]
+(nL + nH × 256) = 15 (nL = 15, nH = 0) [default value when a = 9 (Simplified Chinese mode)]
+(nL + nH × 256) = 32 (nL = 32, nH = 0) [default value when a = 10 
+(built-in USB + serial/parallel interface)]
+(nL + nH × 256) = 0 (nL = 0, nH = 0) [default value when a = 10 
+(built-in USB + interface other than serial/parallel)]
+(nL + nH × 256) = 1 (nL = 1, nH = 0) [default value when a = 97]
+(nL + nH × 256) = 2 (nL = 2, nH = 0) [default value when a = 98]
+(nL + nH × 256) = 0 (nL = 0, nH = 0) [default value when a = 100]
+(nL + nH × 256) = 0 (nL = 0, nH = 0) [default value when a = 101]
+(nL + nH × 256) = 0 (nL = 0, nH = 0) [default value when a = 102]
+(nL + nH × 256) = 0 (nL = 0, nH = 0) [default value when a = 103]
+(nL + nH × 256) = 0 (nL = 0, nH = 0) [default value when a = 104]
+(nL + nH × 256) = 0 (nL = 0, nH = 0) [default value when a = 105]
+(nL + nH × 256) = 0 (nL = 0, nH = 0) [default value when a = 111]
+(nL + nH × 256) = 1 (nL = 1, nH = 0) [default value when a = 112]
+(nL + nH × 256) = 0 (nL = 0, nH = 0) [default value when a = 117]
+(nL + nH × 256) = 0 (nL = 0, nH = 0) [default value when a = 119]

@@ -1,0 +1,30 @@
+Chapter 5   Replacement of 
+73
+5
+Replacement of the TM-T88III
+The TM-T88IV is designed so that it can smoothly replace the TM-T88III. This chapter describes 
+precautions for the replacement.
+Compatibility
+Printing
+The printing and character specifications are the same as those of the TM-T88III except some 
+character font designs. Without special configurations, the TM-T88IV prints the same results as 
+the TM-T88III prints.
+Font designs
+The following font designs of the TM-T88IV have changed from those of the TM-T88III.
+• Font A: 2, 3, 4, 5, 6, 7, 9
+• Font B: 2, 6, 9
+Print Density
+The print density of the TM-T88IV can be set with DIP switches (2-3/2-4) as can the TM-T88III. 
+Set the density the same as for the TM-T88III to print in the same print density.
+Print Speed
+The TM-T88IV has speeded its printing up to 200 mm/s at maximum. (TM-T88III: 150 mm/s)
+The print density can be set also to a customized value. The initial setting of the customized 
+value is “Depends on the DIP switch settings.” If the customized value is changed, the 
+value set with the customized value is enabled. (See "Setting the Memory Switches" on 
+page 43.)
+Depending on print conditions such as print duty, print head temperature, or data 
+transmission speed, print speed is automatically adjusted which may cause white lines due 
+to intermittent print (the motor sometimes stops). To avoid this, keep the print speed 
+constant by setting it lower (See "Setting the Memory Switches" on page 43.), or set the 
+transmission speed higher in case of the serial interface. (See "Transmission speed (DIP 
+switch 1-7/1-8)" on page 36.)

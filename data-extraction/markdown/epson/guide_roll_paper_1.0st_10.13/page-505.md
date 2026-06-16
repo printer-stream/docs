@@ -1,0 +1,19 @@
+## C O N F I D E N T I A L
+
+[Notes]
+
+With this command, the function is decided by the function code ( fn ). The detailed operation differs with each function.
+
+```
+Program example PRINT #1, CHR$(&h1B);"L"; ← Select page mode PRITN #1, CHR$(&h1B);"W";CHR$(0);CHR$(0);CHR$(0);CHR$(0); PRITN #1, CHR$(144);CHR$(1);CHR$(88);CHR$(2); PRINT #1, CHR$(&h1B);"T";CHR$(0); ← Select print direction PRINT #1, CHR$(&h1D);"(Q";CHR$(14);CHR$(0);CHR$(49); ← <Function 49> PRITN #1, CHR$(0);CHR$(0);CHR$(0);CHR$(0); ← Start coordinate PRITN #1, CHR$(100);CHR$(0);CHR$(100);CHR$(0); ← End coordinate PRITN #1, CHR$(1);CHR$(1);CHR$(48);CHR$(48);CHR$(1); ← Other designations PRINT #1, CHR$(&h1D);"(Q";CHR$(12);CHR$(0);CHR$(48); ← <Function 48> PRITN #1, CHR$(0);CHR$(0);CHR$(10);CHR$(0); ← Start coordinate PRITN #1, CHR$(100);CHR$(0);CHR$(10);CHR$(0); ← End coordinate PRITN #1, CHR$(1);CHR$(3);CHR$(48); ← Other designations PRINT #1, CHR$(&h1B);CHR$(&hC); ← Batch printing PRINT #1, CHR$(&h1B);"S"; ← Select standard mode
+```
+
+[Model-dependent variations]
+
+## TM-P60
+
+TM-P60 with Peeler supports this function.
+
+TM-P60
+
+<!-- image -->

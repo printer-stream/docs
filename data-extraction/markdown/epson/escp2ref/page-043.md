@@ -1,0 +1,11 @@
+## Printers not featuring this command
+
+ActionPrinter Apex 80, ActionPrinter T-1000, ActionPrinter 2000, ActionPrinter 2250, ActionPrinter 2500, LX-100, LX-300, LX-400, LX-800, LX-810, LX-850, LX-1050
+
+## Model-dependent variations
+
+DFX-5000, DFX-8000: This command can be used only in LQ mode.
+
+## Related topics
+
+ESC \, ESC l, ESC Q, HT, CR, LF, FF, Moving the horizontal position

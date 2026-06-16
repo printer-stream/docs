@@ -1,0 +1,52 @@
+negative pen control parameter raises the pen. Use of +99 and -99 is
+recommended. Once a pen down parameter has been sent, the pen will
+remain down for following X,Y increment moves until a negative pen
+parameter is received or the UC command is completed. Upon entry
+into a UC command the pen is raised. Each UC command must have
+at least one pen down parameter in order to draw anything. A UC
+command without a pen down will result in a pen movement of one
+character—spaceﬁeld horizontally. When a UC command is complete,
+the pen returns to its up/ down status as set by PU or PD.
+The position of the pen when the UC command is executed becomes the
+character origin point. The initial X,Yincrement is relative to the char­
+acter origin point and each subsequent move is relative to the last com­
+manded pen position. Upon completion of the user deﬁned character,
+the pen is automatically moved one character—spaceﬁeld to the right of
+the character origin point. This point becomes the current pen position
+and hence, the character origin point for the next character (if any).
+The following example generates a 2 symbol which is the same size as
+an uppercase letter. For comparison, an “E” is drawn with the label
+command. The example shows how size commands affect both user
+deﬁned characters and labeled characters. The HP-GL commands
+appear in quotation marks in the BASIC PRINT statements. Other
+BASIC statements, FOR and NEXT, are included in this example.
+PRINT “IN;SP2;PH1000,1000;“
+FUR H=.1S
+TD .99
+STEP
+.1
+PRINT”SI”,R,R*1.4
+PPINT“uc4,?,9s,o,1,~4,o,2,—4,—2,—4,4,o,o,1;"
+NEXT
+H
+PRINT “PR1000,1?50;“
+FUR B=.1S
+TU .99
+STEP
+.1
+PRINT”SI“,B,B*1.4
+PRINT
+”LBE&”
+NEXT
+B
+:——
+u—:n
+EEEEE:i
+222222 E 3:
+User deﬁned characters need not ﬁt into a single character—spaceﬁeld.
+In the next example, the user deﬁned character takes up more than one
+character space. Since this character is to be followed by a label, a CP
+command must be added to move the current pen position beyond the
+limits of the user defined character. The reference point for parameters
+5-20
+LABELING

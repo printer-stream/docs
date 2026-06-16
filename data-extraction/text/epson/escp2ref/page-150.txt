@@ -1,0 +1,31 @@
+Individual Command Explanations        C-143
+ESC SO
+Select double-width printing (one line)
+9-Pin ESC/P
+Format
+ASCII
+ESC
+SO
+Hex
+1B
+0E
+Decimal
+27
+14
+Function
+Doubles the width of all characters, spaces, and intercharacter spacing (set with the ESC SP
+command) following this command on the same line
+Default
+Normal (nondouble-width) printing
+Notes
+• 
+This is a nonrecommended command; use the SO command instead.
+• 
+This command is canceled when the buffer is full, or the printer receives the following
+commands: CR, LF, FF, VT, DC4, ESC W 0.
+Printers not featuring this command
+None
+Model-dependent variations
+None
+Related topics
+SO, DC4, ESC W

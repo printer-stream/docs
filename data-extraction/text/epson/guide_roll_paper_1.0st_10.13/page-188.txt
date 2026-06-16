@@ -1,0 +1,28 @@
+C O N F I D E N T I A L
+Paper roll
+Print position commands     ESC a
+ 
+Ver. 10.13
+p. 188
+[Model-dependent variations]
+None
+Program Example for all printers
+Print Sample
+FOR n=0 TO 2
+  PRINT #1, CHR$(&H1B);"a";CHR$(n);
+  PRINT #1, "ABC"; CHR$(&HA);
+  PRINT #1, "ABCD"; CHR$(&HA);
+  PRINT #1, "ABCDE"; CHR$(&HA);
+NEXT n
+ABC
+ABCD
+ABCDE
+ABC
+ABCD
+ABCDE
+ABC
+ABCD
+ABCDE
+ESC a 0
+ESC a 1
+ESC a 2

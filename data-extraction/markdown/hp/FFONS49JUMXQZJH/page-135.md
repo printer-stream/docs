@@ -1,0 +1,31 @@
+## Sending and Receiving Data
+
+## Computer-to-Plotter
+
+Transmitting data from a computer to the plotter is typically accom­ plished using I/O statements such as WRITE, PRINT, PRINT#, or OUTPUT. The following examples of sending program data to the plotter from various computers are only intended to illustrate the nec­ essity for understanding the I/O statement protocol implemented by your computer. Each of these examples will cause the plotter to label the identity ofthe computer sending data, beginning at the X,Ycoordinates 1000,2000. The examples involve sending both character string and numeric data as variables, and constants or literals.
+
+## HP 9825 and 9826 HPL Example:
+
+```
+0: Txd 0;d1m H$[13] 1: ' SENDING DHTH'+H$ 2: 2000+Y 3: S82E+B 4: wrt ?O5,'SP1;PH1000,',Y 5: wtb ?O5,'LBHP',str(E),H$,3 6: end
+```
+
+Aterminator is sent by the 9825/9826at the end of a wrt statement.
+
+Result:
+
+HP 9828 SENDING DATA
+
+## 9826 BASICExample:
+
+- 10 PRINTER IS ?05
+
+```
+20 H$=' SENDING DHTH' 30 B=9825 40 Y=2000 50 PRINT 'SP1;PH1000,',Y 50 PRINT USING 'K';"LBHP ',B,H$,'§' ?0 END
+```
+
+Aterminator is sent by the 9826at the end of a PRINT statement.
+
+Result
+
+HP 9828 SENDING DATA

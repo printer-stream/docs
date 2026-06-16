@@ -1,0 +1,46 @@
+Sending Graphics Data        R-69
+After plotting the design, divide the grid into groups one dot wide and eight dots
+high.
+The dots in each group have a value, as shown in the following diagram. The
+sum of each group is sent as a byte of data to the printer. Calculate the value for
+each byte as shown.
+128
+64
+32
+16
+8
+4
+2
+1
+128
+64
+32
+16
+8
+4
+2
+1
+128
+64
+32
+16
+8
+4
+2
+1
+128
+64
+32
+16
+8
+4
+2
+1
+128
+64
+32
+16
+8
+4
+2
+1

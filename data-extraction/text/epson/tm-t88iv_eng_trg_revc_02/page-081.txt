@@ -1,0 +1,31 @@
+Chapter 5   Replacement of 
+81
+5
+Customized Value
+For the TM-T88IV, the customized value function is added. (See "Setting the Memory Switches" 
+on page 43.) With the customized value, you can perform the following settings:
+• Print density
+• Print speed
+• Number of head energizing parts
+• Single-color printing/two-color printing
+• Black-color density in two-color printing
+USB Interface
+In addition to the USB interface boards that are available for the TM-T88III, the following ones 
+are available for the TM-T88IV.
+• UB-U05
+• UB-U06
+• UB-U19
+USB Low Power Consumption Mode
+With the TM-T88IV, you can enable the USB low power consumption mode with a DIP switch 
+setting. (See "For USB Interface" on page 40.)
+Maintenance Counter
+For the TM-T88IV, a maintenance counter is added.
+With one of the interface boards above, the USB controller on the main circuit board 
+operates for transmission.
+What is the USB low power consumption mode?
+You can reduce the power consumption when the printer is in the standby mode.
+What is the maintenance counter?
+With this function, printer information such as a number of lines printed, the number of 
+autocutting, and printer operation time after the printer starts working is automatically saved 
+in the printer memory. You can read the information with the Status API of the APD or 
+OPOS ADK to use it for periodical checks or part replacement.

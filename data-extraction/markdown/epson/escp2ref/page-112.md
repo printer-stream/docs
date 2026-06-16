@@ -1,0 +1,29 @@
+## Format
+
+| Hex     |   1B |   67 |
+|---------|------|------|
+| Decimal |   27 |  103 |
+
+## Function
+
+Selects 15-cpi character printing
+
+## Default
+
+10-cpi characters
+
+## Notes
+
+If you change the fixed-pitch setting with this command during proportional mode (selected with the ESC p command), the change takes effect when the printer exits proportional mode.
+
+Printers featuring this command
+
+FX-2170, DFX-5000+
+
+Model-dependent variations
+
+None
+
+## Related topics
+
+ESC M, ESC P, ESC p, ESC !, Selecting the pitch

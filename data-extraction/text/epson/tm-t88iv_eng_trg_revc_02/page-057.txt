@@ -1,0 +1,26 @@
+Chapter 3   Application Development Infor-
+57
+3
+Application Development Information
+This chapter describes how to control the printer and gives information useful for printer 
+application development.
+How to Control the Printer
+Use a driver or ESC/POS commands to control the printer.
+Selecting a Driver
+Choose one of the drivers, Advanced Printer Driver (APD) or OPOS ADK, depending on the 
+application operating environment. You cannot control the same printer with both of the drivers.
+For information about the driver operating environment, see the installation manual for each 
+driver.
+When you newly develop an application
+• Use APD if you want to print True Type fonts or print much graphics.
+• OPOS ADK is recommended for system extensibility. An OPOS driver is provided for various 
+peripherals and it is a POS industry standard now. It enables efficient POS system 
+establishment, reduction of development cost, and effective use of application asset.
+When APD is used for your existing application
+Use APD.
+When OPOS ADK is used for your existing application
+Use OPOS ADK.
+You can use all functions including ones not supported by OPOS ADK or APD by using a 
+driver with ESC/POS command. Use the DIRECT I/O function of OPOS ADK, the control A 
+command of APD, or Status API to send ESC/POS command from each driver. (See 
+ "ESC/POS command functions" on page 58.)

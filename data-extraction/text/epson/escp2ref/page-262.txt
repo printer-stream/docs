@@ -1,0 +1,31 @@
+Select Characters        R-31
+Sending user-defined characters to the printer
+ESC/P 2
+ESC/P
+For 24/48-pin printers, use the ESC & command to send user-defined data to the
+printer. The format of the command is:
+ESC & NUL n m [a0 a1 a2 d0 d1 d2 . . . dk]
+The value for n is the location of the first consecutive character you wish to
+redefine; m is the last character. See the ASCII character table in the Appendix for
+the order of the characters. To define just one character, n is the same as m.
+Parameter a0 specifies the number of blank columns to the left of the character
+and a2 the blank columns to the right. The value for a1 specifies the width of the
+character you are defining in dot columns.
+Repeat the data within the brackets for each character you are defining. You must
+send a0, a1, and a2 for each character you define. After sending a0, a1, and a2, send
+the actual dot data for each character, as described in “Preparing data.”
+The following example replaces the + character with the following user-defined
+character:
+First set the traits. For this character, define a normal height, fixed-pitch, LQ-
+mode character. The following commands set the traits (see “Setting user-defined
+character traits”):
+ESC x 1
+Selects LQ mode
+ESC p 0
+Cancels proportional spacing
+ESC T 
+Cancels super/subscript
+ESC 5 
+Cancels italic printing
+Next, send the data for the character.
+The character code of the character being replaced (+) is 43. Set n and m to 43.

@@ -1,0 +1,27 @@
+Chapter 2   Setup
+41
+2
+Selecting the Print Density (DIP Switch 2-3/2-4)
+Function
+SW 2-3
+SW2-4
+Low power consumption mode
+ON
+ON
+Print density (Standard)
+OFF
+OFF
+Print density (Darker than standard)
+ON
+OFF
+Print density (Dark)
+OFF
+ON
+•
+If the print density is set to “Darker than standard” or ”Dark” level, printing speed may be 
+reduced.
+•
+The print density can be set with DIP switches (2-3/2-4) or to the customized value. (See 
+"Setting the Memory Switches" on page 43.) The initial setting of the customized value is 
+“Depends on the DIP switch settings.” If the customized value is changed, the value set 
+with the customized value is enabled.

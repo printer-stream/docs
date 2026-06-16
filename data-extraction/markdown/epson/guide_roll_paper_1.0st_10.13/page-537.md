@@ -1,0 +1,21 @@
+## C O N F I D E N T I A L
+
+- ■ There are two types of maintenance counters: resettable counters and accumulation counters. A resettable counter is a maintenance counter that can be initialized, and an accumulation counter indicates the counter value from when the printer starts operation. An accumulation counter cannot be initialized (see GS g 2 for details of the accumulation counter.)
+- ■ Featuring counters differ, depending on the printer model. See GS g 2 for details.
+- ■ Take the following into account when writing data to a non-volatile memory.
+- Do not turn off the power or reset the printer from the interface when this command is being executed.
+- The printer may be in BUSY state when processing this command. In this case, be sure not to send a command from the host to the printer, because the printer will not receive the command.
+- Excessive use of this function may destroy the non-volatile memory. As a guideline, do not use any combination of the following commands more than 10 times per day for writing data to the nonvolatile memory: GS ( A (part of functions), GS ( C (part of functions) , GS ( E (part of functions) , GS ( L / GS 8 L (part of functions) , GS ( M (part of functions) , GS g 0 , FS g 1 , FS q .
+- ■ The maintenance counter value can be transmitted by GS g 2 .
+- ■ Note the rules below for the operating NV memory (store data / cancel data):
+- Even if the FEED button is pressed, the printer does not feed paper.
+- The printer does not process real-time commands.
+- Even if 'ASB is enabled' is specified, the printer does not send ASB status.
+- ■ The maintenance counter value can be used for establishing the time for replacing consumed parts or cleaning.
+- ■ Types of counters differ, depending on the printer models (see the model-dependent information of GS g 2 ).
+
+[Model-dependent variations] None
+
+## Program Example
+
+PRINT #1, CHR$(&amp;H1D); Ó g0 Ó ;CHR$(0);CHR$(11);CHR$(0); ← Initializes print character counter

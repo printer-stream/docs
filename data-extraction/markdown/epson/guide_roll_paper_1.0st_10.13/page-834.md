@@ -1,0 +1,15 @@
+## C O N F I D E N T I A L
+
+[Model-dependent variations] TM-L90 , TM-P60
+
+## TM-L90
+
+TM-L90 with Peeler does not support this function.
+
+## TM-P60
+
+Refer to the [Model information] of &lt;Function 33&gt; of this command for details of the paper layout error.
+
+If a paper layout error occurs when printing the first sheet when the peeler cover is closed, when the power is turned on, or the printer is reset, the paper may not be set in the correct position.
+
+When it is difficult to position the paper, it is possible to avoid paper layout errors by setting a high value for this function. However, if you set a high value for this function, the changed alignment of the printing position of the first sheet may adversely affect the printing of subsequent sheets.

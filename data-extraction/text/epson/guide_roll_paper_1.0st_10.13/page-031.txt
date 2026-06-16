@@ -1,0 +1,82 @@
+C O N F I D E N T I A L
+Paper roll
+TM-T70 supported commands
+ 
+Ver. 10.13
+p. 31
+GS ( k
+EXECUTING + SETTING
+Specify and print the symbol
+TWO DIMENSION CODE COMMANDS
+GS ✻
+SETTING COMMAND
+Define downloaded bit image
+BIT-IMAGE COMMANDS
+GS /
+EXECUTING COMMAND
+Print downloaded bit image
+BIT-IMAGE COMMANDS
+GS :
+SETTING COMMAND
+Start/end macro definition
+MACRO FUNCTION COMMANDS
+GS B
+SETTING COMMAND
+Turn white/black reverse printing mode on/off
+CHARACTER COMMANDS
+GS H
+SETTING COMMAND
+Select printing position of HRI characters
+BAR CODE COMMANDS
+GS I
+EXECUTING COMMAND
+Transmit printer ID
+MISCELLANEOUS COMMANDS
+GS L
+SETTING COMMAND
+Set left margin
+PRINT POSITION COMMANDS
+GS P
+SETTING COMMAND
+Set horizontal and vertical motion units
+MISCELLANEOUS COMMANDS
+GS V
+EXECUTING COMMAND
+Select cut mode and cut paper
+MECHANISM CONTROL COMMANDS
+GS W
+SETTING COMMAND
+Set printing area width
+PRINT POSITION COMMANDS
+GS \
+EXECUTING COMMAND
+Set relative vertical print position in page mode
+PRINT POSITION COMMANDS
+GS ^
+EXECUTING COMMAND
+Execute macro
+MACRO FUNCTION COMMANDS
+GS a
+EXECUTING + SETTING
+Enable/disable Automatic Status Back (ASB)
+STATUS COMMANDS
+GS b
+SETTING COMMAND
+Turn smoothing mode on/off
+CHARACTER COMMANDS
+GS f
+SETTING COMMAND
+Select font for HRI characters
+BAR CODE COMMANDS
+GS g 0
+SETTING COMMAND
+Initialize maintenance counter
+MISCELLANEOUS COMMANDS
+GS g 2
+EXECUTING COMMAND
+Transmit maintenance counter
+MISCELLANEOUS COMMANDS
+Command
+Classification
+Name
+Function type

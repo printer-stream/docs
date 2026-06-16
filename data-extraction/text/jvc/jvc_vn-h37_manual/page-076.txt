@@ -1,0 +1,38 @@
+73 
+Format  /api/param?network.interface.ipv6.link_local(Number) 
+Exampleto get first link local address  /api/param?network.interface.ipv6.link_local(1) 
+Example of Response  network.interface.ipv6.link_local(1)=fe80::280:88ff:fe41:400c&200 OK 
+Interpretation  Acquire the link local address of IPv6. Specify from 1 to 8 for Number, and get addresses from 1 
+till vacant address is returned. There is no API for setting link local address of IPv6. 
+Allowed users  admin, operator, user 
+ 
+Getting Global Address of IPv6 
+Format  /api/param?network.interface.ipv6.global(Number) 
+Exampleto get first global address  /api/param?network.interface.ipv6.global(1) 
+Example of Response when no global address is set network.interface.ipv6.global(1)=&200 OK 
+Interpretation  Acquire the global address of IPv6. Specify from 1 to 8 for Number, and get addresses from 1 till 
+vacant address is returned. There is no API for setting global address of IPv6. 
+Allowed users  admin, operator, user 
+ 
+Getting MAC Address 
+Format  /api/param?network.interface.mac 
+Example of Response  network.interface.mac=008088001AEF&200 OK 
+Interpretation  Acquire the MAC address. A 12-byte ASCII character string will be returned. There is no API for 
+setting MAC address. 
+Allowed users  admin, operator, user 
+ 
+Getting TOS Value of Stream 
+Format  /api/param?network.interface.dscp 
+Example of Response  network.interface.dscp =56&200 OK 
+Interpretation  Acquire TOS that includes DHCP field. 
+Allowed users  admin, operator, user 
+ 
+Setting TOS Value of Stream 
+Format  /api/param?network.interface.dscp =data 
+Example  /api/param?network.interface.dscp =56 
+Example of Response  
+ network.interface.dscp&202 Accepted(network.interface.status=restart) 
+Interpretation  Change TOS that includes DHCP field. The range of set value is between 0 to 255 though MSB 6 
+bits in the value is valid. To validate the change, use "network.interface.status=restart" API. 
+Allowed user  admin 
+Downloaded from www.Manualslib.com manuals search engine 

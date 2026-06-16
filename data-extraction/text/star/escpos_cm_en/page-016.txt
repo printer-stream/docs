@@ -1,0 +1,85 @@
+ESC/POS Command Specifications
+16
+Rev.2.52
+1-2-4 
+Data Reception Timing (Compatibility Mode) 
+Standards
+Minimum [ns]
+Maximum [ns]
+Data Hold Time (host)
+tHold-1
+-
+500
+Data Hold Time (printer)
+tHold-2
+-
+-
+Data Setup Time 
+tSetup
+-
+500
+STROBE Pulse Width 
+tSTB
+-
+500
+READY Cycle Idle Time 
+tReady
+-
+-
+BUSY Output Delay Time 
+tBUSY
+0
+500
+Data Processing Time 
+tReply
+0
+∞
+ACKNLG Pulse Width 
+tACK
+1usec/9usec (*1) 
+-
+BUSY Cancel Time 
+tnBUSY
+0
+∞
+ACK Cycle Idle Time 
+tNext
+-
+0
+	
+(*1) Memory Switch Setting: ACK Pulse Width
+	
+	
+	
+	
+	
+	
+ON  	 = 9usec
+	
+	
+	
+	
+	
+	
+	
+	
+	
+OFF = 1usec (Default)
+ 
+tHold-1 
+tSTB 
+tSetup 
+tHold-2 
+tACK 
+tReady 
+tBusy 
+tReply 
+Data 
+Data  n 
+tNext 
+Peripheral Busy 
+tnBUSY 
+nStrobe 
+Busy 
+nACK 
+Data  n+1 

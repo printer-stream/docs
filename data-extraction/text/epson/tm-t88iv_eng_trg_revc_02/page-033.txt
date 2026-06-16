@@ -1,0 +1,15 @@
+Chapter 2   Setup
+33
+2
+Setup
+This chapter describes setup and installation of the product and peripherals.
+Flow of Setup
+This chapter consists of the following sections along with the setup flow of the product and 
+peripherals. 
+1. Installing the Printer (page 34)
+6. Connecting the Power Supply Unit (PS-180) (page 54)
+5. Connecting the Printer to the Host Computer (page 46)
+3. Setting the Memory Switches (page 43)
+7. Connecting the Cash Drawer (page 55)
+2. Setting the DIP Switches (page 35)
+4. Adjusting the Paper Roll Near-End Sensor (page 45)

@@ -1,0 +1,351 @@
+ESC/POS Command Specifications
+367
+Rev.2.52
+• ESC/POS Black Mark Related Commands (When black marks are effective) 
+Commands
+Model Name
+TSP700
+TSP600
+TSP800
+TUP900
+TSP1000
+TSP700II
+TSP650
+TUP500
+TSP800II
+FVP10
+BSC10
+TSP043
+TSP650II
+TSP650IISK
+FF
+×
+×
+×
+×
+×
+Ver5.0 
+or later
+×
+×
+Ver2.0 
+or later
+Ver2.0 
+or later
+×
+×
+×
+×
+DLE ENQ
+×
+×
+×
+×
+×
+Ver5.0 
+or later
+×
+×
+Ver2.0 
+or later
+Ver2.0 
+or later
+×
+×
+×
+×
+GS FF
+×
+×
+×
+×
+×
+Ver5.0 
+or later
+×
+×
+Ver2.0 
+or later
+Ver2.0 
+or later
+×
+×
+×
+×
+GS ( F
+×
+×
+×
+×
+×
+×
+×
+×
+×
+×
+×
+×
+×
+×
+GS ( M n=1
+×
+×
+×
+×
+×
+×
+×
+×
+×
+×
+×
+×
+×
+×
+GS ( M n=2
+×
+×
+×
+×
+×
+×
+×
+×
+×
+×
+×
+×
+×
+×
+GS ( M n=3
+×
+×
+×
+×
+×
+×
+×
+×
+×
+×
+×
+×
+×
+×
+GS <
+×
+×
+×
+×
+×
+Ver5.0 
+or later
+×
+×
+Ver2.0 
+or later
+Ver2.0 
+or later
+×
+×
+×
+×
+GS V
+×
+×
+×
+×
+×
+Ver5.0 
+or later
+×
+×
+Ver2.0 
+or later
+Ver2.0 
+or later
+×
+×
+×
+×
+•  STAR Original Commands 
+Commands
+Model Name
+TSP700
+TSP600
+TSP800
+TUP900
+TSP1000
+TSP700II
+TSP650
+TUP500
+TSP800II
+FVP10
+BSC10
+TSP043
+TSP650II
+TSP650IISK
+ESC GS =
+×
+×
+×
+×
+×
+Ver5.0 
+or later
+×
+×
+Ver2.0 
+or later
+Ver2.0 
+or later
+×
+×
+○
+○
+ESC GS t
+×
+×
+×
+×
+×
+Spec.A:
+Ver5.0 
+or later
+×
+×
+Spec.A:
+Ver2.0 
+or later
+Spec.A:
+Ver2.0 
+or later
+×
+×
+Spec.B
+Spec.B
+ESC GS +
+×
+×
+×
+×
+×
+Ver5.0 
+or later
+×
+×
+Ver2.0 
+or later
+Ver2.0 
+or later
+×
+×
+○
+○
+ESC GS # m
+×
+×
+×
+×
+×
+Spec.C:
+Ver5.0 
+or later
+×
+×
+Spec.C:
+Ver2.0 
+or later
+Spec.C:
+Ver2.0 
+or later
+×
+×
+Spec.C
+Spec.C
+ESC RS F
+×
+×
+×
+×
+×
+Ver5.0 
+or later
+×
+×
+Ver2.0 
+or later
+Ver2.0 
+or later
+×
+×
+○
+○
+ESC RS C
+×
+×
+×
+×
+×
+Ver5.0 
+or later
+×
+×
+Ver2.0 
+or later
+Ver2.0 
+or later
+×
+×
+○
+×
+ESC RS L
+×
+×
+×
+×
+×
+Spec.B:
+Ver5.0 
+or later
+×
+×
+Spec.B:
+Ver2.0 
+or later
+Spec.B:
+Ver2.0 
+or later
+×
+×
+Spec.B
+Spec.B
+ESC GS ETX
+×
+×
+×
+×
+×
+Spec.C:
+Ver5.0 or 
+later
+×
+×
+Spec.C:
+Ver2.0 or 
+later
+Spec.B:
+Ver.1.5 or 
+older
+Spec.C:
+Ver2.0 or 
+later
+×
+×
+Spec. B:
+Ver. 1.2
+or older
+Spec. C:
+Ver.2.0 or 
+later
+Spec.C

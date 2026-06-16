@@ -1,0 +1,84 @@
+<!-- image -->
+
+## ESC X n1 n2 d1...dk
+
+[Name] Fine density bit image (Compatible with 24 bit wire dots)
+
+[Code]
+
+ASCII
+
+ESC
+
+X
+
+n1
+
+n2
+
+d1
+
+...
+
+dk
+
+Hex.
+
+1B
+
+58
+
+n1
+
+n2
+
+d1
+
+...
+
+dk
+
+Decimal
+
+27
+
+88
+
+n1
+
+n2
+
+d1
+
+...
+
+dk
+
+[Defined Area]
+
+1 ≤ (n1 + n2 x 256) ≤ k = {(n1 + n2 x 256) x 3} 0 ≤ d ≤ 255
+
+[Initial Value]
+
+[Function]
+
+- - -
+
+Prints input bit images with 8 dots/mm resolution for both horizontal and vertical.
+
+The following shows the data processing in this command.
+
+- When {(n1 + n2 x 256) x 3} exceeds the printable region, data after d1 is handled as normal data.
+- When {(n1 + n2 x 256) x 3} exceeds the printable region that is currently set, only the data in the
+
+printing region is printed.
+
+At this time, all data for the print region is discarded.
+
+- If the current position already exceeds the print region, this command discards all data.
+
+<!-- image -->
+
+-----------------------------------------------------------------------------
+
+printable region

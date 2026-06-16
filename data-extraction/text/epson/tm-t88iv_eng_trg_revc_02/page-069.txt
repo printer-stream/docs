@@ -1,0 +1,15 @@
+Chapter 4   Handling
+69
+4
+Attaching/Removing the Connector Cover
+Attaching the Connector Cover
+1
+Connect all the cables.
+The connector cover has three possible cable exits: on the right, left, and back.
+2
+Position the two hooks on the connector cover so that they hook the 
+holes on the printer case. Push the connector cover down until it clicks.
+Removing the Connector Cover
+Place the printer with its bottom up. While pushing the both sides of the connector cover toward 
+inside, push it down to detach the two hooks on it from the printer case.
+Hooks

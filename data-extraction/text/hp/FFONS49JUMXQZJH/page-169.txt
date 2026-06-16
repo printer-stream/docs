@@ -1,0 +1,54 @@
+The OutputExtended Error Instruction,
+ESC.E
+UESCRIPHUN The output extended error instruction, ESC . E, outputs
+a number which deﬁnes any RS-232—Crelated I/O error and turns off
+the front-panel ERRORlight.
+USES
+The instruction is used to deﬁne what type of RS-232-Crelated
+I/O error has occurred,if any.
+SYNTAX_
+E
+EXPI-ANAHDN No parameters
+are used.
+RESPONSE
+<DEC>
+The plotter’s response is a decimal number, either 0 or —
+in the range 10-16, followed by the output terminator.
+The meaning of the response is as defined in the follow­
+ing table.
+Error
+No.
+Meaning
+0
+10
+11
+12
+13
+14
+15
+16
+No 1/0 error has occurred
+Output instruction received while another
+output instruction is executing. The original
+instruction will continue normally; the one
+in error will be ignored.
+Invalid byte received after first two charac­
+ters,
+., in a devicecontrolinstruction.
+Invalid byte received while parsing a device
+controlinstruction. The parameter containing
+the invalid byte and all followingparameters
+are defaulted.
+Parameter out ofrange.
+Too many parameters received. Additional
+parameters beyond the proper number are ig­
+nored; parsing of the instruction ends when a
+colon (normal exit) or the ﬁrst byte of another
+instruction is received (abnormal exit).
+A framing error, parity error, or overrun
+error has been detected.
+The input buffer has overﬂowed. As a result,
+one or more bytes of data have been lost, and
+therefore an HP-GL error will probably occur.
+RS-232—C/CCITTV.24INTERFACING
+10-27

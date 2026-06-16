@@ -1,0 +1,42 @@
+Parallel Interface        A-33
+Parallel interface timing
+9-pin printers (excluding MX-series, and LX-300 and later printers)
+24/48-pin printers (excluding LQ-1500, SQ-2000, and LQ-300 and later printers)
+MX-series printers
+LQ-1500, SQ-2000
+BUSY
+ACKNLG
+DATA
+STROBE
+BUSY
+ACKNLG
+DATA
+STROBE
+0.5 µs (min.)
+0.5 µs (min.)
+0.5 µs (min.)
+0.5 µs (min.)
+0.5 µs (min.)
+1.0 µs (min.)
+Approx. 5 µs
+Approx. 7 µs
+Approx. 5 µs
+Approx. 5 µs
+BUSY
+ACKNLG
+DATA
+STROBE
+BUSY
+ACKNLG
+DATA
+STROBE
+0.5 µs (min.)
+0.5 µs (min.)
+0.5 µs (min.)
+0.5 µs (min.)
+0.5 µs (min.)
+0.5 µs (min.)
+Approx. 5 µs
+Approx. 5 µs
+Approx. 4.5 µs
+Approx. 4.5 µs

@@ -1,0 +1,43 @@
+Plotter Default Conditions
+Plotting mode
+Relative character direction
+Line type
+Line pattern length
+Input window
+Relative character size
+Scale
+Symbol mode
+Tick length
+(on either side of axis)
+Standard character set
+Alternate character set
+Labelterminator
+Character slant
+Mask value
+Digitize clear
+Pen velocity
+*Chord angle
+Absolute (PA)
+Horizontal (DR 1,0)
+Solid line
+4%of the distance from P1 to P2
+Mechanical limits of plotter
+(SR .75 , 1.5)
+width = 0.75% of (P2XV Pix)
+height : 1.5%of (P2y- Ply)
+Off
+Off
+0.5% of (P2x —Plx) or (P2y - Ply)
+Set 0
+Set 0
+ETX (ASCII decimal equivalent 3)
+00
+223 , O,0
+On
+38.1 cm/s (15in./s)
+Set to 5 degrees for AA, AR, and CI
+P1 and P2 are changed only with the initialize command (IN).They are
+not affected by device clear and the default command (DF).
+*Applicable only to RS-232-Cplotters that have the serial prefix number 2312A
+or higher.
+REFERENCE MATERIAL C-5

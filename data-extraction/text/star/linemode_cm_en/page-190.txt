@@ -1,0 +1,171 @@
+  
+• TSP700II 
+Count Up 
+Predetermined 
+Times 
+Maintenance 
+Counter 
+Counter 
+Maximum Value 
+Counter Type 
+Estimated Life 
+EEPROM Writing Timing 
+Permanent 
+Counter 
+Head 
+Energizing 
+Count 
+800 
+Million 
+dot lines 
+For 
+each 
+4,000 
+dot 
+lines 
+(500 
+mm) 
+0xF4240 
+(1 
+Million) 
+• When cutting paper 
+• Every 10 minutes (when idling) from 
+when power is turned on. However, one 
+condition 
+is 
+that 
+the 
+count 
+up 
+predetermined count is exceeded. 
+ 
+LF 
+Motor 
+Traveling 
+Distance 
+100 km; 800 
+Million 
+dot 
+lines 
+For 
+each 
+4,000 
+dot 
+lines 
+(500 
+mm) 
+0xF4240 
+(1 
+Million) 
+• When cutting paper 
+• Every 10 minutes (when idling) from 
+when power is turned on. However, one 
+condition 
+is 
+that 
+the 
+count 
+up 
+predetermined count is exceeded. 
+ 
+Cutter Drive 
+Count 
+200,000 cuts
+Every 10 cuts
+0xF4240 
+(1 
+Million) 
+• When cutting paper 
+• Every 10 minutes (when idling) from 
+when power is turned on. However, one 
+condition 
+is 
+that 
+the 
+count 
+up 
+predetermined count is exceeded. 
+User Counter 
+Head 
+Energizing 
+Count 
+800 
+Million 
+dot lines 
+For 
+each 
+4,000 
+dot 
+lines 
+(500 
+mm) 
+0xF4240 
+(1 
+Million) 
+• When cutting paper 
+• Every 10 minutes (when idling) from 
+when power is turned on. However, one 
+condition 
+is 
+that 
+the 
+count 
+up 
+predetermined count is exceeded. 
+ 
+LF 
+Motor 
+Traveling 
+Distance 
+100 km; 800 
+Million 
+dot 
+lines 
+For 
+each 
+4,000 
+dot 
+lines 
+(500 
+mm) 
+0xF4240 
+(1 
+Million) 
+• When cutting paper 
+• Every 10 minutes (when idling) from 
+when power is turned on. However, one 
+condition 
+is 
+that 
+the 
+count 
+up 
+predetermined count is exceeded. 
+ 
+Cutter Drive 
+Count 
+200,000 cuts
+Every 10 cuts
+0xF4240 
+(1 
+Million) 
+• When cutting paper 
+• Every 10 minutes (when idling) from 
+when power is turned on. However, one 
+condition 
+is 
+that 
+the 
+count 
+up 
+predetermined count is exceeded. 
+• The head energizing count is sometimes counted even when there is not energizing data. (Such as when  
+blank space data is included in the font data.) 
+• The estimated life prescribes the number of count of the maintenance counter. It does not match the life  
+specifications. 
+• When the permanent counter exceeds the counter maximum value, thereafter the permanent counter  
+and user counter both count up and then stop. 
+• It is possible to clear the user counter, but it is not possible to clear the permanent counter. 
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+STAR Line Mode Command Specifications 
+5-18 

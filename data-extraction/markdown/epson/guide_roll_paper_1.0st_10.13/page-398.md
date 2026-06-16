@@ -1,0 +1,52 @@
+## C O N F I D E N T I A L
+
+## [Model-dependent variations]
+
+## TM-J2000/J2100 , TM-T90 , TM-T70 , TM-T20 , TM-T88IV , TM-T88V , TM-L90 ,
+
+TM-P60
+
+## Program Example for all printers
+
+PRINT #1, CHR$(&amp;H1D);"h";CHR$(80); ← Set height
+
+PRINT #1, CHR$(&amp;H1D);"w";CHR$(3); ← Set width size to 3
+
+PRINT #1, CHR$(&amp;H1D);"k";CHR$(2); ← Print bar code
+
+PRINT #1, "496595707379";CHR$(0);
+
+PRINT #1, CHR$(&amp;HA);
+
+PRINT #1, CHR$(&amp;H1D);"w";CHR$(4); ← Set width size to 4
+
+PRINT #1, CHR$(&amp;H1D);"k";CHR$(2); ← Print bar code
+
+PRINT #1, "496595707379";CHR$(0);
+
+PRINT #1, CHR$(&amp;HA);
+
+PRINT #1, CHR$(&amp;H1D);"w";CHR$(5); ← Set width size to 5
+
+PRINT #1, CHR$(&amp;H1D);"k";CHR$(2); ← Print bar code
+
+PRINT #1, "496595707379";CHR$(0);
+
+## TM-J2000/J2100
+
+## The module width differs, depending on the specification. (Unit: mm)
+
+|       |                                           | Binary level bar code   | Binary level bar code    |
+|-------|-------------------------------------------|-------------------------|--------------------------|
+| n     | Module width (mm) for multilevel bar code | Thin element width (mm) | Thick element width (mm) |
+| 2, 68 | 0.282 {0.011 inch}                        | 0.282 {0.011 inch}      | 0.706 {0.028 inch}       |
+| 69    | 0.353 {0.014 inch}                        | 0.353 {0.014 inch}      | 0.918 {0.036 inch}       |
+| 3, 70 | 0.423 {0.017 inch}                        | 0.423 {0.017 inch}      | 1.129 {0.044 inch}       |
+| 71    | 0.494 {0.019 inch}                        | 0.494 {0.019 inch}      | 1.271 {0.050 inch}       |
+| 4, 72 | 0.564 {0.022 inch}                        | 0.564 {0.022 inch}      | 1.411 {0.056 inch}       |
+| 73    | 0.635 {0.025 inch}                        | 0.635 {0.025 inch}      | 1.624 {0.064 inch}       |
+| 5, 74 | 0.706 {0.028 inch}                        | 0.706 {0.028 inch}      | 1.834 {0.072 inch}       |
+| 75    | 0.776 {0.031 inch}                        | 0.776 {0.031 inch}      | 2.047 {0.077 inch}       |
+| 6, 76 | 0.847 {0.033 inch}                        | 0.847 {0.033 inch}      | 2.258 {0.089 inch}       |
+
+<!-- image -->

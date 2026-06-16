@@ -1,0 +1,169 @@
+R-58        Select the Print Position
+nL =
+(
+)
+MOD
+horizontal position
+left m
+in position
+defined unit
+(
+) (
+arg
+)
+(
+)
+−
+−
+×
+
+
+
+
+
+
+
+
+
+
+
+
+1
+256
+The defined unit varies as follows:
+ESC/P 2 printers
+The unit defined with the ESC ( U command
+Non-ESC/P 2 printers 1/60 inch
+The format of the ESC \ command is as follows:
+ESC \ nL nH
+The horizontal position is determined by the formula below.
+(horizontal position) = ((nH × 256) + nL) × (defined unit) + (current position)
+To move to the right of the current print position
+nH =
+(
+)
+INT
+horizontal position
+current position
+defined unit
+(
+)
+(
+)
+(
+)
+−
+×
+
+
+
+
+
+
+
+
+
+
+
+
+1
+256
+nL =
+(
+)
+MOD
+horizontal position
+current position
+defined unit
+(
+) (
+)
+(
+)
+−
+×
+
+
+
+
+
+
+
+
+
+
+
+
+1
+256
+To move to the left of the current print position
+nH =
+(
+)
+32768
+1
+256
+−
+−
+×
+
+
+
+
+
+
+
+
+
+
+
+
+INT
+current position
+horizontal position
+defined unit
+(
+) (
+)
+(
+)
+nL =
+(
+)
+32768
+1
+256
+−
+−
+×
+
+
+
+
+
+
+
+
+
+
+
+
+MOD
+current position
+horizontal position
+defined unit
+(
+) (
+)
+(
+)
+The defined unit varies as follows:
+ESC/P 2 printers 
+The unit defined with the ESC ( U command
+Non-ESC/P2,
+24/48-pin printers
+LQ mode
+1/180 inch
+Draft mode 1/120 inch
+9-pin printers
+1/120 inch

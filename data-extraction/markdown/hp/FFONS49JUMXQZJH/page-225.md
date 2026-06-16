@@ -1,0 +1,42 @@
+## Subject Index (Continued)
+
+| On-line, Programmed Off State . . . . . . . .                        | . . . . .1 . . . . . . . . . . . . . . . . . . . 10-6   |
+|----------------------------------------------------------------------|---------------------------------------------------------|
+| On-1ine, Programmed On State . . . . . . . .                         | . . . . . . . . . . . . . . 10-3, 10-7, 10-24           |
+| Optional Parameters . . . . . . . . . . . . . . . . . .              | . . . . . . . . . . . . . . . . 1-7, 1-8, 10-23         |
+| Output Actual Position and Pen Status Instruction, OA . . . . . .    | . . . . . . . . . . . . . . . . 7-3, 8-11, B-5          |
+| Output Buffer Space Instruction, ESC . B                             | . . . . . . . . . . . . . . . . . 10-26, B-12           |
+| Output Commanded Position and Pen Status Instruction, OC . . . . . . | . . . . . . . . . . . . . . . . . . . . . 7-4, B-6      |
+| Output Digitized Point and Pen Status Instruction, OD . . . . . .    | . . . . . . . . . . . . . 6-3 thru 6-7, B-6             |
+| Output Error Instruction, OE . . . . . . . . . .                     | . . . . . . . . . . . . . . . . . . . . . 7-5, B-6      |
+| Output Extended Error Instruction, ESC . E                           | . . . . . . . . . . 10-27, B-12, C-6                    |
+| Output Extended Status Instruction, ESC .                            | O . . . . . . . . . . . . . 10-38, B-14                 |
+| Output Factors Instruction, OF . . . . . . . .                       | . . . . . . . . . . . . . . . . . . . . . 7-6, B-6      |
+| Output Identification Instruction, OI . . .                          | . . . . . . . . . . . . . . . . . . . . . 7-7, B-6      |
+| Output Initiator Character . . . . . . . . . . . .                   | 10-15, 10-17, 10-20, 10-29, 10-34                       |
+| Output Options Instruction, OO . . . . . . .                         | . . . . . . . . . . . . . . . . . . . . . 7-7, B-7      |
+| Output P1 and P2 Instruction, OP . . . . .                           | . . . . . . . . . . . . . . . . . . . . . . . . . 2-5   |
+| Output Status Instruction, OS . . . . . . . . .                      | . . . . . . . . . . . . . . . . . 6-5, 7-8, B-7         |
+| Output Terminator . . . . . . . . . . . . . . . . . . . .            | . . . . . . . . . 7-1, 7-2, 10-15, 10-17,               |
+| Output Trigger Character . . . . . . . 10-14,                        | 10-17, 10-20, 10-21, 10-29, 10-36                       |
+| Output Window Instruction, OW . . . . . . .                          | . . . . . . . . . . . . . . . 2-10, 2-11, B-7           |
+| P                                                                    |                                                         |
+| PA Instruction . . . . . . . . . . . . . . . . . . . . . . . .       | . . . . . . 3-1, 3-4 thru 3-8, 8-7, B-8                 |
+| PD Instruction . . . . . . . . . . . . . . . . . . . . . . .         | . . 3-2, 3-4, 3-6 thru 3-8, 8-7, B-8                    |
+| PR Instruction . . . . . . . . . . . . . . . . . . . . . . . .       | . . . . . . . . . 3-1, 3-8, 3-9, 3-10, B-8              |
+| PU Instruction . . . . . . . . . . . . . . . . . . . . . . .         | . . . . . . 3-2, 3-4 thru 3-8, 8-7, B-8                 |
+| P-mask . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   | .~. . . . . . . . . . . 1-12, 1-14, 6-7, 9-5            |
+| P1,P2 . . . . . . . . . . . . . . . . . . . . . . 2-3 thru           | 2-8, 5-11, 5-16, 5-22 thru 5-26, 8-2                    |
+| Paper Switch . . . . . . . . . . . . . . . . . . . . . . . . .       | . . . . . . . . . . . . . 2-2, 2-6, 2-10, 7-3           |
+| Parallel Poll . . . . . . . . . . . . . . . . . . . . . . . . . .    | . . . . . . . . 1-12, 1-14, 6-7, 9-5, A-1               |
+| Parameter Interaction in Labeling Commands                           | . . . . . . . . . 5-21thru 5-26                         |
+| Pattern Number . . . . . . . . . . . . . . . . . . . . . .           | . . . . . . . . . . . . . . . . . . . . . 4-6, B-5      |
+| Pen Down . . . . . . . . . . . . . . . . . . . . . . . . .           | 3-2, 3-3, 3-4, 3-5, 3-8, 5-19, 5-20, B-8                |
+| Pen Instructions, PU and PD . . . . . . . . . .                      | . . . . . . 3-2, 3-4 thru 3-8, 8-7, B-8                 |
+| Pen Up . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   | . . . . . . . . 3-2, 3-8, 5-19, 5-20, B-8               |
+| Pen Velocity . . . . . . . . . . . . . . . . . . . . . . . . . .     | . . . . . . . . . . . . . . . . . . . . . . 1-5, 3-3    |
+| Personal Computer . . . . . . . . . . . . . . . . . . .              | . . . . . . . . . . . . . . . . . . . 10-2, 10-3        |
+| Pie Charts . . . . . . . . . . . . . . . . . . . . . . . . . . . .   | . . . . . . . . . . . . . . . 1-15, 8-10, 8-13          |
+| Pin Allocations, RS-232-C . . . . . . . . . . . . .                  | . . . . . . . . . . . . . . . . . 10-11, 10-12          |
+| Plot Absolute Instruction, PA . . . . . . . . . .                    | . . . . . . 3-1, 3-4 thru 3-8, 8-7, B-8                 |
+| Plot Relative Instruction, PR . . . . . . . . . .                    | . . . . . . . . . 3-1, 3-8, 3-9, 3-10, B-8              |

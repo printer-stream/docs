@@ -1,0 +1,44 @@
+C O N F I D E N T I A L
+Paper roll
+Customize commands     GS ( E
+ 
+Ver. 10.13
+p. 722
+(nL + nH × 256) = 0, 1 (nL = 0, 1, nH = 0) [a = 100]
+(nL + nH × 256) = 0, 1, 48, 49 (nL = 0, 1, 48, 49,  nH = 0) [a = 111]
+(nL + nH × 256) = 0, 1, 48, 49 (nL = 0, 1, 48, 49,  nH = 0) [a = 112]
+(nL + nH × 256) = 0, 1 (nL = 1,  nH = 0,1 ) [a = 119]
+(nL + nH × 256) = 0, 1, 65535 (nL = 0,1, nH = 0, nL = 255,  nH = 255) [a = 120]
+1 ≤  (nL + nH × 256) ≤  5,  (1 ≤  nL ≤  5, nH = 0) [a = 121, 123, 125]
+(nL + nH × 256) = 0, 1  (nL = 0, 1,  nH = 0) [a = 122, 124, 126]
+TM-T88IV:
+a = 5, 6, 97, 116, 118
+[Other than the following models]
+a = 5, 6, 7, 97, 116, 118 [South Asia model]
+a = 5, 6, 97
+[Japanese model]
+0 ≤  (nL + nH × 256) ≤  6, (nL + nH × 256) = 100,
+65530 ≤  (nL + nH × 256) ≤  65535 [a = 5]
+(0 ≤  nL ≤  6, nH = 0), (nL = 100, nH = 0), (250 ≤  nL ≤  255, nH = 255)
+1 ≤  (nL + nH × 256) ≤  9 (1 ≤  nL ≤  9, nH = 0) [a = 6]
+0 ≤  (nL + nH × 256) ≤  1 (0 ≤  nL ≤  1, nH = 0) [a = 7]
+(nL + nH × 256) = 1, 2, 4, 128 (nL = 1, 2, 4, 128 , nH = 0) [a = 97]
+(nL + nH × 256) = 1, 257 (nL = 1, nH = 0, 1) [a = 116]
+(nL + nH × 256) = 70, 85 (nL = 70, 85 , nH = 0) [a = 118]
+TM-T88V:
+a = 3, 5, 6, 7, 8 ≤ a ≤ 10, 97, 98, 100 ≤ a ≤ 105, 111 112, 117, 119 ≤ a ≤ 126
+(a = 7: only for the South Asia model)
+(nL + nH × 256) =  2, 6 (nL = 2, 6, nH = 0) [80-mm paper width model 
+(when a = 3)]
+(nL + nH × 256) =  2 (nL = 2, nH = 0) [58-mm paper width model (when a = 3)]
+0 ≤  (nL + nH × 256) ≤  6, (nL + nH × 256) = 100
+65530 ≤  (nL + nH × 256) ≤  65535
+(0 ≤  nL ≤  6, nH = 0, nL = 100, nH = 0, 250 ≤  nL ≤  255, nH = 255)  [a = 5]
+1 ≤  (nL + nH × 256) ≤  13 (1 ≤  nL ≤  13, nH = 0) [a = 6]
+0 ≤  (nL + nH × 256) ≤  1 (0 ≤  nL ≤  1, nH = 0) [a = 7]
+0 ≤  (nL + nH × 256) ≤  5,  11 ≤  (nL + nH × 256) ≤  21, (nL + nH × 256) = 26,
+30 ≤  (nL + nH × 256) ≤  53, (nL + nH × 256) = 255, (0 ≤  nL ≤  5, 11 ≤  nL ≤ 21,
+nL = 26, 30 ≤  nL ≤  53,  nL = 255, nH = 0) 
+(nL = 255 is not supported by the South Asia model) [a = 8]
+0 ≤  (nL + nH × 256) ≤  17 (0 ≤  nL ≤  17, nH = 0) [a = 9]
+(nL + nH × 256) = 0, 1, 32 (nL = 0, 1, 32, nH = 0) [a = 10]

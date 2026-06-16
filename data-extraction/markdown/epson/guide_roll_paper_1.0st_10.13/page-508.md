@@ -1,0 +1,18 @@
+## C O N F I D E N T I A L
+
+| ESC T start position     | Start position/end position                                                          | Horizontal and vertical motion units used                    |
+|--------------------------|--------------------------------------------------------------------------------------|--------------------------------------------------------------|
+| Top left or bottom right | X: Vertical in relation to paper feed direction (horizontal direction of characters) | X: Horizontal (vertical in relation to paper feed direction) |
+| Top left or bottom right | Y: Paper feed direction (vertical direction of characters)                           | Y: Vertical (paper feed direction)                           |
+| Top right or bottom left | X: Paper feed direction (horizontal direction of characters)                         | X: Vertical (paper feed direction)                           |
+| Top right or bottom left | Y: Vertical in relation to paper feed direction (vertical direction of characters)   | Y: Horizontal (vertical in relation to paper feed direction) |
+
+- ■ If the line width is 2 dots or more, the line is thickened according to the rules shown in the table below, based on the relationship between the specified start coordinate and end coordinate. However, line data that exceeds the printing area is not saved in the print buffer.
+- ■ When this function is executed, the printing position does not change.
+
+| Condition 1                                                                    | Condition 2                                                | Line thickening method                                          |
+|--------------------------------------------------------------------------------|------------------------------------------------------------|-----------------------------------------------------------------|
+| Y start position = Y end position (Lines horizontal in relation to characters) | X start position < X end position X start position > X end | Thickened downward as seen with the start position at top left  |
+| Y start position = Y end position (Lines horizontal in relation to characters) | position                                                   | Thickened upward as seen with the start position at top left    |
+| X start position = X end position (Lines vertical in relation to characters)   | Y start position < Y end position                          | Thickened rightward as seen with the start position at top left |
+| X start position = X end position (Lines vertical in relation to characters)   | Y start position > Y end position                          | Thickened leftward as seen with the start position at top left  |

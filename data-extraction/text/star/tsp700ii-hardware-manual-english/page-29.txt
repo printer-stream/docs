@@ -1,0 +1,111 @@
+5-1.	 Recoverable errors
+Check the recovery conditions. The printer can be recovered while maintaining its current status.
+Error description
+POWER
+ERROR
+Recovery condition
+Thermal head high 
+temperature detection error
+Flashes at 0.5 sec-
+ond intervals
+OFF
+The printer recovers automatically when the thermal head 
+cools.
+Cover open error
+ON
+ON (Red)
+The printer recovers when you close the cover.
+Near end error
+ON
+Flashes orange 
+lamp at 1 second 
+intervals
+The printer recovers when you set a new paper roll and
+close the printer cover.
+Black mark error
+ON
+ON (Orange)
+The printer recovers when you set a new paper roll and
+close the printer cover.
+Paper out error
+ON
+ON (Orange)
+The printer recovers when you set a new paper roll and 
+close the printer cover.
+Ethernet link disconnection 
+detection (*1
+(Physical link disconnection)
+Flashes at 4 seo-nd 
+intervals.
+Flashes at 4 seo-nd 
+intervals.
+Connect an Ethernet cable. For details, see section 3-2-4, 
+"Ethernet Interface Cable."
+Ethernet link disconnection 
+detection (*1
+(IP address lost)
+Flashes at 0.25 seo-
+nd intervals.
+Flashes at 0.25 seo-
+nd intervals.
+Set the correct IP address and restart the printer.
+(*1: IFBD-HE07 only
+5-2.	 Unrecoverable errors
+Turn the printer off, check the recovery conditions, and then turn the printer back on.  
+If the same error occurs after you turn the printer back on, the printer needs to be repaired.
+Error description
+POWER
+ERROR
+Cause
+Recovery condition
+Cutter error
+Off
+Flashes red lamp at 
+0.125-second intervals
+Paper cutting in progress error
+After you restart the printer, the printer 
+recovers when the mobile cutter re-
+turns to its home position. (Note 3, 4)
+Flash memory error
+Off
+Flashes orange lamp 
+at 0.5 second intervals
+Flash memory access error
+-
+EEPROM error
+Off
+Flashes red lamp at 
+0.75 second intervals
+This is not a recoverable error.
+-
+SRAM error
+Off
+Flashes orange lamp 
+at 1 second intervals
+RAM access error
+-
+Head thermistor 
+error
+Off
+Flashes red lamp at 
+1.5 second intervals
+Detection of head thermistor error
+-
+Power voltage error
+Off
+Flashes orange lamp 
+at 2 second intervals
+Detection of power voltage error
+Check the condition of the power sup-
+ply, and restart the printer.
+	Note 1: 	If an unrecoverable error occurs, turn the power off immediately.
+	
+2: 	A power voltage error may be a result of a power supply malfunction.
+	
+3: 	If the paper is jammed, turn the power off, clear the jammed paper, and then turn the power back on.  
+For details, see section 6-2, “Removing Paper Jams”.
+If you find an error other than the above, try turning the power off, and then on.
+If the same error is displayed even after the power is turned on again, it may be a printer malfunction. Contact
+the seller. 
+- 29 -
+ 5. Error Indicators

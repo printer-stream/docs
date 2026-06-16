@@ -1,0 +1,53 @@
+Set the Printing Area        R-7
+The following diagram shows the printing area for single-sheet and continuous
+paper.
+ESC/P 2
+Single sheets
+Printing area = logical paper length
+Continuous paper
+Physical paper length = logical paper length
+ESC/P
+9-Pin ESC/P
+Single sheets
+Manual feed
+Physical page length = logical page length
+(same as continuous forms)
+Continuous paper
+Physical page length = local page length
+Cut-sheet feeder
+Logical page length = printable area
+Actual
+page
+length
+Printing
+area
+Page length
+setting in printer
+Actual
+page
+length
+Page length
+setting in printer
+Printing
+area
+Actual
+page
+length
+Page length
+setting in printer
+Printing
+area
+Actual
+page
+length
+Actual
+page
+length
+Printing
+area
+Printing
+area
+Page length
+setting in printer
+Page length
+setting in printer

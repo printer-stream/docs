@@ -1,0 +1,36 @@
+corner of the ﬁrst character space and the carriage-return point. After
+lettering a character, the pen stops at the lower-leftcorner of the next
+character space as shown below.For a further explanation of character
+spacing, refer to Spacing Between Characters in this chapter.
+—->
+WIDE
+<—
+HIGH/J.
+CHARACTER
+<___SPACE_’
+STARTING
+POINT
+LINE
+When the plotter receives the character, carriage return, while in label
+mode, it returns to a deﬁned carriage-return point. The carriage-return
+point usually reﬂects the pen’s position when the preceding LB instruc­
+tion was executed. The carriage-return point is updated to the current
+pen position whenever:
+0 one of the following instructions
+is executed: PA, PR, DI, DR, AA,
+AR, RO, DF, or IN.
+0 you use the front-panel CLEAR and RESET function keys or use the
+pen controls to move the pen to a new point.
+Labeling with Variables
+In some applications, it is desirable to label the plot using variables
+rather than literals to deﬁne the label string. Many different conven­
+tions are used in different computer languages and computers to deﬁne
+variable length and the character ﬁeld format in which these variables
+will be printed. Toavoid unexpected placement of the labels deﬁned by
+variables, refer to your computer manual for a deﬁnition of the conven­
+tions used to deﬁne the output character ﬁeld.
+Quotation marks are used by many computers to deﬁne the literal char­
+acters that are to be sent, but variables are not included within q_uo­
+tation marks. The comma is used by some computers as a delimiter
+5-8
+LABELING

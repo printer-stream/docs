@@ -1,0 +1,99 @@
+  
+ 
+ESC GS / 6  n 
+[Name] 
+Set partial cut before Auto Logo printing 
+[Code] 
+ASCII 
+ESC GS 
+/ 
+6
+n
+ 
+ 
+ 
+ 
+Hex. 
+1b 
+1d 
+2f 
+36
+n
+ 
+ 
+ 
+ 
+Decimal 
+27 
+29 
+47 
+54
+n
+ 
+ 
+ 
+ 
+[Defined Area] 
+0 ≤ n ≤ 1 
+[Initial Value] 
+n = 0 
+[Function] 
+Sets a partial cut before the Auto Logo printing.  
+ 
+This command is registered to the non-volatile memory by the “<ESC> <GS> / W” command. 
+ 
+This command is ignored when Auto Logo is being executed. 
+n 
+Setting 
+0 
+Does not execute a partial cut before the Auto Logo printing. 
+1 
+Executes a partial cut before the Auto Logo printing. 
+ 
+ 
+ 
+When printing Logo2 and Logo3 as Auto Logo printing like the one in the drawing below, this 
+command selects to execute a partial cut before printing Logo2 of the Auto Logo and Logo3. 
+ 
+If a partial cut is executed using this function, it is possible to provide coupons, etc., that are printed 
+using Auto Logo with a partial cut. 
+*************** 
+ MACDONALDS 
+*************** 
+1.CHEESBUGER       $2.00 
+2.COKE                    $1.00 
+ 
+---------------------- 
+TOTAL                   $3.00 
+******************** 
+ MACDONALDS 
+******************** 
+1.CHEESEBURGER  $2.00 
+2.COKE                      $1.00 
+ 
+-------------------------------------- 
+TOTAL                       $3.00 
+Header 
+     Header 
+COKE 
+Cheeseburger  
+Prints Logo 2 
+Prints Logo 3 
+Partial Cut 
+Partial Cut 
+Header 
+******************** 
+ MACDONALDS 
+1. Starts Auto Logo with trigger  
+    of cutting command. 
+2. Executes user macro 1. 
+4. Executes user macro 2. 
+    - Executes cut. 
+    - Executes Header logo 
+       printing. 
+3. Prints Auto Logo 
+ 
+ 
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+STAR Line Mode Command Specifications 
+3-119 

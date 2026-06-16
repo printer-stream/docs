@@ -1,0 +1,19 @@
+C-12   Character Code Tables
+Rev. B
+C.12  International Character Set
+ASCII codes (base 16)
+Korea
+Latin America
+Spain II
+Denmark II
+Norway
+Japan
+Spain I
+Italy
+Sweden
+Denmark I
+UK
+Germany
+France
+America
+Country

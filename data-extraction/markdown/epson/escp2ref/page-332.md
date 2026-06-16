@@ -1,0 +1,19 @@
+Color raster graphics printing with MicroWeave requires the addition of the MicroWeave command 'ESC ( i 01 00 n' and the select color command 'ESC r n' to an existing monochrome raster graphics driver. Only four colors are available when printing raster graphics.
+
+n color 0 Black (default) 1 Magenta 2 Cyan 4 Yellow
+
+## Note:
+
+If you change the selected colors after entering raster graphics mode, the data buffer will be flushed.
+
+Any of the following printer drivers can be modified to support MicroWeave color raster graphics printing: Stylus 400, Stylus 800+, Stylus 1000, Stylus 800, Stylus 300, LQ-570+ (ActionPrinter 5000+), LQ-1070+, LQ-150 (ActionPrinter 3260), and LQ-100 (ActionPrinter 3250). This mode can access the highest printing resolution (720 by 720 dpi) featured on EPSON's latest color ink jet printers, such as the Stylus COLOR. See Example 2: MicroWeave ESC/P 2 color raster graphics and RLE compressed raster graphics driver for more information.
+
+## ESC/P 2 MicroWeave color extended raster graphics-TIFF
+
+With the introduction of the Stylus COLOR, new compression method-TIFFhas been added to the existing ESC/P 2 graphics command set. To enter TIFF compressed mode, select the ESC . 2 extended raster graphics command. This compression architecture saves up to five bytes of overhead per raster line.
+
+Note:
+
+In TIFF compressed mode, the band height (m) must always be set to 1. In this setting, one raster line prints at a time.
+
+The new compression mode supports the Stylus COLOR's and later inkjet printers' maximum resolution of 720 by 720 dpi and MicroWeave. The ESC . 2 extended raster graphics compression commands make use of a subset of binary mode commands new to ESC/P 2. These commands, which reduce the amount of code data that must be sent to the printer, are explained below.

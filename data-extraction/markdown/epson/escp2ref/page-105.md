@@ -1,0 +1,14 @@
+- During multipoint mode the printer ignores the ESC W, ESC w, ESC SP, SI, ESC SI, SO, and ESC SO commands.
+- The following commands cancel multipoint mode, returning the printer to 10.5-point characters: ESC P, ESC M, ESC g, ESC p, ESC !, and ESC @.
+
+## Printers not featuring this command
+
+All non-ESC/P 2 printers
+
+## Model-dependent variations
+
+Not all fonts are scalable; see the Command Table section for details on which fonts are scalable on each printer model.
+
+## Related topics
+
+ESC c, ESC P, ESC M, ESC g, ESC p, ESC !, Selecting the point size, Selecting the pitch

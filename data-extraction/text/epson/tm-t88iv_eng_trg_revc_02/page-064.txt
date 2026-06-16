@@ -1,0 +1,32 @@
+64
+Setting Check Modes
+Besides the ordinary print mode, the printer has a self-test mode and hexadecimal dumping 
+mode to check settings of the printer.
+Self-test Mode
+You can confirm the following printer functions by running the self-test.
+• Control circuit functions
+• Printer mechanism
+• Print quality
+• ROM version
+• DIP switch settings
+Starting Self-test
+Follow the steps below to run the self-test.
+1
+Close the roll paper cover.
+2
+While pressing the FEED button, turn on the printer. (Keep pressing the 
+FEED button until the printer starts printing.)
+The printer prints current status of the printer on the roll paper.
+When the printer finishes printing the printer status, the following message is printed and 
+the PAPER OUT LED flashes. (The printer is now in the self-test wait mode.):
+“If you want to continue SELF-TEST printing. Please press FEED button.”
+3
+To begin the print test again, press the FEED button while the printer is in 
+the self-test wait mode.
+4
+After printing the following message, the printer is initialized and returned 
+to the normal mode.
+“*** completed ***“
+With the LAN interface, before printing starts, it takes 6 seconds if the IP address is fixed 
+and 13 seconds if the IP address is obtained with the automatic setting. (It may takes longer 
+depending on the response time from a host.)

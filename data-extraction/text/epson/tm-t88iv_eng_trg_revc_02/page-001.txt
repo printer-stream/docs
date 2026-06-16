@@ -1,0 +1,16 @@
+Describes how to control the printer and necessary information
+when you develop applications.
+Describes setup and instrallation of the product and peripherals.
+Describes how to handle the product.
+Describes precautions for the replacement.
+Describes interfaces, connectors and character code tables.
+Describes features and general specifications for the product.
+Technical Reference Guide
+410528702
+Rev. C
+  Product Overview
+  Setup
+  Application Development Information
+  Handling
+  Replacement of the TM-T88III
+  Appendix

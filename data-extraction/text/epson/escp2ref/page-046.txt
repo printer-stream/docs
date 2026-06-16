@@ -1,0 +1,163 @@
+Individual Command Explanations        C-39
+ESC ( v
+Set relative vertical print position
+ESC/P 2
+Format
+ASCII
+ESC
+(
+v
+nL
+nH
+mL
+mH
+Hex
+1B
+28
+76
+nL
+nH
+mL
+mH
+Decimal
+27
+40
+118
+nL
+nH
+mL
+mH
+Parameter range
+nL = 2, nH = 0
+0 ≤ mL ≤ 255, 0 ≤ mH ≤ 127
+Function
+Moves the vertical print position up or down from the current position, as specified by the
+following formula:
+(horizontal position) = ((mH × 256) + mL) × (defined unit) + (current position)
+For positive (down) movement:
+mH =
+(
+)
+INT
+vertical position
+current position
+defined unit
+(
+) (
+)
+(
+)
+−
+×
+
+
+
+
+
+
+
+
+
+
+
+
+1
+256
+mL =
+(
+)
+MOD
+vertical position
+current position
+defined unit
+(
+) (
+)
+(
+)
+−
+×
+
+
+
+
+
+
+
+
+
+
+
+
+1
+256
+For negative (up) movement:
+mH =
+(
+)
+32768
+1
+256
+−
+−
+×
+
+
+
+
+
+
+
+
+
+
+
+
+INT
+current position
+vertical position
+defined unit
+(
+) (
+)
+(
+)
+mL =
+(
+)
+32768
+1
+256
+−
+−
+×
+
+
+
+
+
+
+
+
+
+
+
+
+MOD
+current position
+vertical position
+defined unit
+(
+) (
+)
+(
+)
+Notes
+• 
+This command is available only on printers featuring ESC/P 2.
+• 
+Set the defined unit using the ESC ( U command.
+• 
+The default defined unit for this command is 1/360 inch.
+• 
+The new position is measured in defined units from the current position.

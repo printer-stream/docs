@@ -1,0 +1,24 @@
+3. Pull out the roll paper toward you.
+4. Close the printer cover.
+5. Tear off the leading edge of the roll paper using the manual cutter.
+
+Figure 1-8 Closing the printer cover
+
+<!-- image -->
+
+Figure 1-9 Tear off paper
+
+<!-- image -->
+
+## 1.3.2.2  Replacing Paper
+
+Follow the procedure below to replace roll paper.
+
+1. Open the printer cover, and remove the core of the previously used roll paper.
+2. Insert the new roll paper following the procedure in 'Installing Roll Paper' (page 1-6).
+
+## 1.3.3  Power Switch Cover
+
+Install the power switch cover that comes with the TM-T88II/TM-T88III onto the printer to prevent inadvertent changing of the power switch, to prevent tampering, and to improve the appearance of the printer.
+
+To reset the TM printer when the power switch cover is installed, insert a long, thin object (such as the end of a paper clip) into the hole in the power switch cover and press the power switch.

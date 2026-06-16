@@ -1,0 +1,38 @@
+<!-- image -->
+
+## Note:
+
+With the TM-T88III, the DIP SW2-5 setting is enabled only when DIP SW1-2 is set to OFF and the receive buffer is set to 4KB.
+
+With the older TM-T88II model, be sure to set DIP SW2-5 to OFF before use. Otherwise, the printer may no longer function correctly.
+
+When the TM-T88II is used or when the TM-T88III is used with DIP SW1-2 set to ON, the BUSY state is canceled when '26 bytes remaining in receive buffer' are reached, regardless of DIP SW2-5 setting.
+
+Do not change the settings of DIP SW2-2 and SW2-6. Otherwise, the printer may no longer function correctly.
+
+## 2.2.2.2  DIP switch settings for other interface specifications
+
+The following DIP switch functions are for parallel interface/USB/Ethernet model printers.
+
+<!-- image -->
+
+Table 2-6  Parallel/USB/Ethernet DIP switch bank 1
+
+| SW       | Function                                                         | ON                   | OFF                     |
+|----------|------------------------------------------------------------------|----------------------|-------------------------|
+| 1-1      | Automatic line feed                                              | Enabled at all times | Disabled at all times * |
+| 1-2      | Receive buffer size                                              | 45 bytes             | 4KB *                   |
+| 1-3, 1-8 | Not defined (Always use printer with these switches set to OFF.) | -                    | -*                      |
+
+Table 2-7  Parallel/USB/Ethernet DIP switch bank 2
+
+| SW       | Function                                           | ON                    | OFF                               |
+|----------|----------------------------------------------------|-----------------------|-----------------------------------|
+| 2-1      | Handshake (BUSY conditions)                        | • Receive buffer full | • Offline * • Receive buffer full |
+| 2-2      | Reserved (do not change setting)                   | Fixed to OFF          |                                   |
+| 2-3, 2-4 | Print density selection/low-power mode             | (See separate table.) |                                   |
+| 2-5      | Conditions for canceling receive buffer BUSY state | (See separate table.) |                                   |
+| 2-6, 2-7 | Reserved (do not change setting)                   | Fixed to OFF          |                                   |
+| 2-8      | Pin #31reset signal (do not change setting)        | Fixed to ON           |                                   |
+
+DIP SW2-1: For details on the BUSY condition, also refer to 'Busy State' (page 3-11).

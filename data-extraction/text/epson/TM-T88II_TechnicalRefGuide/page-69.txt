@@ -1,0 +1,61 @@
+Rev. A
+Options and Consumables   B-1
+TM-T88II/T88III Technical Reference Guide
+Appendix B
+Options and Consumables
+B.1  Roll Paper
+The table below shows the roll paper specifications.
+Note:
+If roll core standards vary from the figures above, it is difficult for the roll paper NE detector to detect the 
+remaining amount of roll paper exactly. Use these figures merely as a guideline.
+B.2  Power Supply
+The following describes the specifications for the optional power supplies (PS-170 and PS-180).
+B.2.1  PS-170 (Legacy Model no Longer Available from the Dealer)
+B.2.1.1  Electrical characteristics
+❏
+Input conditions
+Input voltage (rating):
+90 to 264 VAC (100 VAC –10% to 230 VAC +15%)
+Frequency (rating):
+50/60 Hz ± 3 Hz
+Power consumption (rating): 100 VA
+❏
+Output conditions
+Output voltage (rating):
+24 VDC + 5%
+Output current (rating):
+2.0 A
+Output electric power (rating):48 VA 
+Output peak current:
+4.5 A (within 300 msec)
+B.2.1.2  Case specifications
+❏
+Dimensions:
+80 mm (D) × 166 mm (L) × 44 mm (H) (excluding projections).
+{3.15 × 6.54 × 1.73"} See the figure on the next page.
+❏
+Weight:
+Approx. 0.52 kg {1.15 lb} (excluding the AC cable)
+❏
+Material:
+Durability level: V0
+❏
+Color:
+Black (matte)
+ Table B-1  Paper specifications
+Type of paper
+Specified thermal paper
+Shape
+Roll
+Paper width
+Select from the following:
+❐  79.5 mm ± 0.5 mm (default)
+❐  57.5 mm ± 0.5 mm (factory option with spacer)
+Roll core
+Internal diameter
+12 mm {0.47"}
+Outer diameter
+18 mm {0.71"}
+External dimensions
+Outer diameter
+83 mm {3.27"} or less

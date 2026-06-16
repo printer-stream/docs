@@ -1,0 +1,243 @@
+                                                                                   Rev. 2.31  
+―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+STAR Graphic Mode Command Specifications 
+7 
+ 
+2. COMMAND FUNCTION LIST 
+● Standard Commands 
+Classification 
+Command 
+Name 
+Line 
+mode 
+Raster 
+mode 
+External device 
+drive 
+ESC BEL 
+Set pulse width for external device drive 
+OK 
+OK 
+BEL 
+External device 1 drive instruction 
+OK 
+OK 
+ 
+FS 
+External device 1 drive instruction 
+OK 
+OK 
+ 
+SUB 
+External device 2 drive instruction 
+OK 
+OK 
+ 
+EM 
+External device 2 drive instruction 
+OK 
+OK 
+ 
+ESC GS BEL 
+Ring buzzer 
+OK 
+OK 
+ 
+ESC GS EM DC1 
+Set external buzzer drive pulse condition 
+OK 
+OK 
+ 
+ESC GS EM DC2 
+Output External buzzer drive pulse 
+OK 
+OK 
+Print settings 
+ESC RS A 
+Set print area 
+OK 
+OK 
+ 
+ESC RS d 
+Set print density 
+OK 
+OK 
+ 
+ESC RS r 
+Set printing speed 
+OK 
+OK 
+ 
+ESC GS c 
+Set reduced printing 
+OK 
+OK 
+Status 
+ESC RS a 
+Set status transmission conditions 
+OK 
+OK 
+ 
+ESC ACK SOH 
+Real-time printer status (ASB status) 
+OK 
+OK 
+ 
+ETB 
+Update ETB status 
+OK 
+OK 
+ 
+ESC RS E 
+Clear ETB counter, ETB status 
+OK 
+OK 
+ 
+ESC GS ETX 
+Document start, Document end 
+OK 
+OK 
+Other 
+ESC GS # 
+Set memory switch 
+OK 
+OK 
+ 
+ESC ? 
+Reset printer 
+OK 
+OK 
+ 
+ESC GS L DC1 
+Set LED blink condition 
+OK 
+OK 
+ 
+ESC GS L DC2 
+LED blink 
+OK 
+OK 
+ 
+● Raster related commands 
+Classification 
+Command 
+Name 
+Line 
+mode 
+Raster 
+mode 
+Raster 
+ESC * r R 
+Initialize raster mode 
+OK 
+OK 
+ 
+ESC * r A 
+Enter raster mode 
+OK 
+OK 
+ 
+ESC * r B 
+Quit raster mode 
+No 
+OK 
+ 
+ESC * r C 
+Clear raster data 
+No 
+OK 
+ 
+ESC * r D 
+Drive drawer 
+No 
+OK 
+ 
+ESC * r E 
+Set EOT mode 
+No 
+OK 
+ 
+ESC * r F 
+Set FF mode 
+No 
+OK 
+ 
+ESC * r P 
+Set page length 
+No 
+OK 
+ 
+ESC * r Q 
+Set print quality 
+No 
+OK 
+ 
+ESC * r m l 
+Set left margin 
+No 
+OK 
+ 
+ESC * r m r 
+Set right margin 
+No 
+OK 
+ 
+ESC * r t 
+Set top margin 
+No 
+OK 
+ 
+ESC * r K 
+Set print color 
+No 
+OK 
+ 
+b n1 n2 d1．．． dk 
+Transfer raster data (auto line feed) 
+No 
+OK 
+ 
+k n1 n2 d1．．． dk 
+Transfer raster data 
+No 
+OK 
+ 
+ESC * r Y 
+Position movement in vertical direction 
+No 
+OK 
+ 
+ESC FF NUL 
+Execute FF mode 
+No 
+OK 
+ 
+ESC FF EOT 
+Execute EOT mode 
+No 
+OK 
+Raster extension 
+ESC * r a 
+Start block 
+OK 
+OK 
+ESC * r b 
+End block 
+No 
+OK 
+ 
+ESC * r e 
+Set EM mode 
+No 
+OK 
+ 
+ESC FF EM 
+Execute EM mode 
+No 
+OK 
+ 
+ESC FF LF 
+Execute LF mode 
+No 
+OK 
+ 

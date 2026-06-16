@@ -1,0 +1,48 @@
+"SI1,1.Ev;LB‘.'-¥?OF{E"
+;
+4
+;
+A
+Negative SI parameters will produce mirror images of labels. A nega­
+tive SI width parameter will mirror labels in the right-to-left direction.
+COMMAND
+RESULTING LABEL
+“SI-.35,.6;LBHPR"
+C1}{
+A negative height parameter will mirror labels in the top-to-bottom
+direction.
+.
+COMMAND
+RESULTING LABEL
+”SI.3S,—.6;LBHP&”
+F+tj
+Two negative SI parameters will mirror the label in both directions and
+the label will appear to be rotated 180degrees.
+COMMAND
+RESULTING LABEL
+"sI—.35,—.s;LBHP5"
+CJP4
+For further information on the effects of negative parameters, refer to
+the section Parameter Interaction in Labeling Commands later in this
+chapter.
+In order to produce legible characters, parameters should be greater
+than 0.1.Parameter values above 18allow a maximum of one character
+to be drawn on the paper.
+The Relative Character Size
+Instruction, SR
+DESCRIP-“UN The relative character size instruction, SR, speciﬁes the
+size of characters and symbols as a percentage of the distance between
+scaling points P1 and P2.
+USE3
+The instruction can be used to deﬁne character size relative to
+the distance between P1 and P2 so that if the P1,P2 distance changes,
+character size will adjust to occupy the same “relative” amount of
+space.
+SYNTAX SR
+width, height
+terminator
+or
+SR
+terminator
+5-16
+LABELING

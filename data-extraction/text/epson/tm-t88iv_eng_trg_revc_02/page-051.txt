@@ -1,0 +1,27 @@
+Chapter 2   Setup
+51
+2
+For LAN Interface
+Connect the printer to a network by a LAN cable via a hub.
+LAN interface connection diagram
+Connecting the LAN interface cable
+A customer display (DM-D series) cannot be connected to the printer when the printer is 
+connected to the host computer. To connect the customer display, connect the printer to the 
+host computer via the serial interface.
+CAUTION
+•
+When LAN cables are installed outdoors, make sure devices without proper surge 
+protection are cushioned by being connected through devices that do have surge 
+protection.  
+Otherwise, the devices can be damaged by lightning.
+•
+Never attempt to connect the customer display cable, drawer kick-out cable, or 
+the standard telephone line cable to the 10/100BASE-T LAN connector.
+TM-T88IV
+TM-T88IV
+Serial 
+cable
+Modular cable
+Cash drawer
+10/100BASE-T
+DM-D

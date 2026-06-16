@@ -1,0 +1,21 @@
+Chapter 5   Replacement of 
+79
+5
+Additional Functions and Functional Improvements
+Print Speed
+The TM-T88IV prints faster than the TM-T88III.
+Note) When the printer prints with the default print density level at 24V and 25°C {77°F}.
+High-Speed Graphic Printing
+With the TM-T88IV, high-speed graphic printing is possible. (print speed: 200 mm/s at 
+maximum)
+Two-Dimensional Code
+With the TM-T88IV, two-dimensional code (PDF417, QR code) printing is possible.
+Number of Characters
+For the TM-T88IV, special characters (845) are added.
+TM-T88IV
+TM-T88III
+Print speed
+200 mm/s at maximum
+150 mm/s at maximum
+Depending on print conditions such as print duty, print head temperature, and data 
+transmission speed, print speed is automatically adjusted.

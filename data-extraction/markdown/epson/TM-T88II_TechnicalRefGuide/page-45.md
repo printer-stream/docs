@@ -1,0 +1,21 @@
+<!-- image -->
+
+The error recovery command is valid only if a recoverable error (excluding automatically recoverable errors) occurs. If a recoverable error occurs, the printer recovers from the error upon receipt of an error recovery command from the driver after the cause of the error is eliminated. Turning the printer's power off and on is not required.
+
+## Unrecoverable errors
+
+Normal printer operation is no longer possible when unrecoverable errors occur. The printer must be repaired.
+
+| Error               | Error description                                        | Error LED flash code Approx. 160 ms   | Recovery measure      |
+|---------------------|----------------------------------------------------------|---------------------------------------|-----------------------|
+| Memory R/W error    | After R/W checking, the printer does not work correctly. |                                       | Impossible to recover |
+| High voltage error  | The power supply voltage is extremely high.              |                                       | Impossible to recover |
+| Low voltage error   | The power supply voltage is extremely low.               |                                       | Impossible to recover |
+| CPU execution error | The CPU is executing an incorrect address.               |                                       | Impossible to recover |
+| Drive circuit error | The reaction of the drive circuit is abnormal.           |                                       | Impossible to recover |
+
+Table 3-6  Unrecoverable errors
+
+<!-- image -->
+
+When an unrecoverable error occurs, turn off the power supply immediately.

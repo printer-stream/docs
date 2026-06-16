@@ -1,0 +1,24 @@
+## 24/48-Pin Printers
+
+<!-- image -->
+
+|         |                                    | 1997    |         |                  |                  |          |          |          |          | ESC/P 2   | ESC/P 2   | ESC/P 2        | ESC/P 2        | ESC/P 2    | ESC/P 2    | ESC/P 2     | ESC/P 2     |
+|---------|------------------------------------|---------|---------|------------------|------------------|----------|----------|----------|----------|-----------|-----------|----------------|----------------|------------|------------|-------------|-------------|
+|         |                                    |         |         | 1996             | 1996             | 1995     | 1995     | 1995     | 1995     |           |           |                |                |            |            |             |             |
+|         | S: Standard model N: NLSP          | model S | N       | S                | N                | S        | N        | S        | N        | S         | N         | S              | N              | S          | N          | S           | N           |
+|         |                                    | LQ- 670 | LQ- 670 | DLQ- 3000 ('96~) | DLQ- 3000 ('96~) | LQ- 2070 | LQ- 2070 | LQ- 2170 | LQ- 2170 | LQ- 300   | LQ- 300   | Stylus COL- OR | Stylus COL- OR | Stylus 400 | Stylus 400 | Stylus 800+ | Stylus 800+ |
+| ESC l   | Set left margin                    | 3       | 3       | 3                | 3                | 3        | 3        | 3        | 3        | 3         | 3         | 3              | 3              | 3          | 3          | 3           | 3           |
+| ESC p   | Turn proportional mode on/off      | 3       | 3       | 3                | 3                | 3        | 3        | 3        | 3        | 3         | 3         | 3              | 3              | 3          | 3          | 3           | 3           |
+| ESC q   | Select character style             | 3       | 3       | 3                | 3                | 3        | 3        | 3        | 3        | 3         | 3         | 3              | 3              | 3          | 3          | 3           | 3           |
+| ESC r   | Select printing color              |         |         | 3                | 3                |          |          |          |          | 3         | 3         | 3              | 3              |            |            |             |             |
+| * ESC s | Select low-speed mode              |         |         |                  |                  |          |          |          |          |           |           |                |                |            |            |             |             |
+| ESC t   | Select character table             | 3       | 3       | 3                | 3                | 3        | 3        | 3        | 3        | 3         | 3         | 3              | 3              | 3          | 3          | 3           | 3           |
+|         | 0 T able 0 Italic                  | 3       | 3       | 3                | 3                | 3        | 3        | 3        | 3        | 3         | 3         | 3              | 3              | 3          | 3          | 3           | 3           |
+|         | 1 T able 1 Graphics                | 3       | 3       | 3                | 3                | 3        | 3        | 3        | 3        | 3         | 3         | 3              | 3              | 3          | 3          | 3           | 3           |
+|         | 2 T able 2 User-defined            | 3       | 3       | 3                | 3                | 3        | 3        | 3        | 3        | 3         | 3         | 3              | 3              | 3          | 3          | 3           | 3           |
+|         | 3 T able 3                         | 3       | 3       | 3                | 3                | 3        | 3        | 3        | 3        | 3         | 3         | 3              | 3              | 3          | 3          | 3           | 3           |
+| ESC w   | Turn double-height printing on/off | 3       |         | 3 3              | 3                | 3        | 3        | 3        | 3        | 3         | 3         | 3              | 3              | 3          | 3          | 3           | 3           |
+| ESC x   | Select letter quality or draft     | 3 3     |         | 3                | 3                | 3        | 3        | 3        | 3        | 3         | 3         | 3              | 3              | 3          | 3          | 3           | 3           |
+| * DEL   | Delete last character in buffer    | 3       |         | 3 3              | 3                | 3        | 3        | 3        | 3        | 3         | 3         | 3              | 3              | 3          | 3          | 3           | 3           |
+
+* Nonrecommended or deleted command

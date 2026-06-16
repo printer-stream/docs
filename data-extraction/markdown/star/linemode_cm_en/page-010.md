@@ -1,0 +1,49 @@
+<!-- image -->
+
+## 1.3.  USB Interface
+
+Specifications:
+
+Conforms to USB 2.0 Full Speed.
+
+Supports  printer  class  and  vendor  class  (Refer  to  each  printer  specifications  manual  for selections.)
+
+Connector:
+
+Type B
+
+## 1.4.  Eth ernet  Interface
+
+Specifications:
+
+Conforms to IEEE 802.3.
+
+Cable:
+
+10BASE-T/10BASE-TX
+
+Connector:
+
+RJ45
+
+## 1.5.  W ireless  LAN  Interface
+
+Specifications:
+
+Conforms to IEEE 802.11b.
+
+## 1.6.  Powered USB Interface
+
+Specifications
+
+See the IFBD-BPU03 Specifications Manual
+
+Cable
+
+See the IFBD-BPU03 Specifications Manual
+
+Connector
+
+See the IFBD-BPU03 Specifications Manual
+
+-----------------------------------------------------------------------------

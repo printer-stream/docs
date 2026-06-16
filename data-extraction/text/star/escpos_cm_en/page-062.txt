@@ -1,0 +1,44 @@
+ESC/POS Command Specifications
+62
+Rev.2.52
+ESC M n 
+Name	
+Select character font 
+Code	
+ASCII	
+ESC	
+M	
+n
+	
+Hex.	
+1B	
+4D	
+n	
+	
+Decimal	
+27	
+77	
+n
+Defined Region	
+n = 0, 1, 48, 49
+Function 	
+Selects character font. 
+n
+Function
+0,48
+Selects Font A (12 x 24).  
+1,49
+Selects Font B (9 x 17).   
+Details 	
+•	It is possible to select the character font using ESC! (Batch specify Chinese character print 
+mode), but the last command received is effective.  
+STAR	
+•	The following are the font configurations on STAR printers.  
+Character Fonts 
+Horizontal Dots x Vertical Dots 
+Font A
+12 x 24 Dots 
+Font B 
+9 x 24 Dots 
+Reference	
+ESC ! 

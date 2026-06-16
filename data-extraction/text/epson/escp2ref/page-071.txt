@@ -1,0 +1,61 @@
+C-64        Individual Command Explanations
+ESC B
+Set vertical tabs
+9-Pin ESC/P
+Format
+ASCII
+ESC
+B
+n1
+n2
+. . .
+nk
+NUL
+Hex
+1B
+42
+n1
+n2
+. . .
+nk
+00
+Decimal
+27
+66
+n1
+n2
+. . .
+nk
+0
+Parameter range
+0 ≤ k ≤ 16
+1 ≤ n ≤ 255
+nk > n(k-1)
+Function
+Sets vertical tab positions (in the current line spacing) at the lines specified by n1 to nk, as
+measured from the top-of-form position
+Notes
+• 
+The values for n must be in ascending order; a value of n less than the previous n ends
+tab setting (like the NUL code).
+• 
+Changing the line spacing does not affect previous tab settings.
+• 
+Send an ESC B NUL command to cancel all tab settings.
+• 
+A maximum of 16 vertical tabs can be set.
+• 
+The printer stores all tab settings, even if outside the printing area; if you increase the
+page length to include previously set tabs, you can move to those positions with the VT
+(tab vertically) command.
+• 
+Sending the ESC B command clears any previous tab settings.
+• 
+Setting vertical tabs with ESC B is the same as setting the vertical tabs in VFU channel 0.
+Printers not featuring this command
+None
+Model-dependent variations
+None
+Related topics
+ESC J, ESC C, ESC N, ESC 0, ESC 2, ESC 3, Setting page length, Setting bottom margin,
+Moving the vertical position

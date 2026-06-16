@@ -1,0 +1,157 @@
+  
+2. Separator character 1 (1 Byte) 
+Sends “:” 
+ 
+3. Data Type (1byte) 
+Indicate printer status data; sends “B” (binary type). 
+ 
+4. Status Length (2 bytes) 
+2 byte value indicating printer status byte count. 
+ 
+5. Printer Status (Variable length) 
+Status sent by printer. 
+Status differs according to the cause. 
+See the command causes and automatic status for details on the content of statuses. 
+ 
+6. Separator character 2 (1 Byte) 
+Sends “;” 
+ 
+3) 
+Status Transmission Specification List 
+ 
+Status Cause 
+STAR ASB 
+Length 
+Status Data 
+ 
+ 
+ 
+Status Type 
+Data  
+Status 
+Printer
+Separated
+Separated
+Type 
+Length 
+ 
+ 
+ 
+First/Second 
+Bytes 
+Third/Fourth 
+Bytes 
+Status
+Character 1
+Character 2
+Cause 
+n Parameter
+ASB 
+0x0000 
+-- 
+-- 
+-- 
+-- 
+-- 
+-- 
+-- 
+ASB 
+Automatic Status 
+ESC ACK SOH 
+Printer 
+Status 
+Request 
+ASB 
+0x0000 
+-- 
+-- 
+-- 
+-- 
+-- 
+-- 
+-- 
+ENQ 
+Printer 
+Status 
+Request 
+ASB 
+0x0008 
+“01” 
+Omitted 
+“:” 
+“B” 
+0x0001 
+“;” 
+Status
+EOT 
+Printer 
+Status 
+Request 
+ASB 
+0x0008 
+“02” 
+Omitted 
+“:” 
+“B” 
+0x0001 
+“;” 
+Status
+ASB 
+0x0011 
+“13” 
+“:” 
+“B” 
+0x0008 
+“;” 
+ESC SYN 3 n 
+“00” ≤
+Presenter Counter 
+Request 
+ n ≤ “01”
+Status
+“30” ≤ n ≤ ”31”
+ASB 
+0x000C 
+“16” 
+Omitted 
+“:” 
+“B” 
+0x0005 
+“;” 
+ESC GS x I 
+Status
+PDF417 
+Information 
+Request 
+ASB 
+0x000D 
+“19” 
+Omitted 
+“:” 
+“B” 
+0x0006 
+“;” 
+ESC GS y I QR 
+Code 
+Information 
+Request 
+Status
+ASB 
+0x000F 
+“20” 
+Omitted 
+“:” 
+“B” 
+0x0008 
+“;” 
+ESC GS ETS n1 n2 
+Print End Counter 
+Request 
+Status
+(*1) Automatic status is distributed to all hosts connected to the TCP#9,100 port. 
+ 
+*  Installed MSW region is different depending on the model.  
+ 
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+STAR Line Mode Command Specifications 
+5-15 

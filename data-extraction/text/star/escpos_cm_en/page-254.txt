@@ -1,0 +1,68 @@
+ESC/POS Command Specifications
+254
+Rev.2.52
+<CRC calculation procedure, sample codes, C language>
+#define CRC16 0xA001
+unsigned int CalcCrc16( int size, unsigned char data[] )
+{
+	
+unsigned int result;
+	
+int i,j;
+	
+	
+result = 0xFFFF;
+	
+	
+for( i=0 ; i<size; i++)
+	
+{
+	
+	 result ^= data[i];
+	
+	 for(j = 0x0001; j < 0x0100; j = j << 1)
+	
+	 {
+	
+	 	if( result & 0x0001 )
+	
+	 	
+{
+	
+	 	
+	result >>= 1;
+	
+	 	
+	result ^= CRC16;
+	
+	 	
+}
+	
+	 	
+else
+	
+	 	
+{
+	
+	 	
+	result >>= 1;
+	
+	 	
+}
+	
+	 }	
+	
+}
+	
+result = (~result) & 0xFFFF;
+	
+return result;
+}
+	
+Notes	
+• If a logo is registered by the “FS q” command, the logo data already existing is erased.
+	
+• If a logo is registered by the “GS (L” or “GS 8 L” command, the logo that has been registered by the “FS q” 
+command is erased and the new one is registered.
+Reference	
+GS ( L, GS 8 L 

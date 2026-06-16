@@ -1,0 +1,107 @@
+Individual Command Explanations        C-31
+ESC $
+Set absolute horizontal print position
+ESC/P 2
+ESC/P
+Format
+ASCII
+ESC
+$
+nL
+nH
+Hex
+1B
+24
+nL
+nH
+Decimal
+27
+36
+nL
+nH
+Parameter range
+0 ≤ nH ≤ 127
+0 ≤ nL ≤ 255
+Function
+Moves the horizontal print position to the position specified by the following formula:
+(horizontal position) = ((nH × 256) + nL) × (defined unit) + (left margin)
+nH =
+(
+)
+INT
+horizontal position
+left m
+in position
+defined unit
+(
+)
+(
+arg
+)
+(
+)
+−
+−
+×
+
+
+
+
+
+
+
+
+
+
+
+
+1
+256
+nL =
+(
+)
+MOD
+horizontal position
+left m
+in position
+defined unit
+(
+) (
+arg
+)
+(
+)
+−
+−
+×
+
+
+
+
+
+
+
+
+
+
+
+
+1
+256
+Notes
+• 
+Set the defined unit with the ESC ( U command.
+• 
+The default defined unit setting for this command is 1/60 inch.
+• 
+The new position is measured from the current left-margin position.
+• 
+The printer ignores this command if the specified position is to the right of the right
+margin.
+Printers not featuring this command
+None
+Model-dependent variations
+On non-ESC/P 2 printers:
+The unit of movement is fixed at 1/60 inch.
+Related topics
+ESC \, ESC l, ESC Q, HT, CR, LF, FF, ESC ( U, Moving the horizontal position

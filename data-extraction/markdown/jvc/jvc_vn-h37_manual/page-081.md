@@ -1,0 +1,61 @@
+## Getting Multicast Address
+
+Format  /api/param?network.destination(num).host
+
+Example of Response  network.destination(1).host=225.0.1.1&amp;200 OK
+
+Interpretation Acquire multicast address of specified encode channel. 'num' is encoder channel from 1 to 3.
+
+Allowed users admin, operator
+
+## Setting Multicast Address
+
+Format  /api/param?network.destination(num).host=data
+
+Example  /api/param?network.destination(1).host=225.0.1.1
+
+Example of Response
+
+network.destination(1).host&amp;202 Accepted(network.destination(1).host=save)
+
+Interpretation Change multicast address of specified encode channel. 'num' is encoder channel from 1 to 3.
+
+Specify from 224.0.0.0 to 239.255.255.255. To validate the change, use "network.destination(num).host=save"
+
+API. After the save, start streaming by "network.destination(num).host=start" API.
+
+Allowed user admin
+
+## Getting Multicast Port Number
+
+Format  /api/param?network.destination(num).port
+
+Example of Response  network.destination(1).port=49152&amp;200 OK
+
+Interpretation Acquire multicast port number of specified encode channel. 'num' is encoder channel from 1 to 3.
+
+Allowed users admin, operator
+
+## Setting Multicast Port Number
+
+Format  /api/param?network.destination(num).port=data
+
+Example  /api/param?network.destination(1).port=49152
+
+Example of Response
+
+network.destination(1).port&amp;202 Accepted(network.destination(1).host=save)
+
+Interpretation Change multicast port number of specified encode channel. 'num' is encoder channel from 1 to 3.
+
+Specify from 2 to 65534. To validate the change, use "network.destination(num).host=save" API. After the save,
+
+start streaming by "network.destination(num).host=start" API.
+
+Allowed user admin
+
+## Getting Frame Rate of JPEG Multicast
+
+Format  /api/param?network.destination(num).framerate
+
+Example of Response  network.destination(1).framerate=10&amp;200 OK

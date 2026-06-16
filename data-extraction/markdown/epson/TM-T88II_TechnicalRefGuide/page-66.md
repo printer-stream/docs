@@ -1,0 +1,5 @@
+## Reverse mode
+
+The transfer of status data from the printer to the host proceeds in the nibble or byte mode.
+
+This mode allows data transfer from an asynchronous printer under the control of the host. Data transfers in the nibble mode are made via the existing control lines in units of four bits (a nibble). In the byte mode, data transfer proceeds by making the 8-bit data lines bidirectional. Both modes fail to proceed concurrently in the compatibility mode, thereby causing half-duplex transmission.

@@ -1,0 +1,43 @@
+Rev. A
+Options and Consumables   B-3
+TM-T88II/T88III Technical Reference Guide
+❏
+Output conditions
+Output voltage (rating):
+24 VDC ± 5%
+Output current (rating):
+2.0 A
+Output electric power (rating):
+48 VA
+Output peak current:
+4.5 A 
+B.2.2.2  Case specifications
+❏
+Dimensions:
+68 mm (D) × 136 mm (L) × 32 mm (H) (excluding projections)
+{2.68" × 5.35" × 1.26"} Refer to the figure below.
+❏
+Weight:
+Approx. 0.4 kg {14.11 oz} (excluding the AC cable)
+❏
+Material:
+Durability level: V0
+❏
+Color:
+Black (matte)
+ Figure B-2  Case specifications
+B.2.2.3  Material
+No specific brominated flame retardants, such as PBBE and PBB, are used in this product.
+B.2.2.4  AC cable selection
+❏
+Select an AC cable that satisfies the following conditions.
+•
+Safety standard product
+•
+Plug with PE terminal
+❏
+Ground connection:
+Be sure to ground for safety.
+68
+32
+136

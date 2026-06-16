@@ -1,0 +1,87 @@
+C O N F I D E N T I A L
+Paper roll
+Customize commands     GS ( C
+ 
+Ver. 10.13
+p. 689
+GS ( C pL pH m fn b c1 c2 <Function 2> 
+[Name]
+Transmit the data in the specified record
+[Format]
+ASCII
+GS
+(
+C
+pL
+pH
+m
+fn
+b
+c1
+c2
+Hex
+1D
+28
+43
+05
+00 00 fn
+00 c1
+c2
+Decimal
+29
+40
+67
+5
+0
+0
+fn
+0
+c1
+c2
+[Range]
+(pL + pH × 256) = 5
+(pL = 5, pH = 0)
+m = 0
+fn = 2, 50
+b = 0
+32 ≤  c1 ≤  126
+32 ≤  c2 ≤  126
+[Description]
+Transmits the data for the record specified by the key codes (c1, c2) in the NV user memory.
+•
+ESC/POS Handshaking Protocol is required for this function.
+[Notes]
+■When the specified record exists, the printer sends the “Header to NUL” data shown below:
+(*1)
+When the quantity of stored data exceeds 80 bytes, the printer performs partial processing:
+•
+If there is unsent data, the identification status of the third byte is 41H or 65 decimal.
+•
+If there is no unsent data, the identification status of the third byte is 40H or 64 decimal.
+(*2)
+The printer performs batch processing when the data to be stored is 80 bytes or less. At this time, the 
+identification status of the third byte is 40H or 64 decimal.
+Send data
+Hex
+Decimal
+Data quantity
+Header
+37H
+55
+1 byte
+Identifier
+70H
+112
+1 byte
+Identification status (*1) (*2)
+40H or 41H
+64 or 65
+1 byte
+Data (*3)
+20H − FEH
+32 − 254
+1 − 80 bytes
+NUL
+00H
+0
+1 byte

@@ -1,0 +1,67 @@
+  
+ 
+ESC SP n 
+[Name] 
+Set ANK right space 
+[Code] 
+ASCII 
+ESC 
+SP 
+n 
+ 
+ 
+ 
+ 
+Hex. 
+1B 
+20 
+n 
+ 
+ 
+ 
+ 
+Decimal 
+27 
+32 
+n 
+ 
+ 
+ 
+ 
+[Defined Area] 
+0≤n≤15 
+ 
+48≤n≤57 (”0”≤n≤”9”) 
+ 
+65≤n≤70 (”A”≤n≤”F”) 
+[Initial Value] 
+Memory switch setting 
+[Function]  
+Specify the right space amount of ANK characters in n dots.  
+ 
+ 
+The ANK character width is "left space amount” + "ANK font dot count” + right space amount.”  
+ 
+ 
+(See the information on character specifications in the appropriate printer specifications manual 
+for details on the ANK font dot count.) 
+ 
+ 
+ 
+Character spacing can be specified also with the following commands. 
+ 
+• Specify 12 dot pitch (ESC M) 
+ 
+• Specify 14 dot pitch (ESC g) 
+ 
+• Specify 15 dot pitch (ESC P) 
+ 
+• Specify 16 dot pitch (ESC :) 
+ 
+ 
+ 
+Standard mode and page mode can be set independently of each other. 
+ 
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+STAR Line Mode Command Specifications 
+3-9 

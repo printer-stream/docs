@@ -1,0 +1,38 @@
+ 2. Parts Identification and Nomenclature
+The ID label is on the bottom or rear of the product.
+- 7 -
+Interface connector
+For connection to a 
+host computer.
+Peripheral drive connector
+Connects to peripheral units 
+such as cash drawers, etc. 
+Do not connect this to a 
+telephone.
+Power connector
+For connection of the AC 
+adapter.  
+Never unplug the AC adapter 
+while the printer is on.
+Printer cover
+Open this cover to load 
+or replace paper.
+Cover open lever
+Push this lever in the direction of the ar-
+row to open the printer cover.
+Power switch
+Used to turn on/
+off power to the 
+printer.
+Control panel
+Features LED indicators to indi-
+cate printer status and switches 
+to operate the printer.
+Lights when the printer is online.
+This lamp also indicates errors, in combination with ERROR lamp. 
+POWER lamp (green)
+Lights when the cover is open.
+This lamp also indicates errors, in combination with POWER lamp.
+ERROR lamp (Red/Orange LED)
+When the printer is online, pressing this button feeds the paper roll.
+FEED button

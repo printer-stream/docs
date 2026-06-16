@@ -1,0 +1,30 @@
+Chapter 1   Product Overview
+17
+1
+Power Switch Cover
+Install the power switch cover that comes with the TM-T88IV onto the printer to prevent 
+inadvertent changing of the power switch, to prevent tampering, and to improve the appearance 
+of the printer.
+To reset the printer when the power switch cover is installed, insert a long, thin object (such as 
+the end of a paper clip) into the hole in the power switch cover and press the power switch.
+Control Panel
+LED
+POWER LED (green)
+• Lights when the power supply is on.
+• Goes out when the power supply is turned off.
+ERROR LED
+Lights or flashes when the printer is offline.
+• Lights after the power is turned on or after a reset (offline). Automatically goes out after a 
+while to indicate that the printer is ready.
+• Lights when the end of the roll paper is detected, and when printing has stopped (offline). If 
+this happens, replace the roll paper.
+• Flashes when an error occurs. (For details about the flash codes, see "Error Status" on page 19.)
+• Goes out during regular operation (online).
+WARNING
+If an accident occurs with the power switch cover attached, unplug the power cord 
+immediately. 
+Continued use may cause fire or shock.
+(POWER) LED
+ERROR LED
+PAPER OUT LED
+FEED button

@@ -1,0 +1,42 @@
+Interface Functions
+Interface functions provide the physical capability,to communicate via
+HP-IB. These functions are defined in the ANSI/IEEE
+488-1978
+Standard. This standard, which is the designer’s guide to the bus,
+deﬁnes each interface function in terms of state diagrams that express
+all possible interactions.
+Bus capability is grouped under 10 interface functions, for example:
+Talker, Listener, Controller, Remote/ Local. The following table lists the
+functions, including two special cases of Controller.
+HP—IBInterface Functions
+Mnemonic
+Interface Function Name
+SH
+Source Handshake
+AH
+Acceptor Handshake
+T
+Talker (or TE = Extended Talker)*
+L
+Listener (or LE = Extended Listener)*
+SR
+Service Request
+RL
+Remote Local
+PP
+Parallel Poll
+DC
+Device Clear
+DT
+Device Trigger
+C
+Any Controller
+CN
+A Speciﬁc Controller (for example:
+CA, CB.. .)
+CS
+The System Controller
+*Extended Talkers and Listeners use a two-byte address. Otherwise, they are
+the same as Talker and Listener.
+AN HP-IB OVERVIEW
+A-7

@@ -1,0 +1,29 @@
+<!-- image -->
+
+ESC/P 2 provides the ESC ( c command for setting both top and bottom margins. This allows the printing area settings to match the actual paper.
+
+The top and bottom margin settings are based on the unit defined with the ESC ( U command. If using continuous paper, you should have already defined this unit when you set the page length with the ESC ( c command. If not, see the description of the ESC ( U command in the Command Summary and 'Setting the page length' in this section.
+
+## Note:
+
+- Measure top and bottom margins from the top edge of the page.
+- The distance from the top edge of the page to the bottom-margin position must be less than the page length; otherwise, the end of the page length becomes the bottom-margin position.
+- Setting the top and bottom margins cancels previous top or bottom-margin settings.
+- Changing the defined unit does not affect previously set top and bottommargin settings.
+- Always set the top and bottom margins before paper is loaded or when the print position is at the top-of-form position. Otherwise, the current print position becomes the top-of-form position (this results in undesirable contradictions between the actual and logical page settings).
+
+The following command sets a top and bottom margin of 1 inch when the unit is defined as 1/360 inch and 8 1/2 by 11-inch paper is used.
+
+ESC ( c 4 0 104 1 16 14
+
+## Setting bottom margin
+
+ESC/P
+
+9-Pin ESC/P
+
+When using continuous paper on non-ESC/P 2 printers, set the bottom margin with the ESC N command. The printer then automatically moves the print position to the top-of-form position of the next page when it receives a FF command, or when the print position moves below the bottom-margin position.
+
+The ESC N command sets the bottom margin in lines above the top-of-form position of the following page; you must first set the line spacing.
+
+Sets a top margin of 1 inch (360 units) and a bottom margin 10 inches (3,600 units) below the paper's top edge.

@@ -1,0 +1,30 @@
+C O N F I D E N T I A L
+Paper roll
+Printing paper commands     FS ( L
+ 
+Ver. 10.13
+p. 808
+[Model-dependent variations]
+TM-L90, TM-P60
+Program Example 2 (Black mark paper is printed while cutting one piece.)   
+                                                                                                                           
+GOSUB *BM.Print  ← Send a sheet of print data. 
+PRINT #1, CHR$(&H1C);"(L";CHR$(2);CHR$(0);CHR$(66);CHR$(49); ← Paper feed to cutting position <Function 66>
+PRINT #1, CHR$(&H1D);"V";CHR$(49); ← Paper cut
+PRINT #1, CHR$(&H1C);"(L";CHR$(2);CHR$(0);CHR$(67);CHR$(50); ← Feeds Paper to the print start position <Function 67>
+GOSUB *BM.Print
+← Send a sheet of print data. 
+PRINT #1, CHR$(&H1C);"(L";CHR$(2);CHR$(0);CHR$(66);CHR$(49); ← Paper feed to cutting position <Function 66>
+PRINT #1, CHR$(&H1D);"V";CHR$(49); ← Paper cut
+PRINT #1, CHR$(&H1C);"(L";CHR$(2);CHR$(0);CHR$(67);CHR$(50); ← Feeds Paper to the print start position <Function 67>
+Program Example 3 (The label is continuously printed.)   
+                                                                                                                           
+GOSUB *Label.Print  ← Send a sheet of print data. 
+PRINT #1, CHR$(&H1C);"(L";CHR$(2);CHR(0);CHR$(67);CHR$(49); ← Feeds Paper to the print start position <Function 67>
+GOSUB *Label.Print  ← Send a sheet of print data. 
+PRINT #1, CHR$(&H1C);"(L";CHR$(2);CHR(0);CHR$(67);CHR$(49); ← Feeds Paper to the print start position <Function 67>
+Program example 4 (sets the paper layout)
+PRINT #1, CHR$(&h1C);"(L";CHR$(22);CHR$(0);CHR$(33); ¬ <Function 33>
+PRINT #1, "1"; ¬ Layout reference (sm)
+PRINT #1, "700;15;10;0;-10;"; ¬ Vertical layout (sa - se)
+PRINT #1, "580;"; ? Horizontal layout (sf)
