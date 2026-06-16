@@ -1,0 +1,4 @@
+# Pinned loosely here; CI should freeze an exact lockfile (pip freeze) per the
+# reproducibility note in ../../DESIGN.md so extraction runs are repeatable.
+pymupdf>=1.24,<2.0
+docling>=2.0,<3.0

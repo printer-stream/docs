@@ -1,0 +1,2 @@
+# The indexer is pure standard library (sqlite3 with FTS5 + trigram, shipped with
+# CPython's bundled SQLite on the python:3.13-slim base). No third-party deps.

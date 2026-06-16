@@ -14,5 +14,6 @@ env/
 .DS_Store
 **/.env
 
-# Note: index/ is intentionally tracked — it's built by CI and loaded by the
-# MCP server at boot.
+# Note: data-extraction/index/ is intentionally tracked — it's built by CI
+# (binary index files via Git LFS, see .gitattributes) and baked into the
+# mcp-server image / loaded by the server at boot.

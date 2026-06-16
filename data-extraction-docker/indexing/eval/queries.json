@@ -1,0 +1,10 @@
+[
+  {"query": "GS ( k", "expect_stem": "star/escpos_cm_en"},
+  {"query": "GS /", "expect_stem": "star/escpos_cm_en"},
+  {"query": "Codepage 852", "expect_stem": "star/escpos_cm_en", "expect_labels": ["page-183"]},
+  {"query": "character code table", "expect_stem": "star/escpos_cm_en"},
+  {"query": "bit image", "expect_stem": "star/escpos_cm_en"},
+  {"query": "Chinese Character Control Commands", "expect_stem": "star/escpos_cm_en"},
+  {"query": "Black Mark", "expect_stem": "star/escpos_cm_en"},
+  {"query": "ESC GS", "expect_stem": "star/escpos_cm_en"}
+]

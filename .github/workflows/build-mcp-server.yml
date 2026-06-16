@@ -1,79 +1,49 @@
----
 name: Build MCP Server
 
+# Builds both image variants (lean + stuffed) from mcp-server/Dockerfile and
+# pushes them to GHCR, then optionally triggers a Render deploy. Runs after a
+# successful Index run (the baked index changed), on pushes to mcp-server/**, or
+# manually. The stuffed image bakes jpeg + markdown, so checkout pulls LFS.
+
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'mcp-server/**'
+  workflow_run:
+    workflows: ["Index"]
+    types: [completed]
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "mcp-server/**"
+
+permissions:
+  contents: read
+  packages: write
+
+concurrency:
+  group: build-mcp-server
+  cancel-in-progress: false
 
 jobs:
-
-  validate_new_version:
-    name: Validate new version
+  build:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
-    outputs:
-      planned_version: ${{ steps.validate_new_version.outputs.planned_version }}
-      version_file_exists: ${{ steps.validate_new_version.outputs.version_file_exists }}
-      tag_hash: ${{ steps.validate_new_version.outputs.tag_hash }}
-      can_create: ${{ steps.validate_new_version.outputs.can_create }}
-      tag_exists: ${{ steps.validate_new_version.outputs.tag_exists }}
-      branch_name: ${{ steps.validate_new_version.outputs.branch_name }}
-
     steps:
-
-      - name: Check out this repository
-        uses: actions/checkout@v6
+      - name: Checkout (with LFS; stuffed image bakes jpeg + markdown)
+        uses: actions/checkout@v4
         with:
+          lfs: true
           fetch-depth: 0
 
-      - name: Workaround the version file format
-        id: prepare_version_file
-        shell: bash
-        run: >-
-          grep __version__ mcp-server/version.py | cut -d "=" -f 2 | tr -d "'\" " > .version
+      - name: Compute version and image name
+        id: meta
+        run: |
+          ver=$(grep __version__ mcp-server/version.py | cut -d'"' -f2)
+          repo=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
+          echo "version=${ver}" >> "$GITHUB_OUTPUT"
+          echo "image=ghcr.io/${repo}/mcp-server" >> "$GITHUB_OUTPUT"
 
-      - name: Use latest released action
-        id: validate_new_version
-        uses: reinvented-stuff/validate-version-action@1.2.0
-        with:
-          version_filename: ".version"
-          github_token: "${{ secrets.GITHUB_TOKEN }}"
-          fail_on_error: true
-
-
-  docker_image:
-    name: Build Docker image
-    outputs:
-      job_status: ${{ job.status }}
-    runs-on: ubuntu-latest
-
-    needs:
-      - validate_new_version
-
-    env:
-      PLANNED_VERSION: ${{ needs.validate_new_version.outputs.planned_version }}
-      TAG_HASH: ${{ needs.validate_new_version.outputs.tag_hash }}
-      CAN_CREATE_RELEASE: ${{ needs.validate_new_version.outputs.can_create }}
-      TAG_EXISTS: ${{ needs.validate_new_version.outputs.tag_exists }}
-      BRANCH_NAME: ${{ needs.validate_new_version.outputs.branch_name }}
-      APP_NAME: "mcp-server"
-
-    steps:
-
-      - name: Check out code
-        uses: actions/checkout@v6
-        with:
-          fetch-depth: 0
-
-      - name: Read deps image version
-        id: deps_version
-        shell: bash
-        run: >-
-          grep __version__ mcp-dependencies-image/version.py | cut -d "=" -f 2 | tr -d "'\" " > .deps-version
-          && echo "version=$(cat .deps-version)" >> $GITHUB_OUTPUT
+      - name: Set up Buildx
+        uses: docker/setup-buildx-action@v3
 
       - name: Log in to GHCR
         uses: docker/login-action@v3
@@ -82,43 +52,39 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      # This image is built FROM the dependencies layer. When a push bumps the
-      # deps version, the deps build runs concurrently with this one, so wait
-      # until the exact deps tag is published to GHCR before building. No-op when
-      # the deps image already exists (deps not rebuilt, or already finished).
-      - name: Wait for the dependencies image to be published
-        shell: bash
-        env:
-          DEPS_IMAGE: "ghcr.io/${{ github.repository }}/mcp-dependencies-image:${{ steps.deps_version.outputs.version }}"
-        run: |
-          echo "Ensuring ${DEPS_IMAGE} exists before building (it may be mid-build)..."
-          for attempt in $(seq 1 60); do
-            if docker manifest inspect "${DEPS_IMAGE}" >/dev/null 2>&1; then
-              echo "Dependencies image is available; proceeding."
-              exit 0
-            fi
-            echo "  [${attempt}/60] not available yet; sleeping 15s"
-            sleep 15
-          done
-          echo "::error::Timed out (15 min) waiting for ${DEPS_IMAGE}. Did the dependencies image build succeed?"
-          exit 1
-
-      - name: Build Docker image
-        id: build_docker_image
-        uses: reinvented-stuff/build-docker-image-action@2.7.0
+      - name: Build and push lean image
+        uses: docker/build-push-action@v6
         with:
-          registry_address: "ghcr.io"
-          registry_username: "${{ github.actor }}"
-          registry_token: "${{ secrets.GITHUB_TOKEN }}"
-          name: "${{ github.repository }}/${{ env.APP_NAME }}"
-          planned_version: "${{ env.PLANNED_VERSION }}"
-          dockerfile: "mcp-server/Dockerfile"
-          default_branch: main
-          build_args: |-
-            APP_VERSION=${{ env.PLANNED_VERSION }}
-            DEPS_IMAGE=ghcr.io/${{ github.repository }}/mcp-dependencies-image
-            DEPS_VERSION=${{ steps.deps_version.outputs.version }}
-            VCS_REF=${{ github.sha }}
-            BUILD_DATE=${{ github.event.head_commit.timestamp }}
+          context: .
+          file: mcp-server/Dockerfile
+          target: lean
+          push: true
+          tags: |
+            ${{ steps.meta.outputs.image }}:${{ steps.meta.outputs.version }}
+            ${{ steps.meta.outputs.image }}:latest
+          cache-from: type=gha,scope=mcp-lean
+          cache-to: type=gha,scope=mcp-lean,mode=max
 
-...
+      - name: Build and push stuffed image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: mcp-server/Dockerfile
+          target: stuffed
+          push: true
+          tags: |
+            ${{ steps.meta.outputs.image }}:${{ steps.meta.outputs.version }}-stuffed
+            ${{ steps.meta.outputs.image }}:latest-stuffed
+          cache-from: type=gha,scope=mcp-stuffed
+          cache-to: type=gha,scope=mcp-stuffed,mode=max
+
+      - name: Trigger Render deploy (optional)
+        env:
+          HOOK: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run: |
+          if [ -n "$HOOK" ]; then
+            echo "Triggering Render deploy hook..."
+            curl -fsS -X POST "$HOOK" >/dev/null && echo "Deploy triggered."
+          else
+            echo "RENDER_DEPLOY_HOOK_URL not set; skipping deploy (image is in GHCR)."
+          fi
