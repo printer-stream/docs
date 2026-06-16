@@ -1,0 +1,25 @@
+# Keep the Docker build context lean. NOTE: the server image bakes in parts of
+# the data tree (data-extraction/index, and for the -stuffed target also
+# data-extraction/{jpeg,markdown}), so data-extraction/ is intentionally NOT
+# ignored. Used when building mcp-server from the repo root.
+
+# Source PDFs are only inputs to the extraction steps; no image copies them.
+pdf/
+
+# Version control and OS metadata
+.git/
+.gitignore
+**/.DS_Store
+
+# Python bytecode and local virtual environments — never belong in an image
+# (and the venv can be gigabytes with torch installed).
+**/__pycache__/
+**/*.py[cod]
+**/.virtualenv/
+**/.venv/
+.venv/
+venv/
+
+# Local-only config/secrets. The image sets its configuration via ENV / the
+# render dashboard, not a committed .env.
+**/.env

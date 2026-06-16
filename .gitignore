@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.venv-*/
+venv/
+env/
+
+# Local model / HF caches
+.cache/
+*.egg-info/
+
+# OS metadata and local secrets — never commit these.
+.DS_Store
+**/.env
+
+# Note: data-extraction/index/ is intentionally tracked — it's built by CI
+# (binary index files via Git LFS, see .gitattributes) and baked into the
+# mcp-server image / loaded by the server at boot.

@@ -1,0 +1,93 @@
+name: Extract
+
+# Heavy, one-time/occasional. Manual only. Runs an extraction phase over the
+# corpus and commits the outputs (jpeg/markdown/text/quality/pagemap/meta) to
+# Git LFS. Start on GitHub-hosted runners; if a single run hits the 6h cap,
+# escalate to a private runner (same image, different runs-on) or split the work
+# by dispatching per-stem. Phases are all-or-none per (phase, doc), so re-running
+# a phase simply regenerates its artifacts.
+
+on:
+  workflow_dispatch:
+    inputs:
+      phase:
+        description: "Extraction phase to run"
+        type: choice
+        default: run
+        options: [run, render, text, markdown, quality, assemble]
+      scope:
+        description: "Process the whole corpus or a single document"
+        type: choice
+        default: all
+        options: [all, stem]
+      stem:
+        description: "Document stem when scope=stem, e.g. star/escpos_cm_en"
+        type: string
+        default: ""
+
+permissions:
+  contents: write
+
+# Never let two extraction runs race on the LFS commit.
+concurrency:
+  group: data-extraction
+  cancel-in-progress: false
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (with LFS)
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build extraction image
+        uses: docker/build-push-action@v6
+        with:
+          context: data-extraction-docker/extraction
+          load: true
+          tags: printerrr-extraction:ci
+          cache-from: type=gha,scope=extraction
+          cache-to: type=gha,scope=extraction,mode=max
+
+      - name: Cache Docling models
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/printerrr-models
+          key: docling-models-v1
+
+      - name: Run phase
+        env:
+          PHASE: ${{ inputs.phase }}
+          SCOPE: ${{ inputs.scope }}
+          STEM: ${{ inputs.stem }}
+        run: |
+          mkdir -p "$HOME/.cache/printerrr-models"
+          scope_args="--all"
+          if [ "$SCOPE" = "stem" ]; then
+            if [ -z "$STEM" ]; then echo "::error::scope=stem requires a stem"; exit 1; fi
+            scope_args="--stem $STEM"
+          fi
+          docker run --rm \
+            -v "$PWD":/work \
+            -v "$HOME/.cache/printerrr-models":/models \
+            printerrr-extraction:ci "$PHASE" $scope_args
+
+      - name: Commit outputs to LFS
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data-extraction
+          if git diff --cached --quiet; then
+            echo "No extraction changes to commit."
+          else
+            git commit -m "[Auto] Extraction: ${{ inputs.phase }} (${{ inputs.scope }} ${{ inputs.stem }})"
+            git pull --rebase origin "${GITHUB_REF_NAME}"
+            git push
+          fi
