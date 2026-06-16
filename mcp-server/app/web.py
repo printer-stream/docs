@@ -65,34 +65,70 @@ async def healthz(request: Request) -> JSONResponse:
 
 
 async def version_endpoint(request: Request) -> JSONResponse:
-    return JSONResponse({"name": APP_NAME, "version": __version__})
+    meta = db.index_meta()
+    return JSONResponse(
+        {
+            "name": APP_NAME,
+            "version": __version__,
+            "index": {
+                "created_at": meta.get("created_at"),
+                "indexer_version": meta.get("indexer_version"),
+                "sqlite_version": meta.get("sqlite_version"),
+                "doc_count": meta.get("doc_count"),
+                "page_count": meta.get("page_count"),
+            },
+        }
+    )
+
+
+async def documents_json(request: Request) -> JSONResponse:
+    """List the source PDFs and their extraction lineage (timestamps, extractor
+    version, per-phase timing)."""
+    return JSONResponse({"documents": db.list_documents()})
 
 
 async def landing(request: Request) -> HTMLResponse:
     docs = db.list_documents()
+    meta = db.index_meta()
     base = settings.resolved_static_base_url
     mode = ("served from %s" % html.escape(base)) if base else "self-served (relative /static)"
     rows = "".join(
-        "<tr><td>%s</td><td>%s</td><td>%d</td><td>%s</td><td><code>%s</code></td></tr>"
+        "<tr><td>%s</td><td>%s</td><td>%d</td><td>%s</td><td>%s</td><td>%s</td><td><code>%s</code></td></tr>"
         % (
-            html.escape(d["vendor"]),
-            html.escape(d["title"] or ""),
-            d["page_count"] or 0,
-            html.escape(d["languages"] or ""),
-            html.escape(d["stem"]),
+            html.escape(d.get("vendor") or ""),
+            html.escape(d.get("title") or ""),
+            d.get("page_count") or 0,
+            html.escape(d.get("languages") or ""),
+            html.escape((d.get("extracted_at") or "")[:10]),
+            html.escape(d.get("pipeline_version") or ""),
+            html.escape(d.get("stem") or ""),
         )
         for d in docs
     )
+    index_line = ""
+    if meta:
+        index_line = (
+            "<p class='sub'>Index built %s by indexer v%s (%s docs, %s pages).</p>"
+            % (
+                html.escape(meta.get("created_at") or "?"),
+                html.escape(meta.get("indexer_version") or "?"),
+                html.escape(meta.get("doc_count") or "?"),
+                html.escape(meta.get("page_count") or "?"),
+            )
+        )
     body = (
         "<h1>Printer Stream Docs</h1>"
         "<p class='sub'>Machine-readable printer/device specification corpus, "
         "served over the Model Context Protocol.</p>"
         "<p>MCP endpoint: <code>/mcp</code> (streamable HTTP). "
-        "Tool catalog: <a href='/docs'>/docs</a>. "
+        "Tool catalog: <a href='/docs'>/docs</a>. Documents JSON: "
+        "<a href='/documents'>/documents</a>. Version: <a href='/version'>/version</a>. "
         "Health: <a href='/healthz'>/healthz</a>. Static assets: %s.</p>"
+        "%s"
         "<h2>Documents (%d)</h2>"
-        "<table><tr><th>Vendor</th><th>Title</th><th>Pages</th><th>Command sets</th><th>stem</th></tr>%s</table>"
-        % (mode, len(docs), rows)
+        "<table><tr><th>Vendor</th><th>Title</th><th>Pages</th><th>Command sets</th>"
+        "<th>Extracted</th><th>Extractor</th><th>stem</th></tr>%s</table>"
+        % (mode, index_line, len(docs), rows)
     )
     return HTMLResponse(_page("Printer Stream Docs", body))
 

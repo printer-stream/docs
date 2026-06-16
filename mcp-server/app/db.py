@@ -8,6 +8,7 @@ trigram recall net, so command/symbol queries are found and nothing is missed.
 from __future__ import annotations
 
 import contextlib
+import json
 import logging
 import sqlite3
 from typing import Dict, List, Optional
@@ -62,13 +63,44 @@ def _clamp_k(k: int) -> int:
     return max(1, min(k, settings.search_max_k))
 
 
-def list_documents() -> List[Dict]:
+def index_meta() -> Dict:
+    """Index build metadata (created_at, indexer_version, counts). Empty if the
+    baked index predates the index_meta table."""
     with connection() as c:
-        rows = c.execute(
-            "SELECT stem, vendor, doc, title, page_count, languages "
-            "FROM documents ORDER BY vendor, doc"
-        ).fetchall()
-    return [dict(r) for r in rows]
+        try:
+            rows = c.execute("SELECT key, value FROM index_meta").fetchall()
+        except sqlite3.OperationalError:
+            return {}
+    return {r["key"]: r["value"] for r in rows}
+
+
+def list_documents() -> List[Dict]:
+    """Documents plus extraction lineage (source pdf, extracted_at, extractor
+    version, per-phase timing). Falls back to the basic columns for an older
+    index that lacks the lineage fields."""
+    enriched = (
+        "SELECT stem, vendor, doc, title, page_count, languages, source_pdf, "
+        "extracted_at, pipeline_version, phases FROM documents ORDER BY vendor, doc"
+    )
+    basic = (
+        "SELECT stem, vendor, doc, title, page_count, languages "
+        "FROM documents ORDER BY vendor, doc"
+    )
+    with connection() as c:
+        try:
+            rows = c.execute(enriched).fetchall()
+        except sqlite3.OperationalError:
+            rows = c.execute(basic).fetchall()
+    out: List[Dict] = []
+    for r in rows:
+        d = dict(r)
+        if d.get("phases"):
+            try:
+                d["phases"] = json.loads(d["phases"])
+            except (TypeError, json.JSONDecodeError):
+                pass
+        out.append(d)
+    return out
 
 
 def get_document(stem: str) -> Optional[Dict]:

@@ -34,8 +34,15 @@ results carry image URLs for the hit page and its neighbours.
 | `/mcp` | MCP endpoint (streamable HTTP) |
 | `/` | Landing page (corpus overview) for robots and guests |
 | `/docs` | Tool catalog (the "swagger-like" view; introspects live tool schemas) |
-| `/healthz`, `/version` | Health and version JSON |
+| `/documents` | JSON: source PDFs + extraction lineage (extracted_at, extractor version, per-phase timing) |
+| `/version` | JSON: app version + index build info (created_at, indexer version, doc/page counts) |
+| `/healthz` | Health JSON |
 | `/static/...` | Static assets (only when self-serving; see below) |
+
+The index build timestamp + indexer version (and per-document extraction
+timestamp + extractor/pipeline version) are baked into the index DB at build
+time, so they are served from the one baked artifact. `list_documents()` (MCP
+tool) returns the same per-document lineage.
 
 ## Static assets / CDN
 

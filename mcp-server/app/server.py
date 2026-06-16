@@ -31,7 +31,9 @@ mcp = FastMCP(APP_NAME, host=settings.host, port=settings.port, stateless_http=T
 
 @mcp.tool()
 def list_documents() -> List[Dict]:
-    """List every document with vendor, title, page count, and command sets."""
+    """List every document with vendor, title, page count, command sets, source
+    PDF, and extraction lineage (extracted_at, extractor/pipeline version, and
+    per-phase timing)."""
     docs = db.list_documents()
     log.info("list_documents -> %d docs", len(docs))
     return docs
@@ -129,6 +131,7 @@ def build_app():
         Route("/", web.landing, methods=["GET"]),
         Route("/healthz", web.healthz, methods=["GET"]),
         Route("/version", web.version_endpoint, methods=["GET"]),
+        Route("/documents", web.documents_json, methods=["GET"]),
         Route("/docs", web.docs_page, methods=["GET"]),
     ]
     sd = settings.static_directory()

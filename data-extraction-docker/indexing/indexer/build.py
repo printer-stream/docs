@@ -13,11 +13,14 @@ from __future__ import annotations
 
 import json
 import logging
+import sqlite3
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, List, Tuple
 
 from . import summary as summary_mod
 from .config import FTS_TOKENIZE, LOGGER_NAME, Settings, TRIGRAM_TOKENIZE
+from .version import __version__
 
 log = logging.getLogger(LOGGER_NAME)
 
@@ -29,11 +32,17 @@ DROP TABLE IF EXISTS pages_trgm;
 DROP TABLE IF EXISTS pages_fts;
 DROP TABLE IF EXISTS pages;
 DROP TABLE IF EXISTS documents;
+DROP TABLE IF EXISTS index_meta;
+
+-- Key/value metadata about this index build (created_at, indexer_version, ...).
+CREATE TABLE index_meta (key TEXT PRIMARY KEY, value TEXT);
 
 CREATE TABLE documents (
   id INTEGER PRIMARY KEY,
   stem TEXT UNIQUE, vendor TEXT, doc TEXT, title TEXT,
-  page_count INTEGER, languages TEXT, summary TEXT, source_pdf TEXT
+  page_count INTEGER, languages TEXT, summary TEXT, source_pdf TEXT,
+  -- Extraction lineage copied from the pagemap (for /version and /documents).
+  extracted_at TEXT, pipeline_version TEXT, phases TEXT
 );
 
 CREATE TABLE pages (
@@ -111,10 +120,13 @@ def _index_document(con, settings: Settings, pagemap: Dict) -> int:
         vendor, doc, pagemap.get("page_count", len(pages)), "\n".join(full_text_parts)
     )
     con.execute(
-        "INSERT INTO documents(stem,vendor,doc,title,page_count,languages,summary,source_pdf)"
-        " VALUES (?,?,?,?,?,?,?,?)",
+        "INSERT INTO documents(stem,vendor,doc,title,page_count,languages,summary,source_pdf,"
+        "extracted_at,pipeline_version,phases)"
+        " VALUES (?,?,?,?,?,?,?,?,?,?,?)",
         (stem, vendor, doc, title, pagemap.get("page_count", len(pages)),
-         languages, summary, pagemap.get("source_pdf")),
+         languages, summary, pagemap.get("source_pdf"),
+         pagemap.get("generated_at"), pagemap.get("pipeline_version"),
+         json.dumps(pagemap.get("phases", {}), ensure_ascii=True)),
     )
     log.info("Indexed %s: %d pages, languages=[%s]", stem, len(rows), languages)
     return len(rows)
@@ -135,6 +147,19 @@ def _populate_fts(con) -> None:
     log.info("Populated and optimized FTS indexes")
 
 
+def _write_index_meta(con, doc_count: int, page_count: int) -> None:
+    con.executemany(
+        "INSERT INTO index_meta(key, value) VALUES (?, ?)",
+        [
+            ("created_at", datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")),
+            ("indexer_version", __version__),
+            ("sqlite_version", sqlite3.sqlite_version),
+            ("doc_count", str(doc_count)),
+            ("page_count", str(page_count)),
+        ],
+    )
+
+
 def build_index(con, settings: Settings) -> Dict:
     """Build the whole index into an open connection. Returns build stats."""
     con.executescript(_schema_sql())
@@ -152,6 +177,7 @@ def build_index(con, settings: Settings) -> Dict:
         page_count += _index_document(con, settings, pagemap)
         doc_count += 1
     _populate_fts(con)
+    _write_index_meta(con, doc_count, page_count)
     con.commit()
     log.info("Build complete: %d docs, %d pages", doc_count, page_count)
     return {"doc_count": doc_count, "page_count": page_count}
