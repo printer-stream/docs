@@ -42,7 +42,7 @@ class Settings(BaseSettings):
     port: int = Field(default=10000, alias="PORT")
     log_level: str = Field(default="INFO", alias="LOG_LEVEL")
 
-    search_k: int = Field(default=8, alias="DOCS_SEARCH_K")
+    search_k: int = Field(default=15, alias="DOCS_SEARCH_K")
     search_max_k: int = Field(default=50, alias="DOCS_SEARCH_MAX_K")
 
     @property

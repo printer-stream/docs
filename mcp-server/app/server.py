@@ -61,7 +61,9 @@ def search_specs(
 
     query  : free text; command symbols are handled safely (e.g. 'GS ( k').
     vendor : optional filter, e.g. 'star'.
-    k      : max results. neighbors: also return image URLs for +/-N pages.
+    k      : max results to return (default 15, capped at 50). Pass a larger k for
+             broader recall; the default is a balance of recall vs context size.
+    neighbors: also return image URLs for +/-N pages around each hit.
     """
     t0 = time.perf_counter()
     out: List[Dict] = []

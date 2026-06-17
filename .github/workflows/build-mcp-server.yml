@@ -4,26 +4,28 @@ name: Build MCP Server
 # pushes them to GHCR, then optionally triggers a Render deploy. The stuffed
 # image bakes jpeg + markdown, so checkout pulls LFS.
 #
-# Runs ONLY downstream of the Index workflow (or manual dispatch) - never on a
-# raw push - so it can never run ahead of, or concurrently with, indexing.
-# mcp-server/** pushes trigger Index, which chains here once a current index is
-# committed.
+# Triggers: after a successful Index run (corpus/index changed), on mcp-server/**
+# pushes (server code changed - bakes the existing committed index, no reindex),
+# or manually. A first step waits for any in-progress/queued Index run so the
+# build never bakes a stale or half-written index, even when one push changes
+# both the indexer and the server.
 
 on:
   workflow_run:
     workflows: ["Index"]
     types: [completed]
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "mcp-server/**"
 
 permissions:
   contents: read
   packages: write
 
-# Shared with the Index workflow: the build must wait for any in-progress index
-# rebuild (so it bakes a finished, current index, never a stale or half-written
-# one). Index completion also re-triggers this build via workflow_run above.
 concurrency:
-  group: index-and-image
+  group: build-mcp-server
   cancel-in-progress: false
 
 jobs:
@@ -31,6 +33,19 @@ jobs:
     if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
+      - name: Wait for any in-progress Index run
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for i in $(seq 1 90); do
+            active=$(gh run list --repo "${{ github.repository }}" --workflow Index \
+              --json status,headBranch \
+              -q '[.[] | select((.status=="in_progress" or .status=="queued") and .headBranch=="main")] | length')
+            if [ "${active:-0}" = "0" ]; then echo "No active Index run; proceeding."; exit 0; fi
+            echo "Index run active (${active}); waiting 20s..."; sleep 20
+          done
+          echo "::warning::Timed out waiting for Index; proceeding anyway."
+
       - name: Checkout (with LFS; stuffed image bakes jpeg + markdown)
         uses: actions/checkout@v4
         with:
