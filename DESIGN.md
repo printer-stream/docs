@@ -189,10 +189,12 @@ Python 3.13. Implemented in `mcp-server/`.
 
 - Framework: official Python MCP SDK / FastMCP over streamable HTTP (works on
   Render; gives an HTTP surface for static assets and the landing page).
-- Tools (kept from the current contract): `list_documents()`,
-  `get_document_summary(stem)`, `search_specs(query, vendor?, k?, neighbors?)`,
-  `get_page(stem, page)`. `stem` is the vendor-rooted path without extension,
-  e.g. `star/star_graphic_cm_en`.
+- Tools: `list_documents()`, `get_document_summary(stem)`,
+  `search_specs(query, vendor?, k?, neighbors?)`, `get_page(stem, page)`, and
+  `get_page_image(stem, page, size?)` - the last returns the rendered page as MCP
+  image content (base64) so a vision-capable client can see figures/diagrams the
+  Markdown cannot convey (search/get_page only return image URLs). `stem` is the
+  vendor-rooted path without extension, e.g. `star/star_graphic_cm_en`.
 - Static serving: `/static/jpeg/...` and `/static/md/...`. When
   `DOCS_STATIC_BASE_URL` is set the server returns CDN URLs and does not serve
   static itself; when unset it self-serves and returns relative URLs. Switching

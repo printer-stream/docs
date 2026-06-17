@@ -11,13 +11,13 @@ import logging
 import time
 from typing import Dict, List, Optional
 
-from mcp.server.fastmcp import FastMCP
+from mcp.server.fastmcp import FastMCP, Image
 from starlette.routing import Mount, Route
 from starlette.staticfiles import StaticFiles
 
 from . import db, web
 from .config import APP_NAME, settings, setup_logging
-from .urls import asset_url
+from .urls import asset_url, load_asset_bytes
 
 try:
     from version import __version__
@@ -121,6 +121,26 @@ def get_page(stem: str, page: int) -> Dict:
         "image": {"small": asset_url(row["jpeg_small"]), "big": asset_url(row["jpeg_big"])},
         "markdown_url": asset_url(row["markdown"]),
     }
+
+
+@mcp.tool()
+def get_page_image(stem: str, page: int, size: str = "small") -> Image:
+    """Return a page's rendered image so a vision-capable client can actually see
+    it - for figures, diagrams, and dense tables the Markdown cannot convey.
+
+    stem is the vendor-rooted path without extension; page is 1-based.
+    size: 'small' (~1024px, default; keep payloads modest) or 'big' (full-res).
+    Fetch one page on demand; do not request images for every search hit.
+    """
+    if size not in ("small", "big"):
+        size = "small"
+    row = db.get_page_assets(stem, page)
+    if row is None:
+        raise ValueError("page not found: %s page %s" % (stem, page))
+    rel = row["jpeg_big"] if size == "big" else row["jpeg_small"]
+    data = load_asset_bytes(rel)
+    log.info("get_page_image stem=%r page=%s size=%s -> %d bytes", stem, page, size, len(data))
+    return Image(data=data, format="jpeg")
 
 
 def build_app():

@@ -24,8 +24,15 @@ results carry image URLs for the hit page and its neighbours.
 | `get_document_summary(stem)` | What devices/technologies a doc covers |
 | `search_specs(query, vendor?, k?, neighbors?)` | Ranked pages with snippet + image URLs (+ neighbour images) |
 | `get_page(stem, page)` | Full page Markdown + image URLs |
+| `get_page_image(stem, page, size?)` | The rendered page as image content (base64) a vision client can view; `size` small (default) or big |
 
 `stem` is the vendor-rooted path without extension, e.g. `star/escpos_cm_en`.
+
+`search_specs`/`get_page` return image *URLs* (a human or a client with a fetch
+tool can open them). `get_page_image` returns the actual image as MCP image
+content, so a vision-capable client can see the page directly - use it on demand
+for figures/diagrams/dense tables, not for every search hit (payload size). The
+bytes come from the baked static dir (stuffed image) or the CDN/base URL (lean).
 
 ## HTTP surface
 

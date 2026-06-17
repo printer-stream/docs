@@ -175,6 +175,16 @@ def search_pages(con, query: str, vendor: Optional[str], k: int) -> List[Dict]:
     return hits[:k]
 
 
+def get_page_assets(stem: str, page: int) -> Optional[Dict]:
+    """Just the render paths for a page (for get_page_image), no body."""
+    with connection() as c:
+        r = c.execute(
+            "SELECT label, jpeg_small, jpeg_big FROM pages WHERE stem = ? AND page = ?",
+            (stem, page),
+        ).fetchone()
+    return dict(r) if r else None
+
+
 def neighbor_pages(con, stem: str, lo: int, hi: int) -> List[Dict]:
     rows = con.execute(
         "SELECT page, label, jpeg_small, jpeg_big FROM pages "
