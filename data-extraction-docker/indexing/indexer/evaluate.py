@@ -1,18 +1,27 @@
 """Search-quality eval harness.
 
-Runs a fixed query set against the built index and reports, per query, whether
-the expected document (and any expected page labels) appear in the top-k results
-of the ranked full-text index, plus whether the trigram net finds them. Produces
-a recall@k number so index variants can be compared objectively over time.
+Runs a fixed query set against the built index using the canonical combined
+search (search_pages) and reports, per query and in aggregate:
+
+  - doc hit: an expected document appears in the top-k -> recall_at_k (the CI
+    gate metric; "did we surface the right document at all").
+  - for page-labeled queries, graded retrieval metrics over the labeled relevant
+    pages: precision@k, recall@k, MRR, nDCG@k.
+
+Ground truth per query (in eval/queries.json):
+  - "relevant": ["<stem>#<label>", ...]    page-level (preferred, enables graded metrics)
+  - "expect_stem" + "expect_labels"         page-level (derived)
+  - "expect_stem" only                      doc-level (contributes to doc-hit only)
 """
 
 from __future__ import annotations
 
 import json
 import logging
+import math
 import sqlite3
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Set
 
 from .config import LOGGER_NAME, Settings
 from .search import search_pages
@@ -24,54 +33,90 @@ def default_queries_path() -> Path:
     return Path(__file__).resolve().parent.parent / "eval" / "queries.json"
 
 
-def _stem_rank(results: List[dict], stem: str) -> Optional[int]:
-    for i, r in enumerate(results, start=1):
-        if r["stem"] == stem:
-            return i
+def _relevant_keys(item: Dict) -> Optional[Set[str]]:
+    """Page-level ground truth as a set of '<stem>#<label>', or None (doc-level)."""
+    if item.get("relevant"):
+        return set(item["relevant"])
+    stem, labels = item.get("expect_stem"), item.get("expect_labels")
+    if stem and labels:
+        return {"%s#%s" % (stem, lb) for lb in labels}
     return None
+
+
+def _expected_stems(item: Dict) -> Set[str]:
+    if item.get("relevant"):
+        return {key.split("#", 1)[0] for key in item["relevant"]}
+    if item.get("expect_stem"):
+        return {item["expect_stem"]}
+    return set()
+
+
+def _dcg(flags: List[int]) -> float:
+    return sum(f / math.log2(i + 1) for i, f in enumerate(flags, start=1))
 
 
 def run_eval(settings: Settings, queries_path: Path, k: int = 10) -> Dict:
     queries = json.loads(queries_path.read_text(encoding="utf-8"))
     con = sqlite3.connect(str(settings.db_path))
     total = len(queries)
-    passed = 0
+    doc_hits = 0
+    graded: List[Dict] = []
     details: List[Dict] = []
 
     for item in queries:
         q = item["query"]
-        expect_stem = item.get("expect_stem")
-        expect_labels = item.get("expect_labels", [])
-
-        # Use the canonical combined search (AND -> OR -> trigram), i.e. exactly
-        # what the MCP server serves, so the gate reflects real behaviour.
         results = search_pages(con, q, k)
+        result_keys = ["%s#%s" % (r["stem"], r["label"]) for r in results]
+        exp_stems = _expected_stems(item)
 
-        rank = _stem_rank(results, expect_stem) if expect_stem else None
-        found_labels = {r["label"] for r in results if r["stem"] == expect_stem}
-        labels_found = [lb for lb in expect_labels if lb in found_labels]
+        doc_hit = bool(exp_stems) and any(r["stem"] in exp_stems for r in results)
+        doc_hits += 1 if doc_hit else 0
 
-        ok = True
-        if expect_stem and rank is None:
-            ok = False
-        if expect_labels and not labels_found:
-            ok = False
-        passed += 1 if ok else 0
-
-        log.info(
-            "[%s] %-22s rank=%s labels=%s/%s",
-            "PASS" if ok else "FAIL", q, rank,
-            len(labels_found), len(expect_labels),
-        )
-        details.append(
-            {
-                "query": q, "expect_stem": expect_stem, "ok": ok,
-                "rank": rank,
-                "labels_found": labels_found, "labels_expected": expect_labels,
+        rk = _relevant_keys(item)
+        metrics: Optional[Dict] = None
+        if rk:
+            flags = [1 if key in rk else 0 for key in result_keys]
+            topk = flags[:k]
+            hits = sum(topk)
+            mrr = next((1.0 / i for i, f in enumerate(flags, start=1) if f), 0.0)
+            ideal = [1] * min(len(rk), k)
+            metrics = {
+                "precision_at_k": round(hits / k, 4),
+                "recall_at_k": round(hits / len(rk), 4),
+                "mrr": round(mrr, 4),
+                "ndcg_at_k": round(_dcg(topk) / _dcg(ideal), 4) if ideal else 0.0,
             }
-        )
+            graded.append(metrics)
+
+        suffix = ""
+        if metrics:
+            suffix = " P@%d=%.2f R@%d=%.2f nDCG=%.2f MRR=%.2f" % (
+                k, metrics["precision_at_k"], k, metrics["recall_at_k"],
+                metrics["ndcg_at_k"], metrics["mrr"],
+            )
+        log.info("[%s] %-36s doc_hit=%s%s", "ok" if doc_hit else "MISS", q[:36], doc_hit, suffix)
+        details.append({"query": q, "doc_hit": doc_hit, "metrics": metrics})
 
     con.close()
-    recall = passed / total if total else 0.0
-    log.info("Eval: %d/%d passed (recall@%d = %.2f)", passed, total, k, recall)
-    return {"total": total, "passed": passed, "recall_at_k": recall, "k": k, "details": details}
+
+    def _mean(key: str) -> Optional[float]:
+        return round(sum(g[key] for g in graded) / len(graded), 4) if graded else None
+
+    recall_at_k = round(doc_hits / total, 4) if total else 0.0
+    summary = {
+        "total": total,
+        "k": k,
+        "recall_at_k": recall_at_k,            # doc-hit rate; the CI gate metric
+        "labeled": len(graded),
+        "precision_at_k": _mean("precision_at_k"),
+        "page_recall_at_k": _mean("recall_at_k"),
+        "ndcg_at_k": _mean("ndcg_at_k"),
+        "mrr": _mean("mrr"),
+        "details": details,
+    }
+    log.info(
+        "Eval: doc-hit recall@%d=%.2f (%d/%d) | labeled=%d  P@%d=%s  nDCG@%d=%s  MRR=%s",
+        k, recall_at_k, doc_hits, total, len(graded),
+        k, summary["precision_at_k"], k, summary["ndcg_at_k"], summary["mrr"],
+    )
+    return summary

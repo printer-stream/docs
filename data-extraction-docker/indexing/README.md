@@ -45,12 +45,26 @@ docker build -t printer-stream-indexing data-extraction-docker/indexing
 # Build the index (runs the eval afterwards)
 docker run --rm -v "$PWD":/work printer-stream-indexing build
 
-# Re-run just the eval (recall@k over eval/queries.json)
+# Re-run just the eval over eval/queries.json
 docker run --rm -v "$PWD":/work printer-stream-indexing evaluate --k 10
 
-# Gate in CI: fail if recall drops
+# Gate in CI: fail if doc-hit recall drops
 docker run --rm -v "$PWD":/work printer-stream-indexing evaluate --min-recall 0.9
 ```
 
 The eval query set (`eval/queries.json`) is the objective measure of search
 quality and the basis for comparing index types; extend it as the corpus grows.
+
+Each query carries ground truth, and the harness reports:
+
+- **doc-hit recall@k** - did an expected document appear in the top-k. This is
+  the CI gate (`--min-recall`). Queries can be doc-level (`expect_stem`).
+- **precision@k, recall@k, MRR, nDCG@k** - graded retrieval metrics for
+  page-labeled queries (`"relevant": ["<stem>#<label>", ...]`). nDCG/MRR capture
+  *ranking* quality (relevant pages near the top), which precision@k misses when
+  only 1-2 pages are relevant.
+
+These make quality measurable per change: e.g. a verbose query whose relevant
+pages rank below incidental keyword matches shows up as low MRR/nDCG, and a
+figure page that search can't reach (little extractable text) shows up as a
+recall miss - the signal that the optional `describe` (VLM) phase is needed.

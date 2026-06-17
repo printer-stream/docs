@@ -1,10 +1,21 @@
 [
   {"query": "GS ( k", "expect_stem": "star/escpos_cm_en"},
   {"query": "GS /", "expect_stem": "star/escpos_cm_en"},
-  {"query": "Codepage 852", "expect_stem": "star/escpos_cm_en", "expect_labels": ["page-183"]},
   {"query": "character code table", "expect_stem": "star/escpos_cm_en"},
-  {"query": "bit image", "expect_stem": "star/escpos_cm_en"},
   {"query": "Chinese Character Control Commands", "expect_stem": "star/escpos_cm_en"},
   {"query": "Black Mark", "expect_stem": "star/escpos_cm_en"},
-  {"query": "ESC GS", "expect_stem": "star/escpos_cm_en"}
+
+  {"query": "Codepage 852 character table",
+   "relevant": ["star/escpos_cm_en#page-183", "star/escpos_cm_en#page-182"]},
+  {"query": "GS / bit image",
+   "relevant": ["star/escpos_cm_en#page-090"]},
+  {"query": "pen up down PU PD instruction",
+   "relevant": ["hp/FFONS49JUMXQZJH#page-042"]},
+  {"query": "select pen instruction SP",
+   "relevant": ["hp/FFONS49JUMXQZJH#page-042"]},
+  {"query": "output buffer size ESC.L",
+   "relevant": ["hp/FFONS49JUMXQZJH#page-174"]},
+  {"query": "HP 7475A ESC commands output buffer size",
+   "relevant": ["hp/FFONS49JUMXQZJH#page-174", "hp/FFONS49JUMXQZJH#page-180",
+                "hp/FFONS49JUMXQZJH#page-179", "hp/FFONS49JUMXQZJH#page-010"]}
 ]
