@@ -125,8 +125,10 @@ phases (e.g. a VLM `describe` step) between existing ones.
 | `describe` | jpeg + quality | `describe/<stem>/page-NN.txt` (VLM; optional, off by default) |
 | `assemble` | all the above | `pagemap/<stem>.json` + `markdown/<stem>/document.md` + reports |
 
-`describe` runs after `quality` because it is gated on the quality phase's output
-(flagged + image-only/empty pages); it is excluded from the `all-phases` convenience and
+`describe` runs after `quality`; its `--gate` selects pages - default
+`illustrated` (any page with a figure placeholder plus flagged/empty pages, since
+a text-rich page can still hide a diagram the text never describes), or `flagged`
+/ `all`. It is excluded from the `all-phases` convenience and
 only fires when an endpoint is configured. It is provider-pluggable via any
 OpenAI-compatible vision endpoint (local vLLM or a hosted model) and writes
 supplementary descriptions that the index treats as a separate, lower-signal

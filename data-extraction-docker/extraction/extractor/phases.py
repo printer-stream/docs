@@ -189,35 +189,52 @@ def quality_doc(settings: Settings, stem: str) -> Dict:
     return meta
 
 
-# --- phase: describe (optional VLM; gated to flagged + image-only pages) ----
-def _describe_targets(settings: Settings, stem: str, width: int, page_count: int, all_pages: bool):
-    if all_pages:
-        return [page_label(n, width) for n in range(1, page_count + 1)]
-    # Default gate: pages the quality phase flagged (figure/low-coverage) plus
-    # pages with no extractable text at all ("empty" = blank OR image-only). The
-    # latter is essential: a pure image-only page has no text layer, so it is
-    # tagged empty rather than flagged, yet it is exactly what needs describing.
-    # (Blank pages also match; describing them is cheap and harmless.)
+# --- phase: describe (optional VLM) ----------------------------------------
+# Gate modes select which pages to describe:
+#   all          - every page.
+#   illustrated  - pages with a figure (Docling "<!-- image -->" placeholder) plus
+#                  flagged/empty pages. This is the default: a page can have plenty
+#                  of text yet a diagram the text never describes (e.g. a wiring
+#                  schematic), so flagged/empty alone misses it.
+#   flagged      - only quality-flagged + image-only/empty pages (cheapest).
+_IMAGE_PLACEHOLDER = "<!-- image -->"
+
+
+def _describe_targets(settings: Settings, stem: str, width: int, page_count: int, gate: str):
+    labels = [page_label(n, width) for n in range(1, page_count + 1)]
+    if gate == "all":
+        return labels
+
+    flagged: set = set()
     q_path = settings.quality_json_path(stem)
-    if not q_path.exists():
+    if q_path.exists():
+        data = json.loads(q_path.read_text(encoding="utf-8"))
+        flagged = {lb for lb, p in data.get("pages", {}).items() if p.get("flagged") or p.get("empty")}
+    else:
         log.warning("describe: no quality json for %s; run the quality phase first", stem)
-        return []
-    data = json.loads(q_path.read_text(encoding="utf-8"))
-    return [
-        label for label, p in data.get("pages", {}).items()
-        if p.get("flagged") or p.get("empty")
-    ]
+
+    if gate == "flagged":
+        return [lb for lb in labels if lb in flagged]
+
+    # gate == "illustrated": flagged/empty + any page whose markdown has a figure.
+    md_dir = settings.doc_markdown_dir(stem)
+    targets = set(flagged)
+    for lb in labels:
+        md_path = md_dir / (lb + ".md")
+        if md_path.exists() and _IMAGE_PLACEHOLDER in md_path.read_text(encoding="utf-8"):
+            targets.add(lb)
+    return [lb for lb in labels if lb in targets]
 
 
 def describe_doc(
-    settings: Settings, client: DescribeClient, stem: str, all_pages: bool = False
+    settings: Settings, client: DescribeClient, stem: str, gate: str = "illustrated"
 ) -> Dict:
     doc, page_count, width = _open(settings, stem)
     doc.close()
-    targets = _describe_targets(settings, stem, width, page_count, all_pages)
+    targets = _describe_targets(settings, stem, width, page_count, gate)
     rec = PhaseRecorder(
         "describe", "vlm", client.model,
-        params={"base_url": client.base_url, "image": settings.describe_image, "all_pages": all_pages},
+        params={"base_url": client.base_url, "image": settings.describe_image, "gate": gate},
     )
     out_dir = settings.doc_describe_dir(stem)
     out_dir.mkdir(parents=True, exist_ok=True)

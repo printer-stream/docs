@@ -18,16 +18,27 @@ Every phase also writes `data-extraction/meta/<stem>/<phase>.json` (tool, versio
 params, start/end, duration, per-page timing, status). `assemble` folds a summary
 of those into the pagemap's `phases` field.
 
-The `describe` phase is optional and off by default (not part of `all-phases`). It is
-gated to the pages the quality phase flagged plus image-only/empty pages, and
-needs an OpenAI-compatible vision endpoint (local vLLM or a hosted model):
+The `describe` phase is optional and off by default (not part of `all-phases`). It
+gives pages a VLM-written description so figures the markdown can't convey (e.g. a
+wiring schematic) become searchable. `--gate` selects which pages:
+
+- `illustrated` (default) - pages with a figure (`<!-- image -->`) plus
+  flagged/empty pages. A text-rich page can still hide a diagram the text never
+  describes, so flagged/empty alone is not enough.
+- `flagged` - only quality-flagged + image-only/empty pages (cheapest).
+- `all` - every page.
+
+It needs any OpenAI-compatible vision endpoint - a local model (Ollama, vLLM) or a
+hosted one:
 
 ```bash
 # Endpoint/model/key default from DESCRIBE_BASE_URL / DESCRIBE_MODEL / DESCRIBE_API_KEY.
+# Local via Ollama (no GPU needed; Metal on macOS):
 docker run --rm -v "$PWD":/work \
-  -e DESCRIBE_BASE_URL=http://host.docker.internal:8000/v1 \
-  -e DESCRIBE_MODEL=Qwen/Qwen2.5-VL-7B-Instruct \
-  printer-stream-extraction describe --all
+  -e DESCRIBE_BASE_URL=http://host.docker.internal:11434/v1 \
+  -e DESCRIBE_MODEL=qwen2.5vl -e DESCRIBE_API_KEY=ollama \
+  printer-stream-extraction describe --all          # --gate illustrated (default)
+# or a GPU box with vLLM: DESCRIBE_BASE_URL=http://<host>:8000/v1 DESCRIBE_MODEL=Qwen/Qwen2.5-VL-7B-Instruct
 # then re-run assemble so the pagemap references the new descriptions:
 docker run --rm -v "$PWD":/work printer-stream-extraction assemble --all
 ```

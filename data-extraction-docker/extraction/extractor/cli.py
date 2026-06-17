@@ -83,8 +83,9 @@ def build_parser() -> argparse.ArgumentParser:
                     help="API key (default from DESCRIBE_API_KEY)")
     dp.add_argument("--describe-image", choices=["small", "big"], default="big",
                     help="Which render to send to the VLM")
-    dp.add_argument("--all-pages", action="store_true",
-                    help="Describe every page (default: only quality-flagged pages)")
+    dp.add_argument("--gate", choices=["illustrated", "flagged", "all"], default="illustrated",
+                    help="Which pages to describe: illustrated (figure pages + flagged, "
+                         "default), flagged (flagged/empty only), or all")
 
     sub.add_parser("report", help="Aggregate per-doc QA into quality/report.html")
     return p
@@ -165,7 +166,7 @@ def _run_phase(settings: Settings, args: argparse.Namespace, phase: str) -> int:
     elif phase == "quality":
         fn = lambda stem: phases_mod.quality_doc(settings, stem)
     elif phase == "describe":
-        fn = lambda stem: phases_mod.describe_doc(settings, client, stem, all_pages=args.all_pages)
+        fn = lambda stem: phases_mod.describe_doc(settings, client, stem, gate=args.gate)
     elif phase == "assemble":
         fn = lambda stem: phases_mod.assemble_doc(settings, stem)
     elif phase == "all-phases":
