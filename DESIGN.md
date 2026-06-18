@@ -96,10 +96,12 @@ Tiered, quality-gated. Implemented in `data-extraction-docker/extraction/`.
 - Tier B (fallback / cross-check): OCR for pages with missing or garbled text
   layers (the scanned HP doc, image-only pages). Also an independent signal to
   detect bad text-layer extraction.
-- Tier C (selective, gated, off by default): re-transcribe only pages that fail
-  the quality gate (mangled command tables, figure-dense pages) with a VLM. Kept
-  off under GitHub-hosted CI; enabled only when private runners exist. Never all
-  pages, never a top-tier hosted model by default.
+- Tier C (VLM, profile-selectable): an OpenAI-compatible VLM can serve as the
+  primary `markdown` backend (transcribe the page image), as a faithfulness
+  `vlm-judge` for `quality`, and for the optional `describe` phase. Which tier
+  runs is a profile choice, not a code edit: `default` keeps VLMs off (Docling +
+  heuristic, no GPU/network); `hosted`/`cheap-gpu`/`h200` turn them on. Never the
+  default, never a top-tier hosted model unless the profile asks for it.
 - JPEG rendering: small (~1024px) + big (full-res), driven off the same page
   enumeration that produces the markdown, so the 1:1 mapping is guaranteed and
   recorded in `pagemap`.
@@ -107,6 +109,13 @@ Tiered, quality-gated. Implemented in `data-extraction-docker/extraction/`.
 The extractor is manifest-driven and shardable: a doc manifest lets a CI matrix
 split the corpus across parallel runners (doc-level sharding) to stay under the
 runner time cap.
+
+Each phase's engine/model is set by a **profile** - a TOML file selected with the
+global `--profile` flag (default `default`): one place to swap models or downgrade
+to a shared runner, never a code change. Secrets are referenced by env-var name
+(`api_key_env`), never stored. Built-ins: `default` (no GPU/network), `hosted`
+(hosted API, runs on a shared runner), `cheap-gpu`, `h200`. Selecting an
+unregistered backend fails immediately with the available names.
 
 ### Phase decomposition
 
@@ -116,23 +125,32 @@ its own timing + metadata. This keeps intermediates for troubleshooting, lets us
 re-run/replace one phase without redoing the others, and makes room to insert new
 phases (e.g. a VLM `describe` step) between existing ones.
 
-| Phase | Input | Output |
-|-------|-------|--------|
-| `render`   | pdf           | `jpeg/<stem>/{small,big}/page-NN.jpg` |
-| `text`     | pdf           | `text/<stem>/page-NN.txt` (raw text layer) |
-| `markdown` | pdf           | `markdown/<stem>/page-NN.md` (Docling; the slow phase) |
-| `quality`  | markdown+text | `quality/<stem>.json` |
-| `describe` | jpeg + quality | `describe/<stem>/page-NN.txt` (VLM; optional, off by default) |
-| `assemble` | all the above | `pagemap/<stem>.json` + `markdown/<stem>/document.md` + reports |
+| Phase | Input | Output | Backend (profile section) |
+|-------|-------|--------|---------------------------|
+| `render`   | pdf           | `jpeg/<stem>/{small,big}/page-NN.jpg` | - (`[render]`) |
+| `text`     | pdf           | `text/<stem>/page-NN.txt` (raw text layer) | - |
+| `markdown` | pdf           | `markdown/<stem>/page-NN.md` | `docling` \| `vlm` |
+| `quality`  | markdown+text | `quality/<stem>.json` | `heuristic` \| `vlm-judge` |
+| `describe` | jpeg + quality | `describe/<stem>/page-NN.txt` (VLM; optional) | VLM |
+| `sections` | markdown      | `sections/<stem>.json` (logical chunks) | `headings` \| `llm-text` |
+| `assemble` | all the above | `pagemap/<stem>.json` + `markdown/<stem>/document.md` + reports | - |
 
-`describe` runs after `quality`; its `--gate` selects pages - default
-`illustrated` (any page with a figure placeholder plus flagged/empty pages, since
-a text-rich page can still hide a diagram the text never describes), or `flagged`
-/ `all`. It is excluded from the `all-phases` convenience and
-only fires when an endpoint is configured. It is provider-pluggable via any
-OpenAI-compatible vision endpoint (local vLLM or a hosted model) and writes
-supplementary descriptions that the index treats as a separate, lower-signal
-field - never merged into the authoritative markdown.
+`all-phases` runs `render -> text -> markdown -> quality -> assemble`. `describe`
+and `sections` are separate opt-in phases, excluded from that convenience.
+
+`quality` can use `vlm-judge`, which keeps the heuristic verdict everywhere and
+adds a VLM faithfulness check on **figure pages only** (image + markdown in, `OK`
+or `MISSING: ...` out) - catching diagrams the text silently drops, since the
+heuristic scores an image-only page fine on coverage; figureless pages make no
+model call, bounding cost. `describe`'s `--gate` selects pages - default
+`illustrated` (any figure placeholder plus flagged/empty pages, since a text-rich
+page can still hide a diagram), or `flagged` / `all` (gates are an extensible
+registry); its output is a separate, lower-signal index field, never merged into
+the authoritative markdown. `sections` emits logical chunks (a command/topic spans
+pages; a page is a print-media artifact, not the retrieval unit) for section-level
+retrieval, via `headings` (deterministic) or `llm-text`. All VLM-backed work is
+provider-pluggable via any OpenAI-compatible endpoint (local vLLM or a hosted
+model).
 
 - Atomic unit is (phase, document): "all or none artifacts of the same kind", no
   per-page resume state. Re-run a phase to redo it.
@@ -260,7 +278,8 @@ page<->artifact mapping; downstream code reads it instead of recomputing paths.
 ## Open / deferred
 
 - Vector index under `index/vector/` for later comparison.
-- VLM Tier C enabled once private runners exist.
+- Section-level retrieval: indexer + mcp consume `sections/<stem>.json`.
+- `vlm-window` sections backend (page-image sliding window) - a registry drop-in.
 - CDN cutover (set `DOCS_STATIC_BASE_URL`) once LFS bandwidth or image size
   warrants it.
 
