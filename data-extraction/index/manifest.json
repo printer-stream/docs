@@ -1,10 +1,10 @@
 {
   "builder": {
     "name": "indexer",
-    "version": "0.4.0"
+    "version": "0.5.0"
   },
   "sqlite_version": "3.46.1",
-  "generated_at": "2026-06-17T14:41:44Z",
+  "generated_at": "2026-06-18T13:37:44Z",
   "params": {
     "fts_tokenize": "unicode61 remove_diacritics 0 tokenchars '@/*^<>=&|~#+'",
     "trigram_tokenize": "trigram case_sensitive 0",
@@ -15,14 +15,17 @@
       "path": "data-extraction/index/fulltext/specs.db",
       "engine": "sqlite-fts5",
       "tables": [
+        "sections_fts (unicode61)",
+        "sections_trgm (trigram)",
         "pages_fts (unicode61)",
         "pages_trgm (trigram)",
         "documents_fts"
       ],
       "doc_count": 12,
       "page_count": 2808,
-      "bytes": 30638080,
-      "sha256": "5ee54bbec3d437b014ef51ebe93abbb3199a6a0ad51897bd969f03f28d5b059b"
+      "section_count": 6152,
+      "bytes": 53665792,
+      "sha256": "25bd71c842b529d6f743b6681e14d245966009bbe20bc46728e7b2430e947ca7"
     }
   }
 }
