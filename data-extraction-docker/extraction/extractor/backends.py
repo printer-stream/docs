@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import json
 import logging
+import re
 from typing import List
 
 from .config import LOGGER_NAME
@@ -121,3 +122,145 @@ def _gate_illustrated(settings, stem: str, labels: List[str]) -> List[str]:
         if md_path.exists() and "<!-- image -->" in md_path.read_text(encoding="utf-8"):
             selected.add(lb)
     return [lb for lb in labels if lb in selected]
+
+
+# --- sections backends -----------------------------------------------------
+# Each receives `pages` = [(page_number, label, markdown_text), ...] in order and
+# returns a list of section dicts {title, level, heading_path, text, page_start,
+# page_end, page_labels, char_count}. Phase assigns ids.
+_HEADING_RE = re.compile(r"^(#{1,6})\s+(.+?)\s*$")
+
+
+def _split_text(text: str, max_chars: int) -> List[str]:
+    if max_chars <= 0 or len(text) <= max_chars:
+        return [text]
+    parts: List[str] = []
+    buf: List[str] = []
+    size = 0
+    for para in text.split("\n\n"):
+        if size and size + len(para) > max_chars:
+            parts.append("\n\n".join(buf))
+            buf, size = [], 0
+        buf.append(para)
+        size += len(para) + 2
+    if buf:
+        parts.append("\n\n".join(buf))
+    return parts
+
+
+class _HeadingsSections:
+    name = "headings"
+    model = None
+
+    def __init__(self, settings, cfg) -> None:
+        self._max_chars = int(cfg.get("max_chars", 6000))
+
+    def build(self, pages: List[tuple]) -> List[dict]:
+        labels = {num: label for num, label, _ in pages}
+        raw: List[tuple] = []  # (meta, text)
+        stack: List[tuple] = []  # (level, title)
+        cur = None
+
+        def flush():
+            nonlocal cur
+            if cur is None:
+                return
+            text = "\n".join(cur["lines"]).strip()
+            if text:  # skip heading-only sections; their title lives on in children's heading_path
+                raw.append((cur, text))
+            cur = None
+
+        for num, _label, md in pages:
+            for line in md.splitlines():
+                m = _HEADING_RE.match(line)
+                if m:
+                    flush()
+                    level, title = len(m.group(1)), m.group(2).strip()
+                    while stack and stack[-1][0] >= level:
+                        stack.pop()
+                    stack.append((level, title))
+                    cur = {"title": title, "level": level,
+                           "heading_path": " > ".join(t for _, t in stack),
+                           "lines": [], "page_start": num, "page_end": num, "pages": {num}}
+                else:
+                    if cur is None:  # front matter before the first heading
+                        cur = {"title": "(front matter)", "level": 0, "heading_path": "",
+                               "lines": [], "page_start": num, "page_end": num, "pages": {num}}
+                    cur["lines"].append(line)
+                    cur["page_end"] = num
+                    cur["pages"].add(num)
+        flush()
+
+        out: List[dict] = []
+        for meta, text in raw:
+            page_labels = [labels[n] for n in sorted(meta["pages"])]
+            chunks = _split_text(text, self._max_chars)
+            for ci, chunk in enumerate(chunks):
+                title = meta["title"] if len(chunks) == 1 else "%s (part %d)" % (meta["title"], ci + 1)
+                out.append({
+                    "title": title, "level": meta["level"], "heading_path": meta["heading_path"],
+                    "text": chunk, "page_start": meta["page_start"], "page_end": meta["page_end"],
+                    "page_labels": page_labels, "char_count": len(chunk),
+                })
+        return out
+
+
+@SECTIONS.register("headings")
+def _make_headings(settings, cfg):
+    return _HeadingsSections(settings, cfg)
+
+
+def _parse_section_starts(raw: str) -> List[dict]:
+    s = raw.strip()
+    i, j = s.find("["), s.rfind("]")
+    if i == -1 or j == -1 or j < i:
+        return []
+    try:
+        data = json.loads(s[i:j + 1])
+    except json.JSONDecodeError:
+        return []
+    return [d for d in data if isinstance(d, dict) and d.get("start_page")]
+
+
+class _LlmTextSections:
+    name = "llm-text"
+
+    def __init__(self, settings, cfg) -> None:
+        from . import providers  # lazy
+
+        self._client = providers.client_from(cfg.get("provider"))
+        self.model = self._client.model
+        self._max_tokens = int((cfg.get("provider") or {}).get("max_tokens", 4096))
+
+    def build(self, pages: List[tuple]) -> List[dict]:
+        from .prompts import SECTIONS_PROMPT
+
+        labels = {num: label for num, label, _ in pages}
+        nums = [num for num, _, _ in pages]
+        doc_md = "\n\n".join("<!-- page %d -->\n%s" % (num, md) for num, _l, md in pages)
+        raw = self._client.text_only(SECTIONS_PROMPT + "\n\n" + doc_md, max_tokens=self._max_tokens)
+        starts = _parse_section_starts(raw)
+        if not starts:
+            log.warning("sections llm-text: model returned no parseable starts; empty result")
+            return []
+        starts.sort(key=lambda d: int(d.get("start_page", nums[0])))
+
+        lo, hi = min(nums), max(nums)
+        out: List[dict] = []
+        for k, st in enumerate(starts):
+            sp = max(lo, min(int(st.get("start_page", lo)), hi))
+            ep = (int(starts[k + 1].get("start_page", sp)) - 1) if k + 1 < len(starts) else hi
+            ep = max(sp, min(ep, hi))
+            text = "\n\n".join(md for num, _l, md in pages if sp <= num <= ep).strip()
+            out.append({
+                "title": str(st.get("title", "")), "level": int(st.get("level", 1)),
+                "heading_path": str(st.get("title", "")), "text": text,
+                "page_start": sp, "page_end": ep,
+                "page_labels": [labels[n] for n in nums if sp <= n <= ep], "char_count": len(text),
+            })
+        return out
+
+
+@SECTIONS.register("llm-text")
+def _make_llm_text(settings, cfg):
+    return _LlmTextSections(settings, cfg)

@@ -17,6 +17,18 @@ DESCRIBE_PROMPT = (
     "preamble."
 )
 
+# sections phase (llm-text backend): markdown with page markers -> section starts.
+SECTIONS_PROMPT = (
+    "You are given the Markdown of a technical specification document, with "
+    "<!-- page N --> markers showing where each page begins. Identify the "
+    "document's logical sections (commands, topics, chapters), which may span "
+    "multiple pages. Return ONLY a JSON array; each element is "
+    '{"title": <exact section/command title>, "level": <1 for top-level, 2 for '
+    'subsection, ...>, "start_page": <page number where the section begins>}. '
+    "Use the exact titles from the text, do not invent sections, and do not "
+    "include page content. Output only the JSON array."
+)
+
 # markdown phase (vlm backend): full page image -> faithful GitHub-Flavored Markdown.
 MARKDOWN_PROMPT = (
     "Transcribe this page from a technical printer/plotter command specification "

@@ -6,6 +6,7 @@
   markdown   pdf  -> markdown/<stem>/page-NN.md      (backend: docling | vlm)
   quality    md+text -> quality/<stem>.json          (backend: heuristic | vlm-judge)
   describe   jpeg -> describe/<stem>/page-NN.txt      (VLM; gate-selected pages)
+  sections   markdown -> sections/<stem>.json         (backend: headings | llm-text)
   assemble   all  -> pagemap/<stem>.json + document.md + reports
   all-phases render+text+markdown+quality+assemble, in order
   report     aggregate per-doc QA -> quality/report.html
@@ -57,7 +58,7 @@ def build_parser() -> argparse.ArgumentParser:
     m = sub.add_parser("manifest", help="Discover PDFs and emit a doc manifest as JSON")
     m.add_argument("--out", default=None, help="Write JSON here (default: stdout)")
 
-    for phase in ("render", "text", "markdown", "quality", "assemble", "all-phases"):
+    for phase in ("render", "text", "markdown", "quality", "sections", "assemble", "all-phases"):
         help_text = (
             "Run all phases in order (render, text, markdown, quality, assemble)"
             if phase == "all-phases" else "Phase: %s" % phase
@@ -138,6 +139,10 @@ def _run_phase(settings: Settings, args: argparse.Namespace, phase: str) -> int:
         client = providers.client_from(cfg.get("provider"))
         gate = args.gate or cfg.get("gate", "illustrated")
         fn = lambda stem: phases_mod.describe_doc(settings, client, stem, gate=gate)
+    elif phase == "sections":
+        cfg = settings.profile.sections
+        backend = backends_mod.SECTIONS.get(cfg["backend"])(settings, cfg)
+        fn = lambda stem: phases_mod.sections_doc(settings, backend, stem)
     elif phase == "assemble":
         fn = lambda stem: phases_mod.assemble_doc(settings, stem)
     elif phase == "all-phases":

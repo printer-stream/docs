@@ -85,6 +85,10 @@ class Settings:
         return self.root / self.out_root / "describe"
 
     @property
+    def sections_dir(self) -> Path:
+        return self.root / self.out_root / "sections"
+
+    @property
     def meta_dir(self) -> Path:
         return self.root / self.out_root / "meta"
 
@@ -108,6 +112,9 @@ class Settings:
 
     def quality_json_path(self, stem: str) -> Path:
         return self.quality_dir / f"{stem}.json"
+
+    def sections_json_path(self, stem: str) -> Path:
+        return self.sections_dir / f"{stem}.json"
 
     def quality_html_path(self, stem: str) -> Path:
         return self.quality_dir / f"{stem}.html"

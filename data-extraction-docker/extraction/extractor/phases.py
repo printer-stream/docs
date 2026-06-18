@@ -342,6 +342,47 @@ def assemble_doc(settings: Settings, stem: str) -> Dict:
     return meta
 
 
+# --- phase: sections (logical chunks over the markdown) --------------------
+# `backend` (headings | llm-text | ...) is injected by the CLI; it turns the
+# per-page markdown into sections that may span pages, each mapped to a page range.
+def sections_doc(settings: Settings, backend, stem: str) -> Dict:
+    doc, page_count, width = _open(settings, stem)
+    doc.close()
+    md_dir = settings.doc_markdown_dir(stem)
+    pages = []
+    for n in range(1, page_count + 1):
+        label = page_label(n, width)
+        md_path = md_dir / (label + ".md")
+        md = md_path.read_text(encoding="utf-8") if md_path.exists() else ""
+        pages.append((n, label, md))
+
+    rec = PhaseRecorder(
+        "sections", backend.name, backend.model or __version__,
+        params={"backend": backend.name, "model": backend.model},
+    )
+    log.info("sections %s: backend=%s model=%s", stem, backend.name, backend.model)
+    sections = backend.build(pages)
+    for i, s in enumerate(sections, start=1):
+        s["id"] = i
+
+    vendor, _, name = stem.partition("/")
+    payload = {
+        "stem": stem, "vendor": vendor, "doc": name,
+        "backend": backend.name, "model": backend.model,
+        "generated_at": utcnow(),
+        "page_count": page_count,
+        "section_count": len(sections),
+        "sections": sections,
+    }
+    out = settings.sections_json_path(stem)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(payload, indent=2, ensure_ascii=True) + "\n", encoding="utf-8")
+    meta = rec.to_dict(stem, page_count, extra={"section_count": len(sections)})
+    write_meta(settings, stem, "sections", meta)
+    log.info("sections %s: %d sections written", stem, len(sections))
+    return meta
+
+
 # --- convenience: all phases for one doc, in order -------------------------
 # markdown_backend and quality_backend are built once by the CLI (from the
 # profile) and injected, so the converter/model is loaded once for the whole run.

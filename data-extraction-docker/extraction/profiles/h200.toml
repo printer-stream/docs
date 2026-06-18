@@ -42,11 +42,9 @@ api_key_env = "VLLM_API_KEY"
 max_tokens = 400
 
 [sections]
-backend = "vlm-window"
-window = 3
-overlap = 1
+backend = "llm-text"     # vlm-window (page-image sliding window) is a planned backend
 [sections.provider]
 base_url = "http://localhost:8000/v1"
 model = "Qwen/Qwen2.5-VL-72B-Instruct"
 api_key_env = "VLLM_API_KEY"
-max_tokens = 1024
+max_tokens = 4096
