@@ -1,0 +1,24 @@
+# Default profile: runs anywhere - shared GitHub runner, no GPU, no API key.
+# This reproduces the classic pipeline (Docling markdown, heuristic QA, describe
+# off). Pick this (or `hosted`) if you don't have a GPU.
+
+[render]
+small_width = 1024      # readable everywhere
+big_dpi = 200           # full-resolution render
+jpeg_quality = 85
+
+[markdown]
+backend = "docling"
+do_ocr = true
+
+[quality]
+backend = "heuristic"
+threshold = 0.5
+
+[describe]
+enabled = false
+gate = "illustrated"
+image = "big"
+
+[sections]
+backend = "headings"

@@ -1,0 +1,40 @@
+# Hosted profile: no GPU. VLM steps call a hosted OpenAI-compatible API
+# (OpenAI, DigitalOcean inference, etc.), so this runs on a shared GitHub runner.
+# Set the API key env the provider blocks reference, e.g. export OPENAI_API_KEY=...
+# Cheap: gpt-4o-mini-class models are a few dollars for the whole corpus.
+
+[render]
+small_width = 1024
+big_dpi = 200
+jpeg_quality = 85
+
+[markdown]
+backend = "vlm"
+image = "big"
+[markdown.provider]
+base_url = "https://api.openai.com/v1"
+model = "gpt-4o-mini"
+api_key_env = "OPENAI_API_KEY"
+max_tokens = 4096
+
+[quality]
+backend = "heuristic"          # keep QA free; flip to vlm-judge if desired
+threshold = 0.5
+
+[describe]
+enabled = true
+gate = "illustrated"
+image = "small"                # smaller payload for per-token billing
+[describe.provider]
+base_url = "https://api.openai.com/v1"
+model = "gpt-4o-mini"
+api_key_env = "OPENAI_API_KEY"
+max_tokens = 400
+
+[sections]
+backend = "llm-text"
+[sections.provider]
+base_url = "https://api.openai.com/v1"
+model = "gpt-4o-mini"
+api_key_env = "OPENAI_API_KEY"
+max_tokens = 2048

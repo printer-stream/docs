@@ -19,11 +19,11 @@ from typing import Dict, List, Optional, Tuple
 
 import fitz  # PyMuPDF
 
+from . import backends as backends_mod
 from . import quality as quality_mod
 from . import report as report_mod
 from .config import LOGGER_NAME, Settings
-from .convert import DoclingPageConverter
-from .describe import DescribeClient
+from .describe import PROMPT as DESCRIBE_PROMPT
 from .meta import PhaseRecorder, read_meta, utcnow, write_meta
 from .render import get_text_layer, page_label, pad_width, render_big, render_small
 from .version import __version__
@@ -120,23 +120,26 @@ def text_doc(settings: Settings, stem: str) -> Dict:
     return meta
 
 
-# --- phase: markdown (Docling, the expensive one) --------------------------
+# --- phase: markdown -------------------------------------------------------
+# `backend` is built by the CLI from the profile (docling | vlm) and injected, so
+# this phase is engine-agnostic: it just calls backend.page(doc, idx) -> markdown.
 def markdown_doc(
-    settings: Settings, converter: DoclingPageConverter, stem: str,
-    progress: Optional["Progress"] = None,
+    settings: Settings, backend, stem: str, progress: Optional["Progress"] = None,
 ) -> Dict:
     doc, page_count, width = _open(settings, stem)
+    version = backend.model or _pkg_version("docling")
     rec = PhaseRecorder(
-        "markdown", "docling", _pkg_version("docling"),
-        params={"do_ocr": settings.do_ocr},
+        "markdown", backend.name, version,
+        params={"backend": backend.name, "model": backend.model, "do_ocr": settings.do_ocr},
     )
+    log.info("markdown %s: backend=%s model=%s", stem, backend.name, backend.model)
     out_dir = settings.doc_markdown_dir(stem)
     out_dir.mkdir(parents=True, exist_ok=True)
     try:
         for n in range(page_count):
             label = page_label(n + 1, width)
             with rec.time_page(label):
-                markdown = converter.convert_page(doc, n)
+                markdown = backend.page(doc, n)
             (out_dir / (label + ".md")).write_text(markdown.rstrip() + "\n", encoding="utf-8")
             _log_page("markdown", stem, label, n + 1, page_count, progress, "(%d chars)" % len(markdown))
         meta = rec.to_dict(stem, page_count)
@@ -147,13 +150,16 @@ def markdown_doc(
 
 
 # --- phase: quality --------------------------------------------------------
-def quality_doc(settings: Settings, stem: str) -> Dict:
+# `backend` (heuristic | vlm-judge) is injected by the CLI; it exposes
+# assess(markdown, text) -> PageQuality.
+def quality_doc(settings: Settings, backend, stem: str) -> Dict:
     doc, page_count, width = _open(settings, stem)
     doc.close()  # only needed page_count/width here; inputs come from artifacts
     rec = PhaseRecorder(
-        "quality", "builtin", __version__,
-        params={"threshold": settings.quality_threshold},
+        "quality", backend.name, backend.model or __version__,
+        params={"backend": backend.name, "model": backend.model, "threshold": settings.quality_threshold},
     )
+    log.info("quality %s: backend=%s", stem, backend.name)
     md_dir = settings.doc_markdown_dir(stem)
     text_dir = settings.doc_text_dir(stem)
 
@@ -166,7 +172,7 @@ def quality_doc(settings: Settings, stem: str) -> Dict:
         markdown = md_path.read_text(encoding="utf-8") if md_path.exists() else ""
         text = txt_path.read_text(encoding="utf-8") if txt_path.exists() else ""
 
-        q = quality_mod.assess_page(markdown, text, settings.quality_threshold)
+        q = backend.assess(markdown, text)
         source = "text-layer" if len(text.strip()) >= settings.text_layer_min_chars else "ocr"
         if q.flagged:
             flagged_count += 1
@@ -190,52 +196,20 @@ def quality_doc(settings: Settings, stem: str) -> Dict:
 
 
 # --- phase: describe (optional VLM) ----------------------------------------
-# Gate modes select which pages to describe:
-#   all          - every page.
-#   illustrated  - pages with a figure (Docling "<!-- image -->" placeholder) plus
-#                  flagged/empty pages. This is the default: a page can have plenty
-#                  of text yet a diagram the text never describes (e.g. a wiring
-#                  schematic), so flagged/empty alone misses it.
-#   flagged      - only quality-flagged + image-only/empty pages (cheapest).
-_IMAGE_PLACEHOLDER = "<!-- image -->"
-
-
-def _describe_targets(settings: Settings, stem: str, width: int, page_count: int, gate: str):
-    labels = [page_label(n, width) for n in range(1, page_count + 1)]
-    if gate == "all":
-        return labels
-
-    flagged: set = set()
-    q_path = settings.quality_json_path(stem)
-    if q_path.exists():
-        data = json.loads(q_path.read_text(encoding="utf-8"))
-        flagged = {lb for lb, p in data.get("pages", {}).items() if p.get("flagged") or p.get("empty")}
-    else:
-        log.warning("describe: no quality json for %s; run the quality phase first", stem)
-
-    if gate == "flagged":
-        return [lb for lb in labels if lb in flagged]
-
-    # gate == "illustrated": flagged/empty + any page whose markdown has a figure.
-    md_dir = settings.doc_markdown_dir(stem)
-    targets = set(flagged)
-    for lb in labels:
-        md_path = md_dir / (lb + ".md")
-        if md_path.exists() and _IMAGE_PLACEHOLDER in md_path.read_text(encoding="utf-8"):
-            targets.add(lb)
-    return [lb for lb in labels if lb in targets]
-
-
-def describe_doc(
-    settings: Settings, client: DescribeClient, stem: str, gate: str = "illustrated"
-) -> Dict:
+# `client` is a providers.LLMClient built from the profile's [describe.provider];
+# `gate` is a name resolved against the gate registry (all | flagged | illustrated
+# | ...). Adding a gate = register one function in backends.py.
+def describe_doc(settings: Settings, client, stem: str, gate: str = "illustrated") -> Dict:
     doc, page_count, width = _open(settings, stem)
     doc.close()
-    targets = _describe_targets(settings, stem, width, page_count, gate)
+    labels = [page_label(n, width) for n in range(1, page_count + 1)]
+    targets = backends_mod.GATES.get(gate)(settings, stem, labels)
     rec = PhaseRecorder(
         "describe", "vlm", client.model,
-        params={"base_url": client.base_url, "image": settings.describe_image, "gate": gate},
+        params={"base_url": client.base_url, "model": client.model,
+                "image": settings.describe_image, "gate": gate},
     )
+    log.info("describe %s: gate=%s model=%s -> %d/%d pages", stem, gate, client.model, len(targets), page_count)
     out_dir = settings.doc_describe_dir(stem)
     out_dir.mkdir(parents=True, exist_ok=True)
     size = settings.describe_image if settings.describe_image in ("small", "big") else "big"
@@ -251,7 +225,7 @@ def describe_doc(
             continue
         try:
             with rec.time_page(label):
-                text = client.describe_image(jpeg.read_bytes())
+                text = client.vision(DESCRIBE_PROMPT, jpeg.read_bytes())
             (out_dir / (label + ".txt")).write_text(text.rstrip() + "\n", encoding="utf-8")
             described += 1
             log.info("  describe %s %s  page %d/%d (%d chars)", stem, label, i, total_targets, len(text))
@@ -369,9 +343,12 @@ def assemble_doc(settings: Settings, stem: str) -> Dict:
 
 
 # --- convenience: all phases for one doc, in order -------------------------
+# markdown_backend and quality_backend are built once by the CLI (from the
+# profile) and injected, so the converter/model is loaded once for the whole run.
 def run_all_phases(
     settings: Settings,
-    converter: DoclingPageConverter,
+    markdown_backend,
+    quality_backend,
     stem: str,
     render_progress: Optional["Progress"] = None,
     markdown_progress: Optional["Progress"] = None,
@@ -380,6 +357,6 @@ def run_all_phases(
     # correct across docs without double-counting render and markdown.
     render_doc(settings, stem, progress=render_progress)
     text_doc(settings, stem)
-    markdown_doc(settings, converter, stem, progress=markdown_progress)
-    quality_doc(settings, stem)
+    markdown_doc(settings, markdown_backend, stem, progress=markdown_progress)
+    quality_doc(settings, quality_backend, stem)
     return assemble_doc(settings, stem)

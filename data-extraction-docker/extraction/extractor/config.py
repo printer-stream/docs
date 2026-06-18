@@ -10,35 +10,50 @@ import logging
 import sys
 from dataclasses import dataclass, field
 from pathlib import Path
+from typing import Any
 
 LOGGER_NAME = "extractor"
 
 
 @dataclass
 class Settings:
-    """Runtime configuration for one extraction run."""
+    """Runtime configuration for one extraction run.
+
+    Per-phase params (render size, quality threshold, OCR, describe image) are
+    populated from the selected profile so there is one source of truth; backend
+    *selection* (which model/engine) is read from the profile by the phases.
+    """
 
     root: Path
-    small_width: int = 1024
-    big_dpi: int = 200
-    jpeg_quality: int = 85
-    do_ocr: bool = True
+    profile: Any  # profiles.Profile (duck-typed to avoid an import cycle)
+
     # A page whose PDF text layer has fewer characters than this is treated as
     # image-only; its markdown is credited to OCR ("ocr") rather than the text
-    # layer ("text-layer") in the pagemap.
+    # layer ("text-layer") in the pagemap. A constant, not profile-driven.
     text_layer_min_chars: int = 40
-    # Pages scoring below this are flagged for manual review.
-    quality_threshold: float = 0.5
-    # Which JPEG render the describe phase sends to the VLM ("small" or "big").
-    describe_image: str = "big"
 
     # Repo-relative output roots (kept relative for the pagemap, which records
     # repo-relative paths).
     pdf_root: str = field(default="pdf")
     out_root: str = field(default="data-extraction")
 
+    # Populated from the profile in __post_init__ (defaults mirror profile DEFAULTS).
+    small_width: int = field(default=1024, init=False)
+    big_dpi: int = field(default=200, init=False)
+    jpeg_quality: int = field(default=85, init=False)
+    do_ocr: bool = field(default=True, init=False)
+    quality_threshold: float = field(default=0.5, init=False)
+    describe_image: str = field(default="big", init=False)
+
     def __post_init__(self) -> None:
         self.root = Path(self.root).resolve()
+        r = self.profile.render
+        self.small_width = int(r["small_width"])
+        self.big_dpi = int(r["big_dpi"])
+        self.jpeg_quality = int(r["jpeg_quality"])
+        self.quality_threshold = float(self.profile.quality["threshold"])
+        self.do_ocr = bool(self.profile.markdown.get("do_ocr", True))
+        self.describe_image = self.profile.describe.get("image", "big")
 
     # --- absolute filesystem locations -------------------------------------
     @property

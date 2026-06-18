@@ -1,0 +1,52 @@
+# H200 (or any single big-VRAM CUDA GPU) profile: local VLMs via vLLM.
+# Serve the models first, e.g.:
+#   vllm serve Qwen/Qwen2.5-VL-72B-Instruct --port 8000
+# and export the key the provider blocks reference:  export VLLM_API_KEY=...
+# (vLLM needs no real key; any value works.)
+#
+# NOTE: the vlm / vlm-judge / vlm-window backends land in extraction 3.0.0
+# (steps 2-5). Until then, selecting them errors clearly; `default` is runnable now.
+
+[render]
+small_width = 1024
+big_dpi = 300            # crisper render for the VLM to read tables/labels
+jpeg_quality = 90
+
+[markdown]
+backend = "vlm"
+image = "big"
+[markdown.provider]
+base_url = "http://localhost:8000/v1"
+model = "Qwen/Qwen2.5-VL-72B-Instruct"
+api_key_env = "VLLM_API_KEY"
+max_tokens = 4096
+timeout = 300
+
+[quality]
+backend = "vlm-judge"
+threshold = 0.5
+[quality.provider]
+base_url = "http://localhost:8000/v1"
+model = "Qwen/Qwen2.5-VL-32B-Instruct"
+api_key_env = "VLLM_API_KEY"
+max_tokens = 512
+
+[describe]
+enabled = true
+gate = "illustrated"
+image = "big"
+[describe.provider]
+base_url = "http://localhost:8000/v1"
+model = "Qwen/Qwen2.5-VL-72B-Instruct"
+api_key_env = "VLLM_API_KEY"
+max_tokens = 400
+
+[sections]
+backend = "vlm-window"
+window = 3
+overlap = 1
+[sections.provider]
+base_url = "http://localhost:8000/v1"
+model = "Qwen/Qwen2.5-VL-72B-Instruct"
+api_key_env = "VLLM_API_KEY"
+max_tokens = 1024
