@@ -43,6 +43,34 @@ def _make_docling(settings, cfg):
     return _DoclingMarkdown(settings, cfg)
 
 
+class _VlmMarkdown:
+    """Transcribe a page image to Markdown via an OpenAI-compatible VLM. Renders
+    the page in memory (no dependency on the on-disk render phase)."""
+
+    name = "vlm"
+
+    def __init__(self, settings, cfg) -> None:
+        from . import providers  # lazy
+
+        self._client = providers.client_from(cfg.get("provider"))
+        self.model = self._client.model
+        # dpi for the model's input image; defaults to the profile's big render dpi.
+        self._dpi = int(cfg.get("dpi", settings.big_dpi))
+        self._quality = int(settings.jpeg_quality)
+
+    def page(self, doc, page_index: int) -> str:
+        from .render import jpeg_bytes  # lazy (pulls fitz)
+        from .prompts import MARKDOWN_PROMPT
+
+        img = jpeg_bytes(doc[page_index], self._dpi / 72.0, self._quality)
+        return self._client.vision(MARKDOWN_PROMPT, img)
+
+
+@MARKDOWN.register("vlm")
+def _make_vlm_markdown(settings, cfg):
+    return _VlmMarkdown(settings, cfg)
+
+
 # --- quality backends ------------------------------------------------------
 class _HeuristicQuality:
     name = "heuristic"

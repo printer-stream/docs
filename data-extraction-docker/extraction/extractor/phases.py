@@ -23,8 +23,8 @@ from . import backends as backends_mod
 from . import quality as quality_mod
 from . import report as report_mod
 from .config import LOGGER_NAME, Settings
-from .describe import PROMPT as DESCRIBE_PROMPT
 from .meta import PhaseRecorder, read_meta, utcnow, write_meta
+from .prompts import DESCRIBE_PROMPT
 from .render import get_text_layer, page_label, pad_width, render_big, render_small
 from .version import __version__
 

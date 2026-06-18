@@ -27,11 +27,16 @@ def get_text_layer(page: "fitz.Page") -> str:
     return page.get_text("text") or ""
 
 
+def jpeg_bytes(page: "fitz.Page", zoom: float, quality: int = 85) -> bytes:
+    """Render a page to JPEG bytes in memory (used by the vlm markdown backend to
+    feed the model without depending on the on-disk render phase)."""
+    pix = page.get_pixmap(matrix=fitz.Matrix(zoom, zoom), alpha=False)
+    return pix.tobytes(output="jpeg", jpg_quality=quality)
+
+
 def _save_jpeg(page: "fitz.Page", zoom: float, out_path: Path, quality: int) -> None:
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    matrix = fitz.Matrix(zoom, zoom)
-    pix = page.get_pixmap(matrix=matrix, alpha=False)
-    out_path.write_bytes(pix.tobytes(output="jpeg", jpg_quality=quality))
+    out_path.write_bytes(jpeg_bytes(page, zoom, quality))
 
 
 def render_small(page: "fitz.Page", out_path: Path, settings: Settings) -> None:
