@@ -59,8 +59,8 @@ where it runs change. Pick the lowest tier that meets your quality bar.
 |---------|---------|----------|---------|----------|----------|-------|
 | `default`   | shared GitHub runner, **no GPU, no network** | `docling` (local) | `heuristic` | off | `headings` | nothing |
 | `hosted`    | shared runner, no GPU | `vlm` gpt-4o-mini | `heuristic` | on (gpt-4o-mini) | `llm-text` gpt-4o-mini | `OPENAI_API_KEY` (a few $ for the corpus) |
-| `cheap-gpu` | a 24-48 GB local GPU (vLLM/Ollama) | `vlm` Qwen2.5-VL-7B | `heuristic` | on (7B) | `llm-text` Qwen2.5-7B | a small GPU + `VLLM_API_KEY` (any value) |
-| `h200`      | one big-VRAM CUDA GPU | `vlm` Qwen2.5-VL-72B | `vlm-judge` (32B) | on (72B) | `llm-text` (72B) | an H200-class GPU + `VLLM_API_KEY` (any value) |
+| `cheap-gpu` | a 24-48 GB local GPU (vLLM/Ollama) | `vlm` Qwen3-VL-8B | `heuristic` | on (8B) | `llm-text` Qwen3-VL-8B | a small GPU + `VLLM_API_KEY` (any value) |
+| `h200`      | one big-VRAM CUDA GPU | `vlm` Qwen3-VL-32B-FP8 | `vlm-judge` (32B-FP8) | on (32B-FP8) | `llm-text` (32B-FP8) | an H200-class GPU + `VLLM_API_KEY` (any value) |
 
 `default` is the floor: it reproduces the classic Docling + heuristic pipeline and
 needs no GPU and no API key, so the corpus can always be rebuilt on a free runner.

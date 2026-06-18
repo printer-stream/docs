@@ -1,8 +1,15 @@
 # H200 (or any single big-VRAM CUDA GPU) profile: local VLMs via vLLM.
-# Serve the models first, e.g.:
-#   vllm serve Qwen/Qwen2.5-VL-72B-Instruct --port 8000
+# One model serves every phase. Serve it first, e.g.:
+#   vllm serve Qwen/Qwen3-VL-32B-Instruct-FP8 --port 8000
 # and export the key the provider blocks reference:  export VLLM_API_KEY=...
 # (vLLM needs no real key; any value works.)
+#
+# Why Qwen3-VL-32B-Instruct-FP8: a strict upgrade over Qwen2.5-VL-72B (>= its
+# quality at < half the VRAM), FP8 ~= 33 GB so it fits one 141 GB H200 with room
+# for KV cache; Instruct (not Thinking) for verbatim transcription; 256K context
+# fits whole-doc markdown for sections. For higher page throughput, swap markdown
+# to Qwen/Qwen3-VL-30B-A3B-Instruct-FP8 (3B active). The 235B-A22B flagship needs
+# 2x H200 (FP8 ~235 GB), so it is not a single-GPU default.
 #
 # NOTE: vlm (markdown) and vlm-judge (quality) are implemented as of 3.0.0.
 # vlm-window (page-image sliding-window sections) is still planned; until it lands,
@@ -18,7 +25,7 @@ backend = "vlm"
 image = "big"
 [markdown.provider]
 base_url = "http://localhost:8000/v1"
-model = "Qwen/Qwen2.5-VL-72B-Instruct"
+model = "Qwen/Qwen3-VL-32B-Instruct-FP8"
 api_key_env = "VLLM_API_KEY"
 max_tokens = 4096
 timeout = 300
@@ -28,7 +35,7 @@ backend = "vlm-judge"
 threshold = 0.5
 [quality.provider]
 base_url = "http://localhost:8000/v1"
-model = "Qwen/Qwen2.5-VL-32B-Instruct"
+model = "Qwen/Qwen3-VL-32B-Instruct-FP8"
 api_key_env = "VLLM_API_KEY"
 max_tokens = 512
 
@@ -38,7 +45,7 @@ gate = "illustrated"
 image = "big"
 [describe.provider]
 base_url = "http://localhost:8000/v1"
-model = "Qwen/Qwen2.5-VL-72B-Instruct"
+model = "Qwen/Qwen3-VL-32B-Instruct-FP8"
 api_key_env = "VLLM_API_KEY"
 max_tokens = 400
 
@@ -46,6 +53,6 @@ max_tokens = 400
 backend = "llm-text"     # vlm-window (page-image sliding window) is a planned backend
 [sections.provider]
 base_url = "http://localhost:8000/v1"
-model = "Qwen/Qwen2.5-VL-72B-Instruct"
+model = "Qwen/Qwen3-VL-32B-Instruct-FP8"
 api_key_env = "VLLM_API_KEY"
 max_tokens = 4096
