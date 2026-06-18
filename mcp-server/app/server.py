@@ -7,6 +7,7 @@ FastMCP's own runner.
 
 from __future__ import annotations
 
+import json
 import logging
 import time
 from typing import Dict, List, Optional
@@ -53,24 +54,80 @@ def get_document_summary(stem: str) -> Dict:
     return doc
 
 
+def _page_list(con, stem: str, page_start: int, page_end: int) -> List[Dict]:
+    """The pages a section covers, each with render image URLs."""
+    return [
+        {
+            "page": p["page"],
+            "label": p["label"],
+            "image": {"small": asset_url(p["jpeg_small"]), "big": asset_url(p["jpeg_big"])},
+        }
+        for p in db.section_pages(con, stem, page_start, page_end)
+    ]
+
+
 @mcp.tool()
 def search_specs(
-    query: str, vendor: Optional[str] = None, k: int = settings.search_k, neighbors: int = 1
+    query: str, vendor: Optional[str] = None, k: int = settings.search_k
 ) -> List[Dict]:
-    """Search the corpus. Returns ranked pages with a snippet and image URLs.
+    """Search the corpus and return ranked logical SECTIONS - the primary unit, a
+    command/topic that may span several pages. Each result has a snippet, the pages
+    it covers (with image URLs), and a section_id for get_section.
 
     query  : free text; command symbols are handled safely (e.g. 'GS ( k').
     vendor : optional filter, e.g. 'star'.
     k      : max results to return (default 15, capped at 50). Pass a larger k for
              broader recall; the default is a balance of recall vs context size.
-    neighbors: also return image URLs for +/-N pages around each hit.
+    For an exact byte/symbol lookup at page granularity, use search_pages instead.
+    """
+    t0 = time.perf_counter()
+    out: List[Dict] = []
+    with db.connection() as con:
+        hits = db.search_sections(con, query, vendor, k)
+        for h in hits:
+            try:
+                labels = json.loads(h.get("page_labels") or "[]")
+            except (TypeError, ValueError):
+                labels = []
+            out.append({
+                "stem": h["stem"],
+                "vendor": h["vendor"],
+                "doc": h["doc"],
+                "section_id": h["section_no"],
+                "title": h["title"],
+                "heading_path": h["heading_path"],
+                "level": h["level"],
+                "score": round(h["rank"], 4) if h["rank"] is not None else None,
+                "snippet": h["snippet"],
+                "page_start": h["page_start"],
+                "page_end": h["page_end"],
+                "page_labels": labels,
+                "pages": _page_list(con, h["stem"], h["page_start"], h["page_end"]),
+            })
+    log.info(
+        "search_specs q=%r vendor=%s k=%s -> %d sections in %.1fms",
+        query, vendor, k, len(out), (time.perf_counter() - t0) * 1000.0,
+    )
+    return out
+
+
+@mcp.tool()
+def search_pages(
+    query: str, vendor: Optional[str] = None, k: int = settings.search_k
+) -> List[Dict]:
+    """Page-level fallback search. Returns ranked PAGES with a snippet and image
+    URLs - use when you need an exact byte/symbol match at page granularity and a
+    section result from search_specs is too coarse. For normal topical search,
+    prefer search_specs.
+
+    query/vendor/k behave as in search_specs.
     """
     t0 = time.perf_counter()
     out: List[Dict] = []
     with db.connection() as con:
         hits = db.search_pages(con, query, vendor, k)
         for h in hits:
-            entry = {
+            out.append({
                 "stem": h["stem"],
                 "vendor": h["vendor"],
                 "doc": h["doc"],
@@ -81,18 +138,10 @@ def search_specs(
                 "snippet": h["snippet"],
                 "image": {"small": asset_url(h["jpeg_small"]), "big": asset_url(h["jpeg_big"])},
                 "markdown_url": asset_url(h["markdown"]),
-            }
-            if neighbors and neighbors > 0:
-                nb = db.neighbor_pages(con, h["stem"], h["page"] - neighbors, h["page"] + neighbors)
-                entry["neighbors"] = [
-                    {"page": n["page"], "image_small": asset_url(n["jpeg_small"])}
-                    for n in nb
-                    if n["page"] != h["page"]
-                ]
-            out.append(entry)
+            })
     log.info(
-        "search_specs q=%r vendor=%s k=%s neighbors=%s -> %d hits in %.1fms",
-        query, vendor, k, neighbors, len(out), (time.perf_counter() - t0) * 1000.0,
+        "search_pages q=%r vendor=%s k=%s -> %d pages in %.1fms",
+        query, vendor, k, len(out), (time.perf_counter() - t0) * 1000.0,
     )
     return out
 
@@ -120,6 +169,50 @@ def get_page(stem: str, page: int) -> Dict:
         "flagged": bool(row["flagged"]),
         "image": {"small": asset_url(row["jpeg_small"]), "big": asset_url(row["jpeg_big"])},
         "markdown_url": asset_url(row["markdown"]),
+    }
+
+
+@mcp.tool()
+def get_section(stem: str, section_id: int) -> Dict:
+    """Return a logical section's full Markdown plus the pages it covers.
+
+    A section is the primary retrieval unit (a command/topic that may span pages).
+    stem is the vendor-rooted path without extension; section_id comes from a
+    search_specs result. The returned `pages` list is what the section belongs to,
+    each with image URLs and per-page markdown.
+    """
+    row = db.get_section(stem, section_id)
+    if row is None:
+        log.info("get_section stem=%r section=%s -> not found", stem, section_id)
+        return {"error": "section not found", "stem": stem, "section_id": section_id}
+    try:
+        labels = json.loads(row.get("page_labels") or "[]")
+    except (TypeError, ValueError):
+        labels = []
+    with db.connection() as con:
+        pages = db.section_pages(con, stem, row["page_start"], row["page_end"])
+    log.info("get_section stem=%r section=%s -> %d chars", stem, section_id, len(row.get("body") or ""))
+    return {
+        "stem": row["stem"],
+        "vendor": row["vendor"],
+        "doc": row["doc"],
+        "section_id": row["section_no"],
+        "title": row["title"],
+        "heading_path": row["heading_path"],
+        "level": row["level"],
+        "body": row["body"],
+        "page_start": row["page_start"],
+        "page_end": row["page_end"],
+        "page_labels": labels,
+        "pages": [
+            {
+                "page": p["page"],
+                "label": p["label"],
+                "image": {"small": asset_url(p["jpeg_small"]), "big": asset_url(p["jpeg_big"])},
+                "markdown_url": asset_url(p["markdown"]),
+            }
+            for p in pages
+        ],
     }
 
 

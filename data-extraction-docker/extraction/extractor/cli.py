@@ -8,7 +8,7 @@
   describe   jpeg -> describe/<stem>/page-NN.txt      (VLM; gate-selected pages)
   sections   markdown -> sections/<stem>.json         (backend: headings | llm-text)
   assemble   all  -> pagemap/<stem>.json + document.md + reports
-  all-phases render+text+markdown+quality+assemble, in order
+  all-phases render+text+markdown+quality+sections+assemble, in order
   report     aggregate per-doc QA -> quality/report.html
 
 Which engine/model each phase uses comes from the selected --profile (a TOML file
@@ -60,7 +60,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     for phase in ("render", "text", "markdown", "quality", "sections", "assemble", "all-phases"):
         help_text = (
-            "Run all phases in order (render, text, markdown, quality, assemble)"
+            "Run all phases in order (render, text, markdown, quality, sections, assemble)"
             if phase == "all-phases" else "Phase: %s" % phase
         )
         _add_scope(sub.add_parser(phase, help=help_text))
@@ -148,8 +148,10 @@ def _run_phase(settings: Settings, args: argparse.Namespace, phase: str) -> int:
     elif phase == "all-phases":
         md_backend = _make_markdown_backend(settings)
         q_backend = _make_quality_backend(settings)
+        sec_cfg = settings.profile.sections
+        sec_backend = backends_mod.SECTIONS.get(sec_cfg["backend"])(settings, sec_cfg)
         fn = lambda stem: phases_mod.run_all_phases(
-            settings, md_backend, q_backend, stem,
+            settings, md_backend, q_backend, sec_backend, stem,
             render_progress=render_progress, markdown_progress=markdown_progress,
         )
     else:

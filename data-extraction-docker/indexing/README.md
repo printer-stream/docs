@@ -9,16 +9,28 @@ into both mcp-server image variants.
 
 ## What it builds
 
-A single SQLite file with:
+Retrieval is **section-first**: a command/topic is a logical unit that may span
+several pages, so a section (not a page) is the primary search result. Pages stay
+indexed as a fallback and as the displayable artifact. A single SQLite file with:
 
-- `pages` / `documents` - metadata + body (self-contained for retrieval).
-- `pages_fts` - ranked full-text, `unicode61` tokenizer extended with
+- `sections` - the primary unit, read from `data-extraction/sections/<stem>.json`:
+  title, heading path, level, body, and the **page range/labels it covers**
+  (`page_start`, `page_end`, `page_labels` as a JSON array) so a result can cite
+  and show its pages.
+- `sections_fts` - ranked section full-text, `unicode61` tokenizer extended with
   command-significant `tokenchars` (`@/*^<>=&|~#+`) so phrases like `GS / bit`
-  match while normal prose search is unharmed.
-- `pages_trgm` - `trigram` index: the substring/symbol recall net so no query is
-  silently missed (hex bytes, `GS ( k`, partial tokens).
+  match while normal prose search is unharmed. Ranked with `bm25` column weights
+  (title > heading_path > body).
+- `sections_trgm` - `trigram` substring/symbol recall net for sections.
+- `pages` / `documents` - metadata + body (self-contained, fallback + display).
+- `pages_fts` / `pages_trgm` - the page-level fallback search (same tokenizers).
 - `documents_fts` - title/summary search; summaries are extractive (no LLM):
   vendor, title, detected command languages (ESC/POS, HPGL, ...), top headings.
+
+Sections are backend-agnostic: the build consumes whichever `sections.json` the
+extraction `sections` phase produced (`headings` by default, `llm-text` from a
+GPU/hosted profile) - upgrading sectioning quality needs no index change. A doc
+without `sections.json` is still indexed at the page level (a warning is logged).
 
 `index/<type>/` keeps index types side by side so a future `vector/` index can be
 built and compared against `fulltext/` with the same eval harness.
@@ -34,8 +46,11 @@ FTS5 MATCH treats `( ) " *` as query syntax, so raw user input like `GS ( k` is 
   most multi-word searches return nothing.
 - `fts_phrase()` - the whole text as one quoted phrase, for the trigram index's
   exact substring/symbol matching (`GS ( k`, `1B 40`).
-- `search_pages()` - the canonical path: ranked AND, an OR top-up for recall,
-  then the trigram net. The MCP server mirrors this exactly (`mcp-server/app/db.py`).
+- `search_sections()` - the canonical (primary) path over the section tables:
+  ranked AND, an OR top-up for recall, then the trigram net. `search_pages()` is
+  the identical strategy over the page tables (the fallback). The MCP server
+  mirrors both exactly (`mcp-server/app/db.py`): `search_specs` -> sections,
+  `search_pages` -> pages.
 
 ## Build / evaluate
 
@@ -45,8 +60,9 @@ docker build -t printer-stream-indexing data-extraction-docker/indexing
 # Build the index (runs the eval afterwards)
 docker run --rm -v "$PWD":/work printer-stream-indexing build
 
-# Re-run just the eval over eval/queries.json
+# Re-run just the eval over eval/queries.json (sections by default)
 docker run --rm -v "$PWD":/work printer-stream-indexing evaluate --k 10
+docker run --rm -v "$PWD":/work printer-stream-indexing evaluate --unit page   # fallback path
 
 # Gate in CI: fail if doc-hit recall drops
 docker run --rm -v "$PWD":/work printer-stream-indexing evaluate --min-recall 0.9
@@ -61,8 +77,13 @@ Each query carries ground truth, and the harness reports:
   the CI gate (`--min-recall`). Queries can be doc-level (`expect_stem`).
 - **precision@k, recall@k, MRR, nDCG@k** - graded retrieval metrics for
   page-labeled queries (`"relevant": ["<stem>#<label>", ...]`). nDCG/MRR capture
-  *ranking* quality (relevant pages near the top), which precision@k misses when
+  *ranking* quality (the relevant unit near the top), which precision@k misses when
   only 1-2 pages are relevant.
+
+Ground truth stays page-level. `--unit section` (default) scores the section
+path: a section counts as relevant if it covers any relevant page, and recall@k is
+page coverage (fraction of relevant pages reached by a retrieved section).
+`--unit page` scores the page fallback with the original page-level semantics.
 
 These make quality measurable per change: e.g. a verbose query whose relevant
 pages rank below incidental keyword matches shows up as low MRR/nDCG, and a

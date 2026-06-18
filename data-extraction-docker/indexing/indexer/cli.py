@@ -39,6 +39,8 @@ def build_parser() -> argparse.ArgumentParser:
     e = sub.add_parser("evaluate", help="Run the eval query set against the built index")
     e.add_argument("--queries", default=None, help="Path to queries.json")
     e.add_argument("--k", type=int, default=10)
+    e.add_argument("--unit", default="section", choices=["section", "page"],
+                   help="Retrieval unit to evaluate (default: section)")
     e.add_argument("--min-recall", type=float, default=None, help="Exit non-zero below this")
 
     sub.add_parser("manifest", help="Rewrite the manifest from the existing db")
@@ -69,7 +71,7 @@ def _cmd_evaluate(settings: Settings, args: argparse.Namespace) -> int:
     if not settings.db_path.exists():
         raise SystemExit("index not found: %s (run build first)" % settings.db_path)
     qp = Path(args.queries) if args.queries else eval_mod.default_queries_path()
-    metrics = eval_mod.run_eval(settings, qp, k=args.k)
+    metrics = eval_mod.run_eval(settings, qp, k=args.k, unit=args.unit)
     if args.min_recall is not None and metrics["recall_at_k"] < args.min_recall:
         log.error("recall@%d %.2f below threshold %.2f", args.k, metrics["recall_at_k"], args.min_recall)
         return 1
@@ -94,6 +96,7 @@ def main(argv: List[str] | None = None) -> int:
             stats = {
                 "doc_count": con.execute("SELECT count(*) FROM documents").fetchone()[0],
                 "page_count": con.execute("SELECT count(*) FROM pages").fetchone()[0],
+                "section_count": con.execute("SELECT count(*) FROM sections").fetchone()[0],
             }
         finally:
             con.close()

@@ -32,6 +32,13 @@ class Settings:
         return self.root / self.out_root / "pagemap"
 
     @property
+    def sections_dir(self) -> Path:
+        return self.root / self.out_root / "sections"
+
+    def sections_json_path(self, stem: str) -> Path:
+        return self.sections_dir / (stem + ".json")
+
+    @property
     def index_dir(self) -> Path:
         return self.root / self.out_root / "index"
 

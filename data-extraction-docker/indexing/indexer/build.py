@@ -1,11 +1,15 @@
-"""Build the SQLite FTS5 search index from pagemaps + markdown (+ descriptions).
+"""Build the SQLite FTS5 search index from pagemaps + markdown + sections.
 
-Reads each pagemap (the authoritative page<->artifact map), pulls each page's
-markdown body and optional VLM description, and populates:
-  - pages          : page metadata + body (self-contained for retrieval)
+Retrieval is section-first (a command/topic spans pages), with pages kept as a
+fallback search path and as the displayable artifact. Reads each pagemap (the
+authoritative page<->artifact map) plus sections/<stem>.json, and populates:
   - documents      : per-doc title, languages, extractive summary
-  - pages_fts      : ranked full-text (unicode61 + command-symbol tokenchars)
-  - pages_trgm     : substring/symbol recall (trigram)
+  - sections       : logical chunk + body + the page range/labels it covers
+  - sections_fts   : ranked section full-text (unicode61 + command-symbol tokenchars)
+  - sections_trgm  : section substring/symbol recall (trigram)
+  - pages          : page metadata + body (self-contained, fallback + display)
+  - pages_fts      : ranked page full-text
+  - pages_trgm     : page substring/symbol recall (trigram)
   - documents_fts  : title/summary search
 """
 
@@ -28,6 +32,9 @@ log = logging.getLogger(LOGGER_NAME)
 def _schema_sql() -> str:
     return """
 DROP TABLE IF EXISTS documents_fts;
+DROP TABLE IF EXISTS sections_trgm;
+DROP TABLE IF EXISTS sections_fts;
+DROP TABLE IF EXISTS sections;
 DROP TABLE IF EXISTS pages_trgm;
 DROP TABLE IF EXISTS pages_fts;
 DROP TABLE IF EXISTS pages;
@@ -45,6 +52,17 @@ CREATE TABLE documents (
   extracted_at TEXT, pipeline_version TEXT, phases TEXT
 );
 
+-- Sections are the primary retrieval unit: a logical chunk that may span pages,
+-- carrying the page range/labels it covers (page_labels is a JSON array).
+CREATE TABLE sections (
+  id INTEGER PRIMARY KEY,
+  stem TEXT, vendor TEXT, doc TEXT, section_no INTEGER,
+  title TEXT, heading_path TEXT, level INTEGER, body TEXT,
+  page_start INTEGER, page_end INTEGER, page_labels TEXT, char_count INTEGER
+);
+CREATE INDEX idx_sections_stem ON sections(stem);
+CREATE INDEX idx_sections_vendor ON sections(vendor);
+
 CREATE TABLE pages (
   id INTEGER PRIMARY KEY,
   stem TEXT, vendor TEXT, doc TEXT, page INTEGER, label TEXT,
@@ -55,6 +73,16 @@ CREATE TABLE pages (
 CREATE INDEX idx_pages_stem ON pages(stem);
 CREATE INDEX idx_pages_vendor ON pages(vendor);
 
+CREATE VIRTUAL TABLE sections_fts USING fts5(
+  title, heading_path, body,
+  content='sections', content_rowid='id',
+  tokenize="%s"
+);
+CREATE VIRTUAL TABLE sections_trgm USING fts5(
+  body,
+  content='sections', content_rowid='id',
+  tokenize="%s"
+);
 CREATE VIRTUAL TABLE pages_fts USING fts5(
   body, description, heading_path,
   content='pages', content_rowid='id',
@@ -70,7 +98,7 @@ CREATE VIRTUAL TABLE documents_fts USING fts5(
   content='documents', content_rowid='id',
   tokenize="unicode61 remove_diacritics 0"
 );
-""" % (FTS_TOKENIZE, TRIGRAM_TOKENIZE)
+""" % (FTS_TOKENIZE, TRIGRAM_TOKENIZE, FTS_TOKENIZE, TRIGRAM_TOKENIZE)
 
 
 def _iter_pagemaps(settings: Settings) -> List[Path]:
@@ -132,7 +160,47 @@ def _index_document(con, settings: Settings, pagemap: Dict) -> int:
     return len(rows)
 
 
+def _index_sections(con, settings: Settings, stem: str) -> int:
+    """Insert a document's logical sections from sections/<stem>.json. Missing or
+    unreadable -> warn and skip (the doc's pages are still indexed)."""
+    path = settings.sections_json_path(stem)
+    if not path.exists():
+        log.warning("No sections.json for %s; section search unavailable for this doc", stem)
+        return 0
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        log.exception("Skipping unreadable sections.json %s", path)
+        return 0
+    vendor = data.get("vendor", "")
+    doc = data.get("doc", "")
+    rows: List[Tuple] = []
+    for s in data.get("sections", []):
+        body = s.get("text", "")
+        rows.append(
+            (
+                stem, vendor, doc, s.get("id"),
+                s.get("title", ""), s.get("heading_path", ""), s.get("level"), body,
+                s.get("page_start"), s.get("page_end"),
+                json.dumps(s.get("page_labels", []), ensure_ascii=True),
+                s.get("char_count", len(body)),
+            )
+        )
+    con.executemany(
+        "INSERT INTO sections(stem,vendor,doc,section_no,title,heading_path,level,body,"
+        "page_start,page_end,page_labels,char_count) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",
+        rows,
+    )
+    log.info("Indexed %s: %d sections", stem, len(rows))
+    return len(rows)
+
+
 def _populate_fts(con) -> None:
+    con.execute(
+        "INSERT INTO sections_fts(rowid, title, heading_path, body) "
+        "SELECT id, title, heading_path, body FROM sections"
+    )
+    con.execute("INSERT INTO sections_trgm(rowid, body) SELECT id, body FROM sections")
     con.execute(
         "INSERT INTO pages_fts(rowid, body, description, heading_path) "
         "SELECT id, body, description, heading_path FROM pages"
@@ -142,12 +210,12 @@ def _populate_fts(con) -> None:
         "INSERT INTO documents_fts(rowid, title, summary, languages) "
         "SELECT id, title, summary, languages FROM documents"
     )
-    con.execute("INSERT INTO pages_fts(pages_fts) VALUES('optimize')")
-    con.execute("INSERT INTO pages_trgm(pages_trgm) VALUES('optimize')")
+    for tbl in ("sections_fts", "sections_trgm", "pages_fts", "pages_trgm"):
+        con.execute("INSERT INTO %s(%s) VALUES('optimize')" % (tbl, tbl))
     log.info("Populated and optimized FTS indexes")
 
 
-def _write_index_meta(con, doc_count: int, page_count: int) -> None:
+def _write_index_meta(con, doc_count: int, page_count: int, section_count: int) -> None:
     con.executemany(
         "INSERT INTO index_meta(key, value) VALUES (?, ?)",
         [
@@ -156,6 +224,7 @@ def _write_index_meta(con, doc_count: int, page_count: int) -> None:
             ("sqlite_version", sqlite3.sqlite_version),
             ("doc_count", str(doc_count)),
             ("page_count", str(page_count)),
+            ("section_count", str(section_count)),
         ],
     )
 
@@ -168,6 +237,7 @@ def build_index(con, settings: Settings) -> Dict:
         log.warning("No pagemaps found under %s", settings.pagemap_dir)
     doc_count = 0
     page_count = 0
+    section_count = 0
     for pm_path in pagemaps:
         try:
             pagemap = json.loads(pm_path.read_text(encoding="utf-8"))
@@ -175,9 +245,10 @@ def build_index(con, settings: Settings) -> Dict:
             log.exception("Skipping unreadable pagemap %s", pm_path)
             continue
         page_count += _index_document(con, settings, pagemap)
+        section_count += _index_sections(con, settings, pagemap["stem"])
         doc_count += 1
     _populate_fts(con)
-    _write_index_meta(con, doc_count, page_count)
+    _write_index_meta(con, doc_count, page_count, section_count)
     con.commit()
-    log.info("Build complete: %d docs, %d pages", doc_count, page_count)
-    return {"doc_count": doc_count, "page_count": page_count}
+    log.info("Build complete: %d docs, %d pages, %d sections", doc_count, page_count, section_count)
+    return {"doc_count": doc_count, "page_count": page_count, "section_count": section_count}

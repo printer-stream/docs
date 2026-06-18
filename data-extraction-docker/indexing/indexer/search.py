@@ -10,8 +10,9 @@ syntax (e.g. "GS ( k" is a syntax error). Two strategies are combined:
   - fts_phrase(): the whole text as one quoted phrase -> exact substring match,
     used by the trigram index for symbol/command sequences ("GS ( k", "1B 40").
 
-search_pages() combines them: ranked AND, an OR top-up for recall, then the
-trigram net. This is the canonical query path; the MCP server mirrors it.
+search_pages() / search_sections() combine them: ranked AND, an OR top-up for
+recall, then the trigram net. Sections are the primary retrieval unit (a logical
+chunk that may span pages); pages remain a fallback. The MCP server mirrors both.
 """
 
 from __future__ import annotations
@@ -23,6 +24,10 @@ from typing import List, Optional
 TRIGRAM_MIN = 3
 
 _PAGE_COLS = "p.stem, p.vendor, p.doc, p.page, p.label, p.heading_path"
+_SECTION_COLS = (
+    "s.stem, s.vendor, s.doc, s.section_no, s.title, s.heading_path, s.level, "
+    "s.page_start, s.page_end, s.page_labels"
+)
 
 
 def fts_phrase(text: str) -> str:
@@ -120,6 +125,70 @@ def search_pages(
         _add(_fts_pages(con, " OR ".join(terms), k, vendor))
     if len(hits) < k:
         _add(search_trigram(con, query, k, vendor))
+    return hits[:k]
+
+
+# --- sections (primary retrieval unit) -------------------------------------
+# Mirrors the page path. sections_fts columns are (title, heading_path, body);
+# bm25 weights rank a title/heading match above a body match. Dedup key is
+# (stem, section_no).
+def _fts_sections(con: sqlite3.Connection, match_expr: str, k: int, vendor: Optional[str]) -> List[dict]:
+    where = "sections_fts MATCH ?"
+    params: list = [match_expr]
+    if vendor:
+        where += " AND s.vendor = ?"
+        params.append(vendor)
+    params.append(k)
+    sql = (
+        "SELECT " + _SECTION_COLS + ", "
+        "snippet(sections_fts, 2, '[', ']', ' ... ', 16) AS snippet, "
+        "bm25(sections_fts, 5.0, 3.0, 1.0) AS rank "
+        "FROM sections_fts JOIN sections s ON s.id = sections_fts.rowid "
+        "WHERE " + where + " ORDER BY rank LIMIT ?"
+    )
+    return _rows(con, sql, params)
+
+
+def search_sections_trigram(
+    con: sqlite3.Connection, query: str, k: int = 10, vendor: Optional[str] = None
+) -> List[dict]:
+    if len(query.strip()) < TRIGRAM_MIN:
+        return []
+    where = "sections_trgm MATCH ?"
+    params: list = [fts_phrase(query)]
+    if vendor:
+        where += " AND s.vendor = ?"
+        params.append(vendor)
+    params.append(k)
+    sql = (
+        "SELECT " + _SECTION_COLS + ", '' AS snippet, bm25(sections_trgm) AS rank "
+        "FROM sections_trgm JOIN sections s ON s.id = sections_trgm.rowid "
+        "WHERE " + where + " ORDER BY rank LIMIT ?"
+    )
+    return _rows(con, sql, params)
+
+
+def search_sections(
+    con: sqlite3.Connection, query: str, k: int = 10, vendor: Optional[str] = None
+) -> List[dict]:
+    """Canonical section search: ranked AND, OR top-up for recall, then trigram."""
+    terms = _terms(query)
+    hits = _fts_sections(con, " ".join(terms), k, vendor) if terms else []
+    seen = {(h["stem"], h["section_no"]) for h in hits}
+
+    def _add(rows: List[dict]) -> None:
+        for r in rows:
+            key = (r["stem"], r["section_no"])
+            if key not in seen:
+                hits.append(r)
+                seen.add(key)
+            if len(hits) >= k:
+                break
+
+    if len(hits) < k and len(terms) > 1:
+        _add(_fts_sections(con, " OR ".join(terms), k, vendor))
+    if len(hits) < k:
+        _add(search_sections_trigram(con, query, k, vendor))
     return hits[:k]
 
 

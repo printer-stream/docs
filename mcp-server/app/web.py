@@ -29,8 +29,11 @@ _mcp = None
 _FALLBACK_TOOLS = [
     {"name": "list_documents", "description": "All documents with vendor, title, page count, languages.", "schema": {}},
     {"name": "get_document_summary", "description": "What devices/technologies a document covers.", "schema": {"stem": "string"}},
-    {"name": "search_specs", "description": "Ranked page results with snippet and image URLs.", "schema": {"query": "string", "vendor": "string?", "k": "int", "neighbors": "int"}},
+    {"name": "search_specs", "description": "Ranked logical sections (primary unit) with snippet, page list, and image URLs.", "schema": {"query": "string", "vendor": "string?", "k": "int"}},
+    {"name": "get_section", "description": "A section's full Markdown plus the pages it covers.", "schema": {"stem": "string", "section_id": "int"}},
+    {"name": "search_pages", "description": "Page-level fallback search for exact byte/symbol lookups.", "schema": {"query": "string", "vendor": "string?", "k": "int"}},
     {"name": "get_page", "description": "Full page Markdown plus image URLs.", "schema": {"stem": "string", "page": "int"}},
+    {"name": "get_page_image", "description": "A page's rendered JPEG for vision-capable clients.", "schema": {"stem": "string", "page": "int", "size": "string?"}},
 ]
 
 _STYLE = (

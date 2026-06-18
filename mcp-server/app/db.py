@@ -3,6 +3,8 @@
 Mirrors the indexer's query contract: user text is always turned into a safe FTS5
 phrase (raw input like 'GS ( k' is a MATCH syntax error). Ranked full-text plus a
 trigram recall net, so command/symbol queries are found and nothing is missed.
+Sections are the primary retrieval unit (search_sections); pages remain a fallback
+(search_pages) and the unit for get_page / get_page_image.
 """
 
 from __future__ import annotations
@@ -22,6 +24,10 @@ TRIGRAM_MIN = 3
 _PAGE_COLS = (
     "p.stem, p.vendor, p.doc, p.page, p.label, p.heading_path, "
     "p.jpeg_small, p.jpeg_big, p.markdown"
+)
+_SECTION_COLS = (
+    "s.stem, s.vendor, s.doc, s.section_no, s.title, s.heading_path, s.level, "
+    "s.page_start, s.page_end, s.page_labels"
 )
 
 
@@ -173,6 +179,87 @@ def search_pages(con, query: str, vendor: Optional[str], k: int) -> List[Dict]:
     if len(hits) < k:
         _add(search_trigram(con, query, vendor, k))
     return hits[:k]
+
+
+# --- sections (primary retrieval unit) -------------------------------------
+# Mirrors the page path. sections_fts columns are (title, heading_path, body);
+# bm25 weights rank a title/heading match above a body match.
+def _fts_sections(con, match_expr: str, vendor: Optional[str], k: int) -> List[Dict]:
+    where = "sections_fts MATCH ?"
+    params: list = [match_expr]
+    if vendor:
+        where += " AND s.vendor = ?"
+        params.append(vendor)
+    params.append(k)
+    sql = (
+        "SELECT " + _SECTION_COLS + ", "
+        "snippet(sections_fts, 2, '[', ']', ' ... ', 16) AS snippet, "
+        "bm25(sections_fts, 5.0, 3.0, 1.0) AS rank "
+        "FROM sections_fts JOIN sections s ON s.id = sections_fts.rowid "
+        "WHERE " + where + " ORDER BY rank LIMIT ?"
+    )
+    return [dict(r) for r in con.execute(sql, params).fetchall()]
+
+
+def search_sections_trigram(con, query: str, vendor: Optional[str], k: int) -> List[Dict]:
+    if len(query.strip()) < TRIGRAM_MIN:
+        return []
+    where = "sections_trgm MATCH ?"
+    params: list = [fts_phrase(query)]
+    if vendor:
+        where += " AND s.vendor = ?"
+        params.append(vendor)
+    params.append(k)
+    sql = (
+        "SELECT " + _SECTION_COLS + ", '' AS snippet, bm25(sections_trgm) AS rank "
+        "FROM sections_trgm JOIN sections s ON s.id = sections_trgm.rowid "
+        "WHERE " + where + " ORDER BY rank LIMIT ?"
+    )
+    return [dict(r) for r in con.execute(sql, params).fetchall()]
+
+
+def search_sections(con, query: str, vendor: Optional[str], k: int) -> List[Dict]:
+    """Canonical section search: ranked AND of terms, OR top-up, then trigram."""
+    k = _clamp_k(k)
+    terms = _terms(query)
+    hits = _fts_sections(con, " ".join(terms), vendor, k) if terms else []
+    seen = {(h["stem"], h["section_no"]) for h in hits}
+
+    def _add(rows: List[Dict]) -> None:
+        for r in rows:
+            key = (r["stem"], r["section_no"])
+            if key not in seen:
+                hits.append(r)
+                seen.add(key)
+            if len(hits) >= k:
+                break
+
+    if len(hits) < k and len(terms) > 1:
+        _add(_fts_sections(con, " OR ".join(terms), vendor, k))
+    if len(hits) < k:
+        _add(search_sections_trigram(con, query, vendor, k))
+    return hits[:k]
+
+
+def get_section(stem: str, section_no: int) -> Optional[Dict]:
+    with connection() as c:
+        r = c.execute(
+            "SELECT stem, vendor, doc, section_no, title, heading_path, level, body, "
+            "page_start, page_end, page_labels, char_count "
+            "FROM sections WHERE stem = ? AND section_no = ?",
+            (stem, section_no),
+        ).fetchone()
+    return dict(r) if r else None
+
+
+def section_pages(con, stem: str, page_start: int, page_end: int) -> List[Dict]:
+    """The page artifact rows a section covers (for image URLs + per-page markdown)."""
+    rows = con.execute(
+        "SELECT page, label, jpeg_small, jpeg_big, markdown FROM pages "
+        "WHERE stem = ? AND page BETWEEN ? AND ? ORDER BY page",
+        (stem, page_start, page_end),
+    ).fetchall()
+    return [dict(r) for r in rows]
 
 
 def get_page_assets(stem: str, page: int) -> Optional[Dict]:

@@ -39,9 +39,13 @@ def write_manifest(settings: Settings, stats: Dict) -> Dict:
             settings.index_type: {
                 "path": db.relative_to(settings.root).as_posix(),
                 "engine": "sqlite-fts5",
-                "tables": ["pages_fts (unicode61)", "pages_trgm (trigram)", "documents_fts"],
+                "tables": [
+                    "sections_fts (unicode61)", "sections_trgm (trigram)",
+                    "pages_fts (unicode61)", "pages_trgm (trigram)", "documents_fts",
+                ],
                 "doc_count": stats.get("doc_count", 0),
                 "page_count": stats.get("page_count", 0),
+                "section_count": stats.get("section_count", 0),
                 "bytes": db.stat().st_size if db.exists() else 0,
                 "sha256": _sha256(db) if db.exists() else None,
             }

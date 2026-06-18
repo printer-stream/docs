@@ -32,7 +32,7 @@ log = logging.getLogger(LOGGER_NAME)
 
 # Phases that assemble folds into the pagemap lineage, in execution order.
 # describe is gated on the quality phase's output, so it runs after quality.
-PRIOR_PHASES = ["render", "text", "markdown", "quality", "describe"]
+PRIOR_PHASES = ["render", "text", "markdown", "quality", "describe", "sections"]
 
 
 class Progress:
@@ -396,6 +396,7 @@ def run_all_phases(
     settings: Settings,
     markdown_backend,
     quality_backend,
+    sections_backend,
     stem: str,
     render_progress: Optional["Progress"] = None,
     markdown_progress: Optional["Progress"] = None,
@@ -406,4 +407,5 @@ def run_all_phases(
     text_doc(settings, stem)
     markdown_doc(settings, markdown_backend, stem, progress=markdown_progress)
     quality_doc(settings, quality_backend, stem)
+    sections_doc(settings, sections_backend, stem)
     return assemble_doc(settings, stem)

@@ -10,5 +10,6 @@ heading path, level, text, and the **page range** it covers (`page_start`,
 
 Backends (selected by profile `[sections]`): `headings` (deterministic, splits on
 Markdown headings; the default) and `llm-text` (a text LLM over the markdown with
-page markers). The indexing stage consumes these to offer section-level search
-(a follow-up round). See `../../DESIGN.md`.
+page markers). The indexing stage consumes these as the **primary search unit**
+(`sections_fts`/`sections_trgm`); the MCP `search_specs` tool returns sections,
+each citing the pages it covers. See `../../DESIGN.md`.

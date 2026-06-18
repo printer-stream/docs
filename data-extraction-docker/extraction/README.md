@@ -16,8 +16,9 @@ from the selected **profile** (`--profile`). See `../../DESIGN.md`.
 | `sections` | markdown       | `data-extraction/sections/<stem>.json` (logical chunks) | `headings` \| `llm-text` (`[sections]`) |
 | `assemble` | all the above  | `data-extraction/pagemap/<stem>.json`, `document.md`, reports | - |
 
-`all-phases` runs `render -> text -> markdown -> quality -> assemble` in order.
-`describe` and `sections` are separate, opt-in phases (not in `all-phases`).
+`all-phases` runs `render -> text -> markdown -> quality -> sections -> assemble`
+in order (sections uses the free `headings` backend by default, so it stays
+GPU/network-free). `describe` is a separate, opt-in phase (not in `all-phases`).
 
 Every phase also writes `data-extraction/meta/<stem>/<phase>.json` (tool, version,
 backend + model, params, start/end, duration, per-page timing, status). `assemble`

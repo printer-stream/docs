@@ -189,19 +189,29 @@ Engine: SQLite FTS5. Single file -> trivially baked into the mcp-server image,
 BM25 ranking, no runtime services, custom tokenizer support. Implemented in
 `data-extraction-docker/indexing/`.
 
+- Retrieval is **section-first**: a command/topic is a logical unit that may span
+  several pages, so a section (not a page) is the primary search result. Pages
+  stay indexed as a fallback (exact byte/symbol drilling) and as the displayable
+  artifact. Sections come from the extraction `sections` phase
+  (`sections/<stem>.json`), each carrying the page range/labels it covers.
 - Tokenizer is the make-or-break detail. Default tokenizers shatter `ESC/POS`,
-  `GS ( L`, hex `1B 40` on punctuation and destroy findability. Plan: dual
-  indexing - a `unicode61` index with extended token characters to keep command
+  `GS ( L`, hex `1B 40` on punctuation and destroy findability. Dual indexing per
+  unit - a `unicode61` index with extended token characters to keep command
   symbols intact (ranked search) plus a `trigram` index for substring/symbol
-  recall ("not missing anything").
-- Schema: page-level docs `{stem, vendor, doc, page, heading_path, body,
-  summary}` plus a doc-level table for `list_documents` / summaries. Store enough
-  to render snippets and resolve JPEG URLs via `pagemap`.
+  recall ("not missing anything"). Sections rank with `bm25` weights favouring
+  title/heading over body.
+- Schema: `sections {stem, vendor, doc, section_no, title, heading_path, level,
+  body, page_start, page_end, page_labels, char_count}` (primary) + `pages`
+  (fallback + display) + a doc-level table for `list_documents` / summaries.
+  Sections are backend-agnostic: the build consumes whatever `sections.json`
+  exists (`headings` default, `llm-text` later) with no index change; a doc
+  missing `sections.json` is still indexed at page level.
 - Summaries: per-doc "what devices/technologies it covers", generated
   extractively (no LLM), ASCII-clean, stored in the index and searchable.
-- `manifest.json` records builder version, params, doc/page counts, checksums.
-- Eval harness: a fixed query set with expected pages measures recall/precision.
-  It validates the index and lets us compare index types objectively later.
+- `manifest.json` records builder version, params, doc/page/section counts, checksums.
+- Eval harness: a fixed query set measures recall/precision per unit (`--unit
+  section|page`). Page-level ground truth stays; a section counts relevant if it
+  covers a relevant page. It validates the index and compares index types objectively.
 
 ## Stage 3: MCP server
 
@@ -210,11 +220,15 @@ Python 3.13. Implemented in `mcp-server/`.
 - Framework: official Python MCP SDK / FastMCP over streamable HTTP (works on
   Render; gives an HTTP surface for static assets and the landing page).
 - Tools: `list_documents()`, `get_document_summary(stem)`,
-  `search_specs(query, vendor?, k?, neighbors?)`, `get_page(stem, page)`, and
-  `get_page_image(stem, page, size?)` - the last returns the rendered page as MCP
-  image content (base64) so a vision-capable client can see figures/diagrams the
-  Markdown cannot convey (search/get_page only return image URLs). `stem` is the
-  vendor-rooted path without extension, e.g. `star/star_graphic_cm_en`.
+  `search_specs(query, vendor?, k?)` - the primary search, returning ranked
+  **sections**, each with a snippet, the pages it covers (with image URLs), and a
+  `section_id`; `get_section(stem, section_id)` for a section's full Markdown +
+  page list; `search_pages(query, vendor?, k?)` as a page-level fallback for exact
+  byte/symbol lookups; `get_page(stem, page)`; and `get_page_image(stem, page,
+  size?)` - the last returns the rendered page as MCP image content (base64) so a
+  vision-capable client can see figures/diagrams the Markdown cannot convey
+  (search/get_page only return image URLs). `stem` is the vendor-rooted path
+  without extension, e.g. `star/star_graphic_cm_en`.
 - Static serving: `/static/jpeg/...` and `/static/md/...`. When
   `DOCS_STATIC_BASE_URL` is set the server returns CDN URLs and does not serve
   static itself; when unset it self-serves and returns relative URLs. Switching
@@ -278,7 +292,6 @@ page<->artifact mapping; downstream code reads it instead of recomputing paths.
 ## Open / deferred
 
 - Vector index under `index/vector/` for later comparison.
-- Section-level retrieval: indexer + mcp consume `sections/<stem>.json`.
 - `vlm-window` sections backend (page-image sliding window) - a registry drop-in.
 - CDN cutover (set `DOCS_STATIC_BASE_URL`) once LFS bandwidth or image size
   warrants it.

@@ -1,14 +1,17 @@
 """Search-quality eval harness.
 
-Runs a fixed query set against the built index using the canonical combined
-search (search_pages) and reports, per query and in aggregate:
+Runs a fixed query set against the built index and reports, per query and in
+aggregate, for the chosen retrieval unit (sections by default, pages as fallback):
 
   - doc hit: an expected document appears in the top-k -> recall_at_k (the CI
     gate metric; "did we surface the right document at all").
-  - for page-labeled queries, graded retrieval metrics over the labeled relevant
-    pages: precision@k, recall@k, MRR, nDCG@k.
+  - for page-labeled queries, graded metrics: precision@k, recall@k, MRR, nDCG@k.
 
-Ground truth per query (in eval/queries.json):
+Ground truth is page-level (eval/queries.json), so for the section unit a section
+counts as relevant if it covers any relevant page; recall@k is page coverage (the
+fraction of relevant pages covered by a retrieved section).
+
+Ground truth per query:
   - "relevant": ["<stem>#<label>", ...]    page-level (preferred, enables graded metrics)
   - "expect_stem" + "expect_labels"         page-level (derived)
   - "expect_stem" only                      doc-level (contributes to doc-hit only)
@@ -24,7 +27,7 @@ from pathlib import Path
 from typing import Dict, List, Optional, Set
 
 from .config import LOGGER_NAME, Settings
-from .search import search_pages
+from .search import search_pages, search_sections
 
 log = logging.getLogger(LOGGER_NAME)
 
@@ -55,9 +58,30 @@ def _dcg(flags: List[int]) -> float:
     return sum(f / math.log2(i + 1) for i, f in enumerate(flags, start=1))
 
 
-def run_eval(settings: Settings, queries_path: Path, k: int = 10) -> Dict:
+def _result_flags(unit: str, results: List[Dict], rk: Set[str]) -> tuple:
+    """Per-result relevance flags and the page-keys actually covered (top-k).
+
+    Pages: a result is relevant if its '<stem>#<label>' is in rk.
+    Sections: relevant if it covers any relevant page; 'covered' is the union of
+    relevant page-keys across the results (so recall is page coverage)."""
+    flags: List[int] = []
+    covered: Set[str] = set()
+    for r in results:
+        if unit == "section":
+            labels = json.loads(r.get("page_labels") or "[]")
+            keys = {"%s#%s" % (r["stem"], lb) for lb in labels}
+        else:
+            keys = {"%s#%s" % (r["stem"], r["label"])}
+        hit = keys & rk
+        flags.append(1 if hit else 0)
+        covered |= hit
+    return flags, covered
+
+
+def run_eval(settings: Settings, queries_path: Path, k: int = 10, unit: str = "section") -> Dict:
     queries = json.loads(queries_path.read_text(encoding="utf-8"))
     con = sqlite3.connect(str(settings.db_path))
+    search_fn = search_sections if unit == "section" else search_pages
     total = len(queries)
     doc_hits = 0
     graded: List[Dict] = []
@@ -65,8 +89,7 @@ def run_eval(settings: Settings, queries_path: Path, k: int = 10) -> Dict:
 
     for item in queries:
         q = item["query"]
-        results = search_pages(con, q, k)
-        result_keys = ["%s#%s" % (r["stem"], r["label"]) for r in results]
+        results = search_fn(con, q, k)
         exp_stems = _expected_stems(item)
 
         doc_hit = bool(exp_stems) and any(r["stem"] in exp_stems for r in results)
@@ -75,14 +98,14 @@ def run_eval(settings: Settings, queries_path: Path, k: int = 10) -> Dict:
         rk = _relevant_keys(item)
         metrics: Optional[Dict] = None
         if rk:
-            flags = [1 if key in rk else 0 for key in result_keys]
+            flags, covered = _result_flags(unit, results, rk)
             topk = flags[:k]
             hits = sum(topk)
             mrr = next((1.0 / i for i, f in enumerate(flags, start=1) if f), 0.0)
             ideal = [1] * min(len(rk), k)
             metrics = {
                 "precision_at_k": round(hits / k, 4),
-                "recall_at_k": round(hits / len(rk), 4),
+                "recall_at_k": round(len(covered) / len(rk), 4),
                 "mrr": round(mrr, 4),
                 "ndcg_at_k": round(_dcg(topk) / _dcg(ideal), 4) if ideal else 0.0,
             }
@@ -106,6 +129,7 @@ def run_eval(settings: Settings, queries_path: Path, k: int = 10) -> Dict:
     summary = {
         "total": total,
         "k": k,
+        "unit": unit,
         "recall_at_k": recall_at_k,            # doc-hit rate; the CI gate metric
         "labeled": len(graded),
         "precision_at_k": _mean("precision_at_k"),
@@ -115,8 +139,8 @@ def run_eval(settings: Settings, queries_path: Path, k: int = 10) -> Dict:
         "details": details,
     }
     log.info(
-        "Eval: doc-hit recall@%d=%.2f (%d/%d) | labeled=%d  P@%d=%s  nDCG@%d=%s  MRR=%s",
-        k, recall_at_k, doc_hits, total, len(graded),
+        "Eval[%s]: doc-hit recall@%d=%.2f (%d/%d) | labeled=%d  P@%d=%s  nDCG@%d=%s  MRR=%s",
+        unit, k, recall_at_k, doc_hits, total, len(graded),
         k, summary["precision_at_k"], k, summary["ndcg_at_k"], summary["mrr"],
     )
     return summary
