@@ -1,0 +1,784 @@
+{
+  "stem": "star/tsp700ii-hardware-manual-english",
+  "vendor": "star",
+  "doc": "tsp700ii-hardware-manual-english",
+  "backend": "headings",
+  "model": null,
+  "generated_at": "2026-06-18T12:17:36Z",
+  "page_count": 32,
+  "section_count": 59,
+  "sections": [
+    {
+      "title": "Hardware Manual",
+      "level": 2,
+      "heading_path": "Hardware Manual",
+      "text": "<!-- image -->",
+      "page_start": 1,
+      "page_end": 1,
+      "page_labels": [
+        "page-01"
+      ],
+      "char_count": 14,
+      "id": 1
+    },
+    {
+      "title": "Radio Equipment Information:",
+      "level": 2,
+      "heading_path": "Radio Equipment Information:",
+      "text": "Informations relatives \u00e0 l' \u00e9quipement radio\u00e9lectrique :\n\nRadioger\u00e4teinformationen: Informatie over de radioapparatuur: Informazioni sulle apparecchiature radio: Informaci\u00f3n sobre equipos de radio: Informa\u00e7\u00f5es de equipamento de r\u00e1dio: Radyo Ekipman\u0131 Bilgileri: \u03a0\u03bb\u03b7\u03c1\u03bf\u03c6\u03bf\u03c1\u03af\u03b5\u03c2 \u03c0\u03b5\u03c1\u03af \u03c1\u03b1\u03b4\u03b9\u03bf\u03b5\u03be\u03bf\u03c0\u03bb\u03b9\u03c3\u03bc\u03bf\u03cd: Informacije o radijski opremi: Informacije o radijskoj opremi: Information vedr. radioudstyr: Radioaaltoja l\u00e4hett\u00e4v\u00e4n laitteen tiedot: Informasjon om radioutstyr: Information om radioutrustning: Informacja o urz\u0105dzeniach radiowych: Informace o r\u00e1diov\u00e9m vyza\u0159ov\u00e1n\u00ed p\u0159\u00edstroje: R\u00e1di\u00f3hull\u00e1m-kibocs\u00e1t\u00e1si adatok: Inform\u00e1cie o r\u00e1diovom zariaden\u00ed: Informa\u021bii privind echipamentele radio: Inform\u0101cija par radio iek\u0101rtu: Radijo ry\u0161io \u012frangos informacija: Raadioseadme teave: Informazzjoni tat-Tag\u0127mir tar-Radju: Eolas faoi Threalamh Raidi\u00f3:\n\n| 2402 - 2480MHz   | max. 20 dBm (E.I.R.P .)   |\n|------------------|---------------------------|",
+      "page_start": 2,
+      "page_end": 2,
+      "page_labels": [
+        "page-02"
+      ],
+      "char_count": 924,
+      "id": 2
+    },
+    {
+      "title": "EU Declaration of Conformity",
+      "level": 2,
+      "heading_path": "EU Declaration of Conformity",
+      "text": "Konformit\u00e4tserkl\u00e4rung\n\nD\u00e9claration de conformit\u00e9\n\nDeclaraci\u00f3n de conformidad\n\nDichiarazione di conformit\u00e0\n\nVerklaring van conformiteit\n\nIzjava o sukladnosti\n\nIzjava o skladnosti\n\nProhl\u00e1\u0161en\u00ed o shod\u011b\n\nUyumluluk Beyan\u0131\n\nMegfelel\u0151s\u00e9gi nyilatkozat\n\nOverensstemmelseserkl\u00e6ring\n\nF\u00f6rs\u00e4kran om \u00f6verensst\u00e4mmelse\n\nVaatimuksenmukaisuusvakuutus\n\nKonformitetserkl\u00e6ring\n\nDeclara\u00e7\u00e3o de Conformidade\n\n\u0394\u03ae\u03bb\u03c9\u03c3\u03b7 \u03c3\u03c5\u03bc\u03bc\u03cc\u03c1\u03c6\u03c9\u03c3\u03b7\u03c2\n\nDeklaracja zgodno\u015bci\n\nVyhl\u00e1senie o zhode\n\nVastavusdeklaratsioon\n\nAtbilst\u012bbas deklar\u0101cija\n\nAtitikties deklaracija\n\nDikjarazzjoni ta' Konformit\u00e0\n\nDeclara\u0163ie de conformitate\n\n\u0414\u0435\u043a\u043b\u0430\u0440\u0430\u0446\u0438\u044f \u0437\u0430 \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435\n\nhttps://download.starmicronics.com/manual/CE\\_DoC/TSP700\\_CE\\_DoC\\_Newest.pdf\n\nItalia:\n\nl'uso pubblico e soggetto ad autorizzazione generale da parte del rispettivo provider di servizi.\n\nNoorwegen:  Gebruik van radioapparatuur is niet toegestaan in het geografische gebied binnen een straal van 20 km vanaf het centrum van Ny-\u00c5lesund, Svalbard.\n\nThis statement will be applied only for the printers marketed in Europe.",
+      "page_start": 3,
+      "page_end": 3,
+      "page_labels": [
+        "page-03"
+      ],
+      "char_count": 1022,
+      "id": 3
+    },
+    {
+      "title": "UK Declaration of Conformity",
+      "level": 2,
+      "heading_path": "UK Declaration of Conformity",
+      "text": "https://download.starmicronics.com/manual/CE\\_DoC/TSP700\\_UK\\_DoC\\_Newest.pdf",
+      "page_start": 3,
+      "page_end": 3,
+      "page_labels": [
+        "page-03"
+      ],
+      "char_count": 77,
+      "id": 4
+    },
+    {
+      "title": "FCC/IC Statement",
+      "level": 2,
+      "heading_path": "FCC/IC Statement",
+      "text": "https://download.starmicronics.com/manual/FCC/FCC\\_IC\\_Statement\\_Type4.pdf",
+      "page_start": 3,
+      "page_end": 3,
+      "page_labels": [
+        "page-03"
+      ],
+      "char_count": 75,
+      "id": 5
+    },
+    {
+      "title": "Mexico Statement",
+      "level": 2,
+      "heading_path": "Mexico Statement",
+      "text": "LA OPERACI\u00d3N DE ESTE DISPOSITIVO ESTA SUJETA A LAS SIGUIENTES CONDICIONES:\n\n- a) Es posible que este equipo o dispositivo no cause interferencia perjudicial.\n- b) Este equipo o dispositivo debe aceptar cualquier tipo de interferencia, incluyendo la que pueda causar su operaci\u00f3n no deseada.",
+      "page_start": 3,
+      "page_end": 3,
+      "page_labels": [
+        "page-03"
+      ],
+      "char_count": 290,
+      "id": 6
+    },
+    {
+      "title": "Caution Symbol",
+      "level": 2,
+      "heading_path": "Caution Symbol",
+      "text": "<!-- image -->\n\n<!-- image -->\n\n<!-- image -->\n\n<!-- image -->\n\n<!-- image -->\n\n|                                                                                                                                       | Caution for connections: This is an external device drive connector. Connecting to a telephone line may result in electric shock or malfunction. Do not connect to a telephone line.   |\n|---------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| Caution for static electricity: Do not touch the print head as it may be damaged by static electricity accumulated in the human body. |                                                                                                                                                                                        |\n| Caution for burns: The print head may be hot. Do not touch the print head. There is a risk of burns.                                  |                                                                                                                                                                                        |\n| these parts may result in electric shock.                                                                                             | Caution for electric shock: The device contains high-voltage parts. Touching Do not remove the fixed screw if you are not a service person.                                            |\n| Caution for injury: Do not touch sharp parts. There is a risk of                                                                      | injury.                                                                                                                                                                                |",
+      "page_start": 4,
+      "page_end": 4,
+      "page_labels": [
+        "page-04"
+      ],
+      "char_count": 2017,
+      "id": 7
+    },
+    {
+      "title": "Trademark acknowledgments",
+      "level": 2,
+      "heading_path": "Trademark acknowledgments",
+      "text": "TSP700II\n\n:  Star Micronics Co., Ltd.",
+      "page_start": 4,
+      "page_end": 4,
+      "page_labels": [
+        "page-04"
+      ],
+      "char_count": 37,
+      "id": 8
+    },
+    {
+      "title": "Notice",
+      "level": 2,
+      "heading_path": "Notice",
+      "text": "- All rights reserved. Reproduction of any part of this manual in any form whatsoever, without STAR's express permission is forbidden.\n- The contents of this manual are subject to change without notice.\n- All efforts have been made to ensure the accuracy of the contents of this manual at the time of going to press. However, should any errors be detected, STAR would greatly appreciate being informed of them.\n- The above notwithstanding, STAR can assume no responsibility for any errors in this manual.\n- All  company  and  product  names  are  trademarks  or  registered  trademarks  of  their  respective  owners. (https://www.star-m.jp/eng/trademarks.html)",
+      "page_start": 4,
+      "page_end": 4,
+      "page_labels": [
+        "page-04"
+      ],
+      "char_count": 661,
+      "id": 9
+    },
+    {
+      "title": "TABLE OF CONTENTS",
+      "level": 2,
+      "heading_path": "TABLE OF CONTENTS",
+      "text": "| 1. Unpacking and Installation.................................................................................                  | 1. Unpacking and Installation.................................................................................                  |\n|---------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|\n| 1-1.                                                                                                                            | Unpacking................................................................................................ 6                     |\n| 1-2.                                                                                                                            | Notes about Installation ........................................................................... 6                          |\n| 2. Parts Identification and Nomenclature............................................................... 7                       | 2. Parts Identification and Nomenclature............................................................... 7                       |\n| 3. Setup .................................................................................................................... 8 | 3. Setup .................................................................................................................... 8 |\n| 3-1.                                                                                                                            | Connecting the Interface Cable to the PC ................................................. 8                                    |\n| 3-2.                                                                                                                            | Connecting the Interface Cable to the Printer\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd9                                        |\n| 3-3.                                                                                                                            | Connecting the AC Adapter.................................................................... 12                                |\n| 3-4.                                                                                                                            | Turning the Power On ............................................................................ 13                            |\n| 3-5.                                                                                                                            | Connecting to a Peripheral Device.......................................................... 13                                  |\n| 3-6.                                                                                                                            | Loading a Paper Roll .............................................................................. 14                          |\n| 3-7.                                                                                                                            | Bluetooth Settings (For Bluetooth Interface Models only) .............................. 18                                      |\n| 3-8.                                                                                                                            | Setup Precautions................................................................................... 23                         |\n| 4. Attaching the Accessories....................................................................................25              | 4. Attaching the Accessories....................................................................................25              |\n| 4-1.                                                                                                                            | Attaching the Holder Plate ..................................................................... 25                             |\n| 4-2.                                                                                                                            | Attaching the Cable................................................................................ 28                          |\n| 4-3.                                                                                                                            | Switch Blind Installation ........................................................................ 28                           |\n| 5. Error Indicators..................................................................................................29         | 5. Error Indicators..................................................................................................29         |\n| 5-1.                                                                                                                            | Recoverable errors.................................................................................. 29                         |\n| 5-2.                                                                                                                            | Unrecoverable errors.............................................................................. 29                           |\n| 6. Preventing and Clearing Paper Jams ..................................................................30                      | 6. Preventing and Clearing Paper Jams ..................................................................30                      |\n| 6-1.                                                                                                                            | Preventing Paper Jams............................................................................ 30                            |\n| 6-2.                                                                                                                            | Removing Paper Jam .............................................................................. 30                            |\n| 7. Maintenance ........................................................................................................31       | 7. Maintenance ........................................................................................................31       |\n| 7-1.                                                                                                                            | Thermal Head ........................................................................................ 31                        |\n| 7-2.                                                                                                                            | Platen Rubber Roller .............................................................................. 31                          |\n| 7-3.                                                                                                                            | Sensors and the Surrounding Areas ........................................................ 31                                   |\n| 7-4.                                                                                                                            | Paper Holder the Suurounding Areas...................................................... 31                                     |",
+      "page_start": 5,
+      "page_end": 5,
+      "page_labels": [
+        "page-05"
+      ],
+      "char_count": 7597,
+      "id": 10
+    },
+    {
+      "title": "1-1.  Unpacking",
+      "level": 2,
+      "heading_path": "1-1.  Unpacking",
+      "text": "After unpacking the unit, check that all the necessary accessories are included in the package.\n\n<!-- image -->\n\n<!-- image -->\n\nNote: The ferrite core and fastener provided with your printer depend on your printer configuration.\n\n*   Accessories vary depending on the model and the region where the printer was purchased.",
+      "page_start": 6,
+      "page_end": 6,
+      "page_labels": [
+        "page-06"
+      ],
+      "char_count": 322,
+      "id": 11
+    },
+    {
+      "title": "1-2.  Notes about Installation",
+      "level": 2,
+      "heading_path": "1-2.  Notes about Installation",
+      "text": "1. Choose a firm, level surface where the printer will not be exposed to vibration.\n2. Make sure that the printer is connected to a reliable power outlet. It should not be on the same electric circuit as copiers, refrigerators, or other appliances that cause power spikes.\n3. The power outlet you plan to connect to for power should be nearby and unobstructed.\n4. Make sure that the printer is not exposed to direct sunlight.\n5. Make sure that the printer is well away from heaters and other sources of extreme heat.\n6. Do not locate the printer in a badly ventilated or dusty environment.\n7. Make sure that the room where you are using the printer is not too humid.\n8. This device employs a DC motor and switches that have an electrical contact point. Avoid using the device in environments where silicon gas can become volatile.\n9. Use the printer within the boundaries indicated in the environmental requirements. Even when the ambient temperature and humidity are within the specifications, avoid radical changes in environmental conditions. The suitable operating temperature range is as follows:\n\nOperating temperature: 5\u00b0C to 45\u00b0C\n\n10.  When disposing of the printer, obey local regulations.",
+      "page_start": 6,
+      "page_end": 6,
+      "page_labels": [
+        "page-06"
+      ],
+      "char_count": 1198,
+      "id": 12
+    },
+    {
+      "title": "2. Parts Identification and Nomenclature",
+      "level": 2,
+      "heading_path": "2. Parts Identification and Nomenclature",
+      "text": "<!-- image -->\n\nThe ID label is on the bottom or rear of the product.",
+      "page_start": 7,
+      "page_end": 7,
+      "page_labels": [
+        "page-07"
+      ],
+      "char_count": 69,
+      "id": 13
+    },
+    {
+      "title": "3-1-1.  Parallel Cable",
+      "level": 2,
+      "heading_path": "3-1-1.  Parallel Cable",
+      "text": "Connect the parallel cable to a parallel port on your PC.",
+      "page_start": 8,
+      "page_end": 8,
+      "page_labels": [
+        "page-08"
+      ],
+      "char_count": 57,
+      "id": 14
+    },
+    {
+      "title": "3-1-2.  RS-232C Cable",
+      "level": 2,
+      "heading_path": "3-1-2.  RS-232C Cable",
+      "text": "Connect the RS-232C cable to a RS-232C port on your PC.",
+      "page_start": 8,
+      "page_end": 8,
+      "page_labels": [
+        "page-08"
+      ],
+      "char_count": 55,
+      "id": 15
+    },
+    {
+      "title": "3-1-3.  USB Cable",
+      "level": 2,
+      "heading_path": "3-1-3.  USB Cable",
+      "text": "Connect the USB cable to a USB port on your PC.",
+      "page_start": 8,
+      "page_end": 8,
+      "page_labels": [
+        "page-08"
+      ],
+      "char_count": 47,
+      "id": 16
+    },
+    {
+      "title": "3-1-4.  Ethernet Cable",
+      "level": 2,
+      "heading_path": "3-1-4.  Ethernet Cable",
+      "text": "Connect the Ethernet cable to a USB port on your PC.\n\n<!-- image -->\n\n<!-- image -->\n\n<!-- image -->\n\n<!-- image -->",
+      "page_start": 8,
+      "page_end": 8,
+      "page_labels": [
+        "page-08"
+      ],
+      "char_count": 116,
+      "id": 17
+    },
+    {
+      "title": "3-2. Connecting the Interface Cable to the Printer",
+      "level": 2,
+      "heading_path": "3-2. Connecting the Interface Cable to the Printer",
+      "text": "Printer cables are not included in the package.\n\nObtain an appropriate cable that complies with the specifications beforehand.\n\nBecause the appropriate interface cable differs depending on the system that you are connecting the printer to, contact the dealer that you bought the product from if you are unsure about what cable to use.\n\nBefore connecting or disconnecting an interface cable, be sure to disconnect the AC adapter's power cord from the outlet.",
+      "page_start": 9,
+      "page_end": 9,
+      "page_labels": [
+        "page-09"
+      ],
+      "char_count": 457,
+      "id": 18
+    },
+    {
+      "title": "3-2-1.  Parallel Interface Cable",
+      "level": 2,
+      "heading_path": "3-2-1.  Parallel Interface Cable",
+      "text": "To connect a parallel cable, follow the procedure given below.\n\n- (1) Make sure the printer is turn off.\n- (2) Affix the ferrite core onto the cable as shown in the illustration.\n- (3) Pass the fastener through the ferrite core.\n- (4) Loop the fastener around the cable and lock it. Use scissors to cut off any excess.\n- (5) Connect the interface cable to the connector on the rear panel of the printer.\n- (6) Fasten the connector clasps.\n\n<!-- image -->\n\n<!-- image -->\n\n<!-- image -->\n\n<!-- image -->",
+      "page_start": 9,
+      "page_end": 9,
+      "page_labels": [
+        "page-09"
+      ],
+      "char_count": 502,
+      "id": 19
+    },
+    {
+      "title": "3-2-2.  RS-232C Interface Cable",
+      "level": 2,
+      "heading_path": "3-2-2.  RS-232C Interface Cable",
+      "text": "- (1) Make sure that the AC adapter's power cord is not connected to the outlet.\n- (2) Connect the interface cable to the connector on the rear panel of the printer.\n- (3) Tighten the connector screws.\n\n<!-- image -->",
+      "page_start": 10,
+      "page_end": 10,
+      "page_labels": [
+        "page-10"
+      ],
+      "char_count": 217,
+      "id": 20
+    },
+    {
+      "title": "3-2-3.  USB Cable",
+      "level": 2,
+      "heading_path": "3-2-3.  USB Cable",
+      "text": "To connect a USB cable, follow the procedure given below.\n\n- (1) Make sure that the AC adapter's power cord is not connected to the outlet.\n- (2) Connect the USB cable to the USB port.\n- (3) As shown in the figure, pass the cable through the cable hooks to hold it in place.\n\n<!-- image -->",
+      "page_start": 10,
+      "page_end": 10,
+      "page_labels": [
+        "page-10"
+      ],
+      "char_count": 290,
+      "id": 21
+    },
+    {
+      "title": "3-2-4. Ethernet Cable",
+      "level": 2,
+      "heading_path": "3-2-4. Ethernet Cable",
+      "text": "If  a  ferrite  core  is  included,  install  the  ferrite  core  onto  the  Ethernet  cable  according  to  the  following  procedure  to prevent electrical noise.\n\nIf a ferrite core is not included, perform steps (1) and (5) only.\n\nWhen using an Ethernet cable that is 10 cm or less, shielded cable is recommended.\n\n- (1) Make sure the printer is turned off.\n- (2) Install the ferrite core onto the ethernet cable as shown in the illustration below.\n- (3) Pass the fastener through the ferrite core.\n- (4) Loop the fastener around the cable and lock it. Use scissors to cut off any excess.\n- (5) Connect the interface cable to the connector on the rear panel of the printer.\n6. g Link disconnection detection feature\n\n<!-- image -->\n\n<!-- image -->\n\n<!-- image -->\n\nThe Ethernet interface model is equipped with a link disconnection detection feature.\n\nIf the printer is turned on when an Ethernet cable is not connected to it, the POWER and ERROR lamps are simul-\n\ntaneously turned on and off at 4-second intervals to indicate the disconnection.\n\nBe sure to connect the Ethernet cable from a PC or hub to the printer, and then turn the printer on.",
+      "page_start": 11,
+      "page_end": 11,
+      "page_labels": [
+        "page-11"
+      ],
+      "char_count": 1150,
+      "id": 22
+    },
+    {
+      "title": "3-2-4-1. Initialize Communication Settings",
+      "level": 2,
+      "heading_path": "3-2-4-1. Initialize Communication Settings",
+      "text": "When disposing of the product, initialize it from the viewpoint of information protection. For the initialization procedure, refer to IFBD-HE07/08-BE07 User's Manual or IFBD-HI01X/02X Setup Manual..",
+      "page_start": 11,
+      "page_end": 11,
+      "page_labels": [
+        "page-11"
+      ],
+      "char_count": 198,
+      "id": 23
+    },
+    {
+      "title": "3-3.  Connecting the AC Adapter",
+      "level": 2,
+      "heading_path": "3-3.  Connecting the AC Adapter",
+      "text": "Note:  Before connecting or disconnecting the AC adapter, make sure that the printer and all the devices connected to it are turned off.\n\nThen remove the power cord from the outlet.\n\n- (1) Connect the AC adapter to the power cord.\n2. ( 2) Connect the AC adapter to the connector on the printer.\n- (3) Insert the power cable plug into an AC outlet.\n\n<!-- image -->\n\nNote: We recommend that you use the standard AC adapter and power cord.\n\nIf you are not using the optional AC adapter (PS60A-24B1 series) and are instead preparing your own power supply, note the following points.\n\n-  Use a power supply that is 24 VDC \u00b1 10% and 2.1 A or more. (Select a power supply with current capacity that is appropriate for the actual printing ratio.)\n-  Use a power supply that supports with SELV output or LPS (Limited Power Source).\n-  Take into consideration the noise in the environment that the printer is installed in, and take appropriate measures to protect the printer from static electricity, AC line noise, etc.",
+      "page_start": 12,
+      "page_end": 12,
+      "page_labels": [
+        "page-12"
+      ],
+      "char_count": 1010,
+      "id": 24
+    },
+    {
+      "title": "3-4.  Turning the Power On",
+      "level": 2,
+      "heading_path": "3-4.  Turning the Power On",
+      "text": "Connect the power cord according to the procedure in section 3-3, 'Connecting the AC Adapter' .\n\nTurn on the power switch, which is on the front side of the printer.\n\nThe POWER lamp on the control panel will light.\n\n<!-- image -->",
+      "page_start": 13,
+      "page_end": 13,
+      "page_labels": [
+        "page-13"
+      ],
+      "char_count": 230,
+      "id": 25
+    },
+    {
+      "title": "3-5.  Connecting to a Peripheral Device",
+      "level": 2,
+      "heading_path": "3-5.  Connecting to a Peripheral Device",
+      "text": "You can connect a peripheral device to the printer using a modular plug. Follow the procedure given below.\n\n- (1) Make sure that the AC adapter's power cord is not connected to the outlet.\n- (2) Connect  the  modular  jack  plug  to  the  peripheral  drive  connector  on  the  rear  panel  of  the  printer. Connect the other end of the cable to the modular jack of the peripheral device.\n\nCAUTION:  Do not connect a telephone line to the peripheral drive connector. Doing so may cause the printer to malfunction. Also, for safety purposes, do not connect a wire that may carry excessive voltage to the peripheral drive connector.\n\n<!-- image -->",
+      "page_start": 13,
+      "page_end": 13,
+      "page_labels": [
+        "page-13"
+      ],
+      "char_count": 647,
+      "id": 26
+    },
+    {
+      "title": "3-6.  Loading a Paper Roll",
+      "level": 2,
+      "heading_path": "3-6.  Loading a Paper Roll",
+      "text": "Use a paper roll that complies with the printer specifications.\n\n- (1) Push the cover open lever, and open the printer cover.\n- (2) If the thickness of the paper is 65 to 99 \u00b5m, install the tension bar on the printer as shown. If the thickness of the paper is 100 to 150 \u00b5m, it is not necessary to install the tension bar.\n\n<!-- image -->\n\nNote :\n\nA tension bar cannot be installed when a roll paper guide is installed in a printer.\n\nPlease remove the roll paper guide and then install the tension bar.\n\n<!-- image -->\n\n- (3) Firmly press the tension bar until it clicks into place.\n- (4) After the tension bar is installed, please install the roll paper guide again.\n\n<!-- image -->\n\n<!-- image -->\n- ( 5 )  Load the paper roll into the printer in the direction indicated by the figure, and pull the leading edge of the paper straight toward you.\n\n<!-- image -->\n\nNote:  Make sure not to pass the paper under the tension bar. In the following condition, remove the tension bar unit and change the adjustment lever position in accordance with the procedures described in paragraphs 3-6-2 and 3-6-3:\n\n* Paper thickness between 100 \u03bcm and 150 \u03bcm, or paper width of 57.5 mm on the vertical/wall-mount layout.\n\n- ( 6 )  Push on both sides of the rear cover to close it.\n\n<!-- image -->\n\nNote 1:  Be careful not to pull the paper out at an angle, because doing so may cause the paper to jam or skew.\n\n- 2:  Be sure not to close the printer cover by pushing only one side.\n- 3:  Be careful not to get your fingers caught when opening or closing the printer cover.\n- 4:  After the printer cover is closed, the printer performs initial operations (from paper feeding to paper cutting).  Do not open the printer cover until the initial operations are complete.",
+      "page_start": 14,
+      "page_end": 15,
+      "page_labels": [
+        "page-14",
+        "page-15"
+      ],
+      "char_count": 1751,
+      "id": 27
+    },
+    {
+      "title": "3-6-1.  Compliant Paper Roll Specifications",
+      "level": 2,
+      "heading_path": "3-6-1.  Compliant Paper Roll Specifications",
+      "text": "Note 1: Do not glue or tape the paper roll and shaft core together.\n\n| Paper thickness                                              | Thermal Paper       | 65 to 75 \u03bcm: f 18\u00b11mm(Core outer), f 18\u00b11mm(Core outer)    |\n|--------------------------------------------------------------|---------------------|------------------------------------------------------------|\n| Paper thickness                                              | Thermal Paper       | 65 to 75 \u03bcm: f 32\u00b11mm(Core outer), f 25.4\u00b11mm(Core outer)  |\n| Paper thickness                                              | Thermal Paper       | 75 to 150 \u03bcm: f 32\u00b11mm(Core outer), f 25.4\u00b11mm(Core outer) |\n| Paper thickness                                              | Thermal Label Paper | Max.150 \u03bcm                                                 |\n| Paper width                                                  | Thermal Paper       | 79.5 \u00b1 0.5 mmor 82.5 \u00b1 0.5 mmor 57.5 \u00b1 0.5mm               |\n| Paper width                                                  | Thermal Label Paper | 79.5 \u00b1 0.5 mmor 82.5 \u00b1 0.5mm                               |\n| External dimensions \u2022 Roll diameter \u2022 Take uppaperroll width |                     | Max. f 100mm 80 +0.5 mm/83 +0.5 mm/58 +0.5 mm - 1 - 1 - 1  |\n| Printed surface                                              |                     | Outer edge of roll                                         |\n\n- 2: Do not fold the tail end of the paper.\n- 3: For details on recommended thermal paper, see the following webpage.\n\nhttps://www.star-m.jp/prjump/000089.html",
+      "page_start": 16,
+      "page_end": 16,
+      "page_labels": [
+        "page-16"
+      ],
+      "char_count": 1561,
+      "id": 28
+    },
+    {
+      "title": "3-6-2.  Removing the Tension Bar",
+      "level": 2,
+      "heading_path": "3-6-2.  Removing the Tension Bar",
+      "text": "When using thermal paper roll, the tension bar unit may or may not be necessary, depending on the paper thickness, paper width, or the installation layout. If the tension bar unit is unnecessary, remove it in accordance with the procedure indicated below. The tension bar unit is unnecessary when using full-face thermal label paper roll or thermal label paper roll (tack label paper).\n\n| Installation layout                       | Horizontal    | Horizontal    | Horizontal    | Vertical/wall-mount   | Vertical/wall-mount   | Vertical/wall-mount   |\n|-------------------------------------------|---------------|---------------|---------------|-----------------------|-----------------------|-----------------------|\n| Paper width (mm)                          | 82.5          | 79.5          | 57.5          | 82.5                  | 79.5                  | 57.5                  |\n| Paper thickness between 65 \u03bcm and 100 \u03bcm  | Necessary     | Necessary     | Necessary     | Necessary             | Necessary             | Un- necessary         |\n| Paper thickness between 100 \u03bcm and 150 \u03bcm | Un- necessary | Un- necessary | Un- necessary | Un- necessary         | Un- necessary         | Un- necessary         |\n\n<!-- image -->\n\n<!-- image -->\n\nUse a flat head screwdriver as shown to remove the clips at both ends of the tension bar. Then, remove the tension bar unit.\n\n<!-- image -->\n\n<!-- image -->",
+      "page_start": 16,
+      "page_end": 16,
+      "page_labels": [
+        "page-16"
+      ],
+      "char_count": 1406,
+      "id": 29
+    },
+    {
+      "title": "3-6-3.  Changing the Adjustment Lever Position",
+      "level": 2,
+      "heading_path": "3-6-3.  Changing the Adjustment Lever Position",
+      "text": "The adjustment lever position must be changed in accordance with the paper thickness. It is factory-set to position 1. When using paper thickness between 100 and 150 \u03bcm, change the adjustment lever position in accordance with the procedure below.\n\n<!-- image -->",
+      "page_start": 17,
+      "page_end": 17,
+      "page_labels": [
+        "page-17"
+      ],
+      "char_count": 262,
+      "id": 30
+    },
+    {
+      "title": "3-6-4.  Removing the Roll Paper Guide",
+      "level": 2,
+      "heading_path": "3-6-4.  Removing the Roll Paper Guide",
+      "text": "When using a paper roll with an 82.5 mm width, remove the roll paper guide as shown.\n\nWhen using a paper roll with a 57.5 mm width, remove the roll paper guide, and install the roll paper guide into the other groove. When you change the effective print width (paper roll width), change the printer utility's memory switch setting. For details, see the printer utility help.\n\nNote:  After using a paper roll with a width of 57.5 mm, do not change to a paper roll with a width of 79.5 or 82.5 mm. This is because the printer head has deteriorated as a result of a portion of the head having been in direct contact with the platen.\n\n<!-- image -->\n\n<!-- image -->\n\nAs shown, use a flat head screwdriver to move the adjustment lever inward. Then, lower the adjustment lever to the position in which the protrusion on the adjustment lever engages with the hole in the frame.\n\nNote:  Do not use position 2.\n\nPosition 1 Paper thickness between 65 \u03bcm and 105 \u03bcm\n\n<!-- image -->\n\nPosition 3 Paper thickness between 105 \u03bcm and 150 \u03bcm\n\n<!-- image -->",
+      "page_start": 17,
+      "page_end": 17,
+      "page_labels": [
+        "page-17"
+      ],
+      "char_count": 1039,
+      "id": 31
+    },
+    {
+      "title": "3-7. Bluetooth Settings  (For Bluetooth Interface Models only)",
+      "level": 2,
+      "heading_path": "3-7. Bluetooth Settings  (For Bluetooth Interface Models only)",
+      "text": "<!-- image -->\n\n&lt; LED&gt; Indicates the status of the Bluetooth interface.\n\nGreen (on): Not connected.\n\nGreen (flashing): Ready to start pairing.\n\nBlue (on): Connected.\n\nPurple (flashing): Auto connection ON.\n\nPair the printer with the master device by following the procedure below.",
+      "page_start": 18,
+      "page_end": 18,
+      "page_labels": [
+        "page-18"
+      ],
+      "char_count": 286,
+      "id": 32
+    },
+    {
+      "title": "3-7-1.  Pairing using SSP (Simple Secure Pairing) [Default]",
+      "level": 2,
+      "heading_path": "3-7-1.  Pairing using SSP (Simple Secure Pairing) [Default]",
+      "text": "- (1) Working on the master device, tap [Settings] and set [Bluetooth] to ON.\n\n&lt; iOS &gt;\n\n<!-- image -->\n\n<!-- image -->\n\n- (2) After turning the printer's power switch on, press and hold the PAIR button on the rear interface of the printer for 5 seconds or more, and then release it. The LED will flash green.\n- (3) Pairing will be possible for 60 seconds from when the LED begins flashing green.During this time, execute \"Search for devices\" from the master device and tap the relevant device from the displayed list. Device name: Star Micronics (default)\n- (4) In an iOS device, after pairing, the LED will automatically begin flashing blue, and the printer will be automatically connected. In an Android device, the LED turns blue only while data is sent.\n- (5) Connect to the printer from the master device application and perform printing. If the printing is successful, the pairing process has been completed.\n5. Note : The printer performs various processes immediately after connecting to or disconnecting from a master device.\n\n<!-- image -->\n\nPlease wait approximately 0.1 seconds after connecting, and approximately 0.5 seconds after disconnecting, before beginning communications with the printer.",
+      "page_start": 18,
+      "page_end": 18,
+      "page_labels": [
+        "page-18"
+      ],
+      "char_count": 1214,
+      "id": 33
+    },
+    {
+      "title": "3-7-2.  Pairing using PIN code",
+      "level": 2,
+      "heading_path": "3-7-2.  Pairing using PIN code",
+      "text": "Enter the following information in the master device if it does not support SSP , or when otherwise necessary.\n\nPIN:\n\nDevice name:\n\n1234 (default)\n\nStar Micronics (default)\n\nIt is recommended that you change the PIN code for greater security.\n\nFor details regard changing the PIN code, please see the 'Software Manual -Star Bluetooth Utility- ' .",
+      "page_start": 19,
+      "page_end": 19,
+      "page_labels": [
+        "page-19"
+      ],
+      "char_count": 346,
+      "id": 34
+    },
+    {
+      "title": "3-7-3.  Auto Connection Function (iOS only)",
+      "level": 2,
+      "heading_path": "3-7-3.  Auto Connection Function (iOS only)",
+      "text": "Each time the wireless connection is disconnected while communicating with upper-level iOS devices including iPad over Bluetooth, it is necessary to move back to the Bluetooth setting screen in the upper-level iOS device and tap the desired printer name again to build a connection. This is an iOS specification.\n\nIn order to save this labor, this printer is equipped with the Auto Connection function that automatically requests a connection from an upper-level iOS device that was connected to the printer last time.\n\nThe default setting of this function may differ according to the printer model you are using.\n\nConfirm the default settings for your printer, as well as the use examples for ON/OFF settings, and then make the settings to match your purpose.\n\nYou can also check the current ON/OFF setting by performing self-printing.",
+      "page_start": 19,
+      "page_end": 19,
+      "page_labels": [
+        "page-19"
+      ],
+      "char_count": 836,
+      "id": 35
+    },
+    {
+      "title": "&lt; Confirmation procedure by self-printing &gt;",
+      "level": 2,
+      "heading_path": "&lt; Confirmation procedure by self-printing &gt;",
+      "text": "<!-- image -->\n\n- (1)  While the printer cover is closed, hold down the FEED button on the operation panel, and then turn on the power switch.\n- (2)  Self-printing starts and the settings for F/W version, DIP switch, memory switch, and so on are printed.\n\nSubsequently the interface information is printed and finally the current ON/OFF settings are printed.\n\nCaution: If \"Auto Connection function\" is set to ON when using devices other than iOS, a Bluetooth communication with the printer may fail.  To use devices other than iOS, such as the Android/Windows devices, make sure you turn off the \"Auto Connection\" function before using the printer.\n\nFor information on how to set up this function, see \"3-7-4. Setting up Auto Connection\".\nSee the table below for details of Auto Connection setting.\n\n|                                                 | Auto ConnectionON                                                                                                                                                                         | Auto Connection OFF                                                                                              |\n|-------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|\n| Reconnecting without changing the master device | After the printer is turned on, it automatically connects to the last master device that was connected.                                                                                   | After turning on the printer, tap this printer's name on the Blue- tooth settings screen on the mas- ter device. |\n| Changing the connected master device            | Disconnect the Bluetooth connec- tion in such a way as to turn OFF the power to the upper-level de- vice automatically connected. Then, establish a pairing with a desired master device. | After turning on the printer, es- tablish a pairing with a desired master device.                                |\n| Example (recommended)                           | When connecting directly to the printer from one master device.                                                                                                                           | When using the printer with mul- tiple master device.                                                            |",
+      "page_start": 19,
+      "page_end": 20,
+      "page_labels": [
+        "page-19",
+        "page-20"
+      ],
+      "char_count": 2574,
+      "id": 36
+    },
+    {
+      "title": "u Setting up from the Main Unit for the TSP700II",
+      "level": 2,
+      "heading_path": "u Setting up from the Main Unit for the TSP700II",
+      "text": "Note : The following procedure explains how to change the Auto Connection function setting from ON to OFF. If you want to change it from OFF to ON, please follow the same procedure.\n\n- (1) When paper is loaded in the printer and it is turned on, the [POWER] LED(green) on the front of the printer turns on.\n- (2) If you hold down the [RST] button on the back of the printer for at more than five seconds, initial operations are performed in the same way as when the power is turned on, and the LEDs on the front of the printer flash. If you press the [RST] button when the printer is placed upright, place it horizontally again while the LED is flashing.\n- (3) The following information is printed. After that, turn the printer off and then back on again to set \"Auto Connection\" to OFF.\n- (4) To make sure \"Auto Connection\" is set to OFF correctly, perform self-printing as described in \"3-7-3. Confirmation procedure by self-printing' .\n\n<!-- image -->\n\n&lt; Current Setting &gt;\n\nAuto Connection : OFF\n\nTo enable this setting, turn\n\nPrinter Power OFF and turn ON.\n\nNote :  Only Bluetooth Firmware Version 2.0 or later allows you to switch ON/OFF by pushing the [RST] button. The Bluetooth Firmware version can be confirmed by self-printing. (For more information, see \"3-7-3. Confirmation procedure by self-printing' .)",
+      "page_start": 21,
+      "page_end": 21,
+      "page_labels": [
+        "page-21"
+      ],
+      "char_count": 1322,
+      "id": 37
+    },
+    {
+      "title": "u Setting from the Software",
+      "level": 2,
+      "heading_path": "u Setting from the Software",
+      "text": "After pairing your device and the TSP700II, change \"Auto Connection\" in the following application provided by our company. Please download and use the utility soft from the following URL.\n\n- l iOS: https://www.star-m.jp/prjump/000003.html\n- l Android: https://www.star-m.jp/prjump/000004.html\n- l Windows: https://www.starmicronics.com/support/",
+      "page_start": 21,
+      "page_end": 21,
+      "page_labels": [
+        "page-21"
+      ],
+      "char_count": 344,
+      "id": 38
+    },
+    {
+      "title": "3-7-5.  Resetting Bluetooth Settings",
+      "level": 2,
+      "heading_path": "3-7-5.  Resetting Bluetooth Settings",
+      "text": "The following procedure explains how to initialize settings that you have changed such as the PIN code, device name, and so on.\n\n- (1) While inserting a thin object such as the tip of a pen and holding down the RST button on the rear of the printer, turn on the printer's power switch. The POWER LED (green) and the ERROR LED (red) on the front of the printer start flashing.\n- (2) Hold down the RST button for 4 seconds or more (note 1), and then release it.\n- (3) After you release the RST button, if the LED stops flashing and the POWER LED remains lit green within 12 seconds, initialization is complete. If the LED continues to flash for longer than 12 seconds after releasing the RST button, this indicates that initialization was not successful. Turn off the printer's power and then try again from step 1.\n- (4) Turn off the printer's power switch and delete the pairing setup with the higher ranked device.\n\n<!-- image -->\n\nNote  1:  In step 2, if you do not hold down the RST button for long enough, initialization will not complete correctly.",
+      "page_start": 22,
+      "page_end": 22,
+      "page_labels": [
+        "page-22"
+      ],
+      "char_count": 1053,
+      "id": 39
+    },
+    {
+      "title": "For  F/W Ver2.0, Ver3.0a, and Ver3.0b interfaces",
+      "level": 2,
+      "heading_path": "For  F/W Ver2.0, Ver3.0a, and Ver3.0b interfaces",
+      "text": "In step 2, you need to hold down the RST button for 8 seconds or more.\n\nAlso, after finishing steps 1 to 3, to check that initialization was completed correctly, perform self-printing. If the second sheet (*** Bluetooth Information ***) is not printed, initialization has not been completed correctly. If this happens, turn off the printer's power, and then try again from step 1.\n\n(You can check the firmware version from the self-printing results. See page 14 for the self-printing procedure.)\n\n- 2: Do not turn off the printer during initialization; otherwise initialization will not complete correctly.\n- 3: If initialization is not completed correctly, turn off the printer's power and then try again from step 1.",
+      "page_start": 22,
+      "page_end": 22,
+      "page_labels": [
+        "page-22"
+      ],
+      "char_count": 718,
+      "id": 40
+    },
+    {
+      "title": "WARNING",
+      "level": 2,
+      "heading_path": "WARNING",
+      "text": "- l If you notice smoke or strange odors coming from this product, turn the power switch off immediately, and remove the power cord from the AC outlet. For repairs, contact the dealer that you bought the product from.\n- l Never attempt to repair the product yourself. Doing so can be dangerous.\n- l Never disassemble or modify the product. Doing so may result in injury, fire, or electric shock.\n- l On models that have cutters or tear bars, do not touch the cutter blade or the tear bar.\n-  There is a cutter or tear bar inside the paper outlet slot. Never put your hand in the slot regardless of whether or not the printer is in operation.\n-  You must open the printer cover to replace paper. However, because the cutter blade or tear bar is located inside of the cover, be careful not to bring your face and hands too close to the blade or tear bar when the cover is open.\n- l During and immediately after printing, the area around the print head is very hot. Don't touch it because you could be burned.\n- l Be sure to turn off the printer before performing maintenance on the cutter. Failing to do so is dangerous.",
+      "page_start": 23,
+      "page_end": 23,
+      "page_labels": [
+        "page-23"
+      ],
+      "char_count": 1118,
+      "id": 41
+    },
+    {
+      "title": "CAUTION",
+      "level": 2,
+      "heading_path": "CAUTION",
+      "text": "- l We recommend that you unplug the printer from the power outlet whenever you do not plan to use the printer for long periods.\n\nBecause of this, you should locate the printer so that the power outlet it is plugged into is nearby and easy to access.\n\n- l If an AC cord set is supplied with the product, the power cord that is included has been specially designed for the product.\n- l Make sure that the printer and the PC are turned off and unplugged from their AC outlets before you make connections.\n- l Do not connect a telephone line to the peripheral drive connector, which is used for devices such as cash drawers. Doing so may cause the printer to malfunction. Also, for safety purposes, do not connect a wire that may carry excessive voltage to the peripheral drive connector. l Do not open the printer covers while the printer is printing or cutting.\n- l Do not pull out paper when the printer cover is closed.\n- l If  liquid  or  foreign  objects  (such  as  coins  and  paper)  enter  the  inside  of  the  printer,  turn  the  power  switch  off, disconnect  the  power  cord  from  the  AC  outlet,  and  consult  the  dealer  that  you  bought  the  product  from. Continuing to use the printer may lead to a short-circuit, which may cause electric shock or fire.\n- l The heating element and the driver IC of the thermal print head are easily damaged. Do not touch them with metal objects, sandpaper, etc.\n- l Do not touch the thermal print head heating element. Doing so may make it dirty, which will decrease the printing quality.\n- l Static electricity can damage the driver IC and other components of the thermal print head. Avoid touching it directly.\n- l Do not operate the printer if there is moisture (which has been caused by condensation or another factor) on the front surface of the head.\n- l This device is not suitable for use in the vicinity of children.\n- l The printing quality and the thermal print head's service life cannot be guaranteed if paper other than the recommended paper is used.\n\nIn particular, thermal paper containing Na+, K+, or C1- may drastically reduce the service life of the thermal print head. We recommend that you use paper with the following maximum ion densities: 500 ppm of Na+, 150 ppm of K+, and 300 ppm of Cl-.\n\nFor details on recommended thermal paper, see the following webpage.\n\nhttps://www.star-m.jp/prjump/000089.html",
+      "page_start": 23,
+      "page_end": 24,
+      "page_labels": [
+        "page-23",
+        "page-24"
+      ],
+      "char_count": 2384,
+      "id": 42
+    },
+    {
+      "title": "Wireless Communication",
+      "level": 2,
+      "heading_path": "Wireless Communication",
+      "text": "- l Do not use the device where using wireless devices is prohibited or may cause interference or danger.\n- l The radio waves generated by the device may interfere with the operation of electronic medical devices. If you are using any electrical medical device, contact its manufacturer for the restrictions on the use of the device.\n- l A distance of at least 20 cm {7.87\"} must be maintained at all times between the antenna of this product and people in the vicinity.May exert electromagnetic interference on, and cause malfunction of, cardiac pacemakers.\n- l Security functionality for Bluetooth is installed in this product. Configure the security settings according to the manual (available on the Star Micronics website) to reduce the risk of security issues.\n- l\n- This device supports Bluetooth. Since this functionality may be limited by local regulations, first review the radio laws specific to the country in which the product will be used.\n- l Below is a list of laws this device has been approved by. As Star Micronics is committed to constant innovation, revisions may be made without an announcement. Access the Star Micronics website for the latest listing of approvals.\n- l Please refer to Star Micronics website for the latest information and manuals.",
+      "page_start": 24,
+      "page_end": 24,
+      "page_labels": [
+        "page-24"
+      ],
+      "char_count": 1271,
+      "id": 43
+    },
+    {
+      "title": "4. Attaching the Accessories",
+      "level": 2,
+      "heading_path": "4. Attaching the Accessories",
+      "text": "The following accessories are necessary when mounting the printer to a wall.\n\n- Holder plate and two flangeless screws\n\nThe following accessories do not necessarily have to be attached. Attach it if necessary.\n\n- Cable cover\n- Switch cover",
+      "page_start": 25,
+      "page_end": 25,
+      "page_labels": [
+        "page-25"
+      ],
+      "char_count": 239,
+      "id": 44
+    },
+    {
+      "title": "&lt;Precoutions&gt;",
+      "level": 2,
+      "heading_path": "&lt;Precoutions&gt;",
+      "text": "- n The holder plate is attached to the printer using the included screws and is hooked onto screws that are installed into the wall.\n- Use commercially available screws (4 mm diameter) that are suitable for the wall material (wood, steel beam,\n- n The screws on the wall are not included. concrete, etc.).\n- n The printer's weight is approximately 2.4 kg when the largest diameter roll paper is loaded. Use screws on the wall that have both shear strength and pulling-out strength to withstand a force of at least 12 kgf (118 N).\n- (1) Attach the shaft to the printer.\n- (2) Wipe the area into which the rubber feet will be affixed in order to remove any grime; then, affix the roll stoppers. The positions for affixing them will vary depending on the paper width.\n\n<!-- image -->\n\n82.5 or 79.5 mm width\n\n<!-- image -->\n\n57.5 mm width\n\n<!-- image -->\n- (3) Use a regular screwdriver to remove the clips at both ends of the bar to remove the tension bar unit.",
+      "page_start": 25,
+      "page_end": 26,
+      "page_labels": [
+        "page-25",
+        "page-26"
+      ],
+      "char_count": 959,
+      "id": 45
+    },
+    {
+      "title": "Note: If the paper witdth is 79.5 or 82.5mm and the paper thickness is less than 100\u03bcm, you do not need to remove the tension bar unit\ufffd",
+      "level": 2,
+      "heading_path": "Note: If the paper witdth is 79.5 or 82.5mm and the paper thickness is less than 100\u03bcm, you do not need to remove the tension bar unit\ufffd",
+      "text": "<!-- image -->\n\n- (4) Attach the holding plate to the printer. Then tighten the two screws that were supplied to secure it in place. Position the printer over the screws, etc., on the wall and then slide it downward to set it in place.\n- (5) Push the cover open lever, and open the printer cover.\n- (6) Insert the paper roll as shown.\n- (7) To change the Paper Near End Sensor setting from 'Horizontal' to 'Vertical' , change the MSW (Memory Switch) A-9 from 'OFF (0)' to 'ON (1)' as shown below.\n1. Open the printer cover, then turn the power on while holding the FEED button. Continue holding down the FEED button until the POWER lamp and the ERROR lamp     begin flashing.\n2. The printer will change the MSWA-9 setting (Horizontal/Vertical) when these have flashed for three seconds.\n3.  Run the Self-test Printing to make sure that MSWA-9 is 'ON (1)'\n\n<!-- image -->\n\n<!-- image -->",
+      "page_start": 26,
+      "page_end": 26,
+      "page_labels": [
+        "page-26"
+      ],
+      "char_count": 886,
+      "id": 46
+    },
+    {
+      "title": "CAUTION",
+      "level": 2,
+      "heading_path": "CAUTION",
+      "text": "This caution indicates information that, if ignored, could lead to personal injury or property damage.\n\n- Be\tsure\tto\thave\tqualified\tpersonnel\tinstall\tthe\tspecified\tscrews\tand\tprinter\tto the\twall.\n\nStar  is  not  responsible  for  any  accidents  or  injuries  that  occur  as  a  result  of improper\tinstallation,\tmisuse,\tor\tmodifications.\n\nEspecially\t when\t installing\t the\t printer\t at\t a\t high\t location,\t make\t sure\t that\t the printer\tis\tsecurely\tinstalled\tto\tthe\twall.\n\nIf the printer is not installed securely and falls, personal injury or damage to the printer may result.\n\n- Make\tsure\tthat\tthe\tmounting\tsurface\tand\tinstallation\tscrews\tare\tstrong\tenough to install the printer.\n\nSecurely\tinstall\tthe\tprinter\tso\tthat\tthe\tweight\tof\tthe\tprinter\tand\tany\tconnected cables\twill\tnot\tcause\tthe\tprinter\tto\tfall.\n\nOtherwise,\tpersonal\tinjury\tor\tdamage\tto\tthe\tprinter\tmay\tresult.\n\n- Do not install the printer in an unstable location or a location that is exposed to vibration and shocks.\n\nIf the printer falls, personal injury or damage to the printer may result.",
+      "page_start": 27,
+      "page_end": 27,
+      "page_labels": [
+        "page-27"
+      ],
+      "char_count": 1059,
+      "id": 47
+    },
+    {
+      "title": "4-2.  Attaching the Cable",
+      "level": 2,
+      "heading_path": "4-2.  Attaching the Cable",
+      "text": "Attach the cable cover as shown in the illustration.\n\n<!-- image -->",
+      "page_start": 28,
+      "page_end": 28,
+      "page_labels": [
+        "page-28"
+      ],
+      "char_count": 68,
+      "id": 48
+    },
+    {
+      "title": "4-3.  Switch Blind Installation",
+      "level": 2,
+      "heading_path": "4-3.  Switch Blind Installation",
+      "text": "It is not necessary to install the switch blind. Only install it if it is necessary for you. By installing the switch blind, the following become possible.\n\n-  Preventing the power switch from being operated by mistake.\n-  Ensuring that other people can not easily operate the power switch.\n\nInstall the switch cover as shown in the diagram below.\n\n<!-- image -->\n\nThe power switch can be turned ON ( | ) and OFF (O) by inserting a narrow instrument (ball pen etc.) in the holes in the switch blind.",
+      "page_start": 28,
+      "page_end": 28,
+      "page_labels": [
+        "page-28"
+      ],
+      "char_count": 499,
+      "id": 49
+    },
+    {
+      "title": "5-1. Recoverable errors",
+      "level": 2,
+      "heading_path": "5-1. Recoverable errors",
+      "text": "Check the recovery conditions. The printer can be recovered while maintaining its current status.\n\n| Error description                                                       | POWER                              | ERROR                                     | Recovery condition                                                                     |\n|-------------------------------------------------------------------------|------------------------------------|-------------------------------------------|----------------------------------------------------------------------------------------|\n| Thermal head high temperature detection error                           | Flashes at 0.5 sec- ond intervals  | OFF                                       | The printer recovers automatically when the thermal head cools.                        |\n| Cover open error                                                        | ON                                 | ON (Red)                                  | The printer recovers when you close the cover.                                         |\n| Near end error                                                          | ON                                 | Flashes orange lamp at 1 second intervals | The printer recovers when you set a new paper roll and close the printer cover.        |\n| Black mark error                                                        | ON                                 | ON (Orange)                               | The printer recovers when you set a new paper roll and close the printer cover.        |\n| Paper out error                                                         | ON                                 | ON (Orange)                               | The printer recovers when you set a new paper roll and close the printer cover.        |\n| Ethernet link disconnection detection (*1 (Physical link disconnection) | Flashes at 4 seo-nd intervals.     | Flashes at 4 seo-nd intervals.            | Connect an Ethernet cable. For details, see section 3-2-4, \"Ethernet Interface Cable.\" |\n| Ethernet link disconnection detection (*1 (IP address lost)             | Flashes at 0.25 seo- nd intervals. | Flashes at 0.25 seo- nd intervals.        | Set the correct IP address and restart the printer.                                    |\n\n(*1: IFBD-HE07 only",
+      "page_start": 29,
+      "page_end": 29,
+      "page_labels": [
+        "page-29"
+      ],
+      "char_count": 2333,
+      "id": 50
+    },
+    {
+      "title": "5-2. Unrecoverable errors",
+      "level": 2,
+      "heading_path": "5-2. Unrecoverable errors",
+      "text": "Turn the printer off, check the recovery conditions, and then turn the printer back on.\n\nIf the same error occurs after you turn the printer back on, the printer needs to be repaired.\n\n| Error description     | POWER   | ERROR                                       | Cause                              | Recovery condition                                                                                                     |\n|-----------------------|---------|---------------------------------------------|------------------------------------|------------------------------------------------------------------------------------------------------------------------|\n| Cutter error          | Off     | Flashes red lamp at 0.125-second intervals  | Paper cutting in progress error    | After you restart the printer, the printer recovers when the mobile cutter re- turns to its home position. (Note 3, 4) |\n| Flash memory error    | Off     | Flashes orange lamp at 0.5 second intervals | Flash memory access error          | -                                                                                                                      |\n| EEPROM error          | Off     | Flashes red lamp at 0.75 second intervals   | This is not a recoverable error.   | -                                                                                                                      |\n| SRAMerror             | Off     | Flashes orange lamp at 1 second intervals   | RAMaccess error                    | -                                                                                                                      |\n| Head thermistor error | Off     | Flashes red lamp at 1.5 second intervals    | Detection of head thermistor error | -                                                                                                                      |\n| Power voltage error   | Off     | Flashes orange lamp at 2 second intervals   | Detection of power voltage error   | Check the condition of the power sup- ply, and restart the printer.                                                    |\n\nNote 1:  If an unrecoverable error occurs, turn the power off immediately.\n\n- 2:  A power voltage error may be a result of a power supply malfunction.\n- 3:  If  the  paper  is  jammed,  turn  the  power  off,  clear  the  jammed  paper,  and  then  turn  the  power  back  on. For details, see section 6-2, 'Removing Paper Jams' .\n\nIf you find an error other than the above, try turning the power off, and then on.\n\nIf the same error is displayed even after the power is turned on again, it may be a printer malfunction. Contact the seller.",
+      "page_start": 29,
+      "page_end": 29,
+      "page_labels": [
+        "page-29"
+      ],
+      "char_count": 2646,
+      "id": 51
+    },
+    {
+      "title": "6-1.  Preventing Paper Jams",
+      "level": 2,
+      "heading_path": "6-1.  Preventing Paper Jams",
+      "text": "The paper should not be touched during ejection and before it is cut.\n\nPressing or pulling the paper during ejection may cause a paper jam, paper cutting failure or line feed failure.",
+      "page_start": 30,
+      "page_end": 30,
+      "page_labels": [
+        "page-30"
+      ],
+      "char_count": 183,
+      "id": 52
+    },
+    {
+      "title": "6-2.  Removing Paper Jam",
+      "level": 2,
+      "heading_path": "6-2.  Removing Paper Jam",
+      "text": "If a paper jam occurs, clear it as described below.\n\n- (1) Set the power switch to off to turn off power to the printer.\n- (2) Push the lever toward you to open the printer cover.\n- (3) Remove the jammed paper.\n4. Note 1: To prevent parts such as the thermal head or the rubber roller from damage or deformation, do not forcibly pull on the paper with the printer cover closed.\n5. Note 2: If label paper gets jammed, the glue from the labels could stick to the parts. If this occurs, make sure to wipe them clean of the glue.\n- (4) Position the paper roll straight and close the printer cover gently.\n7. Note 1: Make sure that the paper is positioned straight. If the printer cover is closed with the paper skewed, a paper jam may result.\n8. Note 2: Lock the printer cover by pressing down on the sides. Do not try to close it by pressing down on the centre. The cover may not lock properly.\n- (5) Set the power switch to on to turn on power to the printer. Make sure that the ERROR LED is not lit.\n\nNote:  While the ERROR LED is lit, the printer will not accept any commands such as the print command, so make sure that the printer cover is locked properly.\n\n<!-- image -->",
+      "page_start": 30,
+      "page_end": 30,
+      "page_labels": [
+        "page-30"
+      ],
+      "char_count": 1174,
+      "id": 53
+    },
+    {
+      "title": "Caution Symbol",
+      "level": 2,
+      "heading_path": "Caution Symbol",
+      "text": "<!-- image -->\n\nThis symbol is placed near the thermal head to indicate that it may be hot. Never touch the thermal head immediately after the printer has been used. Let the thermal head cool for a few minutes before touching it. Never touch the thermal head with your hands because it can generate static electricity, which can damage the device in the thermal head.\n\n<!-- image -->\n\n<!-- image -->\n\nThis symbol is placed near the peripheral drive connector.\n\nDo not connect this to a telephone.",
+      "page_start": 30,
+      "page_end": 30,
+      "page_labels": [
+        "page-30"
+      ],
+      "char_count": 496,
+      "id": 54
+    },
+    {
+      "title": "7. Maintenance",
+      "level": 2,
+      "heading_path": "7. Maintenance",
+      "text": "Accumulation of paper dust and dirt may cause the printer to not print portions of characters.\n\nTo prevent such problems, perform periodic maintenance, such as removing paper dust from the paper transport section and removing the blackened paper dust from the thermal head surface.\n\nAs a guideline, clean the printer every six months.\n\nNote: Turn the printer's power switch off before performing maintenance.",
+      "page_start": 31,
+      "page_end": 31,
+      "page_labels": [
+        "page-31"
+      ],
+      "char_count": 408,
+      "id": 55
+    },
+    {
+      "title": "7-1.  Thermal Head",
+      "level": 2,
+      "heading_path": "7-1.  Thermal Head",
+      "text": "To remove the blackened paper dust that has accumulated on the thermal head surface, wipe it clean with a cotton swab (or soft cloth) dipped in alcohol (ethanol, methanol, or isopropyl).\n\nNote 1:  The thermal head is easily damaged.\n\n<!-- image -->\n\nBe sure to clean the thermal head with a soft cloth, and be careful not to damage the head.\n\n- 2:  Do not clean the thermal head immediately after printing, when the thermal head is hot.\n- 3:   Be careful of static electricity while cleaning the thermal head. Static electricity can damage the head.\n- 4:  Turn the power on only after the alcohol has dried completely.",
+      "page_start": 31,
+      "page_end": 31,
+      "page_labels": [
+        "page-31"
+      ],
+      "char_count": 618,
+      "id": 56
+    },
+    {
+      "title": "7-2.  Platen Rubber Roller",
+      "level": 2,
+      "heading_path": "7-2.  Platen Rubber Roller",
+      "text": "Using a dry, soft cloth, wipe off the dirt from the rubber roller. Clean the entire rubber roller by rotating it.",
+      "page_start": 31,
+      "page_end": 31,
+      "page_labels": [
+        "page-31"
+      ],
+      "char_count": 113,
+      "id": 57
+    },
+    {
+      "title": "7-3.  Sensors and the Surrounding Areas",
+      "level": 2,
+      "heading_path": "7-3.  Sensors and the Surrounding Areas",
+      "text": "Clean the sensors (mainly the reflector type sensors) of debris, dust, paper particles, glue, etc. that may have accumulated.",
+      "page_start": 31,
+      "page_end": 31,
+      "page_labels": [
+        "page-31"
+      ],
+      "char_count": 125,
+      "id": 58
+    },
+    {
+      "title": "7-4.  Paper Holder the Suurounding Areas",
+      "level": 2,
+      "heading_path": "7-4.  Paper Holder the Suurounding Areas",
+      "text": "Clean the paper holder of debris, dust, paper particles, etc. that may have accumulated.\n\n<!-- image -->\n<!-- image -->",
+      "page_start": 31,
+      "page_end": 32,
+      "page_labels": [
+        "page-31",
+        "page-32"
+      ],
+      "char_count": 119,
+      "id": 59
+    }
+  ]
+}
