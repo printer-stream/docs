@@ -17,6 +17,17 @@ DESCRIBE_PROMPT = (
     "preamble."
 )
 
+# quality phase (vlm-judge backend): does the markdown faithfully capture the page?
+JUDGE_PROMPT = (
+    "You are given a page image and the Markdown that was extracted from it. "
+    "Decide whether the Markdown faithfully captures the page's substantive "
+    "content - especially tables, command/parameter details, and the content of "
+    "any FIGURES or diagrams (a figure reduced to a placeholder with no "
+    "description is a failure). If important content is missing or wrong, reply "
+    "with a one-line description prefixed 'MISSING: '. If the Markdown is "
+    "faithful, reply with exactly 'OK'."
+)
+
 # sections phase (llm-text backend): markdown with page markers -> section starts.
 SECTIONS_PROMPT = (
     "You are given the Markdown of a technical specification document, with "

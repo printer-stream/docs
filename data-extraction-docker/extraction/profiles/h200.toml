@@ -4,8 +4,9 @@
 # and export the key the provider blocks reference:  export VLLM_API_KEY=...
 # (vLLM needs no real key; any value works.)
 #
-# NOTE: the vlm / vlm-judge / vlm-window backends land in extraction 3.0.0
-# (steps 2-5). Until then, selecting them errors clearly; `default` is runnable now.
+# NOTE: vlm (markdown) and vlm-judge (quality) are implemented as of 3.0.0.
+# vlm-window (page-image sliding-window sections) is still planned; until it lands,
+# sections uses llm-text below. `default` runs with no GPU and no network.
 
 [render]
 small_width = 1024

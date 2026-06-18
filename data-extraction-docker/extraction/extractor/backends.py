@@ -1,10 +1,11 @@
 """Registered backends and gates. Each strategy is one factory; selecting it is a
 profile setting. Add a strategy = add a factory + @register; remove = delete it.
 
-Implemented now (step 1): markdown 'docling', quality 'heuristic', describe gates
-'all'/'flagged'/'illustrated'. VLM markdown/quality-judge and section backends
-register in later steps; selecting an unregistered name fails with a clear error.
-Heavy imports (docling, providers) are lazy so this module imports cheaply.
+Implemented: markdown 'docling'/'vlm', quality 'heuristic'/'vlm-judge', sections
+'headings'/'llm-text', describe gates 'all'/'flagged'/'illustrated'. The planned
+'vlm-window' (page-image sliding-window) sections backend is not yet registered;
+selecting an unregistered name fails with a clear error. Heavy imports (docling,
+providers) are lazy so this module imports cheaply.
 """
 
 from __future__ import annotations
@@ -73,6 +74,9 @@ def _make_vlm_markdown(settings, cfg):
 
 
 # --- quality backends ------------------------------------------------------
+# A quality backend's assess(markdown, text, get_image) returns a PageQuality.
+# `get_image` is a zero-arg callable returning the page's big-render JPEG bytes (or
+# None); text-only backends ignore it so no image is read.
 class _HeuristicQuality:
     name = "heuristic"
     model = None
@@ -80,7 +84,7 @@ class _HeuristicQuality:
     def __init__(self, settings, cfg) -> None:
         self._threshold = float(cfg.get("threshold", 0.5))
 
-    def assess(self, markdown: str, text: str):
+    def assess(self, markdown: str, text: str, get_image=None):
         from . import quality as quality_mod  # lazy (stdlib, but keep symmetric)
 
         return quality_mod.assess_page(markdown, text, self._threshold)
@@ -89,6 +93,55 @@ class _HeuristicQuality:
 @QUALITY.register("heuristic")
 def _make_heuristic(settings, cfg):
     return _HeuristicQuality(settings, cfg)
+
+
+class _VlmJudgeQuality:
+    """Heuristic base, augmented by a VLM faithfulness check on figure pages only.
+
+    The heuristic is blind to figures: a diagram reduced to '<!-- image -->' with
+    no text still scores well on coverage. For pages that contain a figure marker,
+    this asks the VLM whether the markdown captures the page (image + markdown in,
+    'OK' or 'MISSING: ...' out) and, on a miss, flags the page and records why.
+    Text-only and figureless pages keep the heuristic verdict (no model call).
+    """
+
+    name = "vlm-judge"
+
+    def __init__(self, settings, cfg) -> None:
+        from . import providers  # lazy
+
+        self._client = providers.client_from(cfg.get("provider"))
+        self.model = self._client.model
+        self._threshold = float(cfg.get("threshold", 0.5))
+
+    def assess(self, markdown: str, text: str, get_image=None):
+        from . import quality as quality_mod
+        from .prompts import JUDGE_PROMPT
+
+        base = quality_mod.assess_page(markdown, text, self._threshold)
+        has_figure = ("<!-- image -->" in markdown) or ("<!-- figure" in markdown)
+        if not has_figure or get_image is None:
+            return base
+        img = get_image()
+        if not img:
+            return base
+        try:
+            verdict = self._client.vision(
+                JUDGE_PROMPT + "\n\nExtracted Markdown:\n" + markdown, img, max_tokens=200
+            ).strip()
+        except Exception:
+            log.exception("vlm-judge: model call failed; keeping heuristic verdict")
+            return base
+        if verdict and not verdict.upper().startswith("OK"):
+            base.flagged = True
+            base.score = min(base.score, 0.4)
+            base.reasons = list(base.reasons) + ["vlm-judge: " + verdict[:200]]
+        return base
+
+
+@QUALITY.register("vlm-judge")
+def _make_vlm_judge(settings, cfg):
+    return _VlmJudgeQuality(settings, cfg)
 
 
 # --- describe gates --------------------------------------------------------

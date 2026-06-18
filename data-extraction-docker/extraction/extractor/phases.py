@@ -172,7 +172,13 @@ def quality_doc(settings: Settings, backend, stem: str) -> Dict:
         markdown = md_path.read_text(encoding="utf-8") if md_path.exists() else ""
         text = txt_path.read_text(encoding="utf-8") if txt_path.exists() else ""
 
-        q = backend.assess(markdown, text)
+        # Lazy page-image loader: heuristic ignores it (no I/O); vlm-judge reads
+        # the big render only for the pages it actually judges.
+        def get_image(lb: str = label) -> Optional[bytes]:
+            p = settings.doc_jpeg_dir(stem) / "big" / (lb + ".jpg")
+            return p.read_bytes() if p.exists() else None
+
+        q = backend.assess(markdown, text, get_image)
         source = "text-layer" if len(text.strip()) >= settings.text_layer_min_chars else "ocr"
         if q.flagged:
             flagged_count += 1
