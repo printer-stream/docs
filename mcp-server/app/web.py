@@ -79,6 +79,7 @@ async def version_endpoint(request: Request) -> JSONResponse:
                 "sqlite_version": meta.get("sqlite_version"),
                 "doc_count": meta.get("doc_count"),
                 "page_count": meta.get("page_count"),
+                "section_count": meta.get("section_count"),
             },
         }
     )
@@ -111,11 +112,12 @@ async def landing(request: Request) -> HTMLResponse:
     index_line = ""
     if meta:
         index_line = (
-            "<p class='sub'>Index built %s by indexer v%s (%s docs, %s pages).</p>"
+            "<p class='sub'>Index built %s by indexer v%s (%s docs, %s sections, %s pages).</p>"
             % (
                 html.escape(meta.get("created_at") or "?"),
                 html.escape(meta.get("indexer_version") or "?"),
                 html.escape(meta.get("doc_count") or "?"),
+                html.escape(meta.get("section_count") or "?"),
                 html.escape(meta.get("page_count") or "?"),
             )
         )

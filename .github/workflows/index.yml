@@ -17,6 +17,7 @@ on:
     paths:
       - "data-extraction/pagemap/**"
       - "data-extraction/markdown/**"
+      - "data-extraction/sections/**"
       - "data-extraction-docker/indexing/**"
 
 permissions:

@@ -136,6 +136,12 @@ def _run_phase(settings: Settings, args: argparse.Namespace, phase: str) -> int:
         fn = lambda stem: phases_mod.quality_doc(settings, backend, stem)
     elif phase == "describe":
         cfg = settings.profile.describe
+        if not cfg.get("enabled", False):
+            raise SystemExit(
+                "describe is disabled in profile '%s' ([describe] enabled = false). "
+                "Choose a profile that enables it (e.g. hosted, h200) or set it true."
+                % settings.profile.name
+            )
         client = providers.client_from(cfg.get("provider"))
         gate = args.gate or cfg.get("gate", "illustrated")
         fn = lambda stem: phases_mod.describe_doc(settings, client, stem, gate=gate)

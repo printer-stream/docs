@@ -272,15 +272,6 @@ def get_page_assets(stem: str, page: int) -> Optional[Dict]:
     return dict(r) if r else None
 
 
-def neighbor_pages(con, stem: str, lo: int, hi: int) -> List[Dict]:
-    rows = con.execute(
-        "SELECT page, label, jpeg_small, jpeg_big FROM pages "
-        "WHERE stem = ? AND page BETWEEN ? AND ? ORDER BY page",
-        (stem, lo, hi),
-    ).fetchall()
-    return [dict(r) for r in rows]
-
-
 def get_page(stem: str, page: int) -> Optional[Dict]:
     with connection() as c:
         r = c.execute(

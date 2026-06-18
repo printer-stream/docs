@@ -7,9 +7,11 @@ in the exact page text and image. See `../DESIGN.md`.
 ## How it works
 
 The pipeline (PDF -> extraction -> indexing -> this server) bakes a pre-generated
-SQLite FTS5 index into the image; the server queries it. Every page is
-`markdown/<stem>/page-NN.md` paired with `jpeg/<stem>/{small,big}/page-NN.jpg`, so
-results carry image URLs for the hit page and its neighbours.
+SQLite FTS5 index into the image; the server queries it. Retrieval is
+**section-first**: a command/topic is a logical unit that may span pages, so
+`search_specs` returns sections, each citing the pages it covers (image URLs from
+`jpeg/<stem>/{small,big}/page-NN.jpg`). Pages remain a fallback search path
+(`search_pages`) and the unit for `get_page` / `get_page_image`.
 
 - **Ranked full-text + trigram recall:** keyword/phrase search (BM25) plus a
   trigram net so command/symbol queries (`GS ( k`, hex `1B 40`) are not missed.
@@ -22,17 +24,19 @@ results carry image URLs for the hit page and its neighbours.
 |------|---------|
 | `list_documents()` | All docs with vendor, title, page count, command sets |
 | `get_document_summary(stem)` | What devices/technologies a doc covers |
-| `search_specs(query, vendor?, k?, neighbors?)` | Ranked pages with snippet + image URLs (+ neighbour images) |
+| `search_specs(query, vendor?, k?)` | **Primary:** ranked logical sections with a snippet, a `section_id`, and the pages each covers (with image URLs) |
+| `get_section(stem, section_id)` | A section's full Markdown plus the pages it covers |
+| `search_pages(query, vendor?, k?)` | Page-level fallback for exact byte/symbol lookups when a section is too coarse |
 | `get_page(stem, page)` | Full page Markdown + image URLs |
 | `get_page_image(stem, page, size?)` | The rendered page as image content (base64) a vision client can view; `size` small (default) or big |
 
 `stem` is the vendor-rooted path without extension, e.g. `star/escpos_cm_en`.
 
-`search_specs`/`get_page` return image *URLs* (a human or a client with a fetch
-tool can open them). `get_page_image` returns the actual image as MCP image
-content, so a vision-capable client can see the page directly - use it on demand
-for figures/diagrams/dense tables, not for every search hit (payload size). The
-bytes come from the baked static dir (stuffed image) or the CDN/base URL (lean).
+`search_specs`/`get_section`/`get_page` return image *URLs* (a human or a client
+with a fetch tool can open them). `get_page_image` returns the actual image as MCP
+image content, so a vision-capable client can see the page directly - use it on
+demand for figures/diagrams/dense tables, not for every search hit (payload size).
+The bytes come from the baked static dir (stuffed image) or the CDN/base URL (lean).
 
 ## HTTP surface
 
@@ -42,7 +46,7 @@ bytes come from the baked static dir (stuffed image) or the CDN/base URL (lean).
 | `/` | Landing page (corpus overview) for robots and guests |
 | `/docs` | Tool catalog (the "swagger-like" view; introspects live tool schemas) |
 | `/documents` | JSON: source PDFs + extraction lineage (extracted_at, extractor version, per-phase timing) |
-| `/version` | JSON: app version + index build info (created_at, indexer version, doc/page counts) |
+| `/version` | JSON: app version + index build info (created_at, indexer version, doc/section/page counts) |
 | `/healthz` | Health JSON |
 | `/static/...` | Static assets (only when self-serving; see below) |
 
@@ -73,7 +77,7 @@ production, set these via the environment (Render dashboard).
 | `PORT` | `10000` | Listen port (Render sets this) |
 | `HOST` | `0.0.0.0` | Listen address |
 | `LOG_LEVEL` | `INFO` | Logging level (logging only; no prints) |
-| `DOCS_SEARCH_K` / `DOCS_SEARCH_MAX_K` | `8` / `50` | Default / max result count |
+| `DOCS_SEARCH_K` / `DOCS_SEARCH_MAX_K` | `15` / `50` | Default / max result count |
 
 Asset URLs are absolute when `DOCS_BASE_URL` (or `DOCS_STATIC_BASE_URL`) is set,
 otherwise relative `/static/...`. `DOCS_STATIC_BASE_URL` defaults to

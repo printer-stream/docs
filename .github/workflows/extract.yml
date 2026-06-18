@@ -1,8 +1,8 @@
 name: Extract
 
 # Heavy, one-time/occasional. Manual only. Runs an extraction phase over the
-# corpus and commits the outputs (jpeg/markdown/text/quality/pagemap/meta) to
-# Git LFS. Start on GitHub-hosted runners; if a single run hits the 6h cap,
+# corpus and commits the outputs (jpeg/markdown/text/quality/sections/pagemap/meta)
+# to Git LFS. Start on GitHub-hosted runners; if a single run hits the 6h cap,
 # escalate to a private runner (same image, different runs-on) or split the work
 # by dispatching per-stem. Phases are all-or-none per (phase, doc), so re-running
 # a phase simply regenerates its artifacts.
@@ -11,10 +11,10 @@ on:
   workflow_dispatch:
     inputs:
       phase:
-        description: "Phase (all-phases = render+text+markdown+quality+assemble in order)"
+        description: "Phase (all-phases = render+text+markdown+quality+sections+assemble in order)"
         type: choice
         default: all-phases
-        options: [all-phases, render, text, markdown, quality, assemble]
+        options: [all-phases, render, text, markdown, quality, sections, assemble]
       scope:
         description: "Process the whole corpus or a single document"
         type: choice
