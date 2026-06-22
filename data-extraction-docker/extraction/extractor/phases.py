@@ -14,6 +14,8 @@ from __future__ import annotations
 
 import json
 import logging
+import threading
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from importlib.metadata import PackageNotFoundError, version as pkg_version
 from typing import Dict, List, Optional, Tuple
 
@@ -132,16 +134,48 @@ def markdown_doc(
         "markdown", backend.name, version,
         params={"backend": backend.name, "model": backend.model, "do_ocr": settings.do_ocr},
     )
-    log.info("markdown %s: backend=%s model=%s", stem, backend.name, backend.model)
+    concurrency = getattr(backend, "concurrency", 1)
+    log.info("markdown %s: backend=%s model=%s concurrency=%d",
+             stem, backend.name, backend.model, concurrency)
     out_dir = settings.doc_markdown_dir(stem)
     out_dir.mkdir(parents=True, exist_ok=True)
+
+    def _write(label: str, markdown: str) -> int:
+        (out_dir / (label + ".md")).write_text(markdown.rstrip() + "\n", encoding="utf-8")
+        return len(markdown)
+
     try:
-        for n in range(page_count):
-            label = page_label(n + 1, width)
-            with rec.time_page(label):
-                markdown = backend.page(doc, n)
-            (out_dir / (label + ".md")).write_text(markdown.rstrip() + "\n", encoding="utf-8")
-            _log_page("markdown", stem, label, n + 1, page_count, progress, "(%d chars)" % len(markdown))
+        if getattr(backend, "concurrent", False) and concurrency > 1:
+            # Many requests in flight so the model server can batch them. Prefer the
+            # big JPEG the render phase already wrote (lock-free, parallel - no
+            # re-rasterize); only fall back to in-memory fitz (serialized, since
+            # PyMuPDF isn't thread-safe) when running markdown without a prior render.
+            fitz_lock = threading.Lock()
+            reuse_render = getattr(backend, "dpi", None) == settings.big_dpi
+
+            def work(n: int):
+                label = page_label(n + 1, width)
+                jpeg = settings.doc_jpeg_dir(stem) / "big" / (label + ".jpg")
+                with rec.time_page(label):
+                    if reuse_render and jpeg.exists():
+                        img = jpeg.read_bytes()
+                    else:
+                        with fitz_lock:
+                            img = backend.render_input(doc, n)
+                    markdown = backend.transcribe(img)
+                return n, label, _write(label, markdown)
+
+            with ThreadPoolExecutor(max_workers=concurrency) as ex:
+                for fut in as_completed([ex.submit(work, n) for n in range(page_count)]):
+                    n, label, nchars = fut.result()
+                    _log_page("markdown", stem, label, n + 1, page_count, progress, "(%d chars)" % nchars)
+        else:
+            for n in range(page_count):
+                label = page_label(n + 1, width)
+                with rec.time_page(label):
+                    markdown = backend.page(doc, n)
+                nchars = _write(label, markdown)
+                _log_page("markdown", stem, label, n + 1, page_count, progress, "(%d chars)" % nchars)
         meta = rec.to_dict(stem, page_count)
     finally:
         doc.close()
@@ -159,13 +193,12 @@ def quality_doc(settings: Settings, backend, stem: str) -> Dict:
         "quality", backend.name, backend.model or __version__,
         params={"backend": backend.name, "model": backend.model, "threshold": settings.quality_threshold},
     )
-    log.info("quality %s: backend=%s", stem, backend.name)
+    concurrency = getattr(backend, "concurrency", 1)
+    log.info("quality %s: backend=%s concurrency=%d", stem, backend.name, concurrency)
     md_dir = settings.doc_markdown_dir(stem)
     text_dir = settings.doc_text_dir(stem)
 
-    quality_pages: Dict[str, Dict] = {}
-    flagged_count = 0
-    for n in range(1, page_count + 1):
+    def assess_page(n: int):
         label = page_label(n, width)
         md_path = md_dir / (label + ".md")
         txt_path = text_dir / (label + ".txt")
@@ -180,9 +213,24 @@ def quality_doc(settings: Settings, backend, stem: str) -> Dict:
 
         q = backend.assess(markdown, text, get_image)
         source = "text-layer" if len(text.strip()) >= settings.text_layer_min_chars else "ocr"
-        if q.flagged:
-            flagged_count += 1
-        quality_pages[label] = {"source": source, **quality_mod.to_dict(q)}
+        return label, source, q
+
+    quality_pages: Dict[str, Dict] = {}
+    flagged_count = 0
+    if getattr(backend, "concurrent", False) and concurrency > 1:
+        # vlm-judge issues a model call per figure page; overlap them like markdown.
+        with ThreadPoolExecutor(max_workers=concurrency) as ex:
+            for fut in as_completed([ex.submit(assess_page, n) for n in range(1, page_count + 1)]):
+                label, source, q = fut.result()
+                if q.flagged:
+                    flagged_count += 1
+                quality_pages[label] = {"source": source, **quality_mod.to_dict(q)}
+    else:
+        for n in range(1, page_count + 1):
+            label, source, q = assess_page(n)
+            if q.flagged:
+                flagged_count += 1
+            quality_pages[label] = {"source": source, **quality_mod.to_dict(q)}
 
     quality_doc_payload = {
         "stem": stem,
@@ -205,17 +253,20 @@ def quality_doc(settings: Settings, backend, stem: str) -> Dict:
 # `client` is a providers.LLMClient built from the profile's [describe.provider];
 # `gate` is a name resolved against the gate registry (all | flagged | illustrated
 # | ...). Adding a gate = register one function in backends.py.
-def describe_doc(settings: Settings, client, stem: str, gate: str = "illustrated") -> Dict:
+def describe_doc(settings: Settings, client, stem: str, gate: str = "illustrated",
+                 concurrency: int = 1) -> Dict:
     doc, page_count, width = _open(settings, stem)
     doc.close()
     labels = [page_label(n, width) for n in range(1, page_count + 1)]
     targets = backends_mod.GATES.get(gate)(settings, stem, labels)
+    concurrency = max(1, int(concurrency))
     rec = PhaseRecorder(
         "describe", "vlm", client.model,
         params={"base_url": client.base_url, "model": client.model,
-                "image": settings.describe_image, "gate": gate},
+                "image": settings.describe_image, "gate": gate, "concurrency": concurrency},
     )
-    log.info("describe %s: gate=%s model=%s -> %d/%d pages", stem, gate, client.model, len(targets), page_count)
+    log.info("describe %s: gate=%s model=%s concurrency=%d -> %d/%d pages",
+             stem, gate, client.model, concurrency, len(targets), page_count)
     out_dir = settings.doc_describe_dir(stem)
     out_dir.mkdir(parents=True, exist_ok=True)
     size = settings.describe_image if settings.describe_image in ("small", "big") else "big"
@@ -223,21 +274,39 @@ def describe_doc(settings: Settings, client, stem: str, gate: str = "illustrated
     described = 0
     failed = 0
     total_targets = len(targets)
-    for i, label in enumerate(targets, 1):
+
+    def work(label: str):
+        """Describe one page. Reads JPEG bytes (thread-safe) and calls the VLM;
+        returns (label, chars or None). A page failure is logged, not fatal."""
         jpeg = settings.doc_jpeg_dir(stem) / size / (label + ".jpg")
         if not jpeg.exists():
             log.warning("describe: missing %s; run the render phase first", jpeg)
-            failed += 1
-            continue
+            return label, None
         try:
             with rec.time_page(label):
                 text = client.vision(DESCRIBE_PROMPT, jpeg.read_bytes())
             (out_dir / (label + ".txt")).write_text(text.rstrip() + "\n", encoding="utf-8")
-            described += 1
-            log.info("  describe %s %s  page %d/%d (%d chars)", stem, label, i, total_targets, len(text))
+            return label, len(text)
         except Exception:
-            failed += 1
             log.exception("describe failed for %s %s", stem, label)
+            return label, None
+
+    def tally(i: int, label: str, nchars):
+        nonlocal described, failed
+        if nchars is None:
+            failed += 1
+        else:
+            described += 1
+            log.info("  describe %s %s  page %d/%d (%d chars)", stem, label, i, total_targets, nchars)
+
+    if concurrency > 1:
+        with ThreadPoolExecutor(max_workers=concurrency) as ex:
+            for i, fut in enumerate(as_completed([ex.submit(work, lb) for lb in targets]), 1):
+                label, nchars = fut.result()
+                tally(i, label, nchars)
+    else:
+        for i, label in enumerate(targets, 1):
+            tally(i, *work(label))
 
     meta = rec.to_dict(
         stem, len(targets),

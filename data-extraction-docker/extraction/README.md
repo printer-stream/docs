@@ -149,6 +149,25 @@ docker run --rm -v "$PWD":/work printer-stream-extraction report
 Mount a model cache to avoid re-downloading Docling models each run:
 `-v "$HOME/.cache/printer-stream-models":/models`.
 
+## Throughput (VLM profiles)
+
+The VLM phases (`markdown`, `describe`) keep `concurrency` page requests in flight
+so the model server can batch them - the single biggest speed lever on a GPU.
+`concurrency = 1` (the default) sends one request at a time and leaves the GPU
+mostly idle; the GPU profiles set 8-16 and you can raise it toward the server's
+`--max-num-seqs`. In `all-phases` the markdown step reuses the big JPEGs the
+`render` phase already wrote (parallel, lock-free) instead of re-rasterizing; only
+a standalone `markdown` run rasterizes in-memory, serialized by a lock (PyMuPDF
+isn't thread-safe). Pair concurrency with vLLM's `--enable-prefix-caching` (our
+prompt prefix is identical every call).
+
+The bottleneck is the model server (the GPU), not this client: it sees one queue
+of independent page requests, so N requests from one PDF are identical to N spread
+across many PDFs. Per-document parallelism therefore adds nothing on the GPU axis -
+spare GPU VRAM is KV-cache headroom, used by raising `concurrency` /
+`--max-num-seqs`, not by running more PDFs. Page-level concurrency also beats
+doc-level sharding here because one oversized document would otherwise gate the run.
+
 ## Re-running and sharding
 
 The atomic unit is (phase, document): a phase regenerates its artifact kind for

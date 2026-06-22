@@ -144,7 +144,8 @@ def _run_phase(settings: Settings, args: argparse.Namespace, phase: str) -> int:
             )
         client = providers.client_from(cfg.get("provider"))
         gate = args.gate or cfg.get("gate", "illustrated")
-        fn = lambda stem: phases_mod.describe_doc(settings, client, stem, gate=gate)
+        concurrency = int(cfg.get("concurrency", 1))
+        fn = lambda stem: phases_mod.describe_doc(settings, client, stem, gate=gate, concurrency=concurrency)
     elif phase == "sections":
         cfg = settings.profile.sections
         backend = backends_mod.SECTIONS.get(cfg["backend"])(settings, cfg)

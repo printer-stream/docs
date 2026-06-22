@@ -10,7 +10,7 @@ jpeg_quality = 88
 
 [markdown]
 backend = "vlm"
-image = "big"
+concurrency = 8          # in-flight requests; keep modest on a small GPU
 [markdown.provider]
 base_url = "http://localhost:8000/v1"
 model = "Qwen/Qwen3-VL-8B-Instruct"
@@ -26,6 +26,7 @@ threshold = 0.5
 enabled = true
 gate = "illustrated"
 image = "big"
+concurrency = 8
 [describe.provider]
 base_url = "http://localhost:8000/v1"
 model = "Qwen/Qwen3-VL-8B-Instruct"

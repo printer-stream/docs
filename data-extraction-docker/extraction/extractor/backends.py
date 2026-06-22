@@ -47,9 +47,16 @@ def _make_docling(settings, cfg):
 
 class _VlmMarkdown:
     """Transcribe a page image to Markdown via an OpenAI-compatible VLM. Renders
-    the page in memory (no dependency on the on-disk render phase)."""
+    the page in memory (no dependency on the on-disk render phase).
+
+    `concurrent` lets the markdown phase parallelize: render_input (fitz, not
+    thread-safe -> serialized by the caller) is split from transcribe (the network
+    call, safe to run many-at-once so the server can batch). `concurrency` is the
+    number of in-flight requests; >1 is the big throughput lever on a GPU server.
+    """
 
     name = "vlm"
+    concurrent = True
 
     def __init__(self, settings, cfg) -> None:
         from . import providers  # lazy
@@ -57,15 +64,23 @@ class _VlmMarkdown:
         self._client = providers.client_from(cfg.get("provider"))
         self.model = self._client.model
         # dpi for the model's input image; defaults to the profile's big render dpi.
-        self._dpi = int(cfg.get("dpi", settings.big_dpi))
+        # Public so the phase can reuse the on-disk big render when the dpi matches.
+        self.dpi = int(cfg.get("dpi", settings.big_dpi))
         self._quality = int(settings.jpeg_quality)
+        self.concurrency = max(1, int(cfg.get("concurrency", 1)))
 
-    def page(self, doc, page_index: int) -> str:
+    def render_input(self, doc, page_index: int) -> bytes:
         from .render import jpeg_bytes  # lazy (pulls fitz)
+
+        return jpeg_bytes(doc[page_index], self.dpi / 72.0, self._quality)
+
+    def transcribe(self, img: bytes) -> str:
         from .prompts import MARKDOWN_PROMPT
 
-        img = jpeg_bytes(doc[page_index], self._dpi / 72.0, self._quality)
         return self._client.vision(MARKDOWN_PROMPT, img)
+
+    def page(self, doc, page_index: int) -> str:
+        return self.transcribe(self.render_input(doc, page_index))
 
 
 @MARKDOWN.register("vlm")
@@ -106,6 +121,7 @@ class _VlmJudgeQuality:
     """
 
     name = "vlm-judge"
+    concurrent = True
 
     def __init__(self, settings, cfg) -> None:
         from . import providers  # lazy
@@ -113,6 +129,7 @@ class _VlmJudgeQuality:
         self._client = providers.client_from(cfg.get("provider"))
         self.model = self._client.model
         self._threshold = float(cfg.get("threshold", 0.5))
+        self.concurrency = max(1, int(cfg.get("concurrency", 1)))
 
     def assess(self, markdown: str, text: str, get_image=None):
         from . import quality as quality_mod

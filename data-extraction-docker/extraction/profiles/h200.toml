@@ -1,19 +1,24 @@
-# H200 (or any single big-VRAM CUDA GPU) profile: local VLMs via vLLM.
-# One model serves every phase. Serve it first, e.g.:
-#   vllm serve Qwen/Qwen3-VL-32B-Instruct-FP8 --port 8000
+# Hopper single-GPU profile (H200 141 GB, or GH200 96 GB - both Hopper, so FP8
+# works natively). One model serves every phase. Serve it first, e.g.:
+#   vllm serve Qwen/Qwen3-VL-32B-Instruct-FP8 --port 8000 \
+#     --enable-prefix-caching --max-num-seqs 32
 # and export the key the provider blocks reference:  export VLLM_API_KEY=...
 # (vLLM needs no real key; any value works.)
 #
 # Why Qwen3-VL-32B-Instruct-FP8: a strict upgrade over Qwen2.5-VL-72B (>= its
-# quality at < half the VRAM), FP8 ~= 33 GB so it fits one 141 GB H200 with room
-# for KV cache; Instruct (not Thinking) for verbatim transcription; 256K context
-# fits whole-doc markdown for sections. For higher page throughput, swap markdown
-# to Qwen/Qwen3-VL-30B-A3B-Instruct-FP8 (3B active). The 235B-A22B flagship needs
-# 2x H200 (FP8 ~235 GB), so it is not a single-GPU default.
+# quality at < half the VRAM), FP8 ~= 33 GB so it fits one Hopper GPU with room
+# for KV cache; Instruct (not Thinking) for verbatim transcription. This is the
+# best-quality model that fits a single 96 GB GPU, so it is the default - do not
+# downgrade to a smaller/faster model for speed; throughput comes from concurrency
+# (below). If you want even higher precision and have the VRAM/time headroom, run
+# the same model in BF16 (Qwen/Qwen3-VL-32B-Instruct, ~64 GB) - the only step up
+# that fits. The 235B-A22B flagship needs ~2x this VRAM (FP8 ~235 GB), so it is not
+# a single-GPU default.
 #
-# NOTE: vlm (markdown) and vlm-judge (quality) are implemented as of 3.0.0.
-# vlm-window (page-image sliding-window sections) is still planned; until it lands,
-# sections uses llm-text below. `default` runs with no GPU and no network.
+# `concurrency` is the throughput lever (it does NOT change quality): the number of
+# page requests kept in flight so the model server can batch them. 1 leaves the GPU
+# ~idle between calls; 16-32 saturates a single Hopper GPU. Tune with the server's
+# --max-num-seqs. On GH200, build the images for linux/arm64.
 
 [render]
 small_width = 1024
@@ -22,7 +27,7 @@ jpeg_quality = 90
 
 [markdown]
 backend = "vlm"
-image = "big"
+concurrency = 16         # in-flight requests; raise toward --max-num-seqs to go faster
 [markdown.provider]
 base_url = "http://localhost:8000/v1"
 model = "Qwen/Qwen3-VL-32B-Instruct-FP8"
@@ -33,6 +38,7 @@ timeout = 300
 [quality]
 backend = "vlm-judge"
 threshold = 0.5
+concurrency = 16         # vlm-judge calls the model only on figure pages; overlap them
 [quality.provider]
 base_url = "http://localhost:8000/v1"
 model = "Qwen/Qwen3-VL-32B-Instruct-FP8"
@@ -43,16 +49,17 @@ max_tokens = 512
 enabled = true
 gate = "illustrated"
 image = "big"
+concurrency = 16
 [describe.provider]
 base_url = "http://localhost:8000/v1"
 model = "Qwen/Qwen3-VL-32B-Instruct-FP8"
 api_key_env = "VLLM_API_KEY"
 max_tokens = 400
 
+# headings is deterministic, instant, and already gives strong section retrieval.
+# llm-text sends a whole document's markdown in one call, which overflows context
+# and is slow on very long docs (this corpus has an 882-page doc), so it is not
+# the default here; switch to it per-doc if you want LLM-decided boundaries.
 [sections]
-backend = "llm-text"     # vlm-window (page-image sliding window) is a planned backend
-[sections.provider]
-base_url = "http://localhost:8000/v1"
-model = "Qwen/Qwen3-VL-32B-Instruct-FP8"
-api_key_env = "VLLM_API_KEY"
-max_tokens = 4096
+backend = "headings"
+max_chars = 6000
